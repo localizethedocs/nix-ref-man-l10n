@@ -171,18 +171,18 @@ The goal of this project is to translate The Nix Reference Manual into multiple 
   <tbody>
     <tr>
       <td rowspan="1" colspan="1" align="right" style="text-align: right;">
-        <div><a href="https://github.com/localizethedocs/nix-ref-man-l10n/actions/workflows/ci-sphinx-build-docs.yml" ><img alt="ci-sphinx-build-docs" src="https://img.shields.io/github/actions/workflow/status/localizethedocs/nix-ref-man-l10n/ci-sphinx-build-docs.yml?logo=github&style=flat&label=ci-sphinx-build-docs" /></a></div>
+        <div><a href="https://github.com/localizethedocs/nix-ref-man-l10n/actions/workflows/ci-mdbook-build-docs.yml" ><img alt="ci-mdbook-build-docs" src="https://img.shields.io/github/actions/workflow/status/localizethedocs/nix-ref-man-l10n/ci-mdbook-build-docs.yml?logo=github&style=flat&label=ci-mdbook-build-docs" /></a></div>
       </td>
       <td rowspan="1" colspan="1" align="left" style="text-align: left;">
-        <div>透過 Sphinx 建置文件並上傳建置製品。</div>
+        <div>透過 mdBook 建置文件並上傳建置製品。</div>
       </td>
     </tr>
     <tr>
       <td rowspan="1" colspan="1" align="right" style="text-align: right;">
-        <div><a href="https://github.com/localizethedocs/nix-ref-man-l10n/actions/workflows/ci-sphinx-update-pot.yml" ><img alt="ci-sphinx-update-pot" src="https://img.shields.io/github/actions/workflow/status/localizethedocs/nix-ref-man-l10n/ci-sphinx-update-pot.yml?logo=github&style=flat&label=ci-sphinx-update-pot" /></a></div>
+        <div><a href="https://github.com/localizethedocs/nix-ref-man-l10n/actions/workflows/ci-mdbook-update-pot.yml" ><img alt="ci-mdbook-update-pot" src="https://img.shields.io/github/actions/workflow/status/localizethedocs/nix-ref-man-l10n/ci-mdbook-update-pot.yml?logo=github&style=flat&label=ci-mdbook-update-pot" /></a></div>
       </td>
       <td rowspan="1" colspan="1" align="left" style="text-align: left;">
-        <div>透過 Sphinx 使用 <code>gettext</code> 建置器更新 <code>.pot</code> 檔案。</div>
+        <div>Update <code>.pot</code> files by mdBook with <code>gettext</code> builder.</div>
       </td>
     </tr>
     <tr>
