@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/debugging.md:1
+msgid "Debugging Nix"
+msgstr ""
+
+#: source/development/debugging.md:3
+msgid ""
+"This section shows how to build and debug Nix with debug symbols enabled."
+msgstr ""
+
+#: source/development/debugging.md:5
+msgid ""
+"Additionally, see [Testing Nix](./testing.md) for further instructions on "
+"how to debug Nix in the context of a unit test or functional test."
+msgstr ""
+
+#: source/development/debugging.md:7
+msgid "Building Nix with Debug Symbols"
+msgstr ""
+
+#: source/development/debugging.md:9
+msgid ""
+"In the development shell, `mesonBuildType` is set automatically to "
+"`debugoptimized`. This builds Nix with debug symbols, which are essential "
+"for effective debugging."
+msgstr ""
+
+#: source/development/debugging.md:11
+msgid "It is also possible to build without optimization for faster build:"
+msgstr ""
+
+#: source/development/debugging.md:18
+msgid ""
+"(The first line is needed because `fortify` hardening requires at least some "
+"optimization.)"
+msgstr ""
+
+#: source/development/debugging.md:20
+msgid "Building Nix with sanitizers"
+msgstr ""
+
+#: source/development/debugging.md:22
+msgid ""
+"Nix can be built with [Address](https://clang.llvm.org/docs/AddressSanitizer."
+"html) and [UB](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) "
+"sanitizers using LLVM or GCC. This is useful when debugging memory "
+"corruption issues."
+msgstr ""
+
+#: source/development/debugging.md:26
+msgid ""
+"```console\n"
+"[nix-shell]$ export mesonBuildType=debugoptimized\n"
+"[nix-shell]$ appendToVar mesonFlags \"-Dlibexpr:gc=disabled\" # Disable "
+"Boehm\n"
+"[nix-shell]$ appendToVar mesonFlags \"-Db_sanitize=address,undefined\"\n"
+"```"
+msgstr ""
+
+#: source/development/debugging.md:32
+msgid "Debugging the Nix Binary"
+msgstr ""
+
+#: source/development/debugging.md:34
+msgid "Obtain your preferred debugger within the development shell:"
+msgstr ""
+
+#: source/development/debugging.md:40 source/development/debugging.md:54
+#: source/development/debugging.md:71
+msgid "On macOS, use `lldb`:"
+msgstr ""
+
+#: source/development/debugging.md:46
+msgid "Launching the Debugger"
+msgstr ""
+
+#: source/development/debugging.md:48
+msgid "To debug the Nix binary, run:"
+msgstr ""
+
+#: source/development/debugging.md:60
+msgid "Using the Debugger"
+msgstr ""
+
+#: source/development/debugging.md:62
+msgid ""
+"Inside the debugger, you can set breakpoints, run the program, and inspect "
+"variables."
+msgstr ""
+
+#: source/development/debugging.md:69
+msgid ""
+"Refer to the [GDB Documentation](https://www.gnu.org/software/gdb/"
+"documentation/) for comprehensive usage instructions."
+msgstr ""
+
+#: source/development/debugging.md:78
+msgid ""
+"Refer to the [LLDB Tutorial](https://lldb.llvm.org/use/tutorial.html) for "
+"comprehensive usage instructions."
+msgstr ""

@@ -1,0 +1,1332 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/SUMMARY.md:1
+msgid "Table of Contents"
+msgstr ""
+
+#: source/SUMMARY.md:3
+msgid "Introduction"
+msgstr ""
+
+#: source/SUMMARY.md:4
+msgid "Quick Start"
+msgstr ""
+
+#: source/SUMMARY.md:5
+msgid "Installation"
+msgstr ""
+
+#: source/SUMMARY.md:6
+msgid "Supported Platforms"
+msgstr ""
+
+#: source/SUMMARY.md:7
+msgid "Installing a Binary Distribution"
+msgstr ""
+
+#: source/SUMMARY.md:8
+msgid "Installing Nix from Source"
+msgstr ""
+
+#: source/SUMMARY.md:9
+msgid "Prerequisites"
+msgstr ""
+
+#: source/SUMMARY.md:10
+msgid "Obtaining a Source Distribution"
+msgstr ""
+
+#: source/SUMMARY.md:11
+msgid "Building Nix from Source"
+msgstr ""
+
+#: source/SUMMARY.md:12
+msgid "Using Nix within Docker"
+msgstr ""
+
+#: source/SUMMARY.md:13
+msgid "Security"
+msgstr ""
+
+#: source/SUMMARY.md:14
+msgid "Single-User Mode"
+msgstr ""
+
+#: source/SUMMARY.md:15
+msgid "Multi-User Mode"
+msgstr ""
+
+#: source/SUMMARY.md:16
+msgid "Environment Variables"
+msgstr ""
+
+#: source/SUMMARY.md:17
+msgid "Upgrading Nix"
+msgstr ""
+
+#: source/SUMMARY.md:18
+msgid "Uninstalling Nix"
+msgstr ""
+
+#: source/SUMMARY.md:19
+msgid "Nix Store"
+msgstr ""
+
+#: source/SUMMARY.md:20 source/SUMMARY.md:233
+msgid "File System Object"
+msgstr ""
+
+#: source/SUMMARY.md:21
+msgid "Content-Addressing File System Objects"
+msgstr ""
+
+#: source/SUMMARY.md:22
+msgid "Exposing in OS File Systems"
+msgstr ""
+
+#: source/SUMMARY.md:23
+msgid "Store Object"
+msgstr ""
+
+#: source/SUMMARY.md:24
+msgid "Content-Addressing Store Objects"
+msgstr ""
+
+#: source/SUMMARY.md:25
+msgid "Store Path and Store Directory"
+msgstr ""
+
+#: source/SUMMARY.md:26
+msgid "Store Derivation and Deriving Path"
+msgstr ""
+
+#: source/SUMMARY.md:27
+msgid "Derivation Outputs and Types of Derivations"
+msgstr ""
+
+#: source/SUMMARY.md:28
+msgid "Content-addressing derivation outputs"
+msgstr ""
+
+#: source/SUMMARY.md:29
+msgid "Input-addressing derivation outputs"
+msgstr ""
+
+#: source/SUMMARY.md:30
+msgid "Build Trace"
+msgstr ""
+
+#: source/SUMMARY.md:31
+msgid "Derivation Resolution"
+msgstr ""
+
+#: source/SUMMARY.md:32 source/SUMMARY.md:257
+msgid "Building"
+msgstr ""
+
+#: source/SUMMARY.md:33
+msgid "Secrets"
+msgstr ""
+
+#: source/SUMMARY.md:34
+msgid "Store Types"
+msgstr ""
+
+#: source/SUMMARY.md:35
+msgid "Dummy Store"
+msgstr ""
+
+#: source/SUMMARY.md:36
+msgid "Experimental Local Overlay Store"
+msgstr ""
+
+#: source/SUMMARY.md:37
+msgid "Experimental SSH Store"
+msgstr ""
+
+#: source/SUMMARY.md:38
+msgid "Experimental SSH Store with filesystem mounted"
+msgstr ""
+
+#: source/SUMMARY.md:39
+msgid "HTTP Binary Cache Store"
+msgstr ""
+
+#: source/SUMMARY.md:40
+msgid "Local Binary Cache Store"
+msgstr ""
+
+#: source/SUMMARY.md:41
+msgid "Local Daemon Store"
+msgstr ""
+
+#: source/SUMMARY.md:42
+msgid "Local Store"
+msgstr ""
+
+#: source/SUMMARY.md:43
+msgid "S3 Binary Cache Store"
+msgstr ""
+
+#: source/SUMMARY.md:44
+msgid "SSH Store"
+msgstr ""
+
+#: source/SUMMARY.md:46
+msgid "Appendix: Math notation"
+msgstr ""
+
+#: source/SUMMARY.md:47
+msgid "Nix Language"
+msgstr ""
+
+#: source/SUMMARY.md:48
+msgid "Data Types"
+msgstr ""
+
+#: source/SUMMARY.md:49
+msgid "String context"
+msgstr ""
+
+#: source/SUMMARY.md:50
+msgid "Syntax and semantics"
+msgstr ""
+
+#: source/SUMMARY.md:51
+msgid "Evaluation"
+msgstr ""
+
+#: source/SUMMARY.md:52
+msgid "Variables"
+msgstr ""
+
+#: source/SUMMARY.md:53
+msgid "String literals"
+msgstr ""
+
+#: source/SUMMARY.md:54
+msgid "Identifiers"
+msgstr ""
+
+#: source/SUMMARY.md:55
+msgid "Scoping rules"
+msgstr ""
+
+#: source/SUMMARY.md:56
+msgid "String interpolation"
+msgstr ""
+
+#: source/SUMMARY.md:57
+msgid "Lookup path"
+msgstr ""
+
+#: source/SUMMARY.md:58
+msgid "Operators"
+msgstr ""
+
+#: source/SUMMARY.md:59
+msgid "Built-ins"
+msgstr ""
+
+#: source/SUMMARY.md:60
+msgid "Derivations"
+msgstr ""
+
+#: source/SUMMARY.md:61
+msgid "Advanced Attributes"
+msgstr ""
+
+#: source/SUMMARY.md:62
+msgid "Import From Derivation"
+msgstr ""
+
+#: source/SUMMARY.md:63
+msgid "Package Management"
+msgstr ""
+
+#: source/SUMMARY.md:64 source/SUMMARY.md:225
+msgid "Profiles"
+msgstr ""
+
+#: source/SUMMARY.md:65
+msgid "Garbage Collection"
+msgstr ""
+
+#: source/SUMMARY.md:66
+msgid "Garbage Collector Roots"
+msgstr ""
+
+#: source/SUMMARY.md:67
+msgid "Advanced Topics"
+msgstr ""
+
+#: source/SUMMARY.md:68
+msgid "Sharing Packages Between Machines"
+msgstr ""
+
+#: source/SUMMARY.md:69
+msgid "Serving a Nix store via HTTP"
+msgstr ""
+
+#: source/SUMMARY.md:70
+msgid "Serving a Nix store via SSH"
+msgstr ""
+
+#: source/SUMMARY.md:71
+msgid "Remote Builds"
+msgstr ""
+
+#: source/SUMMARY.md:72
+msgid "Tuning Cores and Jobs"
+msgstr ""
+
+#: source/SUMMARY.md:73
+msgid "Verifying Build Reproducibility"
+msgstr ""
+
+#: source/SUMMARY.md:74
+msgid "Using the `post-build-hook`"
+msgstr ""
+
+#: source/SUMMARY.md:75
+msgid "Evaluation profiler"
+msgstr ""
+
+#: source/SUMMARY.md:76
+msgid "Command Reference"
+msgstr ""
+
+#: source/SUMMARY.md:77
+msgid "Common Options"
+msgstr ""
+
+#: source/SUMMARY.md:78
+msgid "Common Environment Variables"
+msgstr ""
+
+#: source/SUMMARY.md:79
+msgid "Main Commands"
+msgstr ""
+
+#: source/SUMMARY.md:80
+msgid "nix-build"
+msgstr ""
+
+#: source/SUMMARY.md:81
+msgid "nix-shell"
+msgstr ""
+
+#: source/SUMMARY.md:82
+msgid "nix-store"
+msgstr ""
+
+#: source/SUMMARY.md:83
+msgid "nix-store --add-fixed"
+msgstr ""
+
+#: source/SUMMARY.md:84
+msgid "nix-store --add"
+msgstr ""
+
+#: source/SUMMARY.md:85
+msgid "nix-store --delete"
+msgstr ""
+
+#: source/SUMMARY.md:86
+msgid "nix-store --dump-db"
+msgstr ""
+
+#: source/SUMMARY.md:87
+msgid "nix-store --dump"
+msgstr ""
+
+#: source/SUMMARY.md:88
+msgid "nix-store --export"
+msgstr ""
+
+#: source/SUMMARY.md:89
+msgid "nix-store --gc"
+msgstr ""
+
+#: source/SUMMARY.md:90
+msgid "nix-store --generate-binary-cache-key"
+msgstr ""
+
+#: source/SUMMARY.md:91
+msgid "nix-store --import"
+msgstr ""
+
+#: source/SUMMARY.md:92
+msgid "nix-store --load-db"
+msgstr ""
+
+#: source/SUMMARY.md:93
+msgid "nix-store --optimise"
+msgstr ""
+
+#: source/SUMMARY.md:94
+msgid "nix-store --print-env"
+msgstr ""
+
+#: source/SUMMARY.md:95
+msgid "nix-store --query"
+msgstr ""
+
+#: source/SUMMARY.md:96
+msgid "nix-store --read-log"
+msgstr ""
+
+#: source/SUMMARY.md:97
+msgid "nix-store --realise"
+msgstr ""
+
+#: source/SUMMARY.md:98
+msgid "nix-store --register-validity"
+msgstr ""
+
+#: source/SUMMARY.md:99
+msgid "nix-store --repair-path"
+msgstr ""
+
+#: source/SUMMARY.md:100
+msgid "nix-store --restore"
+msgstr ""
+
+#: source/SUMMARY.md:101
+msgid "nix-store --serve"
+msgstr ""
+
+#: source/SUMMARY.md:102
+msgid "nix-store --verify-path"
+msgstr ""
+
+#: source/SUMMARY.md:103
+msgid "nix-store --verify"
+msgstr ""
+
+#: source/SUMMARY.md:104
+msgid "nix-env"
+msgstr ""
+
+#: source/SUMMARY.md:105
+msgid "nix-env --delete-generations"
+msgstr ""
+
+#: source/SUMMARY.md:106
+msgid "nix-env --install"
+msgstr ""
+
+#: source/SUMMARY.md:107
+msgid "nix-env --list-generations"
+msgstr ""
+
+#: source/SUMMARY.md:108
+msgid "nix-env --query"
+msgstr ""
+
+#: source/SUMMARY.md:109
+msgid "nix-env --rollback"
+msgstr ""
+
+#: source/SUMMARY.md:110
+msgid "nix-env --set-flag"
+msgstr ""
+
+#: source/SUMMARY.md:111
+msgid "nix-env --set"
+msgstr ""
+
+#: source/SUMMARY.md:112
+msgid "nix-env --switch-generation"
+msgstr ""
+
+#: source/SUMMARY.md:113
+msgid "nix-env --switch-profile"
+msgstr ""
+
+#: source/SUMMARY.md:114
+msgid "nix-env --uninstall"
+msgstr ""
+
+#: source/SUMMARY.md:115
+msgid "nix-env --upgrade"
+msgstr ""
+
+#: source/SUMMARY.md:116
+msgid "Utilities"
+msgstr ""
+
+#: source/SUMMARY.md:117
+msgid "nix-channel"
+msgstr ""
+
+#: source/SUMMARY.md:118
+msgid "nix-collect-garbage"
+msgstr ""
+
+#: source/SUMMARY.md:119
+msgid "nix-copy-closure"
+msgstr ""
+
+#: source/SUMMARY.md:120
+msgid "nix-daemon"
+msgstr ""
+
+#: source/SUMMARY.md:121
+msgid "nix-hash"
+msgstr ""
+
+#: source/SUMMARY.md:122
+msgid "nix-instantiate"
+msgstr ""
+
+#: source/SUMMARY.md:123
+msgid "nix-prefetch-url"
+msgstr ""
+
+#: source/SUMMARY.md:124
+msgid "Experimental Commands"
+msgstr ""
+
+#: source/SUMMARY.md:125
+msgid "nix"
+msgstr ""
+
+#: source/SUMMARY.md:126
+msgid "nix build"
+msgstr ""
+
+#: source/SUMMARY.md:127
+msgid "nix bundle"
+msgstr ""
+
+#: source/SUMMARY.md:128
+msgid "nix config"
+msgstr ""
+
+#: source/SUMMARY.md:129
+msgid "nix config check"
+msgstr ""
+
+#: source/SUMMARY.md:130
+msgid "nix config show"
+msgstr ""
+
+#: source/SUMMARY.md:131
+msgid "nix copy"
+msgstr ""
+
+#: source/SUMMARY.md:132
+msgid "nix daemon"
+msgstr ""
+
+#: source/SUMMARY.md:133
+msgid "nix derivation"
+msgstr ""
+
+#: source/SUMMARY.md:134
+msgid "nix derivation add"
+msgstr ""
+
+#: source/SUMMARY.md:135
+msgid "nix derivation show"
+msgstr ""
+
+#: source/SUMMARY.md:136
+msgid "nix develop"
+msgstr ""
+
+#: source/SUMMARY.md:137
+msgid "nix edit"
+msgstr ""
+
+#: source/SUMMARY.md:138
+msgid "nix env"
+msgstr ""
+
+#: source/SUMMARY.md:139
+msgid "nix env shell"
+msgstr ""
+
+#: source/SUMMARY.md:140
+msgid "nix eval"
+msgstr ""
+
+#: source/SUMMARY.md:141
+msgid "nix flake"
+msgstr ""
+
+#: source/SUMMARY.md:142
+msgid "nix flake archive"
+msgstr ""
+
+#: source/SUMMARY.md:143
+msgid "nix flake check"
+msgstr ""
+
+#: source/SUMMARY.md:144
+msgid "nix flake clone"
+msgstr ""
+
+#: source/SUMMARY.md:145
+msgid "nix flake info"
+msgstr ""
+
+#: source/SUMMARY.md:146
+msgid "nix flake init"
+msgstr ""
+
+#: source/SUMMARY.md:147
+msgid "nix flake lock"
+msgstr ""
+
+#: source/SUMMARY.md:148
+msgid "nix flake metadata"
+msgstr ""
+
+#: source/SUMMARY.md:149
+msgid "nix flake new"
+msgstr ""
+
+#: source/SUMMARY.md:150
+msgid "nix flake prefetch"
+msgstr ""
+
+#: source/SUMMARY.md:151
+msgid "nix flake prefetch-inputs"
+msgstr ""
+
+#: source/SUMMARY.md:152
+msgid "nix flake show"
+msgstr ""
+
+#: source/SUMMARY.md:153
+msgid "nix flake update"
+msgstr ""
+
+#: source/SUMMARY.md:154
+msgid "nix fmt"
+msgstr ""
+
+#: source/SUMMARY.md:155
+msgid "nix formatter"
+msgstr ""
+
+#: source/SUMMARY.md:156
+msgid "nix formatter build"
+msgstr ""
+
+#: source/SUMMARY.md:157
+msgid "nix formatter run"
+msgstr ""
+
+#: source/SUMMARY.md:158
+msgid "nix hash"
+msgstr ""
+
+#: source/SUMMARY.md:159
+msgid "nix hash convert"
+msgstr ""
+
+#: source/SUMMARY.md:160
+msgid "nix hash file"
+msgstr ""
+
+#: source/SUMMARY.md:161
+msgid "nix hash path"
+msgstr ""
+
+#: source/SUMMARY.md:162
+msgid "nix hash to-base16"
+msgstr ""
+
+#: source/SUMMARY.md:163
+msgid "nix hash to-base32"
+msgstr ""
+
+#: source/SUMMARY.md:164
+msgid "nix hash to-base64"
+msgstr ""
+
+#: source/SUMMARY.md:165
+msgid "nix hash to-sri"
+msgstr ""
+
+#: source/SUMMARY.md:166
+msgid "nix help"
+msgstr ""
+
+#: source/SUMMARY.md:167
+msgid "nix help-stores"
+msgstr ""
+
+#: source/SUMMARY.md:168
+msgid "nix key"
+msgstr ""
+
+#: source/SUMMARY.md:169
+msgid "nix key convert-secret-to-public"
+msgstr ""
+
+#: source/SUMMARY.md:170
+msgid "nix key generate-secret"
+msgstr ""
+
+#: source/SUMMARY.md:171
+msgid "nix log"
+msgstr ""
+
+#: source/SUMMARY.md:172
+msgid "nix nar"
+msgstr ""
+
+#: source/SUMMARY.md:173
+msgid "nix nar cat"
+msgstr ""
+
+#: source/SUMMARY.md:174
+msgid "nix nar dump-path"
+msgstr ""
+
+#: source/SUMMARY.md:175
+msgid "nix nar ls"
+msgstr ""
+
+#: source/SUMMARY.md:176
+msgid "nix nar pack"
+msgstr ""
+
+#: source/SUMMARY.md:177
+msgid "nix path-info"
+msgstr ""
+
+#: source/SUMMARY.md:178
+msgid "nix print-dev-env"
+msgstr ""
+
+#: source/SUMMARY.md:179
+msgid "nix profile"
+msgstr ""
+
+#: source/SUMMARY.md:180
+msgid "nix profile add"
+msgstr ""
+
+#: source/SUMMARY.md:181
+msgid "nix profile diff-closures"
+msgstr ""
+
+#: source/SUMMARY.md:182
+msgid "nix profile history"
+msgstr ""
+
+#: source/SUMMARY.md:183
+msgid "nix profile list"
+msgstr ""
+
+#: source/SUMMARY.md:184
+msgid "nix profile remove"
+msgstr ""
+
+#: source/SUMMARY.md:185
+msgid "nix profile rollback"
+msgstr ""
+
+#: source/SUMMARY.md:186
+msgid "nix profile upgrade"
+msgstr ""
+
+#: source/SUMMARY.md:187
+msgid "nix profile wipe-history"
+msgstr ""
+
+#: source/SUMMARY.md:188
+msgid "nix registry"
+msgstr ""
+
+#: source/SUMMARY.md:189
+msgid "nix registry add"
+msgstr ""
+
+#: source/SUMMARY.md:190
+msgid "nix registry list"
+msgstr ""
+
+#: source/SUMMARY.md:191
+msgid "nix registry pin"
+msgstr ""
+
+#: source/SUMMARY.md:192
+msgid "nix registry remove"
+msgstr ""
+
+#: source/SUMMARY.md:193
+msgid "nix registry resolve"
+msgstr ""
+
+#: source/SUMMARY.md:194
+msgid "nix repl"
+msgstr ""
+
+#: source/SUMMARY.md:195
+msgid "nix run"
+msgstr ""
+
+#: source/SUMMARY.md:196
+msgid "nix search"
+msgstr ""
+
+#: source/SUMMARY.md:197
+msgid "nix store"
+msgstr ""
+
+#: source/SUMMARY.md:198
+msgid "nix store add"
+msgstr ""
+
+#: source/SUMMARY.md:199
+msgid "nix store add-file"
+msgstr ""
+
+#: source/SUMMARY.md:200
+msgid "nix store add-path"
+msgstr ""
+
+#: source/SUMMARY.md:201
+msgid "nix store build-trace"
+msgstr ""
+
+#: source/SUMMARY.md:202
+msgid "nix store build-trace info"
+msgstr ""
+
+#: source/SUMMARY.md:203
+msgid "nix store cat"
+msgstr ""
+
+#: source/SUMMARY.md:204
+msgid "nix store copy-log"
+msgstr ""
+
+#: source/SUMMARY.md:205
+msgid "nix store copy-sigs"
+msgstr ""
+
+#: source/SUMMARY.md:206
+msgid "nix store delete"
+msgstr ""
+
+#: source/SUMMARY.md:207
+msgid "nix store diff-closures"
+msgstr ""
+
+#: source/SUMMARY.md:208
+msgid "nix store dump-path"
+msgstr ""
+
+#: source/SUMMARY.md:209
+msgid "nix store gc"
+msgstr ""
+
+#: source/SUMMARY.md:210
+msgid "nix store info"
+msgstr ""
+
+#: source/SUMMARY.md:211
+msgid "nix store ls"
+msgstr ""
+
+#: source/SUMMARY.md:212
+msgid "nix store make-content-addressed"
+msgstr ""
+
+#: source/SUMMARY.md:213
+msgid "nix store optimise"
+msgstr ""
+
+#: source/SUMMARY.md:214
+msgid "nix store path-from-hash-part"
+msgstr ""
+
+#: source/SUMMARY.md:215
+msgid "nix store prefetch-file"
+msgstr ""
+
+#: source/SUMMARY.md:216
+msgid "nix store repair"
+msgstr ""
+
+#: source/SUMMARY.md:217
+msgid "nix store roots-daemon"
+msgstr ""
+
+#: source/SUMMARY.md:218
+msgid "nix store sign"
+msgstr ""
+
+#: source/SUMMARY.md:219
+msgid "nix store verify"
+msgstr ""
+
+#: source/SUMMARY.md:220
+msgid "nix upgrade-nix"
+msgstr ""
+
+#: source/SUMMARY.md:221
+msgid "nix why-depends"
+msgstr ""
+
+#: source/SUMMARY.md:223
+msgid "Files"
+msgstr ""
+
+#: source/SUMMARY.md:224
+msgid "nix.conf"
+msgstr ""
+
+#: source/SUMMARY.md:226
+msgid "manifest.nix"
+msgstr ""
+
+#: source/SUMMARY.md:227
+msgid "manifest.json"
+msgstr ""
+
+#: source/SUMMARY.md:228
+msgid "Channels"
+msgstr ""
+
+#: source/SUMMARY.md:229
+msgid "Default Nix expression"
+msgstr ""
+
+#: source/SUMMARY.md:230
+msgid "Architecture and Design"
+msgstr ""
+
+#: source/SUMMARY.md:231
+msgid "Formats and Protocols"
+msgstr ""
+
+#: source/SUMMARY.md:232
+msgid "JSON Formats"
+msgstr ""
+
+#: source/SUMMARY.md:234
+msgid "Hash"
+msgstr ""
+
+#: source/SUMMARY.md:235
+msgid "Content Address"
+msgstr ""
+
+#: source/SUMMARY.md:236
+msgid "Store Path"
+msgstr ""
+
+#: source/SUMMARY.md:237
+msgid "Signature"
+msgstr ""
+
+#: source/SUMMARY.md:238
+msgid "Store Object Info"
+msgstr ""
+
+#: source/SUMMARY.md:239
+msgid "Derivation"
+msgstr ""
+
+#: source/SUMMARY.md:240
+msgid "Resolved Derivation"
+msgstr ""
+
+#: source/SUMMARY.md:241
+msgid "Derivation Options"
+msgstr ""
+
+#: source/SUMMARY.md:242
+msgid "Deriving Path"
+msgstr ""
+
+#: source/SUMMARY.md:243
+msgid "Build Trace Entry"
+msgstr ""
+
+#: source/SUMMARY.md:244
+msgid "Build Result"
+msgstr ""
+
+#: source/SUMMARY.md:245
+msgid "Store"
+msgstr ""
+
+#: source/SUMMARY.md:246
+msgid "Serving Tarball Flakes"
+msgstr ""
+
+#: source/SUMMARY.md:247
+msgid "Store Path Specification"
+msgstr ""
+
+#: source/SUMMARY.md:248
+msgid "Nix Archive (NAR) Format"
+msgstr ""
+
+#: source/SUMMARY.md:249
+msgid "Binary Cache"
+msgstr ""
+
+#: source/SUMMARY.md:250
+msgid "`nix-cache-info` Format"
+msgstr ""
+
+#: source/SUMMARY.md:251
+msgid "`.narinfo` Format"
+msgstr ""
+
+#: source/SUMMARY.md:252
+msgid "Derivation \"ATerm\" file format"
+msgstr ""
+
+#: source/SUMMARY.md:253
+msgid "Nix32 Encoding"
+msgstr ""
+
+#: source/SUMMARY.md:254
+msgid "C API"
+msgstr ""
+
+#: source/SUMMARY.md:255
+msgid "Glossary"
+msgstr ""
+
+#: source/SUMMARY.md:256
+msgid "Development"
+msgstr ""
+
+#: source/SUMMARY.md:258
+msgid "Testing"
+msgstr ""
+
+#: source/SUMMARY.md:259
+msgid "Benchmarking"
+msgstr ""
+
+#: source/SUMMARY.md:260
+msgid "Debugging"
+msgstr ""
+
+#: source/SUMMARY.md:261
+msgid "Documentation"
+msgstr ""
+
+#: source/SUMMARY.md:262
+msgid "CLI guideline"
+msgstr ""
+
+#: source/SUMMARY.md:263
+msgid "Data Modeling Guidelines"
+msgstr ""
+
+#: source/SUMMARY.md:264
+msgid "C++ style guide"
+msgstr ""
+
+#: source/SUMMARY.md:265
+msgid "Static Analysis"
+msgstr ""
+
+#: source/SUMMARY.md:266
+msgid "Experimental Features"
+msgstr ""
+
+#: source/SUMMARY.md:267
+msgid "Contributing"
+msgstr ""
+
+#: source/SUMMARY.md:268
+msgid "Releases"
+msgstr ""
+
+#: source/SUMMARY.md:269
+msgid "Upcoming release"
+msgstr ""
+
+#: source/SUMMARY.md:271
+msgid "Release 2.35 (2026-06-22)"
+msgstr ""
+
+#: source/SUMMARY.md:272
+msgid "Release 2.34 (2026-02-27)"
+msgstr ""
+
+#: source/SUMMARY.md:273
+msgid "Release 2.33 (2025-12-09)"
+msgstr ""
+
+#: source/SUMMARY.md:274
+msgid "Release 2.32 (2025-10-06)"
+msgstr ""
+
+#: source/SUMMARY.md:275
+msgid "Release 2.31 (2025-08-21)"
+msgstr ""
+
+#: source/SUMMARY.md:276
+msgid "Release 2.30 (2025-07-07)"
+msgstr ""
+
+#: source/SUMMARY.md:277
+msgid "Release 2.29 (2025-05-14)"
+msgstr ""
+
+#: source/SUMMARY.md:278
+msgid "Release 2.28 (2025-04-02)"
+msgstr ""
+
+#: source/SUMMARY.md:279
+msgid "Release 2.27 (2025-03-03)"
+msgstr ""
+
+#: source/SUMMARY.md:280
+msgid "Release 2.26 (2025-01-22)"
+msgstr ""
+
+#: source/SUMMARY.md:281
+msgid "Release 2.25 (2024-11-07)"
+msgstr ""
+
+#: source/SUMMARY.md:282
+msgid "Release 2.24 (2024-07-31)"
+msgstr ""
+
+#: source/SUMMARY.md:283
+msgid "Release 2.23 (2024-06-03)"
+msgstr ""
+
+#: source/SUMMARY.md:284
+msgid "Release 2.22 (2024-04-23)"
+msgstr ""
+
+#: source/SUMMARY.md:285
+msgid "Release 2.21 (2024-03-11)"
+msgstr ""
+
+#: source/SUMMARY.md:286
+msgid "Release 2.20 (2024-01-29)"
+msgstr ""
+
+#: source/SUMMARY.md:287
+msgid "Release 2.19 (2023-11-17)"
+msgstr ""
+
+#: source/SUMMARY.md:288
+msgid "Release 2.18 (2023-09-20)"
+msgstr ""
+
+#: source/SUMMARY.md:289
+msgid "Release 2.17 (2023-07-24)"
+msgstr ""
+
+#: source/SUMMARY.md:290
+msgid "Release 2.16 (2023-05-31)"
+msgstr ""
+
+#: source/SUMMARY.md:291
+msgid "Release 2.15 (2023-04-11)"
+msgstr ""
+
+#: source/SUMMARY.md:292
+msgid "Release 2.14 (2023-02-28)"
+msgstr ""
+
+#: source/SUMMARY.md:293
+msgid "Release 2.13 (2023-01-17)"
+msgstr ""
+
+#: source/SUMMARY.md:294
+msgid "Release 2.12 (2022-12-06)"
+msgstr ""
+
+#: source/SUMMARY.md:295
+msgid "Release 2.11 (2022-08-25)"
+msgstr ""
+
+#: source/SUMMARY.md:296
+msgid "Release 2.10 (2022-07-11)"
+msgstr ""
+
+#: source/SUMMARY.md:297
+msgid "Release 2.9 (2022-05-30)"
+msgstr ""
+
+#: source/SUMMARY.md:298
+msgid "Release 2.8 (2022-04-19)"
+msgstr ""
+
+#: source/SUMMARY.md:299
+msgid "Release 2.7 (2022-03-07)"
+msgstr ""
+
+#: source/SUMMARY.md:300
+msgid "Release 2.6 (2022-01-24)"
+msgstr ""
+
+#: source/SUMMARY.md:301
+msgid "Release 2.5 (2021-12-13)"
+msgstr ""
+
+#: source/SUMMARY.md:302
+msgid "Release 2.4 (2021-11-01)"
+msgstr ""
+
+#: source/SUMMARY.md:303
+msgid "Release 2.3 (2019-09-04)"
+msgstr ""
+
+#: source/SUMMARY.md:304
+msgid "Release 2.2 (2019-01-11)"
+msgstr ""
+
+#: source/SUMMARY.md:305
+msgid "Release 2.1 (2018-09-02)"
+msgstr ""
+
+#: source/SUMMARY.md:306
+msgid "Release 2.0 (2018-02-22)"
+msgstr ""
+
+#: source/SUMMARY.md:307
+msgid "Release 1.11.10 (2017-06-12)"
+msgstr ""
+
+#: source/SUMMARY.md:308
+msgid "Release 1.11 (2016-01-19)"
+msgstr ""
+
+#: source/SUMMARY.md:309
+msgid "Release 1.10 (2015-09-03)"
+msgstr ""
+
+#: source/SUMMARY.md:310
+msgid "Release 1.9 (2015-06-12)"
+msgstr ""
+
+#: source/SUMMARY.md:311
+msgid "Release 1.8 (2014-12-14)"
+msgstr ""
+
+#: source/SUMMARY.md:312
+msgid "Release 1.7 (2014-04-11)"
+msgstr ""
+
+#: source/SUMMARY.md:313
+msgid "Release 1.6.1 (2013-10-28)"
+msgstr ""
+
+#: source/SUMMARY.md:314
+msgid "Release 1.6 (2013-09-10)"
+msgstr ""
+
+#: source/SUMMARY.md:315
+msgid "Release 1.5.2 (2013-05-13)"
+msgstr ""
+
+#: source/SUMMARY.md:316
+msgid "Release 1.5 (2013-02-27)"
+msgstr ""
+
+#: source/SUMMARY.md:317
+msgid "Release 1.4 (2013-02-26)"
+msgstr ""
+
+#: source/SUMMARY.md:318
+msgid "Release 1.3 (2013-01-04)"
+msgstr ""
+
+#: source/SUMMARY.md:319
+msgid "Release 1.2 (2012-12-06)"
+msgstr ""
+
+#: source/SUMMARY.md:320
+msgid "Release 1.1 (2012-07-18)"
+msgstr ""
+
+#: source/SUMMARY.md:321
+msgid "Release 1.0 (2012-05-11)"
+msgstr ""
+
+#: source/SUMMARY.md:322
+msgid "Release 0.16 (2010-08-17)"
+msgstr ""
+
+#: source/SUMMARY.md:323
+msgid "Release 0.15 (2010-03-17)"
+msgstr ""
+
+#: source/SUMMARY.md:324
+msgid "Release 0.14 (2010-02-04)"
+msgstr ""
+
+#: source/SUMMARY.md:325
+msgid "Release 0.13 (2009-11-05)"
+msgstr ""
+
+#: source/SUMMARY.md:326
+msgid "Release 0.12 (2008-11-20)"
+msgstr ""
+
+#: source/SUMMARY.md:327
+msgid "Release 0.11 (2007-12-31)"
+msgstr ""
+
+#: source/SUMMARY.md:328
+msgid "Release 0.10.1 (2006-10-11)"
+msgstr ""
+
+#: source/SUMMARY.md:329
+msgid "Release 0.10 (2006-10-06)"
+msgstr ""
+
+#: source/SUMMARY.md:330
+msgid "Release 0.9.2 (2005-09-21)"
+msgstr ""
+
+#: source/SUMMARY.md:331
+msgid "Release 0.9.1 (2005-09-20)"
+msgstr ""
+
+#: source/SUMMARY.md:332
+msgid "Release 0.9 (2005-09-16)"
+msgstr ""
+
+#: source/SUMMARY.md:333
+msgid "Release 0.8.1 (2005-04-13)"
+msgstr ""
+
+#: source/SUMMARY.md:334
+msgid "Release 0.8 (2005-04-11)"
+msgstr ""
+
+#: source/SUMMARY.md:335
+msgid "Release 0.7 (2005-01-12)"
+msgstr ""
+
+#: source/SUMMARY.md:336
+msgid "Release 0.6 (2004-11-14)"
+msgstr ""
+
+#: source/SUMMARY.md:337
+msgid "Release 0.5 and earlier"
+msgstr ""

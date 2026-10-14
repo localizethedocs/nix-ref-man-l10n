@@ -1,0 +1,423 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.30.md:1
+msgid "Release 2.30.0 (2025-07-07)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:3
+msgid "Backward-incompatible changes and deprecations"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:5
+msgid ""
+"[`build-dir`](../command-ref/conf-file.md#conf-build-dir) no longer defaults "
+"to `$TMPDIR`"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:7
+msgid ""
+"The directory in which temporary build directories are created no longer "
+"defaults to `TMPDIR` or `/tmp`, to avoid builders making their directories "
+"world-accessible. This behavior allowed escaping the build sandbox and can "
+"cause build impurities even when not used maliciously. We now default to "
+"`builds` in `NIX_STATE_DIR` (which is `/nix/var/nix/builds` in the default "
+"configuration)."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:13
+msgid ""
+"Deprecate manually making structured attrs using the `__json` attribute "
+"[\\#13220](https://github.com/NixOS/nix/pull/13220)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:15
+msgid ""
+"The proper way to create a derivation using [structured attrs](../language/"
+"advanced-attributes.md#adv-attr-structuredAttrs) in the Nix language is by "
+"using `__structuredAttrs = true` with [`builtins.derivation`](../language/"
+"builtins.html#builtins-derivation). However, by exploiting how structured "
+"attrs are implemented, it has also been possible to create them by setting "
+"the `__json` environment variable to a serialized JSON string. This sneaky "
+"alternative method is now deprecated, and may be disallowed in future "
+"versions of Nix."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:22
+msgid ""
+"Rename `nix profile install` to [`nix profile add`](../command-ref/new-cli/"
+"nix3-profile-add.md) [\\#13224](https://github.com/NixOS/nix/pull/13224)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:24
+msgid ""
+"The command `nix profile install` has been renamed to [`nix profile add`](../"
+"command-ref/new-cli/nix3-profile-add.md) (though the former is still "
+"available as an alias). This is because the verb \"add\" is a better antonym "
+"for the verb \"remove\" (i.e. `nix profile remove`). Nix also does not have "
+"install hooks or general behavior often associated with \"installing\"."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:26
+msgid "Performance improvements"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:28
+msgid "This release has a number performance improvements, in particular:"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:30
+msgid ""
+"Reduce the size of value from 24 to 16 bytes [\\#13407](https://github.com/"
+"NixOS/nix/pull/13407)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:32
+msgid ""
+"This shaves off a very significant amount of memory used for evaluation "
+"(~20% percent reduction in maximum heap size and ~17% in total bytes)."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:34
+msgid "Features"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:36
+msgid ""
+"Add [stack sampling evaluation profiler](../advanced-topics/eval-profiler."
+"md) [\\#13220](https://github.com/NixOS/nix/pull/13220)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:38
+msgid ""
+"The Nix evaluator now supports [stack sampling evaluation profiling](../"
+"advanced-topics/eval-profiler.md) via the [`--eval-profiler flamegraph`](../"
+"command-ref/conf-file.md#conf-eval-profiler) setting. It outputs collapsed "
+"call stack information to the file specified by [`--eval-profile-file`](../"
+"command-ref/conf-file.md#conf-eval-profile-file) (`nix.profile` by default) "
+"in a format directly consumable by `flamegraph.pl` and compatible tools like "
+"[speedscope](https://speedscope.app/). Sampling frequency can be configured "
+"via [`--eval-profiler-frequency`](../command-ref/conf-file.md#conf-eval-"
+"profiler-frequency) (99 Hz by default)."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:44
+msgid ""
+"Unlike the existing [`--trace-function-calls`](../command-ref/conf-file."
+"md#conf-trace-function-calls), this profiler includes the name of the "
+"function being called when it's available."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:47
+msgid ""
+"[`nix repl`](../command-ref/new-cli/nix3-repl.md) prints which variables "
+"were loaded [\\#11406](https://github.com/NixOS/nix/pull/11406)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:49
+msgid ""
+"Instead of `Added <n> variables` it now prints the first 10 variables that "
+"were added to the global scope."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:51
+msgid ""
+"`nix flake archive`: Add [`--no-check-sigs`](../command-ref/new-cli/nix3-"
+"flake-archive.md#opt-no-check-sigs) option [\\#13277](https://github.com/"
+"NixOS/nix/pull/13277)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:53
+msgid ""
+"This is useful when using [`nix flake archive`](../command-ref/new-cli/nix3-"
+"flake-archive.md) with the destination set to a remote store."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:55
+msgid ""
+"Emit warnings for IFDs with [`trace-import-from-derivation`](../command-ref/"
+"conf-file.md#conf-trace-import-from-derivation) option [\\#13279](https://"
+"github.com/NixOS/nix/pull/13279)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:57
+msgid ""
+"While we have the setting [`allow-import-from-derivation`](../command-ref/"
+"conf-file.md#conf-allow-import-from-derivation) to deny import-from-"
+"derivation (IFD), sometimes users would like to observe IFDs during CI "
+"processes to gradually phase out the idiom. The new setting `trace-import-"
+"from-derivation`, when set, logs a simple warning to the console."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:59
+msgid ""
+"`json-log-path` setting [\\#13003](https://github.com/NixOS/nix/pull/13003)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:61
+msgid ""
+"New setting [`json-log-path`](../command-ref/conf-file.md#conf-json-log-"
+"path) that sends a copy of all Nix log messages (in JSON format) to a file "
+"or Unix domain socket."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:63
+msgid ""
+"Non-flake inputs now contain a `sourceInfo` attribute [\\#13164](https://"
+"github.com/NixOS/nix/issues/13164) [\\#13170](https://github.com/NixOS/nix/"
+"pull/13170)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:65
+msgid ""
+"Flakes have always had a `sourceInfo` attribute which describes the source "
+"of the flake. The `sourceInfo.outPath` is often identical to the flake's "
+"`outPath`. However, it can differ when the flake is located in a "
+"subdirectory of its source."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:68
+msgid ""
+"Non-flake inputs (i.e. inputs with [`flake = false`](../command-ref/new-cli/"
+"nix3-flake.md?highlight=false#flake-inputs)) can also be located at some "
+"path _within_ a wider source. This usually happens when defining a relative "
+"path input within the same source as the parent flake, e.g. `inputs.foo.url "
+"= ./some-file.nix`. Such relative inputs will now inherit their parent's "
+"`sourceInfo`."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:72
+msgid ""
+"This also means it is now possible to use `?dir=subdir` on non-flake inputs."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:74
+msgid ""
+"This iterates on the work done in 2.26 to improve relative path support "
+"([\\#10089](https://github.com/NixOS/nix/pull/10089)), and resolves a "
+"regression introduced in 2.28 relating to nested relative path inputs "
+"([\\#13164](https://github.com/NixOS/nix/issues/13164))."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:77
+msgid "Miscellaneous changes"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:79
+msgid ""
+"[`builtins.sort`](../language/builtins.md#builtins-sort) uses PeekSort "
+"[\\#12623](https://github.com/NixOS/nix/pull/12623)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:81
+msgid ""
+"Previously it used libstdc++'s `std::stable_sort()`. However, that "
+"implementation is not reliable if the user-supplied comparison function is "
+"not a strict weak ordering."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:83
+msgid ""
+"Revert incomplete closure mixed download and build feature [\\#77](https://"
+"github.com/NixOS/nix/issues/77) [\\#12628](https://github.com/NixOS/nix/"
+"issues/12628) [\\#13176](https://github.com/NixOS/nix/pull/13176)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:85
+msgid ""
+"Since Nix 1.3 ([commit `299141e`](https://github.com/NixOS/nix/"
+"commit/299141ecbd08bae17013226dbeae71e842b4fdd7) in 2013) Nix has attempted "
+"to mix together upstream fresh builds and downstream substitutions when "
+"remote substuters contain an \"incomplete closure\" (have some store "
+"objects, but not the store objects they reference). This feature is now "
+"removed."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:88
+msgid ""
+"In the worst case, removing this feature could cause more building "
+"downstream, but it should not cause outright failures, since this is not "
+"happening for opaque store objects that we don't know how to build if we "
+"decide not to substitute. In practice, however, we doubt even more building "
+"is very likely to happen. Remote stores that are missing dependencies in "
+"arbitrary ways (e.g. corruption) don't seem to be very common."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:92
+msgid ""
+"On the contrary, when remote stores fail to implement the [closure property]"
+"(../store/store-object.md#closure-property), it is usually an _intentional_ "
+"choice on the part of the remote store, because it wishes to serve as an "
+"\"overlay\" store over another store, such as `https://cache.nixos.org`. If "
+"an \"incomplete closure\" is encountered in that situation, the right fix is "
+"not to do some sort of \"franken-building\" as this feature implemented, but "
+"instead to make sure both substituters are enabled in the settings."
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:95
+msgid ""
+"(In the future, we should make it easier for remote stores to indicate this "
+"to clients, to catch settings that won't work in general before a missing "
+"dependency is actually encountered.)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:97
+msgid "Contributors"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:99
+msgid "This release was made possible by the following 32 contributors:"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:101
+msgid "Cole Helbling [**(@cole-h)**](https://github.com/cole-h)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:102
+msgid "Eelco Dolstra [**(@edolstra)**](https://github.com/edolstra)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:103
+msgid "Egor Konovalov [**(@egorkonovalov)**](https://github.com/egorkonovalov)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:104
+msgid "Farid Zakaria [**(@fzakaria)**](https://github.com/fzakaria)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:105
+msgid "Graham Christensen [**(@grahamc)**](https://github.com/grahamc)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:106
+msgid ""
+"gustavderdrache [**(@gustavderdrache)**](https://github.com/gustavderdrache)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:107
+msgid "Gwenn Le Bihan [**(@gwennlbh)**](https://github.com/gwennlbh)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:108
+msgid "h0nIg [**(@h0nIg)**](https://github.com/h0nIg)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:109
+msgid ""
+"Jade Masker [**(@donottellmetonottellyou)**](https://github.com/"
+"donottellmetonottellyou)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:110
+msgid "jayeshv [**(@jayeshv)**](https://github.com/jayeshv)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:111
+msgid "Jeremy Fleischman [**(@jfly)**](https://github.com/jfly)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:112
+msgid "John Ericson [**(@Ericson2314)**](https://github.com/Ericson2314)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:113
+msgid "Jonas Chevalier [**(@zimbatm)**](https://github.com/zimbatm)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:114
+msgid "Jörg Thalheim [**(@Mic92)**](https://github.com/Mic92)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:115
+msgid "kstrafe [**(@kstrafe)**](https://github.com/kstrafe)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:116
+msgid "Luc Perkins [**(@lucperkins)**](https://github.com/lucperkins)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:117
+msgid "Matt Sturgeon [**(@MattSturgeon)**](https://github.com/MattSturgeon)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:118
+msgid "Nikita Krasnov [**(@synalice)**](https://github.com/synalice)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:119
+msgid "Peder Bergebakken Sundt [**(@pbsds)**](https://github.com/pbsds)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:120
+msgid "pennae [**(@pennae)**](https://github.com/pennae)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:121
+msgid "Philipp Otterbein"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:122
+msgid "Pol Dellaiera [**(@drupol)**](https://github.com/drupol)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:123
+msgid "PopeRigby [**(@poperigby)**](https://github.com/poperigby)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:124
+msgid "Raito Bezarius"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:125
+msgid "Robert Hensing [**(@roberth)**](https://github.com/roberth)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:126
+msgid "Samuli Thomasson [**(@SimSaladin)**](https://github.com/SimSaladin)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:127
+msgid "Sergei Zimmerman [**(@xokdvium)**](https://github.com/xokdvium)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:128
+msgid "Seth Flynn [**(@getchoo)**](https://github.com/getchoo)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:129
+msgid "Stefan Boca [**(@stefanboca)**](https://github.com/stefanboca)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:130
+msgid "tomberek [**(@tomberek)**](https://github.com/tomberek)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:131
+msgid ""
+"Tristan Ross [**(@RossComputerGuy)**](https://github.com/RossComputerGuy)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:132
+msgid ""
+"Valentin Gagarin [**(@fricklerhandwerk)**](https://github.com/"
+"fricklerhandwerk)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:133
+msgid "Vladimír Čunát [**(@vcunat)**](https://github.com/vcunat)"
+msgstr ""
+
+#: source/release-notes/rl-2.30.md:134
+msgid ""
+"Wolfgang Walther [**(@wolfgangwalther)**](https://github.com/wolfgangwalther)"
+msgstr ""

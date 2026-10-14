@@ -1,0 +1,515 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-env.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-env.md:3
+msgid "`nix-env` - manipulate or query Nix user environments"
+msgstr ""
+
+#: source/command-ref/nix-env.md:5
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/nix-env.md:7
+msgid ""
+"`nix-env` _operation_ \\[_options_\\] \\[_arguments…_\\] \\[`--option` "
+"_name_ _value_\\] \\[`--arg` _name_ _value_\\] \\[`--argstr` _name_ "
+"_value_\\] \\[{`--file` | `-f`} _path_\\] \\[{`--profile` | `-p`} _path_\\] "
+"\\[`--system-filter` _system_\\] \\[`--dry-run`\\]"
+msgstr ""
+
+#: source/command-ref/nix-env.md:16
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-env.md:18
+msgid ""
+"The command `nix-env` is used to manipulate Nix user environments. User "
+"environments are sets of software packages available to a user at some point "
+"in time. In other words, they are a synthesised view of the programs "
+"available in the Nix store. There may be many user environments: different "
+"users can have different environments, and individual users can switch "
+"between different environments."
+msgstr ""
+
+#: source/command-ref/nix-env.md:25
+msgid ""
+"`nix-env` takes exactly one _operation_ flag which indicates the subcommand "
+"to be performed. The following operations are available:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:28
+msgid "[`--install`](./nix-env/install.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:29
+msgid "[`--upgrade`](./nix-env/upgrade.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:30
+msgid "[`--uninstall`](./nix-env/uninstall.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:31
+msgid "[`--set`](./nix-env/set.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:32
+msgid "[`--set-flag`](./nix-env/set-flag.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:33
+msgid "[`--query`](./nix-env/query.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:34
+msgid "[`--switch-profile`](./nix-env/switch-profile.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:35
+msgid "[`--list-generations`](./nix-env/list-generations.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:36
+msgid "[`--delete-generations`](./nix-env/delete-generations.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:37
+msgid "[`--switch-generation`](./nix-env/switch-generation.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:38
+msgid "[`--rollback`](./nix-env/rollback.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:40
+msgid "These pages can be viewed offline:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:42
+msgid "`man nix-env-<operation>`."
+msgstr ""
+
+#: source/command-ref/nix-env.md:44
+msgid "Example: `man nix-env-install`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:46
+msgid "`nix-env --help --<operation>`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:48
+msgid "Example: `nix-env --help --install`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:50
+msgid "Package sources"
+msgstr ""
+
+#: source/command-ref/nix-env.md:52
+msgid "`nix-env` can obtain packages from multiple sources:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:54
+msgid "An attribute set of derivations from:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:55
+msgid ""
+"The [default Nix expression](../command-ref/files/default-nix-expression.md) "
+"(by default)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:56
+msgid "A Nix file, specified via `--file`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:57
+msgid ""
+"A [profile](../command-ref/files/profiles.md), specified via `--from-profile`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:58
+msgid ""
+"A Nix expression that is a function which takes default expression as "
+"argument, specified via `--from-expression`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:59
+msgid "A [store path](../store/store-path.md)"
+msgstr ""
+
+#: source/command-ref/nix-env.md:61
+msgid "Selectors"
+msgstr ""
+
+#: source/command-ref/nix-env.md:63
+msgid ""
+"Several operations, such as [`nix-env --query`](./nix-env/query.md) and "
+"[`nix-env --install`](./nix-env/install.md), take a list of _arguments_ that "
+"specify the packages on which to operate."
+msgstr ""
+
+#: source/command-ref/nix-env.md:65
+msgid ""
+"Packages are identified based on a `name` part and a `version` part of a "
+"[symbolic derivation name](../language/derivations.md#attr-name):"
+msgstr ""
+
+#: source/command-ref/nix-env.md:67
+msgid ""
+"`name`: Everything up to but not including the first dash (`-`) that is "
+"_not_ followed by a letter."
+msgstr ""
+
+#: source/command-ref/nix-env.md:68
+msgid "`version`: The rest, excluding the separating dash."
+msgstr ""
+
+#: source/command-ref/nix-env.md:70 source/command-ref/nix-env.md:81
+#: source/command-ref/nix-env.md:97 source/command-ref/nix-env.md:152
+msgid "**Example**"
+msgstr ""
+
+#: source/command-ref/nix-env.md:72
+msgid "`nix-env` parses the symbolic derivation name `apache-httpd-2.0.48` as:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:76 source/command-ref/nix-env.md:87
+msgid "\"name\""
+msgstr ""
+
+#: source/command-ref/nix-env.md:76
+msgid "\"apache-httpd\""
+msgstr ""
+
+#: source/command-ref/nix-env.md:77 source/command-ref/nix-env.md:88
+msgid "\"version\""
+msgstr ""
+
+#: source/command-ref/nix-env.md:77
+msgid "\"2.0.48\""
+msgstr ""
+
+#: source/command-ref/nix-env.md:83
+msgid "`nix-env` parses the symbolic derivation name `firefox.*` as:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:87
+msgid "\"firefox.*\""
+msgstr ""
+
+#: source/command-ref/nix-env.md:88
+msgid "\"\""
+msgstr ""
+
+#: source/command-ref/nix-env.md:92
+msgid ""
+"The `name` parts of the _arguments_ to `nix-env` are treated as extended "
+"regular expressions and matched against the `name` parts of derivation names "
+"in the package source. The match is case-sensitive. The regular expression "
+"can optionally be followed by a dash (`-`) and a version number; if omitted, "
+"any version of the package will match. For details on regular expressions, "
+"see [**regex**(7)](https://linux.die.net/man/7/regex)."
+msgstr ""
+
+#: source/command-ref/nix-env.md:99
+msgid "Common patterns for finding package names with `nix-env`:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:101
+msgid "`firefox`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:103
+msgid "Matches the package name `firefox` and any version."
+msgstr ""
+
+#: source/command-ref/nix-env.md:105
+msgid "`firefox-32.0`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:107
+msgid "Matches the package name `firefox` and version `32.0`."
+msgstr ""
+
+#: source/command-ref/nix-env.md:109
+msgid "`gtk\\\\+`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:111
+msgid ""
+"Matches the package name `gtk+`. The `+` character must be escaped using a "
+"backslash (`\\`) to prevent it from being interpreted as a quantifier, and "
+"the backslash must be escaped in turn with another backslash to ensure that "
+"the shell passes it on."
+msgstr ""
+
+#: source/command-ref/nix-env.md:114
+msgid "`.\\*`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:116
+msgid "Matches any package name. This is the default for most commands."
+msgstr ""
+
+#: source/command-ref/nix-env.md:119
+msgid "`'.*zip.*'`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:121
+msgid ""
+"Matches any package name containing the string `zip`. Note the dots: "
+"`'*zip*'` does not work, because in a regular expression, the character `*` "
+"is interpreted as a quantifier."
+msgstr ""
+
+#: source/command-ref/nix-env.md:124
+msgid "`'.*(firefox|chromium).*'`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:126
+msgid ""
+"Matches any package name containing the strings `firefox` or `chromium`."
+msgstr ""
+
+#: source/command-ref/nix-env.md:128
+msgid "Files"
+msgstr ""
+
+#: source/command-ref/nix-env.md:130
+msgid "`nix-env` operates on the following files."
+msgstr ""
+
+#: source/command-ref/nix-env.md:132
+msgid "Default Nix expression"
+msgstr ""
+
+#: source/command-ref/nix-env.md:134
+msgid ""
+"The source for the [Nix expressions](../glossary.md#gloss-nix-expression) "
+"used by [`nix-env`](../command-ref/nix-env.md) by default:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:136
+msgid "`~/.nix-defexpr`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:137
+msgid ""
+"`$XDG_STATE_HOME/nix/defexpr` if [`use-xdg-base-directories`](../command-ref/"
+"conf-file.md#conf-use-xdg-base-directories) is set to `true`."
+msgstr ""
+
+#: source/command-ref/nix-env.md:139
+msgid "It is loaded as follows:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:141
+msgid "If the default expression is a file, it is loaded as a Nix expression."
+msgstr ""
+
+#: source/command-ref/nix-env.md:142
+msgid ""
+"If the default expression is a directory containing a `default.nix` file, "
+"that `default.nix` file is loaded as a Nix expression."
+msgstr ""
+
+#: source/command-ref/nix-env.md:143
+msgid ""
+"If the default expression is a directory without a `default.nix` file, then "
+"its contents (both files and subdirectories) are loaded as Nix expressions. "
+"The expressions are combined into a single attribute set, each expression "
+"under an attribute with the same name as the original file or subdirectory. "
+"Subdirectories without a `default.nix` file are traversed recursively in "
+"search of more Nix expressions, but the names of these intermediate "
+"directories are not added to the attribute paths of the default Nix "
+"expression."
+msgstr ""
+
+#: source/command-ref/nix-env.md:147
+msgid "Then, the resulting expression is interpreted like this:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:149
+msgid ""
+"If the expression is an attribute set, it is used as the default Nix "
+"expression."
+msgstr ""
+
+#: source/command-ref/nix-env.md:150
+msgid ""
+"If the expression is a function, an empty set is passed as argument and the "
+"return value is used as the default Nix expression."
+msgstr ""
+
+#: source/command-ref/nix-env.md:154
+msgid ""
+"If the default expression contains two files, `foo.nix` and `bar.nix`, then "
+"the default Nix expression will be equivalent to"
+msgstr ""
+
+#: source/command-ref/nix-env.md:163
+msgid ""
+"The file [`manifest.nix`](../command-ref/files/manifest.nix.md) is always "
+"ignored."
+msgstr ""
+
+#: source/command-ref/nix-env.md:165
+msgid ""
+"The command [`nix-channel`](../command-ref/nix-channel.md) places a symlink "
+"to the current user's [channels](../command-ref/files/channels.md) in this "
+"directory, the [user channel link](#user-channel-link). This makes all "
+"subscribed channels available as attributes in the default expression."
+msgstr ""
+
+#: source/command-ref/nix-env.md:168
+msgid "User channel link"
+msgstr ""
+
+#: source/command-ref/nix-env.md:170
+msgid ""
+"A symlink that ensures that [`nix-env`](../command-ref/nix-env.md) can find "
+"the current user's [channels](../command-ref/files/channels.md):"
+msgstr ""
+
+#: source/command-ref/nix-env.md:172
+msgid "`~/.nix-defexpr/channels`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:173
+msgid ""
+"`$XDG_STATE_HOME/nix/defexpr/channels` if [`use-xdg-base-directories`](../"
+"command-ref/conf-file.md#conf-use-xdg-base-directories) is set to `true`."
+msgstr ""
+
+#: source/command-ref/nix-env.md:175
+msgid "This symlink points to:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:177
+msgid "`$XDG_STATE_HOME/nix/profiles/channels` for regular users"
+msgstr ""
+
+#: source/command-ref/nix-env.md:178
+msgid "`$NIX_STATE_DIR/profiles/per-user/root/channels` for `root`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:180
+msgid ""
+"In a multi-user installation, you may also have `~/.nix-defexpr/"
+"channels_root`, which links to the channels of the root user."
+msgstr ""
+
+#: source/command-ref/nix-env.md:188
+msgid "Profiles"
+msgstr ""
+
+#: source/command-ref/nix-env.md:190
+msgid ""
+"A directory that contains links to profiles managed by [`nix-env`](../"
+"command-ref/nix-env.md) and [`nix profile`](../command-ref/new-cli/nix3-"
+"profile.md):"
+msgstr ""
+
+#: source/command-ref/nix-env.md:192
+msgid "`$XDG_STATE_HOME/nix/profiles` for regular users"
+msgstr ""
+
+#: source/command-ref/nix-env.md:193
+msgid "`$NIX_STATE_DIR/profiles/per-user/root` if the user is `root`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:195
+msgid "A profile is a directory of symlinks to files in the Nix store."
+msgstr ""
+
+#: source/command-ref/nix-env.md:197
+msgid "Filesystem layout"
+msgstr ""
+
+#: source/command-ref/nix-env.md:199
+msgid ""
+"Profiles are versioned as follows. When using a profile named _path_, _path_ "
+"is a symlink to _path_`-`_N_`-link`, where _N_ is the version of the "
+"profile. In turn, _path_`-`_N_`-link` is a symlink to a path in the Nix "
+"store. For example:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:211
+msgid "Each of these symlinks is a root for the Nix garbage collector."
+msgstr ""
+
+#: source/command-ref/nix-env.md:213
+msgid ""
+"The contents of the store path corresponding to each version of the profile "
+"is a tree of symlinks to the files of the installed packages, e.g."
+msgstr ""
+
+#: source/command-ref/nix-env.md:240
+msgid "Each profile version contains a manifest file:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:241
+msgid ""
+"[`manifest.nix`](../command-ref/files/manifest.nix.md) used by [`nix-env`]"
+"(../command-ref/nix-env.md)."
+msgstr ""
+
+#: source/command-ref/nix-env.md:242
+msgid ""
+"[`manifest.json`](../command-ref/files/manifest.json.md) used by [`nix "
+"profile`](../command-ref/new-cli/nix3-profile.md) (experimental)."
+msgstr ""
+
+#: source/command-ref/nix-env.md:244
+msgid "User profile link"
+msgstr ""
+
+#: source/command-ref/nix-env.md:246
+msgid "A symbolic link to the user's current profile:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:248
+msgid "`~/.nix-profile`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:249
+msgid ""
+"`$XDG_STATE_HOME/nix/profile` if [`use-xdg-base-directories`](../command-ref/"
+"conf-file.md#conf-use-xdg-base-directories) is set to `true`."
+msgstr ""
+
+#: source/command-ref/nix-env.md:251
+msgid "By default, this symlink points to:"
+msgstr ""
+
+#: source/command-ref/nix-env.md:253
+msgid "`$XDG_STATE_HOME/nix/profiles/profile` for regular users"
+msgstr ""
+
+#: source/command-ref/nix-env.md:254
+msgid "`$NIX_STATE_DIR/profiles/per-user/root/profile` for `root`"
+msgstr ""
+
+#: source/command-ref/nix-env.md:256
+msgid ""
+"The `PATH` environment variable should include `/bin` subdirectory of the "
+"profile link (e.g. `~/.nix-profile/bin`) for the user environment to be "
+"visible to the user. The [installer](../installation/installing-binary.md) "
+"sets this up by default, unless you enable [`use-xdg-base-directories`](../"
+"command-ref/conf-file.md#conf-use-xdg-base-directories)."
+msgstr ""

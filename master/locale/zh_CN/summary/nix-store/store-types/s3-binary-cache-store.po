@@ -1,0 +1,772 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/s3-binary-cache-store.md:1
+msgid "S3 Binary Cache Store"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:3
+msgid "**Store URL format**: `s3://`_bucket-name_"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:5
+msgid ""
+"This store allows reading and writing a [binary cache](../../protocols/"
+"binary-cache/index.md) stored in an AWS S3 (or S3-compatible service) "
+"bucket. This store shares many idioms with the [HTTP Binary Cache Store]"
+"(../../store/types/http-binary-cache-store.md)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:8
+msgid ""
+"For AWS S3, the binary cache URL for a bucket named `example-nix-cache` will "
+"be exactly <s3://example-nix-cache>. For S3 compatible binary caches, "
+"consult that cache's documentation."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:11
+msgid "Anonymous reads to your S3-compatible binary cache"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:13
+msgid ""
+"If your binary cache is publicly accessible and does not require "
+"authentication, it is simplest to use the \\[HTTP Binary Cache Store\\] "
+"rather than S3 Binary Cache Store with <https://example-nix-cache.s3."
+"amazonaws.com> instead of <s3://example-nix-cache>."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:17
+msgid ""
+"Your bucket will need a [bucket policy](https://docs.aws.amazon.com/AmazonS3/"
+"v1/userguide/bucket-policies.html) like the following to be accessible:"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:23
+msgid "\"Id\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:23
+msgid "\"DirectReads\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:24
+#: source/store/types/s3-binary-cache-store.md:64
+msgid "\"Version\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:24
+#: source/store/types/s3-binary-cache-store.md:64
+msgid "\"2012-10-17\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:25
+#: source/store/types/s3-binary-cache-store.md:65
+msgid "\"Statement\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:27
+#: source/store/types/s3-binary-cache-store.md:67
+msgid "\"Sid\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:27
+msgid "\"AllowDirectReads\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:28
+#: source/store/types/s3-binary-cache-store.md:69
+msgid "\"Action\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:29
+#: source/store/types/s3-binary-cache-store.md:72
+msgid "\"s3:GetObject\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:30
+#: source/store/types/s3-binary-cache-store.md:71
+msgid "\"s3:GetBucketLocation\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:31
+#: source/store/types/s3-binary-cache-store.md:73
+msgid "\"s3:ListBucket\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:33
+#: source/store/types/s3-binary-cache-store.md:68
+msgid "\"Effect\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:33
+#: source/store/types/s3-binary-cache-store.md:68
+msgid "\"Allow\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:34
+#: source/store/types/s3-binary-cache-store.md:78
+msgid "\"Resource\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:35
+#: source/store/types/s3-binary-cache-store.md:79
+msgid "\"arn:aws:s3:::example-nix-cache\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:36
+#: source/store/types/s3-binary-cache-store.md:80
+msgid "\"arn:aws:s3:::example-nix-cache/*\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:38
+msgid "\"Principal\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:38
+msgid "\"*\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:44
+msgid "Authentication"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:46
+msgid ""
+"Nix will use the [default credential provider chain](https://docs.aws.amazon."
+"com/sdk-for-cpp/v1/developer-guide/credentials.html) for authenticating "
+"requests to Amazon S3."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:50
+msgid ""
+"Note that this means Nix will read environment variables and files with "
+"different idioms than with Nix's own settings, as implemented by the AWS "
+"SDK. Consult the documentation linked above for further details."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:53
+msgid "Authenticated reads to your S3 binary cache"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:55
+msgid ""
+"Your bucket will need a bucket policy allowing the desired users to perform "
+"the `s3:GetObject`, `s3:GetBucketLocation`, and `s3:ListBucket` actions on "
+"all objects in the bucket. The [anonymous policy given above](#anonymous-"
+"reads-to-your-s3-compatible-binary-cache) can be updated to have a "
+"restricted `Principal` to support this."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:58
+msgid "Authenticated writes to your S3-compatible binary cache"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:60
+msgid ""
+"Your account will need an IAM policy to support uploading to the bucket:"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:67
+msgid "\"UploadToCache\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:70
+msgid "\"s3:AbortMultipartUpload\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:74
+msgid "\"s3:ListBucketMultipartUploads\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:75
+msgid "\"s3:ListMultipartUploadParts\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:76
+msgid "\"s3:PutObject\""
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:87
+msgid "Examples"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:89
+msgid ""
+"With bucket policies and authentication set up as described above, uploading "
+"works via [`nix copy`](../../command-ref/new-cli/nix3-copy.md) "
+"(experimental)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:91
+msgid "To upload with a specific credential profile for Amazon S3:"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:93
+msgid ""
+"```console\n"
+"$ nix copy nixpkgs.hello \\\n"
+"  --to 's3://example-nix-cache?profile=cache-upload&region=eu-west-2'\n"
+"```"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:98
+msgid "To upload to an S3-compatible binary cache:"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:100
+msgid ""
+"```console\n"
+"$ nix copy nixpkgs.hello --to \\\n"
+"  's3://example-nix-cache?profile=cache-upload&scheme=https&endpoint=minio."
+"example.com'\n"
+"```"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:105
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:107
+msgid ""
+"<span id=\"store-s3-binary-cache-store-addressing-style\">[`addressing-"
+"style`](#store-s3-binary-cache-store-addressing-style)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:109
+msgid ""
+"The S3 addressing style to use. `auto` (default) uses virtual-hosted-style "
+"for standard AWS endpoints and path-style for custom endpoints; bucket names "
+"containing dots automatically fall back to path-style to avoid TLS "
+"certificate errors. `path` forces path-style addressing (deprecated by AWS). "
+"`virtual` forces virtual-hosted-style addressing (bucket names must not "
+"contain dots)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:117
+msgid "**Default:** `auto`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:119
+msgid ""
+"<span id=\"store-s3-binary-cache-store-compression\">[`compression`](#store-"
+"s3-binary-cache-store-compression)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:121
+msgid ""
+"NAR compression method. One of: `xz`, `bzip2`, `gzip`, `zstd`, `none`, `br`, "
+"`compress`, `grzip`, `lrzip`, `lz4`, `lzip`, `lzma` or `lzop`. To use a "
+"particular compression method Nix has to be built with a version of "
+"libarchive that natively supports that compression algorithm."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:124
+msgid "**Default:** `xz`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:126
+msgid ""
+"<span id=\"store-s3-binary-cache-store-compression-level\">[`compression-"
+"level`](#store-s3-binary-cache-store-compression-level)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:128
+msgid ""
+"The _preset level_ to be used when compressing NARs. The meaning and "
+"accepted values depend on the compression method selected. `-1` specifies "
+"that the default compression level should be used."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:132
+msgid "**Default:** `-1`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:134
+msgid ""
+"<span id=\"store-s3-binary-cache-store-endpoint\">[`endpoint`](#store-s3-"
+"binary-cache-store-endpoint)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:136
+msgid ""
+"The S3 endpoint to use. When empty (default), uses AWS S3 with region-"
+"specific endpoints. For S3-compatible services such as MinIO, set this to "
+"your service's endpoint."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:140
+#: source/store/types/s3-binary-cache-store.md:285
+msgid "**Default:** _empty_"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:142
+msgid ""
+"<span id=\"store-s3-binary-cache-store-index-debug-info\">[`index-debug-"
+"info`](#store-s3-binary-cache-store-index-debug-info)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:144
+msgid ""
+"Whether to index DWARF debug info files by build ID. This allows [`dwarffs`]"
+"(https://github.com/edolstra/dwarffs) to fetch debug info on demand"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:147
+#: source/store/types/s3-binary-cache-store.md:194
+#: source/store/types/s3-binary-cache-store.md:208
+#: source/store/types/s3-binary-cache-store.md:342
+#: source/store/types/s3-binary-cache-store.md:348
+#: source/store/types/s3-binary-cache-store.md:354
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:149
+msgid ""
+"<span id=\"store-s3-binary-cache-store-local-nar-cache\">[`local-nar-cache`]"
+"(#store-s3-binary-cache-store-local-nar-cache)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:151
+msgid ""
+"Path to a local cache of NARs fetched from this binary cache, used by "
+"commands such as `nix store cat`."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:153
+#: source/store/types/s3-binary-cache-store.md:161
+#: source/store/types/s3-binary-cache-store.md:167
+#: source/store/types/s3-binary-cache-store.md:200
+#: source/store/types/s3-binary-cache-store.md:279
+#: source/store/types/s3-binary-cache-store.md:303
+#: source/store/types/s3-binary-cache-store.md:327
+#: source/store/types/s3-binary-cache-store.md:333
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:155
+msgid ""
+"<span id=\"store-s3-binary-cache-store-log-compression\">[`log-compression`]"
+"(#store-s3-binary-cache-store-log-compression)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:157
+msgid ""
+"Compression method for `log/*` files. It is recommended to use a compression "
+"method supported by most web browsers (e.g. `brotli`)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:163
+msgid ""
+"<span id=\"store-s3-binary-cache-store-ls-compression\">[`ls-compression`]"
+"(#store-s3-binary-cache-store-ls-compression)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:165
+msgid "Compression method for `.ls` files."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:169
+msgid ""
+"<span id=\"store-s3-binary-cache-store-multipart-chunk-size\">[`multipart-"
+"chunk-size`](#store-s3-binary-cache-store-multipart-chunk-size)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:171
+msgid ""
+"The size (in bytes) of each part in multipart uploads. Must be at least 5 "
+"MiB (AWS S3 requirement). Larger chunk sizes reduce the number of requests "
+"but use more memory. Default is 5 MiB."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:175
+msgid "**Default:** `5242880`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:177
+msgid "**Deprecated alias:** `buffer-size`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:179
+msgid ""
+"<span id=\"store-s3-binary-cache-store-multipart-threshold\">[`multipart-"
+"threshold`](#store-s3-binary-cache-store-multipart-threshold)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:181
+msgid ""
+"The minimum file size (in bytes) for using multipart uploads. Files smaller "
+"than this threshold will use regular PUT requests. Default is 100 MiB. Only "
+"takes effect when multipart-upload is enabled."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:185
+msgid "**Default:** `104857600`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:187
+msgid ""
+"<span id=\"store-s3-binary-cache-store-multipart-upload\">[`multipart-"
+"upload`](#store-s3-binary-cache-store-multipart-upload)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:189
+msgid ""
+"Whether to use multipart uploads for large files. When enabled, files "
+"exceeding the multipart threshold will be uploaded in multiple parts, which "
+"is required for files larger than 5 GiB and can improve performance and "
+"reliability for large uploads."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:196
+msgid ""
+"<span id=\"store-s3-binary-cache-store-narinfo-compression\">[`narinfo-"
+"compression`](#store-s3-binary-cache-store-narinfo-compression)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:198
+msgid "Compression method for `.narinfo` files."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:202
+msgid ""
+"<span id=\"store-s3-binary-cache-store-parallel-compression\">[`parallel-"
+"compression`](#store-s3-binary-cache-store-parallel-compression)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:204
+msgid ""
+"Enable multi-threaded compression of NARs. This is currently only available "
+"for `xz` and `zstd`."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:206
+msgid ""
+"If not set explicitly, defaults to `true` when `compression` is `zstd` and "
+"`false` otherwise."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:210
+msgid ""
+"<span id=\"store-s3-binary-cache-store-path-info-cache-size\">[`path-info-"
+"cache-size`](#store-s3-binary-cache-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:212
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:214
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:216
+msgid ""
+"<span id=\"store-s3-binary-cache-store-priority\">[`priority`](#store-s3-"
+"binary-cache-store-priority)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:218
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:221
+#: source/store/types/s3-binary-cache-store.md:242
+#: source/store/types/s3-binary-cache-store.md:248
+#: source/store/types/s3-binary-cache-store.md:254
+#: source/store/types/s3-binary-cache-store.md:260
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:223
+msgid ""
+"<span id=\"store-s3-binary-cache-store-profile\">[`profile`](#store-s3-"
+"binary-cache-store-profile)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:225
+msgid ""
+"The name of the AWS configuration profile to use. By default Nix uses the "
+"`default` profile."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:228
+msgid "**Default:** `default`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:230
+msgid ""
+"<span id=\"store-s3-binary-cache-store-region\">[`region`](#store-s3-binary-"
+"cache-store-region)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:232
+msgid ""
+"The region of the S3 bucket. If your bucket is not in `us-east-1`, you "
+"should always explicitly specify the region parameter."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:236
+msgid "**Default:** `us-east-1`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:238
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-attempts\">[`retry-attempts`]"
+"(#store-s3-binary-cache-store-retry-attempts)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:240
+msgid ""
+"Override [`filetransfer-retry-attempts`](../../command-ref/conf-file.md#conf-"
+"filetransfer-retry-attempts) for requests to this store."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:244
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-delay\">[`retry-delay`](#store-"
+"s3-binary-cache-store-retry-delay)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:246
+msgid ""
+"Override [`filetransfer-retry-delay`](../../command-ref/conf-file.md#conf-"
+"filetransfer-retry-delay) for requests to this store (milliseconds)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:250
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-delay-rate-limited\">[`retry-"
+"delay-rate-limited`](#store-s3-binary-cache-store-retry-delay-rate-limited)</"
+"span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:252
+msgid ""
+"Override [`filetransfer-retry-delay-rate-limited`](../../command-ref/conf-"
+"file.md#conf-filetransfer-retry-delay-rate-limited) for requests to this "
+"store (milliseconds)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:256
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-max-delay\">[`retry-max-delay`]"
+"(#store-s3-binary-cache-store-retry-max-delay)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:258
+msgid ""
+"Override [`filetransfer-retry-max-delay`](../../command-ref/conf-file."
+"md#conf-filetransfer-retry-max-delay) for requests to this store "
+"(milliseconds)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:262
+msgid ""
+"<span id=\"store-s3-binary-cache-store-scheme\">[`scheme`](#store-s3-binary-"
+"cache-store-scheme)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:264
+msgid ""
+"The scheme used for S3 requests, `https` (default) or `http`. This option "
+"allows you to disable HTTPS for binary caches which don't support it."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:268
+msgid "**Note**"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:270
+msgid "HTTPS should be used if the cache might contain sensitive information."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:273
+msgid "**Default:** `https`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:275
+msgid ""
+"<span id=\"store-s3-binary-cache-store-secret-key\">[`secret-key`](#store-s3-"
+"binary-cache-store-secret-key)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:277
+msgid "Path to the secret key used to sign the binary cache."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:281
+msgid ""
+"<span id=\"store-s3-binary-cache-store-secret-keys\">[`secret-keys`](#store-"
+"s3-binary-cache-store-secret-keys)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:283
+msgid ""
+"List of comma-separated paths to the secret keys used to sign the binary "
+"cache."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:287
+msgid ""
+"<span id=\"store-s3-binary-cache-store-storage-class\">[`storage-class`]"
+"(#store-s3-binary-cache-store-storage-class)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:289
+msgid ""
+"The S3 storage class to use for uploaded objects. When not set (default), "
+"uses the bucket's default storage class. Valid values include:"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:291
+msgid "STANDARD (default, frequently accessed data)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:292
+msgid "REDUCED_REDUNDANCY (less frequently accessed data)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:293
+msgid "STANDARD_IA (infrequent access)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:294
+msgid "ONEZONE_IA (infrequent access, single AZ)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:295
+msgid "INTELLIGENT_TIERING (automatic cost optimization)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:296
+msgid "GLACIER (archival with retrieval times in minutes to hours)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:297
+msgid "DEEP_ARCHIVE (long-term archival with 12-hour retrieval)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:298
+msgid "GLACIER_IR (instant retrieval archival)"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:300
+msgid ""
+"See AWS S3 documentation for detailed storage class descriptions and "
+"pricing: https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-"
+"intro.html"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:305
+msgid ""
+"<span id=\"store-s3-binary-cache-store-store\">[`store`](#store-s3-binary-"
+"cache-store-store)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:307
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:309
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:311
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:313
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:315
+msgid ""
+"<span id=\"store-s3-binary-cache-store-system-features\">[`system-features`]"
+"(#store-s3-binary-cache-store-system-features)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:317
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:319
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:321
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:323
+msgid ""
+"<span id=\"store-s3-binary-cache-store-tls-certificate\">[`tls-certificate`]"
+"(#store-s3-binary-cache-store-tls-certificate)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:325
+msgid "Path to an optional TLS client certificate in PEM format."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:329
+msgid ""
+"<span id=\"store-s3-binary-cache-store-tls-private-key\">[`tls-private-key`]"
+"(#store-s3-binary-cache-store-tls-private-key)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:331
+msgid "Path to an optional TLS client certificate private key in PEM format."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:335
+msgid ""
+"<span id=\"store-s3-binary-cache-store-trusted\">[`trusted`](#store-s3-"
+"binary-cache-store-trusted)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:337
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:344
+msgid ""
+"<span id=\"store-s3-binary-cache-store-want-mass-query\">[`want-mass-query`]"
+"(#store-s3-binary-cache-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:346
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:350
+msgid ""
+"<span id=\"store-s3-binary-cache-store-write-nar-listing\">[`write-nar-"
+"listing`](#store-s3-binary-cache-store-write-nar-listing)</span>"
+msgstr ""
+
+#: source/store/types/s3-binary-cache-store.md:352
+msgid "Whether to write a JSON file that lists the files in each NAR."
+msgstr ""

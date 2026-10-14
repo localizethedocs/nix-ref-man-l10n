@@ -1,0 +1,1697 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/derivation/index.md:1
+msgid "Derivation"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:3
+msgid "[1. Property `name`](#name)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:4
+msgid "[2. Property `version`](#version)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:5
+msgid "[3. Property `outputs`](#outputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:6
+msgid "[3.1. Property `Derivation Output`](#outputs_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:7
+msgid ""
+"[3.1.1. Property `Input-Addressed Output`]"
+"(#outputs_additionalProperties_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:8
+msgid "[3.1.1.1. Property `path`](#outputs_additionalProperties_oneOf_i0_path)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:9
+msgid ""
+"[3.1.2. Property `Fixed Content-Addressed Output`]"
+"(#outputs_additionalProperties_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:10
+msgid ""
+"[3.1.2.1. Property `method`](#outputs_additionalProperties_oneOf_i1_method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:11
+msgid "[3.1.2.2. Property `hash`](#outputs_additionalProperties_oneOf_i1_hash)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:12
+msgid ""
+"[3.1.3. Property `Floating Content-Addressed Output`]"
+"(#outputs_additionalProperties_oneOf_i2)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:13
+msgid ""
+"[3.1.3.1. Property `method`](#outputs_additionalProperties_oneOf_i2_method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:14
+msgid ""
+"[3.1.3.2. Property `hashAlgo`]"
+"(#outputs_additionalProperties_oneOf_i2_hashAlgo)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:15
+msgid ""
+"[3.1.4. Property `Deferred Output`](#outputs_additionalProperties_oneOf_i3)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:16
+msgid ""
+"[3.1.5. Property `Impure Output`](#outputs_additionalProperties_oneOf_i4)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:17
+msgid ""
+"[3.1.5.1. Property `impure`](#outputs_additionalProperties_oneOf_i4_impure)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:18
+msgid ""
+"[3.1.5.2. Property `method`](#outputs_additionalProperties_oneOf_i4_method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:19
+msgid ""
+"[3.1.5.3. Property `hashAlgo`]"
+"(#outputs_additionalProperties_oneOf_i4_hashAlgo)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:20
+msgid "[4. Property `system`](#system)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:21
+msgid "[5. Property `builder`](#builder)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:22
+msgid "[6. Property `args`](#args)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:23
+msgid "[6.1. args items](#args_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:24
+msgid "[7. Property `env`](#env)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:25
+msgid "[7.1. Property `additionalProperties`](#env_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:26
+msgid "[8. Property `structuredAttrs`](#structuredAttrs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:27
+msgid "[9. Property `inputs`](#inputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:28
+msgid "[9.1. Property `srcs`](#inputs_srcs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:29
+msgid "[9.1.1. Store Path](#inputs_srcs_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:30
+msgid "[9.2. Property `drvs`](#inputs_drvs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:31
+msgid "[9.2.1. Pattern Property `Store Path`](#inputs_drvs_pattern1)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:32
+msgid "[9.2.1.1. Property `Output Names`](#inputs_drvs_pattern1_pattern3_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:33
+msgid "[9.2.1.1.1. Output name](#inputs_drvs_pattern1_pattern3_i0_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:34
+msgid ""
+"[9.2.1.2. Property `Dynamic Outputs`](#inputs_drvs_pattern1_pattern3_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:35
+msgid ""
+"[9.2.1.2.1. Property `outputs`](#inputs_drvs_pattern1_pattern3_i1_outputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:36
+msgid ""
+"[9.2.1.2.2. Property `dynamicOutputs`]"
+"(#inputs_drvs_pattern1_pattern3_i1_dynamicOutputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:38
+msgid "**Title:** Derivation"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:42
+#: source/protocols/json/derivation/index.md:74
+#: source/protocols/json/derivation/index.md:87
+#: source/protocols/json/derivation/index.md:119
+#: source/protocols/json/derivation/index.md:149
+#: source/protocols/json/derivation/index.md:170
+#: source/protocols/json/derivation/index.md:190
+#: source/protocols/json/derivation/index.md:207
+#: source/protocols/json/derivation/index.md:227
+#: source/protocols/json/derivation/index.md:245
+#: source/protocols/json/derivation/index.md:271
+#: source/protocols/json/derivation/index.md:293
+#: source/protocols/json/derivation/index.md:305
+#: source/protocols/json/derivation/index.md:324
+#: source/protocols/json/derivation/index.md:338
+#: source/protocols/json/derivation/index.md:356
+#: source/protocols/json/derivation/index.md:367
+#: source/protocols/json/derivation/index.md:379
+#: source/protocols/json/derivation/index.md:398
+#: source/protocols/json/derivation/index.md:411
+#: source/protocols/json/derivation/index.md:425
+#: source/protocols/json/derivation/index.md:447
+#: source/protocols/json/derivation/index.md:456
+#: source/protocols/json/derivation/index.md:471
+#: source/protocols/json/derivation/index.md:480
+#: source/protocols/json/derivation/index.md:498
+#: source/protocols/json/derivation/index.md:515
+#: source/protocols/json/derivation/index.md:547
+#: source/protocols/json/derivation/index.md:582
+#: source/protocols/json/derivation/index.md:612
+#: source/protocols/json/derivation/index.md:629
+#: source/protocols/json/derivation/index.md:653
+#: source/protocols/json/derivation/index.md:665
+#: source/protocols/json/derivation/index.md:685
+#: source/protocols/json/derivation/index.md:697
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:42
+#: source/protocols/json/derivation/index.md:119
+#: source/protocols/json/derivation/index.md:170
+#: source/protocols/json/derivation/index.md:207
+#: source/protocols/json/derivation/index.md:271
+#: source/protocols/json/derivation/index.md:324
+#: source/protocols/json/derivation/index.md:338
+#: source/protocols/json/derivation/index.md:456
+#: source/protocols/json/derivation/index.md:480
+#: source/protocols/json/derivation/index.md:498
+#: source/protocols/json/derivation/index.md:582
+#: source/protocols/json/derivation/index.md:665
+#: source/protocols/json/derivation/index.md:697
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:43
+#: source/protocols/json/derivation/index.md:75
+#: source/protocols/json/derivation/index.md:88
+#: source/protocols/json/derivation/index.md:120
+#: source/protocols/json/derivation/index.md:150
+#: source/protocols/json/derivation/index.md:171
+#: source/protocols/json/derivation/index.md:191
+#: source/protocols/json/derivation/index.md:208
+#: source/protocols/json/derivation/index.md:228
+#: source/protocols/json/derivation/index.md:246
+#: source/protocols/json/derivation/index.md:272
+#: source/protocols/json/derivation/index.md:294
+#: source/protocols/json/derivation/index.md:306
+#: source/protocols/json/derivation/index.md:325
+#: source/protocols/json/derivation/index.md:339
+#: source/protocols/json/derivation/index.md:357
+#: source/protocols/json/derivation/index.md:368
+#: source/protocols/json/derivation/index.md:380
+#: source/protocols/json/derivation/index.md:399
+#: source/protocols/json/derivation/index.md:412
+#: source/protocols/json/derivation/index.md:426
+#: source/protocols/json/derivation/index.md:448
+#: source/protocols/json/derivation/index.md:457
+#: source/protocols/json/derivation/index.md:472
+#: source/protocols/json/derivation/index.md:481
+#: source/protocols/json/derivation/index.md:499
+#: source/protocols/json/derivation/index.md:516
+#: source/protocols/json/derivation/index.md:548
+#: source/protocols/json/derivation/index.md:583
+#: source/protocols/json/derivation/index.md:613
+#: source/protocols/json/derivation/index.md:630
+#: source/protocols/json/derivation/index.md:654
+#: source/protocols/json/derivation/index.md:666
+#: source/protocols/json/derivation/index.md:686
+#: source/protocols/json/derivation/index.md:698
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:43
+#: source/protocols/json/derivation/index.md:58
+#: source/protocols/json/derivation/index.md:59
+#: source/protocols/json/derivation/index.md:60
+#: source/protocols/json/derivation/index.md:61
+#: source/protocols/json/derivation/index.md:62
+#: source/protocols/json/derivation/index.md:63
+#: source/protocols/json/derivation/index.md:64
+#: source/protocols/json/derivation/index.md:65
+#: source/protocols/json/derivation/index.md:66
+#: source/protocols/json/derivation/index.md:141
+#: source/protocols/json/derivation/index.md:150
+#: source/protocols/json/derivation/index.md:171
+#: source/protocols/json/derivation/index.md:182
+#: source/protocols/json/derivation/index.md:208
+#: source/protocols/json/derivation/index.md:218
+#: source/protocols/json/derivation/index.md:219
+#: source/protocols/json/derivation/index.md:272
+#: source/protocols/json/derivation/index.md:284
+#: source/protocols/json/derivation/index.md:285
+#: source/protocols/json/derivation/index.md:325
+#: source/protocols/json/derivation/index.md:339
+#: source/protocols/json/derivation/index.md:348
+#: source/protocols/json/derivation/index.md:349
+#: source/protocols/json/derivation/index.md:350
+#: source/protocols/json/derivation/index.md:448
+#: source/protocols/json/derivation/index.md:465
+#: source/protocols/json/derivation/index.md:472
+#: source/protocols/json/derivation/index.md:481
+#: source/protocols/json/derivation/index.md:490
+#: source/protocols/json/derivation/index.md:506
+#: source/protocols/json/derivation/index.md:507
+#: source/protocols/json/derivation/index.md:548
+#: source/protocols/json/derivation/index.md:613
+#: source/protocols/json/derivation/index.md:630
+#: source/protocols/json/derivation/index.md:654
+#: source/protocols/json/derivation/index.md:666
+#: source/protocols/json/derivation/index.md:676
+#: source/protocols/json/derivation/index.md:677
+#: source/protocols/json/derivation/index.md:686
+#: source/protocols/json/derivation/index.md:698
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:44
+#: source/protocols/json/derivation/index.md:121
+#: source/protocols/json/derivation/index.md:151
+#: source/protocols/json/derivation/index.md:172
+#: source/protocols/json/derivation/index.md:209
+#: source/protocols/json/derivation/index.md:273
+#: source/protocols/json/derivation/index.md:326
+#: source/protocols/json/derivation/index.md:340
+#: source/protocols/json/derivation/index.md:458
+#: source/protocols/json/derivation/index.md:482
+#: source/protocols/json/derivation/index.md:500
+#: source/protocols/json/derivation/index.md:584
+#: source/protocols/json/derivation/index.md:614
+#: source/protocols/json/derivation/index.md:667
+#: source/protocols/json/derivation/index.md:699
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:44
+#: source/protocols/json/derivation/index.md:172
+#: source/protocols/json/derivation/index.md:209
+#: source/protocols/json/derivation/index.md:273
+#: source/protocols/json/derivation/index.md:340
+#: source/protocols/json/derivation/index.md:500
+#: source/protocols/json/derivation/index.md:584
+msgid "Not allowed"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:46
+msgid ""
+"**Description:** Experimental JSON representation of a Nix derivation "
+"(version 4)."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:48
+msgid ""
+"This schema describes the JSON representation of Nix's `Derivation` type."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:50
+#: source/protocols/json/derivation/index.md:555
+msgid "**Warning**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:52
+#: source/protocols/json/derivation/index.md:557
+msgid ""
+"This JSON format is currently [**experimental**](../../../development/"
+"experimental-features.md#xp-feature-nix-command) and subject to change."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:56
+#: source/protocols/json/derivation/index.md:139
+#: source/protocols/json/derivation/index.md:180
+#: source/protocols/json/derivation/index.md:216
+#: source/protocols/json/derivation/index.md:282
+#: source/protocols/json/derivation/index.md:346
+#: source/protocols/json/derivation/index.md:463
+#: source/protocols/json/derivation/index.md:488
+#: source/protocols/json/derivation/index.md:504
+#: source/protocols/json/derivation/index.md:599
+#: source/protocols/json/derivation/index.md:674
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:56
+#: source/protocols/json/derivation/index.md:139
+#: source/protocols/json/derivation/index.md:180
+#: source/protocols/json/derivation/index.md:216
+#: source/protocols/json/derivation/index.md:282
+#: source/protocols/json/derivation/index.md:346
+#: source/protocols/json/derivation/index.md:463
+#: source/protocols/json/derivation/index.md:488
+#: source/protocols/json/derivation/index.md:504
+#: source/protocols/json/derivation/index.md:599
+#: source/protocols/json/derivation/index.md:674
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:56
+#: source/protocols/json/derivation/index.md:139
+#: source/protocols/json/derivation/index.md:180
+#: source/protocols/json/derivation/index.md:216
+#: source/protocols/json/derivation/index.md:282
+#: source/protocols/json/derivation/index.md:346
+#: source/protocols/json/derivation/index.md:463
+#: source/protocols/json/derivation/index.md:488
+#: source/protocols/json/derivation/index.md:504
+#: source/protocols/json/derivation/index.md:599
+#: source/protocols/json/derivation/index.md:674
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:56
+#: source/protocols/json/derivation/index.md:139
+#: source/protocols/json/derivation/index.md:180
+#: source/protocols/json/derivation/index.md:216
+#: source/protocols/json/derivation/index.md:282
+#: source/protocols/json/derivation/index.md:346
+#: source/protocols/json/derivation/index.md:463
+#: source/protocols/json/derivation/index.md:488
+#: source/protocols/json/derivation/index.md:504
+#: source/protocols/json/derivation/index.md:599
+#: source/protocols/json/derivation/index.md:674
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:58
+msgid "+ [name](#name)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:58
+#: source/protocols/json/derivation/index.md:61
+#: source/protocols/json/derivation/index.md:62
+#: source/protocols/json/derivation/index.md:182
+#: source/protocols/json/derivation/index.md:219
+#: source/protocols/json/derivation/index.md:465
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:58
+msgid "Derivation name"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:59
+msgid "+ [version](#version)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:59
+#: source/protocols/json/derivation/index.md:348
+msgid "const"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:59
+msgid "Format version (must be 4)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:60
+msgid "+ [outputs](#outputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:60
+#: source/protocols/json/derivation/index.md:64
+#: source/protocols/json/derivation/index.md:65
+#: source/protocols/json/derivation/index.md:66
+#: source/protocols/json/derivation/index.md:141
+#: source/protocols/json/derivation/index.md:490
+#: source/protocols/json/derivation/index.md:507
+#: source/protocols/json/derivation/index.md:677
+msgid "object"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:60
+msgid "Output specifications"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:61
+msgid "+ [system](#system)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:61
+msgid "Build system type"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:62
+msgid "+ [builder](#builder)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:62
+msgid "Build program path"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:63
+msgid "+ [args](#args)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:63
+msgid "array of string"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:63
+msgid "Builder arguments"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:64
+msgid "+ [env](#env)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:64
+msgid "Environment variables"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:65
+msgid "\\- [structuredAttrs](#structuredAttrs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:65
+msgid "Structured attributes"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:66
+msgid "+ [inputs](#inputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:66
+msgid "Derivation inputs"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:68
+msgid "<a name=\"name\"></a>1. Property `name`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:70
+msgid "**Title:** Derivation name"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:74
+#: source/protocols/json/derivation/index.md:190
+#: source/protocols/json/derivation/index.md:245
+#: source/protocols/json/derivation/index.md:398
+#: source/protocols/json/derivation/index.md:411
+#: source/protocols/json/derivation/index.md:447
+#: source/protocols/json/derivation/index.md:471
+#: source/protocols/json/derivation/index.md:547
+#: source/protocols/json/derivation/index.md:653
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:75
+#: source/protocols/json/derivation/index.md:88
+#: source/protocols/json/derivation/index.md:120
+#: source/protocols/json/derivation/index.md:191
+#: source/protocols/json/derivation/index.md:228
+#: source/protocols/json/derivation/index.md:246
+#: source/protocols/json/derivation/index.md:294
+#: source/protocols/json/derivation/index.md:306
+#: source/protocols/json/derivation/index.md:357
+#: source/protocols/json/derivation/index.md:368
+#: source/protocols/json/derivation/index.md:380
+#: source/protocols/json/derivation/index.md:399
+#: source/protocols/json/derivation/index.md:412
+#: source/protocols/json/derivation/index.md:426
+#: source/protocols/json/derivation/index.md:457
+#: source/protocols/json/derivation/index.md:499
+#: source/protocols/json/derivation/index.md:516
+#: source/protocols/json/derivation/index.md:583
+#: source/protocols/json/derivation/index.md:601
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:76
+#: source/protocols/json/derivation/index.md:89
+#: source/protocols/json/derivation/index.md:122
+#: source/protocols/json/derivation/index.md:152
+#: source/protocols/json/derivation/index.md:173
+#: source/protocols/json/derivation/index.md:192
+#: source/protocols/json/derivation/index.md:210
+#: source/protocols/json/derivation/index.md:229
+#: source/protocols/json/derivation/index.md:247
+#: source/protocols/json/derivation/index.md:274
+#: source/protocols/json/derivation/index.md:307
+#: source/protocols/json/derivation/index.md:327
+#: source/protocols/json/derivation/index.md:341
+#: source/protocols/json/derivation/index.md:381
+#: source/protocols/json/derivation/index.md:400
+#: source/protocols/json/derivation/index.md:413
+#: source/protocols/json/derivation/index.md:427
+#: source/protocols/json/derivation/index.md:459
+#: source/protocols/json/derivation/index.md:483
+#: source/protocols/json/derivation/index.md:631
+#: source/protocols/json/derivation/index.md:655
+#: source/protocols/json/derivation/index.md:668
+msgid "**Defined in**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:76
+#: source/protocols/json/derivation/index.md:89
+#: source/protocols/json/derivation/index.md:122
+#: source/protocols/json/derivation/index.md:400
+#: source/protocols/json/derivation/index.md:413
+#: source/protocols/json/derivation/index.md:427
+#: source/protocols/json/derivation/index.md:459
+#: source/protocols/json/derivation/index.md:483
+msgid ""
+"[JSON format for `Derivation`](../../../protocols/json/derivation/index.html)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:78
+msgid ""
+"**Description:** The name of the derivation. Used when calculating store "
+"paths for the derivation's outputs."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:81
+msgid "<a name=\"version\"></a>2. Property `version`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:83
+msgid "**Title:** Format version (must be 4)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:87
+#: source/protocols/json/derivation/index.md:356
+msgid "`const`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:91
+msgid ""
+"**Description:** Must be `4`. This is a guard that allows us to continue "
+"evolving this format. The choice of `3` is fairly arbitrary, but corresponds "
+"to this informal version:"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:95
+msgid "Version 0: ATerm format"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:97
+msgid ""
+"Version 1: Original JSON format, with ugly `\"r:sha256\"` inherited from "
+"ATerm format."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:99
+msgid "Version 2: Separate `method` and `hashAlgo` fields in output specs"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:101
+msgid "Version 3: Drop store dir from store paths, just include base name."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:103
+msgid "Version 4: Two cleanups, batched together to lesson churn:"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:105
+msgid ""
+"Reorganize inputs into nested structure (`inputs.srcs` and `inputs.drvs`)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:107
+msgid ""
+"Use canonical content address JSON format for floating content addressed "
+"derivation outputs."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:109
+msgid ""
+"Note that while this format is experimental, the maintenance of versions is "
+"best-effort, and not promised to identify every change."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:111
+msgid "Specific value: `4`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:113
+msgid "<a name=\"outputs\"></a>3. Property `outputs`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:115
+msgid "**Title:** Output specifications"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:121
+msgid ""
+"[Each additional property must conform to the schema]"
+"(#outputs_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:124
+msgid ""
+"**Description:** Information about the output paths of the derivation. This "
+"is a JSON object with one member per output, where the key is the output "
+"name and the value is a JSON object as described."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:127
+#: source/protocols/json/derivation/index.md:520
+#: source/protocols/json/derivation/index.md:588
+msgid "**Example**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:130
+msgid "\"outputs\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:131
+#: source/protocols/json/derivation/index.md:593
+msgid "\"out\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:132
+msgid "\"method\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:132
+#: source/protocols/json/derivation/index.md:235
+msgid "\"nar\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:133
+msgid "\"hashAlgo\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:133
+#: source/protocols/json/derivation/index.md:315
+#: source/protocols/json/derivation/index.md:389
+msgid "\"sha256\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:134
+msgid "\"hash\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:134
+msgid "\"6fc80dcc62179dbc12fc0b5881275898f93444833d21b89dfe5f7fbcbb1d0d62\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:141
+msgid "\\- [](#outputs_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:141
+msgid "Derivation Output"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:143
+msgid ""
+"<a name=\"outputs_additionalProperties\"></a>3.1. Property `Derivation "
+"Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:145
+msgid "**Title:** Derivation Output"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:149
+#: source/protocols/json/derivation/index.md:612
+msgid "`combining`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:151
+#: source/protocols/json/derivation/index.md:326
+#: source/protocols/json/derivation/index.md:482
+#: source/protocols/json/derivation/index.md:614
+#: source/protocols/json/derivation/index.md:667
+#: source/protocols/json/derivation/index.md:699
+msgid "Any type allowed"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:152
+msgid "\\#/$defs/output/overall"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:154
+msgid ""
+"**Description:** A single output of a derivation, with different variants "
+"for different output types."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:156
+#: source/protocols/json/derivation/index.md:618
+msgid "One of(Option)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:158
+msgid "[Input-Addressed Output](#outputs_additionalProperties_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:159
+msgid ""
+"[Fixed Content-Addressed Output](#outputs_additionalProperties_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:160
+msgid ""
+"[Floating Content-Addressed Output](#outputs_additionalProperties_oneOf_i2)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:161
+msgid "[Deferred Output](#outputs_additionalProperties_oneOf_i3)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:162
+msgid "[Impure Output](#outputs_additionalProperties_oneOf_i4)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:164
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i0\"></a>3.1.1. Property `Input-"
+"Addressed Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:166
+msgid "**Title:** Input-Addressed Output"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:173
+msgid "\\#/$defs/output/inputAddressed"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:175
+msgid ""
+"**Description:** The traditional non-fixed-output derivation type. The "
+"output path is determined from the derivation itself."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:178
+msgid ""
+"See [Input-addressing derivation outputs](../../../store/derivation/outputs/"
+"input-address.md) for more details."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:182
+msgid "+ [path](#outputs_additionalProperties_oneOf_i0_path)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:182
+msgid "Output path"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:184
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i0_path\"></a>3.1.1.1. Property "
+"`path`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:186
+msgid "**Title:** Output path"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:192
+msgid "store-path-v1.yaml"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:194
+msgid "**Description:** The output path determined from the derivation itself."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:196
+#: source/protocols/json/derivation/index.md:261
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:198
+msgid "**Min length**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:198
+msgid "34"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:199
+#: source/protocols/json/derivation/index.md:263
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:199
+msgid ""
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+$` [Test](https://regex101.com/?"
+"regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%24)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:201
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i1\"></a>3.1.2. Property `Fixed "
+"Content-Addressed Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:203
+msgid "**Title:** Fixed Content-Addressed Output"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:210
+msgid "\\#/$defs/output/caFixed"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:212
+msgid ""
+"**Description:** The output is content-addressed, and the content-address is "
+"fixed in advance."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:214
+msgid ""
+"See [Fixed-output content-addressing](../../../store/derivation/outputs/"
+"content-address.md#fixed) for more details."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:218
+msgid "+ [method](#outputs_additionalProperties_oneOf_i1_method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:218
+#: source/protocols/json/derivation/index.md:284
+#: source/protocols/json/derivation/index.md:285
+#: source/protocols/json/derivation/index.md:349
+#: source/protocols/json/derivation/index.md:350
+msgid "enum (of string)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:218
+#: source/protocols/json/derivation/index.md:284
+#: source/protocols/json/derivation/index.md:349
+msgid "Content-Addressing Method"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:219
+msgid "+ [hash](#outputs_additionalProperties_oneOf_i1_hash)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:219
+msgid "Expected hash value"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:221
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i1_method\"></a>3.1.2.1. "
+"Property `method`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:223
+#: source/protocols/json/derivation/index.md:289
+#: source/protocols/json/derivation/index.md:363
+msgid "**Title:** Content-Addressing Method"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:227
+#: source/protocols/json/derivation/index.md:293
+#: source/protocols/json/derivation/index.md:305
+#: source/protocols/json/derivation/index.md:367
+#: source/protocols/json/derivation/index.md:379
+msgid "`enum (of string)`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:229
+msgid ""
+"[JSON format for `ContentAddress`](../../../protocols/json/content-address."
+"html#method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:231
+#: source/protocols/json/derivation/index.md:297
+msgid "**Description:** Method of content addressing used for this output."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:233
+#: source/protocols/json/derivation/index.md:311
+#: source/protocols/json/derivation/index.md:385
+msgid "Must be one of:"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:234
+msgid "\"flat\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:236
+msgid "\"text\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:237
+msgid "\"git\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:239
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i1_hash\"></a>3.1.2.2. Property "
+"`hash`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:241
+msgid "**Title:** Expected hash value"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:247
+msgid "[JSON format for `Hash`](../../../protocols/json/hash.html)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:249
+msgid "**Description:** The expected content hash."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:251
+msgid "**Examples:**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:254
+msgid "\"sha256-ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:258
+msgid ""
+"\"sha512-IEqPxt2oLwoM7XvrjgikFlfBbvRosiioJ5vjMacDwzWW/"
+"RXBOxsH+aodO+pXeJygMa2Fx6cd1wNU7GMSOMo0RQ==\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:263
+msgid ""
+"`^(blake3\\|md5\\|sha1\\|sha256\\|sha512)-[A-Za-z0-9+/]+=*$` [Test](https://"
+"regex101.com/?regex=%5E%28blake3%7Cmd5%7Csha1%7Csha256%7Csha512%29-%5BA-Za-"
+"z0-9%2B%2F%5D%2B%3D%2A%24&testString=%22sha256-"
+"ungWv48Bz%2BpBQUDeXa4iI7ADYaOWF3qctBD%2FYfIAFa0%3D%22)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:265
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i2\"></a>3.1.3. Property "
+"`Floating Content-Addressed Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:267
+msgid "**Title:** Floating Content-Addressed Output"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:274
+msgid "\\#/$defs/output/caFloating"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:276
+msgid ""
+"**Description:** Floating-output derivations, whose outputs are content "
+"addressed, but not fixed, and so the output paths are dynamically calculated "
+"from whatever the output ends up being."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:280
+msgid ""
+"See [Floating Content-Addressing](../../../store/derivation/outputs/content-"
+"address.md#floating) for more details."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:284
+msgid "+ [method](#outputs_additionalProperties_oneOf_i2_method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:285
+msgid "+ [hashAlgo](#outputs_additionalProperties_oneOf_i2_hashAlgo)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:285
+#: source/protocols/json/derivation/index.md:350
+msgid "Hash algorithm"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:287
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i2_method\"></a>3.1.3.1. "
+"Property `method`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:295
+#: source/protocols/json/derivation/index.md:369
+#: source/protocols/json/derivation/index.md:549
+#: source/protocols/json/derivation/index.md:687
+#: source/protocols/json/derivation/index.md:700
+msgid "**Same definition as**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:295
+#: source/protocols/json/derivation/index.md:369
+msgid "[method](#outputs_additionalProperties_oneOf_i1_method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:299
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i2_hashAlgo\"></a>3.1.3.2. "
+"Property `hashAlgo`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:301
+#: source/protocols/json/derivation/index.md:375
+msgid "**Title:** Hash algorithm"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:307
+#: source/protocols/json/derivation/index.md:381
+msgid "[JSON format for `Hash`](../../../protocols/json/hash.html#algorithm)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:309
+msgid ""
+"**Description:** What hash algorithm to use for the given method of content-"
+"addressing."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:312
+#: source/protocols/json/derivation/index.md:386
+msgid "\"blake3\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:313
+#: source/protocols/json/derivation/index.md:387
+msgid "\"md5\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:314
+#: source/protocols/json/derivation/index.md:388
+msgid "\"sha1\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:316
+#: source/protocols/json/derivation/index.md:390
+msgid "\"sha512\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:318
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i3\"></a>3.1.4. Property "
+"`Deferred Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:320
+msgid "**Title:** Deferred Output"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:327
+msgid "\\#/$defs/output/deferred"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:329
+msgid ""
+"**Description:** Input-addressed output which depends on a (CA) derivation "
+"whose outputs (and thus their content-address are not yet known."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:332
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i4\"></a>3.1.5. Property "
+"`Impure Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:334
+msgid "**Title:** Impure Output"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:341
+msgid "\\#/$defs/output/impure"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:343
+msgid ""
+"**Description:** Impure output which is just like a floating content-"
+"addressed output, but this derivation runs without sandboxing. As such, we "
+"don't record it in the build trace, under the assumption that if we need it "
+"again, we should rebuild it, as it might produce something different."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:348
+msgid "+ [impure](#outputs_additionalProperties_oneOf_i4_impure)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:348
+#: source/protocols/json/derivation/index.md:441
+#: source/protocols/json/derivation/index.md:465
+#: source/protocols/json/derivation/index.md:490
+msgid "\\-"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:349
+msgid "+ [method](#outputs_additionalProperties_oneOf_i4_method)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:350
+msgid "+ [hashAlgo](#outputs_additionalProperties_oneOf_i4_hashAlgo)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:352
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i4_impure\"></a>3.1.5.1. "
+"Property `impure`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:359
+msgid "Specific value: `true`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:361
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i4_method\"></a>3.1.5.2. "
+"Property `method`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:371
+msgid ""
+"**Description:** How the file system objects will be serialized for hashing."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:373
+msgid ""
+"<a name=\"outputs_additionalProperties_oneOf_i4_hashAlgo\"></a>3.1.5.3. "
+"Property `hashAlgo`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:383
+msgid "**Description:** How the serialization will be hashed."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:392
+msgid "<a name=\"system\"></a>4. Property `system`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:394
+msgid "**Title:** Build system type"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:402
+msgid ""
+"**Description:** The system type on which this derivation is to be built (e."
+"g. `x86_64-linux`)."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:405
+msgid "<a name=\"builder\"></a>5. Property `builder`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:407
+msgid "**Title:** Build program path"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:415
+msgid ""
+"**Description:** Absolute path of the program used to perform the build. "
+"Typically this is the `bash` shell (e.g. `/nix/store/"
+"p4xlj4imjbnm4v0x5jf4qysvyjjlgq1d-bash-4.4-p23/bin/bash`)."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:419
+msgid "<a name=\"args\"></a>6. Property `args`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:421
+msgid "**Title:** Builder arguments"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:425
+msgid "`array of string`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:429
+msgid "**Description:** Command-line arguments passed to the `builder`."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:431
+#: source/protocols/json/derivation/index.md:529
+#: source/protocols/json/derivation/index.md:635
+msgid "Array restrictions"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:433
+#: source/protocols/json/derivation/index.md:531
+#: source/protocols/json/derivation/index.md:637
+msgid "**Min items**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:433
+#: source/protocols/json/derivation/index.md:434
+#: source/protocols/json/derivation/index.md:531
+#: source/protocols/json/derivation/index.md:532
+#: source/protocols/json/derivation/index.md:637
+#: source/protocols/json/derivation/index.md:638
+msgid "N/A"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:434
+#: source/protocols/json/derivation/index.md:532
+#: source/protocols/json/derivation/index.md:638
+msgid "**Max items**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:435
+#: source/protocols/json/derivation/index.md:533
+#: source/protocols/json/derivation/index.md:639
+msgid "**Items unicity**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:435
+#: source/protocols/json/derivation/index.md:436
+#: source/protocols/json/derivation/index.md:533
+#: source/protocols/json/derivation/index.md:534
+#: source/protocols/json/derivation/index.md:639
+#: source/protocols/json/derivation/index.md:640
+msgid "False"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:436
+#: source/protocols/json/derivation/index.md:534
+#: source/protocols/json/derivation/index.md:640
+msgid "**Additional items**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:437
+#: source/protocols/json/derivation/index.md:535
+#: source/protocols/json/derivation/index.md:641
+msgid "**Tuple validation**"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:437
+#: source/protocols/json/derivation/index.md:535
+#: source/protocols/json/derivation/index.md:641
+msgid "See below"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:439
+#: source/protocols/json/derivation/index.md:537
+#: source/protocols/json/derivation/index.md:643
+msgid "Each item of this array must be"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:439
+#: source/protocols/json/derivation/index.md:537
+#: source/protocols/json/derivation/index.md:643
+msgid "Description"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:441
+msgid "[args items](#args_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:443
+msgid "<a name=\"args_items\"></a>6.1. args items"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:450
+msgid "<a name=\"env\"></a>7. Property `env`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:452
+msgid "**Title:** Environment variables"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:458
+msgid ""
+"[Each additional property must conform to the schema]"
+"(#env_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:461
+msgid "**Description:** Environment variables passed to the `builder`."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:465
+msgid "\\- [](#env_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:467
+msgid ""
+"<a name=\"env_additionalProperties\"></a>7.1. Property `additionalProperties`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:474
+msgid "<a name=\"structuredAttrs\"></a>8. Property `structuredAttrs`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:476
+msgid "**Title:** Structured attributes"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:485
+msgid ""
+"**Description:** [Structured Attributes](../../../store/derivation/index."
+"md#structured-attrs), only defined if the derivation contains them. "
+"Structured attributes are JSON, and thus embedded as-is."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:490
+msgid "\\- [](#structuredAttrs_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:492
+msgid "<a name=\"inputs\"></a>9. Property `inputs`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:494
+msgid "**Title:** Derivation inputs"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:502
+msgid ""
+"**Description:** Input dependencies for the derivation, organized into "
+"source paths and derivation dependencies."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:506
+msgid "+ [srcs](#inputs_srcs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:506
+#: source/protocols/json/derivation/index.md:676
+msgid "array"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:506
+msgid "Input source paths"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:507
+msgid "+ [drvs](#inputs_drvs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:507
+msgid "Input derivations"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:509
+msgid "<a name=\"inputs_srcs\"></a>9.1. Property `srcs`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:511
+msgid "**Title:** Input source paths"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:515
+#: source/protocols/json/derivation/index.md:629
+#: source/protocols/json/derivation/index.md:685
+msgid "`array`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:518
+msgid "**Description:** List of store paths on which this derivation depends."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:523
+msgid "\"srcs\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:524
+msgid "\"b8nwz167km1yciqpwzjj24f8jcy8pq1h-separate-debug-info.sh\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:525
+msgid "\"ihzmilr413r8fb3ah30yjnhlb18c1laz-fix-pop-var-context-error.patch\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:539
+msgid "[Store Path](#inputs_srcs_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:539
+msgid ""
+"A [store path](../../../store/store-path.md) identifying a store object. ..."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:541
+msgid "<a name=\"inputs_srcs_items\"></a>9.1.1. Store Path"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:543
+#: source/protocols/json/derivation/index.md:608
+msgid "**Title:** Store Path"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:549
+msgid "[path](#outputs_additionalProperties_oneOf_i0_path)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:551
+msgid ""
+"**Description:** A [store path](../../../store/store-path.md) identifying a "
+"store object."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:553
+msgid ""
+"This schema describes the JSON representation of store paths as used in "
+"various Nix JSON APIs."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:561
+msgid "Format"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:563
+msgid ""
+"Store paths in JSON are represented as strings containing just the hash and "
+"name portion, without the store directory prefix."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:565
+msgid "For example: `\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv\"`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:567
+msgid ""
+"(If the store dir is `/nix/store`, then this corresponds to the path `/nix/"
+"store/g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv`.)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:569
+msgid "Structure"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:571
+msgid "The format follows this pattern: `${digest}-${name}`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:573
+msgid ""
+"**hash**: Digest rendered in [Nix32](../../../protocols/nix32.md) (20 hash "
+"bytes become 32 ASCII characters)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:574
+msgid "**name**: The package name and optional version/suffix information"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:576
+msgid "<a name=\"inputs_drvs\"></a>9.2. Property `drvs`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:578
+msgid "**Title:** Input derivations"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:586
+msgid ""
+"**Description:** Mapping of derivation paths to lists of output names they "
+"provide."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:591
+msgid "\"drvs\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:592
+msgid "\"6lkh5yi7nlb7l6dr8fljlli5zfd9hq58-curl-7.73.0.drv\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:592
+msgid "\"dev\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:593
+msgid "\"fn3kgnfzl5dzym26j8g907gq3kbm8bfh-unzip-6.0.drv\""
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:597
+msgid ""
+"specifies that this derivation depends on the `dev` output of `curl`, and "
+"the `out` output of `unzip`."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:601
+msgid ""
+"\\- [^\\[0123456789abcdfghijklmnpqrsvwxyz\\]{32}-.+.drv$]"
+"(#inputs_drvs_pattern1)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:601
+msgid "Combination"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:601
+msgid "Store Path"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:603
+msgid ""
+"<a name=\"inputs_drvs_pattern1\"></a>9.2.1. Pattern Property `Store Path`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:604
+msgid ""
+"All properties whose name matches the regular expression "
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+\\.drv$` ([Test](https://regex101."
+"com/?regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%5C."
+"drv%24)) must respect the following conditions"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:616
+msgid ""
+"**Description:** A store path to a derivation, mapped to the outputs of that "
+"derivation."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:620
+#: source/protocols/json/derivation/index.md:687
+msgid "[Output Names](#inputs_drvs_pattern1_pattern3_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:621
+#: source/protocols/json/derivation/index.md:700
+msgid "[Dynamic Outputs](#inputs_drvs_pattern1_pattern3_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:623
+msgid ""
+"<a name=\"inputs_drvs_pattern1_pattern3_i0\"></a>9.2.1.1. Property `Output "
+"Names`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:625
+#: source/protocols/json/derivation/index.md:681
+msgid "**Title:** Output Names"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:631
+msgid "\\#/$defs/outputNames"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:633
+#: source/protocols/json/derivation/index.md:689
+msgid "**Description:** Set of names of derivation outputs to depend on"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:645
+msgid "[Output name](#inputs_drvs_pattern1_pattern3_i0_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:645
+msgid "Name of the derivation output to depend on"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:647
+msgid ""
+"<a name=\"inputs_drvs_pattern1_pattern3_i0_items\"></a>9.2.1.1.1. Output name"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:649
+msgid "**Title:** Output name"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:655
+msgid "\\#/$defs/outputName"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:657
+msgid "**Description:** Name of the derivation output to depend on"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:659
+msgid ""
+"<a name=\"inputs_drvs_pattern1_pattern3_i1\"></a>9.2.1.2. Property `Dynamic "
+"Outputs`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:661
+#: source/protocols/json/derivation/index.md:693
+msgid "**Title:** Dynamic Outputs"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:668
+msgid "\\#/$defs/dynamicOutputs"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:670
+#: source/protocols/json/derivation/index.md:702
+msgid ""
+"**Description:** **Experimental feature**: [`dynamic-derivations`](../../../"
+"development/experimental-features.md#xp-feature-dynamic-derivations)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:672
+#: source/protocols/json/derivation/index.md:704
+msgid "This recursive data type allows for depending on outputs of outputs."
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:676
+msgid "\\- [outputs](#inputs_drvs_pattern1_pattern3_i1_outputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:676
+msgid "Output Names"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:677
+msgid "\\- [dynamicOutputs](#inputs_drvs_pattern1_pattern3_i1_dynamicOutputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:677
+msgid "Dynamic Outputs"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:679
+msgid ""
+"<a name=\"inputs_drvs_pattern1_pattern3_i1_outputs\"></a>9.2.1.2.1. Property "
+"`outputs`"
+msgstr ""
+
+#: source/protocols/json/derivation/index.md:691
+msgid ""
+"<a name=\"inputs_drvs_pattern1_pattern3_i1_dynamicOutputs\"></a>9.2.1.2.2. "
+"Property `dynamicOutputs`"
+msgstr ""

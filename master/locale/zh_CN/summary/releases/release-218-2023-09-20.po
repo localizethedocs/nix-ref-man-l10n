@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.18.md:1
+msgid "Release 2.18 (2023-09-20)"
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:3
+msgid ""
+"Two new builtin functions, [`builtins.parseFlakeRef`](../language/builtins."
+"md#builtins-parseFlakeRef) and [`builtins.flakeRefToString`](../language/"
+"builtins.md#builtins-flakeRefToString), have been added. These functions are "
+"useful for converting between flake references encoded as attribute sets and "
+"URLs."
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:10
+msgid ""
+"[`builtins.toJSON`](../language/builtins.md#builtins-parseFlakeRef) now "
+"prints [\\--show-trace](../command-ref/conf-file.html#conf-show-trace) items "
+"for the path in which it finds an evaluation error."
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:12
+msgid ""
+"Error messages regarding malformed input to [`nix derivation add`](../"
+"command-ref/new-cli/nix3-derivation-add.md) are now clearer and more "
+"detailed."
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:14
+msgid ""
+"The `discard-references` feature has been stabilized. This means that the "
+"[unsafeDiscardReferences](../language/advanced-attributes.md#adv-attr-"
+"unsafeDiscardReferences) attribute is no longer guarded by an experimental "
+"flag and can be used freely."
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:20
+msgid ""
+"The JSON output for derived paths which are store paths is now a string, not "
+"an object with a single `path` field. This only affects `nix-build --json` "
+"when \"building\" non-derivation things like fetched sources, which is a no-"
+"op."
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:23
+msgid ""
+"A new builtin [`outputOf`](../language/builtins.md#builtins-outputOf) has "
+"been added. It is part of the [`dynamic-derivations`](../development/"
+"experimental-features.md#xp-feature-dynamic-derivations) experimental "
+"feature."
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:26
+msgid ""
+"Flake follow paths at depths greater than 2 are now handled correctly, "
+"preventing \"follows a non-existent input\" errors."
+msgstr ""
+
+#: source/release-notes/rl-2.18.md:28
+msgid ""
+"[`nix-store --query`](../command-ref/nix-store/query.md) gained a new type "
+"of query: `--valid-derivers`. It returns all `.drv` files in the local store "
+"that _can be_ used to build the output passed in argument. This is in "
+"contrast to `--deriver`, which returns the single `.drv` file that _was "
+"actually_ used to build the output passed in argument. In case the output "
+"was substituted from a binary cache, this `.drv` file may only exist on said "
+"binary cache and not locally."
+msgstr ""

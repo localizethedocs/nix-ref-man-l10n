@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.10.md:1
+msgid "Release 2.10 (2022-07-11)"
+msgstr ""
+
+#: source/release-notes/rl-2.10.md:3
+msgid ""
+"`nix repl` now takes installables on the command line, unifying the usage "
+"with other commands that use `--file` and `--expr`. Primary breaking change "
+"is for the common usage of `nix repl '<nixpkgs>'` which can be recovered "
+"with `nix repl --file '<nixpkgs>'` or `nix repl --expr 'import <nixpkgs>{}'`."
+msgstr ""
+
+#: source/release-notes/rl-2.10.md:8
+msgid "This is currently guarded by the `repl-flake` experimental feature."
+msgstr ""
+
+#: source/release-notes/rl-2.10.md:10
+msgid ""
+"A new function `builtins.traceVerbose` is available. It is similar to "
+"`builtins.trace` if the `trace-verbose` setting is set to true, and it is a "
+"no-op otherwise."
+msgstr ""
+
+#: source/release-notes/rl-2.10.md:14
+msgid "`nix search` has a new flag `--exclude` to filter out packages."
+msgstr ""
+
+#: source/release-notes/rl-2.10.md:16
+msgid ""
+"On Linux, if `/nix` doesn't exist and cannot be created and you're not "
+"running as root, Nix will automatically use `~/.local/share/nix/root` as a "
+"chroot store. This enables non-root users to download the statically linked "
+"Nix binary and have it work out of the box, e.g."
+msgstr ""
+
+#: source/release-notes/rl-2.10.md:28
+msgid "`flake-registry.json` is now fetched from `channels.nixos.org`."
+msgstr ""
+
+#: source/release-notes/rl-2.10.md:30
+msgid ""
+"Nix can now be built with LTO by passing `--enable-lto` to `configure`. LTO "
+"is currently only supported when building with GCC."
+msgstr ""

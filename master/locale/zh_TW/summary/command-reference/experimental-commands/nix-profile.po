@@ -1,0 +1,349 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-profile.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:8
+msgid "`nix profile` - manage Nix profiles"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:12
+msgid "`nix profile` \\[_option_...\\] _subcommand_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:14
+msgid "where _subcommand_ is one of the following:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:16
+msgid "[`nix profile add`](./nix3-profile-add.md) - add a package to a profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:17
+msgid ""
+"[`nix profile diff-closures`](./nix3-profile-diff-closures.md) - show the "
+"closure difference between each version of a profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:18
+msgid ""
+"[`nix profile history`](./nix3-profile-history.md) - show all versions of a "
+"profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:19
+msgid ""
+"[`nix profile list`](./nix3-profile-list.md) - list packages in the profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:20
+msgid ""
+"[`nix profile remove`](./nix3-profile-remove.md) - remove packages from a "
+"profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:21
+msgid ""
+"[`nix profile rollback`](./nix3-profile-rollback.md) - roll back to the "
+"previous version or a specified version of a profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:22
+msgid ""
+"[`nix profile upgrade`](./nix3-profile-upgrade.md) - upgrade packages using "
+"their most recent flake"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:23
+msgid ""
+"[`nix profile wipe-history`](./nix3-profile-wipe-history.md) - delete non-"
+"current versions of a profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:25
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:27
+msgid ""
+"`nix profile` allows you to create and manage _Nix profiles_. A Nix profile "
+"is a set of packages that can be installed and upgraded independently from "
+"each other. Nix profiles are versioned, allowing them to be rolled back "
+"easily."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:32
+msgid "Files"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:34
+msgid "Profiles"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:36
+msgid ""
+"A directory that contains links to profiles managed by [`nix-env`](../../"
+"command-ref/nix-env.md) and [`nix profile`](../../command-ref/new-cli/nix3-"
+"profile.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:38
+msgid "`$XDG_STATE_HOME/nix/profiles` for regular users"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:39
+msgid "`$NIX_STATE_DIR/profiles/per-user/root` if the user is `root`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:41
+msgid "A profile is a directory of symlinks to files in the Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:43
+msgid "Filesystem layout"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:45
+msgid ""
+"Profiles are versioned as follows. When using a profile named _path_, _path_ "
+"is a symlink to _path_`-`_N_`-link`, where _N_ is the version of the "
+"profile. In turn, _path_`-`_N_`-link` is a symlink to a path in the Nix "
+"store. For example:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:57
+msgid "Each of these symlinks is a root for the Nix garbage collector."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:59
+msgid ""
+"The contents of the store path corresponding to each version of the profile "
+"is a tree of symlinks to the files of the installed packages, e.g."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:86
+msgid "Each profile version contains a manifest file:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:87
+msgid ""
+"[`manifest.nix`](../../command-ref/files/manifest.nix.md) used by [`nix-env`]"
+"(../../command-ref/nix-env.md)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:88
+msgid ""
+"[`manifest.json`](../../command-ref/files/manifest.json.md) used by [`nix "
+"profile`](../../command-ref/new-cli/nix3-profile.md) (experimental)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:90
+msgid "User profile link"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:92
+msgid "A symbolic link to the user's current profile:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:94
+msgid "`~/.nix-profile`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:95
+msgid ""
+"`$XDG_STATE_HOME/nix/profile` if [`use-xdg-base-directories`](../../command-"
+"ref/conf-file.md#conf-use-xdg-base-directories) is set to `true`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:97
+msgid "By default, this symlink points to:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:99
+msgid "`$XDG_STATE_HOME/nix/profiles/profile` for regular users"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:100
+msgid "`$NIX_STATE_DIR/profiles/per-user/root/profile` for `root`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:102
+msgid ""
+"The `PATH` environment variable should include `/bin` subdirectory of the "
+"profile link (e.g. `~/.nix-profile/bin`) for the user environment to be "
+"visible to the user. The [installer](../../installation/installing-binary."
+"md) sets this up by default, unless you enable [`use-xdg-base-directories`]"
+"(../../command-ref/conf-file.md#conf-use-xdg-base-directories)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:109
+msgid "Profile compatibility"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:111
+#: source/command-ref/new-cli/nix3-profile.md:128
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:113
+msgid ""
+"Once you have used [`nix profile`](../../command-ref/new-cli/nix3-profile."
+"md) you can no longer use [`nix-env`](../../command-ref/nix-env.md) without "
+"first deleting `$XDG_STATE_HOME/nix/profiles/profile`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:118
+msgid ""
+"Once you installed a package with [`nix profile`](../../command-ref/new-cli/"
+"nix3-profile.md), you get the following error message when using [`nix-env`]"
+"(../../command-ref/nix-env.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:126
+msgid "To migrate back to `nix-env` you can delete your current profile:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:130
+msgid ""
+"This will delete packages that have been installed before, so you may want "
+"to back up this information before running the command."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:132
+msgid ""
+"```console\n"
+" $ rm -rf \"${XDG_STATE_HOME-$HOME/.local/state}/nix/profiles/profile\"\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:136
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:138
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:140
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:142
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:144
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:146
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:148
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:150
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:152
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:154
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:156
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:158
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:160
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:162
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:164
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:166
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:168
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:170
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:172
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:174
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:176
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:178
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:180
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:182
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile.md:184
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

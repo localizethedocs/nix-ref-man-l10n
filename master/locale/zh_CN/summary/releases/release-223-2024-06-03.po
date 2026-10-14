@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.23.md:1
+msgid "Release 2.23.0 (2024-06-03)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:3
+msgid ""
+"New builtin: `builtins.warn` [\\#306026](https://github.com/NixOS/nix/"
+"issues/306026) [\\#10592](https://github.com/NixOS/nix/pull/10592)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:5
+msgid ""
+"`builtins.warn` behaves like `builtins.trace \"warning: ${msg}\"`, has an "
+"accurate log level, and is controlled by the options [`debugger-on-trace`]"
+"(../command-ref/conf-file.md#conf-debugger-on-trace), [`debugger-on-warn`]"
+"(../command-ref/conf-file.md#conf-debugger-on-warn) and [`abort-on-warn`](../"
+"command-ref/conf-file.md#conf-abort-on-warn)."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:10
+msgid "Make `nix build --keep-going` consistent with `nix-build --keep-going`"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:12
+msgid ""
+"This means that if e.g. multiple fixed-output derivations fail to build, all "
+"hash mismatches are displayed."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:15
+msgid ""
+"Modify `nix derivation {add,show}` JSON format [\\#9866](https://github.com/"
+"NixOS/nix/issues/9866) [\\#10722](https://github.com/NixOS/nix/pull/10722)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:17
+msgid ""
+"The JSON format for derivations has been slightly revised to better conform "
+"to our [data modeling guidelines](../development/data-modeling.md). In "
+"particular, the hash algorithm and content addressing method of content-"
+"addressed derivation outputs are now separated into two fields `hashAlgo` "
+"and `method`, rather than one field with an arcane `:`\\-separated format."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:21
+msgid ""
+"This JSON format is only used by the experimental `nix derivation` family of "
+"commands, at this time. Future revisions are expected as the JSON format is "
+"still not entirely in compliance even after these changes."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:24
+msgid ""
+"Warn on unknown settings anywhere in the command line [\\#10701](https://"
+"github.com/NixOS/nix/pull/10701)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:26
+msgid ""
+"All `nix` commands will now properly warn when an unknown option is "
+"specified anywhere in the command line."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:28 source/release-notes/rl-2.23.md:63
+msgid "Before:"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:38 source/release-notes/rl-2.23.md:69
+msgid "After:"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:50
+msgid ""
+"`nix env shell` is the new `nix shell`, and `nix shell` remains an accepted "
+"alias [\\#10504](https://github.com/NixOS/nix/issues/10504) [\\#10807]"
+"(https://github.com/NixOS/nix/pull/10807)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:52
+msgid ""
+"This is part of an effort to bring more structure to the CLI subcommands."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:54
+msgid ""
+"`nix env` will be about the process environment. Future commands may include "
+"`nix env run` and `nix env print-env`."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:57
+msgid ""
+"It is also somewhat analogous to the [planned](https://github.com/NixOS/nix/"
+"issues/10504) `nix dev shell` (currently `nix develop`), which is less about "
+"environment variables, and more about running a development shell, which is "
+"a more powerful command, but also requires more setup."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:59
+msgid ""
+"Flake operations that expect derivations now print the failing value and its "
+"type [\\#10778](https://github.com/NixOS/nix/pull/10778)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:61
+msgid ""
+"In errors like `flake output attribute 'nixosConfigurations.yuki.config' is "
+"not a derivation or path`, the message now includes the failing value and "
+"type."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:75
+msgid ""
+"`fetchTree` now fetches Git repositories shallowly by default [\\#10028]"
+"(https://github.com/NixOS/nix/pull/10028)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:77
+msgid ""
+"`builtins.fetchTree` now clones Git repositories shallowly by default, which "
+"reduces network traffic and disk usage significantly in many cases."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:79
+msgid ""
+"Previously, the default behavior was to clone the full history of a specific "
+"tag or branch (e.g. `ref`) and only afterwards extract the files of one "
+"specific revision."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:81
+msgid ""
+"From now on, the `ref` and `allRefs` arguments will be ignored, except if "
+"shallow cloning is disabled by setting `shallow = false`."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:83
+msgid ""
+"The defaults for `builtins.fetchGit` remain unchanged. Here, shallow cloning "
+"has to be enabled manually by passing `shallow = true`."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:85
+msgid ""
+"Store object info JSON format now uses `null` rather than omitting fields "
+"[\\#9995](https://github.com/NixOS/nix/pull/9995)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:87
+msgid ""
+"The [store object info JSON format](../protocols/json/store-object-info.md), "
+"used for e.g. `nix path-info`, no longer omits fields to indicate absent "
+"information, but instead includes the fields with a `null` value. For "
+"example, `\"ca\": null` is used to indicate a store object that isn't "
+"content-addressed rather than omitting the `ca` field entirely. This makes "
+"records of this sort more self-describing, and easier to consume "
+"programmatically."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:91
+msgid ""
+"We will follow this design principle going forward; the [data modeling "
+"guidelines](../development/data-modeling.md) in the contributing section "
+"have been updated accordingly."
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:94
+msgid "Large path warnings [\\#10661](https://github.com/NixOS/nix/pull/10661)"
+msgstr ""
+
+#: source/release-notes/rl-2.23.md:96
+msgid ""
+"Nix can now warn when evaluation of a Nix expression causes a large path to "
+"be copied to the Nix store. The threshold for this warning can be configured "
+"using [the `warn-large-path-threshold` setting](../command-ref/conf-file."
+"md#conf-warn-large-path-threshold), e.g. `--warn-large-path-threshold 100M` "
+"will warn about paths larger than 100 MiB."
+msgstr ""

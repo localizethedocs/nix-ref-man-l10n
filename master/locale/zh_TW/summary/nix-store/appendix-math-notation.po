@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/math-notation.md:1
+msgid "Appendix: Math notation"
+msgstr ""
+
+#: source/store/math-notation.md:3
+msgid ""
+"A few times in this manual, formal \"proof trees\" are used for [natural "
+"deduction](https://en.wikipedia.org/wiki/Natural_deduction)\\-style "
+"definition of various [relations](https://en.wikipedia.org/wiki/"
+"Relation_(mathematics))."
+msgstr ""
+
+#: source/store/math-notation.md:5
+msgid ""
+"The following grammar and assignment of metavariables to syntactic "
+"categories is used in these sections."
+msgstr ""
+
+#: source/store/math-notation.md:7
+msgid ""
+"\\\\begin{align} s, t &\\in \\text{store-path} \\\\\\\\ o &\\in "
+"\\text{output-name} \\\\\\\\ i, p &\\in \\text{deriving-path} \\\\\\\\ d "
+"&\\in \\text{derivation} \\\\end{align}"
+msgstr ""
+
+#: source/store/math-notation.md:14
+msgid ""
+"\\\\begin{align} \\\\text{deriving-path} \\quad p &::= s \\mid (p, o) \\"
+"\\end{align}"
+msgstr ""

@@ -1,0 +1,1251 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-store/query.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:3
+msgid "`nix-store --query` - display information about store paths"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:5
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:7
+msgid ""
+"`nix-store` {`--query` | `-q`} {`--outputs` | `--requisites` | `-R` | `--"
+"references` | `--referrers` | `--referrers-closure` | `--deriver` | `-d` | "
+"`--valid-derivers` | `--graph` | `--tree` | `--binding` _name_ | `-b` _name_ "
+"| `--hash` | `--size` | `--roots`} \\[`--use-output`\\] \\[`-u`\\] \\[`--"
+"force-realise`\\] \\[`-f`\\] _paths…_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:15
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:17
+msgid ""
+"The operation `--query` displays various bits of information about the store "
+"paths . The queries are described below. At most one query can be specified. "
+"The default query is `--outputs`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:21
+msgid ""
+"The paths _paths_ may also be symlinks from outside of the Nix store, to the "
+"Nix store. In that case, the query is applied to the target of the symlink."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:25
+msgid "Common query options"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:27
+msgid "`--use-output` / `-u`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:29
+msgid ""
+"For each argument to the query that is a [store derivation](../../glossary."
+"md#gloss-store-derivation), apply the query to the output path of the "
+"derivation instead."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:32
+msgid "`--force-realise` / `-f`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:34
+msgid ""
+"Realise each argument to the query first (see [`nix-store --realise`](./"
+"realise.md))."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:38
+msgid "Queries"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:40
+msgid "`--outputs`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:42
+msgid ""
+"Prints out the [output paths](../../glossary.md#gloss-output-path) of the "
+"store derivations _paths_. These are the paths that will be produced when "
+"the derivation is built."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:48
+msgid "`--references`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:50
+msgid ""
+"Prints the set of [references](../../glossary.md#gloss-reference) of the "
+"store paths _paths_, that is, their immediate dependencies. (For _all_ "
+"dependencies, use `--requisites`.)"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:56
+msgid "`--requisites` / `-R`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:58
+msgid ""
+"Prints out the set of [_requisites_](../../glossary.md#gloss-requisite) "
+"(better known as the [closure](../../glossary.md#gloss-closure)) of the "
+"store path _paths_."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:63
+msgid "This query has one option:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:65
+msgid ""
+"`--include-outputs` Also include the existing output paths of [store "
+"derivation](../../glossary.md#gloss-store-derivation)s, and their closures."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:69
+msgid ""
+"This query can be used to implement various kinds of deployment. A _source "
+"deployment_ is obtained by distributing the closure of a store derivation. A "
+"_binary deployment_ is obtained by distributing the closure of an output "
+"path. A _cache deployment_ (combined source/binary deployment, including "
+"binaries of build-time-only dependencies) is obtained by distributing the "
+"closure of a store derivation and specifying the option `--include-outputs`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:77
+msgid "`--referrers`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:79
+msgid ""
+"Prints the set of [_referrers_](../../glossary.md#gloss-referrer) of the "
+"store paths _paths_, that is, the store paths currently existing in the Nix "
+"store that refer to one of _paths_. Note that contrary to the references, "
+"the set of referrers is not constant; it can change as store paths are added "
+"or removed."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:87
+msgid "`--referrers-closure`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:89
+msgid ""
+"Prints the closure of the set of store paths _paths_ under the [referrers "
+"relation](../../glossary.md#gloss-referrer); that is, all store paths that "
+"directly or indirectly refer to one of _paths_. These are all the path "
+"currently in the Nix store that are dependent on _paths_."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:96
+msgid "`--deriver` / `-d`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:98
+msgid ""
+"Prints the [deriver](../../glossary.md#gloss-deriver) that was used to build "
+"the store paths _paths_. If the path has no deriver (e.g., if it is a source "
+"file), or if the deriver is not known (e.g., in the case of a binary-only "
+"deployment), the string `unknown-deriver` is printed. The returned deriver "
+"is not guaranteed to exist in the local store, for example when _paths_ were "
+"substituted from a binary cache. Use `--valid-derivers` instead to obtain "
+"valid paths only."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:108
+msgid "`--valid-derivers`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:110
+msgid ""
+"Prints a set of derivation files (`.drv`) which are supposed produce said "
+"paths when realized. Might print nothing, for example for source paths or "
+"paths substituted from a binary cache."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:114
+msgid "`--graph`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:116
+msgid ""
+"Prints the references graph of the store paths _paths_ in the format of the "
+"`dot` tool of AT&T's [Graphviz package](http://www.graphviz.org/). This can "
+"be used to visualise dependency graphs. To obtain a build-time dependency "
+"graph, apply this to a store derivation. To obtain a runtime dependency "
+"graph, apply it to an output path."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:123
+msgid "`--tree`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:125
+msgid ""
+"Prints the references graph of the store paths _paths_ as a nested ASCII "
+"tree. References are ordered by descending closure size; this tends to "
+"flatten the tree, making it more readable. The query only recurses into a "
+"store path when it is first encountered; this prevents a blowup of the tree "
+"representation of the graph."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:131
+msgid "`--graphml`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:133
+msgid ""
+"Prints the references graph of the store paths _paths_ in the [GraphML]"
+"(http://graphml.graphdrawing.org/) file format. This can be used to "
+"visualise dependency graphs. To obtain a build-time dependency graph, apply "
+"this to a [store derivation](../../glossary.md#gloss-store-derivation). To "
+"obtain a runtime dependency graph, apply it to an output path."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:139
+msgid "`--binding` _name_ / `-b` _name_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:141
+msgid ""
+"Prints the value of the attribute _name_ (i.e., environment variable) of the "
+"[store derivation](../../glossary.md#gloss-store-derivation)s _paths_. It is "
+"an error for a derivation to not have the specified attribute."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:145
+msgid "`--hash`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:147
+msgid ""
+"Prints the SHA-256 hash of the contents of the store paths _paths_ (that is, "
+"the hash of the output of `nix-store --dump` on the given paths). Since the "
+"hash is stored in the Nix database, this is a fast operation."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:152
+msgid "`--size`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:154
+msgid ""
+"Prints the size in bytes of the contents of the store paths _paths_ — to be "
+"precise, the size of the output of `nix-store --dump` on the given paths. "
+"Note that the actual disk space required by the store paths may be higher, "
+"especially on filesystems with large cluster sizes."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:160
+msgid "`--roots`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:162
+msgid ""
+"Prints the garbage collector roots that point, directly or indirectly, at "
+"the store paths _paths_."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:165
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:167
+msgid ""
+"The following options are allowed for all `nix-store` operations, but may "
+"not always have an effect."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:169
+msgid "<span id=\"opt-add-root\">[`--add-root`](#opt-add-root)</span> _path_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:171
+msgid ""
+"Causes the result of a realisation (`--realise` and `--force-realise`) to be "
+"registered as a root of the garbage collector. _path_ will be created as a "
+"symlink to the resulting store path. In addition, a uniquely named symlink "
+"to _path_ will be created in `/nix/var/nix/gcroots/auto/`. For instance,"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:187
+msgid ""
+"Thus, when `/home/eelco/bla/result` is removed, the GC root in the `auto` "
+"directory becomes a dangling symlink and will be ignored by the collector."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:191
+#: source/command-ref/nix-store/query.md:276
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:193
+msgid ""
+"Note that it is not possible to move or rename GC roots, since the symlink "
+"in the `auto` directory will still point to the old location."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:197
+msgid ""
+"If there are multiple results, then multiple symlinks will be created by "
+"sequentially numbering symlinks beyond the first one (e.g., `foo`, `foo-2`, "
+"`foo-3`, and so on)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:207
+msgid "Common Options"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:209
+msgid "Most Nix commands accept the following command-line options:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:211
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:213
+msgid "Prints out a summary of the command syntax and exits."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:215
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:217
+msgid "Prints out the Nix version number on standard output and exits."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:219
+msgid ""
+"For machine-readable output, including versions of the libraries Nix links "
+"against, see the [`nix version`](../../command-ref/new-cli/nix3-version.md) "
+"command."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:222
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:224
+msgid ""
+"Increases the level of verbosity of diagnostic messages printed on standard "
+"error. For each Nix operation, the information printed on standard output is "
+"well-defined; any diagnostic information is printed on standard error, never "
+"on standard output."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:228
+msgid ""
+"This option may be specified repeatedly. Currently, the following verbosity "
+"levels exist:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:231
+msgid "`0` “Errors only”"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:233
+msgid "Only print messages explaining why the Nix invocation failed."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:235
+msgid "`1` “Informational”"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:237
+msgid "Print _useful_ messages about what Nix is doing. This is the default."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:240
+msgid "`2` “Talkative”"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:242
+msgid "Print more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:244
+msgid "`3` “Chatty”"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:246
+msgid "Print even more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:248
+msgid "`4` “Debug”"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:250
+msgid "Print debug information."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:252
+msgid "`5` “Vomit”"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:254
+msgid "Print vast amounts of debug information."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:256
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:258
+msgid ""
+"Decreases the level of verbosity of diagnostic messages printed on standard "
+"error. This is the inverse option to `-v` / `--verbose`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:261
+msgid ""
+"This option may be specified repeatedly. See the previous verbosity levels "
+"list."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:264
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:266
+msgid ""
+"This option can be used to change the output of the log format, with "
+"_format_ being one of:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:268
+msgid "`raw`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:270
+msgid "This is the raw format, as outputted by nix-build."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:272
+msgid "`internal-json`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:274
+msgid "Outputs the logs in a structured manner."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:278
+msgid ""
+"While the schema itself is relatively stable, the format of the error-"
+"messages (namely of the `msg`\\-field) can change between releases."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:282
+msgid "`bar`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:284
+msgid "Only display a progress bar during the builds."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:286
+msgid "`bar-with-logs`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:288
+msgid "Display the raw logs, with the progress bar at the bottom."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:290
+msgid ""
+"<span id=\"opt-no-build-output\">[`--no-build-output`](#opt-no-build-"
+"output)</span> / `-Q`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:292
+msgid ""
+"By default, output written by builders to standard output and standard error "
+"is echoed to the Nix command's standard error. This option suppresses this "
+"behaviour. Note that the builder's standard output and error are always "
+"written to a log file in `prefix/nix/var/log/nix`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:296
+msgid ""
+"<span id=\"opt-max-jobs\">[`--max-jobs`](#opt-max-jobs)</span> / `-j` "
+"_number_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:298
+msgid ""
+"Sets the maximum number of build jobs that Nix will perform in parallel to "
+"the specified number. Specify `auto` to use the number of CPUs in the "
+"system. The default is specified by the `max-jobs` configuration setting, "
+"which itself defaults to `1`. A higher value is useful on SMP systems or to "
+"exploit I/O latency."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:303
+msgid ""
+"Setting it to `0` disallows building on the local machine, which is useful "
+"when you want builds to happen only on remote builders."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:305
+msgid "<span id=\"opt-cores\">[`--cores`](#opt-cores)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:307
+msgid ""
+"Sets the value of the `NIX_BUILD_CORES` environment variable in the "
+"invocation of builders. Builders can use this variable at their discretion "
+"to control the maximum amount of parallelism. For instance, in Nixpkgs, if "
+"the derivation attribute `enableParallelBuilding` is set to `true`, the "
+"builder passes the `-jN` flag to GNU Make. It defaults to the value of the "
+"`cores` configuration setting, if set, or `1` otherwise. The value `0` means "
+"that the builder should use all available CPU cores in the system."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:313
+msgid ""
+"<span id=\"opt-max-silent-time\">[`--max-silent-time`](#opt-max-silent-"
+"time)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:315
+msgid ""
+"Sets the maximum number of seconds that a builder can go without producing "
+"any data on standard output or standard error. The default is specified by "
+"the `max-silent-time` configuration setting. `0` means no time-out."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:319
+msgid "<span id=\"opt-timeout\">[`--timeout`](#opt-timeout)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:321
+msgid ""
+"Sets the maximum number of seconds that a builder can run. The default is "
+"specified by the `timeout` configuration setting. `0` means no timeout."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:325
+msgid ""
+"<span id=\"opt-keep-going\">[`--keep-going`](#opt-keep-going)</span> / `-k`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:327
+msgid ""
+"Keep going in case of failed builds, to the greatest extent possible. That "
+"is, if building an input of some derivation fails, Nix will still build the "
+"other inputs, but not the derivation itself. Without this option, Nix stops "
+"if any build fails (except for builds of substitutes), possibly killing "
+"builds in progress (in case of parallel or distributed builds)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:331
+msgid ""
+"<span id=\"opt-keep-failed\">[`--keep-failed`](#opt-keep-failed)</span> / `-"
+"K`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:333
+msgid ""
+"Specifies that in case of a build failure, the temporary directory (usually "
+"in `/tmp`) in which the build takes place should not be deleted. The path of "
+"the build directory is printed as an informational message."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:336
+msgid "<span id=\"opt-fallback\">[`--fallback`](#opt-fallback)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:338
+msgid ""
+"Whenever Nix attempts to build a derivation for which substitutes are known "
+"for each output path, but realising the output paths through the substitutes "
+"fails, fall back on building the derivation."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:340
+msgid ""
+"The most common scenario in which this is useful is when we have registered "
+"substitutes in order to perform binary distribution from, say, a network "
+"repository. If the repository is down, the realisation of the derivation "
+"will fail. When this option is specified, Nix will build the derivation "
+"instead. Thus, installation from binaries falls back on installation from "
+"source. This option is not the default since it is generally not desirable "
+"for a transient failure in obtaining the substitutes to lead to a full build "
+"from source (with the related consumption of resources)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:346
+msgid ""
+"<span id=\"opt-readonly-mode\">[`--readonly-mode`](#opt-readonly-mode)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:348
+msgid ""
+"When this option is used, no attempt is made to open the Nix database. Most "
+"Nix operations do need database access, so those operations will fail."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:351
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:353
+msgid ""
+"This option is accepted by `nix-env`, `nix-instantiate`, `nix-shell` and "
+"`nix-build`. When evaluating Nix expressions, the expression evaluator will "
+"automatically try to call functions that it encounters. It can automatically "
+"call functions for which every argument has a [default value](../../language/"
+"syntax.md#functions) (e.g., `{ argName ?  defaultValue }: ...`)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:357
+msgid ""
+"With `--arg`, you can also call functions that have arguments without a "
+"default value (or override a default value). That is, if the evaluator "
+"encounters a function with an argument named _name_, it will call it with "
+"value _value_."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:360
+msgid ""
+"For instance, the top-level `default.nix` in Nixpkgs is actually a function:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:369
+msgid ""
+"So if you call this Nix expression (e.g., when you do `nix-env --install --"
+"attr pkgname`), the function will be called automatically using the value "
+"[`builtins.currentSystem`](../../language/builtins.md) for the `system` "
+"argument. You can override this using `--arg`, e.g., `nix-env --install --"
+"attr pkgname --arg system \\\"i686-freebsd\\\"`. (Note that since the "
+"argument is a Nix string literal, you have to escape the quotes.)"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:373
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:375
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:377
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:379
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:381
+msgid "<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:383
+msgid ""
+"This option is like `--arg`, only the value is not a Nix expression but a "
+"string. So instead of `--arg system \\\"i686-linux\\\"` (the outer quotes "
+"are to keep the shell happy) you can say `--argstr system i686-linux`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:386
+msgid "<span id=\"opt-attr\">[`--attr`](#opt-attr)</span> / `-A` _attrPath_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:388
+msgid ""
+"Select an attribute from the top-level Nix expression being evaluated. (`nix-"
+"env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
+"path_ _attrPath_ is a sequence of attribute names separated by dots. For "
+"instance, given a top-level Nix expression _e_, the attribute path `xorg."
+"xorgserver` would cause the expression `e.xorg.xorgserver` to be used. See "
+"[`nix-env --install`](../../command-ref/nix-env/install.md) for some "
+"concrete examples."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:394
+msgid ""
+"In addition to attribute names, you can also specify array indices. For "
+"instance, the attribute path `foo.3.bar` selects the `bar` attribute of the "
+"fourth element of the array in the `foo` attribute of the top-level "
+"expression."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:399
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:401
+msgid ""
+"The [URL to the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. where to store derivations (`.drv` files) and "
+"inputs referenced by them."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:403
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> / `-E`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:405
+msgid ""
+"Interpret the command line arguments as a list of Nix expressions to be "
+"parsed and evaluated, rather than as a list of file names of Nix "
+"expressions. (`nix-instantiate`, `nix-build` and `nix-shell` only.)"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:408
+msgid ""
+"For `nix-shell`, this option is commonly used to give you a shell in which "
+"you can build the packages returned by the expression. If you want to get a "
+"shell which contain the _built_ packages ready for use, give your expression "
+"to the `nix-shell --packages ` convenience flag instead."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:411
+msgid "<span id=\"opt-I\">[`-I` / `--include`](#opt-I)</span> _path_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:413
+msgid ""
+"Add an entry to the list of search paths used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md). This option may be given "
+"multiple times."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:416
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:418
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:420
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:422
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:424
+msgid ""
+"Set the Nix configuration option _name_ to _value_. This overrides settings "
+"in the Nix configuration file (see nix.conf5)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:427
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:429
+msgid ""
+"Fix corrupted or missing store paths by redownloading or rebuilding them. "
+"Note that this is slow because it requires computing a cryptographic hash of "
+"the contents of every path in the closure of the build. Also note the "
+"warning under `nix-store --repair-path`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:433
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:435
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:438
+msgid "Common Environment Variables"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:440
+msgid "Most Nix commands interpret the following environment variables."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:442
+msgid "Configuration environment variables"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:444
+msgid ""
+"The following environment variables affect how Nix loads its configuration. "
+"See the [configuration file](../../command-ref/conf-file.md#configuration-"
+"file) documentation for full details."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:447
+msgid ""
+"<span id=\"env-NIX_CONF_DIR\">[`NIX_CONF_DIR`](#env-NIX_CONF_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:449
+msgid "Overrides the system configuration directory."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:451
+msgid ""
+"<span id=\"env-NIX_USER_CONF_FILES\">[`NIX_USER_CONF_FILES`](#env-"
+"NIX_USER_CONF_FILES)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:453
+msgid "Overrides the user configuration file locations."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:455
+msgid "<span id=\"env-NIX_CONFIG\">[`NIX_CONFIG`](#env-NIX_CONFIG)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:457
+msgid "Provides configuration settings inline."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:459
+msgid "Store setting environment variables"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:461
+msgid ""
+"<span id=\"env-NIX_IGNORE_SYMLINK_STORE\">[`NIX_IGNORE_SYMLINK_STORE`](#env-"
+"NIX_IGNORE_SYMLINK_STORE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:463
+msgid ""
+"Normally, the Nix store directory (typically `/nix/store`) is not allowed to "
+"contain any symlink components. This is to prevent “impure” builds. Builders "
+"sometimes “canonicalise” paths by resolving all symlink components. Thus, "
+"builds on different machines (with `/nix/store` resolving to different "
+"locations) could yield different results. This is generally not a problem, "
+"except when builds are deployed to machines where `/nix/store` resolves "
+"differently. If you are sure that you’re not going to do that, you can set "
+"`NIX_IGNORE_SYMLINK_STORE` to `1`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:473
+msgid ""
+"Note that if you’re symlinking the Nix store so that you can put it on "
+"another file system than the root file system, on Linux you’re better off "
+"using `bind` mount points, e.g.,"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:482
+msgid "Consult the mount 8 manual page for details."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:484
+msgid ""
+"<span id=\"env-NIX_STORE_DIR\">[`NIX_STORE_DIR`](#env-NIX_STORE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:486
+msgid ""
+"Overrides the location of the Nix store. On Unix, the default is `/nix/"
+"store`, set at compile time by the `libstore:store-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\store`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:490
+msgid ""
+"See the [Store Types](../../store/types/index.md) chapter; each store has a "
+"`store` setting linking back to this as its default."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:492
+msgid "<span id=\"env-NIX_LOG_DIR\">[`NIX_LOG_DIR`](#env-NIX_LOG_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:494
+msgid ""
+"Overrides the location of the Nix log directory. On Unix, the default is `/"
+"nix/var/log/nix`, set at compile time by the `log-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\log`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:498
+#: source/command-ref/nix-store/query.md:506
+msgid ""
+"The [Local Store](../../store/types/local-store.md), [Local Daemon Store]"
+"(../../store/types/local-daemon-store.md), and [Experimental SSH Store with "
+"filesystem mounted](../../store/types/experimental-ssh-store-with-filesystem-"
+"mounted.md) have per-store settings that override this."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:500
+msgid ""
+"<span id=\"env-NIX_STATE_DIR\">[`NIX_STATE_DIR`](#env-NIX_STATE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:502
+msgid ""
+"Overrides the location of the Nix state directory. On Unix, the default is "
+"`${localstatedir}/nix`, where `localstatedir` is a compile-time build option "
+"defaulting to `/nix/var`. On Windows, there is no compile-time setting; the "
+"default is `%PROGRAMDATA%\\nix\\state`, determined at runtime using the "
+"[`%PROGRAMDATA%` Known Folder](#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:508
+msgid ""
+"<span id=\"env-NIX_DAEMON_SOCKET_PATH\">[`NIX_DAEMON_SOCKET_PATH`](#env-"
+"NIX_DAEMON_SOCKET_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:510
+msgid ""
+"Overrides the path to the Unix domain socket used to communicate with the "
+"Nix daemon. Defaults to `daemon-socket/socket` within the state directory "
+"(see [`NIX_STATE_DIR`](#env-NIX_STATE_DIR))."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:513
+msgid ""
+"See the [Local Daemon Store](../../store/types/local-daemon-store.md) "
+"documentation for details on how the socket path is resolved."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:515
+msgid "<span id=\"env-TMPDIR\">[`TMPDIR`](#env-TMPDIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:517
+msgid ""
+"Use the specified directory to store temporary files. In particular, this "
+"includes temporary build directories; these can take up substantial amounts "
+"of disk space. The default is `/tmp`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:521
+msgid "<span id=\"env-NIX_REMOTE\">[`NIX_REMOTE`](#env-NIX_REMOTE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:523
+msgid ""
+"Overrides the [`store`](../../command-ref/conf-file.md#conf-store) setting."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:531
+msgid "Nix language evaluator settings"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:533
+msgid ""
+"<span id=\"env-NIX_SHOW_STATS\">[`NIX_SHOW_STATS`](#env-NIX_SHOW_STATS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:535
+msgid ""
+"If set to `1`, Nix will print some evaluation statistics, such as the number "
+"of values allocated."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:538
+msgid ""
+"<span id=\"env-NIX_COUNT_CALLS\">[`NIX_COUNT_CALLS`](#env-NIX_COUNT_CALLS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:540
+msgid ""
+"If set to `1`, Nix will print how often functions were called during Nix "
+"expression evaluation. This is useful for profiling your Nix expressions."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:544
+msgid ""
+"<span id=\"env-GC_INITIAL_HEAP_SIZE\">[`GC_INITIAL_HEAP_SIZE`](#env-"
+"GC_INITIAL_HEAP_SIZE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:546
+msgid ""
+"If Nix has been configured to use the Boehm garbage collector, this variable "
+"sets the initial size of the heap in bytes. It defaults to 384 MiB. Setting "
+"it to a low value reduces memory consumption, but will increase runtime due "
+"to the overhead of garbage collection."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:551
+msgid "<span id=\"env-NIX_PATH\">[`NIX_PATH`](#env-NIX_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:553
+msgid ""
+"A colon-separated list of search path entries used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:555
+msgid ""
+"This environment variable overrides the value of the [`nix-path` "
+"configuration setting](../../command-ref/conf-file.md#conf-nix-path)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:557
+msgid ""
+"It can be extended using the [`-I` option](../../command-ref/opt-common."
+"md#opt-I)."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:559
+#: source/command-ref/nix-store/query.md:567
+msgid "**Example**"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:565
+msgid ""
+"If `NIX_PATH` is set to an empty string, resolving search paths will always "
+"fail."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:570
+msgid "'<nixpkgs>'"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:571
+msgid "'nixpkgs'"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:574
+msgid "User Directories"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:576
+msgid ""
+"Nix supports per-user **configuration**, **state**, and **cache** "
+"directories. The following environment variables override the locations for "
+"these directories:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:579
+msgid ""
+"\\[user configuration directory\\]{#user-conf-dir}: \\[`NIX_CONFIG_HOME`\\]"
+"{#env-NIX_CONFIG_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:580
+msgid "user state directory: \\[`NIX_STATE_HOME`\\]{#env-NIX_STATE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:581
+msgid "user cache directory: \\[`NIX_CACHE_HOME`\\]{#env-NIX_CACHE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:583
+msgid "When these are not set, the defaults depend on the platform:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:585
+msgid ""
+"On Unix, the [XDG base directories](#xdg-base-directories): "
+"`$XDG_CONFIG_HOME/nix`, `$XDG_STATE_HOME/nix`, `$XDG_CACHE_HOME/nix`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:586
+msgid ""
+"On Windows, the [Windows Known Folders](#known-folders): `%APPDATA%"
+"\\nix\\config`, `%LOCALAPPDATA%\\nix\\state`, `%LOCALAPPDATA%\\nix\\cache`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:590
+msgid ""
+"For backwards compatibility, legacy Nix commands (e.g. `nix-env`, `nix-"
+"channel`) use dotfiles in `$HOME` instead of these directories unless [`use-"
+"xdg-base-directories`](../../command-ref/conf-file.md#conf-use-xdg-base-"
+"directories) is enabled. [New Nix commands](../../command-ref/new-cli/nix."
+"md) (experimental) use the proper directories by default."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:593
+msgid ""
+"When [`use-xdg-base-directories`](../../command-ref/conf-file.md#conf-use-"
+"xdg-base-directories) is enabled, the configuration directory is resolved as:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:595
+msgid "`$NIX_CONFIG_HOME`, if it is defined"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:596
+msgid "Otherwise, the platform default (e.g. `$XDG_CONFIG_HOME/nix` on Unix)"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:598
+msgid "Likewise for the state and cache directories."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:600
+msgid "Miscellaneous environment variables"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:602
+msgid ""
+"<span id=\"env-IN_NIX_SHELL\">[`IN_NIX_SHELL`](#env-IN_NIX_SHELL)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:604
+msgid ""
+"Indicator that tells if the current environment was set up by `nix-shell`. "
+"It can have the values `pure` or `impure`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:607
+msgid "Appendix: OS-specific conventions"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:609
+msgid "This information is not Nix-specific, but is referenced above."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:611
+msgid "Unix: XDG Base Directories"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:613
+msgid ""
+"The [XDG Base Directory Specification](https://specifications.freedesktop."
+"org/basedir-spec/basedir-spec-latest.html) defines standard locations for "
+"user-specific configuration, state, and cache files on Unix systems."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:617
+msgid "The following environment variables are used:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:619
+msgid "\\[`XDG_CONFIG_HOME`\\]{#env-XDG_CONFIG_HOME} (default `~/.config`)"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:620
+msgid "\\[`XDG_STATE_HOME`\\]{#env-XDG_STATE_HOME} (default `~/.local/state`)"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:621
+msgid "\\[`XDG_CACHE_HOME`\\]{#env-XDG_CACHE_HOME} (default `~/.cache`)"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:622
+msgid ""
+"\\[`XDG_CONFIG_DIRS`\\]{#env-XDG_CONFIG_DIRS} (default `/etc/xdg`) — colon-"
+"separated list of additional configuration base directories, searched after "
+"`XDG_CONFIG_HOME`"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:624
+msgid "Windows: Known Folders"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:626
+msgid ""
+"On Windows, [Known Folders](https://learn.microsoft.com/en-us/windows/win32/"
+"shell/known-folders) provide standard locations for application data on "
+"Windows."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:630
+msgid "The relevant folders are:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:632
+msgid "\\[`%APPDATA%`\\]{#env-APPDATA} — per-user roaming application data"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:633
+msgid ""
+"\\[`%LOCALAPPDATA%`\\]{#env-LOCALAPPDATA} — per-user local application data"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:634
+msgid "\\[`%PROGRAMDATA%`\\]{#env-PROGRAMDATA} — system-wide application data"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:637
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:639
+msgid ""
+"Print the closure (runtime dependencies) of the `svn` program in the current "
+"user environment:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:649
+msgid "Print the build-time dependencies of `svn`:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:659
+msgid ""
+"The difference with the previous example is that we ask the closure of the "
+"derivation (`-qd`), not the closure of the output path that contains `svn`."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:663
+msgid "Show the build-time dependencies as a tree:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:675
+msgid "Show all paths that depend on the same OpenSSL library as `svn`:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:685
+msgid ""
+"Show all paths that directly or indirectly depend on the Glibc (C library) "
+"used by `svn`:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:695
+msgid ""
+"Note that `ldd` is a command that prints out the dynamic libraries used by "
+"an ELF executable."
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:698
+msgid ""
+"Make a picture of the runtime dependency graph of the current user "
+"environment:"
+msgstr ""
+
+#: source/command-ref/nix-store/query.md:706
+msgid ""
+"Show every garbage collector root that points to a store path that depends "
+"on `svn`:"
+msgstr ""

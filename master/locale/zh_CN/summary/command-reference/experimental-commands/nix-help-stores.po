@@ -1,0 +1,3024 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:8
+msgid "`nix help-stores` - show help about store types and their settings"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:12
+msgid "`nix help-stores` \\[_option_...\\]"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:14
+msgid "Nix supports different types of stores:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:16
+msgid "[Dummy Store](#dummy-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:17
+msgid "[Experimental Local Overlay Store](#experimental-local-overlay-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:18
+msgid "[Experimental SSH Store](#experimental-ssh-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:19
+msgid ""
+"[Experimental SSH Store with filesystem mounted](#experimental-ssh-store-"
+"with-filesystem-mounted)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:20
+msgid "[HTTP Binary Cache Store](#http-binary-cache-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:21
+msgid "[Local Binary Cache Store](#local-binary-cache-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:22
+msgid "[Local Daemon Store](#local-daemon-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:23
+msgid "[Local Store](#local-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:24
+msgid "[S3 Binary Cache Store](#s3-binary-cache-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:25
+msgid "[SSH Store](#ssh-store)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:27
+msgid "Store URL format"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:29
+msgid "Stores are specified using a URL-like syntax. For example, the command"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:31
+msgid ""
+"```console\n"
+"# nix path-info --store https://cache.nixos.org/ --json \\\n"
+"  /nix/store/1542dip9i7k4f24y6hqgd04hmvid9hr5-coreutils-9.1\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:36
+msgid ""
+"fetches information about a store path in the HTTP binary cache located at "
+"https://cache.nixos.org/, which is a type of store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:39
+msgid ""
+"Store URLs can specify **store settings** using URL query strings, i.e. by "
+"appending `?name1=value1&name2=value2&...` to the URL. For instance,"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:43
+msgid ""
+"```\n"
+"--store ssh://machine.example.org?ssh-key=/path/to/my/key\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:47
+msgid ""
+"tells Nix to access the store on a remote machine via the SSH protocol, "
+"using `/path/to/my/key` as the SSH private key. The supported settings for "
+"each store type are documented below."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:51
+msgid "`auto` special URL"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:53
+msgid ""
+"The special store URL `auto` causes Nix to automatically select a store as "
+"follows:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:56
+msgid ""
+"Use the [local store](#local-store) `/nix/store` if `/nix/var/nix` is "
+"writable by the current user."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:59
+msgid ""
+"Otherwise, if `/nix/var/nix/daemon-socket/socket` exists, [connect to the "
+"Nix daemon listening on that socket](#local-daemon-store)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:62
+msgid ""
+"Otherwise, on Linux only, use the [local chroot store](../../store/types/"
+"local-store.md#chroot) `~/.local/share/nix/root`, which will be created "
+"automatically if it does not exist."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:66
+msgid "Otherwise, use the [local store](#local-store) `/nix/store`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:68
+msgid "Dummy Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:70
+msgid "**Store URL format**: `dummy://`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:72
+msgid ""
+"This store type represents a store in memory. Store objects can be read and "
+"written, but only so long as the store is open. Once the store is closed, "
+"all data will be discarded."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:76
+msgid ""
+"It's useful when you want to use the Nix evaluator when no actual Nix store "
+"exists, e.g."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:78
+msgid ""
+"```console\n"
+"# nix eval --store dummy:// --expr '1 + 2'\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:82
+#: source/command-ref/new-cli/nix3-help-stores.md:280
+#: source/command-ref/new-cli/nix3-help-stores.md:530
+#: source/command-ref/new-cli/nix3-help-stores.md:659
+#: source/command-ref/new-cli/nix3-help-stores.md:758
+#: source/command-ref/new-cli/nix3-help-stores.md:931
+#: source/command-ref/new-cli/nix3-help-stores.md:1049
+#: source/command-ref/new-cli/nix3-help-stores.md:1179
+#: source/command-ref/new-cli/nix3-help-stores.md:1459
+#: source/command-ref/new-cli/nix3-help-stores.md:1717
+msgid "Settings"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:84
+msgid ""
+"<span id=\"store-dummy-store-path-info-cache-size\">[`path-info-cache-size`]"
+"(#store-dummy-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:86
+#: source/command-ref/new-cli/nix3-help-stores.md:362
+#: source/command-ref/new-cli/nix3-help-stores.md:566
+#: source/command-ref/new-cli/nix3-help-stores.md:687
+#: source/command-ref/new-cli/nix3-help-stores.md:818
+#: source/command-ref/new-cli/nix3-help-stores.md:971
+#: source/command-ref/new-cli/nix3-help-stores.md:1073
+#: source/command-ref/new-cli/nix3-help-stores.md:1239
+#: source/command-ref/new-cli/nix3-help-stores.md:1566
+#: source/command-ref/new-cli/nix3-help-stores.md:1745
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:88
+#: source/command-ref/new-cli/nix3-help-stores.md:364
+#: source/command-ref/new-cli/nix3-help-stores.md:568
+#: source/command-ref/new-cli/nix3-help-stores.md:689
+#: source/command-ref/new-cli/nix3-help-stores.md:820
+#: source/command-ref/new-cli/nix3-help-stores.md:973
+#: source/command-ref/new-cli/nix3-help-stores.md:1075
+#: source/command-ref/new-cli/nix3-help-stores.md:1241
+#: source/command-ref/new-cli/nix3-help-stores.md:1568
+#: source/command-ref/new-cli/nix3-help-stores.md:1747
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:90
+msgid ""
+"<span id=\"store-dummy-store-priority\">[`priority`](#store-dummy-store-"
+"priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:92
+#: source/command-ref/new-cli/nix3-help-stores.md:368
+#: source/command-ref/new-cli/nix3-help-stores.md:572
+#: source/command-ref/new-cli/nix3-help-stores.md:693
+#: source/command-ref/new-cli/nix3-help-stores.md:824
+#: source/command-ref/new-cli/nix3-help-stores.md:977
+#: source/command-ref/new-cli/nix3-help-stores.md:1079
+#: source/command-ref/new-cli/nix3-help-stores.md:1245
+#: source/command-ref/new-cli/nix3-help-stores.md:1572
+#: source/command-ref/new-cli/nix3-help-stores.md:1751
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:95
+#: source/command-ref/new-cli/nix3-help-stores.md:371
+#: source/command-ref/new-cli/nix3-help-stores.md:575
+#: source/command-ref/new-cli/nix3-help-stores.md:696
+#: source/command-ref/new-cli/nix3-help-stores.md:827
+#: source/command-ref/new-cli/nix3-help-stores.md:833
+#: source/command-ref/new-cli/nix3-help-stores.md:839
+#: source/command-ref/new-cli/nix3-help-stores.md:845
+#: source/command-ref/new-cli/nix3-help-stores.md:851
+#: source/command-ref/new-cli/nix3-help-stores.md:980
+#: source/command-ref/new-cli/nix3-help-stores.md:1082
+#: source/command-ref/new-cli/nix3-help-stores.md:1248
+#: source/command-ref/new-cli/nix3-help-stores.md:1575
+#: source/command-ref/new-cli/nix3-help-stores.md:1596
+#: source/command-ref/new-cli/nix3-help-stores.md:1602
+#: source/command-ref/new-cli/nix3-help-stores.md:1608
+#: source/command-ref/new-cli/nix3-help-stores.md:1614
+#: source/command-ref/new-cli/nix3-help-stores.md:1754
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:97
+msgid ""
+"<span id=\"store-dummy-store-read-only\">[`read-only`](#store-dummy-store-"
+"read-only)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:99
+msgid ""
+"Make any sort of write fail instead of succeeding. No additional memory will "
+"be used, because no information needs to be stored."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:102
+#: source/command-ref/new-cli/nix3-help-stores.md:317
+#: source/command-ref/new-cli/nix3-help-stores.md:415
+#: source/command-ref/new-cli/nix3-help-stores.md:1278
+msgid "**Default:** `true`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:104
+msgid ""
+"<span id=\"store-dummy-store-store\">[`store`](#store-dummy-store-store)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:106
+#: source/command-ref/new-cli/nix3-help-stores.md:433
+#: source/command-ref/new-cli/nix3-help-stores.md:621
+#: source/command-ref/new-cli/nix3-help-stores.md:720
+#: source/command-ref/new-cli/nix3-help-stores.md:867
+#: source/command-ref/new-cli/nix3-help-stores.md:996
+#: source/command-ref/new-cli/nix3-help-stores.md:1108
+#: source/command-ref/new-cli/nix3-help-stores.md:1296
+#: source/command-ref/new-cli/nix3-help-stores.md:1661
+#: source/command-ref/new-cli/nix3-help-stores.md:1778
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:108
+#: source/command-ref/new-cli/nix3-help-stores.md:435
+#: source/command-ref/new-cli/nix3-help-stores.md:623
+#: source/command-ref/new-cli/nix3-help-stores.md:722
+#: source/command-ref/new-cli/nix3-help-stores.md:869
+#: source/command-ref/new-cli/nix3-help-stores.md:998
+#: source/command-ref/new-cli/nix3-help-stores.md:1110
+#: source/command-ref/new-cli/nix3-help-stores.md:1298
+#: source/command-ref/new-cli/nix3-help-stores.md:1663
+#: source/command-ref/new-cli/nix3-help-stores.md:1780
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:110
+#: source/command-ref/new-cli/nix3-help-stores.md:437
+#: source/command-ref/new-cli/nix3-help-stores.md:625
+#: source/command-ref/new-cli/nix3-help-stores.md:724
+#: source/command-ref/new-cli/nix3-help-stores.md:871
+#: source/command-ref/new-cli/nix3-help-stores.md:1000
+#: source/command-ref/new-cli/nix3-help-stores.md:1112
+#: source/command-ref/new-cli/nix3-help-stores.md:1300
+#: source/command-ref/new-cli/nix3-help-stores.md:1665
+#: source/command-ref/new-cli/nix3-help-stores.md:1782
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:112
+#: source/command-ref/new-cli/nix3-help-stores.md:395
+#: source/command-ref/new-cli/nix3-help-stores.md:439
+#: source/command-ref/new-cli/nix3-help-stores.md:583
+#: source/command-ref/new-cli/nix3-help-stores.md:627
+#: source/command-ref/new-cli/nix3-help-stores.md:726
+#: source/command-ref/new-cli/nix3-help-stores.md:873
+#: source/command-ref/new-cli/nix3-help-stores.md:1002
+#: source/command-ref/new-cli/nix3-help-stores.md:1090
+#: source/command-ref/new-cli/nix3-help-stores.md:1114
+#: source/command-ref/new-cli/nix3-help-stores.md:1272
+#: source/command-ref/new-cli/nix3-help-stores.md:1302
+#: source/command-ref/new-cli/nix3-help-stores.md:1667
+#: source/command-ref/new-cli/nix3-help-stores.md:1784
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:114
+msgid ""
+"<span id=\"store-dummy-store-system-features\">[`system-features`](#store-"
+"dummy-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:116
+#: source/command-ref/new-cli/nix3-help-stores.md:443
+#: source/command-ref/new-cli/nix3-help-stores.md:631
+#: source/command-ref/new-cli/nix3-help-stores.md:730
+#: source/command-ref/new-cli/nix3-help-stores.md:877
+#: source/command-ref/new-cli/nix3-help-stores.md:1006
+#: source/command-ref/new-cli/nix3-help-stores.md:1118
+#: source/command-ref/new-cli/nix3-help-stores.md:1306
+#: source/command-ref/new-cli/nix3-help-stores.md:1671
+#: source/command-ref/new-cli/nix3-help-stores.md:1788
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:118
+#: source/command-ref/new-cli/nix3-help-stores.md:445
+#: source/command-ref/new-cli/nix3-help-stores.md:633
+#: source/command-ref/new-cli/nix3-help-stores.md:732
+#: source/command-ref/new-cli/nix3-help-stores.md:879
+#: source/command-ref/new-cli/nix3-help-stores.md:1008
+#: source/command-ref/new-cli/nix3-help-stores.md:1120
+#: source/command-ref/new-cli/nix3-help-stores.md:1308
+#: source/command-ref/new-cli/nix3-help-stores.md:1673
+#: source/command-ref/new-cli/nix3-help-stores.md:1790
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:120
+#: source/command-ref/new-cli/nix3-help-stores.md:447
+#: source/command-ref/new-cli/nix3-help-stores.md:635
+#: source/command-ref/new-cli/nix3-help-stores.md:734
+#: source/command-ref/new-cli/nix3-help-stores.md:881
+#: source/command-ref/new-cli/nix3-help-stores.md:1010
+#: source/command-ref/new-cli/nix3-help-stores.md:1122
+#: source/command-ref/new-cli/nix3-help-stores.md:1310
+#: source/command-ref/new-cli/nix3-help-stores.md:1675
+#: source/command-ref/new-cli/nix3-help-stores.md:1792
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:122
+msgid ""
+"<span id=\"store-dummy-store-trusted\">[`trusted`](#store-dummy-store-"
+"trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:124
+#: source/command-ref/new-cli/nix3-help-stores.md:451
+#: source/command-ref/new-cli/nix3-help-stores.md:639
+#: source/command-ref/new-cli/nix3-help-stores.md:738
+#: source/command-ref/new-cli/nix3-help-stores.md:897
+#: source/command-ref/new-cli/nix3-help-stores.md:1014
+#: source/command-ref/new-cli/nix3-help-stores.md:1126
+#: source/command-ref/new-cli/nix3-help-stores.md:1314
+#: source/command-ref/new-cli/nix3-help-stores.md:1691
+#: source/command-ref/new-cli/nix3-help-stores.md:1796
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:129
+#: source/command-ref/new-cli/nix3-help-stores.md:135
+#: source/command-ref/new-cli/nix3-help-stores.md:340
+#: source/command-ref/new-cli/nix3-help-stores.md:387
+#: source/command-ref/new-cli/nix3-help-stores.md:456
+#: source/command-ref/new-cli/nix3-help-stores.md:490
+#: source/command-ref/new-cli/nix3-help-stores.md:496
+#: source/command-ref/new-cli/nix3-help-stores.md:542
+#: source/command-ref/new-cli/nix3-help-stores.md:644
+#: source/command-ref/new-cli/nix3-help-stores.md:650
+#: source/command-ref/new-cli/nix3-help-stores.md:671
+#: source/command-ref/new-cli/nix3-help-stores.md:743
+#: source/command-ref/new-cli/nix3-help-stores.md:749
+#: source/command-ref/new-cli/nix3-help-stores.md:780
+#: source/command-ref/new-cli/nix3-help-stores.md:814
+#: source/command-ref/new-cli/nix3-help-stores.md:902
+#: source/command-ref/new-cli/nix3-help-stores.md:908
+#: source/command-ref/new-cli/nix3-help-stores.md:914
+#: source/command-ref/new-cli/nix3-help-stores.md:953
+#: source/command-ref/new-cli/nix3-help-stores.md:967
+#: source/command-ref/new-cli/nix3-help-stores.md:1019
+#: source/command-ref/new-cli/nix3-help-stores.md:1025
+#: source/command-ref/new-cli/nix3-help-stores.md:1031
+#: source/command-ref/new-cli/nix3-help-stores.md:1131
+#: source/command-ref/new-cli/nix3-help-stores.md:1137
+#: source/command-ref/new-cli/nix3-help-stores.md:1227
+#: source/command-ref/new-cli/nix3-help-stores.md:1264
+#: source/command-ref/new-cli/nix3-help-stores.md:1319
+#: source/command-ref/new-cli/nix3-help-stores.md:1347
+#: source/command-ref/new-cli/nix3-help-stores.md:1353
+#: source/command-ref/new-cli/nix3-help-stores.md:1501
+#: source/command-ref/new-cli/nix3-help-stores.md:1548
+#: source/command-ref/new-cli/nix3-help-stores.md:1562
+#: source/command-ref/new-cli/nix3-help-stores.md:1696
+#: source/command-ref/new-cli/nix3-help-stores.md:1702
+#: source/command-ref/new-cli/nix3-help-stores.md:1708
+#: source/command-ref/new-cli/nix3-help-stores.md:1729
+#: source/command-ref/new-cli/nix3-help-stores.md:1801
+#: source/command-ref/new-cli/nix3-help-stores.md:1807
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:131
+msgid ""
+"<span id=\"store-dummy-store-want-mass-query\">[`want-mass-query`](#store-"
+"dummy-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:133
+#: source/command-ref/new-cli/nix3-help-stores.md:494
+#: source/command-ref/new-cli/nix3-help-stores.md:648
+#: source/command-ref/new-cli/nix3-help-stores.md:747
+#: source/command-ref/new-cli/nix3-help-stores.md:906
+#: source/command-ref/new-cli/nix3-help-stores.md:1023
+#: source/command-ref/new-cli/nix3-help-stores.md:1135
+#: source/command-ref/new-cli/nix3-help-stores.md:1351
+#: source/command-ref/new-cli/nix3-help-stores.md:1700
+#: source/command-ref/new-cli/nix3-help-stores.md:1805
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:137
+msgid "Experimental Local Overlay Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:139
+#: source/command-ref/new-cli/nix3-help-stores.md:297
+#: source/command-ref/new-cli/nix3-help-stores.md:321
+#: source/command-ref/new-cli/nix3-help-stores.md:466
+#: source/command-ref/new-cli/nix3-help-stores.md:500
+#: source/command-ref/new-cli/nix3-help-stores.md:1196
+#: source/command-ref/new-cli/nix3-help-stores.md:1208
+#: source/command-ref/new-cli/nix3-help-stores.md:1323
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:141
+#: source/command-ref/new-cli/nix3-help-stores.md:502
+msgid ""
+"This store is part of an [experimental feature](../../development/"
+"experimental-features.md)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:144
+msgid ""
+"To use this store, make sure the [`local-overlay-store` experimental feature]"
+"(../../development/experimental-features.md#xp-feature-local-overlay-store) "
+"is enabled. For example, include the following in [`nix.conf`](../../command-"
+"ref/conf-file.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:153
+msgid "**Store URL format**: `local-overlay`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:155
+msgid ""
+"This store type is a variation of the \\[local store\\] designed to leverage "
+"Linux's [Overlay Filesystem](https://docs.kernel.org/filesystems/overlayfs."
+"html) (OverlayFS for short). Just as OverlayFS combines a lower and upper "
+"filesystem by treating the upper one as a patch against the lower, the local "
+"overlay store combines a lower store with an upper almost-\\[local store\\]. "
+"(\"almost\" because while the upper filesystems for OverlayFS is valid on "
+"its own, the upper almost-store is not a valid local store on its own "
+"because some references will dangle.) To use this store, you will first need "
+"to configure an OverlayFS mountpoint [appropriately](#example-filesystem-"
+"layout) as Nix will not do this for you (though it will verify the "
+"mountpoint is configured correctly)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:160
+msgid "Conceptual parts of a local overlay store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:162
+msgid ""
+"_This is a more abstract/conceptual description of the parts of a layered "
+"store, an authoritative reference. For more \"practical\" instructions, see "
+"the worked-out example in the next subsection._"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:165
+msgid "The parts of a local overlay store are as follows:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:167
+msgid "**Lower store**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:169
+msgid ""
+"Specified with the [`lower-store`](#store-experimental-local-overlay-store-"
+"lower-store) setting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:171
+msgid ""
+"This is any store implementation that includes a store directory as part of "
+"the native operating system filesystem. For example, this could be a "
+"\\[local store\\], \\[local daemon store\\], or even another local overlay "
+"store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:174
+msgid ""
+"The local overlay store never tries to modify the lower store in any way. "
+"Something else could modify the lower store, but there are restrictions on "
+"this Nix itself requires that this store only grow, and not change in other "
+"ways. For example, new store objects can be added, but deleting or modifying "
+"store objects is not allowed in general, because that will confuse and "
+"corrupt any local overlay store using those objects. (In addition, the "
+"underlying filesystem overlay mechanism may impose additional restrictions, "
+"see below.)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:180
+msgid ""
+"The lower store must not change while it is mounted as part of an overlay "
+"store. To ensure it does not, you might want to mount the store directory "
+"read-only (which then requires the \\[read-only\\] parameter to be set to "
+"`true`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:183
+msgid "**Lower store directory**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:185
+msgid "Specified with `lower-store.real` setting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:187
+msgid "This is the directory used/exposed by the lower store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:189
+msgid ""
+"As specified above, Nix requires the local store can only grow not change in "
+"other ways. Linux's OverlayFS in addition imposes the further requirement "
+"that this directory cannot change at all. That means that, while any local "
+"overlay store exists that is using this store as a lower store, this "
+"directory must not change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:193
+msgid "**Lower metadata source**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:195
+msgid ""
+"Not directly specified. A consequence of the `lower-store` setting, "
+"depending on the type of lower store chosen."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:198
+msgid ""
+"This is abstract, just some way to read the metadata of lower store [store "
+"objects](../../store/store-object.md). For example it could be a SQLite "
+"database (for the \\[local store\\]), or a socket connection (for the "
+"\\[local daemon store\\])."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:201
+msgid ""
+"This need not be writable. As stated above a local overlay store never tries "
+"to modify its lower store. The lower store's metadata is considered part of "
+"the lower store, just as the store's [file system objects](../../store/file-"
+"system-object.md) that appear in the store directory are."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:205
+msgid "**Upper almost-store**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:207
+msgid ""
+"Not directly specified. Instead the constituent parts are independently "
+"specified as described below."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:210
+msgid ""
+"This is almost but not quite just a \\[local store\\]. That is because taken "
+"in isolation, not as part of a local overlay store, by itself, it would "
+"appear corrupted. But combined with everything else as part of an overlay "
+"local store, it is valid."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:214
+msgid "**Upper layer directory**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:216
+msgid ""
+"Specified with [`upper-layer`](#store-experimental-local-overlay-store-upper-"
+"layer) setting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:218
+msgid ""
+"This contains additional [store objects](../../store/store-object.md) (or, "
+"strictly speaking, their [file system objects](../../store/file-system-"
+"object.md) that the local overlay store will extend the lower store with)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:221
+msgid "**Upper store directory**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:223
+msgid ""
+"Specified with the [`real`](#store-experimental-local-overlay-store-real) "
+"setting. This the same as the base local store setting, and can also be "
+"indirectly specified with the [`root`](#store-experimental-local-overlay-"
+"store-root) setting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:226
+msgid "This contains all the store objects from each of the two directories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:228
+msgid ""
+"The lower store directory and upper layer directory are combined via "
+"OverlayFS to create this directory. Nix doesn't do this itself, because it "
+"typically wouldn't have the permissions to do so, so it is the "
+"responsibility of the user to set this up first. Nix can, however, "
+"optionally check that the OverlayFS mount settings appear as expected, "
+"matching Nix's own settings."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:232
+msgid "**Upper SQLite database**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:234
+msgid ""
+"Not directly specified. The location of the database instead depends on the "
+"[`state`](#store-experimental-local-overlay-store-state) setting. It is "
+"always `${state}/db`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:238
+msgid ""
+"This contains the metadata of all of the upper layer [store objects](../../"
+"store/store-object.md) (everything beyond their file system objects), and "
+"also duplicate copies of some lower layer store object's metadata. The "
+"duplication is so the metadata for the [closure](../../glossary.md#gloss-"
+"closure) of upper layer [store objects](../../store/store-object.md) can be "
+"found entirely within the upper layer. (This allows us to use the same SQL "
+"Schema as the \\[local store\\]'s SQLite database, as foreign keys in that "
+"schema enforce closure metadata to be self-contained in this way.)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:245
+msgid "Example filesystem layout"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:247
+msgid ""
+"Here is a worked out example of usage, following the concepts in the "
+"previous section."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:249
+msgid "Say we have the following paths:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:251
+msgid "`/mnt/example/merged-store/nix/store`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:253
+msgid "`/mnt/example/store-a/nix/store`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:255
+msgid "`/mnt/example/store-b`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:257
+msgid ""
+"Then the following store URI can be used to access a local-overlay store at "
+"`/mnt/example/merged-store`:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:259
+msgid ""
+"```\n"
+"local-overlay://?root=/mnt/example/merged-store&lower-store=/mnt/example/"
+"store-a&upper-layer=/mnt/example/store-b\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:263
+msgid ""
+"The lower store directory is located at `/mnt/example/store-a/nix/store`, "
+"while the upper layer is at `/mnt/example/store-b`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:265
+msgid ""
+"Before accessing the overlay store you will need to ensure the OverlayFS "
+"mount is set up correctly:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:267
+msgid ""
+"```shell\n"
+"mount -t overlay overlay \\\n"
+"  -o lowerdir=\"/mnt/example/store-a/nix/store\" \\\n"
+"  -o upperdir=\"/mnt/example/store-b\" \\\n"
+"  -o workdir=\"/mnt/example/workdir\" \\\n"
+"  \"/mnt/example/merged-store/nix/store\"\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:275
+msgid ""
+"Note that OverlayFS requires `/mnt/example/workdir` to be on the same volume "
+"as the `upperdir`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:277
+msgid ""
+"By default, Nix will check that the mountpoint as been set up correctly and "
+"fail with an error if it has not. You can override this behaviour by passing "
+"[`check-mount=false`](#store-experimental-local-overlay-store-check-mount) "
+"if you need to."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:282
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-build-dir\">[`build-dir`]"
+"(#store-experimental-local-overlay-store-build-dir)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:284
+#: source/command-ref/new-cli/nix3-help-stores.md:1183
+msgid ""
+"The directory on the host, in which derivations' temporary build directories "
+"are created."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:286
+#: source/command-ref/new-cli/nix3-help-stores.md:1185
+msgid ""
+"If not set, Nix will use the `builds` subdirectory of its configured state "
+"directory."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:288
+#: source/command-ref/new-cli/nix3-help-stores.md:1187
+msgid ""
+"Note that builds are often performed by the Nix daemon, so its `build-dir` "
+"applies."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:290
+#: source/command-ref/new-cli/nix3-help-stores.md:1189
+msgid ""
+"Nix will create this directory automatically with suitable permissions if it "
+"does not exist. Otherwise its permissions must allow all users to traverse "
+"the directory (i.e. it must have `o+x` set, in unix parlance) for non-"
+"sandboxed builds to work correctly."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:293
+#: source/command-ref/new-cli/nix3-help-stores.md:1192
+msgid ""
+"This is also the location where [`--keep-failed`](../../command-ref/opt-"
+"common.md#opt-keep-failed) leaves its files."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:295
+#: source/command-ref/new-cli/nix3-help-stores.md:1194
+msgid ""
+"If Nix runs without sandbox, or if the platform does not support sandboxing "
+"with bind mounts (e.g. macOS), then the [`builder`](../../language/"
+"derivations.md#attr-builder)'s environment will contain this directory, "
+"instead of the virtual location [`sandbox-build-dir`](../../command-ref/conf-"
+"file.md#conf-sandbox-build-dir)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:299
+#: source/command-ref/new-cli/nix3-help-stores.md:1198
+msgid ""
+"`build-dir` must not be set to a world-writable directory. Placing temporary "
+"build directories in a world-writable place allows other users to access or "
+"modify build data that is currently in use. This alone is merely an "
+"impurity, but combined with another factor this has allowed malicious "
+"derivations to escape the build sandbox."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:303
+#: source/command-ref/new-cli/nix3-help-stores.md:1202
+msgid ""
+"See also the global [`build-dir`](../../command-ref/conf-file.md#conf-build-"
+"dir) setting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:305
+#: source/command-ref/new-cli/nix3-help-stores.md:409
+#: source/command-ref/new-cli/nix3-help-stores.md:421
+#: source/command-ref/new-cli/nix3-help-stores.md:603
+#: source/command-ref/new-cli/nix3-help-stores.md:609
+#: source/command-ref/new-cli/nix3-help-stores.md:716
+#: source/command-ref/new-cli/nix3-help-stores.md:786
+#: source/command-ref/new-cli/nix3-help-stores.md:794
+#: source/command-ref/new-cli/nix3-help-stores.md:800
+#: source/command-ref/new-cli/nix3-help-stores.md:806
+#: source/command-ref/new-cli/nix3-help-stores.md:857
+#: source/command-ref/new-cli/nix3-help-stores.md:887
+#: source/command-ref/new-cli/nix3-help-stores.md:893
+#: source/command-ref/new-cli/nix3-help-stores.md:959
+#: source/command-ref/new-cli/nix3-help-stores.md:986
+#: source/command-ref/new-cli/nix3-help-stores.md:1096
+#: source/command-ref/new-cli/nix3-help-stores.md:1204
+#: source/command-ref/new-cli/nix3-help-stores.md:1284
+#: source/command-ref/new-cli/nix3-help-stores.md:1507
+#: source/command-ref/new-cli/nix3-help-stores.md:1515
+#: source/command-ref/new-cli/nix3-help-stores.md:1521
+#: source/command-ref/new-cli/nix3-help-stores.md:1554
+#: source/command-ref/new-cli/nix3-help-stores.md:1633
+#: source/command-ref/new-cli/nix3-help-stores.md:1657
+#: source/command-ref/new-cli/nix3-help-stores.md:1681
+#: source/command-ref/new-cli/nix3-help-stores.md:1687
+#: source/command-ref/new-cli/nix3-help-stores.md:1774
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:307
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-check-mount\">[`check-"
+"mount`](#store-experimental-local-overlay-store-check-mount)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:309
+msgid "Check that the overlay filesystem is correctly mounted."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:311
+msgid ""
+"Nix does not manage the overlayfs mount point itself, but the correct "
+"functioning of the overlay store does depend on this mount point being set "
+"up correctly. Rather than just assume this is the case, check that the "
+"lowerdir and upperdir options are what we expect them to be. This check is "
+"on by default, but can be disabled if needed."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:319
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-ignore-gc-delete-"
+"failure\">[`ignore-gc-delete-failure`](#store-experimental-local-overlay-"
+"store-ignore-gc-delete-failure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:323
+#: source/command-ref/new-cli/nix3-help-stores.md:468
+#: source/command-ref/new-cli/nix3-help-stores.md:1210
+#: source/command-ref/new-cli/nix3-help-stores.md:1325
+msgid ""
+"This setting is part of an [experimental feature](../../development/"
+"experimental-features.md)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:326
+#: source/command-ref/new-cli/nix3-help-stores.md:471
+#: source/command-ref/new-cli/nix3-help-stores.md:1213
+#: source/command-ref/new-cli/nix3-help-stores.md:1328
+msgid ""
+"To change this setting, make sure the [`local-overlay-store` experimental "
+"feature](../../development/experimental-features.md#xp-feature-local-overlay-"
+"store) is enabled. For example, include the following in [`nix.conf`](../../"
+"command-ref/conf-file.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:336
+#: source/command-ref/new-cli/nix3-help-stores.md:1223
+msgid ""
+"Whether to ignore failures when deleting items with the garbage collector."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:338
+#: source/command-ref/new-cli/nix3-help-stores.md:1225
+msgid ""
+"Normally the garbage collector will fail with an error if the nix daemon "
+"cannot delete a file, with this setting such errors will only be printed as "
+"warnings."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:342
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-log\">[`log`](#store-"
+"experimental-local-overlay-store-log)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:344
+#: source/command-ref/new-cli/nix3-help-stores.md:546
+#: source/command-ref/new-cli/nix3-help-stores.md:1053
+#: source/command-ref/new-cli/nix3-help-stores.md:1231
+msgid "Directory where Nix stores log files."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:346
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-experimental-local-overlay-store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:348
+#: source/command-ref/new-cli/nix3-help-stores.md:550
+#: source/command-ref/new-cli/nix3-help-stores.md:1057
+#: source/command-ref/new-cli/nix3-help-stores.md:1235
+msgid "**Default:** `/nix/var/log/nix`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:350
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-lower-store\">[`lower-"
+"store`](#store-experimental-local-overlay-store-lower-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:352
+msgid ""
+"[Store URL](../../command-ref/new-cli/nix3-help-stores.md#store-url-format) "
+"for the lower store. The default is `auto` (i.e. use the Nix daemon or `/nix/"
+"store` directly)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:355
+msgid ""
+"Must be a store with a store dir on the file system. Must be used as "
+"OverlayFS lower layer for this store's store dir."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:358
+#: source/command-ref/new-cli/nix3-help-stores.md:536
+#: source/command-ref/new-cli/nix3-help-stores.md:597
+#: source/command-ref/new-cli/nix3-help-stores.md:665
+#: source/command-ref/new-cli/nix3-help-stores.md:710
+#: source/command-ref/new-cli/nix3-help-stores.md:863
+#: source/command-ref/new-cli/nix3-help-stores.md:992
+#: source/command-ref/new-cli/nix3-help-stores.md:1494
+#: source/command-ref/new-cli/nix3-help-stores.md:1639
+#: source/command-ref/new-cli/nix3-help-stores.md:1723
+#: source/command-ref/new-cli/nix3-help-stores.md:1768
+msgid "**Default:** _empty_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:360
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-path-info-cache-"
+"size\">[`path-info-cache-size`](#store-experimental-local-overlay-store-path-"
+"info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:366
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-priority\">[`priority`]"
+"(#store-experimental-local-overlay-store-priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:373
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-read-only\">[`read-only`]"
+"(#store-experimental-local-overlay-store-read-only)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:375
+#: source/command-ref/new-cli/nix3-help-stores.md:1252
+msgid ""
+"Allow this store to be opened when its [database](../../glossary.md#gloss-"
+"nix-database) is on a read-only filesystem."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:377
+#: source/command-ref/new-cli/nix3-help-stores.md:1254
+msgid ""
+"Normally Nix attempts to open the store database in read-write mode, even "
+"for querying (when write access is not needed), causing it to fail if the "
+"database is on a read-only filesystem."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:379
+#: source/command-ref/new-cli/nix3-help-stores.md:1256
+msgid ""
+"Enable read-only mode to disable locking and open the SQLite database with "
+"the [`immutable` parameter](https://www.sqlite.org/c3ref/open.html) set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:381
+#: source/command-ref/new-cli/nix3-help-stores.md:1258
+msgid "**Warning** Do not use this unless the filesystem is read-only."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:384
+#: source/command-ref/new-cli/nix3-help-stores.md:1261
+msgid ""
+"Using it when the filesystem is writable can cause incorrect query results "
+"or corruption errors if the database is changed by another process. While "
+"the filesystem the database resides on might appear to be read-only, "
+"consider whether another user or system might have write access to it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:389
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-real\">[`real`](#store-"
+"experimental-local-overlay-store-real)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:391
+#: source/command-ref/new-cli/nix3-help-stores.md:579
+#: source/command-ref/new-cli/nix3-help-stores.md:1086
+#: source/command-ref/new-cli/nix3-help-stores.md:1268
+msgid "Physical path of the Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:393
+msgid ""
+"Defaults to [`store`](#store-experimental-local-overlay-store-store) when "
+"[`root`](#store-experimental-local-overlay-store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:397
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-remount-hook\">[`remount-"
+"hook`](#store-experimental-local-overlay-store-remount-hook)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:399
+msgid ""
+"Script or other executable to run when overlay filesystem needs remounting."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:401
+msgid ""
+"This is occasionally necessary when deleting a store path that exists in "
+"both upper and lower layers. In such a situation, bypassing OverlayFS and "
+"deleting the path in the upper layer directly is the only way to perform the "
+"deletion without creating a \"whiteout\". However this causes the OverlayFS "
+"kernel data structures to get out-of-sync, and can lead to 'stale file "
+"handle' errors; remounting solves the problem."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:407
+msgid "The store directory is passed as an argument to the invoked executable."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:411
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-require-sigs\">[`require-"
+"sigs`](#store-experimental-local-overlay-store-require-sigs)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:413
+#: source/command-ref/new-cli/nix3-help-stores.md:1276
+msgid ""
+"Whether store paths copied into this store should have a trusted signature."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:417
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-root\">[`root`](#store-"
+"experimental-local-overlay-store-root)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:419
+#: source/command-ref/new-cli/nix3-help-stores.md:601
+#: source/command-ref/new-cli/nix3-help-stores.md:1094
+#: source/command-ref/new-cli/nix3-help-stores.md:1282
+msgid "Directory prefixed to all other paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:423
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-state\">[`state`](#store-"
+"experimental-local-overlay-store-state)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:425
+#: source/command-ref/new-cli/nix3-help-stores.md:613
+#: source/command-ref/new-cli/nix3-help-stores.md:1100
+#: source/command-ref/new-cli/nix3-help-stores.md:1288
+msgid "Directory where Nix stores state."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:427
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-experimental-local-overlay-store-root) "
+"is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:429
+#: source/command-ref/new-cli/nix3-help-stores.md:617
+#: source/command-ref/new-cli/nix3-help-stores.md:1104
+#: source/command-ref/new-cli/nix3-help-stores.md:1292
+msgid "**Default:** `/dummy`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:431
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-store\">[`store`](#store-"
+"experimental-local-overlay-store-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:441
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-system-features\">[`system-"
+"features`](#store-experimental-local-overlay-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:449
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-trusted\">[`trusted`]"
+"(#store-experimental-local-overlay-store-trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:458
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-upper-layer\">[`upper-"
+"layer`](#store-experimental-local-overlay-store-upper-layer)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:460
+msgid ""
+"Directory containing the OverlayFS upper layer for this store's store dir."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:462
+msgid "**Default:** `/upper-layer-must-be-set`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:464
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-use-roots-daemon\">[`use-"
+"roots-daemon`](#store-experimental-local-overlay-store-use-roots-daemon)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:481
+#: source/command-ref/new-cli/nix3-help-stores.md:1338
+msgid "Whether to request garbage collector roots from an external daemon."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:483
+#: source/command-ref/new-cli/nix3-help-stores.md:1340
+msgid ""
+"When enabled, the garbage collector connects to a Unix domain socket at "
+"[`<state-dir>`](../../store/types/local-store.md#store-local-store-state)`/"
+"gc-roots-socket/socket` to discover additional roots that should not be "
+"collected. This is useful when the Nix daemon runs without root privileges "
+"and cannot scan `/proc` for runtime roots."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:488
+#: source/command-ref/new-cli/nix3-help-stores.md:1345
+msgid ""
+"The daemon can be started with [`nix store roots-daemon`](../../command-ref/"
+"new-cli/nix3-store-roots-daemon.md)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:492
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-want-mass-query\">[`want-"
+"mass-query`](#store-experimental-local-overlay-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:498
+msgid "Experimental SSH Store with filesystem mounted"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:505
+msgid ""
+"To use this store, make sure the [`mounted-ssh-store` experimental feature]"
+"(../../development/experimental-features.md#xp-feature-mounted-ssh-store) is "
+"enabled. For example, include the following in [`nix.conf`](../../command-"
+"ref/conf-file.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:514
+msgid "**Store URL format**: `mounted-ssh-ng://[username@]hostname`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:516
+msgid ""
+"Experimental store type that allows full access to a Nix store on a remote "
+"machine, and additionally requires that store be mounted in the local file "
+"system."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:519
+msgid ""
+"The mounting of that store is not managed by Nix, and must by managed "
+"manually. It could be accomplished with SSHFS or NFS, for example."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:522
+msgid ""
+"The local file system is used to optimize certain operations. For example, "
+"rather than serializing Nix archives and sending over the Nix channel, we "
+"can directly access the file system data via the mount-point."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:526
+msgid ""
+"The local file system is also used to make certain operations possible that "
+"wouldn't otherwise be. For example, persistent GC roots can be created if "
+"they reside on the same file system as the remote store: the remote side "
+"will create the symlinks necessary to avoid race conditions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:532
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-base64-ssh-"
+"public-host-key\">[`base64-ssh-public-host-key`](#store-experimental-ssh-"
+"store-with-filesystem-mounted-base64-ssh-public-host-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:534
+#: source/command-ref/new-cli/nix3-help-stores.md:663
+#: source/command-ref/new-cli/nix3-help-stores.md:1721
+msgid "The public host key of the remote machine."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:538
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"compress\">[`compress`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-compress)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:540
+#: source/command-ref/new-cli/nix3-help-stores.md:669
+#: source/command-ref/new-cli/nix3-help-stores.md:1727
+msgid "Whether to enable SSH compression."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:544
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-log\">[`log`]"
+"(#store-experimental-ssh-store-with-filesystem-mounted-log)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:548
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-experimental-ssh-store-with-filesystem-mounted-root) is "
+"not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:552
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-max-"
+"connection-age\">[`max-connection-age`](#store-experimental-ssh-store-with-"
+"filesystem-mounted-max-connection-age)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:554
+#: source/command-ref/new-cli/nix3-help-stores.md:675
+#: source/command-ref/new-cli/nix3-help-stores.md:1061
+msgid "Maximum age of a connection before it is closed."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:556
+#: source/command-ref/new-cli/nix3-help-stores.md:677
+#: source/command-ref/new-cli/nix3-help-stores.md:1063
+msgid "**Default:** `4294967295`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:558
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-max-"
+"connections\">[`max-connections`](#store-experimental-ssh-store-with-"
+"filesystem-mounted-max-connections)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:560
+#: source/command-ref/new-cli/nix3-help-stores.md:681
+#: source/command-ref/new-cli/nix3-help-stores.md:1067
+msgid "Maximum number of concurrent connections to the Nix daemon."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:562
+#: source/command-ref/new-cli/nix3-help-stores.md:683
+#: source/command-ref/new-cli/nix3-help-stores.md:1069
+#: source/command-ref/new-cli/nix3-help-stores.md:1741
+msgid "**Default:** `1`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:564
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-path-info-"
+"cache-size\">[`path-info-cache-size`](#store-experimental-ssh-store-with-"
+"filesystem-mounted-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:570
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"priority\">[`priority`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:577
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"real\">[`real`](#store-experimental-ssh-store-with-filesystem-mounted-real)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:581
+msgid ""
+"Defaults to [`store`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"store) when [`root`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:585
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-remote-"
+"program\">[`remote-program`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-remote-program)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:587
+#: source/command-ref/new-cli/nix3-help-stores.md:700
+msgid "Path to the `nix-daemon` executable on the remote machine."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:589
+#: source/command-ref/new-cli/nix3-help-stores.md:702
+msgid "**Default:** `nix-daemon`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:591
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-remote-"
+"store\">[`remote-store`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-remote-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:593
+#: source/command-ref/new-cli/nix3-help-stores.md:706
+#: source/command-ref/new-cli/nix3-help-stores.md:1764
+msgid ""
+"[Store URL](../../store/types/index.md#store-url-format) to be used on the "
+"remote machine. The default is `auto` (i.e. use the Nix daemon or `/nix/"
+"store` directly)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:599
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"root\">[`root`](#store-experimental-ssh-store-with-filesystem-mounted-root)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:605
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-ssh-"
+"key\">[`ssh-key`](#store-experimental-ssh-store-with-filesystem-mounted-ssh-"
+"key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:607
+#: source/command-ref/new-cli/nix3-help-stores.md:714
+#: source/command-ref/new-cli/nix3-help-stores.md:1772
+msgid "Path to the SSH private key used to authenticate to the remote machine."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:611
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"state\">[`state`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"state)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:615
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:619
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"store\">[`store`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:629
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-system-"
+"features\">[`system-features`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:637
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"trusted\">[`trusted`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:646
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-want-mass-"
+"query\">[`want-mass-query`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:652
+msgid "Experimental SSH Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:654
+msgid "**Store URL format**: `ssh-ng://[username@]hostname[:port]`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:656
+msgid ""
+"Experimental store type that allows full access to a Nix store on a remote "
+"machine."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:661
+msgid ""
+"<span id=\"store-experimental-ssh-store-base64-ssh-public-host-"
+"key\">[`base64-ssh-public-host-key`](#store-experimental-ssh-store-base64-"
+"ssh-public-host-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:667
+msgid ""
+"<span id=\"store-experimental-ssh-store-compress\">[`compress`](#store-"
+"experimental-ssh-store-compress)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:673
+msgid ""
+"<span id=\"store-experimental-ssh-store-max-connection-age\">[`max-"
+"connection-age`](#store-experimental-ssh-store-max-connection-age)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:679
+msgid ""
+"<span id=\"store-experimental-ssh-store-max-connections\">[`max-connections`]"
+"(#store-experimental-ssh-store-max-connections)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:685
+msgid ""
+"<span id=\"store-experimental-ssh-store-path-info-cache-size\">[`path-info-"
+"cache-size`](#store-experimental-ssh-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:691
+msgid ""
+"<span id=\"store-experimental-ssh-store-priority\">[`priority`](#store-"
+"experimental-ssh-store-priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:698
+msgid ""
+"<span id=\"store-experimental-ssh-store-remote-program\">[`remote-program`]"
+"(#store-experimental-ssh-store-remote-program)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:704
+msgid ""
+"<span id=\"store-experimental-ssh-store-remote-store\">[`remote-store`]"
+"(#store-experimental-ssh-store-remote-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:712
+msgid ""
+"<span id=\"store-experimental-ssh-store-ssh-key\">[`ssh-key`](#store-"
+"experimental-ssh-store-ssh-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:718
+msgid ""
+"<span id=\"store-experimental-ssh-store-store\">[`store`](#store-"
+"experimental-ssh-store-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:728
+msgid ""
+"<span id=\"store-experimental-ssh-store-system-features\">[`system-features`]"
+"(#store-experimental-ssh-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:736
+msgid ""
+"<span id=\"store-experimental-ssh-store-trusted\">[`trusted`](#store-"
+"experimental-ssh-store-trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:745
+msgid ""
+"<span id=\"store-experimental-ssh-store-want-mass-query\">[`want-mass-query`]"
+"(#store-experimental-ssh-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:751
+msgid "HTTP Binary Cache Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:753
+msgid "**Store URL format**: `http://...`, `https://...`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:755
+msgid ""
+"This store allows a [binary cache](../../protocols/binary-cache/index.md) to "
+"be accessed via the HTTP protocol."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:760
+msgid ""
+"<span id=\"store-http-binary-cache-store-compression\">[`compression`]"
+"(#store-http-binary-cache-store-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:762
+#: source/command-ref/new-cli/nix3-help-stores.md:935
+#: source/command-ref/new-cli/nix3-help-stores.md:1475
+msgid ""
+"NAR compression method. One of: `xz`, `bzip2`, `gzip`, `zstd`, `none`, `br`, "
+"`compress`, `grzip`, `lrzip`, `lz4`, `lzip`, `lzma` or `lzop`. To use a "
+"particular compression method Nix has to be built with a version of "
+"libarchive that natively supports that compression algorithm."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:765
+#: source/command-ref/new-cli/nix3-help-stores.md:938
+#: source/command-ref/new-cli/nix3-help-stores.md:1478
+msgid "**Default:** `xz`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:767
+msgid ""
+"<span id=\"store-http-binary-cache-store-compression-level\">[`compression-"
+"level`](#store-http-binary-cache-store-compression-level)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:769
+#: source/command-ref/new-cli/nix3-help-stores.md:942
+#: source/command-ref/new-cli/nix3-help-stores.md:1482
+msgid ""
+"The _preset level_ to be used when compressing NARs. The meaning and "
+"accepted values depend on the compression method selected. `-1` specifies "
+"that the default compression level should be used."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:773
+#: source/command-ref/new-cli/nix3-help-stores.md:946
+#: source/command-ref/new-cli/nix3-help-stores.md:1486
+#: source/command-ref/new-cli/nix3-help-stores.md:1735
+msgid "**Default:** `-1`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:775
+msgid ""
+"<span id=\"store-http-binary-cache-store-index-debug-info\">[`index-debug-"
+"info`](#store-http-binary-cache-store-index-debug-info)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:777
+#: source/command-ref/new-cli/nix3-help-stores.md:950
+#: source/command-ref/new-cli/nix3-help-stores.md:1498
+msgid ""
+"Whether to index DWARF debug info files by build ID. This allows [`dwarffs`]"
+"(https://github.com/edolstra/dwarffs) to fetch debug info on demand"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:782
+msgid ""
+"<span id=\"store-http-binary-cache-store-local-nar-cache\">[`local-nar-"
+"cache`](#store-http-binary-cache-store-local-nar-cache)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:784
+#: source/command-ref/new-cli/nix3-help-stores.md:957
+#: source/command-ref/new-cli/nix3-help-stores.md:1505
+msgid ""
+"Path to a local cache of NARs fetched from this binary cache, used by "
+"commands such as `nix store cat`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:788
+msgid ""
+"<span id=\"store-http-binary-cache-store-log-compression\">[`log-"
+"compression`](#store-http-binary-cache-store-log-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:790
+#: source/command-ref/new-cli/nix3-help-stores.md:1511
+msgid ""
+"Compression method for `log/*` files. It is recommended to use a compression "
+"method supported by most web browsers (e.g. `brotli`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:796
+msgid ""
+"<span id=\"store-http-binary-cache-store-ls-compression\">[`ls-compression`]"
+"(#store-http-binary-cache-store-ls-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:798
+#: source/command-ref/new-cli/nix3-help-stores.md:1519
+msgid "Compression method for `.ls` files."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:802
+msgid ""
+"<span id=\"store-http-binary-cache-store-narinfo-compression\">[`narinfo-"
+"compression`](#store-http-binary-cache-store-narinfo-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:804
+#: source/command-ref/new-cli/nix3-help-stores.md:1552
+msgid "Compression method for `.narinfo` files."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:808
+msgid ""
+"<span id=\"store-http-binary-cache-store-parallel-compression\">[`parallel-"
+"compression`](#store-http-binary-cache-store-parallel-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:810
+#: source/command-ref/new-cli/nix3-help-stores.md:963
+#: source/command-ref/new-cli/nix3-help-stores.md:1558
+msgid ""
+"Enable multi-threaded compression of NARs. This is currently only available "
+"for `xz` and `zstd`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:812
+#: source/command-ref/new-cli/nix3-help-stores.md:965
+#: source/command-ref/new-cli/nix3-help-stores.md:1560
+msgid ""
+"If not set explicitly, defaults to `true` when `compression` is `zstd` and "
+"`false` otherwise."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:816
+msgid ""
+"<span id=\"store-http-binary-cache-store-path-info-cache-size\">[`path-info-"
+"cache-size`](#store-http-binary-cache-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:822
+msgid ""
+"<span id=\"store-http-binary-cache-store-priority\">[`priority`](#store-http-"
+"binary-cache-store-priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:829
+msgid ""
+"<span id=\"store-http-binary-cache-store-retry-attempts\">[`retry-attempts`]"
+"(#store-http-binary-cache-store-retry-attempts)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:831
+#: source/command-ref/new-cli/nix3-help-stores.md:1594
+msgid ""
+"Override [`filetransfer-retry-attempts`](../../command-ref/conf-file.md#conf-"
+"filetransfer-retry-attempts) for requests to this store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:835
+msgid ""
+"<span id=\"store-http-binary-cache-store-retry-delay\">[`retry-delay`]"
+"(#store-http-binary-cache-store-retry-delay)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:837
+#: source/command-ref/new-cli/nix3-help-stores.md:1600
+msgid ""
+"Override [`filetransfer-retry-delay`](../../command-ref/conf-file.md#conf-"
+"filetransfer-retry-delay) for requests to this store (milliseconds)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:841
+msgid ""
+"<span id=\"store-http-binary-cache-store-retry-delay-rate-limited\">[`retry-"
+"delay-rate-limited`](#store-http-binary-cache-store-retry-delay-rate-"
+"limited)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:843
+#: source/command-ref/new-cli/nix3-help-stores.md:1606
+msgid ""
+"Override [`filetransfer-retry-delay-rate-limited`](../../command-ref/conf-"
+"file.md#conf-filetransfer-retry-delay-rate-limited) for requests to this "
+"store (milliseconds)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:847
+msgid ""
+"<span id=\"store-http-binary-cache-store-retry-max-delay\">[`retry-max-"
+"delay`](#store-http-binary-cache-store-retry-max-delay)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:849
+#: source/command-ref/new-cli/nix3-help-stores.md:1612
+msgid ""
+"Override [`filetransfer-retry-max-delay`](../../command-ref/conf-file."
+"md#conf-filetransfer-retry-max-delay) for requests to this store "
+"(milliseconds)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:853
+msgid ""
+"<span id=\"store-http-binary-cache-store-secret-key\">[`secret-key`](#store-"
+"http-binary-cache-store-secret-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:855
+#: source/command-ref/new-cli/nix3-help-stores.md:984
+#: source/command-ref/new-cli/nix3-help-stores.md:1631
+msgid "Path to the secret key used to sign the binary cache."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:859
+msgid ""
+"<span id=\"store-http-binary-cache-store-secret-keys\">[`secret-keys`]"
+"(#store-http-binary-cache-store-secret-keys)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:861
+#: source/command-ref/new-cli/nix3-help-stores.md:990
+#: source/command-ref/new-cli/nix3-help-stores.md:1637
+msgid ""
+"List of comma-separated paths to the secret keys used to sign the binary "
+"cache."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:865
+msgid ""
+"<span id=\"store-http-binary-cache-store-store\">[`store`](#store-http-"
+"binary-cache-store-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:875
+msgid ""
+"<span id=\"store-http-binary-cache-store-system-features\">[`system-"
+"features`](#store-http-binary-cache-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:883
+msgid ""
+"<span id=\"store-http-binary-cache-store-tls-certificate\">[`tls-"
+"certificate`](#store-http-binary-cache-store-tls-certificate)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:885
+#: source/command-ref/new-cli/nix3-help-stores.md:1679
+msgid "Path to an optional TLS client certificate in PEM format."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:889
+msgid ""
+"<span id=\"store-http-binary-cache-store-tls-private-key\">[`tls-private-"
+"key`](#store-http-binary-cache-store-tls-private-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:891
+#: source/command-ref/new-cli/nix3-help-stores.md:1685
+msgid "Path to an optional TLS client certificate private key in PEM format."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:895
+msgid ""
+"<span id=\"store-http-binary-cache-store-trusted\">[`trusted`](#store-http-"
+"binary-cache-store-trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:904
+msgid ""
+"<span id=\"store-http-binary-cache-store-want-mass-query\">[`want-mass-"
+"query`](#store-http-binary-cache-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:910
+msgid ""
+"<span id=\"store-http-binary-cache-store-write-nar-listing\">[`write-nar-"
+"listing`](#store-http-binary-cache-store-write-nar-listing)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:912
+#: source/command-ref/new-cli/nix3-help-stores.md:1029
+#: source/command-ref/new-cli/nix3-help-stores.md:1706
+msgid "Whether to write a JSON file that lists the files in each NAR."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:916
+msgid "Local Binary Cache Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:918
+msgid "**Store URL format**: `file://`_path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:920
+msgid ""
+"This store allows reading and writing a [binary cache](../../protocols/"
+"binary-cache/index.md) stored in _path_ in the local filesystem. If _path_ "
+"does not exist, it will be created."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:923
+msgid ""
+"For example, the following builds or downloads `nixpkgs#hello` into the "
+"local store and then copies it to the binary cache in `/tmp/binary-cache`:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:927
+msgid ""
+"```\n"
+"# nix copy --to file:///tmp/binary-cache nixpkgs#hello\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:933
+msgid ""
+"<span id=\"store-local-binary-cache-store-compression\">[`compression`]"
+"(#store-local-binary-cache-store-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:940
+msgid ""
+"<span id=\"store-local-binary-cache-store-compression-level\">[`compression-"
+"level`](#store-local-binary-cache-store-compression-level)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:948
+msgid ""
+"<span id=\"store-local-binary-cache-store-index-debug-info\">[`index-debug-"
+"info`](#store-local-binary-cache-store-index-debug-info)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:955
+msgid ""
+"<span id=\"store-local-binary-cache-store-local-nar-cache\">[`local-nar-"
+"cache`](#store-local-binary-cache-store-local-nar-cache)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:961
+msgid ""
+"<span id=\"store-local-binary-cache-store-parallel-compression\">[`parallel-"
+"compression`](#store-local-binary-cache-store-parallel-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:969
+msgid ""
+"<span id=\"store-local-binary-cache-store-path-info-cache-size\">[`path-info-"
+"cache-size`](#store-local-binary-cache-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:975
+msgid ""
+"<span id=\"store-local-binary-cache-store-priority\">[`priority`](#store-"
+"local-binary-cache-store-priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:982
+msgid ""
+"<span id=\"store-local-binary-cache-store-secret-key\">[`secret-key`](#store-"
+"local-binary-cache-store-secret-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:988
+msgid ""
+"<span id=\"store-local-binary-cache-store-secret-keys\">[`secret-keys`]"
+"(#store-local-binary-cache-store-secret-keys)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:994
+msgid ""
+"<span id=\"store-local-binary-cache-store-store\">[`store`](#store-local-"
+"binary-cache-store-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1004
+msgid ""
+"<span id=\"store-local-binary-cache-store-system-features\">[`system-"
+"features`](#store-local-binary-cache-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1012
+msgid ""
+"<span id=\"store-local-binary-cache-store-trusted\">[`trusted`](#store-local-"
+"binary-cache-store-trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1021
+msgid ""
+"<span id=\"store-local-binary-cache-store-want-mass-query\">[`want-mass-"
+"query`](#store-local-binary-cache-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1027
+msgid ""
+"<span id=\"store-local-binary-cache-store-write-nar-listing\">[`write-nar-"
+"listing`](#store-local-binary-cache-store-write-nar-listing)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1033
+msgid "Local Daemon Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1035
+msgid "**Store URL format**: `daemon`, `unix://`_path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1037
+msgid ""
+"This store type accesses a Nix store by talking to a Nix daemon listening on "
+"the Unix domain socket _path_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1040
+msgid ""
+"When _path_ is not specified (i.e. the `daemon` pseudo-URL or bare `unix://"
+"`), the socket path is determined as follows:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1043
+msgid ""
+"The [`NIX_DAEMON_SOCKET_PATH`](../../command-ref/env-common.md#env-"
+"NIX_DAEMON_SOCKET_PATH) environment variable, if set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1045
+msgid ""
+"Otherwise, `daemon-socket/socket` within the [`state`](#store-local-daemon-"
+"store-state) directory."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1051
+msgid ""
+"<span id=\"store-local-daemon-store-log\">[`log`](#store-local-daemon-store-"
+"log)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1055
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-local-daemon-store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1059
+msgid ""
+"<span id=\"store-local-daemon-store-max-connection-age\">[`max-connection-"
+"age`](#store-local-daemon-store-max-connection-age)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1065
+msgid ""
+"<span id=\"store-local-daemon-store-max-connections\">[`max-connections`]"
+"(#store-local-daemon-store-max-connections)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1071
+msgid ""
+"<span id=\"store-local-daemon-store-path-info-cache-size\">[`path-info-cache-"
+"size`](#store-local-daemon-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1077
+msgid ""
+"<span id=\"store-local-daemon-store-priority\">[`priority`](#store-local-"
+"daemon-store-priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1084
+msgid ""
+"<span id=\"store-local-daemon-store-real\">[`real`](#store-local-daemon-"
+"store-real)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1088
+msgid ""
+"Defaults to [`store`](#store-local-daemon-store-store) when [`root`](#store-"
+"local-daemon-store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1092
+msgid ""
+"<span id=\"store-local-daemon-store-root\">[`root`](#store-local-daemon-"
+"store-root)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1098
+msgid ""
+"<span id=\"store-local-daemon-store-state\">[`state`](#store-local-daemon-"
+"store-state)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1102
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-local-daemon-store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1106
+msgid ""
+"<span id=\"store-local-daemon-store-store\">[`store`](#store-local-daemon-"
+"store-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1116
+msgid ""
+"<span id=\"store-local-daemon-store-system-features\">[`system-features`]"
+"(#store-local-daemon-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1124
+msgid ""
+"<span id=\"store-local-daemon-store-trusted\">[`trusted`](#store-local-"
+"daemon-store-trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1133
+msgid ""
+"<span id=\"store-local-daemon-store-want-mass-query\">[`want-mass-query`]"
+"(#store-local-daemon-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1139
+msgid "Local Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1141
+msgid "**Store URL format**: `local`, _root_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1143
+msgid ""
+"This store type accesses a Nix store in the local filesystem directly (i.e. "
+"not via the Nix daemon). _root_ is an absolute path that is prefixed to "
+"other directories such as the Nix store directory. The store pseudo-URL "
+"`local` denotes a store that uses `/` as its root directory."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1149
+msgid "Local chroot store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1151
+msgid ""
+"A local store that uses a _root_ other than `/` is called a _local chroot "
+"store_. With such stores, the store directory is \"logically\" still `/nix/"
+"store`, so programs stored in them can only be built and executed by "
+"`chroot`\\-ing into _root_. Chroot stores only support building and running "
+"on Linux when [`mount namespaces`](https://man7.org/linux/man-pages/man7/"
+"mount_namespaces.7.html) and [`user namespaces`](https://man7.org/linux/man-"
+"pages/man7/user_namespaces.7.html) are enabled."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1158
+msgid ""
+"For example, the following uses `/tmp/root` as the chroot environment to "
+"build or download `nixpkgs#hello` and then execute it:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1166
+msgid ""
+"Here, the \"physical\" store location is `/tmp/root/nix/store`, and Nix's "
+"store metadata is in `/tmp/root/nix/var/nix/db`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1169
+msgid ""
+"It is also possible, but not recommended, to change the \"logical\" location "
+"of the Nix store from its default of `/nix/store`. This makes it impossible "
+"to use default substituters such as `https://cache.nixos.org/`, and thus you "
+"may have to build everything locally. Here is an example:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1181
+msgid ""
+"<span id=\"store-local-store-build-dir\">[`build-dir`](#store-local-store-"
+"build-dir)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1206
+msgid ""
+"<span id=\"store-local-store-ignore-gc-delete-failure\">[`ignore-gc-delete-"
+"failure`](#store-local-store-ignore-gc-delete-failure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1229
+msgid ""
+"<span id=\"store-local-store-log\">[`log`](#store-local-store-log)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1233
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-local-store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1237
+msgid ""
+"<span id=\"store-local-store-path-info-cache-size\">[`path-info-cache-size`]"
+"(#store-local-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1243
+msgid ""
+"<span id=\"store-local-store-priority\">[`priority`](#store-local-store-"
+"priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1250
+msgid ""
+"<span id=\"store-local-store-read-only\">[`read-only`](#store-local-store-"
+"read-only)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1266
+msgid ""
+"<span id=\"store-local-store-real\">[`real`](#store-local-store-real)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1270
+msgid ""
+"Defaults to [`store`](#store-local-store-store) when [`root`](#store-local-"
+"store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1274
+msgid ""
+"<span id=\"store-local-store-require-sigs\">[`require-sigs`](#store-local-"
+"store-require-sigs)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1280
+msgid ""
+"<span id=\"store-local-store-root\">[`root`](#store-local-store-root)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1286
+msgid ""
+"<span id=\"store-local-store-state\">[`state`](#store-local-store-state)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1290
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-local-store-root) is not set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1294
+msgid ""
+"<span id=\"store-local-store-store\">[`store`](#store-local-store-store)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1304
+msgid ""
+"<span id=\"store-local-store-system-features\">[`system-features`](#store-"
+"local-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1312
+msgid ""
+"<span id=\"store-local-store-trusted\">[`trusted`](#store-local-store-"
+"trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1321
+msgid ""
+"<span id=\"store-local-store-use-roots-daemon\">[`use-roots-daemon`](#store-"
+"local-store-use-roots-daemon)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1349
+msgid ""
+"<span id=\"store-local-store-want-mass-query\">[`want-mass-query`](#store-"
+"local-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1355
+msgid "S3 Binary Cache Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1357
+msgid "**Store URL format**: `s3://`_bucket-name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1359
+msgid ""
+"This store allows reading and writing a [binary cache](../../protocols/"
+"binary-cache/index.md) stored in an AWS S3 (or S3-compatible service) "
+"bucket. This store shares many idioms with the [HTTP Binary Cache Store]"
+"(../../store/types/http-binary-cache-store.md)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1362
+msgid ""
+"For AWS S3, the binary cache URL for a bucket named `example-nix-cache` will "
+"be exactly <s3://example-nix-cache>. For S3 compatible binary caches, "
+"consult that cache's documentation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1365
+msgid "Anonymous reads to your S3-compatible binary cache"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1367
+msgid ""
+"If your binary cache is publicly accessible and does not require "
+"authentication, it is simplest to use the \\[HTTP Binary Cache Store\\] "
+"rather than S3 Binary Cache Store with <https://example-nix-cache.s3."
+"amazonaws.com> instead of <s3://example-nix-cache>."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1371
+msgid ""
+"Your bucket will need a [bucket policy](https://docs.aws.amazon.com/AmazonS3/"
+"v1/userguide/bucket-policies.html) like the following to be accessible:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1377
+msgid "\"Id\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1377
+msgid "\"DirectReads\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1378
+#: source/command-ref/new-cli/nix3-help-stores.md:1418
+msgid "\"Version\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1378
+#: source/command-ref/new-cli/nix3-help-stores.md:1418
+msgid "\"2012-10-17\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1379
+#: source/command-ref/new-cli/nix3-help-stores.md:1419
+msgid "\"Statement\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1381
+#: source/command-ref/new-cli/nix3-help-stores.md:1421
+msgid "\"Sid\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1381
+msgid "\"AllowDirectReads\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1382
+#: source/command-ref/new-cli/nix3-help-stores.md:1423
+msgid "\"Action\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1383
+#: source/command-ref/new-cli/nix3-help-stores.md:1426
+msgid "\"s3:GetObject\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1384
+#: source/command-ref/new-cli/nix3-help-stores.md:1425
+msgid "\"s3:GetBucketLocation\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1385
+#: source/command-ref/new-cli/nix3-help-stores.md:1427
+msgid "\"s3:ListBucket\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1387
+#: source/command-ref/new-cli/nix3-help-stores.md:1422
+msgid "\"Effect\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1387
+#: source/command-ref/new-cli/nix3-help-stores.md:1422
+msgid "\"Allow\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1388
+#: source/command-ref/new-cli/nix3-help-stores.md:1432
+msgid "\"Resource\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1389
+#: source/command-ref/new-cli/nix3-help-stores.md:1433
+msgid "\"arn:aws:s3:::example-nix-cache\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1390
+#: source/command-ref/new-cli/nix3-help-stores.md:1434
+msgid "\"arn:aws:s3:::example-nix-cache/*\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1392
+msgid "\"Principal\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1392
+msgid "\"*\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1398
+msgid "Authentication"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1400
+msgid ""
+"Nix will use the [default credential provider chain](https://docs.aws.amazon."
+"com/sdk-for-cpp/v1/developer-guide/credentials.html) for authenticating "
+"requests to Amazon S3."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1404
+msgid ""
+"Note that this means Nix will read environment variables and files with "
+"different idioms than with Nix's own settings, as implemented by the AWS "
+"SDK. Consult the documentation linked above for further details."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1407
+msgid "Authenticated reads to your S3 binary cache"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1409
+msgid ""
+"Your bucket will need a bucket policy allowing the desired users to perform "
+"the `s3:GetObject`, `s3:GetBucketLocation`, and `s3:ListBucket` actions on "
+"all objects in the bucket. The [anonymous policy given above](#anonymous-"
+"reads-to-your-s3-compatible-binary-cache) can be updated to have a "
+"restricted `Principal` to support this."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1412
+msgid "Authenticated writes to your S3-compatible binary cache"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1414
+msgid ""
+"Your account will need an IAM policy to support uploading to the bucket:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1421
+msgid "\"UploadToCache\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1424
+msgid "\"s3:AbortMultipartUpload\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1428
+msgid "\"s3:ListBucketMultipartUploads\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1429
+msgid "\"s3:ListMultipartUploadParts\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1430
+msgid "\"s3:PutObject\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1441
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1443
+msgid ""
+"With bucket policies and authentication set up as described above, uploading "
+"works via [`nix copy`](../../command-ref/new-cli/nix3-copy.md) "
+"(experimental)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1445
+msgid "To upload with a specific credential profile for Amazon S3:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1447
+msgid ""
+"```console\n"
+"$ nix copy nixpkgs.hello \\\n"
+"  --to 's3://example-nix-cache?profile=cache-upload&region=eu-west-2'\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1452
+msgid "To upload to an S3-compatible binary cache:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1454
+msgid ""
+"```console\n"
+"$ nix copy nixpkgs.hello --to \\\n"
+"  's3://example-nix-cache?profile=cache-upload&scheme=https&endpoint=minio."
+"example.com'\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1461
+msgid ""
+"<span id=\"store-s3-binary-cache-store-addressing-style\">[`addressing-"
+"style`](#store-s3-binary-cache-store-addressing-style)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1463
+msgid ""
+"The S3 addressing style to use. `auto` (default) uses virtual-hosted-style "
+"for standard AWS endpoints and path-style for custom endpoints; bucket names "
+"containing dots automatically fall back to path-style to avoid TLS "
+"certificate errors. `path` forces path-style addressing (deprecated by AWS). "
+"`virtual` forces virtual-hosted-style addressing (bucket names must not "
+"contain dots)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1471
+msgid "**Default:** `auto`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1473
+msgid ""
+"<span id=\"store-s3-binary-cache-store-compression\">[`compression`](#store-"
+"s3-binary-cache-store-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1480
+msgid ""
+"<span id=\"store-s3-binary-cache-store-compression-level\">[`compression-"
+"level`](#store-s3-binary-cache-store-compression-level)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1488
+msgid ""
+"<span id=\"store-s3-binary-cache-store-endpoint\">[`endpoint`](#store-s3-"
+"binary-cache-store-endpoint)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1490
+msgid ""
+"The S3 endpoint to use. When empty (default), uses AWS S3 with region-"
+"specific endpoints. For S3-compatible services such as MinIO, set this to "
+"your service's endpoint."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1496
+msgid ""
+"<span id=\"store-s3-binary-cache-store-index-debug-info\">[`index-debug-"
+"info`](#store-s3-binary-cache-store-index-debug-info)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1503
+msgid ""
+"<span id=\"store-s3-binary-cache-store-local-nar-cache\">[`local-nar-cache`]"
+"(#store-s3-binary-cache-store-local-nar-cache)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1509
+msgid ""
+"<span id=\"store-s3-binary-cache-store-log-compression\">[`log-compression`]"
+"(#store-s3-binary-cache-store-log-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1517
+msgid ""
+"<span id=\"store-s3-binary-cache-store-ls-compression\">[`ls-compression`]"
+"(#store-s3-binary-cache-store-ls-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1523
+msgid ""
+"<span id=\"store-s3-binary-cache-store-multipart-chunk-size\">[`multipart-"
+"chunk-size`](#store-s3-binary-cache-store-multipart-chunk-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1525
+msgid ""
+"The size (in bytes) of each part in multipart uploads. Must be at least 5 "
+"MiB (AWS S3 requirement). Larger chunk sizes reduce the number of requests "
+"but use more memory. Default is 5 MiB."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1529
+msgid "**Default:** `5242880`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1531
+msgid "**Deprecated alias:** `buffer-size`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1533
+msgid ""
+"<span id=\"store-s3-binary-cache-store-multipart-threshold\">[`multipart-"
+"threshold`](#store-s3-binary-cache-store-multipart-threshold)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1535
+msgid ""
+"The minimum file size (in bytes) for using multipart uploads. Files smaller "
+"than this threshold will use regular PUT requests. Default is 100 MiB. Only "
+"takes effect when multipart-upload is enabled."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1539
+msgid "**Default:** `104857600`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1541
+msgid ""
+"<span id=\"store-s3-binary-cache-store-multipart-upload\">[`multipart-"
+"upload`](#store-s3-binary-cache-store-multipart-upload)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1543
+msgid ""
+"Whether to use multipart uploads for large files. When enabled, files "
+"exceeding the multipart threshold will be uploaded in multiple parts, which "
+"is required for files larger than 5 GiB and can improve performance and "
+"reliability for large uploads."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1550
+msgid ""
+"<span id=\"store-s3-binary-cache-store-narinfo-compression\">[`narinfo-"
+"compression`](#store-s3-binary-cache-store-narinfo-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1556
+msgid ""
+"<span id=\"store-s3-binary-cache-store-parallel-compression\">[`parallel-"
+"compression`](#store-s3-binary-cache-store-parallel-compression)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1564
+msgid ""
+"<span id=\"store-s3-binary-cache-store-path-info-cache-size\">[`path-info-"
+"cache-size`](#store-s3-binary-cache-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1570
+msgid ""
+"<span id=\"store-s3-binary-cache-store-priority\">[`priority`](#store-s3-"
+"binary-cache-store-priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1577
+msgid ""
+"<span id=\"store-s3-binary-cache-store-profile\">[`profile`](#store-s3-"
+"binary-cache-store-profile)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1579
+msgid ""
+"The name of the AWS configuration profile to use. By default Nix uses the "
+"`default` profile."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1582
+msgid "**Default:** `default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1584
+msgid ""
+"<span id=\"store-s3-binary-cache-store-region\">[`region`](#store-s3-binary-"
+"cache-store-region)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1586
+msgid ""
+"The region of the S3 bucket. If your bucket is not in `us-east-1`, you "
+"should always explicitly specify the region parameter."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1590
+msgid "**Default:** `us-east-1`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1592
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-attempts\">[`retry-attempts`]"
+"(#store-s3-binary-cache-store-retry-attempts)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1598
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-delay\">[`retry-delay`](#store-"
+"s3-binary-cache-store-retry-delay)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1604
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-delay-rate-limited\">[`retry-"
+"delay-rate-limited`](#store-s3-binary-cache-store-retry-delay-rate-limited)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1610
+msgid ""
+"<span id=\"store-s3-binary-cache-store-retry-max-delay\">[`retry-max-delay`]"
+"(#store-s3-binary-cache-store-retry-max-delay)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1616
+msgid ""
+"<span id=\"store-s3-binary-cache-store-scheme\">[`scheme`](#store-s3-binary-"
+"cache-store-scheme)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1618
+msgid ""
+"The scheme used for S3 requests, `https` (default) or `http`. This option "
+"allows you to disable HTTPS for binary caches which don't support it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1622
+#: source/command-ref/new-cli/nix3-help-stores.md:1855
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1624
+msgid "HTTPS should be used if the cache might contain sensitive information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1627
+msgid "**Default:** `https`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1629
+msgid ""
+"<span id=\"store-s3-binary-cache-store-secret-key\">[`secret-key`](#store-s3-"
+"binary-cache-store-secret-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1635
+msgid ""
+"<span id=\"store-s3-binary-cache-store-secret-keys\">[`secret-keys`](#store-"
+"s3-binary-cache-store-secret-keys)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1641
+msgid ""
+"<span id=\"store-s3-binary-cache-store-storage-class\">[`storage-class`]"
+"(#store-s3-binary-cache-store-storage-class)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1643
+msgid ""
+"The S3 storage class to use for uploaded objects. When not set (default), "
+"uses the bucket's default storage class. Valid values include:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1645
+msgid "STANDARD (default, frequently accessed data)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1646
+msgid "REDUCED_REDUNDANCY (less frequently accessed data)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1647
+msgid "STANDARD_IA (infrequent access)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1648
+msgid "ONEZONE_IA (infrequent access, single AZ)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1649
+msgid "INTELLIGENT_TIERING (automatic cost optimization)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1650
+msgid "GLACIER (archival with retrieval times in minutes to hours)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1651
+msgid "DEEP_ARCHIVE (long-term archival with 12-hour retrieval)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1652
+msgid "GLACIER_IR (instant retrieval archival)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1654
+msgid ""
+"See AWS S3 documentation for detailed storage class descriptions and "
+"pricing: https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-"
+"intro.html"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1659
+msgid ""
+"<span id=\"store-s3-binary-cache-store-store\">[`store`](#store-s3-binary-"
+"cache-store-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1669
+msgid ""
+"<span id=\"store-s3-binary-cache-store-system-features\">[`system-features`]"
+"(#store-s3-binary-cache-store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1677
+msgid ""
+"<span id=\"store-s3-binary-cache-store-tls-certificate\">[`tls-certificate`]"
+"(#store-s3-binary-cache-store-tls-certificate)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1683
+msgid ""
+"<span id=\"store-s3-binary-cache-store-tls-private-key\">[`tls-private-key`]"
+"(#store-s3-binary-cache-store-tls-private-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1689
+msgid ""
+"<span id=\"store-s3-binary-cache-store-trusted\">[`trusted`](#store-s3-"
+"binary-cache-store-trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1698
+msgid ""
+"<span id=\"store-s3-binary-cache-store-want-mass-query\">[`want-mass-query`]"
+"(#store-s3-binary-cache-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1704
+msgid ""
+"<span id=\"store-s3-binary-cache-store-write-nar-listing\">[`write-nar-"
+"listing`](#store-s3-binary-cache-store-write-nar-listing)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1710
+msgid "SSH Store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1712
+msgid "**Store URL format**: `ssh://[username@]hostname[:port]`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1714
+msgid ""
+"This store type allows limited access to a remote store on another machine "
+"via SSH."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1719
+msgid ""
+"<span id=\"store-ssh-store-base64-ssh-public-host-key\">[`base64-ssh-public-"
+"host-key`](#store-ssh-store-base64-ssh-public-host-key)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1725
+msgid ""
+"<span id=\"store-ssh-store-compress\">[`compress`](#store-ssh-store-"
+"compress)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1731
+msgid ""
+"<span id=\"store-ssh-store-log-fd\">[`log-fd`](#store-ssh-store-log-fd)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1733
+msgid "file descriptor to which SSH's stderr is connected"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1737
+msgid ""
+"<span id=\"store-ssh-store-max-connections\">[`max-connections`](#store-ssh-"
+"store-max-connections)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1739
+msgid "Maximum number of concurrent SSH connections."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1743
+msgid ""
+"<span id=\"store-ssh-store-path-info-cache-size\">[`path-info-cache-size`]"
+"(#store-ssh-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1749
+msgid ""
+"<span id=\"store-ssh-store-priority\">[`priority`](#store-ssh-store-"
+"priority)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1756
+msgid ""
+"<span id=\"store-ssh-store-remote-program\">[`remote-program`](#store-ssh-"
+"store-remote-program)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1758
+msgid "Path to the `nix-store` executable on the remote machine."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1760
+msgid "**Default:** `nix-store`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1762
+msgid ""
+"<span id=\"store-ssh-store-remote-store\">[`remote-store`](#store-ssh-store-"
+"remote-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1770
+msgid ""
+"<span id=\"store-ssh-store-ssh-key\">[`ssh-key`](#store-ssh-store-ssh-key)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1776
+msgid ""
+"<span id=\"store-ssh-store-store\">[`store`](#store-ssh-store-store)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1786
+msgid ""
+"<span id=\"store-ssh-store-system-features\">[`system-features`](#store-ssh-"
+"store-system-features)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1794
+msgid ""
+"<span id=\"store-ssh-store-trusted\">[`trusted`](#store-ssh-store-trusted)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1803
+msgid ""
+"<span id=\"store-ssh-store-want-mass-query\">[`want-mass-query`](#store-ssh-"
+"store-want-mass-query)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1809
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1811
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1813
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1815
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1817
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1819
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1821
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1823
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1825
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1827
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1829
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1831
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1833
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1835
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1837
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1839
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1841
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1843
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1845
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1847
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1849
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1851
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1853
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-help-stores.md:1857
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/nix32.md:1
+msgid "Nix32 Encoding"
+msgstr ""
+
+#: source/protocols/nix32.md:3
+msgid ""
+"Nix32 is Nix's variant of [Base32](https://en.wikipedia.org/wiki/Base32) "
+"encoding, used for [store path digests](../protocols/store-path.md), hash "
+"output via [`nix hash`](../command-ref/new-cli/nix3-hash.md), and the "
+"[`outputHash`](../language/advanced-attributes.md#adv-attr-outputHash) "
+"derivation attribute."
+msgstr ""
+
+#: source/protocols/nix32.md:5
+msgid "Alphabet"
+msgstr ""
+
+#: source/protocols/nix32.md:7
+msgid "The Nix32 alphabet consists of these 32 characters:"
+msgstr ""
+
+#: source/protocols/nix32.md:13
+msgid "The letters `e`, `o`, `u`, and `t` are omitted."
+msgstr ""
+
+#: source/protocols/nix32.md:15
+msgid "Byte Order"
+msgstr ""
+
+#: source/protocols/nix32.md:17
+msgid ""
+"Nix32 encoding processes the hash bytes from the end (last byte first), "
+"while base-16 encoding processes from the beginning (first byte first)."
+msgstr ""
+
+#: source/protocols/nix32.md:19
+msgid ""
+"Consequently, the string sort order is determined primarily by the first "
+"bytes for base-16, and by the last bytes for Nix32."
+msgstr ""

@@ -1,0 +1,264 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/data-modeling.md:1
+msgid "Data Modeling Guidelines"
+msgstr ""
+
+#: source/development/data-modeling.md:3
+msgid ""
+"Nix consumes and produces JSON and attribute sets in a variety of contexts. "
+"These guidelines ensure consistent practices for our interfaces, for ease of "
+"use, and so that experience in one part carries over to another."
+msgstr ""
+
+#: source/development/data-modeling.md:6
+msgid ""
+"For these guidelines, we will use JSON terminology, but they apply equally "
+"well to new attribute set interfaces (primops, etc.). Note that these are "
+"guidelines first and foremost. Exceptions include:"
+msgstr ""
+
+#: source/development/data-modeling.md:8
+msgid "Feature testing: e.g., it is OK to do `builtins?frobnicate`."
+msgstr ""
+
+#: source/development/data-modeling.md:9
+msgid ""
+"Compatibility: we generally do not change stable interfaces just to make "
+"them comply. New replacements can be added with care."
+msgstr ""
+
+#: source/development/data-modeling.md:11
+msgid "Extensibility"
+msgstr ""
+
+#: source/development/data-modeling.md:13
+msgid ""
+"The schema of JSON input and output should allow for backwards compatible "
+"extension. This section explains how to achieve this."
+msgstr ""
+
+#: source/development/data-modeling.md:16
+msgid ""
+"Two definitions are helpful here, because while JSON only defines one \"key-"
+"value\" object type, we use it to cover two use cases:"
+msgstr ""
+
+#: source/development/data-modeling.md:18
+msgid ""
+"**dictionary**: a map from names to value that all have the same type. In C+"
+"+ this would be a `std::map` with string keys."
+msgstr ""
+
+#: source/development/data-modeling.md:21
+msgid ""
+"**record**: a fixed set of attributes each with their own type. In C++, this "
+"would be represented by a `struct`."
+msgstr ""
+
+#: source/development/data-modeling.md:24
+msgid ""
+"It is best not to mix these use cases, as that may lead to incompatibilities "
+"when the schema changes. For example, adding a record field to a dictionary "
+"breaks consumers that assume all JSON object fields to have the same meaning "
+"and type, and dictionary items with a colliding name can not be represented "
+"anymore."
+msgstr ""
+
+#: source/development/data-modeling.md:27
+msgid "This leads to the following guidelines:"
+msgstr ""
+
+#: source/development/data-modeling.md:29
+msgid "The top-level (root) value must be a record."
+msgstr ""
+
+#: source/development/data-modeling.md:31
+msgid "Otherwise, one can not change the structure of a command's output."
+msgstr ""
+
+#: source/development/data-modeling.md:33
+msgid "The value of a dictionary item must be a record."
+msgstr ""
+
+#: source/development/data-modeling.md:35
+msgid "Otherwise, the item type can not be extended."
+msgstr ""
+
+#: source/development/data-modeling.md:37
+msgid "List items should be records."
+msgstr ""
+
+#: source/development/data-modeling.md:39
+msgid "Otherwise, one can not change the structure of the list items."
+msgstr ""
+
+#: source/development/data-modeling.md:41
+msgid ""
+"If the order of the items does not matter, and each item has a unique key "
+"that is a string, consider representing the list as a dictionary instead. If "
+"the order of the items needs to be preserved, return a list of records."
+msgstr ""
+
+#: source/development/data-modeling.md:44
+msgid "Streaming JSON should return records."
+msgstr ""
+
+#: source/development/data-modeling.md:46
+msgid ""
+"An example of a streaming JSON format is [JSON lines](https://jsonlines."
+"org/), where each line represents a JSON value. These JSON values can be "
+"considered top-level values or list items, and they must be records."
+msgstr ""
+
+#: source/development/data-modeling.md:49
+#: source/development/data-modeling.md:102
+msgid "Examples"
+msgstr ""
+
+#: source/development/data-modeling.md:51
+msgid "This is bad, because all keys must be assumed to be store types:"
+msgstr ""
+
+#: source/development/data-modeling.md:55
+#: source/development/data-modeling.md:65
+msgid "\"local\""
+msgstr ""
+
+#: source/development/data-modeling.md:56
+msgid "\"remote\""
+msgstr ""
+
+#: source/development/data-modeling.md:57
+msgid "\"http\""
+msgstr ""
+
+#: source/development/data-modeling.md:61
+msgid ""
+"This is good, because the it is extensible at the root, and is somewhat self-"
+"documenting:"
+msgstr ""
+
+#: source/development/data-modeling.md:65
+msgid "\"storeTypes\""
+msgstr ""
+
+#: source/development/data-modeling.md:66
+msgid "\"pluginSupport\""
+msgstr ""
+
+#: source/development/data-modeling.md:70
+msgid ""
+"While the dictionary of store types seems like a very complete response at "
+"first, a use case may arise that warrants returning additional information. "
+"For example, the presence of plugin support may be crucial information for a "
+"client to proceed when their desired store type is missing."
+msgstr ""
+
+#: source/development/data-modeling.md:75
+msgid "The following representation is bad because it is not extensible:"
+msgstr ""
+
+#: source/development/data-modeling.md:78
+#: source/development/data-modeling.md:84
+#: source/development/data-modeling.md:93
+msgid "\"outputs\""
+msgstr ""
+
+#: source/development/data-modeling.md:78
+msgid "\"out\" \"bin\""
+msgstr ""
+
+#: source/development/data-modeling.md:81
+msgid ""
+"However, simply converting everything to records is not enough, because the "
+"order of outputs must be preserved:"
+msgstr ""
+
+#: source/development/data-modeling.md:84
+#: source/development/data-modeling.md:93
+msgid "\"bin\""
+msgstr ""
+
+#: source/development/data-modeling.md:84
+#: source/development/data-modeling.md:93
+msgid "\"out\""
+msgstr ""
+
+#: source/development/data-modeling.md:87
+msgid ""
+"The first item is the default output. Deriving this information from the "
+"outputs ordering is not great, but this is how Nix currently happens to "
+"work. While it is possible for a JSON parser to preserve the order of "
+"fields, we can not rely on this capability to be present in all JSON "
+"libraries."
+msgstr ""
+
+#: source/development/data-modeling.md:90
+msgid "This representation is extensible and preserves the ordering:"
+msgstr ""
+
+#: source/development/data-modeling.md:93
+msgid "\"outputName\""
+msgstr ""
+
+#: source/development/data-modeling.md:96
+msgid "Self-describing values"
+msgstr ""
+
+#: source/development/data-modeling.md:98
+msgid ""
+"As described in the previous section, it's crucial that schemas can be "
+"extended with new fields without breaking compatibility. However, that "
+"should _not_ mean we use the presence/absence of fields to indicate optional "
+"information _within_ a version of the schema. Instead, always include the "
+"field, and use `null` to indicate the \"nothing\" case."
+msgstr ""
+
+#: source/development/data-modeling.md:104
+msgid "Here are two JSON objects:"
+msgstr ""
+
+#: source/development/data-modeling.md:108
+#: source/development/data-modeling.md:113
+#: source/development/data-modeling.md:126
+#: source/development/data-modeling.md:129
+msgid "\"foo\""
+msgstr ""
+
+#: source/development/data-modeling.md:114
+#: source/development/data-modeling.md:129
+msgid "\"bar\""
+msgstr ""
+
+#: source/development/data-modeling.md:118
+msgid ""
+"Since they differ in which fields they contain, they should _not_ both be "
+"valid values of the same schema. At most, they can match two different "
+"schemas where the second (with `foo` and `bar`) is considered a newer "
+"version of the first (with just `foo`). Within each version, all fields are "
+"mandatory (always `foo`, and always `foo` and `bar`). Only _between_ each "
+"version, `bar` gets added as a new mandatory field."
+msgstr ""
+
+#: source/development/data-modeling.md:123
+msgid "Here are another two JSON objects:"
+msgstr ""
+
+#: source/development/data-modeling.md:132
+msgid ""
+"Since they both contain a `foo` field, they could be valid values of the "
+"same schema. The schema would have `foo` has an optional field, which is "
+"either `null` or an object where `bar` is an integer."
+msgstr ""

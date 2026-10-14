@@ -1,0 +1,515 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:8
+msgid "`nix store copy-sigs` - copy store path signatures from substituters"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:12
+msgid "`nix store copy-sigs` \\[_option_...\\] _installables_..."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:16
+msgid "To copy signatures from a binary cache to the local store:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:18
+msgid ""
+"```console\n"
+"# nix store copy-sigs --substituter https://cache.nixos.org \\\n"
+"    --recursive /nix/store/q833p12cmm9qknyp1walqih941msnb9z-hello-2.12.1\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:23
+msgid "To copy signatures from one binary cache to another:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:25
+msgid ""
+"```console\n"
+"# nix store copy-sigs --substituter https://cache.nixos.org \\\n"
+"    --store file:///tmp/binary-cache \\\n"
+"    --recursive -v \\\n"
+"    /nix/store/q833p12cmm9qknyp1walqih941msnb9z-hello-2.12.1\n"
+"imported 2 signatures\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:33
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:35
+msgid ""
+"`nix store copy-sigs` copies store path signatures from one store to another."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:37
+msgid ""
+"It is not advised to copy signatures to binary cache stores. Binary cache "
+"signatures are stored in `.narinfo` files. Since these are cached "
+"aggressively, clients may not see the new signatures quickly. It is "
+"therefore better to set any required signatures when the paths are first "
+"uploaded to the binary cache."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:39
+msgid ""
+"Store paths are processed in parallel. The amount of parallelism is "
+"controlled by the [`http-connections`](../../command-ref/conf-file.md#conf-"
+"http-connections) settings."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:41
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:43
+msgid "<span id=\"opt-stdin\">[`--stdin`](#opt-stdin)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:45
+msgid ""
+"Read installables from the standard input. No default installable applied."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:47
+msgid ""
+"<span id=\"opt-substituter\">[`--substituter`](#opt-substituter)</span> / `-"
+"s` _store-uri_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:49
+msgid "Copy signatures from the specified store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:51
+msgid "Common evaluation options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:53
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:55
+msgid "Pass the value _expr_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:57
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:59
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:61
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:63
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:65
+msgid ""
+"<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _string_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:67
+msgid "Pass the string _string_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:69
+msgid "<span id=\"opt-debugger\">[`--debugger`](#opt-debugger)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:71
+msgid "Start an interactive environment if evaluation fails."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:73
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:75
+msgid ""
+"The [URL of the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:78
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:80
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:82
+msgid ""
+"<span id=\"opt-include\">[`--include`](#opt-include)</span> / `-I` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:84
+msgid ""
+"Add _path_ to search path entries used to resolve [lookup paths](../../"
+"language/constructs/lookup-path.md)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:86
+msgid "This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:88
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:90
+msgid ""
+"<span id=\"opt-override-flake\">[`--override-flake`](#opt-override-flake)</"
+"span> _original-ref_ _resolved-ref_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:92
+msgid ""
+"Override the flake registries, redirecting _original-ref_ to _resolved-ref_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:94
+msgid "Common flake-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:96
+msgid ""
+"<span id=\"opt-commit-lock-file\">[`--commit-lock-file`](#opt-commit-lock-"
+"file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:98
+msgid "Commit changes to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:100
+msgid ""
+"<span id=\"opt-inputs-from\">[`--inputs-from`](#opt-inputs-from)</span> "
+"_flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:102
+msgid "Use the inputs of the specified flake as registry entries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:104
+msgid ""
+"<span id=\"opt-no-registries\">[`--no-registries`](#opt-no-registries)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:106
+msgid "Don't allow lookups in the flake registries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:108
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:132
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:144
+msgid "**DEPRECATED**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:110
+msgid ""
+"Use [`--no-use-registries`](../../command-ref/conf-file.md#conf-use-"
+"registries) instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:112
+msgid ""
+"<span id=\"opt-no-update-lock-file\">[`--no-update-lock-file`](#opt-no-"
+"update-lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:114
+msgid "Do not allow any updates to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:116
+msgid ""
+"<span id=\"opt-no-write-lock-file\">[`--no-write-lock-file`](#opt-no-write-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:118
+msgid "Do not write the flake's newly generated lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:120
+msgid ""
+"<span id=\"opt-output-lock-file\">[`--output-lock-file`](#opt-output-lock-"
+"file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:122
+msgid ""
+"Write the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:124
+msgid ""
+"<span id=\"opt-override-input\">[`--override-input`](#opt-override-input)</"
+"span> _input-path_ _flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:126
+msgid ""
+"Override a specific flake input (e.g. `dwarffs/nixpkgs`). The input path "
+"must not be empty. This implies `--no-write-lock-file`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:128
+msgid ""
+"<span id=\"opt-recreate-lock-file\">[`--recreate-lock-file`](#opt-recreate-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:130
+msgid "Recreate the flake's lock file from scratch."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:134
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:146
+msgid ""
+"Use [`nix flake update`](../../command-ref/new-cli/nix3-flake-update.md) "
+"instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:136
+msgid ""
+"<span id=\"opt-reference-lock-file\">[`--reference-lock-file`](#opt-"
+"reference-lock-file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:138
+msgid ""
+"Read the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:140
+msgid ""
+"<span id=\"opt-update-input\">[`--update-input`](#opt-update-input)</span> "
+"_input-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:142
+msgid ""
+"Update a specific flake input (ignoring its previous entry in the lock file)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:148
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:150
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:152
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:154
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:156
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:158
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:160
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:162
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:164
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:166
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:168
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:170
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:172
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:174
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:176
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:178
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:180
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:182
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:184
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:186
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:188
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:190
+msgid ""
+"During evaluation, rewrite missing or corrupted files in the Nix store. "
+"During building, rebuild missing or corrupted store paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:192
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:194
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:196
+msgid ""
+"Options that change the interpretation of [installables](../../command-ref/"
+"new-cli/nix.md#installables)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:198
+msgid "<span id=\"opt-all\">[`--all`](#opt-all)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:200
+msgid "Apply the operation to every store path."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:202
+msgid "<span id=\"opt-derivation\">[`--derivation`](#opt-derivation)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:204
+msgid ""
+"Operate on the [store derivation](../../glossary.md#gloss-store-derivation) "
+"rather than its outputs."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:206
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:208
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression _expr_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:210
+msgid "<span id=\"opt-file\">[`--file`](#opt-file)</span> / `-f` _file_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:212
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression stored in _file_. If _file_ "
+"is the character -, then a Nix expression is read from standard input. "
+"Implies `--impure`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:214
+msgid ""
+"<span id=\"opt-recursive\">[`--recursive`](#opt-recursive)</span> / `-r`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:216
+msgid "Apply operation to closure of the specified paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:218
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-copy-sigs.md:220
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

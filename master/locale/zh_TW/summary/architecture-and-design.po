@@ -1,0 +1,103 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/architecture/architecture.md:1
+msgid "Architecture"
+msgstr ""
+
+#: source/architecture/architecture.md:3
+msgid ""
+"This chapter describes how Nix works. It should help users understand why "
+"Nix behaves as it does, and it should help developers understand how to "
+"modify Nix and how to write similar tools."
+msgstr ""
+
+#: source/architecture/architecture.md:6
+msgid "Overview"
+msgstr ""
+
+#: source/architecture/architecture.md:8
+msgid ""
+"Nix consists of [hierarchical layers](https://en.wikipedia.org/wiki/"
+"Multitier_architecture#Layers)."
+msgstr ""
+
+#: source/architecture/architecture.md:12
+msgid ""
+"The following [concept map](https://en.wikipedia.org/wiki/Concept_map) shows "
+"its main components (rectangles), the objects they operate on (rounded "
+"rectangles), and their interactions (connecting phrases):"
+msgstr ""
+
+#: source/architecture/architecture.md:55
+msgid ""
+"At the top is the [command line interface](../command-ref/index.md) that "
+"drives the underlying layers."
+msgstr ""
+
+#: source/architecture/architecture.md:57
+msgid ""
+"The [Nix language](../language/index.md) evaluator transforms Nix "
+"expressions into self-contained _build plans_, which are used to derive "
+"_build results_ from referenced _build inputs_."
+msgstr ""
+
+#: source/architecture/architecture.md:59
+msgid ""
+"The command line interface and Nix expressions are what users deal with most."
+msgstr ""
+
+#: source/architecture/architecture.md:61
+msgid "**Note**"
+msgstr ""
+
+#: source/architecture/architecture.md:63
+msgid ""
+"The Nix language itself does not have a notion of _packages_ or "
+"_configurations_. As far as we are concerned here, the inputs and results of "
+"a build plan are just data."
+msgstr ""
+
+#: source/architecture/architecture.md:66
+msgid ""
+"Underlying the command line interface and the Nix language evaluator is the "
+"[Nix store](../store/index.md), a mechanism to keep track of build plans, "
+"data, and references between them. It can also execute build plans to "
+"produce new data, which are made available to the operating system as files."
+msgstr ""
+
+#: source/architecture/architecture.md:69
+msgid ""
+"A build plan itself is a series of _build tasks_, together with their build "
+"inputs."
+msgstr ""
+
+#: source/architecture/architecture.md:71
+msgid ""
+"**Important** A build task in Nix is called [store derivation](../glossary."
+"md#gloss-store-derivation)."
+msgstr ""
+
+#: source/architecture/architecture.md:74
+msgid ""
+"Each build task has a special build input executed as _build instructions_ "
+"in order to perform the build. The result of a build task can be input to "
+"another build task."
+msgstr ""
+
+#: source/architecture/architecture.md:77
+msgid ""
+"The following [data flow diagram](https://en.wikipedia.org/wiki/Data-"
+"flow_diagram) shows a build plan for illustration. Build inputs used as "
+"instructions to a build task are marked accordingly:"
+msgstr ""

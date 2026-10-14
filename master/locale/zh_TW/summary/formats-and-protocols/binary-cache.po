@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/binary-cache/index.md:1
+msgid "Binary Cache"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:3
+msgid ""
+"The binary cache format is an interface designed for exposing a store over "
+"HTTP."
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:5
+msgid "A binary cache consists of:"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:7
+msgid ""
+"A [`nix-cache-info`](./nix-cache-info.md) file at the root with remote-side "
+"configuration."
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:8
+msgid "For each [store object](../../store/store-object.md):"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:9
+msgid ""
+"A [`.narinfo`](./narinfo.md) file containing the object's [metadata](../../"
+"store/store-object.md#metadata) and a (usually relative) URL to the "
+"corresponding compressed NAR."
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:10
+msgid ""
+"A possibly-compressed [Nix Archive](../../store/file-system-object/content-"
+"address.md#serial-nix-archive) containing the store object's file system "
+"data."
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:11
+msgid ""
+"For every entry in the [build trace](../../store/build-trace.md), a JSON "
+"file at `build-trace-v2/<drvBaseName>/<outputName>.doi`:"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:12
+msgid ""
+"the path encodes the [key](../../protocols/json/build-trace-entry.md#key)"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:13
+msgid ""
+"the contents are the [value](../../protocols/json/build-trace-entry."
+"md#value)."
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:15
+msgid ""
+"The following [store types](../../store/types/index.md) use the binary cache "
+"format:"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:17
+msgid ""
+"[HTTP Binary Cache Store](../../store/types/http-binary-cache-store.md) — "
+"served over HTTP(S)"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:18
+msgid ""
+"[Local Binary Cache Store](../../store/types/local-binary-cache-store.md) — "
+"stored on the file system"
+msgstr ""
+
+#: source/protocols/binary-cache/index.md:19
+msgid ""
+"[S3 Binary Cache Store](../../store/types/s3-binary-cache-store.md) — stored "
+"in an AWS S3 bucket"
+msgstr ""

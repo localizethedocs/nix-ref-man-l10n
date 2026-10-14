@@ -1,0 +1,781 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:8
+msgid ""
+"`nix` - a tool for reproducible and declarative configuration management"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:12
+msgid "`nix` \\[_option_...\\] _subcommand_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:14
+msgid "where _subcommand_ is one of the following:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:16
+msgid "**Help commands:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:18
+msgid ""
+"[`nix help`](./nix3-help.md) - show help about `nix` or a particular "
+"subcommand"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:19
+msgid ""
+"[`nix help-stores`](./nix3-help-stores.md) - show help about store types and "
+"their settings"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:21 source/command-ref/new-cli/nix.md:30
+msgid "**Main commands:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:23
+msgid ""
+"[`nix build`](./nix3-build.md) - build a derivation or fetch a store path"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:24
+msgid ""
+"[`nix develop`](./nix3-develop.md) - run a bash shell that provides the "
+"build environment of a derivation"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:25
+msgid "[`nix flake`](./nix3-flake.md) - manage Nix flakes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:26
+msgid "[`nix profile`](./nix3-profile.md) - manage Nix profiles"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:27
+msgid "[`nix run`](./nix3-run.md) - run a Nix application"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:28
+msgid "[`nix search`](./nix3-search.md) - search for packages"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:32
+msgid ""
+"[`nix repl`](./nix3-repl.md) - start an interactive environment for "
+"evaluating Nix expressions"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:34
+msgid "**Infrequently used commands:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:36
+msgid ""
+"[`nix bundle`](./nix3-bundle.md) - bundle an application so that it works "
+"outside of the Nix store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:37
+msgid "[`nix copy`](./nix3-copy.md) - copy paths between Nix stores"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:38
+msgid ""
+"[`nix edit`](./nix3-edit.md) - open the Nix expression of a Nix package in "
+"$EDITOR"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:39
+msgid "[`nix eval`](./nix3-eval.md) - evaluate a Nix expression"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:40
+msgid "[`nix fmt`](./nix3-fmt.md) - reformat your code in the standard style"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:41
+msgid "[`nix formatter`](./nix3-formatter.md) - build or run the formatter"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:42
+msgid ""
+"[`nix log`](./nix3-log.md) - show the build log of the specified packages or "
+"paths, if available"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:43
+msgid ""
+"[`nix path-info`](./nix3-path-info.md) - query information about store paths"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:44
+msgid "[`nix registry`](./nix3-registry.md) - manage the flake registry"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:45
+msgid ""
+"[`nix why-depends`](./nix3-why-depends.md) - show why a package has another "
+"package in its closure"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:47
+msgid "**Utility/scripting commands:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:49
+msgid "[`nix config`](./nix3-config.md) - manipulate the Nix configuration"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:50
+msgid ""
+"[`nix daemon`](./nix3-daemon.md) - daemon to perform store operations on "
+"behalf of non-root clients"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:51
+msgid "[`nix derivation`](./nix3-derivation.md) - work with derivations"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:52
+msgid "[`nix env`](./nix3-env.md) - manipulate the process environment"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:53
+msgid "[`nix hash`](./nix3-hash.md) - compute and convert cryptographic hashes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:54
+msgid "[`nix key`](./nix3-key.md) - generate and convert Nix signing keys"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:55
+msgid "[`nix nar`](./nix3-nar.md) - create or inspect NAR files"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:56
+msgid ""
+"[`nix print-dev-env`](./nix3-print-dev-env.md) - print shell code that can "
+"be sourced by bash to reproduce the build environment of a derivation"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:57
+msgid "[`nix store`](./nix3-store.md) - manipulate a Nix store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:59
+msgid "**Commands for upgrading or troubleshooting your Nix installation:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:61
+msgid ""
+"[`nix upgrade-nix`](./nix3-upgrade-nix.md) - upgrade Nix to the latest "
+"stable version"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:63
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:65
+msgid "Create a new flake:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:72
+msgid "Build the flake in the current directory:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:80
+msgid "Run the flake in the current directory:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:87
+msgid "Start a development shell for hacking on this flake:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:102
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:104
+msgid ""
+"Nix is a tool for building software, configurations and other artifacts in a "
+"reproducible and declarative way. For more information, see the [Nix "
+"homepage](https://nixos.org/) or the [Nix manual](https://nix.dev/manual/nix/"
+"stable/)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:109
+msgid "Installables"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:111
+msgid ""
+"**Warning**   \n"
+"Installables are part of the unstable [`nix-command` experimental feature]"
+"(../../development/experimental-features.md#xp-feature-nix-command), and "
+"subject to change without notice."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:116
+msgid ""
+"Many `nix` subcommands operate on one or more _installables_. These are "
+"command line arguments that represent something that can be realised in the "
+"Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:119
+msgid "The following types of installable are supported by most commands:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:121
+msgid "[Flake output attribute](#flake-output-attribute) (experimental)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:122
+msgid "This is the default"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:123
+msgid "[Store path](#store-path)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:124
+msgid ""
+"This is assumed if the argument is a Nix store path or a symlink to a Nix "
+"store path"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:125
+msgid "[Nix file](#nix-file), optionally qualified by an attribute path"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:126
+msgid "Specified with `--file`/`-f`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:127
+msgid ""
+"[Nix expression](#nix-expression), optionally qualified by an attribute path"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:128
+msgid "Specified with `--expr`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:130
+msgid ""
+"For most commands, if no installable is specified, `.` is assumed. That is, "
+"Nix will operate on the default flake output attribute of the flake in the "
+"current directory."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:133
+msgid "Flake output attribute"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:135
+msgid ""
+"**Warning**   \n"
+"Flake output attribute installables depend on both the [`flakes`](../../"
+"development/experimental-features.md#xp-feature-flakes) and [`nix-command`]"
+"(../../development/experimental-features.md#xp-feature-nix-command) "
+"experimental features, and subject to change without notice."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:142
+msgid "Example: `nixpkgs#hello`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:144
+msgid ""
+"These have the form _flakeref_\\[`#`_attrpath_\\], where _flakeref_ is a "
+"[flake reference](./nix3-flake.md#flake-references) and _attrpath_ is an "
+"optional attribute path. For more information on flakes, see [the `nix "
+"flake` manual page](./nix3-flake.md).  Flake references are most commonly a "
+"flake identifier in the flake registry (e.g. `nixpkgs`), or a raw path (e.g. "
+"`/path/to/my-flake` or `.` or `../foo`), or a full URL (e.g. `github:nixos/"
+"nixpkgs` or `path:.`)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:152
+msgid ""
+"When the flake reference is a raw path (a path without any URL scheme), it "
+"is interpreted as a `path:` or `git+file:` url in the following way:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:156
+msgid ""
+"If the path is within a Git repository, then the url will be of the form "
+"`git+file://[GIT_REPO_ROOT]?dir=[RELATIVE_FLAKE_DIR_PATH]` where "
+"`GIT_REPO_ROOT` is the path to the root of the git repository, and "
+"`RELATIVE_FLAKE_DIR_PATH` is the path (relative to the directory root) of "
+"the closest parent of the given path that contains a `flake.nix` within the "
+"git repository. If no such directory exists, then Nix will error-out."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:164
+msgid ""
+"Note that the search will only include files indexed by git. In particular, "
+"files which are matched by `.gitignore` or have never been `git add`\\-ed "
+"will not be available in the flake. If this is undesirable, specify `path:"
+"<directory>` explicitly;"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:168
+msgid ""
+"For example, if `/foo/bar` is a git repository with the following structure:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:178
+msgid "Then `/foo/bar/baz/blah` will resolve to `git+file:///foo/bar?dir=baz`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:180
+msgid ""
+"If the supplied path is not a git repository, then the url will have the "
+"form `path:FLAKE_DIR_PATH` where `FLAKE_DIR_PATH` is the closest parent of "
+"the supplied path that contains a `flake.nix` file (within the same file-"
+"system). If no such directory exists, then Nix will error-out."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:185
+msgid ""
+"For example, if `/foo/bar/flake.nix` exists, then `/foo/bar/baz/` will "
+"resolve to `path:/foo/bar`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:188
+msgid ""
+"If _attrpath_ is omitted, Nix tries some default values; for most "
+"subcommands, the default is `packages.`_system_`.default` (e.g. `packages."
+"x86_64-linux.default`), but some subcommands have other defaults. If "
+"_attrpath_ _is_ specified, _attrpath_ is interpreted as relative to one or "
+"more prefixes; for most subcommands, these are `packages.`_system_, "
+"`legacyPackages.*system*` and the empty prefix. Thus, on `x86_64-linux` `nix "
+"build nixpkgs#hello` will try to build the attributes `packages.x86_64-linux."
+"hello`, `legacyPackages.x86_64-linux.hello` and `hello`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:199
+msgid ""
+"If _attrpath_ begins with `.` then no prefixes or defaults are attempted. "
+"This allows the form _flakeref_\\[`#.`_attrpath_\\], such as `github:NixOS/"
+"nixpkgs#.lib.fakeSha256` to avoid a search of `packages.*system*.lib."
+"fakeSha256`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:201
+msgid "Store path"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:203
+msgid "Example: `/nix/store/10l19qifk7hjjq47px8m2prqk1gv4isy-hello-2.10`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:205
+msgid ""
+"These are paths inside the Nix store, or symlinks that resolve to a path in "
+"the Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:207
+msgid ""
+"A [store derivation](../../glossary.md#gloss-store-derivation) is also "
+"addressed by store path."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:209
+msgid "Example: `/nix/store/p7gp6lxdg32h4ka1q398wd9r2zkbbz2v-hello-2.10.drv`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:211
+msgid ""
+"If you want to refer to an output path of that store derivation, add the "
+"output name preceded by a caret (`^`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:213
+msgid ""
+"Example: `/nix/store/p7gp6lxdg32h4ka1q398wd9r2zkbbz2v-hello-2.10.drv^out`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:215
+msgid "All outputs can be referred to at once with the special syntax `^*`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:217
+msgid "Example: `/nix/store/p7gp6lxdg32h4ka1q398wd9r2zkbbz2v-hello-2.10.drv^*`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:219
+msgid "Nix file"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:221
+msgid "Example: `--file /path/to/nixpkgs hello`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:223
+msgid ""
+"When the option `-f` / `--file` _path_ \\[_attrpath_...\\] is given, "
+"installables are interpreted as the value of the expression in the Nix file "
+"at _path_. If attribute paths are provided, commands will operate on the "
+"corresponding values accessible at these paths. The Nix expression in that "
+"file, or any selected attribute, must evaluate to a derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:227
+msgid "Nix expression"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:229
+msgid "Example: `--expr 'import <nixpkgs> {}' hello`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:231
+msgid ""
+"When the option `--expr` _expression_ \\[_attrpath_...\\] is given, "
+"installables are interpreted as the value of the of the Nix expression. If "
+"attribute paths are provided, commands will operate on the corresponding "
+"values accessible at these paths. The Nix expression, or any selected "
+"attribute, must evaluate to a derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:235
+msgid ""
+"You may need to specify `--impure` if the expression references impure "
+"inputs (such as `<nixpkgs>`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:237
+msgid "Derivation output selection"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:239
+msgid ""
+"Derivations can have multiple outputs, each corresponding to a different "
+"store path. For instance, a package can have a `bin` output that contains "
+"programs, and a `dev` output that provides development artifacts like C/C++ "
+"header files. The outputs on which `nix` commands operate are determined as "
+"follows:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:245
+msgid ""
+"You can explicitly specify the desired outputs using the syntax "
+"_installable_`^`_output1_`,`_..._`,`_outputN_ — that is, a caret followed "
+"immediately by a comma-separated list of derivation outputs to select. For "
+"installables specified as [Flake output attributes](#flake-output-attribute) "
+"or [Store paths](#store-path), the output is specified in the same argument:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:248
+msgid ""
+"For example, you can obtain the `dev` and `static` outputs of the `glibc` "
+"package:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:256 source/command-ref/new-cli/nix.md:289
+msgid ""
+"and likewise, using a store path to a \"drv\" file to specify the derivation:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:263
+msgid ""
+"For `--expr` and `-f`/`--file`, the derivation output is specified as part "
+"of the attribute path:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:270
+msgid "This syntax is the same even if the actual attribute path is empty:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:276
+msgid ""
+"You can also specify that _all_ outputs should be used using the syntax "
+"_installable_`^*`. For example, the following shows the size of all outputs "
+"of the `glibc` package in the binary cache:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:280
+msgid ""
+"```console\n"
+"# nix path-info --closure-size --eval-store auto --store https://cache.nixos."
+"org 'nixpkgs#glibc^*'\n"
+"/nix/store/i2fn2mjgihz960bwa7ldab5ra5fhxznh-glibc-2.33-123                 "
+"33208200\n"
+"/nix/store/n2wnn3i47w6dbylh64hdjzgd5rrprdn8-glibc-2.33-123-bin             "
+"36142896\n"
+"/nix/store/v7dyz518sbkzl8x2a1sgk1lwsfd3d6gm-glibc-2.33-123-debug          "
+"155787312\n"
+"/nix/store/z4hv6ybyinqw9a3dwyl5k66a91aggylj-glibc-2.33-123-static          "
+"42488328\n"
+"/nix/store/lrjirf0j1rjnvif6amyp9pfcqr2km385-glibc-2.33-123-dev             "
+"44200560\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:295
+msgid ""
+"If you didn't specify the desired outputs, but the derivation has an "
+"attribute `meta.outputsToInstall`, Nix will use those outputs. For example, "
+"since the package `nixpkgs#libxml2` has this attribute:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:299
+msgid ""
+"```console\n"
+"# nix eval 'nixpkgs#libxml2.meta.outputsToInstall'\n"
+"[ \"bin\" \"man\" ]\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:304
+msgid ""
+"a command like `nix shell nixpkgs#libxml2` will provide only those two "
+"outputs by default."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:307
+msgid ""
+"Note that a [store derivation](../../glossary.md#gloss-store-derivation) "
+"(given by its `.drv` file store path) doesn't have any attributes like "
+"`meta`, and thus this case doesn't apply to it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:312
+msgid "Otherwise, Nix will use all outputs of the derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:314
+msgid "Nix stores"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:316
+msgid ""
+"Most `nix` subcommands operate on a _Nix store_. The various store types are "
+"documented in the [Store Types](../../store/types/index.md) section of the "
+"manual."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:321
+msgid ""
+"The same information is also available from the [`nix help-stores`](./nix3-"
+"help-stores.md) command."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:323
+msgid "Shebang interpreter"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:325
+msgid ""
+"The `nix` command can be used as a `#!` interpreter. Arguments to Nix can be "
+"passed on subsequent lines in the script."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:328
+msgid ""
+"Verbatim strings may be passed in double backtick (``` `` ```) quotes. <!-- "
+"that's markdown for two backticks in inline code. --> Sequences of _n_ "
+"backticks of 3 or longer are parsed as _n-1_ literal backticks. A single "
+"space before the closing ``` `` ``` is ignored if present."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:332
+msgid ""
+"`--file` and `--expr` resolve relative paths based on the script location."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:334
+msgid "Examples:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:343
+msgid "or with **flakes**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:352
+msgid "or with an **expression**:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:355
+msgid "#! /usr/bin/env nix\n"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:356
+msgid "#! nix with (import (builtins.getFlake \"nixpkgs\") {});\n"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:358
+msgid "#! nix ``\n"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:362
+msgid "\"$@\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:365
+msgid ""
+"or with cascading interpreters. Note that the `#! nix` lines don't need to "
+"follow after the first line, to accommodate other interpreters."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:367
+msgid ""
+"````\n"
+"#!/usr/bin/env nix\n"
+"//! ```cargo\n"
+"//! [dependencies]\n"
+"//! time = \"0.1.25\"\n"
+"//! ```\n"
+"/*\n"
+"#!nix shell nixpkgs#rustc nixpkgs#rust-script nixpkgs#cargo --command rust-"
+"script\n"
+"*/\n"
+"fn main() {\n"
+"    for argument in std::env::args().skip(1) {\n"
+"        println!(\"{}\", argument);\n"
+"    };\n"
+"    println!(\"{}\", std::env::var(\"HOME\").expect(\"\"));\n"
+"    println!(\"{}\", time::now().rfc822z());\n"
+"}\n"
+"// vim: ft=rust\n"
+"````"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:386
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:388
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:390
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:392
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:394
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:396
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:398
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:400
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:402
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:404
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:406
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:408
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:410
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:412
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:414
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:416
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:418
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:420
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:422
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:424
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:426
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:428
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:430
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:432
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix.md:434
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

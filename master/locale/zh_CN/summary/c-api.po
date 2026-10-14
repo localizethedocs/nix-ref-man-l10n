@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/c-api.md:1
+msgid "C API"
+msgstr ""
+
+#: source/c-api.md:3
+msgid ""
+"Nix provides a C API with the intent of [_becoming_](https://github.com/"
+"NixOS/nix/milestone/52) a stable API, which it is currently not. It is in "
+"development."
+msgstr ""
+
+#: source/c-api.md:6
+msgid "See:"
+msgstr ""
+
+#: source/c-api.md:7
+msgid "C API documentation for a recent build of master"
+msgstr ""
+
+#: source/c-api.md:8
+msgid ""
+"[Getting Started](https://hydra.nixos.org/job/nix/master/external-api-docs/"
+"latest/download-by-type/doc/external-api-docs)"
+msgstr ""
+
+#: source/c-api.md:9
+msgid ""
+"[Index](https://hydra.nixos.org/job/nix/master/external-api-docs/latest/"
+"download-by-type/doc/external-api-docs/globals.html)"
+msgstr ""
+
+#: source/c-api.md:10
+msgid ""
+"[Matrix Room _Nix Bindings_](https://matrix.to/#/#nix-bindings:nixos.org) "
+"for discussion and questions."
+msgstr ""
+
+#: source/c-api.md:11
+msgid "[Stabilisation Milestone](https://github.com/NixOS/nix/milestone/52)"
+msgstr ""
+
+#: source/c-api.md:12
+msgid ""
+"[Other C API PRs and issues](https://github.com/NixOS/nix/labels/c%20api)"
+msgstr ""
+
+#: source/c-api.md:13
+msgid ""
+"[Contributing C API Documentation](development/documentation.md#c-api-"
+"documentation), including how to build it locally."
+msgstr ""

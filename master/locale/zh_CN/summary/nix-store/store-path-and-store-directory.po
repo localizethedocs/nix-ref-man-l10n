@@ -1,0 +1,289 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/store-path.md:1
+msgid "Store Path and Store Directory"
+msgstr ""
+
+#: source/store/store-path.md:3
+msgid ""
+"Nix's [store object](./store-object.md) and [file system object](./file-"
+"system-object.md) data models are minimal and abstract. But to actually be "
+"used by software, store objects need to be made available through the "
+"operating system's file system."
+msgstr ""
+
+#: source/store/store-path.md:6
+msgid ""
+"This is done by exposing all the store objects in a single _[store directory]"
+"(#store-directory-path)_. Every entry in that directory is a _[store path "
+"base name](#base-name)_ pointing to a store object. Store objects exposed in "
+"this way can then be referenced by _[store paths](#store-path)_."
+msgstr ""
+
+#: source/store/store-path.md:16
+msgid "Store Path Base Name"
+msgstr ""
+
+#: source/store/store-path.md:18
+msgid "Nix implements references to store objects as _store path base names_."
+msgstr ""
+
+#: source/store/store-path.md:20
+msgid ""
+"Think of a store path base name as an [opaque](https://en.m.wikipedia.org/"
+"wiki/Opaque_data_type), [unique identifier](https://en.m.wikipedia.org/wiki/"
+"Unique_identifier): The only way to obtain a store path base name is by "
+"adding or building store objects. A store path base name will always "
+"reference exactly one store object."
+msgstr ""
+
+#: source/store/store-path.md:27
+msgid "Store path base names are pairs of"
+msgstr ""
+
+#: source/store/store-path.md:29
+msgid "A 20-byte \\[digest\\]{#digest} for identification"
+msgstr ""
+
+#: source/store/store-path.md:30
+msgid "A symbolic \\[name\\]{#name} for people to read"
+msgstr ""
+
+#: source/store/store-path.md:32 source/store/store-path.md:43
+#: source/store/store-path.md:78
+msgid "**Example**"
+msgstr ""
+
+#: source/store/store-path.md:34
+msgid "Digest: `q06x3jll2yfzckz2bzqak089p43ixkkq`"
+msgstr ""
+
+#: source/store/store-path.md:35
+msgid "Name:   `firefox-33.1`"
+msgstr ""
+
+#: source/store/store-path.md:37
+msgid "A store path base name is rendered to a string as the concatenation of"
+msgstr ""
+
+#: source/store/store-path.md:39
+msgid ""
+"Digest rendered in [Nix32](../protocols/nix32.md), a variant of [Base32]"
+"(https://en.wikipedia.org/wiki/Base32) (20 hash bytes become 32 ASCII "
+"characters)"
+msgstr ""
+
+#: source/store/store-path.md:40
+msgid "Hyphen (`-`)"
+msgstr ""
+
+#: source/store/store-path.md:41
+msgid "Name"
+msgstr ""
+
+#: source/store/store-path.md:54
+msgid ""
+"Exactly how the digest is calculated depends on the type of store object "
+"being referenced. Store path digests are _supposed_ to be opaque, and so for "
+"most operations, it is not necessary to know the details. That said, the "
+"manual has a full [specification of store path digests](../protocols/store-"
+"path.md)."
+msgstr ""
+
+#: source/store/store-path.md:58
+msgid "Store Directory Path"
+msgstr ""
+
+#: source/store/store-path.md:60
+msgid ""
+"Every [Nix store](./index.md) has a store directory path. This is an "
+"absolute, lexically canonical (not containing any `..`, `.`, or similar) "
+"path which points to the directory where all store objects are to be found."
+msgstr ""
+
+#: source/store/store-path.md:65 source/store/store-path.md:98
+msgid "**Note**"
+msgstr ""
+
+#: source/store/store-path.md:67
+msgid ""
+"The store directory defaults to `/nix/store`, but is in principle arbitrary."
+msgstr ""
+
+#: source/store/store-path.md:69
+msgid "Store Path"
+msgstr ""
+
+#: source/store/store-path.md:71
+msgid ""
+"A store path is the pair of a store directory path and a [store path base "
+"name](#base-name). It is rendered to a file system path as the concatenation "
+"of"
+msgstr ""
+
+#: source/store/store-path.md:74
+msgid "[Store directory path](#store-directory-path) (typically `/nix/store`)"
+msgstr ""
+
+#: source/store/store-path.md:75
+msgid "Path separator (`/`)"
+msgstr ""
+
+#: source/store/store-path.md:76
+msgid "The [store path base name](#base-name)"
+msgstr ""
+
+#: source/store/store-path.md:86
+msgid ""
+"When we have fixed a given store, or given store directory path (that all "
+"the stores in use share), the abstract syntax for store paths and the "
+"abstract syntax for store path base names coincide: the store directory path "
+"is known from context, so only the other two fields vary from one store path "
+"to the next."
+msgstr ""
+
+#: source/store/store-path.md:88
+msgid "Exposing Store Objects in OS File Systems"
+msgstr ""
+
+#: source/store/store-path.md:90
+msgid ""
+"Not every store can be accessed through the file system. But if the store "
+"has a file system representation, the following should be true:"
+msgstr ""
+
+#: source/store/store-path.md:93
+msgid ""
+"The store directory path is canonical: no prefix of the path (i.e. path of "
+"the first _n_ path segments) points to a symlink. In other words, the store "
+"directory can be looked up from the store directory path without following "
+"any symlinks. (This condition is a separate condition in addition to the "
+"\"lexical canonicity\" described above, which is a property of just the path "
+"itself. This (regular) \"canonicity\" is a property about the path and the "
+"filesystem it navigates jointly.)"
+msgstr ""
+
+#: source/store/store-path.md:100
+msgid ""
+"The [`allow-symlinked-store`](../command-ref/conf-file.md#conf-allow-"
+"symlinked-store) setting can be used to relax this requirement."
+msgstr ""
+
+#: source/store/store-path.md:102
+msgid "The store directory path in fact points to a directory."
+msgstr ""
+
+#: source/store/store-path.md:104
+msgid ""
+"The store directory contains, for every store object in the store, the [file "
+"system object](./file-system-object.md) of that store object at the "
+"(rendered) [store path base name](#base-name). The permissions and other "
+"metadata for these files in the store directory is in the normal form "
+"described in [Exposing in OS file systems](./file-system-object/os-file-"
+"system.md)."
+msgstr ""
+
+#: source/store/store-path.md:107
+msgid ""
+"The above properties mean that the following file accesses will work. "
+"Suppose we have a store available on the file system per the above rules, "
+"and `q06x3jll2yfzckz2bzqak089p43ixkkq-firefox-33.1` is the store path base "
+"name of a store object in that store."
+msgstr ""
+
+#: source/store/store-path.md:110
+msgid ""
+"Suppose that the store directory (path) is `/foo/bar`. Then, `/foo/bar/"
+"q06x3jll2yfzckz2bzqak089p43ixkkq-firefox-33.1` exists and is the file system "
+"object of that store object."
+msgstr ""
+
+#: source/store/store-path.md:113
+msgid ""
+"Suppose that we don't know what the store directory path of the store is, "
+"but we do have a capability `storeDir` to the store directory on the file "
+"system. (This would be a \"file descriptor\" on Unix, or a \"file handle\" "
+"on Windows.) Then (using the Unix notation for this):"
+msgstr ""
+
+#: source/store/store-path.md:116
+msgid ""
+"```\n"
+"openat(storeDir, \"q06x3jll2yfzckz2bzqak089p43ixkkq-firefox-33.1\", "
+"O_NOFOLLOW)\n"
+"```"
+msgstr ""
+
+#: source/store/store-path.md:119
+msgid ""
+"will succeed (so long as the file system object is not a symlink), and the "
+"yielded capability will point to the file system object of that store object."
+msgstr ""
+
+#: source/store/store-path.md:121
+msgid ""
+"(The behavior for symlinks is harder to specify because of limitations in "
+"POSIX.)"
+msgstr ""
+
+#: source/store/store-path.md:123
+msgid "Relocating store objects"
+msgstr ""
+
+#: source/store/store-path.md:125
+msgid ""
+"The inclusion of the store directory path in the full rendered store path "
+"means that the full rendered store path is not just derived from the "
+"referenced store object itself, but depends on the store that the store "
+"object is in. (And actually, all of the currently-supported ways of "
+"computing the digest of a store path also depend on the store directory "
+"path, as described in the [specification of store path digests](../protocols/"
+"store-path.md). So this is also true even just for store path base names, in "
+"general.)"
+msgstr ""
+
+#: source/store/store-path.md:129
+msgid ""
+"It is therefore important to consider which store a given store object "
+"belongs to: Files in the store object can contain store paths, and processes "
+"may read these paths. Nix can only guarantee referential integrity if store "
+"paths do not cross store boundaries."
+msgstr ""
+
+#: source/store/store-path.md:133
+msgid "One can only copy store objects to a different store if"
+msgstr ""
+
+#: source/store/store-path.md:135
+msgid "The source and target stores' directories match"
+msgstr ""
+
+#: source/store/store-path.md:137
+msgid "or"
+msgstr ""
+
+#: source/store/store-path.md:139
+msgid ""
+"The store object in question has no references, that is, contains no store "
+"paths"
+msgstr ""
+
+#: source/store/store-path.md:141
+msgid ""
+"One cannot copy a store object to a store with a different store directory. "
+"Instead, it has to be rebuilt, together with all its dependencies. It is in "
+"general not enough to replace the store directory string in file contents, "
+"as this may render executables unusable by invalidating their internal "
+"offsets or checksums."
+msgstr ""

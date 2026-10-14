@@ -1,0 +1,252 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/string-context.md:1
+msgid "String context"
+msgstr ""
+
+#: source/language/string-context.md:3 source/language/string-context.md:19
+msgid "**Note**"
+msgstr ""
+
+#: source/language/string-context.md:5
+msgid ""
+"This is an advanced topic. The Nix language is designed to be used without "
+"the programmer consciously dealing with string contexts or even knowing what "
+"they are."
+msgstr ""
+
+#: source/language/string-context.md:8
+msgid ""
+"A string in the Nix language is not just a sequence of characters like "
+"strings in other languages. It is actually a pair of a sequence of "
+"characters and a _string context_. The string context is an (unordered) set "
+"of _string context elements_."
+msgstr ""
+
+#: source/language/string-context.md:12
+msgid ""
+"The purpose of string contexts is to collect non-string values attached to "
+"strings via [string concatenation](./operators.md#string-concatenation), "
+"[string interpolation](./string-interpolation.md), and similar operations. "
+"The idea is that a user can reference other files when creating text files "
+"through Nix expressions, without manually keeping track of the exact paths. "
+"Nix will ensure that the all referenced files are accessible – that all "
+"[store paths](../glossary.md#gloss-store-path) are [valid](../glossary."
+"md#gloss-validity)."
+msgstr ""
+
+#: source/language/string-context.md:21
+msgid ""
+"String contexts are _not_ explicitly manipulated in idiomatic Nix language "
+"code."
+msgstr ""
+
+#: source/language/string-context.md:23
+msgid "String context elements come in different forms:"
+msgstr ""
+
+#: source/language/string-context.md:25
+msgid ""
+"[deriving path](../glossary.md#gloss-deriving-path){#string-context-element-"
+"derived-path}"
+msgstr ""
+
+#: source/language/string-context.md:27
+msgid ""
+"A string context element of this type is a [deriving path](../glossary."
+"md#gloss-deriving-path). They can be either of type [constant](#string-"
+"context-constant) or [output](#string-context-output), which correspond to "
+"the types of deriving paths."
+msgstr ""
+
+#: source/language/string-context.md:30
+msgid "\\[Constant string context elements\\]{#string-context-constant}"
+msgstr ""
+
+#: source/language/string-context.md:32 source/language/string-context.md:54
+#: source/language/string-context.md:83
+msgid "**Example**"
+msgstr ""
+
+#: source/language/string-context.md:34
+msgid ""
+"[`builtins.storePath`](./builtins.md#builtins-storePath) creates a string "
+"with a single constant string context element:"
+msgstr ""
+
+#: source/language/string-context.md:36
+msgid ""
+"```nix\n"
+"builtins.getContext (builtins.storePath \"/nix/store/"
+"ikwkxz4wwlp2g1428n7dy729cg1d9hin-hello-2.10\")\n"
+"```"
+msgstr ""
+
+#: source/language/string-context.md:39 source/language/string-context.md:65
+#: source/language/string-context.md:93
+msgid "evaluates to"
+msgstr ""
+
+#: source/language/string-context.md:40
+msgid ""
+"```nix\n"
+"{\n"
+"  \"/nix/store/ikwkxz4wwlp2g1428n7dy729cg1d9hin-hello-2.10\" = {\n"
+"    path = true;\n"
+"  };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/string-context.md:52
+msgid "\\[Output string context elements\\]{#string-context-output}"
+msgstr ""
+
+#: source/language/string-context.md:56
+msgid ""
+"The behavior of string contexts are best demonstrated with a built-in "
+"function that is still experimental: [`builtins.outputOf`](./builtins."
+"md#builtins-outputOf). This example will _not_ work with stable Nix!"
+msgstr ""
+
+#: source/language/string-context.md:59
+msgid ""
+"```nix\n"
+"builtins.getContext\n"
+"  (builtins.outputOf\n"
+"    (builtins.storePath \"/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-"
+"hello-2.12.drv\")\n"
+"    \"out\")\n"
+"```"
+msgstr ""
+
+#: source/language/string-context.md:66
+msgid ""
+"```nix\n"
+"{\n"
+"  \"/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv\" = {\n"
+"    outputs = [ \"out\" ];\n"
+"  };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/string-context.md:76
+msgid "\\[_derivation deep_\\]{#string-context-element-derivation-deep}"
+msgstr ""
+
+#: source/language/string-context.md:78
+msgid ""
+"_derivation deep_ is an advanced feature intended to be used with the "
+"[`exportReferencesGraph` derivation attribute](./advanced-attributes."
+"html#adv-attr-exportReferencesGraph). A _derivation deep_ string context "
+"element is a derivation path, and refers to both its outputs and the entire "
+"build closure of that derivation: all its outputs, all the other derivations "
+"the given derivation depends on, and all the outputs of those."
+msgstr ""
+
+#: source/language/string-context.md:85
+msgid ""
+"The best way to illustrate _derivation deep_ string contexts is with "
+"[`builtins.addDrvOutputDependencies`](./builtins.md#builtins-"
+"addDrvOutputDependencies). Take a regular constant string context element "
+"pointing to a derivation, and transform it into a \"Derivation deep\" string "
+"context element."
+msgstr ""
+
+#: source/language/string-context.md:88
+msgid ""
+"```nix\n"
+"builtins.getContext\n"
+"  (builtins.addDrvOutputDependencies\n"
+"    (builtins.storePath \"/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-"
+"hello-2.12.drv\"))\n"
+"```"
+msgstr ""
+
+#: source/language/string-context.md:94
+msgid ""
+"```nix\n"
+"{\n"
+"  \"/nix/store/fvchh9cvcr7kdla6n860hshchsba305w-hello-2.12.drv\" = {\n"
+"    allOutputs = true;\n"
+"  };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/string-context.md:105
+msgid "Inspecting string contexts"
+msgstr ""
+
+#: source/language/string-context.md:107
+msgid ""
+"Most basically, [`builtins.hasContext`](./builtins.md#builtins-hasContext) "
+"will tell whether a string has a non-empty context."
+msgstr ""
+
+#: source/language/string-context.md:109
+msgid ""
+"When more granular information is needed, [`builtins.getContext`](./builtins."
+"md#builtins-getContext) can be used. It creates an [attribute set](./types."
+"md#type-attrs) representing the string context, which can be inspected as "
+"usual."
+msgstr ""
+
+#: source/language/string-context.md:116
+msgid "Clearing string contexts"
+msgstr ""
+
+#: source/language/string-context.md:118
+msgid ""
+"[`builtins.unsafeDiscardStringContext`](./builtins.md#builtins-"
+"unsafeDiscardStringContext) will make a copy of a string, but with an empty "
+"string context. The returned string can be used in more ways, e.g. by "
+"operators that require the string context to be empty. The requirement to "
+"explicitly discard the string context in such use cases helps ensure that "
+"string context elements are not lost by mistake. The \"unsafe\" marker is "
+"only there to remind that Nix normally guarantees that dependencies are "
+"tracked, whereas the returned string has lost them."
+msgstr ""
+
+#: source/language/string-context.md:123
+msgid "Constructing string contexts"
+msgstr ""
+
+#: source/language/string-context.md:125
+msgid ""
+"[`builtins.appendContext`](./builtins.md#builtins-appendContext) will create "
+"a copy of a string, but with additional string context elements. The context "
+"is specified explicitly by an [attribute set](./types.md#type-attrs) in the "
+"format that [`builtins.hasContext`](./builtins.md#builtins-hasContext) "
+"produces. A string with arbitrary contexts can be made like this:"
+msgstr ""
+
+#: source/language/string-context.md:129
+msgid ""
+"Create a string with the desired string context elements. (The contents of "
+"the string do not matter.)"
+msgstr ""
+
+#: source/language/string-context.md:131
+msgid ""
+"Dump its context with [`builtins.getContext`](./builtins.md#builtins-"
+"getContext)."
+msgstr ""
+
+#: source/language/string-context.md:132
+msgid ""
+"Combine it with a base string and repeated [`builtins.appendContext`](./"
+"builtins.md#builtins-appendContext) calls."
+msgstr ""

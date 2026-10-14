@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.5.md:1
+msgid "Release 2.5 (2021-12-13)"
+msgstr ""
+
+#: source/release-notes/rl-2.5.md:3
+msgid ""
+"The garbage collector no longer blocks new builds, so the message `waiting "
+"for the big garbage collector lock...` is a thing of the past."
+msgstr ""
+
+#: source/release-notes/rl-2.5.md:7
+msgid "Binary cache stores now have a setting `compression-level`."
+msgstr ""
+
+#: source/release-notes/rl-2.5.md:9
+msgid "`nix develop` now has a flag `--unpack` to run `unpackPhase`."
+msgstr ""
+
+#: source/release-notes/rl-2.5.md:11
+msgid "Lists can now be compared lexicographically using the `<` operator."
+msgstr ""
+
+#: source/release-notes/rl-2.5.md:13
+msgid ""
+"New built-in function: `builtins.groupBy`, with the same functionality as "
+"Nixpkgs' `lib.groupBy`, but faster."
+msgstr ""
+
+#: source/release-notes/rl-2.5.md:16
+msgid "`nix repl` now has a `:log` command."
+msgstr ""

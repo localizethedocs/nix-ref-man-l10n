@@ -13,22 +13,22 @@
     },
     "zh_CN" : 
     {
-      "branch" : "",
+      "branch" : "master",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-10-13 16:43:52 +0000",
+        "hash" : "a9f38ea0ee89f550616f342386f45e896f4abd18",
+        "title" : "Revert accidentally merged PR (#16602)"
       }
     },
     "zh_TW" : 
     {
-      "branch" : "",
+      "branch" : "master",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-10-13 16:43:52 +0000",
+        "hash" : "a9f38ea0ee89f550616f342386f45e896f4abd18",
+        "title" : "Revert accidentally merged PR (#16602)"
       }
     }
   },

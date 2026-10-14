@@ -1,0 +1,763 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/experimental-local-overlay-store.md:1
+msgid "Experimental Local Overlay Store"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:3
+#: source/store/types/experimental-local-overlay-store.md:161
+#: source/store/types/experimental-local-overlay-store.md:185
+#: source/store/types/experimental-local-overlay-store.md:330
+msgid "**Warning**"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:5
+msgid ""
+"This store is part of an [experimental feature](../../development/"
+"experimental-features.md)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:8
+msgid ""
+"To use this store, make sure the [`local-overlay-store` experimental feature]"
+"(../../development/experimental-features.md#xp-feature-local-overlay-store) "
+"is enabled. For example, include the following in [`nix.conf`](../../command-"
+"ref/conf-file.md):"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:17
+msgid "**Store URL format**: `local-overlay`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:19
+msgid ""
+"This store type is a variation of the \\[local store\\] designed to leverage "
+"Linux's [Overlay Filesystem](https://docs.kernel.org/filesystems/overlayfs."
+"html) (OverlayFS for short). Just as OverlayFS combines a lower and upper "
+"filesystem by treating the upper one as a patch against the lower, the local "
+"overlay store combines a lower store with an upper almost-\\[local store\\]. "
+"(\"almost\" because while the upper filesystems for OverlayFS is valid on "
+"its own, the upper almost-store is not a valid local store on its own "
+"because some references will dangle.) To use this store, you will first need "
+"to configure an OverlayFS mountpoint [appropriately](#example-filesystem-"
+"layout) as Nix will not do this for you (though it will verify the "
+"mountpoint is configured correctly)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:24
+msgid "Conceptual parts of a local overlay store"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:26
+msgid ""
+"_This is a more abstract/conceptual description of the parts of a layered "
+"store, an authoritative reference. For more \"practical\" instructions, see "
+"the worked-out example in the next subsection._"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:29
+msgid "The parts of a local overlay store are as follows:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:31
+msgid "**Lower store**:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:33
+msgid ""
+"Specified with the [`lower-store`](#store-experimental-local-overlay-store-"
+"lower-store) setting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:35
+msgid ""
+"This is any store implementation that includes a store directory as part of "
+"the native operating system filesystem. For example, this could be a "
+"\\[local store\\], \\[local daemon store\\], or even another local overlay "
+"store."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:38
+msgid ""
+"The local overlay store never tries to modify the lower store in any way. "
+"Something else could modify the lower store, but there are restrictions on "
+"this Nix itself requires that this store only grow, and not change in other "
+"ways. For example, new store objects can be added, but deleting or modifying "
+"store objects is not allowed in general, because that will confuse and "
+"corrupt any local overlay store using those objects. (In addition, the "
+"underlying filesystem overlay mechanism may impose additional restrictions, "
+"see below.)"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:44
+msgid ""
+"The lower store must not change while it is mounted as part of an overlay "
+"store. To ensure it does not, you might want to mount the store directory "
+"read-only (which then requires the \\[read-only\\] parameter to be set to "
+"`true`)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:47
+msgid "**Lower store directory**:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:49
+msgid "Specified with `lower-store.real` setting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:51
+msgid "This is the directory used/exposed by the lower store."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:53
+msgid ""
+"As specified above, Nix requires the local store can only grow not change in "
+"other ways. Linux's OverlayFS in addition imposes the further requirement "
+"that this directory cannot change at all. That means that, while any local "
+"overlay store exists that is using this store as a lower store, this "
+"directory must not change."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:57
+msgid "**Lower metadata source**:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:59
+msgid ""
+"Not directly specified. A consequence of the `lower-store` setting, "
+"depending on the type of lower store chosen."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:62
+msgid ""
+"This is abstract, just some way to read the metadata of lower store [store "
+"objects](../../store/store-object.md). For example it could be a SQLite "
+"database (for the \\[local store\\]), or a socket connection (for the "
+"\\[local daemon store\\])."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:65
+msgid ""
+"This need not be writable. As stated above a local overlay store never tries "
+"to modify its lower store. The lower store's metadata is considered part of "
+"the lower store, just as the store's [file system objects](../../store/file-"
+"system-object.md) that appear in the store directory are."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:69
+msgid "**Upper almost-store**:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:71
+msgid ""
+"Not directly specified. Instead the constituent parts are independently "
+"specified as described below."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:74
+msgid ""
+"This is almost but not quite just a \\[local store\\]. That is because taken "
+"in isolation, not as part of a local overlay store, by itself, it would "
+"appear corrupted. But combined with everything else as part of an overlay "
+"local store, it is valid."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:78
+msgid "**Upper layer directory**:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:80
+msgid ""
+"Specified with [`upper-layer`](#store-experimental-local-overlay-store-upper-"
+"layer) setting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:82
+msgid ""
+"This contains additional [store objects](../../store/store-object.md) (or, "
+"strictly speaking, their [file system objects](../../store/file-system-"
+"object.md) that the local overlay store will extend the lower store with)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:85
+msgid "**Upper store directory**:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:87
+msgid ""
+"Specified with the [`real`](#store-experimental-local-overlay-store-real) "
+"setting. This the same as the base local store setting, and can also be "
+"indirectly specified with the [`root`](#store-experimental-local-overlay-"
+"store-root) setting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:90
+msgid "This contains all the store objects from each of the two directories."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:92
+msgid ""
+"The lower store directory and upper layer directory are combined via "
+"OverlayFS to create this directory. Nix doesn't do this itself, because it "
+"typically wouldn't have the permissions to do so, so it is the "
+"responsibility of the user to set this up first. Nix can, however, "
+"optionally check that the OverlayFS mount settings appear as expected, "
+"matching Nix's own settings."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:96
+msgid "**Upper SQLite database**:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:98
+msgid ""
+"Not directly specified. The location of the database instead depends on the "
+"[`state`](#store-experimental-local-overlay-store-state) setting. It is "
+"always `${state}/db`."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:102
+msgid ""
+"This contains the metadata of all of the upper layer [store objects](../../"
+"store/store-object.md) (everything beyond their file system objects), and "
+"also duplicate copies of some lower layer store object's metadata. The "
+"duplication is so the metadata for the [closure](../../glossary.md#gloss-"
+"closure) of upper layer [store objects](../../store/store-object.md) can be "
+"found entirely within the upper layer. (This allows us to use the same SQL "
+"Schema as the \\[local store\\]'s SQLite database, as foreign keys in that "
+"schema enforce closure metadata to be self-contained in this way.)"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:109
+msgid "Example filesystem layout"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:111
+msgid ""
+"Here is a worked out example of usage, following the concepts in the "
+"previous section."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:113
+msgid "Say we have the following paths:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:115
+msgid "`/mnt/example/merged-store/nix/store`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:117
+msgid "`/mnt/example/store-a/nix/store`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:119
+msgid "`/mnt/example/store-b`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:121
+msgid ""
+"Then the following store URI can be used to access a local-overlay store at "
+"`/mnt/example/merged-store`:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:123
+msgid ""
+"```\n"
+"local-overlay://?root=/mnt/example/merged-store&lower-store=/mnt/example/"
+"store-a&upper-layer=/mnt/example/store-b\n"
+"```"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:127
+msgid ""
+"The lower store directory is located at `/mnt/example/store-a/nix/store`, "
+"while the upper layer is at `/mnt/example/store-b`."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:129
+msgid ""
+"Before accessing the overlay store you will need to ensure the OverlayFS "
+"mount is set up correctly:"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:131
+msgid ""
+"```shell\n"
+"mount -t overlay overlay \\\n"
+"  -o lowerdir=\"/mnt/example/store-a/nix/store\" \\\n"
+"  -o upperdir=\"/mnt/example/store-b\" \\\n"
+"  -o workdir=\"/mnt/example/workdir\" \\\n"
+"  \"/mnt/example/merged-store/nix/store\"\n"
+"```"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:139
+msgid ""
+"Note that OverlayFS requires `/mnt/example/workdir` to be on the same volume "
+"as the `upperdir`."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:141
+msgid ""
+"By default, Nix will check that the mountpoint as been set up correctly and "
+"fail with an error if it has not. You can override this behaviour by passing "
+"[`check-mount=false`](#store-experimental-local-overlay-store-check-mount) "
+"if you need to."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:144
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:146
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-build-dir\">[`build-dir`]"
+"(#store-experimental-local-overlay-store-build-dir)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:148
+msgid ""
+"The directory on the host, in which derivations' temporary build directories "
+"are created."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:150
+msgid ""
+"If not set, Nix will use the `builds` subdirectory of its configured state "
+"directory."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:152
+msgid ""
+"Note that builds are often performed by the Nix daemon, so its `build-dir` "
+"applies."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:154
+msgid ""
+"Nix will create this directory automatically with suitable permissions if it "
+"does not exist. Otherwise its permissions must allow all users to traverse "
+"the directory (i.e. it must have `o+x` set, in unix parlance) for non-"
+"sandboxed builds to work correctly."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:157
+msgid ""
+"This is also the location where [`--keep-failed`](../../command-ref/opt-"
+"common.md#opt-keep-failed) leaves its files."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:159
+msgid ""
+"If Nix runs without sandbox, or if the platform does not support sandboxing "
+"with bind mounts (e.g. macOS), then the [`builder`](../../language/"
+"derivations.md#attr-builder)'s environment will contain this directory, "
+"instead of the virtual location [`sandbox-build-dir`](../../command-ref/conf-"
+"file.md#conf-sandbox-build-dir)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:163
+msgid ""
+"`build-dir` must not be set to a world-writable directory. Placing temporary "
+"build directories in a world-writable place allows other users to access or "
+"modify build data that is currently in use. This alone is merely an "
+"impurity, but combined with another factor this has allowed malicious "
+"derivations to escape the build sandbox."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:167
+msgid ""
+"See also the global [`build-dir`](../../command-ref/conf-file.md#conf-build-"
+"dir) setting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:169
+#: source/store/types/experimental-local-overlay-store.md:273
+#: source/store/types/experimental-local-overlay-store.md:285
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:171
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-check-mount\">[`check-"
+"mount`](#store-experimental-local-overlay-store-check-mount)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:173
+msgid "Check that the overlay filesystem is correctly mounted."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:175
+msgid ""
+"Nix does not manage the overlayfs mount point itself, but the correct "
+"functioning of the overlay store does depend on this mount point being set "
+"up correctly. Rather than just assume this is the case, check that the "
+"lowerdir and upperdir options are what we expect them to be. This check is "
+"on by default, but can be disabled if needed."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:181
+#: source/store/types/experimental-local-overlay-store.md:279
+msgid "**Default:** `true`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:183
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-ignore-gc-delete-"
+"failure\">[`ignore-gc-delete-failure`](#store-experimental-local-overlay-"
+"store-ignore-gc-delete-failure)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:187
+#: source/store/types/experimental-local-overlay-store.md:332
+msgid ""
+"This setting is part of an [experimental feature](../../development/"
+"experimental-features.md)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:190
+#: source/store/types/experimental-local-overlay-store.md:335
+msgid ""
+"To change this setting, make sure the [`local-overlay-store` experimental "
+"feature](../../development/experimental-features.md#xp-feature-local-overlay-"
+"store) is enabled. For example, include the following in [`nix.conf`](../../"
+"command-ref/conf-file.md):"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:200
+msgid ""
+"Whether to ignore failures when deleting items with the garbage collector."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:202
+msgid ""
+"Normally the garbage collector will fail with an error if the nix daemon "
+"cannot delete a file, with this setting such errors will only be printed as "
+"warnings."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:204
+#: source/store/types/experimental-local-overlay-store.md:251
+#: source/store/types/experimental-local-overlay-store.md:320
+#: source/store/types/experimental-local-overlay-store.md:354
+#: source/store/types/experimental-local-overlay-store.md:360
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:206
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-log\">[`log`](#store-"
+"experimental-local-overlay-store-log)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:208
+msgid "Directory where Nix stores log files."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:210
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-experimental-local-overlay-store-root) is not set."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:212
+msgid "**Default:** `/nix/var/log/nix`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:214
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-lower-store\">[`lower-"
+"store`](#store-experimental-local-overlay-store-lower-store)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:216
+msgid ""
+"[Store URL](../../command-ref/new-cli/nix3-help-stores.md#store-url-format) "
+"for the lower store. The default is `auto` (i.e. use the Nix daemon or `/nix/"
+"store` directly)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:219
+msgid ""
+"Must be a store with a store dir on the file system. Must be used as "
+"OverlayFS lower layer for this store's store dir."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:222
+msgid "**Default:** _empty_"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:224
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-path-info-cache-"
+"size\">[`path-info-cache-size`](#store-experimental-local-overlay-store-path-"
+"info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:226
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:228
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:230
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-priority\">[`priority`]"
+"(#store-experimental-local-overlay-store-priority)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:232
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:235
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:237
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-read-only\">[`read-only`]"
+"(#store-experimental-local-overlay-store-read-only)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:239
+msgid ""
+"Allow this store to be opened when its [database](../../glossary.md#gloss-"
+"nix-database) is on a read-only filesystem."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:241
+msgid ""
+"Normally Nix attempts to open the store database in read-write mode, even "
+"for querying (when write access is not needed), causing it to fail if the "
+"database is on a read-only filesystem."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:243
+msgid ""
+"Enable read-only mode to disable locking and open the SQLite database with "
+"the [`immutable` parameter](https://www.sqlite.org/c3ref/open.html) set."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:245
+msgid "**Warning** Do not use this unless the filesystem is read-only."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:248
+msgid ""
+"Using it when the filesystem is writable can cause incorrect query results "
+"or corruption errors if the database is changed by another process. While "
+"the filesystem the database resides on might appear to be read-only, "
+"consider whether another user or system might have write access to it."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:253
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-real\">[`real`](#store-"
+"experimental-local-overlay-store-real)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:255
+msgid "Physical path of the Nix store."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:257
+msgid ""
+"Defaults to [`store`](#store-experimental-local-overlay-store-store) when "
+"[`root`](#store-experimental-local-overlay-store-root) is not set."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:259
+#: source/store/types/experimental-local-overlay-store.md:303
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:261
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-remount-hook\">[`remount-"
+"hook`](#store-experimental-local-overlay-store-remount-hook)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:263
+msgid ""
+"Script or other executable to run when overlay filesystem needs remounting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:265
+msgid ""
+"This is occasionally necessary when deleting a store path that exists in "
+"both upper and lower layers. In such a situation, bypassing OverlayFS and "
+"deleting the path in the upper layer directly is the only way to perform the "
+"deletion without creating a \"whiteout\". However this causes the OverlayFS "
+"kernel data structures to get out-of-sync, and can lead to 'stale file "
+"handle' errors; remounting solves the problem."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:271
+msgid "The store directory is passed as an argument to the invoked executable."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:275
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-require-sigs\">[`require-"
+"sigs`](#store-experimental-local-overlay-store-require-sigs)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:277
+msgid ""
+"Whether store paths copied into this store should have a trusted signature."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:281
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-root\">[`root`](#store-"
+"experimental-local-overlay-store-root)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:283
+msgid "Directory prefixed to all other paths."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:287
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-state\">[`state`](#store-"
+"experimental-local-overlay-store-state)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:289
+msgid "Directory where Nix stores state."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:291
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-experimental-local-overlay-store-root) "
+"is not set."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:293
+msgid "**Default:** `/dummy`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:295
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-store\">[`store`](#store-"
+"experimental-local-overlay-store-store)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:297
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:299
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:301
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:305
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-system-features\">[`system-"
+"features`](#store-experimental-local-overlay-store-system-features)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:307
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:309
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:311
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:313
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-trusted\">[`trusted`]"
+"(#store-experimental-local-overlay-store-trusted)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:315
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:322
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-upper-layer\">[`upper-"
+"layer`](#store-experimental-local-overlay-store-upper-layer)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:324
+msgid ""
+"Directory containing the OverlayFS upper layer for this store's store dir."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:326
+msgid "**Default:** `/upper-layer-must-be-set`"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:328
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-use-roots-daemon\">[`use-"
+"roots-daemon`](#store-experimental-local-overlay-store-use-roots-daemon)</"
+"span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:345
+msgid "Whether to request garbage collector roots from an external daemon."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:347
+msgid ""
+"When enabled, the garbage collector connects to a Unix domain socket at "
+"[`<state-dir>`](../../store/types/local-store.md#store-local-store-state)`/"
+"gc-roots-socket/socket` to discover additional roots that should not be "
+"collected. This is useful when the Nix daemon runs without root privileges "
+"and cannot scan `/proc` for runtime roots."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:352
+msgid ""
+"The daemon can be started with [`nix store roots-daemon`](../../command-ref/"
+"new-cli/nix3-store-roots-daemon.md)."
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:356
+msgid ""
+"<span id=\"store-experimental-local-overlay-store-want-mass-query\">[`want-"
+"mass-query`](#store-experimental-local-overlay-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/experimental-local-overlay-store.md:358
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""

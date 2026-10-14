@@ -1,0 +1,561 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:8
+msgid ""
+"`nix store make-content-addressed` - rewrite a path or closure to content-"
+"addressed form"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:12
+msgid "`nix store make-content-addressed` \\[_option_...\\] _installables_..."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:16
+msgid "Create a content-addressed representation of the closure of GNU Hello:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:24
+msgid ""
+"Since the resulting paths are content-addressed, they are always trusted and "
+"don't need signatures to copied to another store:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:31
+msgid ""
+"By contrast, the original closure is input-addressed, so it does need "
+"signatures to be trusted:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:39
+msgid ""
+"Create a content-addressed representation of the current NixOS system "
+"closure:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:46
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:48
+msgid ""
+"This command converts the closure of the store paths specified by "
+"[_installables_](./nix.md#installables) to content-addressed form."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:51
+msgid ""
+"Nix store paths are usually _input-addressed_, meaning that the hash part of "
+"the store path is computed from the contents of the derivation (i.e., the "
+"build-time dependency graph). Input-addressed paths need to be signed by a "
+"trusted key if you want to import them into a store, because we need to "
+"trust that the contents of the path were actually built by the derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:59
+msgid ""
+"By contrast, in a _content-addressed_ path, the hash part is computed from "
+"the contents of the path. This allows the contents of the path to be "
+"verified without any additional information such as signatures. This means "
+"that a command like"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:64
+msgid ""
+"```console\n"
+"# nix build /nix/store/5skmmcb9svys5lj3kbsrjg7vf2irid63-hello-2.10 \\\n"
+"    --substituters https://my-cache.example.org\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:69
+msgid ""
+"will succeed even if the binary cache `https://my-cache.example.org` doesn't "
+"present any signatures."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:72
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:74
+msgid "<span id=\"opt-from\">[`--from`](#opt-from)</span> _store-uri_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:76
+msgid "URL of the source Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:78
+msgid "<span id=\"opt-json\">[`--json`](#opt-json)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:80
+msgid ""
+"Produce output in JSON format, suitable for consumption by another program."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:82
+msgid "<span id=\"opt-no-pretty\">[`--no-pretty`](#opt-no-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:84
+msgid ""
+"Print compact JSON output on a single line, even when the output is a "
+"terminal. Some commands may print multiple JSON objects on separate lines."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:89
+msgid "<span id=\"opt-pretty\">[`--pretty`](#opt-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:91
+msgid "Print multi-line, indented JSON output for readability."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:97
+msgid "<span id=\"opt-stdin\">[`--stdin`](#opt-stdin)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:99
+msgid ""
+"Read installables from the standard input. No default installable applied."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:101
+msgid "<span id=\"opt-to\">[`--to`](#opt-to)</span> _store-uri_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:103
+msgid "URL of the destination Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:105
+msgid "Common evaluation options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:107
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:109
+msgid "Pass the value _expr_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:111
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:113
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:115
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:117
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:119
+msgid ""
+"<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _string_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:121
+msgid "Pass the string _string_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:123
+msgid "<span id=\"opt-debugger\">[`--debugger`](#opt-debugger)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:125
+msgid "Start an interactive environment if evaluation fails."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:127
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:129
+msgid ""
+"The [URL of the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:132
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:134
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:136
+msgid ""
+"<span id=\"opt-include\">[`--include`](#opt-include)</span> / `-I` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:138
+msgid ""
+"Add _path_ to search path entries used to resolve [lookup paths](../../"
+"language/constructs/lookup-path.md)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:140
+msgid "This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:142
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:144
+msgid ""
+"<span id=\"opt-override-flake\">[`--override-flake`](#opt-override-flake)</"
+"span> _original-ref_ _resolved-ref_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:146
+msgid ""
+"Override the flake registries, redirecting _original-ref_ to _resolved-ref_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:148
+msgid "Common flake-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:150
+msgid ""
+"<span id=\"opt-commit-lock-file\">[`--commit-lock-file`](#opt-commit-lock-"
+"file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:152
+msgid "Commit changes to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:154
+msgid ""
+"<span id=\"opt-inputs-from\">[`--inputs-from`](#opt-inputs-from)</span> "
+"_flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:156
+msgid "Use the inputs of the specified flake as registry entries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:158
+msgid ""
+"<span id=\"opt-no-registries\">[`--no-registries`](#opt-no-registries)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:160
+msgid "Don't allow lookups in the flake registries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:162
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:186
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:198
+msgid "**DEPRECATED**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:164
+msgid ""
+"Use [`--no-use-registries`](../../command-ref/conf-file.md#conf-use-"
+"registries) instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:166
+msgid ""
+"<span id=\"opt-no-update-lock-file\">[`--no-update-lock-file`](#opt-no-"
+"update-lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:168
+msgid "Do not allow any updates to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:170
+msgid ""
+"<span id=\"opt-no-write-lock-file\">[`--no-write-lock-file`](#opt-no-write-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:172
+msgid "Do not write the flake's newly generated lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:174
+msgid ""
+"<span id=\"opt-output-lock-file\">[`--output-lock-file`](#opt-output-lock-"
+"file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:176
+msgid ""
+"Write the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:178
+msgid ""
+"<span id=\"opt-override-input\">[`--override-input`](#opt-override-input)</"
+"span> _input-path_ _flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:180
+msgid ""
+"Override a specific flake input (e.g. `dwarffs/nixpkgs`). The input path "
+"must not be empty. This implies `--no-write-lock-file`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:182
+msgid ""
+"<span id=\"opt-recreate-lock-file\">[`--recreate-lock-file`](#opt-recreate-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:184
+msgid "Recreate the flake's lock file from scratch."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:188
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:200
+msgid ""
+"Use [`nix flake update`](../../command-ref/new-cli/nix3-flake-update.md) "
+"instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:190
+msgid ""
+"<span id=\"opt-reference-lock-file\">[`--reference-lock-file`](#opt-"
+"reference-lock-file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:192
+msgid ""
+"Read the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:194
+msgid ""
+"<span id=\"opt-update-input\">[`--update-input`](#opt-update-input)</span> "
+"_input-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:196
+msgid ""
+"Update a specific flake input (ignoring its previous entry in the lock file)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:202
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:204
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:206
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:208
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:210
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:212
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:214
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:216
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:218
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:220
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:222
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:224
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:226
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:228
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:230
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:232
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:234
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:236
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:238
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:240
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:242
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:244
+msgid ""
+"During evaluation, rewrite missing or corrupted files in the Nix store. "
+"During building, rebuild missing or corrupted store paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:246
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:248
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:250
+msgid ""
+"Options that change the interpretation of [installables](../../command-ref/"
+"new-cli/nix.md#installables)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:252
+msgid "<span id=\"opt-all\">[`--all`](#opt-all)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:254
+msgid "Apply the operation to every store path."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:256
+msgid "<span id=\"opt-derivation\">[`--derivation`](#opt-derivation)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:258
+msgid ""
+"Operate on the [store derivation](../../glossary.md#gloss-store-derivation) "
+"rather than its outputs."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:260
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:262
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression _expr_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:264
+msgid "<span id=\"opt-file\">[`--file`](#opt-file)</span> / `-f` _file_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:266
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression stored in _file_. If _file_ "
+"is the character -, then a Nix expression is read from standard input. "
+"Implies `--impure`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:268
+msgid ""
+"<span id=\"opt-recursive\">[`--recursive`](#opt-recursive)</span> / `-r`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:270
+msgid "Apply operation to closure of the specified paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:272
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-make-content-addressed.md:274
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

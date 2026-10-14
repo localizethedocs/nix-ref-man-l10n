@@ -1,0 +1,191 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:8
+msgid "`nix profile wipe-history` - delete non-current versions of a profile"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:12
+msgid "`nix profile wipe-history` \\[_option_...\\]"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:16
+msgid "Delete all versions of the default profile older than 100 days:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:24
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:26
+msgid ""
+"This command deletes non-current versions of a profile, making it impossible "
+"to roll back to these versions. By default, all non-current versions are "
+"deleted. With `--older-than` _N_`d`, all non-current versions older than _N_ "
+"days are deleted."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:31
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:33
+msgid "<span id=\"opt-dry-run\">[`--dry-run`](#opt-dry-run)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:35
+msgid "Show what this command would do without doing it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:37
+msgid ""
+"<span id=\"opt-older-than\">[`--older-than`](#opt-older-than)</span> _age_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:39
+msgid ""
+"Delete versions older than the specified age. _age_ must be in the format "
+"_N_`d`, where _N_ denotes a number of days."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:41
+msgid "<span id=\"opt-profile\">[`--profile`](#opt-profile)</span> _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:43
+msgid "The profile to operate on."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:45
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:47
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:49
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:51
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:53
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:55
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:57
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:59
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:61
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:63
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:65
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:67
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:69
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:71
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:73
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:75
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:77
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:79
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:81
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:83
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:85
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:87
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:89
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-profile-wipe-history.md:91
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

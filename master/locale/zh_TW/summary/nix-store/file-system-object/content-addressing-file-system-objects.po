@@ -1,0 +1,201 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/file-system-object/content-address.md:1
+msgid "Content-Addressing File System Objects"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:3
+msgid ""
+"For many operations, Nix needs to calculate [a content addresses](../../"
+"glossary.md#gloss-content-address) of [a file system object](../file-system-"
+"object.md) (FSO). Usually this is needed as part of [content addressing "
+"store objects](../store-object/content-address.md), since store objects "
+"always have a root file system object. But some command-line utilities also "
+"just work on \"raw\" file system objects, not part of any store object."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:9
+msgid ""
+"Every content addressing scheme Nix uses ultimately involves feeding data "
+"into a [hash function](https://en.wikipedia.org/wiki/Hash_function), and "
+"getting back an opaque fixed-size digest which is deemed a content address. "
+"The various _methods_ of content addressing thus differ in how abstract data "
+"(in this case, a file system object and its descendants) are fed into the "
+"hash function."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:12
+msgid "Serialising File System Objects"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:14
+msgid ""
+"The simplest method is to serialise the entire file system object tree into "
+"a single binary string, and then hash that binary string, yielding the "
+"content address. In this section we describe the currently-supported methods "
+"of serialising file system objects."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:17
+msgid "Flat"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:19
+msgid ""
+"A single file object can just be hashed by its contents. This is not enough "
+"information to encode the fact that the file system object is a file, but if "
+"we _already_ know that the FSO is a single non-executable file by other "
+"means, it is sufficient."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:23
+msgid ""
+"Because the hashed data is just the raw file, as is, this choice is good for "
+"compatibility with other systems. For example, Unix commands like "
+"`sha256sum` or `sha1sum` will produce hashes for single files that match "
+"this."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:26
+msgid "Nix Archive (NAR)"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:28
+msgid ""
+"For the other cases of [file system objects](../file-system-object.md), "
+"especially directories with arbitrary descendants, we need a more complex "
+"serialisation format. Examples of such serialisations are the ZIP and TAR "
+"file formats. However, for our purposes these formats have two problems:"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:32
+msgid ""
+"They do not have a canonical serialisation, meaning that given an FSO, there "
+"can be many different serialisations. For instance, TAR files can have "
+"variable amounts of padding between archive members; and some archive "
+"formats leave the order of directory entries undefined. This would be bad "
+"because we use serialisation to compute cryptographic hashes over file "
+"system objects, and for those hashes to be useful as a content address or "
+"for integrity checking, uniqueness is crucial. Otherwise, correct hashes "
+"would report false mismatches, and the store would fail to find the content."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:39
+msgid ""
+"They store more information than we have in our notion of FSOs, such as time "
+"stamps. This can cause FSOs that Nix should consider equal to hash to "
+"different values on different machines, just because the dates differ."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:42
+msgid ""
+"As a practical consideration, the TAR format is the only truly universal "
+"format in the Unix environment. It has many problems, such as an inability "
+"to deal with long file names and files larger than 2^33 bytes. Current "
+"implementations such as GNU Tar work around these limitations in various "
+"ways."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:46
+msgid ""
+"For these reasons, Nix has its very own archive format—the Nix Archive (NAR) "
+"format, which is carefully designed to avoid the problems described above."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:49
+msgid ""
+"The exact specification of the Nix Archive format is in [specified here]"
+"(../../protocols/nix-archive/index.md)."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:51
+msgid ""
+"Content addressing File System Objects beyond a single serialisation pass"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:53
+msgid ""
+"Serialising the entire tree and then hashing that binary string is not the "
+"only option for content addressing, however. Another technique is that of a "
+"[Merkle graph](https://en.wikipedia.org/wiki/Merkle_tree), where previously "
+"computed hashes are included in subsequent byte strings to be hashed."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:56
+msgid ""
+"In particular, the Merkle graphs can match the original graph structure of "
+"file system objects: we can first hash (serialised) child file system "
+"objects, and then hash parent objects using the hashes of their children in "
+"the serialisation (to be hashed) of the parent file system objects."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:59
+msgid ""
+"Currently, there is one such Merkle DAG content addressing method supported."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:61
+msgid ""
+"Git ([experimental](../../development/experimental-features.md#xp-feature-"
+"git-hashing))"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:63
+msgid "**Warning**"
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:65
+msgid ""
+"This method is part of the [`git-hashing`](../../development/experimental-"
+"features.md#xp-feature-git-hashing) experimental feature."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:67
+msgid ""
+"Git's file system model is very close to Nix's, and so Git's content "
+"addressing method is a pretty good fit. Just as with regular Git, files and "
+"symlinks are hashed as git \"blobs\", and directories are hashed as git "
+"\"trees\"."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:70
+msgid ""
+"However, one difference between Nix's and Git's file system model needs "
+"special treatment. Plain files, executable files, and symlinks are not "
+"differentiated as distinctly addressable objects, but by their context: by "
+"the directory entry that refers to them. That means so long as the root "
+"object is a directory, there is no problem: every non-directory object is "
+"owned by a parent directory, and the entry that refers to it provides the "
+"missing information. However, if the root object is not a directory, then we "
+"have no way of knowing which one of an executable file, non-executable file, "
+"or symlink it is supposed to be."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:76
+msgid ""
+"In response to this, we have decided to treat a bare file as non-executable "
+"file. This is similar to do what we do with [flat serialisation](#serial-"
+"flat), which also lacks this information. To avoid an address collision, "
+"attempts to hash a bare executable file or symlink will result in an error "
+"(just as would happen for flat serialisation also). Thus, Git can encode "
+"some, but not all of Nix's \"File System Objects\", and this sort of content-"
+"addressing is likewise partial."
+msgstr ""
+
+#: source/store/file-system-object/content-address.md:81
+msgid ""
+"In the future, we may support a Git-like hash for such file system objects, "
+"or we may adopt another Merkle DAG format which is capable of representing "
+"all Nix file system objects."
+msgstr ""

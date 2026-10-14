@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-hash.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:3
+msgid "`nix-hash` - compute the cryptographic hash of a path"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:5
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:7
+msgid ""
+"`nix-hash` \\[`--flat`\\] \\[`--base32`\\] \\[`--truncate`\\] \\[`--type` "
+"_hashAlgo_\\] _path…_"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:9
+msgid ""
+"`nix-hash` \\[`--to-base16`\\|`--to-base32`\\|`--to-base64`\\|`--to-sri`\\] "
+"\\[`--type` _hashAlgo_\\] _hash…_"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:11
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:13
+msgid ""
+"The command `nix-hash` computes the cryptographic hash of the contents of "
+"each _path_ and prints it on standard output. By default, it computes an MD5 "
+"hash, but other hash algorithms are available as well. The hash is printed "
+"in hexadecimal. To generate the same hash as `nix-prefetch-url` you have to "
+"specify multiple arguments, see below for an example."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:20
+msgid ""
+"The hash is computed over a _serialisation_ of each path: a dump of the file "
+"system tree rooted at the path. This allows directories and symlinks to be "
+"hashed as well as regular files. The dump is in the _[Nix Archive (NAR)](../"
+"store/file-system-object/content-address.md#serial-nix-archive) format_ "
+"produced by [`nix-store --dump`](../command-ref/nix-store/dump.md).  Thus, "
+"`nix-hash path` yields the same cryptographic hash as `nix-store --dump path "
+"| md5sum`."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:30
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:32
+msgid "`--flat`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:34
+msgid ""
+"Print the cryptographic hash of the contents of each regular file _path_. "
+"That is, instead of computing the hash of the [Nix Archive (NAR)](../store/"
+"file-system-object/content-address.md#serial-nix-archive) of _path_, just "
+"[directly hash](../store/file-system-object/content-address.md#serial-flat) "
+"_path_ as is. This requires _path_ to resolve to a regular file rather than "
+"directory. The result is identical to that produced by the GNU commands "
+"`md5sum` and `sha1sum`."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:42
+msgid "`--base16`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:44
+msgid "Print the hash in a hexadecimal representation (default)."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:46
+msgid "`--base32`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:48
+msgid ""
+"Print the hash in [Nix32](../protocols/nix32.md) representation rather than "
+"hexadecimal. This representation is more compact and can be used in Nix "
+"expressions (such as in calls to `fetchurl`)."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:52
+msgid "`--base64`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:54
+msgid ""
+"Similar to `--base32`, but print the hash in a [Base64](https://en.wikipedia."
+"org/wiki/Base64) representation, which is more compact than the Nix32 one."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:57
+msgid "`--sri`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:59
+msgid ""
+"Print the hash in [SRI](../glossary.md#gloss-sri) format with Base64 "
+"encoding. The type of hash algorithm will be prepended to the hash string, "
+"followed by a hyphen (-) and the Base64 hash body."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:63
+msgid "`--truncate`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:65
+msgid "Truncate hashes longer than 160 bits (such as SHA-256) to 160 bits."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:67
+msgid "`--type` _hashAlgo_"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:69
+msgid ""
+"Use the specified cryptographic hash algorithm, which can be one of "
+"`blake3`, `md5`, `sha1`, `sha256`, and `sha512`."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:72
+msgid "`--to-base16`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:74
+msgid ""
+"Don’t hash anything, but convert the [Nix32](../protocols/nix32.md) hash "
+"representation _hash_ to hexadecimal."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:77
+msgid "`--to-base32`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:79
+msgid ""
+"Don’t hash anything, but convert the hexadecimal hash representation _hash_ "
+"to [Nix32](../protocols/nix32.md)."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:82
+msgid "`--to-base64`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:84
+msgid ""
+"Don’t hash anything, but convert the hexadecimal hash representation _hash_ "
+"to Base64."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:87
+msgid "`--to-sri`"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:89
+msgid ""
+"Don’t hash anything, but convert the hexadecimal hash representation _hash_ "
+"to SRI."
+msgstr ""
+
+#: source/command-ref/nix-hash.md:92
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:94
+msgid "Computing the same hash as `nix-prefetch-url`:"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:96
+msgid ""
+"```console\n"
+"$ nix-prefetch-url file://<(echo test)\n"
+"1lkgqb6fclns49861dwk9rzb6xnfkxbpws74mxnx01z9qyv1pjpj\n"
+"$ nix-hash --type sha256 --flat --base32 <(echo test)\n"
+"1lkgqb6fclns49861dwk9rzb6xnfkxbpws74mxnx01z9qyv1pjpj\n"
+"```"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:103
+msgid "Computing hashes:"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:105
+msgid ""
+"```console\n"
+"$ mkdir test\n"
+"$ echo \"hello\" > test/world\n"
+"\n"
+"$ nix-hash test/ (MD5 hash; default)\n"
+"8179d3caeff1869b5ba1744e5a245c04\n"
+"\n"
+"$ nix-store --dump test/ | md5sum (for comparison)\n"
+"8179d3caeff1869b5ba1744e5a245c04  -\n"
+"\n"
+"$ nix-hash --type sha1 test/\n"
+"e4fd8ba5f7bbeaea5ace89fe10255536cd60dab6\n"
+"\n"
+"$ nix-hash --type sha1 --base16 test/\n"
+"e4fd8ba5f7bbeaea5ace89fe10255536cd60dab6\n"
+"\n"
+"$ nix-hash --type sha1 --base32 test/\n"
+"nvd61k9nalji1zl9rrdfmsmvyyjqpzg4\n"
+"\n"
+"$ nix-hash --type sha1 --base64 test/\n"
+"5P2Lpfe76upazon+ECVVNs1g2rY=\n"
+"\n"
+"$ nix-hash --type sha1 --sri test/\n"
+"sha1-5P2Lpfe76upazon+ECVVNs1g2rY=\n"
+"\n"
+"$ nix-hash --type sha256 --flat test/\n"
+"error: reading file `test/': Is a directory\n"
+"\n"
+"$ nix-hash --type sha256 --flat test/world\n"
+"5891b5b522d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03\n"
+"```"
+msgstr ""
+
+#: source/command-ref/nix-hash.md:137
+msgid "Converting between hexadecimal, Nix32, Base64, and SRI:"
+msgstr ""

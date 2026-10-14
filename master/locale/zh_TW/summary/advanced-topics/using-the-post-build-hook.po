@@ -1,0 +1,221 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/advanced-topics/post-build-hook.md:1
+msgid "Using the `post-build-hook`"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:3
+msgid "Implementation Caveats"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:5
+msgid ""
+"Here we use the post-build hook to upload to a binary cache. This is a "
+"simple and working example, but it is not suitable for all use cases."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:8
+msgid ""
+"The post build hook program runs after each executed build, and blocks the "
+"build loop. The build loop exits if the hook program fails."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:11
+msgid ""
+"Concretely, this implementation will make Nix slow or unusable when the "
+"internet is slow or unreliable."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:14
+msgid ""
+"A more advanced implementation might pass the store paths to a user-supplied "
+"daemon or queue for processing the store paths outside of the build loop."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:18
+msgid "Prerequisites"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:20
+msgid ""
+"This tutorial assumes you have configured an [S3-compatible binary cache](../"
+"command-ref/new-cli/nix3-help-stores.md#s3-binary-cache-store) as a "
+"[substituter](../command-ref/conf-file.md#conf-substituters), and that the "
+"`root` user's default AWS profile can upload to the bucket."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:23
+msgid "Set up a Signing Key"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:25
+msgid ""
+"Use `nix-store --generate-binary-cache-key` to create our public and private "
+"signing keys. We will sign paths with the private key, and distribute the "
+"public key for verifying the authenticity of the paths."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:35
+msgid ""
+"Then update [`nix.conf`](../command-ref/conf-file.md) on any machine that "
+"will access the cache. Add the cache URL to [`substituters`](../command-ref/"
+"conf-file.md#conf-substituters) and the public key to [`trusted-public-keys`]"
+"(../command-ref/conf-file.md#conf-trusted-public-keys):"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:38
+msgid ""
+"    substituters = https://cache.nixos.org/ s3://example-nix-cache\n"
+"    trusted-public-keys = cache.nixos."
+"org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= example-nix-cache-1:1/"
+"cKDz3QCCOmwcztD2eV6Coggp6rqc9DGjWv7C0G+rM=\n"
+"    "
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:41
+msgid ""
+"Machines that build for the cache must sign derivations using the private "
+"key. On those machines, add the path to the key file to the [`secret-key-"
+"files`](../command-ref/conf-file.md#conf-secret-key-files) field in their "
+"[`nix.conf`](../command-ref/conf-file.md):"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:46
+msgid "We will restart the Nix daemon in a later step."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:48
+msgid "Implementing the build hook"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:50
+msgid "Write the following script to `/etc/nix/upload-to-cache.sh`:"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:53
+msgid "#!/bin/sh\n"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:56
+msgid "# disable globbing\n"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:57
+msgid "' '"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:59
+msgid "\"Uploading paths\""
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:60
+msgid "\"s3://example-nix-cache\""
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:63
+msgid "**Note**"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:65
+msgid ""
+"The `$OUT_PATHS` variable is a space-separated list of Nix store paths. In "
+"this case, we expect and want the shell to perform word splitting to make "
+"each output path its own argument to `nix store sign`. Nix guarantees the "
+"paths will not contain any spaces, however a store path might contain glob "
+"characters. The `set -f` disables globbing in the shell. If you want to "
+"upload the `.drv` file too, the `$DRV_PATH` variable is also defined for the "
+"script and works just like `$OUT_PATHS`."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:74
+msgid "Then make sure the hook program is executable by the `root` user:"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:80
+msgid "Updating Nix Configuration"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:82
+msgid ""
+"Edit `/etc/nix/nix.conf` to run our hook, by adding the following "
+"configuration snippet at the end:"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:87
+msgid "Then, restart the `nix-daemon`."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:89
+msgid "Testing"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:91
+msgid "Build any derivation, for example:"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:93
+msgid ""
+"```console\n"
+"$ nix-build --expr '(import <nixpkgs> {}).writeText \"example\" (builtins."
+"toString builtins.currentTime)'\n"
+"this derivation will be built:\n"
+"  /nix/store/s4pnfbkalzy5qz57qs6yybna8wylkig6-example.drv\n"
+"building '/nix/store/s4pnfbkalzy5qz57qs6yybna8wylkig6-example.drv'...\n"
+"running post-build-hook '/home/grahamc/projects/github.com/NixOS/nix/post-"
+"hook.sh'...\n"
+"post-build-hook: Signing paths /nix/store/ibcyipq5gf91838ldx40mjsp0b8w9n18-"
+"example\n"
+"post-build-hook: Uploading paths /nix/store/ibcyipq5gf91838ldx40mjsp0b8w9n18-"
+"example\n"
+"/nix/store/ibcyipq5gf91838ldx40mjsp0b8w9n18-example\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:104
+msgid ""
+"Then delete the path from the store, and try substituting it from the binary "
+"cache:"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:112
+msgid "Now, copy the path back from the cache:"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:114
+msgid ""
+"```console\n"
+"$ nix-store --realise /nix/store/ibcyipq5gf91838ldx40mjsp0b8w9n18-example\n"
+"copying path '/nix/store/m8bmqwrch6l3h8s0k3d673xpmipcdpsa-example from 's3://"
+"example-nix-cache'...\n"
+"warning: you did not specify '--add-root'; the result might be removed by "
+"the garbage collector\n"
+"/nix/store/m8bmqwrch6l3h8s0k3d673xpmipcdpsa-example\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:121
+msgid "Conclusion"
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:123
+msgid ""
+"We now have a Nix installation configured to automatically sign and upload "
+"every local build to a remote binary cache."
+msgstr ""
+
+#: source/advanced-topics/post-build-hook.md:126
+msgid ""
+"Before deploying this to production, be sure to consider the [implementation "
+"caveats](#implementation-caveats)."
+msgstr ""

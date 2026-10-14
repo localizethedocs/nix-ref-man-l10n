@@ -1,0 +1,1145 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-env/delete-generations.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:3
+msgid "`nix-env --delete-generations` - delete profile generations"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:5
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:7
+msgid "`nix-env` `--delete-generations` _generations_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:9
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:11
+msgid ""
+"This operation deletes the specified generations of the current profile."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:13
+msgid "_generations_ can be a one of the following:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:15
+msgid "<span id=\"generations-list\">[`<number>...`](#generations-list)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:17
+msgid ""
+"A list of generation numbers, each one a separate command-line argument."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:19
+msgid ""
+"Delete exactly the profile generations given by their generation number. "
+"Deleting the current generation is not allowed."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:22
+msgid ""
+"<span id=\"generations-old\">[The special value `old`](#generations-old)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:24
+msgid "Delete all generations except the current one."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:26
+msgid "**WARNING**"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:28
+msgid "Older _and newer_ generations will be deleted by this operation."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:30
+msgid ""
+"One might expect this to just delete older generations than the current one, "
+"but that is only true if the current generation is also the latest. Because "
+"one can roll back to a previous generation, it is possible to have "
+"generations newer than the current one. They will also be deleted."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:34
+msgid "<span id=\"generations-time\">[`<number>d`](#generations-time)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:36
+msgid "The last _number_ days"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:38
+msgid "_Example_: `30d`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:40
+msgid ""
+"Delete all generations created more than _number_ days ago, except the most "
+"recent one of them. This allows rolling back to generations that were "
+"available within the specified period."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:43
+msgid "<span id=\"generations-count\">[`+<number>`](#generations-count)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:45
+msgid "The last _number_ generations up to the present"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:47
+msgid "_Example_: `+5`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:49
+msgid "Keep the last _number_ generations, along with any newer than current."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:51
+msgid ""
+"Periodically deleting old generations is important to make garbage "
+"collection effective. The is because profiles are also garbage collection "
+"roots — any [store object](../../store/store-object.md) reachable from a "
+"profile is \"alive\" and ineligible for deletion."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:57
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:59
+msgid ""
+"The following options are allowed for all `nix-env` operations, but may not "
+"always have an effect."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:61
+msgid "`--file` / `-f` _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:63
+msgid ""
+"Specifies the Nix expression (designated below as the _active Nix "
+"expression_) used by the `--install`, `--upgrade`, and `--query --available` "
+"operations to obtain derivations. The default is `~/.nix-defexpr`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:68
+msgid ""
+"If the argument starts with `http://` or `https://`, it is interpreted as "
+"the URL of a tarball that will be downloaded and unpacked to a temporary "
+"location. The tarball must include a single top-level directory containing "
+"at least a file named `default.nix`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:73
+msgid "`--profile` / `-p` _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:75
+msgid ""
+"Specifies the profile to be used by those operations that operate on a "
+"profile (designated below as the _active profile_). A profile is a sequence "
+"of user environments called _generations_, one of which is the _current "
+"generation_."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:80
+msgid "`--dry-run`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:82
+msgid ""
+"For the `--install`, `--upgrade`, `--uninstall`, `--switch-generation`, `--"
+"delete-generations` and `--rollback` operations, this flag will cause `nix-"
+"env` to print what _would_ be done if this flag had not been specified, "
+"without actually doing it."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:87
+msgid ""
+"`--dry-run` also prints out which paths will be [substituted](../../glossary."
+"md) (i.e., downloaded) and which paths will be built from source (because no "
+"substitute is available)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:91
+msgid "`--system-filter` _system_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:93
+msgid ""
+"By default, operations such as `--query --available` show derivations "
+"matching any platform. This option allows you to use derivations for the "
+"specified platform _system_."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:101
+msgid "Common Options"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:103
+msgid "Most Nix commands accept the following command-line options:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:105
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:107
+msgid "Prints out a summary of the command syntax and exits."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:109
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:111
+msgid "Prints out the Nix version number on standard output and exits."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:113
+msgid ""
+"For machine-readable output, including versions of the libraries Nix links "
+"against, see the [`nix version`](../../command-ref/new-cli/nix3-version.md) "
+"command."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:116
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:118
+msgid ""
+"Increases the level of verbosity of diagnostic messages printed on standard "
+"error. For each Nix operation, the information printed on standard output is "
+"well-defined; any diagnostic information is printed on standard error, never "
+"on standard output."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:122
+msgid ""
+"This option may be specified repeatedly. Currently, the following verbosity "
+"levels exist:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:125
+msgid "`0` “Errors only”"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:127
+msgid "Only print messages explaining why the Nix invocation failed."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:129
+msgid "`1` “Informational”"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:131
+msgid "Print _useful_ messages about what Nix is doing. This is the default."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:134
+msgid "`2` “Talkative”"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:136
+msgid "Print more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:138
+msgid "`3` “Chatty”"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:140
+msgid "Print even more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:142
+msgid "`4` “Debug”"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:144
+msgid "Print debug information."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:146
+msgid "`5` “Vomit”"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:148
+msgid "Print vast amounts of debug information."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:150
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:152
+msgid ""
+"Decreases the level of verbosity of diagnostic messages printed on standard "
+"error. This is the inverse option to `-v` / `--verbose`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:155
+msgid ""
+"This option may be specified repeatedly. See the previous verbosity levels "
+"list."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:158
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:160
+msgid ""
+"This option can be used to change the output of the log format, with "
+"_format_ being one of:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:162
+msgid "`raw`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:164
+msgid "This is the raw format, as outputted by nix-build."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:166
+msgid "`internal-json`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:168
+msgid "Outputs the logs in a structured manner."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:170
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:172
+msgid ""
+"While the schema itself is relatively stable, the format of the error-"
+"messages (namely of the `msg`\\-field) can change between releases."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:176
+msgid "`bar`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:178
+msgid "Only display a progress bar during the builds."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:180
+msgid "`bar-with-logs`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:182
+msgid "Display the raw logs, with the progress bar at the bottom."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:184
+msgid ""
+"<span id=\"opt-no-build-output\">[`--no-build-output`](#opt-no-build-"
+"output)</span> / `-Q`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:186
+msgid ""
+"By default, output written by builders to standard output and standard error "
+"is echoed to the Nix command's standard error. This option suppresses this "
+"behaviour. Note that the builder's standard output and error are always "
+"written to a log file in `prefix/nix/var/log/nix`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:190
+msgid ""
+"<span id=\"opt-max-jobs\">[`--max-jobs`](#opt-max-jobs)</span> / `-j` "
+"_number_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:192
+msgid ""
+"Sets the maximum number of build jobs that Nix will perform in parallel to "
+"the specified number. Specify `auto` to use the number of CPUs in the "
+"system. The default is specified by the `max-jobs` configuration setting, "
+"which itself defaults to `1`. A higher value is useful on SMP systems or to "
+"exploit I/O latency."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:197
+msgid ""
+"Setting it to `0` disallows building on the local machine, which is useful "
+"when you want builds to happen only on remote builders."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:199
+msgid "<span id=\"opt-cores\">[`--cores`](#opt-cores)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:201
+msgid ""
+"Sets the value of the `NIX_BUILD_CORES` environment variable in the "
+"invocation of builders. Builders can use this variable at their discretion "
+"to control the maximum amount of parallelism. For instance, in Nixpkgs, if "
+"the derivation attribute `enableParallelBuilding` is set to `true`, the "
+"builder passes the `-jN` flag to GNU Make. It defaults to the value of the "
+"`cores` configuration setting, if set, or `1` otherwise. The value `0` means "
+"that the builder should use all available CPU cores in the system."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:207
+msgid ""
+"<span id=\"opt-max-silent-time\">[`--max-silent-time`](#opt-max-silent-"
+"time)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:209
+msgid ""
+"Sets the maximum number of seconds that a builder can go without producing "
+"any data on standard output or standard error. The default is specified by "
+"the `max-silent-time` configuration setting. `0` means no time-out."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:213
+msgid "<span id=\"opt-timeout\">[`--timeout`](#opt-timeout)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:215
+msgid ""
+"Sets the maximum number of seconds that a builder can run. The default is "
+"specified by the `timeout` configuration setting. `0` means no timeout."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:219
+msgid ""
+"<span id=\"opt-keep-going\">[`--keep-going`](#opt-keep-going)</span> / `-k`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:221
+msgid ""
+"Keep going in case of failed builds, to the greatest extent possible. That "
+"is, if building an input of some derivation fails, Nix will still build the "
+"other inputs, but not the derivation itself. Without this option, Nix stops "
+"if any build fails (except for builds of substitutes), possibly killing "
+"builds in progress (in case of parallel or distributed builds)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:225
+msgid ""
+"<span id=\"opt-keep-failed\">[`--keep-failed`](#opt-keep-failed)</span> / `-"
+"K`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:227
+msgid ""
+"Specifies that in case of a build failure, the temporary directory (usually "
+"in `/tmp`) in which the build takes place should not be deleted. The path of "
+"the build directory is printed as an informational message."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:230
+msgid "<span id=\"opt-fallback\">[`--fallback`](#opt-fallback)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:232
+msgid ""
+"Whenever Nix attempts to build a derivation for which substitutes are known "
+"for each output path, but realising the output paths through the substitutes "
+"fails, fall back on building the derivation."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:234
+msgid ""
+"The most common scenario in which this is useful is when we have registered "
+"substitutes in order to perform binary distribution from, say, a network "
+"repository. If the repository is down, the realisation of the derivation "
+"will fail. When this option is specified, Nix will build the derivation "
+"instead. Thus, installation from binaries falls back on installation from "
+"source. This option is not the default since it is generally not desirable "
+"for a transient failure in obtaining the substitutes to lead to a full build "
+"from source (with the related consumption of resources)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:240
+msgid ""
+"<span id=\"opt-readonly-mode\">[`--readonly-mode`](#opt-readonly-mode)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:242
+msgid ""
+"When this option is used, no attempt is made to open the Nix database. Most "
+"Nix operations do need database access, so those operations will fail."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:245
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:247
+msgid ""
+"This option is accepted by `nix-env`, `nix-instantiate`, `nix-shell` and "
+"`nix-build`. When evaluating Nix expressions, the expression evaluator will "
+"automatically try to call functions that it encounters. It can automatically "
+"call functions for which every argument has a [default value](../../language/"
+"syntax.md#functions) (e.g., `{ argName ?  defaultValue }: ...`)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:251
+msgid ""
+"With `--arg`, you can also call functions that have arguments without a "
+"default value (or override a default value). That is, if the evaluator "
+"encounters a function with an argument named _name_, it will call it with "
+"value _value_."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:254
+msgid ""
+"For instance, the top-level `default.nix` in Nixpkgs is actually a function:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:263
+msgid ""
+"So if you call this Nix expression (e.g., when you do `nix-env --install --"
+"attr pkgname`), the function will be called automatically using the value "
+"[`builtins.currentSystem`](../../language/builtins.md) for the `system` "
+"argument. You can override this using `--arg`, e.g., `nix-env --install --"
+"attr pkgname --arg system \\\"i686-freebsd\\\"`. (Note that since the "
+"argument is a Nix string literal, you have to escape the quotes.)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:267
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:269
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:271
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:273
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:275
+msgid "<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:277
+msgid ""
+"This option is like `--arg`, only the value is not a Nix expression but a "
+"string. So instead of `--arg system \\\"i686-linux\\\"` (the outer quotes "
+"are to keep the shell happy) you can say `--argstr system i686-linux`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:280
+msgid "<span id=\"opt-attr\">[`--attr`](#opt-attr)</span> / `-A` _attrPath_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:282
+msgid ""
+"Select an attribute from the top-level Nix expression being evaluated. (`nix-"
+"env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
+"path_ _attrPath_ is a sequence of attribute names separated by dots. For "
+"instance, given a top-level Nix expression _e_, the attribute path `xorg."
+"xorgserver` would cause the expression `e.xorg.xorgserver` to be used. See "
+"[`nix-env --install`](../../command-ref/nix-env/install.md) for some "
+"concrete examples."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:288
+msgid ""
+"In addition to attribute names, you can also specify array indices. For "
+"instance, the attribute path `foo.3.bar` selects the `bar` attribute of the "
+"fourth element of the array in the `foo` attribute of the top-level "
+"expression."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:293
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:295
+msgid ""
+"The [URL to the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. where to store derivations (`.drv` files) and "
+"inputs referenced by them."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:297
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> / `-E`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:299
+msgid ""
+"Interpret the command line arguments as a list of Nix expressions to be "
+"parsed and evaluated, rather than as a list of file names of Nix "
+"expressions. (`nix-instantiate`, `nix-build` and `nix-shell` only.)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:302
+msgid ""
+"For `nix-shell`, this option is commonly used to give you a shell in which "
+"you can build the packages returned by the expression. If you want to get a "
+"shell which contain the _built_ packages ready for use, give your expression "
+"to the `nix-shell --packages ` convenience flag instead."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:305
+msgid "<span id=\"opt-I\">[`-I` / `--include`](#opt-I)</span> _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:307
+msgid ""
+"Add an entry to the list of search paths used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md). This option may be given "
+"multiple times."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:310
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:312
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:314
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:316
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:318
+msgid ""
+"Set the Nix configuration option _name_ to _value_. This overrides settings "
+"in the Nix configuration file (see nix.conf5)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:321
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:323
+msgid ""
+"Fix corrupted or missing store paths by redownloading or rebuilding them. "
+"Note that this is slow because it requires computing a cryptographic hash of "
+"the contents of every path in the closure of the build. Also note the "
+"warning under `nix-store --repair-path`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:327
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:329
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:332
+msgid "Environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:334
+msgid "`NIX_PROFILE`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:336
+msgid ""
+"Location of the Nix profile. Defaults to the target of the symlink `~/.nix-"
+"profile`, if it exists, or `/nix/var/nix/profiles/default` otherwise."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:341
+msgid "Common Environment Variables"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:343
+msgid "Most Nix commands interpret the following environment variables."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:345
+msgid "Configuration environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:347
+msgid ""
+"The following environment variables affect how Nix loads its configuration. "
+"See the [configuration file](../../command-ref/conf-file.md#configuration-"
+"file) documentation for full details."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:350
+msgid ""
+"<span id=\"env-NIX_CONF_DIR\">[`NIX_CONF_DIR`](#env-NIX_CONF_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:352
+msgid "Overrides the system configuration directory."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:354
+msgid ""
+"<span id=\"env-NIX_USER_CONF_FILES\">[`NIX_USER_CONF_FILES`](#env-"
+"NIX_USER_CONF_FILES)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:356
+msgid "Overrides the user configuration file locations."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:358
+msgid "<span id=\"env-NIX_CONFIG\">[`NIX_CONFIG`](#env-NIX_CONFIG)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:360
+msgid "Provides configuration settings inline."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:362
+msgid "Store setting environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:364
+msgid ""
+"<span id=\"env-NIX_IGNORE_SYMLINK_STORE\">[`NIX_IGNORE_SYMLINK_STORE`](#env-"
+"NIX_IGNORE_SYMLINK_STORE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:366
+msgid ""
+"Normally, the Nix store directory (typically `/nix/store`) is not allowed to "
+"contain any symlink components. This is to prevent “impure” builds. Builders "
+"sometimes “canonicalise” paths by resolving all symlink components. Thus, "
+"builds on different machines (with `/nix/store` resolving to different "
+"locations) could yield different results. This is generally not a problem, "
+"except when builds are deployed to machines where `/nix/store` resolves "
+"differently. If you are sure that you’re not going to do that, you can set "
+"`NIX_IGNORE_SYMLINK_STORE` to `1`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:376
+msgid ""
+"Note that if you’re symlinking the Nix store so that you can put it on "
+"another file system than the root file system, on Linux you’re better off "
+"using `bind` mount points, e.g.,"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:385
+msgid "Consult the mount 8 manual page for details."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:387
+msgid ""
+"<span id=\"env-NIX_STORE_DIR\">[`NIX_STORE_DIR`](#env-NIX_STORE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:389
+msgid ""
+"Overrides the location of the Nix store. On Unix, the default is `/nix/"
+"store`, set at compile time by the `libstore:store-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\store`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:393
+msgid ""
+"See the [Store Types](../../store/types/index.md) chapter; each store has a "
+"`store` setting linking back to this as its default."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:395
+msgid "<span id=\"env-NIX_LOG_DIR\">[`NIX_LOG_DIR`](#env-NIX_LOG_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:397
+msgid ""
+"Overrides the location of the Nix log directory. On Unix, the default is `/"
+"nix/var/log/nix`, set at compile time by the `log-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\log`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:401
+#: source/command-ref/nix-env/delete-generations.md:409
+msgid ""
+"The [Local Store](../../store/types/local-store.md), [Local Daemon Store]"
+"(../../store/types/local-daemon-store.md), and [Experimental SSH Store with "
+"filesystem mounted](../../store/types/experimental-ssh-store-with-filesystem-"
+"mounted.md) have per-store settings that override this."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:403
+msgid ""
+"<span id=\"env-NIX_STATE_DIR\">[`NIX_STATE_DIR`](#env-NIX_STATE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:405
+msgid ""
+"Overrides the location of the Nix state directory. On Unix, the default is "
+"`${localstatedir}/nix`, where `localstatedir` is a compile-time build option "
+"defaulting to `/nix/var`. On Windows, there is no compile-time setting; the "
+"default is `%PROGRAMDATA%\\nix\\state`, determined at runtime using the "
+"[`%PROGRAMDATA%` Known Folder](#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:411
+msgid ""
+"<span id=\"env-NIX_DAEMON_SOCKET_PATH\">[`NIX_DAEMON_SOCKET_PATH`](#env-"
+"NIX_DAEMON_SOCKET_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:413
+msgid ""
+"Overrides the path to the Unix domain socket used to communicate with the "
+"Nix daemon. Defaults to `daemon-socket/socket` within the state directory "
+"(see [`NIX_STATE_DIR`](#env-NIX_STATE_DIR))."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:416
+msgid ""
+"See the [Local Daemon Store](../../store/types/local-daemon-store.md) "
+"documentation for details on how the socket path is resolved."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:418
+msgid "<span id=\"env-TMPDIR\">[`TMPDIR`](#env-TMPDIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:420
+msgid ""
+"Use the specified directory to store temporary files. In particular, this "
+"includes temporary build directories; these can take up substantial amounts "
+"of disk space. The default is `/tmp`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:424
+msgid "<span id=\"env-NIX_REMOTE\">[`NIX_REMOTE`](#env-NIX_REMOTE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:426
+msgid ""
+"Overrides the [`store`](../../command-ref/conf-file.md#conf-store) setting."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:434
+msgid "Nix language evaluator settings"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:436
+msgid ""
+"<span id=\"env-NIX_SHOW_STATS\">[`NIX_SHOW_STATS`](#env-NIX_SHOW_STATS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:438
+msgid ""
+"If set to `1`, Nix will print some evaluation statistics, such as the number "
+"of values allocated."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:441
+msgid ""
+"<span id=\"env-NIX_COUNT_CALLS\">[`NIX_COUNT_CALLS`](#env-NIX_COUNT_CALLS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:443
+msgid ""
+"If set to `1`, Nix will print how often functions were called during Nix "
+"expression evaluation. This is useful for profiling your Nix expressions."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:447
+msgid ""
+"<span id=\"env-GC_INITIAL_HEAP_SIZE\">[`GC_INITIAL_HEAP_SIZE`](#env-"
+"GC_INITIAL_HEAP_SIZE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:449
+msgid ""
+"If Nix has been configured to use the Boehm garbage collector, this variable "
+"sets the initial size of the heap in bytes. It defaults to 384 MiB. Setting "
+"it to a low value reduces memory consumption, but will increase runtime due "
+"to the overhead of garbage collection."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:454
+msgid "<span id=\"env-NIX_PATH\">[`NIX_PATH`](#env-NIX_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:456
+msgid ""
+"A colon-separated list of search path entries used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:458
+msgid ""
+"This environment variable overrides the value of the [`nix-path` "
+"configuration setting](../../command-ref/conf-file.md#conf-nix-path)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:460
+msgid ""
+"It can be extended using the [`-I` option](../../command-ref/opt-common."
+"md#opt-I)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:462
+#: source/command-ref/nix-env/delete-generations.md:470
+msgid "**Example**"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:468
+msgid ""
+"If `NIX_PATH` is set to an empty string, resolving search paths will always "
+"fail."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:473
+msgid "'<nixpkgs>'"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:474
+msgid "'nixpkgs'"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:477
+msgid "User Directories"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:479
+msgid ""
+"Nix supports per-user **configuration**, **state**, and **cache** "
+"directories. The following environment variables override the locations for "
+"these directories:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:482
+msgid ""
+"\\[user configuration directory\\]{#user-conf-dir}: \\[`NIX_CONFIG_HOME`\\]"
+"{#env-NIX_CONFIG_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:483
+msgid "user state directory: \\[`NIX_STATE_HOME`\\]{#env-NIX_STATE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:484
+msgid "user cache directory: \\[`NIX_CACHE_HOME`\\]{#env-NIX_CACHE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:486
+msgid "When these are not set, the defaults depend on the platform:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:488
+msgid ""
+"On Unix, the [XDG base directories](#xdg-base-directories): "
+"`$XDG_CONFIG_HOME/nix`, `$XDG_STATE_HOME/nix`, `$XDG_CACHE_HOME/nix`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:489
+msgid ""
+"On Windows, the [Windows Known Folders](#known-folders): `%APPDATA%"
+"\\nix\\config`, `%LOCALAPPDATA%\\nix\\state`, `%LOCALAPPDATA%\\nix\\cache`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:493
+msgid ""
+"For backwards compatibility, legacy Nix commands (e.g. `nix-env`, `nix-"
+"channel`) use dotfiles in `$HOME` instead of these directories unless [`use-"
+"xdg-base-directories`](../../command-ref/conf-file.md#conf-use-xdg-base-"
+"directories) is enabled. [New Nix commands](../../command-ref/new-cli/nix."
+"md) (experimental) use the proper directories by default."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:496
+msgid ""
+"When [`use-xdg-base-directories`](../../command-ref/conf-file.md#conf-use-"
+"xdg-base-directories) is enabled, the configuration directory is resolved as:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:498
+msgid "`$NIX_CONFIG_HOME`, if it is defined"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:499
+msgid "Otherwise, the platform default (e.g. `$XDG_CONFIG_HOME/nix` on Unix)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:501
+msgid "Likewise for the state and cache directories."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:503
+msgid "Miscellaneous environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:505
+msgid ""
+"<span id=\"env-IN_NIX_SHELL\">[`IN_NIX_SHELL`](#env-IN_NIX_SHELL)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:507
+msgid ""
+"Indicator that tells if the current environment was set up by `nix-shell`. "
+"It can have the values `pure` or `impure`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:510
+msgid "Appendix: OS-specific conventions"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:512
+msgid "This information is not Nix-specific, but is referenced above."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:514
+msgid "Unix: XDG Base Directories"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:516
+msgid ""
+"The [XDG Base Directory Specification](https://specifications.freedesktop."
+"org/basedir-spec/basedir-spec-latest.html) defines standard locations for "
+"user-specific configuration, state, and cache files on Unix systems."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:520
+msgid "The following environment variables are used:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:522
+msgid "\\[`XDG_CONFIG_HOME`\\]{#env-XDG_CONFIG_HOME} (default `~/.config`)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:523
+msgid "\\[`XDG_STATE_HOME`\\]{#env-XDG_STATE_HOME} (default `~/.local/state`)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:524
+msgid "\\[`XDG_CACHE_HOME`\\]{#env-XDG_CACHE_HOME} (default `~/.cache`)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:525
+msgid ""
+"\\[`XDG_CONFIG_DIRS`\\]{#env-XDG_CONFIG_DIRS} (default `/etc/xdg`) — colon-"
+"separated list of additional configuration base directories, searched after "
+"`XDG_CONFIG_HOME`"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:527
+msgid "Windows: Known Folders"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:529
+msgid ""
+"On Windows, [Known Folders](https://learn.microsoft.com/en-us/windows/win32/"
+"shell/known-folders) provide standard locations for application data on "
+"Windows."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:533
+msgid "The relevant folders are:"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:535
+msgid "\\[`%APPDATA%`\\]{#env-APPDATA} — per-user roaming application data"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:536
+msgid ""
+"\\[`%LOCALAPPDATA%`\\]{#env-LOCALAPPDATA} — per-user local application data"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:537
+msgid "\\[`%PROGRAMDATA%`\\]{#env-PROGRAMDATA} — system-wide application data"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:540
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:542
+msgid "Delete explicit generation numbers"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:548
+msgid ""
+"Delete the generations numbered 3, 4, and 8, so long as the current active "
+"generation is not any of those."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:550
+msgid "Keep most-recent by count (number of generations)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:556
+msgid ""
+"Suppose `30` is the current generation, and we currently have generations "
+"numbered `20` through `32`."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:558
+msgid ""
+"Then this command will delete generations `20` through `25` (`<= 30 - 5`), "
+"and keep generations `26` through `31` (`> 30 - 5`)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:561
+msgid "Keep most-recent by time (number of days)"
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:567
+msgid ""
+"This command will delete all generations older than 30 days, except for the "
+"generation that was active 30 days ago (if it currently exists)."
+msgstr ""
+
+#: source/command-ref/nix-env/delete-generations.md:569
+msgid "Delete all older"
+msgstr ""

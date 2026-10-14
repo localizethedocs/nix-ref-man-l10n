@@ -1,0 +1,359 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.20.md:1
+msgid "Release 2.20.0 (2024-01-29)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:3
+msgid ""
+"Option `allowed-uris` can now match whole schemes in URIs without slashes "
+"[\\#9547](https://github.com/NixOS/nix/pull/9547)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:5
+msgid ""
+"If a scheme, such as `github:` is specified in the `allowed-uris` option, "
+"all URIs starting with `github:` are allowed. Previously this only worked "
+"for schemes whose URIs used the `://` syntax."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:8
+msgid ""
+"Include cgroup stats when building through the daemon [\\#9598](https://"
+"github.com/NixOS/nix/pull/9598)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:10
+msgid ""
+"Nix now also reports cgroup statistics when building through the Nix daemon "
+"and when doing remote builds using `ssh-ng`, if both sides of the connection "
+"are using Nix 2.20 or newer."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:13
+msgid ""
+"Disallow empty search regex in `nix search` [\\#9481](https://github.com/"
+"NixOS/nix/pull/9481)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:15
+msgid ""
+"[`nix search`](../command-ref/new-cli/nix3-search.md) now requires a search "
+"regex to be passed. To show all packages, use `^`."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:17
+msgid ""
+"Add new `eval-system` setting [\\#4093](https://github.com/NixOS/nix/"
+"pull/4093)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:19
+msgid ""
+"Add a new `eval-system` option. Unlike `system`, it just overrides the value "
+"of `builtins.currentSystem`. This is more useful than overriding `system`, "
+"because you can build these derivations on remote builders which can work on "
+"the given system. In contrast, `system` also affects scheduling which will "
+"cause Nix to build those derivations locally even if that doesn't make sense."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:24
+msgid ""
+"`eval-system` only takes effect if it is non-empty. If empty (the default) "
+"`system` is used as before, so there is no breakage."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:27
+msgid ""
+"Import-from-derivation builds the derivation in the build store [\\#9661]"
+"(https://github.com/NixOS/nix/pull/9661)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:29
+msgid ""
+"When using `--eval-store`, `import`ing from a derivation will now result in "
+"the derivation being built on the build store, i.e. the store specified in "
+"the `store` Nix option."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:31
+msgid ""
+"Because the resulting Nix expression must be copied back to the evaluation "
+"store in order to be imported, this requires the evaluation store to trust "
+"the build store's signatures."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:33
+msgid ""
+"Mounted SSH Store [\\#7890](https://github.com/NixOS/nix/issues/7890) "
+"[\\#7912](https://github.com/NixOS/nix/pull/7912)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:35
+msgid ""
+"Introduced the store [`mounted-ssh-ng://`](../command-ref/new-cli/nix3-help-"
+"stores.md). This store allows full access to a Nix store on a remote machine "
+"and additionally requires that the store be mounted in the local filesystem."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:38
+msgid ""
+"Rename `nix show-config` to `nix config show` [\\#7672](https://github.com/"
+"NixOS/nix/issues/7672) [\\#9477](https://github.com/NixOS/nix/pull/9477)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:40
+msgid ""
+"`nix show-config` was renamed to `nix config show`, and `nix doctor` was "
+"renamed to `nix config check`, to be more consistent with the rest of the "
+"command line interface."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:42
+msgid ""
+"Add command `nix hash convert` [\\#9452](https://github.com/NixOS/nix/"
+"pull/9452)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:44
+msgid ""
+"This replaces the old `nix hash to-*` commands, which are still available "
+"but will emit a deprecation warning. Please convert as follows:"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:46
+msgid ""
+"`nix hash to-base16 $hash1 $hash2`: Use `nix hash convert --to base16 $hash1 "
+"$hash2` instead."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:47
+msgid ""
+"`nix hash to-base32 $hash1 $hash2`: Use `nix hash convert --to nix32 $hash1 "
+"$hash2` instead."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:48
+msgid ""
+"`nix hash to-base64 $hash1 $hash2`: Use `nix hash convert --to base64 $hash1 "
+"$hash2` instead."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:49
+msgid ""
+"`nix hash to-sri $hash1 $hash2`: : Use `nix hash convert --to sri $hash1 "
+"$hash2` or even just `nix hash convert $hash1 $hash2` instead."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:51
+msgid ""
+"Rename hash format `base32` to `nix32` [\\#9452](https://github.com/NixOS/"
+"nix/pull/9452)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:53
+msgid ""
+"Hash format `base32` was renamed to `nix32` since it used a special Nix-"
+"specific character set for [Base32](https://en.wikipedia.org/wiki/Base32)."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:56
+msgid ""
+"`nix profile` now allows referring to elements by human-readable names "
+"[\\#8678](https://github.com/NixOS/nix/pull/8678)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:58
+msgid ""
+"[`nix profile`](../command-ref/new-cli/nix3-profile.md) now uses names to "
+"refer to installed packages when running [`list`](../command-ref/new-cli/"
+"nix3-profile-list.md), [`remove`](../command-ref/new-cli/nix3-profile-remove."
+"md) or [`upgrade`](../command-ref/new-cli/nix3-profile-upgrade.md) as "
+"opposed to indices. Profile element names are generated when a package is "
+"installed and remain the same until the package is removed."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:60
+msgid ""
+"**Warning**: The `manifest.nix` file used to record the contents of profiles "
+"has changed. Nix will automatically upgrade profiles to the new version when "
+"you modify the profile. After that, the profile can no longer be used by "
+"older versions of Nix."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:62
+msgid ""
+"Give `nix store add` a `--hash-algo` flag [\\#9809](https://github.com/NixOS/"
+"nix/pull/9809)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:64
+msgid ""
+"Adds a missing feature that was present in the old CLI, and matches our "
+"plans to have similar flags for `nix hash convert` and `nix hash path`."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:67
+msgid "Coercion errors include the failing value"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:69
+msgid ""
+"The `error: cannot coerce a <TYPE> to a string` message now includes the "
+"value which caused the error."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:72 source/release-notes/rl-2.20.md:93
+msgid "Before:"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:78 source/release-notes/rl-2.20.md:99
+msgid "After:"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:88
+msgid "Type errors include the failing value"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:90
+msgid ""
+"In errors like `value is an integer while a list was expected`, the message "
+"now includes the failing value."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:108
+msgid ""
+"Source locations are printed more consistently in errors [\\#561](https://"
+"github.com/NixOS/nix/issues/561) [\\#9555](https://github.com/NixOS/nix/"
+"pull/9555)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:110
+msgid ""
+"Source location information is now included in error messages more "
+"consistently. Given this code:"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:113
+msgid ""
+"```nix\n"
+"let\n"
+"  attr = {foo = \"bar\";};\n"
+"  key = {};\n"
+"in\n"
+"  attr.${key}\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:121
+msgid ""
+"Previously, Nix would show this unhelpful message when attempting to "
+"evaluate it:"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:131
+msgid "Now, the error message displays where the problematic value was found:"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:147
+msgid ""
+"Some stack overflow segfaults are fixed [\\#9616](https://github.com/NixOS/"
+"nix/issues/9616) [\\#9617](https://github.com/NixOS/nix/pull/9617)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:149
+msgid ""
+"The number of nested function calls has been restricted, to detect and "
+"report infinite function call recursions. The default maximum call depth is "
+"10,000 and can be set with [the `max-call-depth` option](../command-ref/conf-"
+"file.md#conf-max-call-depth)."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:154
+msgid ""
+"This replaces the `stack overflow (possible infinite recursion)` message."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:156
+msgid ""
+"Better error reporting for `with` expressions [\\#9658](https://github.com/"
+"NixOS/nix/pull/9658)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:158
+msgid ""
+"`with` expressions using non-attrset values to resolve variables are now "
+"reported with proper positions, e.g."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:171
+msgid ""
+"Functions are printed with more detail [\\#7145](https://github.com/NixOS/"
+"nix/issues/7145) [\\#9606](https://github.com/NixOS/nix/pull/9606)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:173
+msgid ""
+"`nix repl`, `nix eval`, `builtins.trace`, and most other places values are "
+"printed will now include function names and source location information:"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:176
+msgid ""
+"```\n"
+"$ nix repl nixpkgs\n"
+"nix-repl> builtins.map\n"
+"«primop map»\n"
+"\n"
+"nix-repl> builtins.map lib.id\n"
+"«partially applied primop map»\n"
+"\n"
+"nix-repl> builtins.trace lib.id \"my-value\"\n"
+"trace: «lambda id @ /nix/store/kgr5lnaiiv08wb7k324yv1i1npjmrvjc-source/lib/"
+"trivial.nix:26:5»\n"
+"\"my-value\"\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:189
+msgid ""
+"Flake operations like `nix develop` will no longer fail when run in a Git "
+"repository where the `flake.lock` file is `.gitignore`d [\\#8854](https://"
+"github.com/NixOS/nix/issues/8854) [\\#9324](https://github.com/NixOS/nix/"
+"pull/9324)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:194
+msgid ""
+"Nix commands will now respect Ctrl-C [\\#7145](https://github.com/NixOS/nix/"
+"issues/7145) [\\#6995](https://github.com/NixOS/nix/pull/6995) [\\#9687]"
+"(https://github.com/NixOS/nix/pull/9687)"
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:199
+msgid ""
+"Previously, many Nix commands would hang indefinitely if Ctrl-C was pressed "
+"while performing various operations (including `nix develop`, `nix flake "
+"update`, and so on). With several fixes to Nix's signal handlers, Nix "
+"commands will now exit quickly after Ctrl-C is pressed."
+msgstr ""
+
+#: source/release-notes/rl-2.20.md:204
+msgid ""
+"`nix copy` to a `ssh-ng` store now needs `--substitute-on-destination` (a.k."
+"a. `-s`) in order to substitute paths on the remote store instead of copying "
+"them. The behavior is consistent with `nix copy` to a different kind of "
+"remote store. Previously this behavior was controlled by the `builders-use-"
+"substitutes` setting and `--substitute-on-destination` was ignored."
+msgstr ""

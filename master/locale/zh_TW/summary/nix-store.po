@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/index.md:1
+msgid "Nix Store"
+msgstr ""
+
+#: source/store/index.md:3
+msgid ""
+"The _Nix store_ is an abstraction to store immutable file system data (such "
+"as software packages) that can have dependencies on other such data."
+msgstr ""
+
+#: source/store/index.md:5
+msgid ""
+"Concretely, albeit using concepts that are only defined in the rest of the "
+"chapter, a store consists of:"
+msgstr ""
+
+#: source/store/index.md:7
+msgid ""
+"A set of [store objects](./store-object.md), the immutable file system data."
+msgstr ""
+
+#: source/store/index.md:9
+msgid ""
+"This can also be looked at as a map from [store paths](./store-path.md) to "
+"store objects."
+msgstr ""
+
+#: source/store/index.md:11
+msgid ""
+"A set of [derivations](./derivation/index.md), instructions for building "
+"store objects."
+msgstr ""
+
+#: source/store/index.md:13
+msgid ""
+"This can also be looked at as a map from [store paths](./store-path.md) to "
+"derivations. Since store paths to derivations always end in `.drv`, and "
+"store paths to other store objects never do, the two maps can also be "
+"combined into one. Derivations can also be encoded as store objects too."
+msgstr ""
+
+#: source/store/index.md:17
+msgid ""
+"A [build trace](./build-trace.md), a record of which derivations have been "
+"built and what they produced."
+msgstr ""
+
+#: source/store/index.md:19
+msgid "**Warning**"
+msgstr ""
+
+#: source/store/index.md:21
+msgid ""
+"The concept of a build trace is currently [**experimental**](../development/"
+"experimental-features.md#xp-feature-ca-derivations) and subject to change."
+msgstr ""
+
+#: source/store/index.md:25
+msgid ""
+"There are [multiple types of Nix stores](./types/index.md) with different "
+"capabilities, such as the default one on the [local file system](./types/"
+"local-store.md) (`/nix/store`) or [binary caches](./types/http-binary-cache-"
+"store.md)."
+msgstr ""

@@ -1,0 +1,618 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-run.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:8
+msgid "`nix run` - run a Nix application"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:12
+msgid "`nix run` \\[_option_...\\] _installable_ _args_..."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:16
+msgid "Run the default app from the `blender-bin` flake:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:22
+msgid "Run a non-default app from the `blender-bin` flake:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:28
+msgid ""
+"Tip: you can find apps provided by this flake by running `nix flake show "
+"blender-bin`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:31
+msgid "Run `vim` from the `nixpkgs` flake:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:37
+msgid ""
+"Note that `vim` (as of the time of writing of this page) is not an app but a "
+"package. Thus, Nix runs the eponymous file from the `vim` package."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:41
+msgid "Run `vim` with arguments:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:47
+msgid "Run the default app from the current directory with arguments:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:53
+msgid ""
+"Note: The first positional argument is always treated as the _installable_, "
+"even after `--`. To pass arguments to the default installable, specify it "
+"explicitly: `nix run . -- arg1 arg2` or `nix run -- . arg1 arg2`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:57
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:59
+msgid ""
+"`nix run` builds and runs [_installable_](./nix.md#installables), which must "
+"evaluate to an _app_ or a regular Nix derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:62
+msgid ""
+"If _installable_ evaluates to an _app_ (see below), it executes the program "
+"specified by the app definition."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:65
+msgid ""
+"If _installable_ evaluates to a derivation, it will try to execute the "
+"program `<out>/bin/<name>`, where _out_ is the primary output store path of "
+"the derivation, and _name_ is the first of the following that exists:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:70
+msgid "The `meta.mainProgram` attribute of the derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:71
+msgid "The `pname` attribute of the derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:72
+msgid "The name part of the value of the `name` attribute of the derivation."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:74
+msgid ""
+"For instance, if `name` is set to `hello-1.10`, `nix run` will run `$out/bin/"
+"hello`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:77
+msgid "Flake output attributes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:79
+msgid ""
+"If no flake output attribute is given, `nix run` tries the following flake "
+"output attributes:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:82
+msgid "`apps.<system>.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:84
+msgid "`packages.<system>.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:86
+msgid ""
+"If an attribute _name_ is given, `nix run` tries the following flake output "
+"attributes:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:89
+msgid "`apps.<system>.<name>`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:91
+msgid "`packages.<system>.<name>`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:93
+msgid "`legacyPackages.<system>.<name>`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:95
+msgid "Apps"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:97
+msgid ""
+"An app is specified by a flake output attribute named `apps.<system>."
+"<name>`. It looks like this:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:100
+msgid ""
+"```nix\n"
+"apps.x86_64-linux.blender_2_79 = {\n"
+"  type = \"app\";\n"
+"  program = \"${self.packages.x86_64-linux.blender_2_79}/bin/blender\";\n"
+"  meta.description = \"Run Blender, a free and open-source 3D creation suite."
+"\";\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:108
+msgid "The only supported attributes are:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:110
+msgid "`type` (required): Must be set to `app`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:112
+msgid ""
+"`program` (required): The full path of the executable to run. It must reside "
+"in the Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:115
+msgid "`meta.description` (optional): A description of the app."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:117
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:119
+msgid "Common evaluation options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:121
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:123
+msgid "Pass the value _expr_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:125
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:127
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:129
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:131
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:133
+msgid ""
+"<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _string_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:135
+msgid "Pass the string _string_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:137
+msgid "<span id=\"opt-debugger\">[`--debugger`](#opt-debugger)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:139
+msgid "Start an interactive environment if evaluation fails."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:141
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:143
+msgid ""
+"The [URL of the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:146
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:148
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:150
+msgid ""
+"<span id=\"opt-include\">[`--include`](#opt-include)</span> / `-I` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:152
+msgid ""
+"Add _path_ to search path entries used to resolve [lookup paths](../../"
+"language/constructs/lookup-path.md)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:154
+msgid "This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:156
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:158
+msgid ""
+"<span id=\"opt-override-flake\">[`--override-flake`](#opt-override-flake)</"
+"span> _original-ref_ _resolved-ref_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:160
+msgid ""
+"Override the flake registries, redirecting _original-ref_ to _resolved-ref_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:162
+msgid "Common flake-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:164
+msgid ""
+"<span id=\"opt-commit-lock-file\">[`--commit-lock-file`](#opt-commit-lock-"
+"file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:166
+msgid "Commit changes to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:168
+msgid ""
+"<span id=\"opt-inputs-from\">[`--inputs-from`](#opt-inputs-from)</span> "
+"_flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:170
+msgid "Use the inputs of the specified flake as registry entries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:172
+msgid ""
+"<span id=\"opt-no-registries\">[`--no-registries`](#opt-no-registries)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:174
+msgid "Don't allow lookups in the flake registries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:176
+#: source/command-ref/new-cli/nix3-run.md:200
+#: source/command-ref/new-cli/nix3-run.md:212
+msgid "**DEPRECATED**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:178
+msgid ""
+"Use [`--no-use-registries`](../../command-ref/conf-file.md#conf-use-"
+"registries) instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:180
+msgid ""
+"<span id=\"opt-no-update-lock-file\">[`--no-update-lock-file`](#opt-no-"
+"update-lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:182
+msgid "Do not allow any updates to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:184
+msgid ""
+"<span id=\"opt-no-write-lock-file\">[`--no-write-lock-file`](#opt-no-write-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:186
+msgid "Do not write the flake's newly generated lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:188
+msgid ""
+"<span id=\"opt-output-lock-file\">[`--output-lock-file`](#opt-output-lock-"
+"file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:190
+msgid ""
+"Write the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:192
+msgid ""
+"<span id=\"opt-override-input\">[`--override-input`](#opt-override-input)</"
+"span> _input-path_ _flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:194
+msgid ""
+"Override a specific flake input (e.g. `dwarffs/nixpkgs`). The input path "
+"must not be empty. This implies `--no-write-lock-file`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:196
+msgid ""
+"<span id=\"opt-recreate-lock-file\">[`--recreate-lock-file`](#opt-recreate-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:198
+msgid "Recreate the flake's lock file from scratch."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:202
+#: source/command-ref/new-cli/nix3-run.md:214
+msgid ""
+"Use [`nix flake update`](../../command-ref/new-cli/nix3-flake-update.md) "
+"instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:204
+msgid ""
+"<span id=\"opt-reference-lock-file\">[`--reference-lock-file`](#opt-"
+"reference-lock-file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:206
+msgid ""
+"Read the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:208
+msgid ""
+"<span id=\"opt-update-input\">[`--update-input`](#opt-update-input)</span> "
+"_input-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:210
+msgid ""
+"Update a specific flake input (ignoring its previous entry in the lock file)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:216
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:218
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:220
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:222
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:224
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:226
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:228
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:230
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:232
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:234
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:236
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:238
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:240
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:242
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:244
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:246
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:248
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:250
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:252
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:254
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:256
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:258
+msgid ""
+"During evaluation, rewrite missing or corrupted files in the Nix store. "
+"During building, rebuild missing or corrupted store paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:260
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:262
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:264
+msgid "Options that change environment variables"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:266
+msgid ""
+"<span id=\"opt-ignore-env\">[`--ignore-env`](#opt-ignore-env)</span> / `-i`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:268
+msgid ""
+"Clear the entire environment, except for those specified with `--keep-env-"
+"var`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:270
+msgid ""
+"<span id=\"opt-keep-env-var\">[`--keep-env-var`](#opt-keep-env-var)</span> / "
+"`-k` _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:272
+msgid "Keep the environment variable _name_, when using `--ignore-env`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:274
+msgid ""
+"<span id=\"opt-set-env-var\">[`--set-env-var`](#opt-set-env-var)</span> / `-"
+"s` _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:276
+msgid "Sets an environment variable _name_ with _value_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:278
+msgid ""
+"<span id=\"opt-unset-env-var\">[`--unset-env-var`](#opt-unset-env-var)</"
+"span> / `-u` _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:280
+msgid "Unset the environment variable _name_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:282
+msgid ""
+"Options that change the interpretation of [installables](../../command-ref/"
+"new-cli/nix.md#installables)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:284
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:286
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression _expr_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:288
+msgid "<span id=\"opt-file\">[`--file`](#opt-file)</span> / `-f` _file_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:290
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression stored in _file_. If _file_ "
+"is the character -, then a Nix expression is read from standard input. "
+"Implies `--impure`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:292
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-run.md:294
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

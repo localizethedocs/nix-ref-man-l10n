@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/hash.md:1
+msgid "Hash"
+msgstr ""
+
+#: source/protocols/json/hash.md:3
+msgid "**Title:** Hash"
+msgstr ""
+
+#: source/protocols/json/hash.md:7
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/hash.md:7
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/hash.md:8
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/hash.md:8
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/hash.md:10
+msgid ""
+"**Description:** A cryptographic hash value used throughout Nix for content "
+"addressing and integrity verification."
+msgstr ""
+
+#: source/protocols/json/hash.md:12
+msgid ""
+"This schema describes the JSON representation of Nix's `Hash` type as an "
+"[SRI](https://developer.mozilla.org/en-US/docs/Web/Security/"
+"Subresource_Integrity) string."
+msgstr ""
+
+#: source/protocols/json/hash.md:14
+msgid "**Examples:**"
+msgstr ""
+
+#: source/protocols/json/hash.md:17
+msgid "\"sha256-ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=\""
+msgstr ""
+
+#: source/protocols/json/hash.md:21
+msgid ""
+"\"sha512-IEqPxt2oLwoM7XvrjgikFlfBbvRosiioJ5vjMacDwzWW/"
+"RXBOxsH+aodO+pXeJygMa2Fx6cd1wNU7GMSOMo0RQ==\""
+msgstr ""
+
+#: source/protocols/json/hash.md:24
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/hash.md:26
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/hash.md:26
+msgid ""
+"`^(blake3\\|md5\\|sha1\\|sha256\\|sha512)-[A-Za-z0-9+/]+=*$` [Test](https://"
+"regex101.com/?regex=%5E%28blake3%7Cmd5%7Csha1%7Csha256%7Csha512%29-%5BA-Za-"
+"z0-9%2B%2F%5D%2B%3D%2A%24&testString=%22sha256-"
+"ungWv48Bz%2BpBQUDeXa4iI7ADYaOWF3qctBD%2FYfIAFa0%3D%22)"
+msgstr ""
+
+#: source/protocols/json/hash.md:31
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/hash.md:33
+msgid "SHA-256"
+msgstr ""
+
+#: source/protocols/json/hash.md:36
+msgid "\"sha256-8OTC92xYkW7CWPJGhRvqCR0U1CR6L8PhhpRGGxgW4Ts=\""
+msgstr ""
+
+#: source/protocols/json/hash.md:40
+msgid "BLAKE3"
+msgstr ""
+
+#: source/protocols/json/hash.md:43
+msgid "\"blake3-nnDuFEmWX7YtBJBAoe0G7Dd0MNpuwTFz58T//NKL6YA=\""
+msgstr ""

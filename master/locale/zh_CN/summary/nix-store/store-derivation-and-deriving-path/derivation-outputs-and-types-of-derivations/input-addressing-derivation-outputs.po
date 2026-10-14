@@ -1,0 +1,517 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/derivation/outputs/input-address.md:1
+msgid "Input-addressing derivation outputs"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:5
+msgid ""
+"\"Input addressing\" means the address the store object by the _way it was "
+"made_ rather than _what it is_. That is to say, an input-addressed output's "
+"store path is a function not of the output itself, but of the derivation "
+"that produced it. Even if two store paths have the same contents, if they "
+"are produced in different ways, and one is input-addressed, then they will "
+"have different store paths, and thus guaranteed to not be the same store "
+"object."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:9
+msgid "Masking content addressed derivation outputs"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:11
+msgid ""
+"A naive implementation of an output hash computation for input-addressed "
+"outputs would be to hash the derivation hash and output together. This "
+"clearly has the uniqueness properties we want for input-addressed outputs, "
+"but suffers from an inefficiency. Specifically, new builds would be required "
+"whenever a change is made to a fixed-output derivation, despite having "
+"provably no differences in the inputs to the new derivation compared to what "
+"it used to be. Concretely, this would cause a \"mass rebuild\" whenever any "
+"fetching detail changes, including mirror lists, certificate authority "
+"certificates, etc."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:16
+msgid ""
+"To solve this problem, we compute output hashes differently, so that certain "
+"output hashes become identical. We do this by _masking_: before hashing, we "
+"rewrite the parts of the derivation whose differences we do not want to see."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:19
+msgid "There are two maskings, and they are independent:"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:21
+msgid ""
+"_Input masking_ replaces each input derivation's store path with a hash "
+"standing for what that input _produces_, rather than for the derivation that "
+"produces it. This is what makes different fixed-output derivation inputs "
+"that produce the same outputs stop mattering."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:24
+msgid ""
+"_Output masking_ blanks the derivation's own output paths --- in `outputs`, "
+"and in the environment variables named after them. This is needed when those "
+"very paths are what we are computing; it is not wanted when the derivation "
+"is merely being hashed to stand in for an input to something else, where the "
+"paths it already has are exactly what identifies it."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:27
+msgid ""
+"A derivation with only the first applied is an _input-masked derivation_; "
+"one with both is a _fully masked derivation_."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:29
+msgid ""
+"Every non-injective function induces an equivalence relation on its domain, "
+"by saying two elements are equivalent if they map to the same value. But the "
+"equivalence relation induced by input masking is also pleasant to "
+"characterize directly, without reference to input masking at all. "
+"Intuitively this makes sense, because the details of how exactly inputs are "
+"hashed (which hash function, say) shouldn't matter (ignoring hash collisions "
+"and the like) --- all that matters is which derivations are deemed "
+"equivalent. The [semantic properties](#semantic-properties) section below "
+"develops this further."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:34
+msgid ""
+"So how do we compute the [hash part](../../../store/store-path.md#digest) of "
+"the output paths of an input-addressed derivation? This is done by the "
+"function `hashInputMaskedDerivation`, shown below, which does the input "
+"masking itself; its callers do any output masking."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:37
+msgid ""
+"First, a word on inputs. `hashInputMaskedDerivation` is only defined on "
+"derivations whose [inputs](../../../store/derivation/index.md#inputs) take "
+"the first-order form:"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:54
+msgid ""
+"For the algorithm below, we adopt a derivation where the two types of (first "
+"order) derived paths are partitioned into two sets, as follows:"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:55
+msgid ""
+"```typescript\n"
+"type Derivation = {\n"
+"  // inputs: Set<FirstOrderDerivingPath>; // replaced\n"
+"  inputSrcs: Set<ConstantPath>; // new instead\n"
+"  inputDrvOutputs: Set<FirstOrderOutputPath>; // new instead\n"
+"  // ...other fields...\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:64
+msgid ""
+"In the [currently-experimental](../../../development/experimental-features."
+"md#xp-feature-dynamic-derivations) higher-order case where outputs of "
+"outputs are allowed as [deriving paths](../../../store/derivation/index."
+"md#deriving-path) and thus derivation inputs, derivations using that "
+"generalization are not valid arguments to this function. Those derivations "
+"must be (partially) [resolved](../../../store/resolution.md) enough first, "
+"to the point where no such higher-order inputs remain. Then, and only then, "
+"can input addresses be assigned."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:68
+msgid ""
+"```\n"
+"function hashInputMaskedDerivation(drv) -> Hash:\n"
+"    assert(drv.outputs are input-addressed)\n"
+"    drv′ ← drv with {\n"
+"        inputDrvOutputs = ⋃(\n"
+"            assert(drvPath is store path)\n"
+"            case hashOutputsOrInputMaskedDerivation(readDrv(drvPath)) of\n"
+"                drvHash : Hash →\n"
+"                    (drvHash.toBase16(), output)\n"
+"                outputHashes : Map[String, Hash] →\n"
+"                    (outputHashes[output].toBase16(), \"out\")\n"
+"            | (drvPath, output) ∈ drv.inputDrvOutputs\n"
+"        )\n"
+"    }\n"
+"    return hashSHA256(printDrv(drv′))\n"
+"\n"
+"function hashOutputsOrInputMaskedDerivation(drv) -> Map[String, Hash] | "
+"Hash:\n"
+"    if drv.outputs are content-addressed:\n"
+"        return {\n"
+"            outputName ↦ hashSHA256(\n"
+"                \"fixed:out:\" + ca.printMethodAlgo() +\n"
+"                \":\" + ca.hash.toBase16() +\n"
+"                \":\" + ca.makeFixedOutputPath(drv.name, outputName))\n"
+"            | (outputName ↦ output) ∈ drv.outputs\n"
+"            , ca = output.contentAddress // or get from build trace if "
+"floating\n"
+"        }\n"
+"    else: // drv.outputs are input-addressed\n"
+"        return hashInputMaskedDerivation(drv)\n"
+"```"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:98
+msgid "`hashInputMaskedDerivation`"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:100
+msgid ""
+"We replace each element in the derivation's `inputDrvOutputs` using data "
+"from a call to `hashOutputsOrInputMaskedDerivation` on the `drvPath` of that "
+"element. When `hashOutputsOrInputMaskedDerivation` returns a single drv hash "
+"(because the input derivation in question is input-addressing), we simply "
+"swap out the `drvPath` for that hash, and keep the same output name. When "
+"`hashOutputsOrInputMaskedDerivation` returns a map of content addresses per-"
+"output, we look up the output in question, and pair it with the output name "
+"`out`."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:104
+msgid ""
+"That rewriting is the input masking. The resulting pseudo-derivation (with "
+"hashes instead of store paths in `inputDrvs`) is then printed (in the "
+"[\"ATerm\" format](../../../protocols/derivation-aterm.md#input-address-"
+"encoding)) and hashed, and this becomes the hash of the input-masked "
+"derivation."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:107
+msgid ""
+"When calculating output hashes, `hashInputMaskedDerivation` is called on an "
+"almost-complete input-addressing derivation, which is just missing its input-"
+"addressed outputs paths --- that is, one that is already output masked, "
+"making it fully masked. The derivation hash is then used to calculate output "
+"paths for each output, as the [complete store path calculation](../../../"
+"protocols/store-path.md#fingerprint) specifies: it is the digest of the "
+"hashed ATerm that specification calls for, under the `\"output:\" id` case, "
+"where `id` is the output name. The store object's name is the derivation's "
+"name, with `-` and the output name appended --- unless the output is named "
+"`out`, in which case the derivation's name is used as-is."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:111
+msgid ""
+"Note that one derivation hash serves every output; what distinguishes their "
+"paths is only the output name, which enters twice over, as both `id` and "
+"part of the name."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:113
+msgid ""
+"Those output paths can then be substituted into the almost-complete input-"
+"addressed derivation to complete it."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:115
+#: source/store/derivation/outputs/input-address.md:130
+#: source/store/derivation/outputs/input-address.md:139
+#: source/store/derivation/outputs/input-address.md:169
+#: source/store/derivation/outputs/input-address.md:257
+msgid "**Note**"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:117
+msgid ""
+"There may be an unintentional deviation from specification currently "
+"implemented in the `(outputHashes[output].toBase16(), \"out\")` case. This "
+"is not fatal because the deviation would only apply for content-addressing "
+"derivations with more than one output, and that only occurs in the floating "
+"case, which is [experimental](../../../development/experimental-features."
+"md#xp-feature-ca-derivations). Once this bug is fixed, this note will be "
+"removed."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:121
+msgid "`hashOutputsOrInputMaskedDerivation`"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:123
+msgid ""
+"`hashOutputsOrInputMaskedDerivation` consists of two main cases, based on "
+"whether the outputs of the derivation are to be input-addressed or content-"
+"addressed."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:125
+msgid "Input-addressed outputs case"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:127
+msgid ""
+"In the input-addressed case, it just calls `hashInputMaskedDerivation`, and "
+"returns that derivation hash. This makes `hashInputMaskedDerivation` and "
+"`hashOutputsOrInputMaskedDerivation` mutually-recursive."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:132
+msgid ""
+"In this case, `hashInputMaskedDerivation` is being called on a _complete_ "
+"input-addressing derivation that already has its output paths calculated: it "
+"is not output masked, so it is input-masked only, not fully masked. The "
+"input masking takes place anyways."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:135
+msgid "Content-addressed outputs case"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:137
+msgid ""
+"If the outputs are [content-addressed](./content-address.md), then it "
+"computes a hash for each output derived from the content-address of that "
+"output."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:141
+msgid ""
+"In the [fixed](./content-address.md#fixed) content-addressing case, the "
+"outputs' content addresses are statically specified in advance, so this "
+"always just works. (The fixed case is what the pseudo-code shows.)"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:144
+msgid ""
+"In the [floating](./content-address.md#floating) case, the content addresses "
+"are not specified in advance. This is what the \"or get from [build trace]"
+"(../../../store/build-trace.md) if floating\" comment refers to. In this "
+"case, the algorithm is _stuck_ until the input in question is built, and we "
+"know what the actual contents of the output in question is."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:148
+msgid ""
+"That is OK however, because there is no problem with delaying the assigning "
+"of input addresses (which, remember, is what `hashInputMaskedDerivation` is "
+"ultimately for) until all inputs are known."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:150
+msgid "Deferring input-addressing when downstream of unknown CA store objects"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:152
+msgid ""
+"As the previous note says, the algorithm is _stuck_ when an input is a "
+"[floating content-addressed](./content-address.md#floating) output that has "
+"not been built yet: there is no content address to substitute for it, so the "
+"input masking cannot be completed and no input address can be computed."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:154
+msgid ""
+"The derivation is still written to the store, with its outputs _deferred_: "
+"an output in this state has no store path at all, and the environment "
+"variable named after it is empty. This costs nothing, because a derivation's "
+"own store path is [content-addressed](../../../store/store-object/content-"
+"address.md#method-text) on the bytes of its serialization, which do not "
+"depend on its output paths being known."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:157
+msgid ""
+"A deferred output does not use a third kind of addressing alongside input- "
+"and content-addressing. It is input-addressed; it just does not know its "
+"path yet."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:160
+msgid ""
+"Being stuck is contagious. A derivation with deferred outputs has, for this "
+"purpose, unknown outputs of its own, so `hashOutputsOrInputMaskedDerivation` "
+"is stuck on it in turn, and anything depending on it must also defer. The "
+"condition therefore propagates downstream from the floating output that "
+"caused it."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:164
+msgid ""
+"Deferral is resolved by building, not by revisiting the same derivation. "
+"Once the offending inputs are built, their content addresses are known, and "
+"the derivation can be [resolved](../../../store/resolution.md): its inputs "
+"are replaced by the plain store paths they turned out to denote. The "
+"resolved derivation is a _different_ derivation, with its own store path --- "
+"necessarily so, since it has different bytes. It has no input derivations "
+"left to be stuck on, so its input addresses are computable, and it is what "
+"actually gets built."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:171
+msgid ""
+"Nothing gates deferred outputs themselves. They only _arise_ downstream of "
+"[floating content-addressed](./content-address.md#floating) outputs."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:174
+msgid "Performance"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:176
+msgid ""
+"The recursion in the algorithm is potentially inefficient: it could call "
+"itself once for each path by which a subderivation can be reached, i.e., "
+"`O(V^k)` times for a derivation graph with `V` derivations and with out-"
+"degree of at most `k`. In the actual implementation, [memoisation](https://"
+"en.wikipedia.org/wiki/Memoization) is used to reduce this cost to be "
+"proportional to the total number of `inputDrvOutputs` encountered."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:180
+msgid "Semantic properties"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:182
+msgid ""
+"_See [this chapter's appendix](../../../store/math-notation.md) on grammar "
+"and metavariable conventions._"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:184
+msgid ""
+"Masking is, mathematically, a quotient, in reference to quotient types or "
+"sets: what it discards is exactly what we want two derivations to be allowed "
+"to differ in. Accordingly, `hashInputMaskedDerivation` partitions input-"
+"addressing derivations into equivalence classes: every derivation in that "
+"equivalence class is mapped to the same derivation hash. We can characterize "
+"this equivalence relation directly, by working bottom up."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:188
+msgid ""
+"We start by defining an equivalence relation on first-order output deriving "
+"paths that refer content-addressed derivation outputs. Two such paths are "
+"equivalent if they refer to the same store object:"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:190
+msgid ""
+"\\\\\\[ \\\\begin{prooftree} \\\\AxiomC{$d\\_1$ is content-addressing} \\"
+"\\AxiomC{$d\\_2$ is content-addressing} \\\\AxiomC{$ {}^\\*(\\text{path}"
+"(d\\_1), o\\_1) = {}^\\*(\\text{path}(d\\_2), o\\_2) $} \\"
+"\\TrinaryInfC{$(\\text{path}(d\\_1), o\\_1) \\\\,\\\\sim\\_{\\\\mathrm{CA}}\\"
+"\\, (d\\_2, o\\_2)$} \\\\end{prooftree} \\\\\\]"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:203
+msgid ""
+"where \\\\({}^\\*(s, o)\\\\) denotes the store object that the output "
+"deriving path refers to."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:205
+msgid ""
+"We will also need the following construction to lift any equivalence "
+"relation on \\\\(X\\\\) to an equivalence relation on (finite) sets of \\"
+"\\(X\\\\) (in short, \\\\(\\\\mathcal{P}(X)\\\\)):"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:207
+msgid ""
+"\\\\\\[ \\\\begin{prooftree} \\\\AxiomC{$\\\\forall a \\\\in A. \\\\exists b "
+"\\\\in B. a \\\\,\\\\sim\\_X\\\\, b$} \\\\AxiomC{$\\\\forall b \\\\in B. \\"
+"\\exists a \\\\in A. b \\\\,\\\\sim\\_X\\\\, a$} \\\\BinaryInfC{$A \\\\,\\"
+"\\sim\\_{\\\\mathcal{P}(X)}\\\\, B$} \\\\end{prooftree} \\\\\\]"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:215
+msgid ""
+"Now we can define the equivalence relation \\\\(\\\\sim\\_\\\\mathrm{IA}\\"
+"\\) on input-addressed derivation outputs. Two input-addressed outputs are "
+"equivalent if their derivations are equivalent (via the yet-to-be-defined \\"
+"\\(\\\\sim\\_{\\\\mathrm{IADrv}}\\\\) relation) and their output names are "
+"the same:"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:217
+msgid ""
+"\\\\\\[ \\\\begin{prooftree} \\\\AxiomC{$d\\_1$ is input-addressing} \\"
+"\\AxiomC{$d\\_2$ is input-addressing} \\\\AxiomC{$d\\_1 \\\\,\\\\sim\\_{\\"
+"\\mathrm{IADrv}}\\\\, d\\_2$} \\\\AxiomC{$o\\_1 = o\\_2$} \\"
+"\\QuaternaryInfC{$(\\text{path}(d\\_1), o\\_1) \\\\,\\\\sim\\_{\\"
+"\\mathrm{IA}}\\\\, (\\text{path}(d\\_2), o\\_2)$} \\\\end{prooftree} \\\\\\]"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:227
+msgid ""
+"And now we can define \\\\(\\\\sim\\_{\\\\mathrm{IADrv}}\\\\). Two input-"
+"addressed derivations are equivalent if their content-addressed inputs are "
+"equivalent, their input-addressed inputs are also equivalent, and they are "
+"otherwise equal:"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:232
+msgid ""
+"\\\\\\[ \\\\begin{prooftree} \\\\alwaysNoLine \\\\AxiomC{$ \\"
+"\\mathrm{caInputs}(d\\_1) \\\\,\\\\sim\\_{\\\\mathcal{P}(\\\\mathrm{CA})}\\"
+"\\, \\\\mathrm{caInputs}(d\\_2) $} \\\\AxiomC{$ \\\\mathrm{iaInputs}(d\\_1) "
+"\\\\,\\\\sim\\_{\\\\mathcal{P}(\\\\mathrm{IA})}\\\\, \\\\mathrm{iaInputs}"
+"(d\\_2) $} \\\\BinaryInfC{$ d\\_1\\left\\[\\\\mathrm{inputDrvOutputs} := \\"
+"\\{\\\\}\\right\\] = d\\_2\\left\\[\\\\mathrm{inputDrvOutputs} := \\\\{\\"
+"\\}\\right\\] $} \\\\alwaysSingleLine \\\\UnaryInfC{$d\\_1 \\\\,\\\\sim\\_{\\"
+"\\mathrm{IADrv}}\\\\, d\\_2$} \\\\end{prooftree} \\\\\\]"
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:255
+msgid ""
+"where \\\\(\\\\mathrm{caInputs}(d)\\\\) returns the content-addressed inputs "
+"of \\\\(d\\\\) and \\\\(\\\\mathrm{iaInputs}(d)\\\\) returns the input-"
+"addressed inputs."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:259
+msgid ""
+"An astute reader might notice that that nowhere does `inputSrcs` enter into "
+"these definitions. That means that replacing an input derivation with its "
+"outputs directly added to `inputSrcs` always results in a derivation in a "
+"different equivalence class, despite the resulting input closure (as would "
+"be mounted in the store at build time) being the same. [Issue #9259](https://"
+"github.com/NixOS/nix/issues/9259) is about creating a coarser equivalence "
+"relation to address this."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:263
+msgid ""
+"\\\\(\\\\sim\\_\\\\mathrm{Drv}\\\\) from [derivation resolution](../../../"
+"store/resolution.md) is such an equivalence relation. It is coarser than "
+"this one: any two derivations which are \"'hash input-masked derivation'-"
+"equivalent\" (\\\\(\\\\sim\\_\\\\mathrm{IADrv}\\\\)) are also \"resolution-"
+"equivalent\" (\\\\(\\\\sim\\_\\\\mathrm{Drv}\\\\)). It also relates "
+"derivations whose `inputDrvOutputs` have been rewritten into `inputSrcs`."
+msgstr ""
+
+#: source/store/derivation/outputs/input-address.md:267
+msgid ""
+"Input-addressing downstream of content addressing, as described above, "
+"anticipates this. Since a content-addressed input contributes only its "
+"content address, and not the derivation that produced it, derivations "
+"differing only in _how_ an identical content-addressed input was produced "
+"are already \\\\(\\\\sim\\_\\\\mathrm{IADrv}\\\\)-equivalent. And since a "
+"deferred derivation is completely resolved before it is input-addressed, its "
+"input-addressed `inputDrvOutputs` are normalized to `inputSrcs` as well --- "
+"so derivations differing only in how an identical _input-addressed_ input "
+"was produced are \\\\(\\\\sim\\_\\\\mathrm{IADrv}\\\\)-equivalent too. That "
+"is the same \"identify an input by what it is, rather than by how it was "
+"made\" move as \\\\(\\\\sim\\_\\\\mathrm{Drv}\\\\). The difference is that \\"
+"\\(\\\\sim\\_\\\\mathrm{Drv}\\\\) makes it unconditionally, whereas here it "
+"falls out for content-addressed inputs always, and for the rest only where "
+"deferral forced a resolution first."
+msgstr ""

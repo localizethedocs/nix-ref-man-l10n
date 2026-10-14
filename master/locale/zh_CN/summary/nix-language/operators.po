@@ -1,0 +1,781 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/operators.md:1
+msgid "Operators"
+msgstr ""
+
+#: source/language/operators.md:3
+msgid "Name"
+msgstr ""
+
+#: source/language/operators.md:3
+msgid "Syntax"
+msgstr ""
+
+#: source/language/operators.md:3
+msgid "Associativity"
+msgstr ""
+
+#: source/language/operators.md:3
+msgid "Precedence"
+msgstr ""
+
+#: source/language/operators.md:5
+msgid "[Attribute selection](#attribute-selection)"
+msgstr ""
+
+#: source/language/operators.md:5 source/language/operators.md:44
+msgid "_attrset_ `.` _attrpath_ \\[ `or` _expr_ \\]"
+msgstr ""
+
+#: source/language/operators.md:5 source/language/operators.md:7
+#: source/language/operators.md:8 source/language/operators.md:18
+#: source/language/operators.md:20 source/language/operators.md:21
+#: source/language/operators.md:22 source/language/operators.md:23
+#: source/language/operators.md:24 source/language/operators.md:25
+msgid "none"
+msgstr ""
+
+#: source/language/operators.md:5
+msgid "1"
+msgstr ""
+
+#: source/language/operators.md:6
+msgid "[Function application](#function-application)"
+msgstr ""
+
+#: source/language/operators.md:6 source/language/operators.md:55
+msgid "_func_ _expr_"
+msgstr ""
+
+#: source/language/operators.md:6 source/language/operators.md:10
+#: source/language/operators.md:11 source/language/operators.md:12
+#: source/language/operators.md:13 source/language/operators.md:14
+#: source/language/operators.md:15 source/language/operators.md:16
+#: source/language/operators.md:17 source/language/operators.md:26
+#: source/language/operators.md:27 source/language/operators.md:29
+msgid "left"
+msgstr ""
+
+#: source/language/operators.md:6
+msgid "2"
+msgstr ""
+
+#: source/language/operators.md:7
+msgid "[Arithmetic negation](#arithmetic)"
+msgstr ""
+
+#: source/language/operators.md:7
+msgid "`-` _number_"
+msgstr ""
+
+#: source/language/operators.md:7
+msgid "3"
+msgstr ""
+
+#: source/language/operators.md:8
+msgid "[Has attribute](#has-attribute)"
+msgstr ""
+
+#: source/language/operators.md:8 source/language/operators.md:71
+msgid "_expr_ `?` _attrpath_"
+msgstr ""
+
+#: source/language/operators.md:8
+msgid "4"
+msgstr ""
+
+#: source/language/operators.md:9
+msgid "List concatenation"
+msgstr ""
+
+#: source/language/operators.md:9
+msgid "_list_ `++` _list_"
+msgstr ""
+
+#: source/language/operators.md:9 source/language/operators.md:19
+#: source/language/operators.md:28 source/language/operators.md:30
+msgid "right"
+msgstr ""
+
+#: source/language/operators.md:9
+msgid "5"
+msgstr ""
+
+#: source/language/operators.md:10
+msgid "[Multiplication](#arithmetic)"
+msgstr ""
+
+#: source/language/operators.md:10
+msgid "_number_ `*` _number_"
+msgstr ""
+
+#: source/language/operators.md:10 source/language/operators.md:11
+msgid "6"
+msgstr ""
+
+#: source/language/operators.md:11
+msgid "[Division](#arithmetic)"
+msgstr ""
+
+#: source/language/operators.md:11
+msgid "_number_ `/` _number_"
+msgstr ""
+
+#: source/language/operators.md:12
+msgid "[Subtraction](#arithmetic)"
+msgstr ""
+
+#: source/language/operators.md:12
+msgid "_number_ `-` _number_"
+msgstr ""
+
+#: source/language/operators.md:12 source/language/operators.md:13
+#: source/language/operators.md:14 source/language/operators.md:15
+#: source/language/operators.md:16 source/language/operators.md:17
+msgid "7"
+msgstr ""
+
+#: source/language/operators.md:13
+msgid "[Addition](#arithmetic)"
+msgstr ""
+
+#: source/language/operators.md:13
+msgid "_number_ `+` _number_"
+msgstr ""
+
+#: source/language/operators.md:14
+msgid "[String concatenation](#string-concatenation)"
+msgstr ""
+
+#: source/language/operators.md:14 source/language/operators.md:106
+msgid "_string_ `+` _string_"
+msgstr ""
+
+#: source/language/operators.md:15
+msgid "[Path concatenation](#path-concatenation)"
+msgstr ""
+
+#: source/language/operators.md:15 source/language/operators.md:116
+msgid "_path_ `+` _path_"
+msgstr ""
+
+#: source/language/operators.md:16
+msgid "[Path and string concatenation](#path-and-string-concatenation)"
+msgstr ""
+
+#: source/language/operators.md:16
+msgid "_path_ `+` _string_"
+msgstr ""
+
+#: source/language/operators.md:17
+msgid "[String and path concatenation](#string-and-path-concatenation)"
+msgstr ""
+
+#: source/language/operators.md:17
+msgid "_string_ `+` _path_"
+msgstr ""
+
+#: source/language/operators.md:18
+msgid "Logical negation (`NOT`)"
+msgstr ""
+
+#: source/language/operators.md:18
+msgid "`!` _bool_"
+msgstr ""
+
+#: source/language/operators.md:18
+msgid "8"
+msgstr ""
+
+#: source/language/operators.md:19
+msgid "[Update](#update)"
+msgstr ""
+
+#: source/language/operators.md:19
+msgid "_attrset_ `//` _attrset_"
+msgstr ""
+
+#: source/language/operators.md:19
+msgid "9"
+msgstr ""
+
+#: source/language/operators.md:20
+msgid "[Less than](#comparison)"
+msgstr ""
+
+#: source/language/operators.md:20
+msgid "_expr_ `<` _expr_"
+msgstr ""
+
+#: source/language/operators.md:20 source/language/operators.md:21
+#: source/language/operators.md:22 source/language/operators.md:23
+msgid "10"
+msgstr ""
+
+#: source/language/operators.md:21
+msgid "[Less than or equal to](#comparison)"
+msgstr ""
+
+#: source/language/operators.md:21
+msgid "_expr_ `<=` _expr_"
+msgstr ""
+
+#: source/language/operators.md:22
+msgid "[Greater than](#comparison)"
+msgstr ""
+
+#: source/language/operators.md:22
+msgid "_expr_ `>` _expr_"
+msgstr ""
+
+#: source/language/operators.md:23
+msgid "[Greater than or equal to](#comparison)"
+msgstr ""
+
+#: source/language/operators.md:23
+msgid "_expr_ `>=` _expr_"
+msgstr ""
+
+#: source/language/operators.md:24
+msgid "[Equality](#equality)"
+msgstr ""
+
+#: source/language/operators.md:24
+msgid "_expr_ `==` _expr_"
+msgstr ""
+
+#: source/language/operators.md:24 source/language/operators.md:25
+msgid "11"
+msgstr ""
+
+#: source/language/operators.md:25
+msgid "Inequality"
+msgstr ""
+
+#: source/language/operators.md:25
+msgid "_expr_ `!=` _expr_"
+msgstr ""
+
+#: source/language/operators.md:26
+msgid "[Logical conjunction](#logical-conjunction) (`AND`)"
+msgstr ""
+
+#: source/language/operators.md:26
+msgid "_bool_ `&&` _bool_"
+msgstr ""
+
+#: source/language/operators.md:26
+msgid "[12](#precedence-and-disjunctive-normal-form)"
+msgstr ""
+
+#: source/language/operators.md:27
+msgid "[Logical disjunction](#logical-disjunction) (`OR`)"
+msgstr ""
+
+#: source/language/operators.md:27
+msgid "_bool_ <code>\\|\\|</code> _bool_"
+msgstr ""
+
+#: source/language/operators.md:27
+msgid "[13](#precedence-and-disjunctive-normal-form)"
+msgstr ""
+
+#: source/language/operators.md:28
+msgid "[Logical implication](#logical-implication)"
+msgstr ""
+
+#: source/language/operators.md:28
+msgid "_bool_ `->` _bool_"
+msgstr ""
+
+#: source/language/operators.md:28
+msgid "14"
+msgstr ""
+
+#: source/language/operators.md:29 source/language/operators.md:30
+msgid "[Pipe operator](#pipe-operators) (experimental)"
+msgstr ""
+
+#: source/language/operators.md:29
+msgid "_expr_ `\\|>` _func_"
+msgstr ""
+
+#: source/language/operators.md:29 source/language/operators.md:30
+msgid "15"
+msgstr ""
+
+#: source/language/operators.md:30
+msgid "_func_ `<\\|` _expr_"
+msgstr ""
+
+#: source/language/operators.md:40
+msgid "Attribute selection"
+msgstr ""
+
+#: source/language/operators.md:42 source/language/operators.md:53
+#: source/language/operators.md:69 source/language/operators.md:104
+#: source/language/operators.md:114 source/language/operators.md:125
+#: source/language/operators.md:140 source/language/operators.md:159
+#: source/language/operators.md:215 source/language/operators.md:237
+#: source/language/operators.md:266
+msgid "**Syntax**"
+msgstr ""
+
+#: source/language/operators.md:46
+msgid ""
+"Select the attribute denoted by attribute path _attrpath_ from [attribute "
+"set](./types.md#type-attrs) _attrset_. If the attribute doesn’t exist, "
+"return the _expr_ after `or` if provided, otherwise abort evaluation."
+msgstr ""
+
+#: source/language/operators.md:51
+msgid "Function application"
+msgstr ""
+
+#: source/language/operators.md:57
+msgid ""
+"Apply the callable value _func_ to the argument _expr_. Note the absence of "
+"any visible operator symbol. A callable value is either:"
+msgstr ""
+
+#: source/language/operators.md:59
+msgid "a [user-defined function](./syntax.md#functions)"
+msgstr ""
+
+#: source/language/operators.md:60
+msgid "a [built-in](./builtins.md) function"
+msgstr ""
+
+#: source/language/operators.md:61
+msgid ""
+"an attribute set with a [`__functor` attribute](./syntax.md#attr-__functor)"
+msgstr ""
+
+#: source/language/operators.md:63 source/language/operators.md:301
+msgid "**Warning**"
+msgstr ""
+
+#: source/language/operators.md:65
+msgid ""
+"[List](./types.md#type-list) items are also separated by whitespace, which "
+"means that function calls in list items must be enclosed by parentheses."
+msgstr ""
+
+#: source/language/operators.md:67
+msgid "Has attribute"
+msgstr ""
+
+#: source/language/operators.md:73
+msgid ""
+"Test whether _expr_ is an [attribute set](./types.md#type-attrs) containing "
+"the attribute denoted by _[attrpath](./syntax.md#attrpath-literal)_. If "
+"_attrpath_ contains multiple components, and any of its components (other "
+"than the last) do not correspond to an attribute set in _expr_, the result "
+"is false. The result is a [Boolean](./types.md#type-bool) value."
+msgstr ""
+
+#: source/language/operators.md:77
+msgid ""
+"See also: [`builtins.hasAttr`](../language/builtins.md#builtins-hasAttr)"
+msgstr ""
+
+#: source/language/operators.md:85
+msgid ""
+"After evaluating _attrset_ and _attrpath_, the computational complexity is "
+"O(log(_n_)) for _n_ attributes in the _attrset_."
+msgstr ""
+
+#: source/language/operators.md:87
+msgid "Arithmetic"
+msgstr ""
+
+#: source/language/operators.md:89
+msgid ""
+"Numbers will retain their type unless mixed with other numeric types: Pure "
+"integer operations will always return integers, whereas any operation "
+"involving at least one floating point number returns a floating point number."
+msgstr ""
+
+#: source/language/operators.md:92
+msgid ""
+"Evaluation of the following numeric operations throws an evaluation error:"
+msgstr ""
+
+#: source/language/operators.md:93
+msgid "Division by zero"
+msgstr ""
+
+#: source/language/operators.md:94
+msgid ""
+"Integer overflow, that is, any operation yielding a result outside of the "
+"representable range of [Nix language integers](./syntax.md#number-literal)"
+msgstr ""
+
+#: source/language/operators.md:96
+msgid "See also [Comparison](#comparison) and [Equality](#equality)."
+msgstr ""
+
+#: source/language/operators.md:98
+msgid "The `+` operator is overloaded to also work on strings and paths."
+msgstr ""
+
+#: source/language/operators.md:102
+msgid "String concatenation"
+msgstr ""
+
+#: source/language/operators.md:108
+msgid ""
+"Concatenate two [strings](./types.md#type-string) and merge their [string "
+"contexts](./string-context.md)."
+msgstr ""
+
+#: source/language/operators.md:112
+msgid "Path concatenation"
+msgstr ""
+
+#: source/language/operators.md:118
+msgid "Concatenate two [paths](./types.md#type-path). The result is a path."
+msgstr ""
+
+#: source/language/operators.md:123
+msgid "Path and string concatenation"
+msgstr ""
+
+#: source/language/operators.md:127
+msgid "_path_ + _string_"
+msgstr ""
+
+#: source/language/operators.md:129
+msgid ""
+"Concatenate _[path](./types.md#type-path)_ with _[string](./types.md#type-"
+"string)_. The result is a path."
+msgstr ""
+
+#: source/language/operators.md:132
+msgid "**Note**"
+msgstr ""
+
+#: source/language/operators.md:134
+msgid ""
+"The string must not have a [string context](./string-context.md) that refers "
+"to a [store path](../store/store-path.md)."
+msgstr ""
+
+#: source/language/operators.md:138
+msgid "String and path concatenation"
+msgstr ""
+
+#: source/language/operators.md:142
+msgid "_string_ + _path_"
+msgstr ""
+
+#: source/language/operators.md:144
+msgid ""
+"Concatenate _[string](./types.md#type-string)_ with _[path](./types.md#type-"
+"path)_. The result is a string."
+msgstr ""
+
+#: source/language/operators.md:147
+msgid "**Important**"
+msgstr ""
+
+#: source/language/operators.md:149
+msgid ""
+"The file or directory at _path_ must exist and is copied to the [store](../"
+"glossary.md#gloss-store). The path appears in the result as the "
+"corresponding [store path](../store/store-path.md)."
+msgstr ""
+
+#: source/language/operators.md:157
+msgid "Update"
+msgstr ""
+
+#: source/language/operators.md:161
+msgid "_attrset1_ // _attrset2_"
+msgstr ""
+
+#: source/language/operators.md:163
+msgid ""
+"Update [attribute set](./types.md#type-attrs) _attrset1_ with names and "
+"values from _attrset2_."
+msgstr ""
+
+#: source/language/operators.md:165
+msgid ""
+"The returned attribute set will have all of the attributes in _attrset1_ and "
+"_attrset2_. If an attribute name is present in both, the attribute value "
+"from the latter is taken."
+msgstr ""
+
+#: source/language/operators.md:168
+msgid ""
+"This operator is [strict](../language/evaluation.md#strictness) in both "
+"_attrset1_ and _attrset2_. That means that both arguments are evaluated to "
+"[weak head normal form](../language/evaluation.md#values), so the attribute "
+"sets themselves are evaluated, but their attribute values are not evaluated."
+msgstr ""
+
+#: source/language/operators.md:173
+msgid "Comparison"
+msgstr ""
+
+#: source/language/operators.md:175
+msgid "Comparison is"
+msgstr ""
+
+#: source/language/operators.md:177
+msgid "[arithmetic](#arithmetic) for [numbers](./types.md#type-float)"
+msgstr ""
+
+#: source/language/operators.md:178
+msgid ""
+"lexicographic for [strings](./types.md#type-string) and [paths](./types."
+"md#type-path)"
+msgstr ""
+
+#: source/language/operators.md:179
+msgid ""
+"item-wise lexicographic for [lists](./types.md#type-list): elements at the "
+"same index in both lists are compared according to their type and skipped if "
+"they are equal."
+msgstr ""
+
+#: source/language/operators.md:182
+msgid ""
+"All comparison operators are implemented in terms of `<`, and the following "
+"equivalencies hold:"
+msgstr ""
+
+#: source/language/operators.md:184
+msgid "comparison"
+msgstr ""
+
+#: source/language/operators.md:184
+msgid "implementation"
+msgstr ""
+
+#: source/language/operators.md:186
+msgid "_a_ `<=` _b_"
+msgstr ""
+
+#: source/language/operators.md:186
+msgid "`! (` _b_ `<` _a_ `)`"
+msgstr ""
+
+#: source/language/operators.md:187
+msgid "_a_ `>`  _b_"
+msgstr ""
+
+#: source/language/operators.md:187
+msgid "_b_ `<` _a_"
+msgstr ""
+
+#: source/language/operators.md:188
+msgid "_a_ `>=` _b_"
+msgstr ""
+
+#: source/language/operators.md:188
+msgid "`! (` _a_ `<` _b_ `)`"
+msgstr ""
+
+#: source/language/operators.md:192
+msgid "Equality"
+msgstr ""
+
+#: source/language/operators.md:194
+msgid ""
+"[Attribute sets](./types.md#type-attrs) are compared first by attribute "
+"names and then by items until a difference is found."
+msgstr ""
+
+#: source/language/operators.md:195
+msgid ""
+"[Lists](./types.md#type-list) are compared first by length and then by items "
+"until a difference is found."
+msgstr ""
+
+#: source/language/operators.md:196
+msgid ""
+"Comparison of distinct [functions](./syntax.md#functions) returns `false`, "
+"but identical functions may be subject to [value identity optimization]"
+"(#value-identity-optimization)."
+msgstr ""
+
+#: source/language/operators.md:197
+msgid "Numbers are type-compatible, see [arithmetic](#arithmetic) operators."
+msgstr ""
+
+#: source/language/operators.md:198
+msgid "Floating point numbers only differ up to a limited precision."
+msgstr ""
+
+#: source/language/operators.md:200
+msgid ""
+"The `==` operator is [strict](../language/evaluation.md#strictness) in both "
+"arguments; when comparing composite types ([attribute sets](./types.md#type-"
+"attrs) and [lists](./types.md#type-list)), it is partially strict in their "
+"contained values: they are evaluated until a difference is found. <!-- this "
+"is woefully underspecified, affecting which expressions evaluate correctly; "
+"not just \"ordering\" or error messages. -->"
+msgstr ""
+
+#: source/language/operators.md:202
+msgid "Value identity optimization"
+msgstr ""
+
+#: source/language/operators.md:204
+msgid ""
+"Nix performs equality comparisons of nested values by pointer equality or "
+"more abstractly, _identity_. Nix semantics ideally do not assign a unique "
+"identity to values as they are created, but equality is an exception to this "
+"rule. The disputable benefit of this is that it is more efficient, and it "
+"allows cyclical structures to be compared, e.g. `let x = { x = x; }; in x == "
+"x` evaluates to `true`. However, as a consequence, it makes a function equal "
+"to itself when the comparison is made in a list or attribute set, in "
+"contradiction to a simple direct comparison."
+msgstr ""
+
+#: source/language/operators.md:213
+msgid "Logical conjunction"
+msgstr ""
+
+#: source/language/operators.md:217
+msgid "_bool1_ `&&` _bool2_"
+msgstr ""
+
+#: source/language/operators.md:219
+msgid "Logical AND. Equivalent to `if` _bool1_ `then` _bool2_ `else false`."
+msgstr ""
+
+#: source/language/operators.md:221 source/language/operators.md:272
+msgid ""
+"This operator is [strict](../language/evaluation.md#strictness) in _bool1_, "
+"but only evaluates _bool2_ if _bool1_ is `true`."
+msgstr ""
+
+#: source/language/operators.md:223 source/language/operators.md:245
+#: source/language/operators.md:274 source/language/operators.md:291
+msgid "**Example**"
+msgstr ""
+
+#: source/language/operators.md:225
+msgid ""
+"```nix\n"
+"true && false\n"
+"=> false\n"
+"\n"
+"false && throw \"never evaluated\"\n"
+"=> false\n"
+"```"
+msgstr ""
+
+#: source/language/operators.md:235
+msgid "Logical disjunction"
+msgstr ""
+
+#: source/language/operators.md:239
+msgid "_bool1_ `||` _bool2_"
+msgstr ""
+
+#: source/language/operators.md:241
+msgid "Logical OR. Equivalent to `if` _bool1_ `then true` `else` _bool2_."
+msgstr ""
+
+#: source/language/operators.md:243
+msgid ""
+"This operator is [strict](../language/evaluation.md#strictness) in _bool1_, "
+"but only evaluates _bool2_ if _bool1_ is `false`."
+msgstr ""
+
+#: source/language/operators.md:247
+msgid ""
+"```nix\n"
+"true || false\n"
+"=> true\n"
+"\n"
+"true || throw \"never evaluated\"\n"
+"=> true\n"
+"```"
+msgstr ""
+
+#: source/language/operators.md:257
+msgid "Precedence and disjunctive normal form"
+msgstr ""
+
+#: source/language/operators.md:259
+msgid ""
+"The precedence of `&&` and `||` aligns with disjunctive normal form. Without "
+"parentheses, an expression describes multiple \"permissible "
+"situations\" (connected by `||`), where each situation consists of multiple "
+"simultaneous conditions (connected by `&&`)."
+msgstr ""
+
+#: source/language/operators.md:262
+msgid ""
+"For example, `A || B && C || D && E` is parsed as `A || (B && C) || (D && "
+"E)`, describing three permissible situations: A holds, or both B and C hold, "
+"or both D and E hold."
+msgstr ""
+
+#: source/language/operators.md:264
+msgid "Logical implication"
+msgstr ""
+
+#: source/language/operators.md:268
+msgid "_bool1_ `->` _bool2_"
+msgstr ""
+
+#: source/language/operators.md:270
+msgid ""
+"Logical implication. Equivalent to `!`_bool1_ `||` _bool2_ (or `if` _bool1_ "
+"`then` _bool2_ `else true`)."
+msgstr ""
+
+#: source/language/operators.md:276
+msgid ""
+"```nix\n"
+"true -> false\n"
+"=> false\n"
+"\n"
+"false -> throw \"never evaluated\"\n"
+"=> true\n"
+"```"
+msgstr ""
+
+#: source/language/operators.md:286
+msgid "Pipe operators"
+msgstr ""
+
+#: source/language/operators.md:288
+msgid "_a_ `|>` _b_ is equivalent to _b_ _a_"
+msgstr ""
+
+#: source/language/operators.md:289
+msgid "_a_ `<|` _b_ is equivalent to _a_ _b_"
+msgstr ""
+
+#: source/language/operators.md:303
+msgid ""
+"This syntax is part of an [experimental feature](../development/experimental-"
+"features.md) and may change in future releases."
+msgstr ""
+
+#: source/language/operators.md:307
+msgid ""
+"To use this syntax, make sure the [`pipe-operators` experimental feature](../"
+"development/experimental-features.md#xp-feature-pipe-operators) is enabled. "
+"For example, include the following in [`nix.conf`](../command-ref/conf-file."
+"md):"
+msgstr ""

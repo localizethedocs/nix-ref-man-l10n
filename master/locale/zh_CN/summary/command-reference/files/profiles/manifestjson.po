@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/files/manifest.json.md:1
+msgid "`manifest.json`"
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:3
+msgid ""
+"The manifest file records the provenance of the packages that are installed "
+"in a [profile](./profiles.md) managed by [`nix profile`](../../command-ref/"
+"new-cli/nix3-profile.md) (experimental)."
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:5
+msgid ""
+"Here is an example of what the file might look like after installing `zoom-"
+"us` from Nixpkgs:"
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:9
+msgid "\"version\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:10
+msgid "\"elements\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:12
+msgid "\"active\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:13
+msgid "\"attrPath\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:13
+msgid "\"legacyPackages.x86_64-linux.zoom-us\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:14
+msgid "\"originalUrl\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:14
+msgid "\"flake:nixpkgs\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:15
+msgid "\"storePaths\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:16
+msgid "\"/nix/store/wbhg2ga8f3h87s9h5k0slxk0m81m4cxl-zoom-us-5.3.469451.0927\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:18
+msgid "\"uri\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:18
+msgid "\"github:NixOS/nixpkgs/13d0c311e3ae923a00f734b43fd1d35b47d8943a\""
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:25
+msgid ""
+"Each object in the array `elements` denotes an installed package and has the "
+"following fields:"
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:28
+msgid ""
+"`originalUrl`: The [flake reference](../../command-ref/new-cli/nix3-flake."
+"md) specified by the user at the time of installation (e.g. `nixpkgs`). This "
+"is also the flake reference that will be used by `nix profile upgrade`."
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:32
+msgid "`uri`: The locked flake reference to which `originalUrl` resolved."
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:34
+msgid ""
+"`attrPath`: The flake output attribute that provided this package. Note that "
+"this is not necessarily the attribute that the user specified, but the one "
+"resulting from applying the default attribute paths and prefixes; for "
+"instance, `hello` might resolve to `packages.x86_64-linux.hello` and the "
+"empty string to `packages.x86_64-linux.default`."
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:41
+msgid "`storePath`: The paths in the Nix store containing the package."
+msgstr ""
+
+#: source/command-ref/files/manifest.json.md:43
+msgid ""
+"`active`: Whether the profile contains symlinks to the files of this "
+"package. If set to false, the package is kept in the Nix store, but is not "
+"\"visible\" in the profile's symlink tree."
+msgstr ""
