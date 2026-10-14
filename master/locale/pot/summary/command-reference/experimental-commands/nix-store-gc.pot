@@ -1,0 +1,182 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-store-gc.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:8
+msgid "`nix store gc` - perform garbage collection on a Nix store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:12
+msgid "`nix store gc` \\[_option_...\\]"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:16
+msgid "Delete unreachable paths in the Nix store:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:22
+msgid "Delete up to 1 gigabyte of garbage:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:28
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:30
+msgid "This command deletes unreachable paths in the Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:32
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:34
+msgid "<span id=\"opt-dry-run\">[`--dry-run`](#opt-dry-run)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:36
+msgid "Show what this command would do without doing it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:38
+msgid "<span id=\"opt-max\">[`--max`](#opt-max)</span> _n_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:40
+msgid ""
+"Stop after freeing _n_ bytes of disk space. Cannot be combined with --dry-"
+"run."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:42
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:44
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:46
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:48
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:50
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:52
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:54
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:56
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:58
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:60
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:62
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:64
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:66
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:68
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:70
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:72
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:74
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:76
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:78
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:80
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:82
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:84
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:86
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-gc.md:88
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.12.md:1
+msgid "Release 2.12 (2022-12-06)"
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:3
+msgid ""
+"On Linux, Nix can now run builds in a user namespace where they run as root "
+"(UID 0) and have 65,536 UIDs available. This is primarily useful for running "
+"containers such as `systemd-nspawn` inside a Nix build. For an example, see "
+"[`tests/systemd-nspawn/nix`](https://github.com/NixOS/nix/"
+"blob/67bcb99700a0da1395fa063d7c6586740b304598/tests/systemd-nspawn.nix.)."
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:10
+msgid "A build can enable this by setting the derivation attribute:"
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:12
+msgid ""
+"```\n"
+"requiredSystemFeatures = [ \"uid-range\" ];\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:16
+msgid ""
+"The `uid-range` [system feature](../command-ref/conf-file.md#conf-system-"
+"features) requires the [`auto-allocate-uids`](../command-ref/conf-file."
+"md#conf-auto-allocate-uids) setting to be enabled."
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:21
+msgid ""
+"Nix can now automatically pick UIDs for builds, removing the need to create "
+"`nixbld*` user accounts. See [`auto-allocate-uids`](../command-ref/conf-file."
+"md#conf-auto-allocate-uids)."
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:26
+msgid ""
+"On Linux, Nix has experimental support for running builds inside a cgroup. "
+"See [`use-cgroups`](../command-ref/conf-file.md#conf-use-cgroups)."
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:30
+msgid ""
+"`<nix/fetchurl.nix>` now accepts an additional argument `impure` which "
+"defaults to `false`.  If it is set to `true`, the `hash` and `sha256` "
+"arguments will be ignored and the resulting derivation will have `__impure` "
+"set to `true`, making it an impure derivation."
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:35
+msgid ""
+"If `builtins.readFile` is called on a file with context, then only the parts "
+"of the context that appear in the content of the file are retained.  This "
+"avoids a lot of spurious errors where strings end up having a context just "
+"because they are read from a store path ([\\#7260](https://github.com/NixOS/"
+"nix/pull/7260))."
+msgstr ""
+
+#: source/release-notes/rl-2.12.md:41
+msgid ""
+"`nix build --json` now prints some statistics about top-level derivations, "
+"such as CPU statistics when cgroups are enabled."
+msgstr ""

@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-config.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:8
+msgid "`nix config` - manipulate the Nix configuration"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:12
+msgid "`nix config` \\[_option_...\\] _subcommand_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:14
+msgid "where _subcommand_ is one of the following:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:16
+#: source/command-ref/new-cli/nix3-config.md:20
+msgid "**:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:18
+msgid ""
+"[`nix config show`](./nix3-config-show.md) - show the Nix configuration or "
+"the value of a specific setting"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:22
+msgid ""
+"[`nix config check`](./nix3-config-check.md) - check your system for "
+"potential problems and print a PASS or FAIL for each check"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:24
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:26
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:28
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:30
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:32
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:34
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:36
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:38
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:40
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:42
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:44
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:46
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:48
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:50
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:52
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:54
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:56
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:58
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:60
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:62
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:64
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:66
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:68
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:70
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-config.md:72
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

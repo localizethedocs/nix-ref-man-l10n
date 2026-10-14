@@ -1,0 +1,197 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-hash.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:8
+msgid "`nix hash` - compute and convert cryptographic hashes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:12
+msgid "`nix hash` \\[_option_...\\] _subcommand_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:14
+msgid "where _subcommand_ is one of the following:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:16
+msgid "**Available commands:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:18
+msgid ""
+"[`nix hash file`](./nix3-hash-file.md) - print cryptographic hash of a "
+"regular file"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:19
+msgid ""
+"[`nix hash path`](./nix3-hash-path.md) - print cryptographic hash of the NAR "
+"serialisation of a path"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:20
+msgid ""
+"[`nix hash to-base16`](./nix3-hash-to-base16.md) - convert a hash to base-16 "
+"representation (deprecated, use `nix hash convert` instead)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:21
+msgid ""
+"[`nix hash to-base32`](./nix3-hash-to-base32.md) - convert a hash to base-32 "
+"representation (deprecated, use `nix hash convert` instead)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:22
+msgid ""
+"[`nix hash to-base64`](./nix3-hash-to-base64.md) - convert a hash to base-64 "
+"representation (deprecated, use `nix hash convert` instead)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:23
+msgid ""
+"[`nix hash to-sri`](./nix3-hash-to-sri.md) - convert a hash to SRI "
+"representation (deprecated, use `nix hash convert` instead)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:25
+msgid "**:**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:27
+msgid ""
+"[`nix hash convert`](./nix3-hash-convert.md) - convert between hash formats"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:29
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:31
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:33
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:35
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:37
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:39
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:41
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:43
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:45
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:47
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:49
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:51
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:53
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:55
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:57
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:59
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:61
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:63
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:65
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:67
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:69
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:71
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:73
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:75
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-hash.md:77
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

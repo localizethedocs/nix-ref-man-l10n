@@ -1,0 +1,103 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/file-system-object.md:1
+msgid "File System Object"
+msgstr ""
+
+#: source/store/file-system-object.md:3
+msgid ""
+"Nix uses a simplified model of the file system, which consists of file "
+"system objects. Every file system object is one of the following:"
+msgstr ""
+
+#: source/store/file-system-object.md:6
+msgid "\\[**Regular File**\\]{#regular}"
+msgstr ""
+
+#: source/store/file-system-object.md:8
+msgid "A possibly empty sequence of bytes for contents"
+msgstr ""
+
+#: source/store/file-system-object.md:9
+msgid ""
+"A single boolean representing the [executable](https://en.m.wikipedia.org/"
+"wiki/File-system_permissions#Permissions) permission"
+msgstr ""
+
+#: source/store/file-system-object.md:11
+msgid "\\[**Directory**\\]{#directory}"
+msgstr ""
+
+#: source/store/file-system-object.md:13
+msgid "Mapping of names to child file system objects"
+msgstr ""
+
+#: source/store/file-system-object.md:15
+msgid "\\[**Symbolic link**\\]{#symlink}"
+msgstr ""
+
+#: source/store/file-system-object.md:17
+msgid "An arbitrary string, known as the _target_ of the symlink."
+msgstr ""
+
+#: source/store/file-system-object.md:19
+msgid ""
+"In general, Nix does not assign any semantics to symbolic links. Certain "
+"operations however, may make additional assumptions and attempt to use the "
+"target to find another file system object."
+msgstr ""
+
+#: source/store/file-system-object.md:22
+msgid ""
+"See [the Wikipedia article on symbolic links](https://en.m.wikipedia.org/"
+"wiki/Symbolic_link) for background information if you are unfamiliar with "
+"this Unix concept."
+msgstr ""
+
+#: source/store/file-system-object.md:24
+msgid ""
+"File system objects and their children form a tree. A bare file or symlink "
+"can be a root file system object."
+msgstr ""
+
+#: source/store/file-system-object.md:27
+msgid ""
+"Nix does not encode any other file system notions such as [hard links]"
+"(https://en.m.wikipedia.org/wiki/Hard_link), [permissions](https://en.m."
+"wikipedia.org/wiki/File-system_permissions), timestamps, or other metadata."
+msgstr ""
+
+#: source/store/file-system-object.md:29
+msgid "Examples of file system objects"
+msgstr ""
+
+#: source/store/file-system-object.md:31
+msgid "A plain file:"
+msgstr ""
+
+#: source/store/file-system-object.md:37
+msgid "An executable file:"
+msgstr ""
+
+#: source/store/file-system-object.md:43
+msgid "A symlink:"
+msgstr ""
+
+#: source/store/file-system-object.md:49
+msgid "A directory with contents:"
+msgstr ""
+
+#: source/store/file-system-object.md:62
+msgid "A directory that contains a symlink and other directories:"
+msgstr ""

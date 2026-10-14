@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-1.2.md:1
+msgid "Release 1.2 (2012-12-06)"
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:3
+msgid "This release has the following improvements and changes:"
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:5
+msgid ""
+"Nix has a new binary substituter mechanism: the _binary cache_. A binary "
+"cache contains pre-built binaries of Nix packages. Whenever Nix wants to "
+"build a missing Nix store path, it will check a set of binary caches to see "
+"if any of them has a pre-built binary of that path. The configuration "
+"setting `binary-caches` contains a list of URLs of binary caches. For "
+"instance, doing"
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:12
+msgid ""
+"    $ nix-env -i thunderbird --option binary-caches http://cache.nixos.org\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:14
+msgid ""
+"will install Thunderbird and its dependencies, using the available pre-built "
+"binaries in <http://cache.nixos.org>. The main advantage over the old "
+"“manifest”-based method of getting pre-built binaries is that you don’t have "
+"to worry about your manifest being in sync with the Nix expressions you’re "
+"installing from; i.e., you don’t need to run `nix-pull` to update your "
+"manifest. It’s also more scalable because you don’t need to redownload a "
+"giant manifest file every time."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:23
+msgid ""
+"A Nix channel can provide a binary cache URL that will be used automatically "
+"if you subscribe to that channel. If you use the Nixpkgs or NixOS channels "
+"(<http://nixos.org/channels>) you automatically get the cache <http://cache."
+"nixos.org>."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:28
+msgid ""
+"Binary caches are created using `nix-push`. For details on the operation and "
+"format of binary caches, see the `nix-push` manpage. More details are "
+"provided in [this nix-dev posting](https://nixos.org/nix-dev/2012-"
+"September/009826.html)."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:33
+msgid ""
+"Multiple output support should now be usable. A derivation can declare that "
+"it wants to produce multiple store paths by saying something like"
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:37
+msgid ""
+"    outputs = [ \"lib\" \"headers\" \"doc\" ];\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:39
+msgid ""
+"This will cause Nix to pass the intended store path of each output to the "
+"builder through the environment variables `lib`, `headers` and `doc`. Other "
+"packages can refer to a specific output by referring to `pkg.output`, e.g."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:46
+msgid ""
+"If you install a package with multiple outputs using `nix-env`, each output "
+"path will be symlinked into the user environment."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:49
+msgid "Dashes are now valid as part of identifiers and attribute names."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:51
+msgid ""
+"The new operation `nix-store --repair-path` allows corrupted or missing "
+"store paths to be repaired by redownloading them. `nix-store --verify --"
+"check-contents                 --repair` will scan and repair all paths in "
+"the Nix store. Similarly, `nix-env`, `nix-build`, `nix-instantiate` and `nix-"
+"store --realise` have a `--repair` flag to detect and fix bad paths by "
+"rebuilding or redownloading them."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:59
+msgid ""
+"Nix no longer sets the immutable bit on files in the Nix store. Instead, the "
+"recommended way to guard the Nix store against accidental modification on "
+"Linux is to make it a read-only bind mount, like this:"
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:67
+msgid ""
+"Nix will automatically make `/nix/store` writable as needed (using a private "
+"mount namespace) to allow modifications."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:70
+msgid ""
+"Store optimisation (replacing identical files in the store with hard links) "
+"can now be done automatically every time a path is added to the store. This "
+"is enabled by setting the configuration option `auto-optimise-store` to "
+"`true` (disabled by default)."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:75
+msgid ""
+"Nix now supports `xz` compression for NARs in addition to `bzip2`. It "
+"compresses about 30% better on typical archives and decompresses about twice "
+"as fast."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:79
+msgid ""
+"Basic Nix expression evaluation profiling: setting the environment variable "
+"`NIX_COUNT_CALLS` to `1` will cause Nix to print how many times each primop "
+"or function was executed."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:83
+msgid "New primops: `concatLists`, `elem`, `elemAt` and `filter`."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:85
+msgid ""
+"The command `nix-copy-closure` has a new flag `--use-substitutes` (`-s`) to "
+"download missing paths on the target machine using the substitute mechanism."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:89
+msgid ""
+"The command `nix-worker` has been renamed to `nix-daemon`. Support for "
+"running the Nix worker in “slave” mode has been removed."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:92
+msgid "The `--help` flag of every Nix command now invokes `man`."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:94
+msgid "Chroot builds are now supported on systemd machines."
+msgstr ""
+
+#: source/release-notes/rl-1.2.md:96
+msgid ""
+"This release has contributions from Eelco Dolstra, Florian Friesdorf, Mats "
+"Erik Andersson and Shea Levy."
+msgstr ""

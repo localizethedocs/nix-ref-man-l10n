@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/static-analysis.md:1
+msgid "Static Analysis"
+msgstr ""
+
+#: source/development/static-analysis.md:3
+msgid ""
+"Nix uses [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) for static "
+"analysis of C++ code. This helps catch bugs, enforce coding standards, and "
+"maintain code quality."
+msgstr ""
+
+#: source/development/static-analysis.md:6
+msgid "Running clang-tidy locally"
+msgstr ""
+
+#: source/development/static-analysis.md:8
+msgid "To run clang-tidy on the entire codebase in the development shell:"
+msgstr ""
+
+#: source/development/static-analysis.md:16
+msgid "This will analyze all C++ source files and report any warnings."
+msgstr ""
+
+#: source/development/static-analysis.md:18
+msgid "To automatically apply fixes for certain warnings:"
+msgstr ""
+
+#: source/development/static-analysis.md:24
+msgid "**Warning**"
+msgstr ""
+
+#: source/development/static-analysis.md:26
+msgid ""
+"Review the changes before committing, as automatic fixes may not always be "
+"correct."
+msgstr ""
+
+#: source/development/static-analysis.md:28
+msgid "CI integration"
+msgstr ""
+
+#: source/development/static-analysis.md:30
+msgid ""
+"clang-tidy runs automatically on every pull request via GitHub Actions. The "
+"CI job builds `.#hydraJobs.clangTidy.x86_64-linux` which:"
+msgstr ""
+
+#: source/development/static-analysis.md:33
+msgid "Builds all components with debug mode (for faster compilation)"
+msgstr ""
+
+#: source/development/static-analysis.md:34
+msgid "Runs clang-tidy on each component"
+msgstr ""
+
+#: source/development/static-analysis.md:35
+msgid "Fails if any warnings are found (warnings are treated as errors)"
+msgstr ""
+
+#: source/development/static-analysis.md:37
+msgid "Configuration"
+msgstr ""
+
+#: source/development/static-analysis.md:39
+msgid ""
+"The clang-tidy configuration is in `.clang-tidy` at the repository root "
+"(symlinked from `nix-meson-build-support/common/clang-tidy/.clang-tidy`)."
+msgstr ""
+
+#: source/development/static-analysis.md:41
+msgid "Suppressing warnings"
+msgstr ""
+
+#: source/development/static-analysis.md:43
+msgid "If a warning is a false positive, you can suppress it in several ways:"
+msgstr ""
+
+#: source/development/static-analysis.md:45
+msgid "**Inline suppression** (preferred for specific cases):"
+msgstr ""
+
+#: source/development/static-analysis.md:47
+msgid "// NOLINTBEGIN(bugprone-some-check)\n"
+msgstr ""
+
+#: source/development/static-analysis.md:49
+msgid "// NOLINTEND(bugprone-some-check)\n"
+msgstr ""
+
+#: source/development/static-analysis.md:51
+msgid "Or for a single line:"
+msgstr ""
+
+#: source/development/static-analysis.md:53
+msgid "// NOLINT(bugprone-some-check)\n"
+msgstr ""
+
+#: source/development/static-analysis.md:56
+msgid ""
+"**Configuration file** (for project-wide suppression): Add the check to the "
+"disabled list in `.clang-tidy`:"
+msgstr ""
+
+#: source/development/static-analysis.md:59
+msgid "Checks"
+msgstr ""
+
+#: source/development/static-analysis.md:60
+msgid "-bugprone-some-check  # Reason for disabling\n"
+msgstr ""
+
+#: source/development/static-analysis.md:63
+msgid "**Check options** (for configuring check behavior):"
+msgstr ""
+
+#: source/development/static-analysis.md:65
+msgid "CheckOptions"
+msgstr ""
+
+#: source/development/static-analysis.md:66
+msgid "bugprone-reserved-identifier.AllowedIdentifiers"
+msgstr ""
+
+#: source/development/static-analysis.md:66
+msgid "'__some_identifier'"
+msgstr ""
+
+#: source/development/static-analysis.md:69
+msgid "Adding new checks"
+msgstr ""
+
+#: source/development/static-analysis.md:71
+msgid "To enable additional checks:"
+msgstr ""
+
+#: source/development/static-analysis.md:73
+msgid "Edit `nix-meson-build-support/common/clang-tidy/.clang-tidy`"
+msgstr ""
+
+#: source/development/static-analysis.md:74
+msgid "Add the check to the `Checks` list"
+msgstr ""
+
+#: source/development/static-analysis.md:75
+msgid "Run clang-tidy locally to see the impact"
+msgstr ""
+
+#: source/development/static-analysis.md:76
+msgid "Fix any new warnings or disable specific sub-checks if needed"
+msgstr ""
+
+#: source/development/static-analysis.md:78
+msgid "Custom clang-tidy plugin"
+msgstr ""
+
+#: source/development/static-analysis.md:80
+msgid ""
+"The Nix project includes infrastructure for custom clang-tidy checks in `src/"
+"clang-tidy-plugin/`. These checks can enforce Nix-specific coding patterns "
+"that aren't covered by standard clang-tidy checks."
+msgstr ""
+
+#: source/development/static-analysis.md:83
+msgid "To add a new custom check:"
+msgstr ""
+
+#: source/development/static-analysis.md:85
+msgid "Add the check implementation in `src/clang-tidy-plugin/`"
+msgstr ""
+
+#: source/development/static-analysis.md:86
+msgid "Register it in `nix-clang-tidy-checks.cc`"
+msgstr ""
+
+#: source/development/static-analysis.md:87
+msgid "Enable it in `.clang-tidy` with the `nix-` prefix"
+msgstr ""

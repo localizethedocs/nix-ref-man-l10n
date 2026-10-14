@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/package-management/sharing-packages.md:1
+msgid "Sharing Packages Between Machines"
+msgstr ""
+
+#: source/package-management/sharing-packages.md:3
+msgid ""
+"Sometimes you want to copy a package from one machine to another. Or, you "
+"want to install some packages and you know that another machine already has "
+"some or all of those packages or their dependencies. In that case there are "
+"mechanisms to quickly copy packages between machines."
+msgstr ""

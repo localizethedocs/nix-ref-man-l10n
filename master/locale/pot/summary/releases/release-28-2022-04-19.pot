@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.8.md:1
+msgid "Release 2.8 (2022-04-19)"
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:3
+msgid ""
+"New experimental command: `nix fmt`, which applies a formatter defined by "
+"the `formatter.<system>` flake output to the Nix expressions in a flake."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:7
+msgid ""
+"Various Nix commands can now read expressions from standard input using `--"
+"file -`."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:10
+msgid ""
+"New experimental builtin function `builtins.fetchClosure` that copies a "
+"closure from a binary cache at evaluation time and rewrites it to content-"
+"addressed form (if it isn't already). Like `builtins.storePath`, this allows "
+"importing pre-built store paths; the difference is that it doesn't require "
+"the user to configure binary caches and trusted public keys."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:17
+msgid ""
+"This function is only available if you enable the experimental feature "
+"`fetch-closure`."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:20
+msgid ""
+"New experimental feature: _impure derivations_. These are derivations that "
+"can produce a different result every time they're built. Here is an example:"
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:24
+msgid ""
+"```nix\n"
+"stdenv.mkDerivation {\n"
+"  name = \"impure\";\n"
+"  __impure = true; # marks this derivation as impure\n"
+"  buildCommand = \"date > $out\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:32
+msgid ""
+"Running `nix build` twice on this expression will build the derivation "
+"twice, producing two different content-addressed store paths. Like fixed-"
+"output derivations, impure derivations have access to the network. Only "
+"fixed-output derivations and impure derivations can depend on an impure "
+"derivation."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:38
+msgid ""
+"`nix store make-content-addressable` has been renamed to `nix store make-"
+"content-addressed`."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:41
+msgid ""
+"The `nixosModule` flake output attribute has been renamed consistent with "
+"the `.default` renames in Nix 2.7."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:44
+msgid "`nixosModule` → `nixosModules.default`"
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:46
+msgid ""
+"As before, the old output will continue to work, but `nix flake check` will "
+"issue a warning about it."
+msgstr ""
+
+#: source/release-notes/rl-2.8.md:49
+msgid ""
+"`nix run` is now stricter in what it accepts: members of the `apps` flake "
+"output are now required to be apps (as defined in [the manual](https://nix."
+"dev/manual/nix/stable/command-ref/new-cli/nix3-run.html#apps)), and members "
+"of `packages` or `legacyPackages` must be derivations (not apps)."
+msgstr ""

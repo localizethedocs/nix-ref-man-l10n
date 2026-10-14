@@ -1,0 +1,151 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-store.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-store.md:3
+msgid "`nix-store` - manipulate or query the Nix store"
+msgstr ""
+
+#: source/command-ref/nix-store.md:5
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/nix-store.md:7
+msgid ""
+"`nix-store` _operation_ \\[_options…_\\] \\[_arguments…_\\] \\[`--option` "
+"_name_ _value_\\] \\[`--add-root` _path_\\]"
+msgstr ""
+
+#: source/command-ref/nix-store.md:11
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-store.md:13
+msgid ""
+"The command `nix-store` performs primitive operations on the Nix store. You "
+"generally do not need to run this command manually."
+msgstr ""
+
+#: source/command-ref/nix-store.md:16
+msgid ""
+"`nix-store` takes exactly one _operation_ flag which indicates the "
+"subcommand to be performed. The following operations are available:"
+msgstr ""
+
+#: source/command-ref/nix-store.md:18
+msgid "[`--realise`](./nix-store/realise.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:19
+msgid "[`--serve`](./nix-store/serve.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:20
+msgid "[`--gc`](./nix-store/gc.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:21
+msgid "[`--delete`](./nix-store/delete.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:22
+msgid "[`--query`](./nix-store/query.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:23
+msgid "[`--add`](./nix-store/add.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:24
+msgid "[`--add-fixed`](./nix-store/add-fixed.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:25
+msgid "[`--verify`](./nix-store/verify.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:26
+msgid "[`--verify-path`](./nix-store/verify-path.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:27
+msgid "[`--repair-path`](./nix-store/repair-path.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:28
+msgid "[`--dump`](./nix-store/dump.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:29
+msgid "[`--restore`](./nix-store/restore.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:30
+msgid "[`--export`](./nix-store/export.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:31
+msgid "[`--import`](./nix-store/import.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:32
+msgid "[`--optimise`](./nix-store/optimise.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:33
+msgid "[`--read-log`](./nix-store/read-log.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:34
+msgid "[`--dump-db`](./nix-store/dump-db.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:35
+msgid "[`--load-db`](./nix-store/load-db.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:36
+msgid "[`--register-validity`](./nix-store/register-validity.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:37
+msgid "[`--print-env`](./nix-store/print-env.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:38
+msgid ""
+"[`--generate-binary-cache-key`](./nix-store/generate-binary-cache-key.md)"
+msgstr ""
+
+#: source/command-ref/nix-store.md:40
+msgid "These pages can be viewed offline:"
+msgstr ""
+
+#: source/command-ref/nix-store.md:42
+msgid "`man nix-store-<operation>`."
+msgstr ""
+
+#: source/command-ref/nix-store.md:44
+msgid "Example: `man nix-store-realise`"
+msgstr ""
+
+#: source/command-ref/nix-store.md:46
+msgid "`nix-store --help --<operation>`"
+msgstr ""
+
+#: source/command-ref/nix-store.md:48
+msgid "Example: `nix-store --help --realise`"
+msgstr ""

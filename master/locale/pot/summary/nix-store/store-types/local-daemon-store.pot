@@ -1,0 +1,253 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/local-daemon-store.md:1
+msgid "Local Daemon Store"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:3
+msgid "**Store URL format**: `daemon`, `unix://`_path_"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:5
+msgid ""
+"This store type accesses a Nix store by talking to a Nix daemon listening on "
+"the Unix domain socket _path_."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:8
+msgid ""
+"When _path_ is not specified (i.e. the `daemon` pseudo-URL or bare `unix://"
+"`), the socket path is determined as follows:"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:11
+msgid ""
+"The [`NIX_DAEMON_SOCKET_PATH`](../../command-ref/env-common.md#env-"
+"NIX_DAEMON_SOCKET_PATH) environment variable, if set."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:13
+msgid ""
+"Otherwise, `daemon-socket/socket` within the [`state`](#store-local-daemon-"
+"store-state) directory."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:17
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:19
+msgid ""
+"<span id=\"store-local-daemon-store-log\">[`log`](#store-local-daemon-store-"
+"log)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:21
+msgid "Directory where Nix stores log files."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:23
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-local-daemon-store-root) is not set."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:25
+msgid "**Default:** `/nix/var/log/nix`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:27
+msgid ""
+"<span id=\"store-local-daemon-store-max-connection-age\">[`max-connection-"
+"age`](#store-local-daemon-store-max-connection-age)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:29
+msgid "Maximum age of a connection before it is closed."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:31
+msgid "**Default:** `4294967295`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:33
+msgid ""
+"<span id=\"store-local-daemon-store-max-connections\">[`max-connections`]"
+"(#store-local-daemon-store-max-connections)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:35
+msgid "Maximum number of concurrent connections to the Nix daemon."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:37
+msgid "**Default:** `1`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:39
+msgid ""
+"<span id=\"store-local-daemon-store-path-info-cache-size\">[`path-info-cache-"
+"size`](#store-local-daemon-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:41
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:43
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:45
+msgid ""
+"<span id=\"store-local-daemon-store-priority\">[`priority`](#store-local-"
+"daemon-store-priority)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:47
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:50
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:52
+msgid ""
+"<span id=\"store-local-daemon-store-real\">[`real`](#store-local-daemon-"
+"store-real)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:54
+msgid "Physical path of the Nix store."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:56
+msgid ""
+"Defaults to [`store`](#store-local-daemon-store-store) when [`root`](#store-"
+"local-daemon-store-root) is not set."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:58
+#: source/store/types/local-daemon-store.md:82
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:60
+msgid ""
+"<span id=\"store-local-daemon-store-root\">[`root`](#store-local-daemon-"
+"store-root)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:62
+msgid "Directory prefixed to all other paths."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:64
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:66
+msgid ""
+"<span id=\"store-local-daemon-store-state\">[`state`](#store-local-daemon-"
+"store-state)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:68
+msgid "Directory where Nix stores state."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:70
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-local-daemon-store-root) is not set."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:72
+msgid "**Default:** `/dummy`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:74
+msgid ""
+"<span id=\"store-local-daemon-store-store\">[`store`](#store-local-daemon-"
+"store-store)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:76
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:78
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:80
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:84
+msgid ""
+"<span id=\"store-local-daemon-store-system-features\">[`system-features`]"
+"(#store-local-daemon-store-system-features)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:86
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:88
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:90
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:92
+msgid ""
+"<span id=\"store-local-daemon-store-trusted\">[`trusted`](#store-local-"
+"daemon-store-trusted)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:94
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:99
+#: source/store/types/local-daemon-store.md:105
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:101
+msgid ""
+"<span id=\"store-local-daemon-store-want-mass-query\">[`want-mass-query`]"
+"(#store-local-daemon-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/local-daemon-store.md:103
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""

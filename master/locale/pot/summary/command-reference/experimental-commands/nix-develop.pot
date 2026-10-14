@@ -1,0 +1,671 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-develop.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:8
+msgid ""
+"`nix develop` - run a bash shell that provides the build environment of a "
+"derivation"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:12
+msgid "`nix develop` \\[_option_...\\] _installable_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:16
+msgid ""
+"Start a shell with the build environment of the default package of the flake "
+"in the current directory:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:23
+msgid "Typical commands to run inside this shell are:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:31
+msgid ""
+"Alternatively, you can run whatever build tools your project uses directly, "
+"e.g. for a typical Unix project:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:40
+msgid "Run a particular build phase directly:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:51
+msgid "Start a shell with the build environment of GNU Hello:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:57
+msgid "Record a build environment in a profile:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:63
+msgid "Use a build environment previously recorded in a profile:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:69
+msgid ""
+"Replace all occurrences of the store path corresponding to `glibc.dev` with "
+"a writable directory:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:76
+msgid ""
+"Note that this is useful if you're running a `nix develop` shell for "
+"`nixpkgs#glibc` in `~/my-glibc` and want to compile another package against "
+"it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:80
+msgid "Run a series of script commands:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:82
+msgid ""
+"```console\n"
+"# nix develop --command bash -c \"mkdir build && cmake .. && make\"\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:86
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:88
+msgid ""
+"`nix develop` starts a `bash` shell that provides an interactive build "
+"environment nearly identical to what Nix would use to build [_installable_]"
+"(./nix.md#installables). Inside this shell, environment variables and shell "
+"functions are set up so that you can interactively and incrementally build "
+"your package."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:94
+msgid ""
+"Nix determines the build environment by building a modified version of the "
+"derivation _installable_ that just records the environment initialised by "
+"`stdenv` and exits. This build environment can be recorded into a profile "
+"using `--profile`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:99
+msgid ""
+"The prompt used by the `bash` shell can be customised by setting the `bash-"
+"prompt`, `bash-prompt-prefix`, and `bash-prompt-suffix` settings in `nix."
+"conf` or in the flake's `nixConfig` attribute."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:103
+msgid "Flake output attributes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:105
+msgid ""
+"If no flake output attribute is given, `nix develop` tries the following "
+"flake output attributes:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:108
+msgid "`devShells.<system>.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:110
+msgid "`packages.<system>.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:112
+msgid ""
+"If a flake output _name_ is given, `nix develop` tries the following flake "
+"output attributes:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:115
+msgid "`devShells.<system>.<name>`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:117
+msgid "`packages.<system>.<name>`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:119
+msgid "`legacyPackages.<system>.<name>`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:121
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:123
+msgid "<span id=\"opt-build\">[`--build`](#opt-build)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:125
+msgid "Run the `build` phase."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:127
+msgid "<span id=\"opt-check\">[`--check`](#opt-check)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:129
+msgid "Run the `check` phase."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:131
+msgid ""
+"<span id=\"opt-command\">[`--command`](#opt-command)</span> / `-c` _command_ "
+"_args_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:133
+msgid ""
+"Instead of starting an interactive shell, start the specified command and "
+"arguments."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:135
+msgid "<span id=\"opt-configure\">[`--configure`](#opt-configure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:137
+msgid "Run the `configure` phase."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:139
+msgid "<span id=\"opt-install\">[`--install`](#opt-install)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:141
+msgid "Run the `install` phase."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:143
+msgid ""
+"<span id=\"opt-installcheck\">[`--installcheck`](#opt-installcheck)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:145
+msgid "Run the `installcheck` phase."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:147
+msgid "<span id=\"opt-phase\">[`--phase`](#opt-phase)</span> _phase-name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:149
+msgid "The stdenv phase to run (e.g. `build` or `configure`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:151
+msgid "<span id=\"opt-profile\">[`--profile`](#opt-profile)</span> _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:153
+msgid "The profile to operate on."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:155
+msgid ""
+"<span id=\"opt-redirect\">[`--redirect`](#opt-redirect)</span> _installable_ "
+"_outputs-dir_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:157
+msgid "Redirect a store path to a mutable location."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:159
+msgid "<span id=\"opt-unpack\">[`--unpack`](#opt-unpack)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:161
+msgid "Run the `unpack` phase."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:163
+msgid "Common evaluation options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:165
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:167
+msgid "Pass the value _expr_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:169
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:171
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:173
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:175
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:177
+msgid ""
+"<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _string_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:179
+msgid "Pass the string _string_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:181
+msgid "<span id=\"opt-debugger\">[`--debugger`](#opt-debugger)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:183
+msgid "Start an interactive environment if evaluation fails."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:185
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:187
+msgid ""
+"The [URL of the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:190
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:192
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:194
+msgid ""
+"<span id=\"opt-include\">[`--include`](#opt-include)</span> / `-I` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:196
+msgid ""
+"Add _path_ to search path entries used to resolve [lookup paths](../../"
+"language/constructs/lookup-path.md)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:198
+msgid "This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:200
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:202
+msgid ""
+"<span id=\"opt-override-flake\">[`--override-flake`](#opt-override-flake)</"
+"span> _original-ref_ _resolved-ref_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:204
+msgid ""
+"Override the flake registries, redirecting _original-ref_ to _resolved-ref_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:206
+msgid "Common flake-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:208
+msgid ""
+"<span id=\"opt-commit-lock-file\">[`--commit-lock-file`](#opt-commit-lock-"
+"file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:210
+msgid "Commit changes to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:212
+msgid ""
+"<span id=\"opt-inputs-from\">[`--inputs-from`](#opt-inputs-from)</span> "
+"_flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:214
+msgid "Use the inputs of the specified flake as registry entries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:216
+msgid ""
+"<span id=\"opt-no-registries\">[`--no-registries`](#opt-no-registries)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:218
+msgid "Don't allow lookups in the flake registries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:220
+#: source/command-ref/new-cli/nix3-develop.md:244
+#: source/command-ref/new-cli/nix3-develop.md:256
+msgid "**DEPRECATED**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:222
+msgid ""
+"Use [`--no-use-registries`](../../command-ref/conf-file.md#conf-use-"
+"registries) instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:224
+msgid ""
+"<span id=\"opt-no-update-lock-file\">[`--no-update-lock-file`](#opt-no-"
+"update-lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:226
+msgid "Do not allow any updates to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:228
+msgid ""
+"<span id=\"opt-no-write-lock-file\">[`--no-write-lock-file`](#opt-no-write-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:230
+msgid "Do not write the flake's newly generated lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:232
+msgid ""
+"<span id=\"opt-output-lock-file\">[`--output-lock-file`](#opt-output-lock-"
+"file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:234
+msgid ""
+"Write the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:236
+msgid ""
+"<span id=\"opt-override-input\">[`--override-input`](#opt-override-input)</"
+"span> _input-path_ _flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:238
+msgid ""
+"Override a specific flake input (e.g. `dwarffs/nixpkgs`). The input path "
+"must not be empty. This implies `--no-write-lock-file`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:240
+msgid ""
+"<span id=\"opt-recreate-lock-file\">[`--recreate-lock-file`](#opt-recreate-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:242
+msgid "Recreate the flake's lock file from scratch."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:246
+#: source/command-ref/new-cli/nix3-develop.md:258
+msgid ""
+"Use [`nix flake update`](../../command-ref/new-cli/nix3-flake-update.md) "
+"instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:248
+msgid ""
+"<span id=\"opt-reference-lock-file\">[`--reference-lock-file`](#opt-"
+"reference-lock-file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:250
+msgid ""
+"Read the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:252
+msgid ""
+"<span id=\"opt-update-input\">[`--update-input`](#opt-update-input)</span> "
+"_input-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:254
+msgid ""
+"Update a specific flake input (ignoring its previous entry in the lock file)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:260
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:262
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:264
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:266
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:268
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:270
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:272
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:274
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:276
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:278
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:280
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:282
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:284
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:286
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:288
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:290
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:292
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:294
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:296
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:298
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:300
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:302
+msgid ""
+"During evaluation, rewrite missing or corrupted files in the Nix store. "
+"During building, rebuild missing or corrupted store paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:304
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:306
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:308
+msgid "Options that change environment variables"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:310
+msgid ""
+"<span id=\"opt-ignore-env\">[`--ignore-env`](#opt-ignore-env)</span> / `-i`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:312
+msgid ""
+"Clear the entire environment, except for those specified with `--keep-env-"
+"var`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:314
+msgid ""
+"<span id=\"opt-keep-env-var\">[`--keep-env-var`](#opt-keep-env-var)</span> / "
+"`-k` _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:316
+msgid "Keep the environment variable _name_, when using `--ignore-env`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:318
+msgid ""
+"<span id=\"opt-set-env-var\">[`--set-env-var`](#opt-set-env-var)</span> / `-"
+"s` _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:320
+msgid "Sets an environment variable _name_ with _value_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:322
+msgid ""
+"<span id=\"opt-unset-env-var\">[`--unset-env-var`](#opt-unset-env-var)</"
+"span> / `-u` _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:324
+msgid "Unset the environment variable _name_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:326
+msgid ""
+"Options that change the interpretation of [installables](../../command-ref/"
+"new-cli/nix.md#installables)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:328
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:330
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression _expr_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:332
+msgid "<span id=\"opt-file\">[`--file`](#opt-file)</span> / `-f` _file_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:334
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression stored in _file_. If _file_ "
+"is the character -, then a Nix expression is read from standard input. "
+"Implies `--impure`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:336
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-develop.md:338
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

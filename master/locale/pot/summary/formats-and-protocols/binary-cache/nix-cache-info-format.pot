@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/binary-cache/nix-cache-info.md:1
+msgid "`nix-cache-info` Format"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:3
+msgid ""
+"The `nix-cache-info` file is a metadata file at the root of a [binary cache]"
+"(../../protocols/binary-cache/index.md) (e.g., `https://cache.example.com/"
+"nix-cache-info`)."
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:5
+msgid "MIME type: `text/x-nix-cache-info`"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:7
+msgid "Format"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:9
+msgid "Line-based key-value format:"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:15
+msgid ""
+"Leading and trailing whitespace is trimmed from values. Lines without a "
+"colon are ignored. Unknown keys are silently ignored."
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:19
+msgid "Fields"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:21
+msgid "`StoreDir`"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:23
+msgid ""
+"The Nix store directory path that this cache was built for (e.g., `/nix/"
+"store`)."
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:25
+msgid ""
+"If present, Nix verifies that this matches the client's store directory:"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:27
+msgid ""
+"```\n"
+"error: binary cache 'https://example.com' is for Nix stores with prefix '/"
+"nix/store', not '/home/user/nix/store'\n"
+"```"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:31
+msgid "`WantMassQuery`"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:33
+msgid ""
+"`1` or `0`. Sets the default for [`want-mass-query`](../../store/types/http-"
+"binary-cache-store.md#store-http-binary-cache-store-want-mass-query)."
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:35
+msgid "`Priority`"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:37
+msgid ""
+"Integer. Sets the default for [`priority`](../../store/types/http-binary-"
+"cache-store.md#store-http-binary-cache-store-priority)."
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:39
+msgid "Example"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:47
+msgid "Caching Behavior"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:49
+msgid ""
+"Nix caches `nix-cache-info` in the [cache directory](../../command-ref/env-"
+"common.md#env-NIX_CACHE_HOME) with a 7-day TTL."
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:51
+msgid "See Also"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:53
+msgid "[HTTP Binary Cache Store](../../store/types/http-binary-cache-store.md)"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:54
+msgid ""
+"[Serving a Nix store via HTTP](../../package-management/binary-cache-"
+"substituter.md)"
+msgstr ""
+
+#: source/protocols/binary-cache/nix-cache-info.md:55
+msgid "[`substituters`](../../command-ref/conf-file.md#conf-substituters)"
+msgstr ""

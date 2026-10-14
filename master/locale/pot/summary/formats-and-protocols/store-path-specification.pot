@@ -1,0 +1,321 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/store-path.md:1
+msgid "Complete Store Path Calculation"
+msgstr ""
+
+#: source/protocols/store-path.md:3
+msgid ""
+"This is the complete specification for how [store path](../store/store-path."
+"md)s are calculated."
+msgstr ""
+
+#: source/protocols/store-path.md:5
+msgid ""
+"The format of this specification is close to [Extended Backus–Naur form]"
+"(https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form), but must "
+"deviate for a few things such as hash functions which we treat as "
+"bidirectional for specification purposes."
+msgstr ""
+
+#: source/protocols/store-path.md:7
+msgid ""
+"Regular users do _not_ need to know this information --- store paths can be "
+"treated as black boxes computed from the properties of the store objects "
+"they refer to. But for those interested in exactly how Nix works, e.g. if "
+"they are reimplementing it, this information can be useful."
+msgstr ""
+
+#: source/protocols/store-path.md:12
+msgid "Store path proper"
+msgstr ""
+
+#: source/protocols/store-path.md:14
+msgid ""
+"```ebnf\n"
+"store-path = store-dir \"/\" digest \"-\" name\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:17 source/protocols/store-path.md:100
+msgid "where"
+msgstr ""
+
+#: source/protocols/store-path.md:19
+msgid "`name` = the name of the store object."
+msgstr ""
+
+#: source/protocols/store-path.md:21
+msgid ""
+"`store-dir` = the [path of the store directory](../store/store-path.md#store-"
+"directory-path)"
+msgstr ""
+
+#: source/protocols/store-path.md:23
+msgid ""
+"`digest` = [Nix32](../protocols/nix32.md) representation of the compressed "
+"to 160 bits [SHA-256](https://en.m.wikipedia.org/wiki/SHA-256) hash of "
+"`fingerprint`."
+msgstr ""
+
+#: source/protocols/store-path.md:25
+msgid ""
+"For the definition of the hash compression algorithm, please refer to "
+"section 5.1 of the [Nix thesis](https://edolstra.github.io/pubs/phd-thesis."
+"pdf)."
+msgstr ""
+
+#: source/protocols/store-path.md:27
+msgid "Fingerprint"
+msgstr ""
+
+#: source/protocols/store-path.md:29
+msgid ""
+"```ebnf\n"
+"fingerprint = type \":sha256:\" inner-digest \":\" store \":\" name\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:33
+msgid ""
+"Note that it includes the location of the store as well as the name to make "
+"sure that changes to either of those are reflected in the hash (e.g. you "
+"won't get `/nix/store/<digest>-name1` and `/nix/store/<digest>-name2`, or `/"
+"gnu/store/<digest>-name1`, with equal hash parts)."
+msgstr ""
+
+#: source/protocols/store-path.md:36
+msgid "`type` = one of:"
+msgstr ""
+
+#: source/protocols/store-path.md:38
+msgid ""
+"```ebnf\n"
+"| \"text\" { \":\" store-path }\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:42
+msgid ""
+"This is for the [\"Text\"](../store/store-object/content-address.md#method-"
+"text) method of content addressing store objects. The optional trailing "
+"store paths are the references of the store object."
+msgstr ""
+
+#: source/protocols/store-path.md:47
+msgid ""
+"```ebnf\n"
+"| \"source\" { \":\" store-path } [ \":self\" ]\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:51
+msgid ""
+"This is for the [\"Nix Archive\"](../store/store-object/content-address."
+"md#method-nix-archive) method of content addressing store objects, if the "
+"hash algorithm is [SHA-256](https://en.m.wikipedia.org/wiki/SHA-256). Just "
+"like in the \"Text\" case, we can have the store objects referenced by their "
+"paths. Additionally, we can have an optional `:self` label to denote self-"
+"reference."
+msgstr ""
+
+#: source/protocols/store-path.md:58
+msgid ""
+"```ebnf\n"
+"| \"output:\" id\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:62
+msgid ""
+"For either the outputs built from derivations, or content-addressed store "
+"objects that are not using one of the two above cases. To be explicit about "
+"the latter, that is currently these methods:"
+msgstr ""
+
+#: source/protocols/store-path.md:66
+msgid "[\"Flat\"](../store/store-object/content-address.md#method-flat)"
+msgstr ""
+
+#: source/protocols/store-path.md:67
+msgid "[\"Git\"](../store/store-object/content-address.md#method-git)"
+msgstr ""
+
+#: source/protocols/store-path.md:68
+msgid ""
+"[\"Nix Archive\"](../store/store-object/content-address.md#method-nix-"
+"archive) if the hash algorithm is not [SHA-256](https://en.m.wikipedia.org/"
+"wiki/SHA-256)."
+msgstr ""
+
+#: source/protocols/store-path.md:70
+msgid ""
+"`id` is the name of the output (usually, \"out\"). For content-addressed "
+"store objects, `id`, is always \"out\"."
+msgstr ""
+
+#: source/protocols/store-path.md:73
+msgid ""
+"`inner-digest` = base-16 representation of a SHA-256 hash of `inner-"
+"fingerprint`. The base-16 encoding uses lower-cased hex digits."
+msgstr ""
+
+#: source/protocols/store-path.md:76
+msgid "Inner fingerprint"
+msgstr ""
+
+#: source/protocols/store-path.md:78
+msgid "`inner-fingerprint` = one of the following based on `type`:"
+msgstr ""
+
+#: source/protocols/store-path.md:80
+msgid "if `type` = `\"text:\" ...`:"
+msgstr ""
+
+#: source/protocols/store-path.md:82
+msgid "the string written to the resulting store path."
+msgstr ""
+
+#: source/protocols/store-path.md:84
+msgid "if `type` = `\"source:\" ...`:"
+msgstr ""
+
+#: source/protocols/store-path.md:86
+msgid ""
+"the [Nix Archive (NAR)](../store/file-system-object/content-address."
+"md#serial-nix-archive) serialization of the [file system object](../store/"
+"file-system-object.md) of the store object."
+msgstr ""
+
+#: source/protocols/store-path.md:88
+msgid "if `type` = `\"output:\" id`:"
+msgstr ""
+
+#: source/protocols/store-path.md:90
+msgid "For input-addressed derivation outputs:"
+msgstr ""
+
+#: source/protocols/store-path.md:92
+msgid ""
+"the [ATerm](../protocols/derivation-aterm.md#input-address-encoding) "
+"serialization of the [\"fully masked derivation\"](../store/derivation/"
+"outputs/input-address.md#input-masked-drv), in which fixed-output inputs are "
+"replaced by their content addresses and the derivation's own output paths "
+"are blanked."
+msgstr ""
+
+#: source/protocols/store-path.md:94
+msgid "For content-addressed store paths:"
+msgstr ""
+
+#: source/protocols/store-path.md:96
+msgid ""
+"```ebnf\n"
+"\"fixed:out:\" rec algo \":\" hash \":\"\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:102
+msgid "`rec` = one of:"
+msgstr ""
+
+#: source/protocols/store-path.md:104
+msgid ""
+"```ebnf\n"
+"| \"\"\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:107
+msgid "(empty string) for hashes of the flat (single file) serialization"
+msgstr ""
+
+#: source/protocols/store-path.md:109
+msgid ""
+"```ebnf\n"
+"| \"r:\"\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:112
+msgid ""
+"hashes of the for [Nix Archive (NAR)](../store/file-system-object/content-"
+"address.md#serial-nix-archive) (arbitrary file system object) serialization"
+msgstr ""
+
+#: source/protocols/store-path.md:114
+msgid ""
+"```ebnf\n"
+"| \"git:\"\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:117
+msgid ""
+"hashes of the [Git blob/tree](https://git-scm.com/book/en/v2/Git-Internals-"
+"Git-Objects) [Merkel tree](https://en.wikipedia.org/wiki/Merkle_tree) format"
+msgstr ""
+
+#: source/protocols/store-path.md:119
+msgid ""
+"```ebnf\n"
+"algo = \"md5\" | \"sha1\" | \"sha256\"\n"
+"```"
+msgstr ""
+
+#: source/protocols/store-path.md:123
+msgid ""
+"`hash` = base-16 representation of the path or flat hash of the contents of "
+"the path (or expected contents of the path for fixed-output derivations)."
+msgstr ""
+
+#: source/protocols/store-path.md:125
+msgid ""
+"Note that `id` = `\"out\"`, regardless of the name part of the store path. "
+"Also note that NAR + SHA-256 must not use this case, and instead must use "
+"the `type` = `\"source:\" ...` case."
+msgstr ""
+
+#: source/protocols/store-path.md:131
+msgid "Historical Note"
+msgstr ""
+
+#: source/protocols/store-path.md:133
+msgid ""
+"The `type` = `\"source:\" ...` and `type` = `\"output:out\"` grammars "
+"technically overlap in purpose, in that both can represent data hashed by "
+"its SHA-256 NAR serialization."
+msgstr ""
+
+#: source/protocols/store-path.md:136
+msgid ""
+"The original reason for this way of computing names was to prevent name "
+"collisions (for security). For instance, the thinking was that it shouldn't "
+"be feasible to come up with a derivation whose output path collides with the "
+"path for a copied source. The former would have an `inner-fingerprint` "
+"starting with `output:out:`, while the latter would have an `inner-"
+"fingerprint` starting with `source:`."
+msgstr ""
+
+#: source/protocols/store-path.md:140
+msgid ""
+"Since `64519cfd657d024ae6e2bb74cb21ad21b886fd2a` (2008), however, it was "
+"decided that separating derivation-produced vs manually-hashed content-"
+"addressed data like this was not useful. Now, data that is content-addressed "
+"with SHA-256 + NAR-serialization always uses the `source:...` construction, "
+"regardless of how it was produced (manually or by derivation). This allows "
+"freely switching between using [fixed-output derivations](../glossary."
+"md#gloss-fixed-output-derivation) for fetching, and fetching out-of-band and "
+"then manually adding. It also removes the ambiguity from the grammar."
+msgstr ""

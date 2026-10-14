@@ -1,0 +1,872 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/cli-guideline.md:1
+msgid "CLI guideline"
+msgstr ""
+
+#: source/development/cli-guideline.md:3
+msgid "Goals"
+msgstr ""
+
+#: source/development/cli-guideline.md:5
+msgid ""
+"Purpose of this document is to provide a clear direction to **help design "
+"delightful command line** experience. This document contains guidelines to "
+"follow to ensure a consistent and approachable user experience."
+msgstr ""
+
+#: source/development/cli-guideline.md:9
+msgid "Overview"
+msgstr ""
+
+#: source/development/cli-guideline.md:11
+msgid ""
+"`nix` command provides a single entry to a number of sub-commands that help "
+"**developers and system administrators** in the life-cycle of a software "
+"project. We particularly need to pay special attention to help and assist "
+"new users of Nix."
+msgstr ""
+
+#: source/development/cli-guideline.md:16
+msgid "Naming the `COMMANDS`"
+msgstr ""
+
+#: source/development/cli-guideline.md:18
+msgid ""
+"Words matter. Naming is an important part of the usability. Users will be "
+"interacting with Nix on a regular basis so we should **name things for ease "
+"of understanding**."
+msgstr ""
+
+#: source/development/cli-guideline.md:22
+msgid ""
+"We recommend following the [Principle of Least Astonishment](https://en."
+"wikipedia.org/wiki/Principle_of_least_astonishment). This means that you "
+"should **never use acronyms or abbreviations** unless they are commonly used "
+"in other tools (e.g. `nix init`). And if the command name is too long (> "
+"10-12 characters) then shortening it makes sense (e.g. “prioritization” → "
+"“priority”)."
+msgstr ""
+
+#: source/development/cli-guideline.md:29
+msgid ""
+"Commands should **follow a noun-verb dialogue**. Although noun-verb "
+"formatting seems backwards from a speaking perspective (i.e. `nix store "
+"copy` vs. `nix copy store`) it allows us to organize commands the same way "
+"users think about completing an action (the group first, then the command)."
+msgstr ""
+
+#: source/development/cli-guideline.md:34
+msgid "Naming rules"
+msgstr ""
+
+#: source/development/cli-guideline.md:36
+msgid ""
+"Rules are there to guide you by limiting your options. But not everything "
+"can fit the rules all the time. In those cases document the exceptions in "
+"[Appendix 1: Commands naming exceptions](#appendix-1-commands-naming-"
+"exceptions) and provide reason. The rules want to force a Nix developer to "
+"look, not just at the command at hand, but also the command in a full "
+"context alongside other `nix` commands."
+msgstr ""
+
+#: source/development/cli-guideline.md:47
+msgid ""
+"`GROUP`, `COMMAND`, `ARGUMENTS` and `OPTIONS` should be lowercase and in a "
+"singular form."
+msgstr ""
+
+#: source/development/cli-guideline.md:49
+msgid "`GROUP` should be a  **NOUN**."
+msgstr ""
+
+#: source/development/cli-guideline.md:50
+msgid "`COMMAND` should be a **VERB**."
+msgstr ""
+
+#: source/development/cli-guideline.md:51
+msgid "`ARGUMENTS` and `OPTIONS` are discussed in [_Input_ section](#input)."
+msgstr ""
+
+#: source/development/cli-guideline.md:53
+msgid "Classification"
+msgstr ""
+
+#: source/development/cli-guideline.md:55
+msgid ""
+"Some commands are more important, some less. While we want all of our "
+"commands to be perfect we can only spend limited amount of time testing and "
+"improving them."
+msgstr ""
+
+#: source/development/cli-guideline.md:59
+msgid ""
+"This classification tries to separate commands in 3 categories in terms of "
+"their importance in regards to the new users. Users who are likely to be "
+"impacted the most by bad user experience."
+msgstr ""
+
+#: source/development/cli-guideline.md:63
+msgid "**Main commands**"
+msgstr ""
+
+#: source/development/cli-guideline.md:65
+msgid ""
+"Commands used for our main use cases and most likely used by new users. We "
+"expect attention to details, such as:"
+msgstr ""
+
+#: source/development/cli-guideline.md:68
+#: source/development/cli-guideline.md:86
+msgid ""
+"Proper use of [colors](#colors), [emojis](#special-unicode-characters) and "
+"[aligning of text](#text-alignment)."
+msgstr ""
+
+#: source/development/cli-guideline.md:70
+#: source/development/cli-guideline.md:88
+#: source/development/cli-guideline.md:97
+msgid "[Autocomplete](#shell-completion) of options."
+msgstr ""
+
+#: source/development/cli-guideline.md:71
+msgid "Show [next possible steps](#next-steps)."
+msgstr ""
+
+#: source/development/cli-guideline.md:72
+msgid ""
+"Showing some [“tips”](#educate-the-user) when running logs running tasks "
+"(eg. building / downloading) in order to teach users interesting bits of Nix "
+"ecosystem."
+msgstr ""
+
+#: source/development/cli-guideline.md:75
+msgid ""
+"[Help pages](#help-is-essential) to be as good as we can write them pointing "
+"to external documentation and tutorials for more."
+msgstr ""
+
+#: source/development/cli-guideline.md:78
+msgid ""
+"Examples of such commands: `nix init`, `nix develop`, `nix build`, `nix "
+"run`, ..."
+msgstr ""
+
+#: source/development/cli-guideline.md:81
+msgid "**Infrequently used commands**"
+msgstr ""
+
+#: source/development/cli-guideline.md:83
+msgid ""
+"From infrequently used commands we expect less attention to details, but "
+"still some:"
+msgstr ""
+
+#: source/development/cli-guideline.md:90
+msgid "Examples of such commands: `nix edit`, `nix eval`, ..."
+msgstr ""
+
+#: source/development/cli-guideline.md:92
+msgid "**Utility and scripting commands**"
+msgstr ""
+
+#: source/development/cli-guideline.md:94
+msgid ""
+"Commands that expose certain internal functionality of `nix`, mostly used by "
+"other scripts."
+msgstr ""
+
+#: source/development/cli-guideline.md:99
+msgid ""
+"Examples of such commands: `nix store copy`, `nix hash base16`, `nix store "
+"ping`, ..."
+msgstr ""
+
+#: source/development/cli-guideline.md:103
+msgid "Help is essential"
+msgstr ""
+
+#: source/development/cli-guideline.md:105
+msgid ""
+"Help should be built into your command line so that new users can gradually "
+"discover new features when they need them."
+msgstr ""
+
+#: source/development/cli-guideline.md:108
+msgid "Looking for help"
+msgstr ""
+
+#: source/development/cli-guideline.md:110
+msgid ""
+"Since there is no standard way how user will look for help we rely on ways "
+"help is provided by commonly used tools. As a guide for this we took `git` "
+"and whenever in doubt look at it as a preferred direction."
+msgstr ""
+
+#: source/development/cli-guideline.md:114
+msgid "The rules are:"
+msgstr ""
+
+#: source/development/cli-guideline.md:116
+msgid ""
+"Help is shown by using `--help` or `help` command (eg `nix` ```--``help``` "
+"or `nix help`)."
+msgstr ""
+
+#: source/development/cli-guideline.md:118
+msgid ""
+"For non-COMMANDs (eg. `nix` ```--``help``` and `nix store` ```--``help```) "
+"we **show a summary** of most common use cases. Summary is presented on the "
+"STDOUT without any use of PAGER."
+msgstr ""
+
+#: source/development/cli-guideline.md:121
+msgid ""
+"For COMMANDs (eg. `nix init` ```--``help``` or `nix help init`) we display "
+"the man page of that command. By default the PAGER is used (as in `git`)."
+msgstr ""
+
+#: source/development/cli-guideline.md:123
+msgid ""
+"At the end of either summary or man page there should be an URL pointing to "
+"an online version of more detailed documentation."
+msgstr ""
+
+#: source/development/cli-guideline.md:125
+msgid ""
+"The structure of summaries and man pages should be the same as in `git`."
+msgstr ""
+
+#: source/development/cli-guideline.md:127
+msgid "Anticipate where help is needed"
+msgstr ""
+
+#: source/development/cli-guideline.md:129
+msgid ""
+"Even better then requiring the user to search for help is to anticipate and "
+"predict when user might need it. Either because the lack of discoverability, "
+"typo in the input or simply taking the opportunity to teach the user of "
+"interesting - but less visible - details."
+msgstr ""
+
+#: source/development/cli-guideline.md:134
+msgid "Shell completion"
+msgstr ""
+
+#: source/development/cli-guideline.md:136
+msgid ""
+"This type of help is most common and almost expected by users. We need to "
+"**provide the best shell completion** for `bash`, `zsh` and `fish`."
+msgstr ""
+
+#: source/development/cli-guideline.md:139
+msgid "Completion needs to be **context aware**, this mean when a user types:"
+msgstr ""
+
+#: source/development/cli-guideline.md:145
+msgid "we need to display a list of flakes starting with `n`."
+msgstr ""
+
+#: source/development/cli-guideline.md:147
+msgid "Wrong input"
+msgstr ""
+
+#: source/development/cli-guideline.md:149
+msgid ""
+"As we all know we humans make mistakes, all the time. When a typo - "
+"intentional or unintentional - is made, we should prompt for closest "
+"possible options or point to the documentation which would educate user to "
+"not make the same errors. Here are few examples:"
+msgstr ""
+
+#: source/development/cli-guideline.md:154
+msgid "In first example we prompt the user for typing wrong command name:"
+msgstr ""
+
+#: source/development/cli-guideline.md:167
+msgid ""
+"Sometimes users will make mistake either because of a typo or simply because "
+"of lack of discoverability. Our handling of this cases needs to be context "
+"sensitive."
+msgstr ""
+
+#: source/development/cli-guideline.md:184
+msgid "Next steps"
+msgstr ""
+
+#: source/development/cli-guideline.md:186
+msgid ""
+"It can be invaluable to newcomers to show what a possible next steps and "
+"what is the usual development workflow with Nix. For example:"
+msgstr ""
+
+#: source/development/cli-guideline.md:200
+msgid "Educate the user"
+msgstr ""
+
+#: source/development/cli-guideline.md:202
+msgid ""
+"We should take any opportunity to **educate users**, but at the same time we "
+"must **be very very careful to not annoy users**. There is a thin line "
+"between being helpful and being annoying."
+msgstr ""
+
+#: source/development/cli-guideline.md:206
+msgid ""
+"An example of educating users might be to provide _Tips_ in places where "
+"they are waiting."
+msgstr ""
+
+#: source/development/cli-guideline.md:229
+msgid ""
+"Now **Learn** part of the output is where you educate users. You should only "
+"show it when you know that a build will take some time and not annoy users "
+"of the builds that take only few seconds."
+msgstr ""
+
+#: source/development/cli-guideline.md:233
+msgid ""
+"Every feature like this should go through an intensive review and testing to "
+"collect as much feedback as possible and to fine tune every little detail. "
+"If done right this can be an awesome features beginners and advance users "
+"will love, but if not done perfectly it will annoy users and leave bad "
+"impression."
+msgstr ""
+
+#: source/development/cli-guideline.md:238
+msgid "Input"
+msgstr ""
+
+#: source/development/cli-guideline.md:240
+msgid "Input to a command is provided via `ARGUMENTS` and `OPTIONS`."
+msgstr ""
+
+#: source/development/cli-guideline.md:242
+msgid ""
+"`ARGUMENTS` represent a required input for a function. When choosing to use "
+"`ARGUMENTS` over `OPTIONS` please be aware of the downsides that come with "
+"it:"
+msgstr ""
+
+#: source/development/cli-guideline.md:245
+msgid ""
+"User will need to remember the order of `ARGUMENTS`. This is not a problem "
+"if there is only one `ARGUMENT`."
+msgstr ""
+
+#: source/development/cli-guideline.md:247
+msgid "With `OPTIONS` it is possible to provide much better auto completion."
+msgstr ""
+
+#: source/development/cli-guideline.md:248
+msgid "With `OPTIONS` it is possible to provide much better error message."
+msgstr ""
+
+#: source/development/cli-guideline.md:249
+msgid "Using `OPTIONS` it will mean there is a little bit more typing."
+msgstr ""
+
+#: source/development/cli-guideline.md:251
+msgid ""
+"We don’t discourage the use of `ARGUMENTS`, but simply want to make every "
+"developer consider the downsides and choose wisely."
+msgstr ""
+
+#: source/development/cli-guideline.md:254
+msgid "Naming the `OPTIONS`"
+msgstr ""
+
+#: source/development/cli-guideline.md:256
+msgid ""
+"The only naming convention - apart from the ones mentioned in Naming the "
+"`COMMANDS` section is how flags are named."
+msgstr ""
+
+#: source/development/cli-guideline.md:259
+msgid ""
+"Flags are a type of `OPTION` that represent an option that can be turned ON "
+"of OFF. We can say **flags are boolean type of** `**OPTION**`."
+msgstr ""
+
+#: source/development/cli-guideline.md:262
+msgid "Here are few examples of flag `OPTIONS`:"
+msgstr ""
+
+#: source/development/cli-guideline.md:264
+msgid "`--colors` vs. `--no-colors` (showing colors in the output)"
+msgstr ""
+
+#: source/development/cli-guideline.md:265
+msgid "`--emojis` vs. `--no-emojis` (showing emojis in the output)"
+msgstr ""
+
+#: source/development/cli-guideline.md:267
+msgid "Prompt when input not provided"
+msgstr ""
+
+#: source/development/cli-guideline.md:269
+msgid ""
+"For _main commands_ (as [per classification](#classification)) we want "
+"command to improve the discoverability of possible input. A new user will "
+"most likely not know which `ARGUMENTS` and `OPTIONS` are required or which "
+"values are possible for those options."
+msgstr ""
+
+#: source/development/cli-guideline.md:274
+msgid ""
+"In case the user does not provide the input or they provide wrong input, "
+"rather than show the error, prompt a user with an option to find and select "
+"correct input (see examples)."
+msgstr ""
+
+#: source/development/cli-guideline.md:278
+msgid ""
+"Prompting is of course not required when TTY is not attached to STDIN. This "
+"would mean that scripts won't need to handle prompt, but rather handle "
+"errors."
+msgstr ""
+
+#: source/development/cli-guideline.md:281
+msgid "A place to use prompt and provide user with interactive select"
+msgstr ""
+
+#: source/development/cli-guideline.md:294
+msgid ""
+"Another great place to add prompts are **confirmation dialogues for "
+"dangerous actions**. For example when adding new substitutor via `OPTIONS` "
+"or via `flake.nix` we should prompt - for the first time - and let user "
+"review what is going to happen."
+msgstr ""
+
+#: source/development/cli-guideline.md:300
+#: source/development/cli-guideline.md:553
+msgid ""
+"```shell\n"
+"$ nix build --option substitutors https://cache.example.org\n"
+"------------------------------------------------------------------------\n"
+"  Warning! A security related question needs to be answered.\n"
+"------------------------------------------------------------------------\n"
+"  The following substitutors will be used to in `my-project`:\n"
+"    - https://cache.example.org\n"
+"\n"
+"  Do you allow `my-project` to use above mentioned substitutors?\n"
+"    [y/N] |> y\n"
+"```"
+msgstr ""
+
+#: source/development/cli-guideline.md:312
+msgid "Output"
+msgstr ""
+
+#: source/development/cli-guideline.md:314
+msgid ""
+"Terminal output can be quite limiting in many ways. Which should force us to "
+"think about the experience even more. As with every design the output is a "
+"compromise between being terse and being verbose, between showing help to "
+"beginners and annoying advance users. For this it is important that we know "
+"what are the priorities."
+msgstr ""
+
+#: source/development/cli-guideline.md:320
+msgid ""
+"Nix command line should be first and foremost written with beginners in "
+"mind. But users won't stay beginners for long and what was once useful might "
+"quickly become annoying. There is no golden rule that we can give in this "
+"guideline that would make it easier how to draw a line and find best "
+"compromise."
+msgstr ""
+
+#: source/development/cli-guideline.md:325
+msgid ""
+"What we would encourage is to **build prototypes**, do some **user testing** "
+"and collect **feedback**. Then repeat the cycle few times."
+msgstr ""
+
+#: source/development/cli-guideline.md:328
+msgid ""
+"First design the _happy path_ and only after your iron it out, continue to "
+"work on **edge cases** (handling and displaying errors, changes of the "
+"output by certain `OPTIONS`, etc…)"
+msgstr ""
+
+#: source/development/cli-guideline.md:332
+msgid "Follow best practices"
+msgstr ""
+
+#: source/development/cli-guideline.md:334
+msgid ""
+"Needless to say we Nix must be a good citizen and follow best practices in "
+"command line."
+msgstr ""
+
+#: source/development/cli-guideline.md:337
+msgid "In short: **STDOUT is for output, STDERR is for (human) messaging.**"
+msgstr ""
+
+#: source/development/cli-guideline.md:339
+msgid ""
+"STDOUT and STDERR provide a way for you to output messages to the user while "
+"also allowing them to redirect content to a file. For example:"
+msgstr ""
+
+#: source/development/cli-guideline.md:342
+msgid ""
+"```shell\n"
+"$ nix build > build.txt\n"
+"------------------------------------------------------------------------\n"
+"  Error! Attribute `bin` missing at (1:94) from string.\n"
+"------------------------------------------------------------------------\n"
+"\n"
+"  1| with import <nixpkgs> { }; (pkgs.runCommandCC or pkgs.runCommand) "
+"\"shell\" { buildInputs = [ (surge.bin) ]; } \"\"\n"
+"```"
+msgstr ""
+
+#: source/development/cli-guideline.md:351
+msgid "Because this warning is on STDERR, it doesn’t end up in the file."
+msgstr ""
+
+#: source/development/cli-guideline.md:353
+msgid ""
+"But not everything on STDERR is an error though. For example, you can run "
+"`nix build` and collect logs in a file while still seeing the progress."
+msgstr ""
+
+#: source/development/cli-guideline.md:376
+msgid "Errors (WIP)"
+msgstr ""
+
+#: source/development/cli-guideline.md:378
+msgid ""
+"**TODO**: Once we have implementation for the _happy path_ then we will "
+"think how to present errors."
+msgstr ""
+
+#: source/development/cli-guideline.md:381
+msgid "Not only for humans"
+msgstr ""
+
+#: source/development/cli-guideline.md:383
+msgid ""
+"Terse, machine-readable output formats can also be useful but shouldn’t get "
+"in the way of making beautiful CLI output. When needed, commands should "
+"offer a `--json` flag to allow users to easily parse and script the CLI."
+msgstr ""
+
+#: source/development/cli-guideline.md:387
+msgid ""
+"When TTY is not detected on STDOUT we should remove all design elements (no "
+"colors, no emojis and using ASCII instead of Unicode symbols). The same "
+"should happen when TTY is not detected on STDERR. We should not display "
+"progress / status section, but only print warnings and errors."
+msgstr ""
+
+#: source/development/cli-guideline.md:392
+msgid "Dialog with the user"
+msgstr ""
+
+#: source/development/cli-guideline.md:394
+msgid ""
+"CLIs don't always make it clear when an action has taken place. For every "
+"action a user performs, your CLI should provide an equal and appropriate "
+"reaction, clearly highlighting the what just happened. For example:"
+msgstr ""
+
+#: source/development/cli-guideline.md:407
+msgid ""
+"Above command clearly states that command successfully completed. And in "
+"case of `nix build`, which is a command that might take some time to "
+"complete, it is equally important to also show that a command started."
+msgstr ""
+
+#: source/development/cli-guideline.md:411
+msgid "Text alignment"
+msgstr ""
+
+#: source/development/cli-guideline.md:413
+msgid ""
+"Text alignment is the number one design element that will present all of the "
+"Nix commands as a family and not as separate tools glued together."
+msgstr ""
+
+#: source/development/cli-guideline.md:416
+msgid "The format we should follow is:"
+msgstr ""
+
+#: source/development/cli-guideline.md:425
+msgid "Few rules that we can extract from above example:"
+msgstr ""
+
+#: source/development/cli-guideline.md:427
+msgid "Each line should start at least with one space."
+msgstr ""
+
+#: source/development/cli-guideline.md:428
+msgid "First word should be a VERB and must be aligned to the right."
+msgstr ""
+
+#: source/development/cli-guideline.md:429
+msgid "Second word should be a NOUN and must be aligned to the left."
+msgstr ""
+
+#: source/development/cli-guideline.md:430
+msgid ""
+"If you can not find a good VERB / NOUN pair, don’t worry make it as "
+"understandable to the user as possible."
+msgstr ""
+
+#: source/development/cli-guideline.md:432
+msgid ""
+"More details of each line can be provided by `|>` character which is serving "
+"as the first word when aligning the text"
+msgstr ""
+
+#: source/development/cli-guideline.md:435
+msgid ""
+"Don’t forget you should also test your terminal output with colors and "
+"emojis off (`--no-colors --no-emojis`)."
+msgstr ""
+
+#: source/development/cli-guideline.md:438
+msgid "Dim / Bright"
+msgstr ""
+
+#: source/development/cli-guideline.md:440
+msgid ""
+"After comparing few terminals with different color schemes we would "
+"**recommend to avoid using dimmed text**. The difference from the rest of "
+"the text is very little in many terminal and color scheme combinations. "
+"Sometimes the difference is not even notable, therefore relying on it "
+"wouldn’t make much sense."
+msgstr ""
+
+#: source/development/cli-guideline.md:445
+msgid ""
+"**The bright text is much better supported** across terminals and color "
+"schemes. Most of the time the difference is perceived as if the bright text "
+"would be bold."
+msgstr ""
+
+#: source/development/cli-guideline.md:449
+msgid "Colors"
+msgstr ""
+
+#: source/development/cli-guideline.md:451
+msgid ""
+"Humans are already conditioned by society to attach certain meaning to "
+"certain colors. While the meaning is not universal, a simple collection of "
+"colors is used to represent basic emotions."
+msgstr ""
+
+#: source/development/cli-guideline.md:455
+msgid "Colors that can be used in output"
+msgstr ""
+
+#: source/development/cli-guideline.md:457
+msgid "Red = error, danger, stop"
+msgstr ""
+
+#: source/development/cli-guideline.md:458
+msgid "Green = success, good"
+msgstr ""
+
+#: source/development/cli-guideline.md:459
+msgid "Yellow/Orange = proceed with caution, warning, in progress"
+msgstr ""
+
+#: source/development/cli-guideline.md:460
+msgid "Blue/Magenta = stability, calm"
+msgstr ""
+
+#: source/development/cli-guideline.md:462
+msgid ""
+"While colors are nice, when command line is used by machines (in automation "
+"scripts) you want to remove the colors. There should be a global `--no-"
+"colors` option that would remove the colors."
+msgstr ""
+
+#: source/development/cli-guideline.md:466
+msgid "Special (Unicode) characters"
+msgstr ""
+
+#: source/development/cli-guideline.md:468
+msgid ""
+"Most of the terminal have good support for Unicode characters and you should "
+"use them in your output by default. But always have a backup solution that "
+"is implemented only with ASCII characters and will be used when `--ascii` "
+"option is going to be passed in. Please make sure that you test your output "
+"also without Unicode characters"
+msgstr ""
+
+#: source/development/cli-guideline.md:474
+msgid ""
+"More they showing all the different Unicode characters it is important to "
+"**establish common set of characters** that we use for certain situations."
+msgstr ""
+
+#: source/development/cli-guideline.md:477
+msgid "Emojis"
+msgstr ""
+
+#: source/development/cli-guideline.md:479
+msgid ""
+"Emojis help channel emotions even better than text, colors and special "
+"characters."
+msgstr ""
+
+#: source/development/cli-guideline.md:482
+msgid ""
+"We recommend **keeping the set of emojis to a minimum**. This will enable "
+"each emoji to stand out more."
+msgstr ""
+
+#: source/development/cli-guideline.md:485
+msgid ""
+"As not everybody is happy about emojis we should provide an `--no-emojis` "
+"option to disable them. Please make sure that you test your output also "
+"without emojis."
+msgstr ""
+
+#: source/development/cli-guideline.md:489
+msgid "Tables"
+msgstr ""
+
+#: source/development/cli-guideline.md:491
+msgid ""
+"All commands that are listing certain data can be implemented in some sort "
+"of a table. It’s important that each row of your output is a single ‘entry’ "
+"of data. Never output table borders. It’s noisy and a huge pain for parsing "
+"using other tools such as `grep`."
+msgstr ""
+
+#: source/development/cli-guideline.md:496
+msgid ""
+"Be mindful of the screen width. Only show a few columns by default with the "
+"table header, for more the table can be manipulated by the following options:"
+msgstr ""
+
+#: source/development/cli-guideline.md:499
+msgid "`--no-headers`: Show column headers by default but allow to hide them."
+msgstr ""
+
+#: source/development/cli-guideline.md:500
+msgid "`--columns`: Comma-separated list of column names to add."
+msgstr ""
+
+#: source/development/cli-guideline.md:501
+msgid ""
+"`--sort`: Allow sorting by column. Allow inverse and multi-column sort as "
+"well."
+msgstr ""
+
+#: source/development/cli-guideline.md:503
+msgid "Interactive output"
+msgstr ""
+
+#: source/development/cli-guideline.md:505
+msgid ""
+"Interactive output was selected to be able to strike the balance between "
+"beginners and advance users. While the default output will target beginners "
+"it can, with a few key strokes, be changed into and advance introspection "
+"tool."
+msgstr ""
+
+#: source/development/cli-guideline.md:509
+msgid "Progress"
+msgstr ""
+
+#: source/development/cli-guideline.md:511
+msgid ""
+"For longer running commands we should provide and overview the progress. "
+"This is shown best in `nix build` example:"
+msgstr ""
+
+#: source/development/cli-guideline.md:534
+msgid "Search"
+msgstr ""
+
+#: source/development/cli-guideline.md:536
+msgid ""
+"Use a `fzf` like fuzzy search when there are multiple options to choose from."
+msgstr ""
+
+#: source/development/cli-guideline.md:548
+msgid "Prompt"
+msgstr ""
+
+#: source/development/cli-guideline.md:550
+msgid ""
+"In some situations we need to prompt the user and inform the user about what "
+"is going to happen."
+msgstr ""
+
+#: source/development/cli-guideline.md:565
+msgid "Verbosity"
+msgstr ""
+
+#: source/development/cli-guideline.md:567
+msgid "There are many ways that you can control verbosity."
+msgstr ""
+
+#: source/development/cli-guideline.md:569
+msgid "Verbosity levels are:"
+msgstr ""
+
+#: source/development/cli-guideline.md:571
+msgid "`ERROR` (level 0)"
+msgstr ""
+
+#: source/development/cli-guideline.md:572
+msgid "`WARN` (level 1)"
+msgstr ""
+
+#: source/development/cli-guideline.md:573
+msgid "`NOTICE` (level 2)"
+msgstr ""
+
+#: source/development/cli-guideline.md:574
+msgid "`INFO` (level 3)"
+msgstr ""
+
+#: source/development/cli-guideline.md:575
+msgid "`TALKATIVE` (level 4)"
+msgstr ""
+
+#: source/development/cli-guideline.md:576
+msgid "`CHATTY` (level 5)"
+msgstr ""
+
+#: source/development/cli-guideline.md:577
+msgid "`DEBUG` (level 6)"
+msgstr ""
+
+#: source/development/cli-guideline.md:578
+msgid "`VOMIT` (level 7)"
+msgstr ""
+
+#: source/development/cli-guideline.md:580
+msgid ""
+"The default level that the command starts is `ERROR`. The simplest way to "
+"increase the verbosity by stacking `-v` option (eg: `-vvv == level 3 == "
+"INFO`). There are also two shortcuts, `--debug` to run in `DEBUG` verbosity "
+"level and `--quiet` to run in `ERROR` verbosity level."
+msgstr ""
+
+#: source/development/cli-guideline.md:587
+msgid "Appendix 1: Commands naming exceptions"
+msgstr ""
+
+#: source/development/cli-guideline.md:589
+msgid "`nix init` and `nix repl` are well established"
+msgstr ""

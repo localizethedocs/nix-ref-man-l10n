@@ -1,0 +1,391 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/derivation/outputs/index.md:1
+msgid "Derivation Outputs and Types of Derivations"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:3
+msgid ""
+"As stated on the [main pages on derivations](../index.md#store-derivation), "
+"a derivation produces [store objects](../../../store/store-object.md), which "
+"are known as the _outputs_ of the derivation. Indeed, the entire point of "
+"derivations is to produce these outputs, and to reliably and reproducibly "
+"produce these derivations each time the derivation is run."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:7
+msgid ""
+"One of the parts of a derivation is its _outputs specification_, which "
+"specifies certain information about the outputs the derivation produces when "
+"run. The outputs specification is a map, from names to specifications for "
+"individual outputs."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:10
+msgid "Output Names"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:12
+msgid ""
+"Output names can be any string which is also a valid [store path name]"
+"(../../../store/store-path.md#name). The name mapped to each output "
+"specification is not actually the name of the output. In the general case, "
+"the output store object has name `derivationName + \"-\" + outputSpecName`, "
+"not any other metadata about it. However, an output spec named \"out\" "
+"describes and output store object whose name is just the derivation name."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:17
+msgid "**Example**"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:19
+msgid "A derivation is named `hello`, and has two outputs, `out`, and `dev`"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:21
+msgid "The derivation's path will be: `/nix/store/<hash>-hello.drv`."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:23
+msgid "The store path of `out` will be: `/nix/store/<hash>-hello`."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:25
+msgid "The store path of `dev` will be: `/nix/store/<hash>-hello-dev`."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:27
+msgid ""
+"The outputs are the derivations are the [store objects](../../../store/store-"
+"object.md) it is obligated to produce."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:29
+msgid "**Note**"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:31
+msgid ""
+"The formal terminology here is somewhat at odds with everyday communication "
+"in the Nix community today. \"output\" in casual usage tends to refer to "
+"either to the actual output store object, or the notional output spec, "
+"depending on context."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:34
+msgid ""
+"For example \"hello's `dev` output\" means the store object referred to by "
+"the store path `/nix/store/<hash>-hello-dev`. It is unusual to call this the "
+"\"`hello-dev` output\", even though `hello-dev` is the actual name of that "
+"store object."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:37
+msgid "Types of output addressing"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:39
+msgid ""
+"The main information contained in an output specification is how the "
+"derivation output is addressed. In particular, the specification decides:"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:42
+msgid ""
+"whether the output is [content-addressed](./content-address.md) or [input-"
+"addressed](./input-address.md)"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:44
+msgid "if the content is content-addressed, how is it content addressed"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:46
+msgid ""
+"if the content is content-addressed, [what is its content address](./content-"
+"address.md#fixed) (and thus what is its \\[store path\\])"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:48
+msgid "Output checks"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:50
+msgid ""
+"In addition to the output specification above, a derivation may mandate "
+"additional _checks_ on its outputs: properties that must hold for the "
+"produced store objects in order for the build to be considered successful. "
+"Checks may be specified separately for each output, or once for all outputs "
+"of the derivation."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:54
+msgid "Reference checks"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:56
+msgid ""
+"The main checks constrain the [references](../../../glossary.md#gloss-"
+"reference) of an output. These checks vary along two axes, yielding 4 "
+"possible checks:"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:59
+msgid ""
+"Whether the check applies to the _direct_ references of the output, or to "
+"its entire [closure](../../../glossary.md#gloss-closure) via _transitive_ "
+"references ([requisites](../../../store/store-object.md#references))."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:61
+msgid ""
+"Whether the check _allows_ a set of references (every reference must be a "
+"member of the set, though not every member needs to be referenced), or "
+"_disallows_ a set of references (no reference may be a member of the set)."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:63
+msgid "The four checks are:"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:65
+msgid ""
+"\\[_allowed references_\\]{#allowed-references}: An optional set; the "
+"output's references must be a subset of it. When the set is absent the check "
+"is skipped, i.e. every reference is allowed."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:69
+msgid ""
+"For example, the empty set enforces that the output has no runtime "
+"dependencies at all."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:71
+msgid "**Usage note**"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:73
+msgid ""
+"This is used in NixOS to check that generated files such as initial ramdisks "
+"for booting Linux don't have accidental dependencies on other paths in the "
+"Nix store."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:75
+msgid ""
+"\\[_allowed requisites_\\]{#allowed-requisites}: Like _allowed references_, "
+"but applying to the whole closure of the output: every transitive dependency "
+"must be a member of the set."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:79
+msgid ""
+"\\[_disallowed references_\\]{#disallowed-references}: A set of which no "
+"member may be a direct reference of the output. (There is no need for this "
+"check to be optional: disallowing nothing is the same as skipping the check.)"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:83
+msgid ""
+"\\[_disallowed requisites_\\]{#disallowed-requisites}: Like _disallowed "
+"references_, but applying to the whole closure of the output: no member of "
+"the set may appear anywhere in the output's transitive dependencies."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:87
+msgid ""
+"The references of a store object are always store paths. However, if every "
+"element of these sets had to be a store path, it would be hard-to-impossible "
+"to constrain references from outputs _to other outputs_ of the same "
+"derivation, because in general the store paths of outputs are not known "
+"until the derivation is built. For this reason, an element of these sets may "
+"also be an _output name_ of the derivation being checked, standing for the "
+"store path of that output, whatever it turns out to be. For example, an "
+"output can be permitted to reference itself by including its own name in its "
+"_allowed references_."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:92
+msgid "Size checks"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:94
+msgid ""
+"\\[_max size_\\]{#max-size}: The [NAR size](../../../store/store-object."
+"md#nar-size) of the output's store object may not exceed the given number of "
+"bytes."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:97
+msgid ""
+"\\[_max closure size_\\]{#max-closure-size}: The [closure NAR size](../../../"
+"store/store-object.md#closure-nar-size) of the output's store object may not "
+"exceed the given number of bytes."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:100
+msgid "Self-reference handling"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:102
+msgid ""
+"\\[_ignore self references_\\]{#ignore-self-refs}: Whether references of an "
+"output to itself are exempted from the reference checks above."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:105
+msgid "Reference scanning"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:107
+msgid ""
+"Besides the output checks, there is one more per-output setting. It is _not_ "
+"a check — nothing is verified about the produced store object — but it is "
+"configured in the same per-output manner, so it is documented here:"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:110
+msgid ""
+"\\[_unsafe discard references_\\]{#unsafe-discard-references}: Disables "
+"[scanning the output for run-time references](../../building.md#scanning-for-"
+"references) altogether. The output is then registered as having no "
+"references, regardless of its contents."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:114
+msgid ""
+"This is useful, for example, when generating self-contained filesystem "
+"images with their own embedded Nix store: hashes found inside such an image "
+"refer to the embedded store and not to the host's Nix store."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:117
+msgid ""
+"As the name suggests, this is unsafe: discarding references that are in fact "
+"needed at run time makes the closure incomplete, so copying the output "
+"elsewhere will not bring its dependencies along."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:125
+msgid "Types of derivations"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:127
+msgid ""
+"The sections on each type of derivation output addressing ended up "
+"discussing other attributes of the derivation besides its outputs, such as "
+"purity, scheduling, determinism, etc. This is no concidence; for the type of "
+"a derivation is in fact one-for-one with the type of its outputs:"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:130
+msgid ""
+"A derivation that produces _xyz-addressed_ outputs is an _xyz-addressing_ "
+"derivations."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:132
+msgid "The rules for this are fairly concise:"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:134
+msgid "All the outputs must be of the same type / use the same addressing"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:136
+msgid "The derivation must have at least one output"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:138
+msgid ""
+"Additionally, if the outputs are fixed content-addressed, there must be "
+"exactly one output, whose specification is mapped from the name `out`. (The "
+"name `out` is special, according to the rules described above. Having only "
+"one output and calling its specification `out` means the single output is "
+"effectively anonymous; the store path just has the derivation name.)"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:142
+msgid "(This is an arbitrary restriction that could be lifted.)"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:144
+msgid ""
+"The output is either _fixed_ or _floating_, indicating whether the store "
+"path is known prior to building it."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:146
+msgid "With fixed content-addressing it is fixed."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:148
+msgid ""
+"A _fixed content-addressing_ derivation is also called a _fixed-output "
+"derivation_, since that is the only currently-implemented form of fixed-"
+"output addressing"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:150
+msgid "With floating content-addressing or input-addressing it is floating."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:152
+msgid ""
+"Thus, historically with Nix, with no experimental features enabled, _all_ "
+"outputs are fixed."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:154
+msgid ""
+"The derivation may be _pure_ or _impure_, indicating what read access to the "
+"outside world the [builder](../index.md#builder) has."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:156
+msgid "An input-addressing derivation _must_ be pure."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:158
+msgid ""
+"If it is impure, we would have a large problem, because an input-addressed "
+"derivation always produces outputs with the same paths."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:161
+msgid "A content-addressing derivation may be pure or impure"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:163
+msgid ""
+"If it is impure, it may be fixed (typical), or it may be floating if the "
+"additional [`impure-derivations`](../../../development/experimental-features."
+"md#xp-feature-impure-derivations) experimental feature is enabled."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:165
+msgid "If it is pure, it must be floating."
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:167
+msgid "Pure, fixed content-addressing derivations are not supported"
+msgstr ""
+
+#: source/store/derivation/outputs/index.md:169
+msgid ""
+"There is no use for this forth combination. The sole purpose of an output's "
+"store path being fixed is to support the derivation being impure."
+msgstr ""

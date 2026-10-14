@@ -1,0 +1,271 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/local-binary-cache-store.md:1
+msgid "Local Binary Cache Store"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:3
+msgid "**Store URL format**: `file://`_path_"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:5
+msgid ""
+"This store allows reading and writing a [binary cache](../../protocols/"
+"binary-cache/index.md) stored in _path_ in the local filesystem. If _path_ "
+"does not exist, it will be created."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:8
+msgid ""
+"For example, the following builds or downloads `nixpkgs#hello` into the "
+"local store and then copies it to the binary cache in `/tmp/binary-cache`:"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:12
+msgid ""
+"```\n"
+"# nix copy --to file:///tmp/binary-cache nixpkgs#hello\n"
+"```"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:16
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:18
+msgid ""
+"<span id=\"store-local-binary-cache-store-compression\">[`compression`]"
+"(#store-local-binary-cache-store-compression)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:20
+msgid ""
+"NAR compression method. One of: `xz`, `bzip2`, `gzip`, `zstd`, `none`, `br`, "
+"`compress`, `grzip`, `lrzip`, `lz4`, `lzip`, `lzma` or `lzop`. To use a "
+"particular compression method Nix has to be built with a version of "
+"libarchive that natively supports that compression algorithm."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:23
+msgid "**Default:** `xz`"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:25
+msgid ""
+"<span id=\"store-local-binary-cache-store-compression-level\">[`compression-"
+"level`](#store-local-binary-cache-store-compression-level)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:27
+msgid ""
+"The _preset level_ to be used when compressing NARs. The meaning and "
+"accepted values depend on the compression method selected. `-1` specifies "
+"that the default compression level should be used."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:31
+msgid "**Default:** `-1`"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:33
+msgid ""
+"<span id=\"store-local-binary-cache-store-index-debug-info\">[`index-debug-"
+"info`](#store-local-binary-cache-store-index-debug-info)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:35
+msgid ""
+"Whether to index DWARF debug info files by build ID. This allows [`dwarffs`]"
+"(https://github.com/edolstra/dwarffs) to fetch debug info on demand"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:38
+#: source/store/types/local-binary-cache-store.md:52
+#: source/store/types/local-binary-cache-store.md:104
+#: source/store/types/local-binary-cache-store.md:110
+#: source/store/types/local-binary-cache-store.md:116
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:40
+msgid ""
+"<span id=\"store-local-binary-cache-store-local-nar-cache\">[`local-nar-"
+"cache`](#store-local-binary-cache-store-local-nar-cache)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:42
+msgid ""
+"Path to a local cache of NARs fetched from this binary cache, used by "
+"commands such as `nix store cat`."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:44
+#: source/store/types/local-binary-cache-store.md:71
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:46
+msgid ""
+"<span id=\"store-local-binary-cache-store-parallel-compression\">[`parallel-"
+"compression`](#store-local-binary-cache-store-parallel-compression)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:48
+msgid ""
+"Enable multi-threaded compression of NARs. This is currently only available "
+"for `xz` and `zstd`."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:50
+msgid ""
+"If not set explicitly, defaults to `true` when `compression` is `zstd` and "
+"`false` otherwise."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:54
+msgid ""
+"<span id=\"store-local-binary-cache-store-path-info-cache-size\">[`path-info-"
+"cache-size`](#store-local-binary-cache-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:56
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:58
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:60
+msgid ""
+"<span id=\"store-local-binary-cache-store-priority\">[`priority`](#store-"
+"local-binary-cache-store-priority)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:62
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:65
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:67
+msgid ""
+"<span id=\"store-local-binary-cache-store-secret-key\">[`secret-key`](#store-"
+"local-binary-cache-store-secret-key)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:69
+msgid "Path to the secret key used to sign the binary cache."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:73
+msgid ""
+"<span id=\"store-local-binary-cache-store-secret-keys\">[`secret-keys`]"
+"(#store-local-binary-cache-store-secret-keys)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:75
+msgid ""
+"List of comma-separated paths to the secret keys used to sign the binary "
+"cache."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:77
+msgid "**Default:** _empty_"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:79
+msgid ""
+"<span id=\"store-local-binary-cache-store-store\">[`store`](#store-local-"
+"binary-cache-store-store)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:81
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:83
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:85
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:87
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:89
+msgid ""
+"<span id=\"store-local-binary-cache-store-system-features\">[`system-"
+"features`](#store-local-binary-cache-store-system-features)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:91
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:93
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:95
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:97
+msgid ""
+"<span id=\"store-local-binary-cache-store-trusted\">[`trusted`](#store-local-"
+"binary-cache-store-trusted)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:99
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:106
+msgid ""
+"<span id=\"store-local-binary-cache-store-want-mass-query\">[`want-mass-"
+"query`](#store-local-binary-cache-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:108
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:112
+msgid ""
+"<span id=\"store-local-binary-cache-store-write-nar-listing\">[`write-nar-"
+"listing`](#store-local-binary-cache-store-write-nar-listing)</span>"
+msgstr ""
+
+#: source/store/types/local-binary-cache-store.md:114
+msgid "Whether to write a JSON file that lists the files in each NAR."
+msgstr ""
