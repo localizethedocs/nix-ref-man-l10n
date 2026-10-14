@@ -1,0 +1,303 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-daemon.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:8
+msgid ""
+"`nix daemon` - daemon to perform store operations on behalf of non-root "
+"clients"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:12
+msgid "`nix daemon` \\[_option_...\\]"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:16
+msgid "Run the daemon:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:22
+msgid ""
+"Run the daemon and listen on standard I/O instead of binding to a UNIX "
+"socket:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:28
+msgid "Run the daemon and force all connections to be trusted:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:34
+msgid "Run the daemon and force all connections to be untrusted:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:40
+msgid ""
+"Run the daemon, listen on standard I/O, and force all connections to use "
+"Nix's default trust:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:46
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:48
+msgid ""
+"This command runs the Nix daemon, which is a required component in multi-"
+"user Nix installations. It runs build tasks and other operations on the Nix "
+"store on behalf of non-root users. Usually you don't run the daemon "
+"directly; instead it's managed by a service management framework such as "
+"`systemd` on Linux, or `launchctl` on Darwin."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:54
+msgid "Note that this daemon does not fork into the background."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:56
+msgid "Socket path"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:58
+msgid ""
+"Unless `--stdio` is used, the daemon listens on a Unix domain socket. The "
+"socket path is determined similarly as for the [Local Daemon Store](../../"
+"store/types/local-daemon-store.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:61
+msgid "The `--socket-path` flag, if passed."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:63
+msgid ""
+"The [`NIX_DAEMON_SOCKET_PATH`](../../command-ref/env-common.md#env-"
+"NIX_DAEMON_SOCKET_PATH) environment variable, if set."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:65
+msgid ""
+"Otherwise, `daemon-socket/socket` within the store's state directory. The "
+"[Local Store](../../store/types/local-store.md), [Local Daemon Store](../../"
+"store/types/local-daemon-store.md), and [Experimental SSH Store with "
+"filesystem mounted](../../store/types/experimental-ssh-store-with-filesystem-"
+"mounted.md) each have their own per-store state directory. For other store "
+"types, the global [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) is used."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:75
+msgid "Systemd socket activation"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:77
+msgid ""
+"`nix daemon` supports systemd socket-based activation using the `nix-daemon."
+"socket` unit in the Nix distribution. It supports listening on multiple "
+"addresses; for example, the following stanza in `nix-daemon.socket` makes "
+"the daemon listen on two Unix domain sockets:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:89
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:91
+msgid ""
+"<span id=\"opt-default-trust\">[`--default-trust`](#opt-default-trust)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:93
+msgid "Use Nix's default trust."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:95
+msgid ""
+"<span id=\"opt-force-trusted\">[`--force-trusted`](#opt-force-trusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:97
+msgid "Force the daemon to trust connecting clients."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:99
+msgid ""
+"<span id=\"opt-force-untrusted\">[`--force-untrusted`](#opt-force-"
+"untrusted)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:101
+msgid ""
+"Force the daemon to not trust connecting clients. The connection is "
+"processed by the receiving daemon before forwarding commands."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:104
+msgid "<span id=\"opt-process-ops\">[`--process-ops`](#opt-process-ops)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:106
+msgid ""
+"Forces the daemon to process received commands itself rather than forwarding "
+"the commands straight to the remote store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:108
+msgid ""
+"            This is useful for the `mounted-ssh://` store where some actions "
+"need to be performed on the remote end but as connected user, and not as the "
+"user of the underlying daemon on the remote end.\n"
+"    "
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:110
+msgid ""
+"<span id=\"opt-socket-path\">[`--socket-path`](#opt-socket-path)</span> "
+"_path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:112
+msgid ""
+"Path to the daemon's UNIX socket. Overrides `NIX_DAEMON_SOCKET_PATH` and the "
+"default. Incompatible with `--stdio`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:116
+msgid "<span id=\"opt-stdio\">[`--stdio`](#opt-stdio)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:118
+msgid "Attach to standard I/O, instead of using UNIX socket(s)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:120
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:122
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:124
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:126
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:128
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:130
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:132
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:134
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:136
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:138
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:140
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:142
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:144
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:146
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:148
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:150
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:152
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:154
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:156
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:158
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:160
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:162
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:164
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-daemon.md:166
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

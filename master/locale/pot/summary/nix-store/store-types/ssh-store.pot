@@ -1,0 +1,228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/ssh-store.md:1
+msgid "SSH Store"
+msgstr ""
+
+#: source/store/types/ssh-store.md:3
+msgid "**Store URL format**: `ssh://[username@]hostname[:port]`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:5
+msgid ""
+"This store type allows limited access to a remote store on another machine "
+"via SSH."
+msgstr ""
+
+#: source/store/types/ssh-store.md:8
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/ssh-store.md:10
+msgid ""
+"<span id=\"store-ssh-store-base64-ssh-public-host-key\">[`base64-ssh-public-"
+"host-key`](#store-ssh-store-base64-ssh-public-host-key)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:12
+msgid "The public host key of the remote machine."
+msgstr ""
+
+#: source/store/types/ssh-store.md:14 source/store/types/ssh-store.md:59
+msgid "**Default:** _empty_"
+msgstr ""
+
+#: source/store/types/ssh-store.md:16
+msgid ""
+"<span id=\"store-ssh-store-compress\">[`compress`](#store-ssh-store-"
+"compress)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:18
+msgid "Whether to enable SSH compression."
+msgstr ""
+
+#: source/store/types/ssh-store.md:20 source/store/types/ssh-store.md:92
+#: source/store/types/ssh-store.md:98
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:22
+msgid ""
+"<span id=\"store-ssh-store-log-fd\">[`log-fd`](#store-ssh-store-log-fd)</"
+"span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:24
+msgid "file descriptor to which SSH's stderr is connected"
+msgstr ""
+
+#: source/store/types/ssh-store.md:26
+msgid "**Default:** `-1`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:28
+msgid ""
+"<span id=\"store-ssh-store-max-connections\">[`max-connections`](#store-ssh-"
+"store-max-connections)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:30
+msgid "Maximum number of concurrent SSH connections."
+msgstr ""
+
+#: source/store/types/ssh-store.md:32
+msgid "**Default:** `1`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:34
+msgid ""
+"<span id=\"store-ssh-store-path-info-cache-size\">[`path-info-cache-size`]"
+"(#store-ssh-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:36
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/ssh-store.md:38
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:40
+msgid ""
+"<span id=\"store-ssh-store-priority\">[`priority`](#store-ssh-store-"
+"priority)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:42
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/ssh-store.md:45
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:47
+msgid ""
+"<span id=\"store-ssh-store-remote-program\">[`remote-program`](#store-ssh-"
+"store-remote-program)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:49
+msgid "Path to the `nix-store` executable on the remote machine."
+msgstr ""
+
+#: source/store/types/ssh-store.md:51
+msgid "**Default:** `nix-store`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:53
+msgid ""
+"<span id=\"store-ssh-store-remote-store\">[`remote-store`](#store-ssh-store-"
+"remote-store)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:55
+msgid ""
+"[Store URL](../../store/types/index.md#store-url-format) to be used on the "
+"remote machine. The default is `auto` (i.e. use the Nix daemon or `/nix/"
+"store` directly)."
+msgstr ""
+
+#: source/store/types/ssh-store.md:61
+msgid ""
+"<span id=\"store-ssh-store-ssh-key\">[`ssh-key`](#store-ssh-store-ssh-key)</"
+"span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:63
+msgid "Path to the SSH private key used to authenticate to the remote machine."
+msgstr ""
+
+#: source/store/types/ssh-store.md:65
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/store/types/ssh-store.md:67
+msgid ""
+"<span id=\"store-ssh-store-store\">[`store`](#store-ssh-store-store)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:69
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/ssh-store.md:71
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/ssh-store.md:73
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/ssh-store.md:75
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:77
+msgid ""
+"<span id=\"store-ssh-store-system-features\">[`system-features`](#store-ssh-"
+"store-system-features)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:79
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/ssh-store.md:81
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/ssh-store.md:83
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/ssh-store.md:85
+msgid ""
+"<span id=\"store-ssh-store-trusted\">[`trusted`](#store-ssh-store-trusted)</"
+"span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:87
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/ssh-store.md:94
+msgid ""
+"<span id=\"store-ssh-store-want-mass-query\">[`want-mass-query`](#store-ssh-"
+"store-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/ssh-store.md:96
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""

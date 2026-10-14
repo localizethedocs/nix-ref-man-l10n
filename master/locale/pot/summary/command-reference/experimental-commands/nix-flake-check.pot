@@ -1,0 +1,591 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-flake-check.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:8
+msgid "`nix flake check` - check whether the flake evaluates and run its tests"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:12
+msgid "`nix flake check` \\[_option_...\\] _flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:16
+msgid "Evaluate the flake in the current directory, and build its checks:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:22
+msgid "Verify that the `patchelf` flake evaluates, but don't build its checks:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:29
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:31
+msgid ""
+"This command verifies that the flake specified by flake reference _flake-"
+"url_ can be evaluated successfully (as detailed below), and that the "
+"derivations specified by the flake's `checks` output can be built "
+"successfully."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:36
+msgid ""
+"If the `keep-going` option is set to `true`, Nix will keep evaluating as "
+"much as it can and report the errors as it encounters them. Otherwise it "
+"will stop at the first error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:40
+msgid "Evaluation checks"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:42
+msgid "The following flake output attributes must be derivations:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:44
+msgid "`checks.`_system_`.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:45
+msgid "`devShells.`_system_`.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:46
+msgid "`devShells.`_system_`.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:47
+msgid "`nixosConfigurations.`_name_`.config.system.build.toplevel`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:48
+msgid "`packages.`_system_`.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:49
+msgid "`packages.`_system_`.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:51
+msgid ""
+"The following flake output attributes must be [app definitions](./nix3-run."
+"md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:54
+msgid "`apps.`_system_`.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:55
+msgid "`apps.`_system_`.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:57
+msgid ""
+"The following flake output attributes must be [template definitions](./nix3-"
+"flake-init.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:60
+msgid "`templates.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:61
+msgid "`templates.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:63
+msgid "The following flake output attributes must be _Nixpkgs overlays_:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:65
+msgid "`overlays.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:66
+msgid "`overlays.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:68
+msgid "The following flake output attributes must be _NixOS modules_:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:70
+msgid "`nixosModules.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:71
+msgid "`nixosModules.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:73
+msgid ""
+"The following flake output attributes must be [bundlers](./nix3-bundle.md):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:76
+msgid "`bundlers.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:77
+msgid "`bundlers.`_name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:79
+msgid ""
+"Old default attributes are renamed, they will work but will emit a warning:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:81
+msgid "`defaultPackage.<system>` → `packages.`_system_`.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:82
+msgid "`defaultApps.<system>` → `apps.`_system_`.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:83
+msgid "`defaultTemplate` → `templates.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:84
+msgid "`defaultBundler.<system>` → `bundlers.`_system_`.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:85
+msgid "`overlay` → `overlays.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:86
+msgid "`devShell.<system>` → `devShells.`_system_`.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:87
+msgid "`nixosModule` → `nixosModules.default`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:89
+msgid ""
+"In addition, the `hydraJobs` output is evaluated in the same way as Hydra's "
+"`hydra-eval-jobs` (i.e. as a arbitrarily deeply nested attribute set of "
+"derivations). Similarly, the `legacyPackages`._system_ output is evaluated "
+"like `nix-env --query --available `."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:94
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:96
+msgid "<span id=\"opt-all-systems\">[`--all-systems`](#opt-all-systems)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:98
+msgid "Check the outputs for all systems."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:100
+msgid "<span id=\"opt-no-build\">[`--no-build`](#opt-no-build)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:102
+msgid "Do not build checks."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:104
+msgid ""
+"<span id=\"opt-out-link\">[`--out-link`](#opt-out-link)</span> / `-o` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:106
+msgid ""
+"Use _path_ as prefix for the symlinks to the check results. By default, no "
+"out links are created."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:108
+msgid ""
+"<span id=\"opt-print-out-paths\">[`--print-out-paths`](#opt-print-out-"
+"paths)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:110
+msgid "Print the resulting output paths"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:112
+msgid "Common evaluation options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:114
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:116
+msgid "Pass the value _expr_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:118
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:120
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:122
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:124
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:126
+msgid ""
+"<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _string_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:128
+msgid "Pass the string _string_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:130
+msgid "<span id=\"opt-debugger\">[`--debugger`](#opt-debugger)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:132
+msgid "Start an interactive environment if evaluation fails."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:134
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:136
+msgid ""
+"The [URL of the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:139
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:141
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:143
+msgid ""
+"<span id=\"opt-include\">[`--include`](#opt-include)</span> / `-I` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:145
+msgid ""
+"Add _path_ to search path entries used to resolve [lookup paths](../../"
+"language/constructs/lookup-path.md)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:147
+msgid "This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:149
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:151
+msgid ""
+"<span id=\"opt-override-flake\">[`--override-flake`](#opt-override-flake)</"
+"span> _original-ref_ _resolved-ref_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:153
+msgid ""
+"Override the flake registries, redirecting _original-ref_ to _resolved-ref_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:155
+msgid "Common flake-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:157
+msgid ""
+"<span id=\"opt-commit-lock-file\">[`--commit-lock-file`](#opt-commit-lock-"
+"file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:159
+msgid "Commit changes to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:161
+msgid ""
+"<span id=\"opt-inputs-from\">[`--inputs-from`](#opt-inputs-from)</span> "
+"_flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:163
+msgid "Use the inputs of the specified flake as registry entries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:165
+msgid ""
+"<span id=\"opt-no-registries\">[`--no-registries`](#opt-no-registries)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:167
+msgid "Don't allow lookups in the flake registries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:169
+#: source/command-ref/new-cli/nix3-flake-check.md:193
+#: source/command-ref/new-cli/nix3-flake-check.md:205
+msgid "**DEPRECATED**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:171
+msgid ""
+"Use [`--no-use-registries`](../../command-ref/conf-file.md#conf-use-"
+"registries) instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:173
+msgid ""
+"<span id=\"opt-no-update-lock-file\">[`--no-update-lock-file`](#opt-no-"
+"update-lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:175
+msgid "Do not allow any updates to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:177
+msgid ""
+"<span id=\"opt-no-write-lock-file\">[`--no-write-lock-file`](#opt-no-write-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:179
+msgid "Do not write the flake's newly generated lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:181
+msgid ""
+"<span id=\"opt-output-lock-file\">[`--output-lock-file`](#opt-output-lock-"
+"file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:183
+msgid ""
+"Write the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:185
+msgid ""
+"<span id=\"opt-override-input\">[`--override-input`](#opt-override-input)</"
+"span> _input-path_ _flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:187
+msgid ""
+"Override a specific flake input (e.g. `dwarffs/nixpkgs`). The input path "
+"must not be empty. This implies `--no-write-lock-file`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:189
+msgid ""
+"<span id=\"opt-recreate-lock-file\">[`--recreate-lock-file`](#opt-recreate-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:191
+msgid "Recreate the flake's lock file from scratch."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:195
+#: source/command-ref/new-cli/nix3-flake-check.md:207
+msgid ""
+"Use [`nix flake update`](../../command-ref/new-cli/nix3-flake-update.md) "
+"instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:197
+msgid ""
+"<span id=\"opt-reference-lock-file\">[`--reference-lock-file`](#opt-"
+"reference-lock-file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:199
+msgid ""
+"Read the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:201
+msgid ""
+"<span id=\"opt-update-input\">[`--update-input`](#opt-update-input)</span> "
+"_input-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:203
+msgid ""
+"Update a specific flake input (ignoring its previous entry in the lock file)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:209
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:211
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:213
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:215
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:217
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:219
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:221
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:223
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:225
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:227
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:229
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:231
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:233
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:235
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:237
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:239
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:241
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:243
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:245
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:247
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:249
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:251
+msgid ""
+"During evaluation, rewrite missing or corrupted files in the Nix store. "
+"During building, rebuild missing or corrupted store paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:253
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:255
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:257
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake-check.md:259
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/content-address.md:1
+#: source/protocols/json/content-address.md:38
+msgid "Content Address"
+msgstr ""
+
+#: source/protocols/json/content-address.md:3
+msgid "[1. Property `method`](#method)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:4
+msgid "[2. Property `hash`](#hash)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:6
+#: source/protocols/json/content-address.md:67
+msgid "**Title:** Content Address"
+msgstr ""
+
+#: source/protocols/json/content-address.md:10
+#: source/protocols/json/content-address.md:46
+#: source/protocols/json/content-address.md:71
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/content-address.md:10
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/content-address.md:11
+#: source/protocols/json/content-address.md:47
+#: source/protocols/json/content-address.md:72
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/content-address.md:11
+#: source/protocols/json/content-address.md:37
+#: source/protocols/json/content-address.md:38
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/content-address.md:12
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/content-address.md:12
+msgid "Not allowed"
+msgstr ""
+
+#: source/protocols/json/content-address.md:14
+msgid ""
+"**Description:** This schema describes the JSON representation of Nix's "
+"`ContentAddress` type, which conveys information about [content-addressing "
+"store objects](../../store/store-object/content-address.md)."
+msgstr ""
+
+#: source/protocols/json/content-address.md:16
+msgid "**Note**"
+msgstr ""
+
+#: source/protocols/json/content-address.md:18
+msgid ""
+"For current methods of content addressing, this data type is a bit "
+"suspicious, because it is neither simply a content address of a file system "
+"object (the `method` is richer), nor simply a content address of a store "
+"object (the `hash` doesn't account for the references). It should thus only "
+"be used in contexts where the references are also known / otherwise made "
+"tamper-resistant."
+msgstr ""
+
+#: source/protocols/json/content-address.md:35
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/content-address.md:35
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/content-address.md:35
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/content-address.md:35
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/content-address.md:37
+msgid "+ [method](#method)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:37
+msgid "enum (of string)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:37
+msgid "Content-Addressing Method"
+msgstr ""
+
+#: source/protocols/json/content-address.md:38
+msgid "+ [hash](#hash)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:38
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/content-address.md:40
+msgid "<a name=\"method\"></a>1. Property `method`"
+msgstr ""
+
+#: source/protocols/json/content-address.md:42
+msgid "**Title:** Content-Addressing Method"
+msgstr ""
+
+#: source/protocols/json/content-address.md:46
+msgid "`enum (of string)`"
+msgstr ""
+
+#: source/protocols/json/content-address.md:47
+#: source/protocols/json/content-address.md:72
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/content-address.md:48
+#: source/protocols/json/content-address.md:73
+msgid "**Defined in**"
+msgstr ""
+
+#: source/protocols/json/content-address.md:48
+msgid ""
+"[JSON format for `ContentAddress`](../../protocols/json/content-address."
+"html#method)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:50
+msgid ""
+"**Description:** A string representing the [method](../../store/store-object/"
+"content-address.md) of content addressing that is chosen."
+msgstr ""
+
+#: source/protocols/json/content-address.md:52
+msgid "Valid method strings are:"
+msgstr ""
+
+#: source/protocols/json/content-address.md:54
+msgid ""
+"[`flat`](../../store/store-object/content-address.md#method-flat) (provided "
+"the contents are a single file)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:55
+msgid "[`nar`](../../store/store-object/content-address.md#method-nix-archive)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:56
+msgid "[`text`](../../store/store-object/content-address.md#method-text)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:57
+msgid "[`git`](../../store/store-object/content-address.md#method-git)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:59
+msgid "Must be one of:"
+msgstr ""
+
+#: source/protocols/json/content-address.md:60
+msgid "\"flat\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:61
+#: source/protocols/json/content-address.md:114
+msgid "\"nar\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:62
+#: source/protocols/json/content-address.md:104
+msgid "\"text\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:63
+msgid "\"git\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:65
+msgid "<a name=\"hash\"></a>2. Property `hash`"
+msgstr ""
+
+#: source/protocols/json/content-address.md:71
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/content-address.md:73
+msgid "[JSON format for `Hash`](../../protocols/json/hash.html)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:75
+msgid "**Description:** This would be the content-address itself."
+msgstr ""
+
+#: source/protocols/json/content-address.md:77
+msgid ""
+"For all current methods, this is just a content address of the file system "
+"object of the store object, [as described in the store chapter](../../store/"
+"file-system-object/content-address.md), and not of the store object as a "
+"whole. In particular, the references of the store object are _not_ taken "
+"into account with this hash (and currently-supported methods)."
+msgstr ""
+
+#: source/protocols/json/content-address.md:80
+msgid "**Examples:**"
+msgstr ""
+
+#: source/protocols/json/content-address.md:83
+msgid "\"sha256-ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:87
+msgid ""
+"\"sha512-IEqPxt2oLwoM7XvrjgikFlfBbvRosiioJ5vjMacDwzWW/"
+"RXBOxsH+aodO+pXeJygMa2Fx6cd1wNU7GMSOMo0RQ==\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:90
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/content-address.md:92
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/content-address.md:92
+msgid ""
+"`^(blake3\\|md5\\|sha1\\|sha256\\|sha512)-[A-Za-z0-9+/]+=*$` [Test](https://"
+"regex101.com/?regex=%5E%28blake3%7Cmd5%7Csha1%7Csha256%7Csha512%29-%5BA-Za-"
+"z0-9%2B%2F%5D%2B%3D%2A%24&testString=%22sha256-"
+"ungWv48Bz%2BpBQUDeXa4iI7ADYaOWF3qctBD%2FYfIAFa0%3D%22)"
+msgstr ""
+
+#: source/protocols/json/content-address.md:97
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/content-address.md:99
+msgid ""
+"[Text](../../store/store-object/content-address.html#method-text) method"
+msgstr ""
+
+#: source/protocols/json/content-address.md:103
+#: source/protocols/json/content-address.md:113
+msgid "\"hash\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:103
+msgid "\"sha256-8OTC92xYkW7CWPJGhRvqCR0U1CR6L8PhhpRGGxgW4Ts=\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:104
+#: source/protocols/json/content-address.md:114
+msgid "\"method\""
+msgstr ""
+
+#: source/protocols/json/content-address.md:109
+msgid ""
+"[Nix Archive](../../store/store-object/content-address.html#method-nix-"
+"archive) method"
+msgstr ""
+
+#: source/protocols/json/content-address.md:113
+msgid "\"sha256-9vLqj0XYoFfJVmoz+ZR02i5camYE1zYSFlDicwxvsKM=\""
+msgstr ""

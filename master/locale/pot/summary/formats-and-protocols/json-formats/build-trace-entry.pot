@@ -1,0 +1,637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/build-trace-entry.md:1
+msgid "Build Trace Entry"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:3
+msgid "[1. Property `key`](#key)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:4
+msgid "[1.1. Property `drvPath`](#key_drvPath)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:5
+msgid "[1.2. Property `outputName`](#key_outputName)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:6
+msgid "[2. Property `value`](#value)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:7
+msgid "[2.1. Property `outPath`](#value_outPath)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:8
+msgid "[2.2. Property `signatures`](#value_signatures)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:9
+msgid "[2.2.1. Signature](#value_signatures_items)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:10
+msgid "[2.2.1.1. Property `keyName`](#value_signatures_items_keyName)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:11
+msgid "[2.2.1.2. Property `sig`](#value_signatures_items_sig)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:13
+msgid "**Title:** Build Trace Entry"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:17
+#: source/protocols/json/build-trace-entry.md:54
+#: source/protocols/json/build-trace-entry.md:73
+#: source/protocols/json/build-trace-entry.md:90
+#: source/protocols/json/build-trace-entry.md:101
+#: source/protocols/json/build-trace-entry.md:120
+#: source/protocols/json/build-trace-entry.md:137
+#: source/protocols/json/build-trace-entry.md:160
+#: source/protocols/json/build-trace-entry.md:192
+#: source/protocols/json/build-trace-entry.md:203
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:17
+#: source/protocols/json/build-trace-entry.md:54
+#: source/protocols/json/build-trace-entry.md:101
+#: source/protocols/json/build-trace-entry.md:160
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:18
+#: source/protocols/json/build-trace-entry.md:55
+#: source/protocols/json/build-trace-entry.md:74
+#: source/protocols/json/build-trace-entry.md:91
+#: source/protocols/json/build-trace-entry.md:102
+#: source/protocols/json/build-trace-entry.md:121
+#: source/protocols/json/build-trace-entry.md:138
+#: source/protocols/json/build-trace-entry.md:161
+#: source/protocols/json/build-trace-entry.md:193
+#: source/protocols/json/build-trace-entry.md:204
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:18
+#: source/protocols/json/build-trace-entry.md:45
+#: source/protocols/json/build-trace-entry.md:46
+#: source/protocols/json/build-trace-entry.md:64
+#: source/protocols/json/build-trace-entry.md:65
+#: source/protocols/json/build-trace-entry.md:111
+#: source/protocols/json/build-trace-entry.md:112
+#: source/protocols/json/build-trace-entry.md:161
+#: source/protocols/json/build-trace-entry.md:183
+#: source/protocols/json/build-trace-entry.md:184
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:19
+#: source/protocols/json/build-trace-entry.md:56
+#: source/protocols/json/build-trace-entry.md:103
+#: source/protocols/json/build-trace-entry.md:162
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:19
+#: source/protocols/json/build-trace-entry.md:56
+msgid "Not allowed"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:21
+msgid ""
+"**Description:** A record of a successful build outcome for a specific "
+"derivation output."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:23
+msgid ""
+"This schema describes the JSON representation of an [entry](../../store/"
+"build-trace.md#entry) in a [build trace](../../store/build-trace.md)."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:25
+#: source/protocols/json/build-trace-entry.md:169
+msgid "**Warning**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:27
+msgid ""
+"This JSON format is currently [**experimental**](../../development/"
+"experimental-features.md#xp-feature-ca-derivations) and subject to change."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:31
+#: source/protocols/json/build-trace-entry.md:175
+msgid "Version History"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:33
+msgid "Version 1: Original format"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:35
+msgid "Version 2:"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:36
+msgid "Remove `dependentRealisations`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:38
+msgid "Version 3:"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:39
+msgid ""
+"Use `drvPath` not `drvHash` to refer to derivation in a more conventional "
+"way."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:40
+msgid "Separate into `key` and `value`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:41
+msgid "Use 2nd version of signatures format (objects, not strings)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:43
+#: source/protocols/json/build-trace-entry.md:62
+#: source/protocols/json/build-trace-entry.md:109
+#: source/protocols/json/build-trace-entry.md:181
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:43
+#: source/protocols/json/build-trace-entry.md:62
+#: source/protocols/json/build-trace-entry.md:109
+#: source/protocols/json/build-trace-entry.md:181
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:43
+#: source/protocols/json/build-trace-entry.md:62
+#: source/protocols/json/build-trace-entry.md:109
+#: source/protocols/json/build-trace-entry.md:181
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:43
+#: source/protocols/json/build-trace-entry.md:62
+#: source/protocols/json/build-trace-entry.md:109
+#: source/protocols/json/build-trace-entry.md:181
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:45
+msgid "+ [key](#key)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:45
+#: source/protocols/json/build-trace-entry.md:46
+msgid "object"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:45
+msgid "Build Trace Key"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:46
+msgid "+ [value](#value)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:46
+msgid "Build Trace Value"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:48
+msgid "<a name=\"key\"></a>1. Property `key`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:50
+msgid "**Title:** Build Trace Key"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:55
+#: source/protocols/json/build-trace-entry.md:74
+#: source/protocols/json/build-trace-entry.md:91
+#: source/protocols/json/build-trace-entry.md:102
+#: source/protocols/json/build-trace-entry.md:121
+#: source/protocols/json/build-trace-entry.md:138
+#: source/protocols/json/build-trace-entry.md:193
+#: source/protocols/json/build-trace-entry.md:204
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:57
+#: source/protocols/json/build-trace-entry.md:75
+#: source/protocols/json/build-trace-entry.md:104
+#: source/protocols/json/build-trace-entry.md:122
+#: source/protocols/json/build-trace-entry.md:163
+msgid "**Defined in**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:57
+msgid "\\#/$defs/key"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:59
+msgid ""
+"**Description:** A [build trace entry](../../store/build-trace.md#entry) is "
+"a key-value pair. This is the \"key\" part, referring to a derivation and "
+"output."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:64
+msgid "+ [drvPath](#key_drvPath)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:64
+#: source/protocols/json/build-trace-entry.md:65
+#: source/protocols/json/build-trace-entry.md:111
+#: source/protocols/json/build-trace-entry.md:183
+#: source/protocols/json/build-trace-entry.md:184
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:64
+msgid "Derivation Path"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:65
+msgid "+ [outputName](#key_outputName)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:65
+msgid "Output Name"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:67
+msgid "<a name=\"key_drvPath\"></a>1.1. Property `drvPath`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:69
+msgid "**Title:** Derivation Path"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:73
+#: source/protocols/json/build-trace-entry.md:90
+#: source/protocols/json/build-trace-entry.md:120
+#: source/protocols/json/build-trace-entry.md:192
+#: source/protocols/json/build-trace-entry.md:203
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:75
+#: source/protocols/json/build-trace-entry.md:122
+msgid "store-path-v1.yaml"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:77
+msgid "**Description:** The store path of the derivation that was built."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:79
+#: source/protocols/json/build-trace-entry.md:126
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:81
+#: source/protocols/json/build-trace-entry.md:128
+msgid "**Min length**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:81
+#: source/protocols/json/build-trace-entry.md:128
+msgid "34"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:82
+#: source/protocols/json/build-trace-entry.md:129
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:82
+#: source/protocols/json/build-trace-entry.md:129
+msgid ""
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+$` [Test](https://regex101.com/?"
+"regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%24)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:84
+msgid "<a name=\"key_outputName\"></a>1.2. Property `outputName`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:86
+msgid "**Title:** Output Name"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:93
+msgid ""
+"**Description:** Name of the specific output (e.g., \"out\", \"dev\", "
+"\"doc\")"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:95
+msgid "<a name=\"value\"></a>2. Property `value`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:97
+msgid "**Title:** Build Trace Value"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:103
+#: source/protocols/json/build-trace-entry.md:162
+msgid "Any type allowed"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:104
+msgid "\\#/$defs/value"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:106
+msgid ""
+"**Description:** A [build trace entry](../../store/build-trace.md#entry) is "
+"a key-value pair. This is the \"value\" part, describing an output."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:111
+msgid "+ [outPath](#value_outPath)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:111
+msgid "Output Store Path"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:112
+msgid "+ [signatures](#value_signatures)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:112
+msgid "array"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:112
+msgid "Build Signatures"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:114
+msgid "<a name=\"value_outPath\"></a>2.1. Property `outPath`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:116
+msgid "**Title:** Output Store Path"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:124
+msgid ""
+"**Description:** The path to the store object that resulted from building "
+"this derivation for the given output name."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:131
+msgid "<a name=\"value_signatures\"></a>2.2. Property `signatures`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:133
+msgid "**Title:** Build Signatures"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:137
+msgid "`array`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:140
+msgid ""
+"**Description:** A set of cryptographic signatures attesting to the "
+"authenticity of this build trace entry."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:142
+msgid "Array restrictions"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:144
+msgid "**Min items**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:144
+#: source/protocols/json/build-trace-entry.md:145
+msgid "N/A"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:145
+msgid "**Max items**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:146
+msgid "**Items unicity**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:146
+#: source/protocols/json/build-trace-entry.md:147
+msgid "False"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:147
+msgid "**Additional items**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:148
+msgid "**Tuple validation**"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:148
+msgid "See below"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:150
+msgid "Each item of this array must be"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:150
+msgid "Description"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:152
+msgid "[Signature](#value_signatures_items)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:152
+msgid ""
+"A cryptographic signature along with the name of the key that produced "
+"it. ..."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:154
+msgid "<a name=\"value_signatures_items\"></a>2.2.1. Signature"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:156
+msgid "**Title:** Signature"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:163
+msgid "signature-v2.yaml"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:165
+msgid ""
+"**Description:** A cryptographic signature along with the name of the key "
+"that produced it."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:167
+msgid ""
+"This schema describes the JSON representation of signatures as used in "
+"various Nix JSON APIs."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:171
+msgid ""
+"This JSON format is currently [**experimental**](../../development/"
+"experimental-features.md#xp-feature-nix-command) and subject to change."
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:177
+msgid ""
+"Version 1: Colon-separated string in the format `<key-name>:<signature-in-"
+"Base64>`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:179
+msgid "Version 2: Structured object with `keyName` and `sig` fields"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:183
+msgid "+ [keyName](#value_signatures_items_keyName)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:183
+msgid "Key Name"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:184
+msgid "+ [sig](#value_signatures_items_sig)"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:184
+msgid "Signature Data"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:186
+msgid ""
+"<a name=\"value_signatures_items_keyName\"></a>2.2.1.1. Property `keyName`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:188
+msgid "**Title:** Key Name"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:195
+msgid "**Description:** The name of the key used to produce this signature"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:197
+msgid "<a name=\"value_signatures_items_sig\"></a>2.2.1.2. Property `sig`"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:199
+msgid "**Title:** Signature Data"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:206
+msgid "**Description:** The raw signature bytes, Base64-encoded"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:211
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:213
+msgid "Simple build trace entry"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:217
+#: source/protocols/json/build-trace-entry.md:233
+msgid "\"key\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:218
+#: source/protocols/json/build-trace-entry.md:234
+msgid "\"drvPath\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:218
+#: source/protocols/json/build-trace-entry.md:234
+msgid "\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-bar.drv\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:219
+#: source/protocols/json/build-trace-entry.md:235
+msgid "\"outputName\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:219
+#: source/protocols/json/build-trace-entry.md:235
+msgid "\"foo\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:221
+#: source/protocols/json/build-trace-entry.md:237
+msgid "\"value\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:222
+#: source/protocols/json/build-trace-entry.md:238
+msgid "\"outPath\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:222
+msgid "\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:223
+#: source/protocols/json/build-trace-entry.md:239
+msgid "\"signatures\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:229
+msgid "Build trace entry with signature"
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:238
+msgid "\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:241
+msgid "\"keyName\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:241
+msgid "\"asdf\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:242
+msgid "\"sig\""
+msgstr ""
+
+#: source/protocols/json/build-trace-entry.md:242
+msgid "\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\""
+msgstr ""

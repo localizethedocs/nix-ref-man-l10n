@@ -1,0 +1,183 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/signature.md:1
+msgid "Signature"
+msgstr ""
+
+#: source/protocols/json/signature.md:3
+msgid "[1. Property `keyName`](#keyName)"
+msgstr ""
+
+#: source/protocols/json/signature.md:4
+msgid "[2. Property `sig`](#sig)"
+msgstr ""
+
+#: source/protocols/json/signature.md:6
+msgid "**Title:** Signature"
+msgstr ""
+
+#: source/protocols/json/signature.md:10 source/protocols/json/signature.md:41
+#: source/protocols/json/signature.md:52
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/signature.md:10
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/signature.md:11 source/protocols/json/signature.md:42
+#: source/protocols/json/signature.md:53
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/signature.md:11 source/protocols/json/signature.md:32
+#: source/protocols/json/signature.md:33
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/signature.md:12
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/signature.md:12
+msgid "Any type allowed"
+msgstr ""
+
+#: source/protocols/json/signature.md:14
+msgid ""
+"**Description:** A cryptographic signature along with the name of the key "
+"that produced it."
+msgstr ""
+
+#: source/protocols/json/signature.md:16
+msgid ""
+"This schema describes the JSON representation of signatures as used in "
+"various Nix JSON APIs."
+msgstr ""
+
+#: source/protocols/json/signature.md:18
+msgid "**Warning**"
+msgstr ""
+
+#: source/protocols/json/signature.md:20
+msgid ""
+"This JSON format is currently [**experimental**](../../development/"
+"experimental-features.md#xp-feature-nix-command) and subject to change."
+msgstr ""
+
+#: source/protocols/json/signature.md:24
+msgid "Version History"
+msgstr ""
+
+#: source/protocols/json/signature.md:26
+msgid ""
+"Version 1: Colon-separated string in the format `<key-name>:<signature-in-"
+"Base64>`"
+msgstr ""
+
+#: source/protocols/json/signature.md:28
+msgid "Version 2: Structured object with `keyName` and `sig` fields"
+msgstr ""
+
+#: source/protocols/json/signature.md:30
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/signature.md:30
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/signature.md:30
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/signature.md:30
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/signature.md:32
+msgid "+ [keyName](#keyName)"
+msgstr ""
+
+#: source/protocols/json/signature.md:32 source/protocols/json/signature.md:33
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/signature.md:32
+msgid "Key Name"
+msgstr ""
+
+#: source/protocols/json/signature.md:33
+msgid "+ [sig](#sig)"
+msgstr ""
+
+#: source/protocols/json/signature.md:33
+msgid "Signature Data"
+msgstr ""
+
+#: source/protocols/json/signature.md:35
+msgid "<a name=\"keyName\"></a>1. Property `keyName`"
+msgstr ""
+
+#: source/protocols/json/signature.md:37
+msgid "**Title:** Key Name"
+msgstr ""
+
+#: source/protocols/json/signature.md:41 source/protocols/json/signature.md:52
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/signature.md:42 source/protocols/json/signature.md:53
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/signature.md:44
+msgid "**Description:** The name of the key used to produce this signature"
+msgstr ""
+
+#: source/protocols/json/signature.md:46
+msgid "<a name=\"sig\"></a>2. Property `sig`"
+msgstr ""
+
+#: source/protocols/json/signature.md:48
+msgid "**Title:** Signature Data"
+msgstr ""
+
+#: source/protocols/json/signature.md:55
+msgid "**Description:** The raw signature bytes, Base64-encoded"
+msgstr ""
+
+#: source/protocols/json/signature.md:60
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/signature.md:62
+msgid "Simple signature"
+msgstr ""
+
+#: source/protocols/json/signature.md:66
+msgid "\"keyName\""
+msgstr ""
+
+#: source/protocols/json/signature.md:66
+msgid "\"cache.nixos.org-1\""
+msgstr ""
+
+#: source/protocols/json/signature.md:67
+msgid "\"sig\""
+msgstr ""
+
+#: source/protocols/json/signature.md:67
+msgid "\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\""
+msgstr ""

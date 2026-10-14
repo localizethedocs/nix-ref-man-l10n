@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/variables.md:1
+msgid "Variables"
+msgstr ""
+
+#: source/language/variables.md:3
+msgid "A _variable_ is an [identifier](identifiers.md) used as an expression."
+msgstr ""
+
+#: source/language/variables.md:5
+msgid "**Syntax**"
+msgstr ""
+
+#: source/language/variables.md:7
+msgid "_expression_ → _identifier_"
+msgstr ""
+
+#: source/language/variables.md:9
+msgid ""
+"A variable must have the same name as a definition in the [scope](./scope."
+"md) that encloses it. The value of a variable is the value of the "
+"corresponding expression in the enclosing scope."
+msgstr ""
