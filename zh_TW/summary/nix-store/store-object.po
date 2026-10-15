@@ -1,0 +1,215 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/store-object.md:1
+msgid "Store Object"
+msgstr ""
+
+#: source/store/store-object.md:3
+msgid ""
+"A Nix store is a collection of _store objects_ with _references_ between "
+"them. A store object consists of"
+msgstr ""
+
+#: source/store/store-object.md:6
+msgid "A [file system object](./file-system-object.md) as data"
+msgstr ""
+
+#: source/store/store-object.md:8
+msgid "A set of [store paths](./store-path.md) as references to store objects"
+msgstr ""
+
+#: source/store/store-object.md:10
+msgid "References"
+msgstr ""
+
+#: source/store/store-object.md:12
+msgid ""
+"Store objects can refer to both other store objects and themselves. "
+"References from a store object to itself are called _self-references_."
+msgstr ""
+
+#: source/store/store-object.md:15
+msgid ""
+"Store objects and their references form a directed graph, where the store "
+"objects are the vertices, and the references are the edges. In particular, "
+"the edge corresponding to a reference is from the store object that contains "
+"the reference, and to the store object that the store path (which is the "
+"reference) refers to."
+msgstr ""
+
+#: source/store/store-object.md:18
+msgid ""
+"References other than a self-reference must not form a cycle. The graph of "
+"references excluding self-references thus forms a [directed acyclic graph]"
+"(../glossary.md#gloss-directed-acyclic-graph)."
+msgstr ""
+
+#: source/store/store-object.md:23
+msgid ""
+"We can take the [transitive closure](https://en.wikipedia.org/wiki/"
+"Transitive_closure) of the references graph, in which any pair of store "
+"objects have an edge if a _path_ of one or more references exists from the "
+"first to the second object. (A single reference always forms a path which is "
+"one reference long, but longer paths may connect objects which have no "
+"direct reference between them.) The _requisites_ of a store object are all "
+"store objects reachable by paths of references which start with given store "
+"object's references."
+msgstr ""
+
+#: source/store/store-object.md:29
+msgid ""
+"We can also take the [transpose graph](https://en.wikipedia.org/wiki/"
+"Transpose_graph) of the references graph, where we reverse the orientation "
+"of all edges. The _referrers_ of a store object are the store objects that "
+"reference it."
+msgstr ""
+
+#: source/store/store-object.md:34
+msgid ""
+"One can also combine both concepts: taking the transitive closure of the "
+"transposed references graph. The _referrers closure_ of a store object are "
+"the store objects that can reach the given store object via paths of "
+"references."
+msgstr ""
+
+#: source/store/store-object.md:37 source/store/store-object.md:57
+#: source/store/store-object.md:65
+msgid "**Note**"
+msgstr ""
+
+#: source/store/store-object.md:39
+msgid ""
+"Care must be taken to distinguish between the intrinsic and extrinsic "
+"properties of store objects. We can create graphs from the store objects in "
+"a store, but the contents of the store is not, in general fixed, and may "
+"instead change over time."
+msgstr ""
+
+#: source/store/store-object.md:42
+msgid ""
+"The references of a store object --- the set of store paths called the "
+"references --- is a field of a store object, and thus intrinsic by "
+"definition. Regardless of what store contains the store object in question, "
+"and what else that store may or may not contain, the references are the same."
+msgstr ""
+
+#: source/store/store-object.md:45
+msgid ""
+"The requisites of a store object are almost intrinsic --- some store paths "
+"do not precisely refer to a unique single store object. Exactly what store "
+"object is being referenced, and what in turn _its_ references are, depends "
+"on the store in question. Different stores may disagree on what a given "
+"store path refers to."
+msgstr ""
+
+#: source/store/store-object.md:49
+msgid ""
+"The referrers of a store object are completely extrinsic, and depends solely "
+"on the store which contains that store object, not the store object itself. "
+"Other store objects which refer to the store object in question may be added "
+"or removed from the store."
+msgstr ""
+
+#: source/store/store-object.md:52
+msgid "Immutability"
+msgstr ""
+
+#: source/store/store-object.md:54
+msgid ""
+"Store objects are [immutable](https://en.wikipedia.org/wiki/"
+"Immutable_object): Once created, they do not change nor can any store object "
+"they reference be changed."
+msgstr ""
+
+#: source/store/store-object.md:59
+msgid ""
+"Stores which support atomically deleting multiple store objects allow more "
+"flexibility while still upholding this property."
+msgstr ""
+
+#: source/store/store-object.md:61
+msgid "Closure property"
+msgstr ""
+
+#: source/store/store-object.md:63
+msgid ""
+"A store can only contain a store object if it also contains all the store "
+"objects it refers to."
+msgstr ""
+
+#: source/store/store-object.md:67
+msgid ""
+"The \"closure property\" isn't meant to prohibit, for example, [lazy loading]"
+"(https://en.wikipedia.org/wiki/Lazy_loading) of store objects. However, the "
+"\"closure property\" and immutability in conjunction imply that any such "
+"lazy loading ought to be deterministic."
+msgstr ""
+
+#: source/store/store-object.md:70
+msgid "Store Object Metadata"
+msgstr ""
+
+#: source/store/store-object.md:72
+msgid ""
+"[Store implementations](../store/types/index.md) currently associate more "
+"information than described above with a store object. Quite arguably some of "
+"this information doesn't belong here, because it conflates concerns."
+msgstr ""
+
+#: source/store/store-object.md:75
+msgid "Two such properties are sizes:"
+msgstr ""
+
+#: source/store/store-object.md:77
+msgid ""
+"\\[_NAR size_\\]{#nar-size}: The size in bytes of the store object's [file "
+"system object](./file-system-object.md), serialised as a [Nix Archive](./"
+"file-system-object/content-address.md#serial-nix-archive)."
+msgstr ""
+
+#: source/store/store-object.md:80
+msgid ""
+"This is an intrinsic property of the store object itself, and not of the way "
+"any particular store happens to store it. In particular, it is unrelated to "
+"the space the store object occupies on disk, which varies with compression, "
+"deduplication, and file system overheads."
+msgstr ""
+
+#: source/store/store-object.md:83
+msgid ""
+"\\[_closure NAR size_\\]{#closure-nar-size}: The sum of the [_NAR size_]"
+"(#nar-size) of every store object in the [closure](../glossary.md#gloss-"
+"closure) of the store object, including itself."
+msgstr ""
+
+#: source/store/store-object.md:86
+msgid ""
+"Unlike the _NAR size_, this is not quite an intrinsic property. As a "
+"consequence of the [requisites](#references) being slightly ambiguous as "
+"described above, the _closure NAR size_ is also slightly ambiguous; both "
+"depend on the store in question and the exact closure in that store."
+msgstr ""
+
+#: source/store/store-object.md:90
+msgid ""
+"Because of these issues, implementations currently typically compute this on "
+"the fly rather than storing it."
+msgstr ""
+
+#: source/store/store-object.md:92
+msgid ""
+"For details see the [store object info](../protocols/json/store-object-info."
+"md) JSON format or the [narinfo](../protocols/binary-cache/narinfo.md) "
+"format."
+msgstr ""

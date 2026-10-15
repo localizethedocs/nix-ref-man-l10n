@@ -1,0 +1,523 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/building.md:1
+msgid "Building Nix"
+msgstr ""
+
+#: source/development/building.md:3
+msgid ""
+"This section provides some notes on how to start hacking on Nix. To get the "
+"latest version of Nix from GitHub:"
+msgstr ""
+
+#: source/development/building.md:6 source/development/building.md:15
+#: source/development/building.md:33 source/development/building.md:89
+#: source/development/building.md:271
+msgid "**Note**"
+msgstr ""
+
+#: source/development/building.md:8
+msgid ""
+"When checking out the repo on Windows, make sure you have the git setting "
+"`core.symlinks` enabled, before cloning, as there are symlinks in the repo."
+msgstr ""
+
+#: source/development/building.md:10
+msgid ""
+"```console\n"
+"$ git clone https://github.com/NixOS/nix.git\n"
+"$ cd nix\n"
+"```"
+msgstr ""
+
+#: source/development/building.md:17
+msgid ""
+"The following instructions assume you already have some version of Nix "
+"installed locally, so that you can use it to set up the development "
+"environment. If you don't have it installed, follow the [installation "
+"instructions](../installation/index.md)."
+msgstr ""
+
+#: source/development/building.md:21 source/development/building.md:75
+msgid ""
+"To build all dependencies and start a shell in which all environment "
+"variables are set up so that those dependencies can be found:"
+msgstr ""
+
+#: source/development/building.md:27 source/development/building.md:83
+msgid ""
+"To get a shell with one of the other [supported compilation environments]"
+"(#compilation-environments):"
+msgstr ""
+
+#: source/development/building.md:35
+msgid ""
+"You can use `native-ccacheStdenv` to drastically improve rebuild time. By "
+"default, [ccache](https://ccache.dev) keeps artifacts in `~/.cache/ccache/`."
+msgstr ""
+
+#: source/development/building.md:38 source/development/building.md:94
+msgid "To build Nix itself in this shell:"
+msgstr ""
+
+#: source/development/building.md:40
+msgid ""
+"```console\n"
+"[nix-shell]$ out=\"$(pwd)/outputs/out\" dev=$out debug=$out mesonFlags+=\" --"
+"prefix=${out}\"\n"
+"[nix-shell]$ dontAddPrefix=1 configurePhase\n"
+"[nix-shell]$ buildPhase\n"
+"```"
+msgstr ""
+
+#: source/development/building.md:46 source/development/building.md:101
+msgid "To test it:"
+msgstr ""
+
+#: source/development/building.md:52 source/development/building.md:107
+msgid "To install it in `$(pwd)/outputs`:"
+msgstr ""
+
+#: source/development/building.md:60 source/development/building.md:118
+msgid ""
+"To build a release version of Nix for the current operating system and CPU "
+"architecture:"
+msgstr ""
+
+#: source/development/building.md:66 source/development/building.md:124
+msgid ""
+"You can also build Nix for one of the [supported platforms](#platforms)."
+msgstr ""
+
+#: source/development/building.md:68
+msgid "Building Nix with flakes"
+msgstr ""
+
+#: source/development/building.md:70
+msgid ""
+"This section assumes you are using Nix with the [`flakes`](../development/"
+"experimental-features.md#xp-feature-flakes) and [`nix-command`](../"
+"development/experimental-features.md#xp-feature-nix-command) experimental "
+"features enabled."
+msgstr ""
+
+#: source/development/building.md:81
+msgid ""
+"This shell also adds `./outputs/bin/nix` to your `$PATH` so you can run "
+"`nix` immediately after building it."
+msgstr ""
+
+#: source/development/building.md:91
+msgid ""
+"Use `ccacheStdenv` to drastically improve rebuild time. By default, [ccache]"
+"(https://ccache.dev) keeps artifacts in `~/.cache/ccache/`."
+msgstr ""
+
+#: source/development/building.md:115
+msgid ""
+"For more information on running and filtering tests, see [`testing.md`](./"
+"testing.md)."
+msgstr ""
+
+#: source/development/building.md:126
+msgid "Platforms"
+msgstr ""
+
+#: source/development/building.md:128
+msgid ""
+"Nix can be built for various platforms, as specified in [`flake.nix`]"
+"(https://github.com/nixos/nix/blob/master/flake.nix):"
+msgstr ""
+
+#: source/development/building.md:132
+msgid "`x86_64-linux`"
+msgstr ""
+
+#: source/development/building.md:133
+msgid "`i686-linux`"
+msgstr ""
+
+#: source/development/building.md:134
+msgid "`aarch64-linux`"
+msgstr ""
+
+#: source/development/building.md:135
+msgid "`aarch64-darwin`"
+msgstr ""
+
+#: source/development/building.md:136 source/development/building.md:164
+msgid "`armv6l-linux`"
+msgstr ""
+
+#: source/development/building.md:137 source/development/building.md:165
+msgid "`armv7l-linux`"
+msgstr ""
+
+#: source/development/building.md:138 source/development/building.md:166
+msgid "`powerpc64-linux` (ELFv1 ABI)"
+msgstr ""
+
+#: source/development/building.md:139 source/development/building.md:167
+msgid "`powerpc64le-linux`"
+msgstr ""
+
+#: source/development/building.md:140
+msgid "`riscv64-linux`"
+msgstr ""
+
+#: source/development/building.md:142
+msgid ""
+"In order to build Nix for a different platform than the one you're currently "
+"on, you need a way for your current Nix installation to build code for that "
+"platform. Common solutions include \\[remote build machines\\] and [binary "
+"format emulation](https://nixos.org/manual/nixos/stable/options.html#opt-"
+"boot.binfmt.emulatedSystems) (only supported on NixOS)."
+msgstr ""
+
+#: source/development/building.md:150
+msgid ""
+"Given such a setup, executing the build only requires selecting the "
+"respective attribute. For example, to compile for `aarch64-linux`:"
+msgstr ""
+
+#: source/development/building.md:157
+msgid ""
+"or for Nix with the [`flakes`](../development/experimental-features.md#xp-"
+"feature-flakes) and [`nix-command`](../development/experimental-features."
+"md#xp-feature-nix-command) experimental features enabled:"
+msgstr ""
+
+#: source/development/building.md:163
+msgid "Cross-compiled builds are available for:"
+msgstr ""
+
+#: source/development/building.md:168
+msgid ""
+"`riscv64-linux` Add more [system types](#system-type) to `crossSystems` in "
+"`flake.nix` to bootstrap Nix on unsupported platforms."
+msgstr ""
+
+#: source/development/building.md:171
+msgid "Building for multiple platforms at once"
+msgstr ""
+
+#: source/development/building.md:173
+msgid ""
+"It is useful to perform multiple cross and native builds on the same source "
+"tree, for example to ensure that better support for one platform doesn't "
+"break the build for another. Meson thankfully makes this very easy by "
+"confining all build products to the build directory --- one simple shares "
+"the source directory between multiple build directories, each of which "
+"contains the build for Nix to a different platform."
+msgstr ""
+
+#: source/development/building.md:177
+msgid "Here's how to do that:"
+msgstr ""
+
+#: source/development/building.md:179
+msgid "Instruct Nixpkgs's infra where we want Meson to put its build directory"
+msgstr ""
+
+#: source/development/building.md:182
+msgid "build-my-variant-name"
+msgstr ""
+
+#: source/development/building.md:185
+msgid "Configure as usual"
+msgstr ""
+
+#: source/development/building.md:191
+msgid "Build as usual"
+msgstr ""
+
+#: source/development/building.md:197
+msgid "System type"
+msgstr ""
+
+#: source/development/building.md:199
+msgid ""
+"Nix uses a string with the following format to identify the _system type_ or "
+"_platform_ it runs on:"
+msgstr ""
+
+#: source/development/building.md:205
+msgid ""
+"It is set when Nix is compiled for the given system, and based on the output "
+"of Meson's [`host_machine` information](https://mesonbuild.com/Reference-"
+"manual_builtin_host_machine.html)."
+msgstr ""
+
+#: source/development/building.md:207
+msgid ""
+"For historic reasons and backward-compatibility, some CPU and OS identifiers "
+"are translated as follows:"
+msgstr ""
+
+#: source/development/building.md:209
+msgid "`host_machine.cpu_family()`"
+msgstr ""
+
+#: source/development/building.md:209
+msgid "`host_machine.endian()`"
+msgstr ""
+
+#: source/development/building.md:209
+msgid "Nix"
+msgstr ""
+
+#: source/development/building.md:211
+msgid "`x86`"
+msgstr ""
+
+#: source/development/building.md:211
+msgid "`i686`"
+msgstr ""
+
+#: source/development/building.md:212
+msgid "`arm`"
+msgstr ""
+
+#: source/development/building.md:212
+msgid "`host_machine.cpu()`"
+msgstr ""
+
+#: source/development/building.md:213 source/development/building.md:215
+msgid "`ppc`"
+msgstr ""
+
+#: source/development/building.md:213 source/development/building.md:214
+#: source/development/building.md:217 source/development/building.md:218
+msgid "`little`"
+msgstr ""
+
+#: source/development/building.md:213
+msgid "`powerpcle`"
+msgstr ""
+
+#: source/development/building.md:214 source/development/building.md:216
+msgid "`ppc64`"
+msgstr ""
+
+#: source/development/building.md:214
+msgid "`powerpc64le`"
+msgstr ""
+
+#: source/development/building.md:215 source/development/building.md:216
+#: source/development/building.md:219 source/development/building.md:220
+msgid "`big`"
+msgstr ""
+
+#: source/development/building.md:215
+msgid "`powerpc`"
+msgstr ""
+
+#: source/development/building.md:216
+msgid "`powerpc64`"
+msgstr ""
+
+#: source/development/building.md:217 source/development/building.md:219
+msgid "`mips`"
+msgstr ""
+
+#: source/development/building.md:217
+msgid "`mipsel`"
+msgstr ""
+
+#: source/development/building.md:218 source/development/building.md:220
+msgid "`mips64`"
+msgstr ""
+
+#: source/development/building.md:218
+msgid "`mips64el`"
+msgstr ""
+
+#: source/development/building.md:223
+msgid ""
+"When cross-compiling Nix with Meson for local development, you need to "
+"specify a [cross-file](https://mesonbuild.com/Cross-compilation.html) using "
+"the `--cross-file` option. Cross-files define the target architecture and "
+"toolchain. When cross-compiling Nix with Nix, Nixpkgs takes care of this for "
+"you."
+msgstr ""
+
+#: source/development/building.md:225
+msgid "In the nix flake we also have some cross-compilation targets available:"
+msgstr ""
+
+#: source/development/building.md:235
+msgid "Compilation environments"
+msgstr ""
+
+#: source/development/building.md:237
+msgid "Nix can be compiled using multiple environments:"
+msgstr ""
+
+#: source/development/building.md:239
+msgid "`stdenv`: default;"
+msgstr ""
+
+#: source/development/building.md:240
+msgid "`gccStdenv`: force the use of `gcc` compiler;"
+msgstr ""
+
+#: source/development/building.md:241
+msgid "`clangStdenv`: force the use of `clang` compiler;"
+msgstr ""
+
+#: source/development/building.md:242
+msgid ""
+"`ccacheStdenv`: enable \\[ccache\\], a compiler cache to speed up "
+"compilation."
+msgstr ""
+
+#: source/development/building.md:244
+msgid "To build with one of those environments, you can use"
+msgstr ""
+
+#: source/development/building.md:250
+msgid "for flake-enabled Nix, or"
+msgstr ""
+
+#: source/development/building.md:256
+msgid "for classic Nix."
+msgstr ""
+
+#: source/development/building.md:258
+msgid ""
+"You can use any of the other supported environments in place of `nix-cli-"
+"ccacheStdenv`."
+msgstr ""
+
+#: source/development/building.md:260
+msgid "Editor integration"
+msgstr ""
+
+#: source/development/building.md:262
+msgid ""
+"The `clangd` LSP server is installed by default on the `clang`\\-based "
+"`devShell`s. See [supported compilation environments](#compilation-"
+"environments) and instructions how to set up a shell [with flakes](#building-"
+"nix-with-flakes) or in [classic Nix](#building-nix)."
+msgstr ""
+
+#: source/development/building.md:265
+msgid ""
+"To use the LSP with your editor, you will want a `compile_commands.json` "
+"file telling `clangd` how we are compiling the code. Meson's configure "
+"always produces this inside the build directory."
+msgstr ""
+
+#: source/development/building.md:268
+msgid ""
+"Configure your editor to use the `clangd` from the `.#native-clangStdenv` "
+"shell. You can do that either by running it inside the development shell, or "
+"by using [nix-direnv](https://github.com/nix-community/nix-direnv) and [the "
+"appropriate editor plugin](https://github.com/direnv/direnv/wiki#editor-"
+"integration)."
+msgstr ""
+
+#: source/development/building.md:273
+msgid ""
+"For some editors (e.g. Visual Studio Code), you may need to install a "
+"[special extension](https://open-vsx.org/extension/llvm-vs-code-extensions/"
+"vscode-clangd) for the editor to interact with `clangd`. Some other editors "
+"(e.g. Emacs, Vim) need a plugin to support LSP servers in general (e.g. [lsp-"
+"mode](https://github.com/emacs-lsp/lsp-mode) for Emacs and [vim-lsp](https://"
+"github.com/prabirshrestha/vim-lsp) for vim). Editor-specific setup is "
+"typically opinionated, so we will not cover it here in more detail."
+msgstr ""
+
+#: source/development/building.md:277
+msgid "Formatting and pre-commit hooks"
+msgstr ""
+
+#: source/development/building.md:279
+msgid "You may run the formatters as a one-off using:"
+msgstr ""
+
+#: source/development/building.md:285
+msgid "Pre-commit hooks"
+msgstr ""
+
+#: source/development/building.md:287
+msgid ""
+"If you'd like to run the formatters before every commit, install the hooks:"
+msgstr ""
+
+#: source/development/building.md:293
+msgid ""
+"This installs [pre-commit](https://pre-commit.com) using [cachix/git-hooks."
+"nix](https://github.com/cachix/git-hooks.nix)."
+msgstr ""
+
+#: source/development/building.md:295
+msgid ""
+"When making a commit, pay attention to the console output. If it fails, run "
+"`git add --patch` to approve the suggestions _and commit again_."
+msgstr ""
+
+#: source/development/building.md:298
+msgid "To refresh pre-commit hook's config file, do the following:"
+msgstr ""
+
+#: source/development/building.md:299
+msgid "Exit the development shell and start it again by running `nix develop`."
+msgstr ""
+
+#: source/development/building.md:300
+msgid ""
+"If you also use the pre-commit hook, also run `pre-commit-hooks-install` "
+"again."
+msgstr ""
+
+#: source/development/building.md:302
+msgid "VSCode"
+msgstr ""
+
+#: source/development/building.md:304
+msgid ""
+"Insert the following json into your `.vscode/settings.json` file to "
+"configure `nixfmt`. This will be picked up by the _Format Document_ command, "
+"`\"editor.formatOnSave\"`, etc."
+msgstr ""
+
+#: source/development/building.md:309
+msgid "\"nix.formatterPath\""
+msgstr ""
+
+#: source/development/building.md:309 source/development/building.md:314
+#: source/development/building.md:321
+msgid "\"nixfmt\""
+msgstr ""
+
+#: source/development/building.md:310
+msgid "\"nix.serverSettings\""
+msgstr ""
+
+#: source/development/building.md:311
+msgid "\"nixd\""
+msgstr ""
+
+#: source/development/building.md:312 source/development/building.md:319
+msgid "\"formatting\""
+msgstr ""
+
+#: source/development/building.md:313 source/development/building.md:320
+msgid "\"command\""
+msgstr ""
+
+#: source/development/building.md:318
+msgid "\"nil\""
+msgstr ""

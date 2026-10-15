@@ -1,0 +1,3676 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/builtins.md:1
+msgid "Built-ins"
+msgstr ""
+
+#: source/language/builtins.md:3
+msgid ""
+"This section lists the values and functions built into the Nix language "
+"evaluator. All built-ins are available through the global [`builtins`]"
+"(#builtins-builtins) constant."
+msgstr ""
+
+#: source/language/builtins.md:6
+msgid "Some built-ins are also exposed directly in the global scope:"
+msgstr ""
+
+#: source/language/builtins.md:8
+msgid "[`derivation`](#builtins-derivation)"
+msgstr ""
+
+#: source/language/builtins.md:9
+msgid "`derivationStrict`"
+msgstr ""
+
+#: source/language/builtins.md:10
+msgid "[`abort`](#builtins-abort)"
+msgstr ""
+
+#: source/language/builtins.md:11
+msgid "[`baseNameOf`](#builtins-baseNameOf)"
+msgstr ""
+
+#: source/language/builtins.md:12
+msgid "[`break`](#builtins-break)"
+msgstr ""
+
+#: source/language/builtins.md:13
+msgid "[`dirOf`](#builtins-dirOf)"
+msgstr ""
+
+#: source/language/builtins.md:14
+msgid "[`false`](#builtins-false)"
+msgstr ""
+
+#: source/language/builtins.md:15
+msgid "[`fetchGit`](#builtins-fetchGit)"
+msgstr ""
+
+#: source/language/builtins.md:16
+msgid "`fetchMercurial`"
+msgstr ""
+
+#: source/language/builtins.md:17
+msgid "[`fetchTarball`](#builtins-fetchTarball)"
+msgstr ""
+
+#: source/language/builtins.md:18
+msgid "[`fetchTree`](#builtins-fetchTree)"
+msgstr ""
+
+#: source/language/builtins.md:19
+msgid "[`fromTOML`](#builtins-fromTOML)"
+msgstr ""
+
+#: source/language/builtins.md:20
+msgid "[`import`](#builtins-import)"
+msgstr ""
+
+#: source/language/builtins.md:21
+msgid "[`isNull`](#builtins-isNull)"
+msgstr ""
+
+#: source/language/builtins.md:22
+msgid "[`map`](#builtins-map)"
+msgstr ""
+
+#: source/language/builtins.md:23
+msgid "[`null`](#builtins-null)"
+msgstr ""
+
+#: source/language/builtins.md:24
+msgid "[`placeholder`](#builtins-placeholder)"
+msgstr ""
+
+#: source/language/builtins.md:25
+msgid "[`removeAttrs`](#builtins-removeAttrs)"
+msgstr ""
+
+#: source/language/builtins.md:26
+msgid "[`scopedImport`](#builtins-scopedImport)"
+msgstr ""
+
+#: source/language/builtins.md:27
+msgid "[`throw`](#builtins-throw)"
+msgstr ""
+
+#: source/language/builtins.md:28
+msgid "[`toString`](#builtins-toString)"
+msgstr ""
+
+#: source/language/builtins.md:29
+msgid "[`true`](#builtins-true)"
+msgstr ""
+
+#: source/language/builtins.md:33
+msgid "**Tip**"
+msgstr ""
+
+#: source/language/builtins.md:35
+msgid "**Should I use `builtins` or `lib`?**"
+msgstr ""
+
+#: source/language/builtins.md:37
+msgid ""
+"The built-ins are designed to be a stable interface that expressions can "
+"depend on over time, so that, for instance, old Nixpkgs versions continue to "
+"evaluate reproducibly."
+msgstr ""
+
+#: source/language/builtins.md:40
+msgid ""
+"On the flip side, this means they have accumulated a few quirks that Nix is "
+"unable to change, but a library like Nixpkgs `lib` _can_ improve, replace or "
+"deprecate those behaviors, because its sources are pinned where "
+"reproducibility matters."
+msgstr ""
+
+#: source/language/builtins.md:44
+msgid ""
+"So while it is not wrong to use `builtins` directly, for instance in small "
+"Nixpkgs-independent projects, you will have a better experience using a "
+"library like `lib` as your primary source of functions, as it hides "
+"problematic functions, fixes up others, and helps you improve your code by "
+"means of future deprecations, which are still sufficiently rare."
+msgstr ""
+
+#: source/language/builtins.md:59
+msgid "Abort Nix expression evaluation and print the error message _s_."
+msgstr ""
+
+#: source/language/builtins.md:68
+msgid "Return the sum of the numbers _e1_ and _e2_."
+msgstr ""
+
+#: source/language/builtins.md:77
+msgid ""
+"Create a copy of the given string where a single [constant](../language/"
+"string-context.md#string-context-constant) string context element is turned "
+"into a [derivation deep](../language/string-context.md#string-context-"
+"element-derivation-deep) string context element."
+msgstr ""
+
+#: source/language/builtins.md:83
+msgid ""
+"The store path that is the constant string context element should point to a "
+"valid derivation, and end in `.drv`."
+msgstr ""
+
+#: source/language/builtins.md:85
+msgid ""
+"The original string context element must not be empty or have multiple "
+"elements, and it must not have any other type of element other than a "
+"constant or derivation deep element. The latter is supported so this "
+"function is idempotent."
+msgstr ""
+
+#: source/language/builtins.md:88
+msgid ""
+"This is the opposite of [`builtins.unsafeDiscardOutputDependency`](#builtins-"
+"unsafeDiscardOutputDependency)."
+msgstr ""
+
+#: source/language/builtins.md:97
+msgid ""
+"Evaluate _context_, which can be coerced to a string, and append it to any "
+"error or stack traces displayed while evaluating _value_. Then return "
+"_value_."
+msgstr ""
+
+#: source/language/builtins.md:101
+msgid ""
+"This function is useful for providing helpful context in complex Nix "
+"expressions when the evaluation of _value_ fails. The additional context is "
+"applied when evaluating _value_ itself fails, not when attributes or "
+"elements of _value_ are evaluated."
+msgstr ""
+
+#: source/language/builtins.md:106
+msgid ""
+"For example, the module system from nixpkgs uses this to show the relevant "
+"information about the options that were evaluating when an error occurs."
+msgstr ""
+
+#: source/language/builtins.md:110
+msgid ""
+"```nix-repl\n"
+"nix-repl> addErrorContext \"while evaluating foo\" (throw \"bar\")\n"
+"error:\n"
+"       … while evaluating foo\n"
+"\n"
+"       … while calling the 'throw' builtin\n"
+"         at «string»:1:56:\n"
+"            1| with builtins; addErrorContext \"while evaluating "
+"foo\" (throw \"bar\")\n"
+"             |                                                        ^\n"
+"\n"
+"       error: bar\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:130
+msgid ""
+"Return `true` if the function _pred_ returns `true` for all elements of "
+"_list_, and `false` otherwise. Short-circuits and does not evaluate elements "
+"that appear later in the list if `pred` evaluates to `false`."
+msgstr ""
+
+#: source/language/builtins.md:141
+msgid ""
+"Return `true` if the function _pred_ returns `true` for at least one element "
+"of _list_, and `false` otherwise. Short-circuits and does not evaluate "
+"elements that appear later in the list if `pred` evaluates to `true`."
+msgstr ""
+
+#: source/language/builtins.md:152
+msgid ""
+"Return the names of the attributes in the set _set_ in an alphabetically "
+"sorted list. For instance, `builtins.attrNames { y = 1; x = \"foo\"; }` "
+"evaluates to `[ \"x\" \"y\" ]`."
+msgstr ""
+
+#: source/language/builtins.md:156 source/language/builtins.md:168
+msgid ""
+"Has `O(n log n)` time complexity, where `n` is number of attributes in the "
+"_set_."
+msgstr ""
+
+#: source/language/builtins.md:165
+msgid ""
+"Return the values of the attributes in the set _set_ in the order "
+"corresponding to the sorted attribute names."
+msgstr ""
+
+#: source/language/builtins.md:177
+msgid ""
+"Return the _base name_ of either a [path value](../language/types.md#type-"
+"path) _x_ or a string _x_, depending on which type is passed, and according "
+"to the following rules."
+msgstr ""
+
+#: source/language/builtins.md:179
+msgid ""
+"For a path value, the _base name_ is considered to be the part of the path "
+"after the last directory separator, including any file extensions. This is "
+"the simple case, as path values don't have trailing slashes."
+msgstr ""
+
+#: source/language/builtins.md:182
+msgid ""
+"When the argument is a string, a more involved logic applies. If the string "
+"ends with a `/`, only this one final slash is removed."
+msgstr ""
+
+#: source/language/builtins.md:184
+msgid ""
+"After this, the _base name_ is returned as previously described, assuming `/"
+"` as the directory separator. (Note that evaluation must be platform "
+"independent.)"
+msgstr ""
+
+#: source/language/builtins.md:186
+msgid ""
+"This is somewhat similar to the [GNU `basename`](https://www.gnu.org/"
+"software/coreutils/manual/html_node/basename-invocation.html) command, but "
+"GNU `basename` strips any number of trailing slashes."
+msgstr ""
+
+#: source/language/builtins.md:195
+msgid "Return the bitwise AND of the integers _e1_ and _e2_."
+msgstr ""
+
+#: source/language/builtins.md:204
+msgid "Return the bitwise OR of the integers _e1_ and _e2_."
+msgstr ""
+
+#: source/language/builtins.md:213
+msgid "Return the bitwise XOR of the integers _e1_ and _e2_."
+msgstr ""
+
+#: source/language/builtins.md:222
+msgid ""
+"In debug mode (enabled using `--debugger`), pause Nix expression evaluation "
+"and enter the REPL. Otherwise, return the argument `v`."
+msgstr ""
+
+#: source/language/builtins.md:232
+msgid "Contains all the built-in functions and values."
+msgstr ""
+
+#: source/language/builtins.md:234
+msgid ""
+"Since built-in functions were added over time, [testing for attributes](./"
+"operators.md#has-attribute) in `builtins` can be used for graceful fallback "
+"on older Nix installations:"
+msgstr ""
+
+#: source/language/builtins.md:248
+msgid ""
+"Collect each attribute named _attr_ from a list of attribute sets.  Attrsets "
+"that don't contain the named attribute are ignored. For example,"
+msgstr ""
+
+#: source/language/builtins.md:252
+msgid ""
+"```nix\n"
+"builtins.catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:256
+msgid "evaluates to `[1 2]`."
+msgstr ""
+
+#: source/language/builtins.md:258
+msgid "Has `O(n)` time complexity, where `n` is the size of the _list_."
+msgstr ""
+
+#: source/language/builtins.md:267
+msgid ""
+"Rounds and converts _number_ to the next higher NixInt value if possible, i."
+"e. `ceil *number* >= *number*` and `ceil *number* - *number* < 1`."
+msgstr ""
+
+#: source/language/builtins.md:270
+msgid ""
+"An evaluation error is thrown, if there exists no such NixInt value `ceil "
+"*number*`. Due to bugs in previous Nix versions an evaluation error might be "
+"thrown, if the datatype of _number_ is a NixInt and if `*number* < "
+"-9007199254740992` or `*number* > 9007199254740992`."
+msgstr ""
+
+#: source/language/builtins.md:274
+msgid ""
+"If the datatype of _number_ is neither a NixInt (signed 64-bit integer) nor "
+"a NixFloat (IEEE-754 double-precision floating-point number), an evaluation "
+"error is thrown."
+msgstr ""
+
+#: source/language/builtins.md:284
+msgid ""
+"Compare two strings representing versions and return `-1` if version _s1_ is "
+"older than version _s2_, `0` if they are the same, and `1` if _s1_ is newer "
+"than _s2_. The version comparison algorithm is the same as the one used by "
+"[`nix-env -u`](../command-ref/nix-env/upgrade.md)."
+msgstr ""
+
+#: source/language/builtins.md:297
+msgid "Concatenate a list of lists into a single list."
+msgstr ""
+
+#: source/language/builtins.md:306
+msgid ""
+"This function is equivalent to `builtins.concatLists (map f list)` but is "
+"more efficient."
+msgstr ""
+
+#: source/language/builtins.md:316
+msgid ""
+"Concatenate a list of strings with a separator between each element, e.g. "
+"`concatStringsSep \"/\" [\"usr\" \"local\" \"bin\"] == \"usr/local/bin\"`."
+msgstr ""
+
+#: source/language/builtins.md:327
+msgid ""
+"Return the specified representation of a hash string, based on the "
+"attributes presented in _args_:"
+msgstr ""
+
+#: source/language/builtins.md:329
+msgid "`hash`"
+msgstr ""
+
+#: source/language/builtins.md:331
+msgid "The hash to be converted. The hash format is detected automatically."
+msgstr ""
+
+#: source/language/builtins.md:334
+msgid "`hashAlgo`"
+msgstr ""
+
+#: source/language/builtins.md:336
+msgid "The algorithm used to create the hash. Must be one of"
+msgstr ""
+
+#: source/language/builtins.md:337
+msgid "`\"md5\"`"
+msgstr ""
+
+#: source/language/builtins.md:338
+msgid "`\"sha1\"`"
+msgstr ""
+
+#: source/language/builtins.md:339
+msgid "`\"sha256\"`"
+msgstr ""
+
+#: source/language/builtins.md:340
+msgid "`\"sha512\"`"
+msgstr ""
+
+#: source/language/builtins.md:342
+msgid ""
+"The attribute may be omitted when `hash` is an [SRI hash](https://www.w3.org/"
+"TR/SRI/#the-integrity-attribute) or when the hash is prefixed with the hash "
+"algorithm name followed by a colon. That `<hashAlgo>:<hashBody>` syntax is "
+"supported for backwards compatibility with existing tooling."
+msgstr ""
+
+#: source/language/builtins.md:345
+msgid "`toHashFormat`"
+msgstr ""
+
+#: source/language/builtins.md:347
+msgid "The format of the resulting hash. Must be one of"
+msgstr ""
+
+#: source/language/builtins.md:348
+msgid "`\"base16\"`"
+msgstr ""
+
+#: source/language/builtins.md:349
+msgid "`\"nix32\"`"
+msgstr ""
+
+#: source/language/builtins.md:350
+msgid "`\"base32\"` (deprecated alias for `\"nix32\"`)"
+msgstr ""
+
+#: source/language/builtins.md:351
+msgid "`\"base64\"`"
+msgstr ""
+
+#: source/language/builtins.md:352
+msgid "`\"sri\"`"
+msgstr ""
+
+#: source/language/builtins.md:354
+msgid ""
+"The result hash is the _toHashFormat_ representation of the hash _hash_."
+msgstr ""
+
+#: source/language/builtins.md:356 source/language/builtins.md:370
+#: source/language/builtins.md:383 source/language/builtins.md:958
+#: source/language/builtins.md:980 source/language/builtins.md:1091
+#: source/language/builtins.md:1219 source/language/builtins.md:1240
+#: source/language/builtins.md:1266 source/language/builtins.md:1427
+#: source/language/builtins.md:1452 source/language/builtins.md:1471
+#: source/language/builtins.md:1696 source/language/builtins.md:1852
+#: source/language/builtins.md:1917 source/language/builtins.md:1936
+#: source/language/builtins.md:2226 source/language/builtins.md:2562
+msgid "**Example**"
+msgstr ""
+
+#: source/language/builtins.md:358
+msgid "Convert a SHA256 hash in Base16 to SRI:"
+msgstr ""
+
+#: source/language/builtins.md:360
+msgid ""
+"```nix\n"
+"builtins.convertHash {\n"
+"  hash = "
+"\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\n"
+"  toHashFormat = \"sri\";\n"
+"  hashAlgo = \"sha256\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:368 source/language/builtins.md:394
+msgid ""
+"    \"sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\"\n"
+"    "
+msgstr ""
+
+#: source/language/builtins.md:372
+msgid "Convert a SHA256 hash in SRI to Base16:"
+msgstr ""
+
+#: source/language/builtins.md:374
+msgid ""
+"```nix\n"
+"builtins.convertHash {\n"
+"  hash = \"sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\";\n"
+"  toHashFormat = \"base16\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:381
+msgid ""
+"    \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"\n"
+"    "
+msgstr ""
+
+#: source/language/builtins.md:385
+msgid "Convert a hash in the form `<hashAlgo>:<hashBody>` in Base16 to SRI:"
+msgstr ""
+
+#: source/language/builtins.md:387
+msgid ""
+"```nix\n"
+"builtins.convertHash {\n"
+"  hash = \"sha256:"
+"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\n"
+"  toHashFormat = \"sri\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:403
+msgid ""
+"The value of the [`eval-system`](../command-ref/conf-file.md#conf-eval-"
+"system) or else [`system`](../command-ref/conf-file.md#conf-system) "
+"configuration option."
+msgstr ""
+
+#: source/language/builtins.md:409
+msgid ""
+"It can be used to set the `system` attribute for [`builtins.derivation`](../"
+"language/derivations.md) such that the resulting derivation can be built on "
+"the same system that evaluates the Nix expression:"
+msgstr ""
+
+#: source/language/builtins.md:418
+msgid ""
+"It can be overridden in order to create derivations for different system "
+"than the current one:"
+msgstr ""
+
+#: source/language/builtins.md:420
+msgid ""
+"```console\n"
+"$ nix-instantiate --system \"mips64-linux\" --eval --expr 'builtins."
+"currentSystem'\n"
+"\"mips64-linux\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:425 source/language/builtins.md:454
+#: source/language/builtins.md:538 source/language/builtins.md:763
+#: source/language/builtins.md:882 source/language/builtins.md:918
+#: source/language/builtins.md:1100 source/language/builtins.md:1501
+#: source/language/builtins.md:1778 source/language/builtins.md:1909
+#: source/language/builtins.md:2292 source/language/builtins.md:2345
+#: source/language/builtins.md:2548 source/language/builtins.md:2552
+msgid "**Note**"
+msgstr ""
+
+#: source/language/builtins.md:427 source/language/builtins.md:456
+#: source/language/builtins.md:2737
+msgid ""
+"Not available in [pure evaluation mode](../command-ref/conf-file.md#conf-"
+"pure-eval)."
+msgstr ""
+
+#: source/language/builtins.md:436
+msgid ""
+"Return the [Unix time](https://en.wikipedia.org/wiki/Unix_time) at first "
+"evaluation. Repeated references to that name re-use the initially obtained "
+"value."
+msgstr ""
+
+#: source/language/builtins.md:439 source/language/builtins.md:554
+#: source/language/builtins.md:569 source/language/builtins.md:597
+#: source/language/builtins.md:2112 source/language/builtins.md:2525
+msgid "Example:"
+msgstr ""
+
+#: source/language/builtins.md:452
+msgid ""
+"The [store path](../store/store-path.md) of a derivation depending on "
+"`currentTime` differs for each evaluation, unless both evaluate `builtins."
+"currentTime` in the same second."
+msgstr ""
+
+#: source/language/builtins.md:465
+msgid ""
+"This is like `seq e1 e2`, except that _e1_ is evaluated _deeply_: if it’s a "
+"list or set, its elements or attributes are also evaluated recursively."
+msgstr ""
+
+#: source/language/builtins.md:476
+msgid ""
+"Return the directory part of the string _s_, that is, everything before the "
+"final slash in the string. This is similar to the GNU `dirname` command."
+msgstr ""
+
+#: source/language/builtins.md:487
+msgid "Return the quotient of the numbers _e1_ and _e2_."
+msgstr ""
+
+#: source/language/builtins.md:496
+msgid ""
+"Return `true` if a value equal to _x_ occurs in the list _xs_, and `false` "
+"otherwise. Short-circuits and does not evaluate elements that occur in the "
+"list after the first match."
+msgstr ""
+
+#: source/language/builtins.md:507
+msgid ""
+"Return element _n_ from the list _xs_. Elements are counted starting from 0. "
+"A fatal error occurs if the index is out of bounds."
+msgstr ""
+
+#: source/language/builtins.md:517 source/language/builtins.md:2276
+#: source/language/builtins.md:3067
+msgid "Primitive value."
+msgstr ""
+
+#: source/language/builtins.md:519 source/language/builtins.md:3069
+msgid ""
+"It can be returned by [comparison operators](../language/operators."
+"md#comparison) and used in [conditional expressions](../language/syntax."
+"md#conditionals)."
+msgstr ""
+
+#: source/language/builtins.md:524
+msgid "The name `false` is not special, and can be shadowed:"
+msgstr ""
+
+#: source/language/builtins.md:540
+msgid ""
+"This function is only available if the [`fetch-closure` experimental feature]"
+"(../development/experimental-features.md#xp-feature-fetch-closure) is "
+"enabled."
+msgstr ""
+
+#: source/language/builtins.md:542 source/language/builtins.md:886
+#: source/language/builtins.md:1505 source/language/builtins.md:1782
+#: source/language/builtins.md:2296 source/language/builtins.md:2349
+msgid ""
+"For example, include the following in [`nix.conf`](../command-ref/conf-file."
+"md):"
+msgstr ""
+
+#: source/language/builtins.md:548
+msgid ""
+"Fetch a store path [closure](../glossary.md#gloss-closure) from a binary "
+"cache, and return the store path as a string with context."
+msgstr ""
+
+#: source/language/builtins.md:550
+msgid ""
+"This function can be invoked in three ways that we will discuss in order of "
+"preference."
+msgstr ""
+
+#: source/language/builtins.md:552
+msgid "**Fetch a content-addressed store path**"
+msgstr ""
+
+#: source/language/builtins.md:556
+msgid ""
+"```nix\n"
+"builtins.fetchClosure {\n"
+"  fromStore = \"https://cache.nixos.org\";\n"
+"  fromPath = /nix/store/ldbhlwhh39wha58rm61bkiiwm6j7211j-git-2.33.1;\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:563
+msgid ""
+"This is the simplest invocation, and it does not require the user of the "
+"expression to configure [`trusted-public-keys`](../command-ref/conf-file."
+"md#conf-trusted-public-keys) to ensure their authenticity."
+msgstr ""
+
+#: source/language/builtins.md:565
+msgid ""
+"If your store path is [input addressed](../glossary.md#gloss-input-addressed-"
+"store-object) instead of content addressed, consider the other two "
+"invocations."
+msgstr ""
+
+#: source/language/builtins.md:567
+msgid ""
+"**Fetch any store path and rewrite it to a fully content-addressed store "
+"path**"
+msgstr ""
+
+#: source/language/builtins.md:571
+msgid ""
+"```nix\n"
+"builtins.fetchClosure {\n"
+"  fromStore = \"https://cache.nixos.org\";\n"
+"  fromPath = /nix/store/nph9br6y2dmciy6q3dj3fwk2brdlr4gh-git-2.33.1;\n"
+"  toPath = /nix/store/ldbhlwhh39wha58rm61bkiiwm6j7211j-git-2.33.1;\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:579
+msgid ""
+"This example fetches `/nix/store/r2jd...` from the specified binary cache, "
+"and rewrites it into the content-addressed store path `/nix/store/ldbh...`."
+msgstr ""
+
+#: source/language/builtins.md:583
+msgid ""
+"Like the previous example, no extra configuration or privileges are required."
+msgstr ""
+
+#: source/language/builtins.md:585
+msgid ""
+"To find out the correct value for `toPath` given a `fromPath`, use [`nix "
+"store make-content-addressed`](../command-ref/new-cli/nix3-store-make-"
+"content-addressed.md):"
+msgstr ""
+
+#: source/language/builtins.md:588
+msgid ""
+"```console\n"
+"# nix store make-content-addressed --from https://cache.nixos.org /nix/store/"
+"nph9br6y2dmciy6q3dj3fwk2brdlr4gh-git-2.33.1\n"
+"rewrote '/nix/store/nph9br6y2dmciy6q3dj3fwk2brdlr4gh-git-2.33.1' to '/nix/"
+"store/ldbhlwhh39wha58rm61bkiiwm6j7211j-git-2.33.1'\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:593
+msgid ""
+"Alternatively, set `toPath = \"\"` and find the correct `toPath` in the "
+"error message."
+msgstr ""
+
+#: source/language/builtins.md:595
+msgid "**Fetch an input-addressed store path as is**"
+msgstr ""
+
+#: source/language/builtins.md:599
+msgid ""
+"```nix\n"
+"builtins.fetchClosure {\n"
+"  fromStore = \"https://cache.nixos.org\";\n"
+"  fromPath = /nix/store/nph9br6y2dmciy6q3dj3fwk2brdlr4gh-git-2.33.1;\n"
+"  inputAddressed = true;\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:607
+msgid ""
+"It is possible to fetch an [input-addressed store path](../glossary.md#gloss-"
+"input-addressed-store-object) and return it as is. However, this is the "
+"least preferred way of invoking `fetchClosure`, because it requires that the "
+"input-addressed paths are trusted by the Nix configuration."
+msgstr ""
+
+#: source/language/builtins.md:610
+msgid "**`builtins.storePath`**"
+msgstr ""
+
+#: source/language/builtins.md:612
+msgid ""
+"`fetchClosure` is similar to [`builtins.storePath`](#builtins-storePath) in "
+"that it allows you to use a previously built store path in a Nix expression. "
+"However, `fetchClosure` is more reproducible because it specifies a binary "
+"cache from which the path can be fetched. Also, using content-addressed "
+"store paths does not require users to configure [`trusted-public-keys`](../"
+"command-ref/conf-file.md#conf-trusted-public-keys) to ensure their "
+"authenticity."
+msgstr ""
+
+#: source/language/builtins.md:623
+msgid ""
+"Fetch a path from git. _args_ can be a URL, in which case the HEAD of the "
+"repo at that URL is fetched. Otherwise, it can be an attribute with the "
+"following attributes (all except `url` optional):"
+msgstr ""
+
+#: source/language/builtins.md:627 source/language/builtins.md:1284
+msgid "`url`"
+msgstr ""
+
+#: source/language/builtins.md:629
+msgid ""
+"The [Git URL](https://git-scm.com/docs/git-clone#_git_urls) of the repo. SCP-"
+"like syntax is supported, but relative paths are rewritten to absolute ones. "
+"For example:"
+msgstr ""
+
+#: source/language/builtins.md:632
+msgid "`git@github.com:repo/path` becomes `ssh://git@github.com/repo/path`"
+msgstr ""
+
+#: source/language/builtins.md:636
+msgid "`name` (default: `source`)"
+msgstr ""
+
+#: source/language/builtins.md:638
+msgid "The name of the directory the repo should be exported to in the store."
+msgstr ""
+
+#: source/language/builtins.md:640
+msgid "`rev` (default: _the tip of `ref`_)"
+msgstr ""
+
+#: source/language/builtins.md:642
+msgid ""
+"The [Git revision](https://git-scm.com/docs/git-rev-"
+"parse#_specifying_revisions) to fetch. This is typically a commit hash."
+msgstr ""
+
+#: source/language/builtins.md:647
+msgid "`ref` (default: `HEAD`)"
+msgstr ""
+
+#: source/language/builtins.md:649
+msgid ""
+"The [Git reference](https://git-scm.com/book/en/v2/Git-Internals-Git-"
+"References) under which to look for the requested revision. This is often a "
+"branch or tag name."
+msgstr ""
+
+#: source/language/builtins.md:654 source/language/builtins.md:687
+msgid "This option has no effect once `shallow` cloning is enabled."
+msgstr ""
+
+#: source/language/builtins.md:656
+msgid ""
+"By default, the `ref` value is prefixed with `refs/heads/`. As of 2.3.0, Nix "
+"doesn't prefix `refs/heads/` if `ref` starts with `refs/`."
+msgstr ""
+
+#: source/language/builtins.md:659
+msgid "`submodules` (default: `false`)"
+msgstr ""
+
+#: source/language/builtins.md:661
+msgid ""
+"A Boolean parameter that specifies whether submodules should be checked out."
+msgstr ""
+
+#: source/language/builtins.md:663
+msgid "`exportIgnore` (default: `true`)"
+msgstr ""
+
+#: source/language/builtins.md:665
+msgid ""
+"A Boolean parameter that specifies whether `export-ignore` from `."
+"gitattributes` should be applied. This approximates part of the `git "
+"archive` behavior."
+msgstr ""
+
+#: source/language/builtins.md:668
+msgid ""
+"Enabling this option is not recommended because it is unknown whether the "
+"Git developers commit to the reproducibility of `export-ignore` in newer Git "
+"versions."
+msgstr ""
+
+#: source/language/builtins.md:670
+msgid "`shallow` (default: `false`)"
+msgstr ""
+
+#: source/language/builtins.md:672 source/language/builtins.md:1072
+msgid ""
+"Make a shallow clone when fetching the Git tree. When this is enabled, the "
+"options `ref` and `allRefs` have no effect anymore."
+msgstr ""
+
+#: source/language/builtins.md:675
+msgid "`lfs` (default: `false`)"
+msgstr ""
+
+#: source/language/builtins.md:677
+msgid ""
+"A boolean that when `true` specifies that [Git LFS](https://git-lfs.com/) "
+"files should be fetched."
+msgstr ""
+
+#: source/language/builtins.md:681
+msgid "`allRefs`"
+msgstr ""
+
+#: source/language/builtins.md:683
+msgid ""
+"Whether to fetch all references (eg. branches and tags) of the repository. "
+"With this argument being true, it's possible to load a `rev` from _any_ "
+"`ref`. (by default only `rev`s from the specified `ref` are supported)."
+msgstr ""
+
+#: source/language/builtins.md:689
+msgid ""
+"`verifyCommit` (default: `true` if `publicKey` or `publicKeys` are provided, "
+"otherwise `false`)"
+msgstr ""
+
+#: source/language/builtins.md:691
+msgid ""
+"Whether to check `rev` for a signature matching `publicKey` or `publicKeys`. "
+"If `verifyCommit` is enabled, then `fetchGit` cannot use a local repository "
+"with uncommitted changes. Requires the [`verified-fetches` experimental "
+"feature](../development/experimental-features.md#xp-feature-verified-"
+"fetches)."
+msgstr ""
+
+#: source/language/builtins.md:695
+msgid "`publicKey`"
+msgstr ""
+
+#: source/language/builtins.md:697
+msgid ""
+"The public key against which `rev` is verified if `verifyCommit` is enabled. "
+"Requires the [`verified-fetches` experimental feature](../development/"
+"experimental-features.md#xp-feature-verified-fetches)."
+msgstr ""
+
+#: source/language/builtins.md:700
+msgid "`keytype` (default: `\"ssh-ed25519\"`)"
+msgstr ""
+
+#: source/language/builtins.md:702
+msgid "The key type of `publicKey`. Possible values:"
+msgstr ""
+
+#: source/language/builtins.md:704
+msgid "`\"ssh-dsa\"`"
+msgstr ""
+
+#: source/language/builtins.md:705
+msgid "`\"ssh-ecdsa\"`"
+msgstr ""
+
+#: source/language/builtins.md:706
+msgid "`\"ssh-ecdsa-sk\"`"
+msgstr ""
+
+#: source/language/builtins.md:707
+msgid "`\"ssh-ed25519\"`"
+msgstr ""
+
+#: source/language/builtins.md:708
+msgid "`\"ssh-ed25519-sk\"`"
+msgstr ""
+
+#: source/language/builtins.md:709
+msgid ""
+"`\"ssh-rsa\"` Requires the [`verified-fetches` experimental feature](../"
+"development/experimental-features.md#xp-feature-verified-fetches)."
+msgstr ""
+
+#: source/language/builtins.md:712
+msgid "`publicKeys`"
+msgstr ""
+
+#: source/language/builtins.md:714
+msgid ""
+"The public keys against which `rev` is verified if `verifyCommit` is "
+"enabled. Must be given as a list of attribute sets with the following form:"
+msgstr ""
+
+#: source/language/builtins.md:717
+msgid ""
+"```nix\n"
+"{\n"
+"  key = \"<public key>\";\n"
+"  type = \"<key type>\"; # optional, default: \"ssh-ed25519\"\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:724
+msgid ""
+"Requires the [`verified-fetches` experimental feature](../development/"
+"experimental-features.md#xp-feature-verified-fetches)."
+msgstr ""
+
+#: source/language/builtins.md:726
+msgid "Here are some examples of how to use `fetchGit`."
+msgstr ""
+
+#: source/language/builtins.md:728
+msgid "To fetch a private repository over SSH:"
+msgstr ""
+
+#: source/language/builtins.md:730
+msgid ""
+"```nix\n"
+"builtins.fetchGit {\n"
+"  url = \"git@github.com:my-secret/repository.git\";\n"
+"  ref = \"master\";\n"
+"  rev = \"adab8b916a45068c044658c4158d81878f9ed1c3\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:738
+msgid "To fetch an arbitrary reference:"
+msgstr ""
+
+#: source/language/builtins.md:740
+msgid ""
+"```nix\n"
+"builtins.fetchGit {\n"
+"  url = \"https://github.com/NixOS/nix.git\";\n"
+"  ref = \"refs/heads/0.5-release\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:747
+msgid ""
+"If the revision you're looking for is in the default branch of the git "
+"repository you don't strictly need to specify the branch name in the `ref` "
+"attribute."
+msgstr ""
+
+#: source/language/builtins.md:751
+msgid ""
+"However, if the revision you're looking for is in a future branch for the "
+"non-default branch you will need to specify the the `ref` attribute as well."
+msgstr ""
+
+#: source/language/builtins.md:755
+msgid ""
+"```nix\n"
+"builtins.fetchGit {\n"
+"  url = \"https://github.com/nixos/nix.git\";\n"
+"  rev = \"841fcbd04755c7a2865c51c1e2d3b045976b7452\";\n"
+"  ref = \"1.11-maintenance\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:765
+msgid ""
+"It is nice to always specify the branch which a revision belongs to. Without "
+"the branch being specified, the fetcher might fail if the default branch "
+"changes. Additionally, it can be confusing to try a commit from a non-"
+"default branch and see the fetch fail. If the branch is specified the fault "
+"is much more obvious."
+msgstr ""
+
+#: source/language/builtins.md:772
+msgid ""
+"If the revision you're looking for is in the default branch of the git "
+"repository you may omit the `ref` attribute."
+msgstr ""
+
+#: source/language/builtins.md:775
+msgid ""
+"```nix\n"
+"builtins.fetchGit {\n"
+"  url = \"https://github.com/nixos/nix.git\";\n"
+"  rev = \"841fcbd04755c7a2865c51c1e2d3b045976b7452\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:782
+msgid "To fetch a specific tag:"
+msgstr ""
+
+#: source/language/builtins.md:784
+msgid ""
+"```nix\n"
+"builtins.fetchGit {\n"
+"  url = \"https://github.com/nixos/nix.git\";\n"
+"  ref = \"refs/tags/1.9\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:791
+msgid "To fetch the latest version of a remote branch:"
+msgstr ""
+
+#: source/language/builtins.md:793
+msgid ""
+"```nix\n"
+"builtins.fetchGit {\n"
+"  url = \"ssh://git@github.com/nixos/nix.git\";\n"
+"  ref = \"master\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:800
+msgid "To verify the commit signature:"
+msgstr ""
+
+#: source/language/builtins.md:802
+msgid ""
+"```nix\n"
+"builtins.fetchGit {\n"
+"  url = \"ssh://git@github.com/nixos/nix.git\";\n"
+"  verifyCommit = true;\n"
+"  publicKeys = [\n"
+"      {\n"
+"        type = \"ssh-ed25519\";\n"
+"        key = \"AAAAC3NzaC1lZDI1NTE5AAAAIArPKULJOid8eS6XETwUjO48/"
+"HKBWl7FTCK0Z//fplDi\";\n"
+"      }\n"
+"  ];\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:815
+msgid ""
+"Nix refetches the branch according to the [`tarball-ttl`](../command-ref/"
+"conf-file.md#conf-tarball-ttl) setting."
+msgstr ""
+
+#: source/language/builtins.md:817
+msgid ""
+"This behavior is disabled in [pure evaluation mode](../command-ref/conf-file."
+"md#conf-pure-eval)."
+msgstr ""
+
+#: source/language/builtins.md:819
+msgid "To fetch the content of a checked-out work directory:"
+msgstr ""
+
+#: source/language/builtins.md:825
+msgid ""
+"If the URL points to a local directory, and no `ref` or `rev` is given, "
+"`fetchGit` uses the current content of the checked-out files, even if they "
+"are not committed or added to Git's index. It only considers files added to "
+"the Git repository, as listed by `git ls-files`."
+msgstr ""
+
+#: source/language/builtins.md:837
+msgid ""
+"Download the specified URL, unpack it and return the path of the unpacked "
+"tree. The file must be a tape archive (`.tar`) compressed with `gzip`, "
+"`bzip2` or `xz`. If the tarball consists of a single directory, then the top-"
+"level path component of the files in the tarball is removed. The typical use "
+"of the function is to obtain external Nix expression dependencies, such as a "
+"particular version of Nixpkgs, e.g."
+msgstr ""
+
+#: source/language/builtins.md:845
+msgid ""
+"```nix\n"
+"with import (fetchTarball https://github.com/NixOS/nixpkgs/archive/"
+"nixos-14.12.tar.gz) {};\n"
+"\n"
+"stdenv.mkDerivation { … }\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:851
+msgid ""
+"The fetched tarball is cached for a certain amount of time (1 hour by "
+"default) in `~/.cache/nix/tarballs/`. You can change the cache timeout "
+"either on the command line with `--tarball-ttl` _number-of-seconds_ or in "
+"the Nix configuration file by adding the line `tarball-ttl = ` _number-of-"
+"seconds_."
+msgstr ""
+
+#: source/language/builtins.md:857
+msgid ""
+"Note that when obtaining the hash with `nix-prefetch-url` the option `--"
+"unpack` is required."
+msgstr ""
+
+#: source/language/builtins.md:860
+msgid ""
+"This function can also verify the contents against a hash. In that case, the "
+"function takes a set instead of a URL. The set requires the attribute `url` "
+"and the attribute `sha256`, e.g."
+msgstr ""
+
+#: source/language/builtins.md:864
+msgid ""
+"```nix\n"
+"with import (fetchTarball {\n"
+"  url = \"https://github.com/NixOS/nixpkgs/archive/nixos-14.12.tar.gz\";\n"
+"  sha256 = \"1jppksrfvbk5ypiqdz4cddxdl8z6zyzdb2srq8fcffr327ld5jj2\";\n"
+"}) {};\n"
+"\n"
+"stdenv.mkDerivation { … }\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:873 source/language/builtins.md:1293
+msgid ""
+"Not available in [restricted evaluation mode](../command-ref/conf-file."
+"md#conf-restrict-eval)."
+msgstr ""
+
+#: source/language/builtins.md:884
+msgid ""
+"This function is only available if the [`fetch-tree` experimental feature]"
+"(../development/experimental-features.md#xp-feature-fetch-tree) is enabled."
+msgstr ""
+
+#: source/language/builtins.md:892
+msgid ""
+"Fetch a file system tree or a plain file using one of the supported backends "
+"and return an attribute set with:"
+msgstr ""
+
+#: source/language/builtins.md:894
+msgid "the resulting fixed-output [store path](../store/store-path.md)"
+msgstr ""
+
+#: source/language/builtins.md:895
+msgid ""
+"the corresponding [NAR](../store/file-system-object/content-address."
+"md#serial-nix-archive) hash"
+msgstr ""
+
+#: source/language/builtins.md:896
+msgid ""
+"backend-specific metadata (currently not documented). <!-- TODO: document "
+"output attributes -->"
+msgstr ""
+
+#: source/language/builtins.md:898
+msgid "_input_ must be an attribute set with the following attributes:"
+msgstr ""
+
+#: source/language/builtins.md:900
+msgid "`type` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:902
+msgid ""
+"One of the [supported source types](#source-types). This determines other "
+"required and allowed input attributes."
+msgstr ""
+
+#: source/language/builtins.md:905
+msgid "`narHash` (String, optional)"
+msgstr ""
+
+#: source/language/builtins.md:907
+msgid ""
+"The `narHash` parameter can be used to substitute the source of the tree. It "
+"also allows for verification of tree contents that may not be provided by "
+"the underlying transfer mechanism. If `narHash` is set, the source is first "
+"looked up is the Nix store and [substituters](../command-ref/conf-file."
+"md#conf-substituters), and only fetched if not available."
+msgstr ""
+
+#: source/language/builtins.md:911
+msgid ""
+"A subset of the output attributes of `fetchTree` can be re-used for "
+"subsequent calls to `fetchTree` to produce the same result again. That is, "
+"`fetchTree` is idempotent."
+msgstr ""
+
+#: source/language/builtins.md:914
+msgid ""
+"Downloads are cached in `$XDG_CACHE_HOME/nix`. The remote source is fetched "
+"from the network if both are true:"
+msgstr ""
+
+#: source/language/builtins.md:916
+msgid ""
+"A NAR hash is supplied and the corresponding store path is not [valid](../"
+"glossary.md#gloss-validity), that is, not available in the store"
+msgstr ""
+
+#: source/language/builtins.md:920
+msgid ""
+"[Substituters](../command-ref/conf-file.md#conf-substituters) are not used "
+"in fetching."
+msgstr ""
+
+#: source/language/builtins.md:922
+msgid ""
+"There is no cache entry or the cache entry is older than [`tarball-ttl`](../"
+"command-ref/conf-file.md#conf-tarball-ttl)"
+msgstr ""
+
+#: source/language/builtins.md:924
+msgid "Source types"
+msgstr ""
+
+#: source/language/builtins.md:926
+msgid ""
+"The following source types and associated input attributes are supported."
+msgstr ""
+
+#: source/language/builtins.md:932
+msgid "`\"file\"`"
+msgstr ""
+
+#: source/language/builtins.md:935
+msgid ""
+"Place a plain file into the Nix store. This is similar to [`builtins."
+"fetchurl`](../language/builtins.md#builtins-fetchurl)"
+msgstr ""
+
+#: source/language/builtins.md:939 source/language/builtins.md:1111
+#: source/language/builtins.md:1129 source/language/builtins.md:1169
+#: source/language/builtins.md:1183 source/language/builtins.md:1204
+msgid "`lastModified` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:941 source/language/builtins.md:1034
+#: source/language/builtins.md:1145 source/language/builtins.md:1206
+msgid "`name` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:943 source/language/builtins.md:1036
+#: source/language/builtins.md:1113 source/language/builtins.md:1131
+#: source/language/builtins.md:1147 source/language/builtins.md:1161
+#: source/language/builtins.md:1171 source/language/builtins.md:1185
+#: source/language/builtins.md:1208
+msgid "`narHash` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:945 source/language/builtins.md:1121
+#: source/language/builtins.md:1139 source/language/builtins.md:1151
+#: source/language/builtins.md:1165 source/language/builtins.md:1175
+#: source/language/builtins.md:1193 source/language/builtins.md:1210
+msgid "`rev` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:947 source/language/builtins.md:1153
+#: source/language/builtins.md:1177 source/language/builtins.md:1212
+msgid "`revCount` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:949 source/language/builtins.md:1214
+msgid "`unpack` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:951 source/language/builtins.md:1086
+#: source/language/builtins.md:1155 source/language/builtins.md:1216
+msgid "`url` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:954
+msgid "Supported protocols:"
+msgstr ""
+
+#: source/language/builtins.md:956
+msgid "`https`"
+msgstr ""
+
+#: source/language/builtins.md:960
+msgid ""
+"```nix\n"
+"fetchTree {\n"
+"  type = \"file\";\n"
+"  url = \"https://example.com/index.html\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:967
+msgid "`http`"
+msgstr ""
+
+#: source/language/builtins.md:969
+msgid "Insecure HTTP transfer for legacy sources."
+msgstr ""
+
+#: source/language/builtins.md:971 source/language/builtins.md:1313
+#: source/language/builtins.md:2791
+msgid "**Warning**"
+msgstr ""
+
+#: source/language/builtins.md:973
+msgid ""
+"HTTP performs no encryption or authentication. Use a `narHash` known in "
+"advance to ensure the output has expected contents."
+msgstr ""
+
+#: source/language/builtins.md:976
+msgid "`file`"
+msgstr ""
+
+#: source/language/builtins.md:978
+msgid "A file on the local file system."
+msgstr ""
+
+#: source/language/builtins.md:982
+msgid ""
+"```nix\n"
+"fetchTree {\n"
+"  type = \"file\";\n"
+"  url = \"file:///home/eelco/nix/README.md\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:990
+msgid "`\"git\"`"
+msgstr ""
+
+#: source/language/builtins.md:993
+msgid ""
+"Fetch a Git tree and copy it to the Nix store. This is similar to [`builtins."
+"fetchGit`](../language/builtins.md#builtins-fetchGit)."
+msgstr ""
+
+#: source/language/builtins.md:997
+msgid "`allRefs` (Bool, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1000 source/language/builtins.md:1045
+msgid ""
+"By default, this has no effect. This becomes relevant only once `shallow` "
+"cloning is disabled."
+msgstr ""
+
+#: source/language/builtins.md:1002
+msgid ""
+"Whether to fetch all references (eg. branches and tags) of the repository. "
+"With this argument being true, it's possible to load a `rev` from _any_ "
+"`ref`. (Without setting this option, only `rev`s from the specified `ref` "
+"are supported)."
+msgstr ""
+
+#: source/language/builtins.md:1006 source/language/builtins.md:1031
+#: source/language/builtins.md:1083
+msgid "Default: `false`"
+msgstr ""
+
+#: source/language/builtins.md:1009
+msgid "`dirtyRev` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1011
+msgid "`dirtyShortRev` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1013
+msgid "`exportIgnore` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1015
+msgid "`keytype` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1017
+msgid "`lastModified` (Integer, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1020
+msgid "Unix timestamp of the fetched commit."
+msgstr ""
+
+#: source/language/builtins.md:1022 source/language/builtins.md:1065
+msgid ""
+"If set, pass through the value to the output attribute set. Otherwise, "
+"generated from the fetched Git tree."
+msgstr ""
+
+#: source/language/builtins.md:1026
+msgid "`lfs` (Bool, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1029
+msgid "Fetch any [Git LFS](https://git-lfs.com/) files."
+msgstr ""
+
+#: source/language/builtins.md:1038
+msgid "`publicKey` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1040
+msgid "`publicKeys` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1042
+msgid "`ref` (String, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1047
+msgid ""
+"A [Git reference](https://git-scm.com/book/en/v2/Git-Internals-Git-"
+"References), such as a branch or tag name."
+msgstr ""
+
+#: source/language/builtins.md:1049
+msgid "Default: `\"HEAD\"`"
+msgstr ""
+
+#: source/language/builtins.md:1052
+msgid "`rev` (String, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1055
+msgid "A Git revision; a commit hash."
+msgstr ""
+
+#: source/language/builtins.md:1057
+msgid "Default: the tip of `ref`"
+msgstr ""
+
+#: source/language/builtins.md:1060
+msgid "`revCount` (Integer, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1063
+msgid ""
+"Number of revisions in the history of the Git repository before the fetched "
+"commit."
+msgstr ""
+
+#: source/language/builtins.md:1069
+msgid "`shallow` (Bool, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1075
+msgid "Default: `true`"
+msgstr ""
+
+#: source/language/builtins.md:1078
+msgid "`submodules` (Bool, optional)"
+msgstr ""
+
+#: source/language/builtins.md:1081
+msgid "Also fetch submodules if available."
+msgstr ""
+
+#: source/language/builtins.md:1089
+msgid "The URL formats supported are the same as for Git itself."
+msgstr ""
+
+#: source/language/builtins.md:1093
+msgid ""
+"```nix\n"
+"fetchTree {\n"
+"  type = \"git\";\n"
+"  url = \"git@github.com:NixOS/nixpkgs.git\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1102
+msgid ""
+"If the URL points to a local directory, and no `ref` or `rev` is given, Nix "
+"only considers files added to the Git index, as listed by `git ls-files` but "
+"uses the _current file contents_ of the Git working directory."
+msgstr ""
+
+#: source/language/builtins.md:1105
+msgid "`verifyCommit` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1107 source/language/builtins.md:1232
+msgid "`\"github\"`"
+msgstr ""
+
+#: source/language/builtins.md:1109 source/language/builtins.md:1127
+#: source/language/builtins.md:1181
+msgid "`host` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1115 source/language/builtins.md:1133
+#: source/language/builtins.md:1187
+msgid "`owner` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1117 source/language/builtins.md:1135
+#: source/language/builtins.md:1149 source/language/builtins.md:1163
+#: source/language/builtins.md:1189
+msgid "`ref` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1119 source/language/builtins.md:1137
+#: source/language/builtins.md:1191
+msgid "`repo` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1123 source/language/builtins.md:1141
+#: source/language/builtins.md:1195
+msgid "`treeHash` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1125 source/language/builtins.md:1233
+msgid "`\"gitlab\"`"
+msgstr ""
+
+#: source/language/builtins.md:1143
+msgid "`\"hg\"`"
+msgstr ""
+
+#: source/language/builtins.md:1157
+msgid "`\"indirect\"`"
+msgstr ""
+
+#: source/language/builtins.md:1159
+msgid "`id` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1167 source/language/builtins.md:1231
+msgid "`\"path\"`"
+msgstr ""
+
+#: source/language/builtins.md:1173
+msgid "`path` (String, required)"
+msgstr ""
+
+#: source/language/builtins.md:1179 source/language/builtins.md:1234
+msgid "`\"sourcehut\"`"
+msgstr ""
+
+#: source/language/builtins.md:1197
+msgid "`\"tarball\"`"
+msgstr ""
+
+#: source/language/builtins.md:1200
+msgid ""
+"Download a tar archive and extract it into the Nix store. This has the same "
+"underlying implementation as [`builtins.fetchTarball`](../language/builtins."
+"md#builtins-fetchTarball)"
+msgstr ""
+
+#: source/language/builtins.md:1221
+msgid ""
+"```nix\n"
+"fetchTree {\n"
+"  type = \"tarball\";\n"
+"  url = \"https://github.com/NixOS/nixpkgs/tarball/nixpkgs-23.11\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1229
+msgid "The following input types are still subject to change:"
+msgstr ""
+
+#: source/language/builtins.md:1235
+msgid "`\"mercurial\"`"
+msgstr ""
+
+#: source/language/builtins.md:1237
+msgid ""
+"_input_ can also be a [URL-like reference](../command-ref/new-cli/nix3-flake."
+"md#flake-references). The additional input types and the URL-like syntax "
+"requires the [`flakes` experimental feature](../development/experimental-"
+"features.md#xp-feature-flakes) to be enabled."
+msgstr ""
+
+#: source/language/builtins.md:1242
+msgid "Fetch a GitHub repository using the attribute set representation:"
+msgstr ""
+
+#: source/language/builtins.md:1244
+msgid ""
+"```nix\n"
+"builtins.fetchTree {\n"
+"  type = \"github\";\n"
+"  owner = \"NixOS\";\n"
+"  repo = \"nixpkgs\";\n"
+"  rev = \"ae2e6b3958682513d28f7d633734571fb18285dd\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1253
+msgid "This evaluates to the following attribute set:"
+msgstr ""
+
+#: source/language/builtins.md:1255
+msgid ""
+"```nix\n"
+"{\n"
+"  lastModified = 1686503798;\n"
+"  lastModifiedDate = \"20230611171638\";\n"
+"  narHash = \"sha256-rA9RqKP9OlBrgGCPvfd5HVAXDOy8k2SmPtB/ijShNXc=\";\n"
+"  outPath = \"/nix/store/l5m6qlvfs9sdw14ja3qbzpglcjlb6j1x-source\";\n"
+"  rev = \"ae2e6b3958682513d28f7d633734571fb18285dd\";\n"
+"  shortRev = \"ae2e6b3\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1268
+msgid "Fetch the same GitHub repository using the URL-like syntax:"
+msgstr ""
+
+#: source/language/builtins.md:1270
+msgid ""
+"```nix\n"
+"builtins.fetchTree \"github:NixOS/nixpkgs/"
+"ae2e6b3958682513d28f7d633734571fb18285dd\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1281
+msgid ""
+"Download the specified URL and return the path of the downloaded file. `arg` "
+"can be either a string denoting the URL, or an attribute set with the "
+"following attributes:"
+msgstr ""
+
+#: source/language/builtins.md:1286
+msgid "The URL of the file to download."
+msgstr ""
+
+#: source/language/builtins.md:1288
+msgid "`name` (default: the last path component of the URL)"
+msgstr ""
+
+#: source/language/builtins.md:1290
+msgid ""
+"A name for the file in the store. This can be useful if the URL has any "
+"characters that are invalid for the store."
+msgstr ""
+
+#: source/language/builtins.md:1302
+msgid ""
+"Return a list consisting of the elements of _list_ for which the function "
+"_f_ returns `true`. Has linear time complexity in the size of the input "
+"_list_."
+msgstr ""
+
+#: source/language/builtins.md:1315
+msgid ""
+"`filterSource` should not be used to filter store paths. Since "
+"`filterSource` uses the name of the input directory while naming the output "
+"directory, doing so produces a directory name in the form of `<hash2>-<hash>-"
+"<name>`, where `<hash>-<name>` is the name of the input directory. Since "
+"`<hash>` depends on the unfiltered directory, the name of the output "
+"directory indirectly depends on files that are filtered out by the function. "
+"This triggers a rebuild even when a filtered out file is changed. Use "
+"`builtins.path` instead, which allows specifying the name of the output "
+"directory."
+msgstr ""
+
+#: source/language/builtins.md:1326
+msgid ""
+"This function allows you to copy sources into the Nix store while filtering "
+"certain files. For instance, suppose that you want to use the directory "
+"`source-dir` as an input to a Nix expression, e.g."
+msgstr ""
+
+#: source/language/builtins.md:1337
+msgid ""
+"However, if `source-dir` is a Subversion working copy, then all of those "
+"annoying `.svn` subdirectories are also copied to the store. Worse, the "
+"contents of those directories may change a lot, causing lots of spurious "
+"rebuilds. With `filterSource` you can filter out the `.svn` directories:"
+msgstr ""
+
+#: source/language/builtins.md:1343
+msgid ""
+"```nix\n"
+"src = builtins.filterSource\n"
+"  (path: type: type != \"directory\" || baseNameOf path != \".svn\")\n"
+"  ./source-dir;\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1349
+msgid ""
+"Thus, the first argument _e1_ must be a predicate function that is called "
+"for each regular file, directory or symlink in the source tree _e2_. If the "
+"function returns `true`, the file is copied to the Nix store, otherwise it "
+"is omitted. The function is called with two arguments. The first is the full "
+"path of the file. The second is a string that identifies the type of the "
+"file, which is either `\"regular\"`, `\"directory\"`, `\"symlink\"` or "
+"`\"unknown\"` (for other kinds of files such as device nodes or fifos — but "
+"note that those cannot be copied to the Nix store, so if the predicate "
+"returns `true` for them, the copy fails). If you exclude a directory, the "
+"entire corresponding subtree of _e2_ is excluded."
+msgstr ""
+
+#: source/language/builtins.md:1368
+msgid "Find _lookup-path_ in _search-path_."
+msgstr ""
+
+#: source/language/builtins.md:1370
+msgid ""
+"[Lookup path](../language/constructs/lookup-path.md) expressions are "
+"[desugared](https://en.wikipedia.org/wiki/Syntactic_sugar) using this and "
+"[`builtins.nixPath`](#builtins-nixPath):"
+msgstr ""
+
+#: source/language/builtins.md:1376 source/language/builtins.md:2240
+msgid "is equivalent to:"
+msgstr ""
+
+#: source/language/builtins.md:1378 source/language/builtins.md:2242
+msgid ""
+"```nix\n"
+"builtins.findFile builtins.nixPath \"nixpkgs\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1382
+msgid ""
+"A search path is represented as a list of [attribute sets](./types.md#type-"
+"attrs) with two attributes:"
+msgstr ""
+
+#: source/language/builtins.md:1383
+msgid "`prefix` is a relative path."
+msgstr ""
+
+#: source/language/builtins.md:1384
+msgid "`path` denotes a file system location"
+msgstr ""
+
+#: source/language/builtins.md:1386
+msgid "Examples of search path attribute sets:"
+msgstr ""
+
+#: source/language/builtins.md:1388
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"\";\n"
+"  path = \"/nix/var/nix/profiles/per-user/root/channels\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1394
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"nixos-config\";\n"
+"  path = \"/etc/nixos/configuration.nix\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1400
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"nixpkgs\";\n"
+"  path = \"https://github.com/NixOS/nixpkgs/tarballs/master\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1406 source/language/builtins.md:1456
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"nixpkgs\";\n"
+"  path = \"channel:nixpkgs-unstable\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1412
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"flake-compat\";\n"
+"  path = \"flake:github:edolstra/flake-compat\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1419
+msgid ""
+"The lookup algorithm checks each entry until a match is found, returning a "
+"[path value](../language/types.md#type-path) of the match:"
+msgstr ""
+
+#: source/language/builtins.md:1421
+msgid ""
+"If a prefix of `lookup-path` matches `prefix`, then the remainder of _lookup-"
+"path_ (the \"suffix\") is searched for within the directory denoted by "
+"`path`. The contents of `path` may need to be downloaded at this point to "
+"look inside."
+msgstr ""
+
+#: source/language/builtins.md:1424
+msgid ""
+"If the suffix is found inside that directory, then the entry is a match. The "
+"combined absolute path of the directory (now downloaded if need be) and the "
+"suffix is returned."
+msgstr ""
+
+#: source/language/builtins.md:1429
+msgid "A _search-path_ value"
+msgstr ""
+
+#: source/language/builtins.md:1431
+msgid ""
+"```\n"
+"[\n"
+"  {\n"
+"    prefix = \"\";\n"
+"    path = \"/home/eelco/Dev\";\n"
+"  }\n"
+"  {\n"
+"    prefix = \"nixos-config\";\n"
+"    path = \"/etc/nixos\";\n"
+"  }\n"
+"]\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1444
+msgid ""
+"and a _lookup-path_ value `\"nixos-config\"` causes Nix to try `/home/eelco/"
+"Dev/nixos-config` and `/etc/nixos` in that order and return the first path "
+"that exists."
+msgstr ""
+
+#: source/language/builtins.md:1446
+msgid ""
+"If `path` starts with `http://` or `https://`, it is interpreted as the URL "
+"of a tarball to be downloaded and unpacked to a temporary location. The "
+"tarball must consist of a single top-level directory."
+msgstr ""
+
+#: source/language/builtins.md:1449
+msgid ""
+"The URLs of the tarballs from the official `nixos.org` channels can be "
+"abbreviated as `channel:<channel-name>`. See [documentation on `nix-channel`]"
+"(../command-ref/nix-channel.md) for details about channels."
+msgstr ""
+
+#: source/language/builtins.md:1454
+msgid "These two search path entries are equivalent:"
+msgstr ""
+
+#: source/language/builtins.md:1462
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"nixpkgs\";\n"
+"  path = \"https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1469
+msgid ""
+"Search paths can also point to source trees using [flake URLs](../command-"
+"ref/new-cli/nix3-flake.md#url-like-syntax)."
+msgstr ""
+
+#: source/language/builtins.md:1473
+msgid "The search path entry"
+msgstr ""
+
+#: source/language/builtins.md:1475
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"nixpkgs\";\n"
+"  path = \"flake:nixpkgs\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1481
+msgid ""
+"specifies that the prefix `nixpkgs` shall refer to the source tree "
+"downloaded from the `nixpkgs` entry in the flake registry."
+msgstr ""
+
+#: source/language/builtins.md:1483
+msgid "Similarly"
+msgstr ""
+
+#: source/language/builtins.md:1485
+msgid ""
+"```\n"
+"{\n"
+"  prefix = \"nixpkgs\";\n"
+"  path = \"flake:github:nixos/nixpkgs/nixos-22.05\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1492
+msgid ""
+"makes `<nixpkgs>` refer to a particular branch of the `NixOS/nixpkgs` "
+"repository on GitHub."
+msgstr ""
+
+#: source/language/builtins.md:1503 source/language/builtins.md:1780
+#: source/language/builtins.md:2347
+msgid ""
+"This function is only available if the [`flakes` experimental feature](../"
+"development/experimental-features.md#xp-feature-flakes) is enabled."
+msgstr ""
+
+#: source/language/builtins.md:1511
+msgid "Convert a flake reference from attribute set format to URL format."
+msgstr ""
+
+#: source/language/builtins.md:1513 source/language/builtins.md:2357
+msgid "For example:"
+msgstr ""
+
+#: source/language/builtins.md:1515
+msgid ""
+"```nix\n"
+"builtins.flakeRefToString {\n"
+"  dir = \"lib\"; owner = \"NixOS\"; ref = \"23.05\"; repo = \"nixpkgs\"; "
+"type = \"github\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1521 source/language/builtins.md:1709
+#: source/language/builtins.md:1748 source/language/builtins.md:1820
+#: source/language/builtins.md:2122 source/language/builtins.md:2386
+#: source/language/builtins.md:3205
+msgid "evaluates to"
+msgstr ""
+
+#: source/language/builtins.md:1523
+msgid ""
+"```nix\n"
+"\"github:NixOS/nixpkgs/23.05?dir=lib\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1534
+msgid ""
+"Rounds and converts _number_ to the next lower NixInt value if possible, i."
+"e. `floor *number* <= *number*` and `*number* - floor *number* < 1`."
+msgstr ""
+
+#: source/language/builtins.md:1537
+msgid ""
+"An evaluation error is thrown, if there exists no such NixInt value `floor "
+"*number*`. Due to bugs in previous Nix versions an evaluation error might be "
+"thrown, if the datatype of _number_ is a NixInt and if `*number* < "
+"-9007199254740992` or `*number* > 9007199254740992`."
+msgstr ""
+
+#: source/language/builtins.md:1541
+msgid ""
+"If the datatype of _number_ is neither a NixInt (signed 64-bit integer) nor "
+"a NixFloat (IEEE-754 double-precision floating-point number), an evaluation "
+"error will be thrown."
+msgstr ""
+
+#: source/language/builtins.md:1551
+msgid "Reduce a list by applying a binary operator, from left to right, e.g."
+msgstr ""
+
+#: source/language/builtins.md:1569
+msgid ""
+"For example, `foldl' (acc: elem: acc + elem) 0 [1 2 3]` evaluates to `6` and "
+"`foldl' (acc: elem: { \"${elem}\" = elem; } // acc) {} [\"a\" \"b\"]` "
+"evaluates to `{ a = \"a\"; b = \"b\"; }`."
+msgstr ""
+
+#: source/language/builtins.md:1573
+msgid ""
+"The first argument of `op` is the accumulator whereas the second argument is "
+"the current element being processed."
+msgstr ""
+
+#: source/language/builtins.md:1576
+msgid ""
+"The return value of each application of `op` is evaluated immediately, even "
+"for intermediate values. This way, `foldl'` can operate in constant stack "
+"space, allowing it to operate on large lists, regardless of [max-call-depth]"
+"(../command-ref/conf-file.md#conf-max-call-depth)."
+msgstr ""
+
+#: source/language/builtins.md:1581
+msgid ""
+"Conventionally, a fold function without the `'` (\"prime\") preserves "
+"laziness, but lacks these benefits. See also [Nixpkgs `lib.foldl`](https://"
+"nixos.org/manual/nixpkgs/unstable/#function-library-lib.lists.foldl)."
+msgstr ""
+
+#: source/language/builtins.md:1585
+msgid "Has linear time complexity in the size of the list."
+msgstr ""
+
+#: source/language/builtins.md:1594
+msgid "Convert a JSON string to a Nix value. For example,"
+msgstr ""
+
+#: source/language/builtins.md:1596
+msgid ""
+"```nix\n"
+"builtins.fromJSON ''{\"x\": [1, 2, 3], \"y\": null}''\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1600
+msgid "returns the value `{ x = [ 1 2 3 ]; y = null; }`."
+msgstr ""
+
+#: source/language/builtins.md:1609
+msgid "Convert a TOML string to a Nix value. For example,"
+msgstr ""
+
+#: source/language/builtins.md:1611
+msgid ""
+"```nix\n"
+"builtins.fromTOML ''\n"
+"  x=1\n"
+"  s=\"a\"\n"
+"  [table]\n"
+"  y=2\n"
+"''\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1620
+msgid "returns the value `{ s = \"a\"; table = { y = 2; }; x = 1; }`."
+msgstr ""
+
+#: source/language/builtins.md:1629
+msgid ""
+"Return a set containing the names of the formal arguments expected by the "
+"function _f_. The value of each attribute is a Boolean denoting whether the "
+"corresponding argument has a default value. For instance, `functionArgs "
+"({ x, y ? 123}: ...) = { x = false; y = true; }`."
+msgstr ""
+
+#: source/language/builtins.md:1635
+msgid ""
+"\"Formal argument\" here refers to the attributes pattern-matched by the "
+"function. Plain lambdas are not included, e.g. `functionArgs (x: ...) = { }`."
+msgstr ""
+
+#: source/language/builtins.md:1639 source/language/builtins.md:1898
+msgid "Has constant time complexity."
+msgstr ""
+
+#: source/language/builtins.md:1648
+msgid ""
+"Generate list of size _length_, with each element _i_ equal to the value "
+"returned by _generator_ `i`. For example,"
+msgstr ""
+
+#: source/language/builtins.md:1655
+msgid "returns the list `[ 0 1 4 9 16 ]`."
+msgstr ""
+
+#: source/language/builtins.md:1657
+msgid "Has linear time complexity."
+msgstr ""
+
+#: source/language/builtins.md:1666
+msgid ""
+"`builtins.genericClosure` iteratively computes the transitive closure over "
+"an arbitrary relation defined by a function."
+msgstr ""
+
+#: source/language/builtins.md:1668
+msgid ""
+"It takes _attrset_ with two attributes named `startSet` and `operator`, and "
+"returns a list of attribute sets:"
+msgstr ""
+
+#: source/language/builtins.md:1670
+msgid "`startSet`: The initial list of attribute sets."
+msgstr ""
+
+#: source/language/builtins.md:1673
+msgid ""
+"`operator`: A function that takes an attribute set and returns a list of "
+"attribute sets. It defines how each item in the current set is processed and "
+"expanded into more items."
+msgstr ""
+
+#: source/language/builtins.md:1677
+msgid ""
+"Each attribute set in the list `startSet` and the list returned by "
+"`operator` must have an attribute `key`, which must support equality "
+"comparison. The value of `key` can be one of the following types:"
+msgstr ""
+
+#: source/language/builtins.md:1680
+msgid "[Int](../language/types.md#type-int)"
+msgstr ""
+
+#: source/language/builtins.md:1681
+msgid "[Float](../language/types.md#type-float)"
+msgstr ""
+
+#: source/language/builtins.md:1682
+msgid "[Boolean](../language/types.md#type-bool)"
+msgstr ""
+
+#: source/language/builtins.md:1683
+msgid "[String](../language/types.md#type-string)"
+msgstr ""
+
+#: source/language/builtins.md:1684
+msgid "[Path](../language/types.md#type-path)"
+msgstr ""
+
+#: source/language/builtins.md:1685
+msgid "[List](../language/types.md#type-list)"
+msgstr ""
+
+#: source/language/builtins.md:1687
+msgid ""
+"The result is produced by calling the `operator` on each `item` that has not "
+"been called yet, including newly added items, until no new items are added. "
+"Items are compared by their `key` attribute."
+msgstr ""
+
+#: source/language/builtins.md:1690
+msgid "Common usages are:"
+msgstr ""
+
+#: source/language/builtins.md:1692
+msgid "Generating unique collections of items, such as dependency graphs."
+msgstr ""
+
+#: source/language/builtins.md:1693
+msgid "Traversing through structures that may contain cycles or loops."
+msgstr ""
+
+#: source/language/builtins.md:1694
+msgid "Processing data structures with complex internal relationships."
+msgstr ""
+
+#: source/language/builtins.md:1722
+msgid ""
+"`getAttr` returns the attribute named _s_ from _set_. Evaluation aborts if "
+"the attribute doesn’t exist. This is a dynamic version of the `.` operator, "
+"since _s_ is an expression rather than an identifier."
+msgstr ""
+
+#: source/language/builtins.md:1727 source/language/builtins.md:1839
+msgid ""
+"Has `O(log n)` time complexity, where `n` is number of attributes in the "
+"_set_."
+msgstr ""
+
+#: source/language/builtins.md:1736
+msgid "Return the string context of _s_."
+msgstr ""
+
+#: source/language/builtins.md:1738
+msgid ""
+"The string context tracks references to derivations within a string. It is "
+"represented as an attribute set of [store derivation](../glossary.md#gloss-"
+"store-derivation) paths mapping to output names."
+msgstr ""
+
+#: source/language/builtins.md:1741
+msgid ""
+"Using [string interpolation](../language/string-interpolation.md) on a "
+"derivation adds that derivation to the string context. For example,"
+msgstr ""
+
+#: source/language/builtins.md:1744
+msgid ""
+"```nix\n"
+"builtins.getContext \"${derivation { name = \"a\"; builder = \"b\"; system = "
+"\"c\"; }}\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1750
+msgid ""
+"```\n"
+"{ \"/nix/store/arhvjaf6zmlyn8vh8fgn55rpwnxq0n7l-a.drv\" = { outputs = "
+"[ \"out\" ]; }; }\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1761
+msgid ""
+"`getEnv` returns the value of the environment variable _s_, or an empty "
+"string if the variable doesn’t exist. This function should be used with "
+"care, as it can introduce all sorts of nasty environment dependencies in "
+"your Nix expression."
+msgstr ""
+
+#: source/language/builtins.md:1766
+msgid ""
+"`getEnv` is used in Nix Packages to locate the file `~/.nixpkgs/config.nix`, "
+"which contains user-local settings for Nix Packages. (That is, it does a "
+"`getEnv \"HOME\"` to locate the user’s home directory.)"
+msgstr ""
+
+#: source/language/builtins.md:1788
+msgid ""
+"Fetch a flake from a flake reference or a path, and return its output "
+"attributes and some metadata. For example:"
+msgstr ""
+
+#: source/language/builtins.md:1790
+msgid ""
+"```nix\n"
+"(builtins.getFlake \"nix/55bc52401966fbffa525c574c14f67b00bc4fb3a\")."
+"packages.x86_64-linux.nix\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1794
+msgid ""
+"Unless impure evaluation is allowed (`--impure`), the flake reference must "
+"be \"locked\", e.g. contain a Git revision or content hash. An example of an "
+"unlocked usage is:"
+msgstr ""
+
+#: source/language/builtins.md:1798
+msgid ""
+"```nix\n"
+"(builtins.getFlake \"github:edolstra/dwarffs\").rev\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1809
+msgid ""
+"Groups elements of _list_ together by the string returned from the function "
+"_f_ called on each element. It returns an attribute set where each attribute "
+"value contains the elements of _list_ that are mapped to the same "
+"corresponding attribute name returned by _f_."
+msgstr ""
+
+#: source/language/builtins.md:1814
+msgid "For example,"
+msgstr ""
+
+#: source/language/builtins.md:1816
+msgid ""
+"```nix\n"
+"builtins.groupBy (builtins.substring 0 1) [\"foo\" \"bar\" \"baz\"]\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1822
+msgid ""
+"```nix\n"
+"{ b = [ \"bar\" \"baz\" ]; f = [ \"foo\" ]; }\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1826
+msgid ""
+"Has `O(n log n)` time complexity, where `n` is the size of the input _list_."
+msgstr ""
+
+#: source/language/builtins.md:1835
+msgid ""
+"`hasAttr` returns `true` if _set_ has an attribute named _s_, and `false` "
+"otherwise. This is a dynamic version of the `?` operator, since _s_ is an "
+"expression rather than an identifier."
+msgstr ""
+
+#: source/language/builtins.md:1848
+msgid ""
+"Return `true` if string _s_ has a non-empty context. The context can be "
+"obtained with [`getContext`](#builtins-getContext)."
+msgstr ""
+
+#: source/language/builtins.md:1854
+msgid ""
+"Many operations require a string context to be empty because they are "
+"intended only to work with \"regular\" strings, and also to help users avoid "
+"unintentionally loosing track of string context elements. `builtins."
+"hasContext` can help create better domain-specific errors in those case."
+msgstr ""
+
+#: source/language/builtins.md:1857
+msgid ""
+"```nix\n"
+"name: meta:\n"
+"\n"
+"if builtins.hasContext name\n"
+"then throw \"package name cannot contain string context\"\n"
+"else { ${name} = meta; }\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:1872
+msgid ""
+"Return a base-16 representation of the cryptographic hash of the file at "
+"path _p_. The hash algorithm specified by _type_ must be one of `\"md5\"`, "
+"`\"sha1\"`, `\"sha256\"` or `\"sha512\"`."
+msgstr ""
+
+#: source/language/builtins.md:1883
+msgid ""
+"Return a base-16 representation of the cryptographic hash of string _s_. The "
+"hash algorithm specified by _type_ must be one of `\"md5\"`, `\"sha1\"`, "
+"`\"sha256\"` or `\"sha512\"`."
+msgstr ""
+
+#: source/language/builtins.md:1894
+msgid ""
+"Return the first element of a list; abort evaluation if the argument isn’t a "
+"list or is an empty list. You can test whether a list is empty by comparing "
+"it with `[]`."
+msgstr ""
+
+#: source/language/builtins.md:1907
+msgid "Load, parse, and return the Nix expression in the file _path_."
+msgstr ""
+
+#: source/language/builtins.md:1911
+msgid "Unlike some languages, `import` is a regular function in Nix."
+msgstr ""
+
+#: source/language/builtins.md:1913 source/language/builtins.md:2558
+msgid ""
+"The _path_ argument must meet the same criteria as an [interpolated "
+"expression](../language/string-interpolation.md#interpolated-expression)."
+msgstr ""
+
+#: source/language/builtins.md:1915 source/language/builtins.md:2560
+msgid ""
+"If _path_ is a directory, the file `default.nix` in that directory is used "
+"if it exists."
+msgstr ""
+
+#: source/language/builtins.md:1923
+msgid "Import `default.nix` from the current directory."
+msgstr ""
+
+#: source/language/builtins.md:1931
+msgid ""
+"Evaluation aborts if the file doesn’t exist or contains an invalid Nix "
+"expression."
+msgstr ""
+
+#: source/language/builtins.md:1933
+msgid ""
+"A Nix expression loaded by `import` must not contain any _free variables_, "
+"that is, identifiers that are not defined in the Nix expression itself and "
+"are not built-in. Therefore, it cannot refer to variables that are in scope "
+"at the call site."
+msgstr ""
+
+#: source/language/builtins.md:1938
+msgid "If you have a calling expression"
+msgstr ""
+
+#: source/language/builtins.md:1947
+msgid "then the following `foo.nix` throws an error:"
+msgstr ""
+
+#: source/language/builtins.md:1954
+msgid ""
+"since `x` is not in scope in `foo.nix`. If you want `x` to be available in "
+"`foo.nix`, pass it as a function argument:"
+msgstr ""
+
+#: source/language/builtins.md:1964
+msgid "and"
+msgstr ""
+
+#: source/language/builtins.md:1971
+msgid ""
+"The function argument doesn’t have to be called `x` in `foo.nix`; any name "
+"would work."
+msgstr ""
+
+#: source/language/builtins.md:1980
+msgid ""
+"Return a set consisting of the attributes in the set _e2_ which have the "
+"same name as some attribute in _e1_."
+msgstr ""
+
+#: source/language/builtins.md:1983
+msgid ""
+"Has `O(n log m)` time complexity, where `n` and `m` are the sizes of the "
+"smallest and largest set respectively."
+msgstr ""
+
+#: source/language/builtins.md:1992
+msgid "Return `true` if _e_ evaluates to a set, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2001
+msgid "Return `true` if _e_ evaluates to a bool, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2010
+msgid "Return `true` if _e_ evaluates to a float, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2019
+msgid "Return `true` if _e_ evaluates to a function, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2028
+msgid "Return `true` if _e_ evaluates to an integer, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2037
+msgid "Return `true` if _e_ evaluates to a list, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2046
+msgid "Return `true` if _e_ evaluates to `null`, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2048
+msgid "This is equivalent to `e == null`."
+msgstr ""
+
+#: source/language/builtins.md:2057
+msgid "Return `true` if _e_ evaluates to a path, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2066
+msgid "Return `true` if _e_ evaluates to a string, and `false` otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2075
+msgid "The current version of the Nix language."
+msgstr ""
+
+#: source/language/builtins.md:2084
+msgid "Return the length of the list _e_."
+msgstr ""
+
+#: source/language/builtins.md:2093
+msgid ""
+"Return `true` if the value _e1_ is less than the value _e2_, and `false` "
+"otherwise. Evaluation aborts if either _e1_ or _e2_ does not evaluate to a "
+"number, string or path. Furthermore, it aborts if _e2_ does not match _e1_'s "
+"type according to the aforementioned classification of number, string or "
+"path."
+msgstr ""
+
+#: source/language/builtins.md:2104
+msgid ""
+"Construct a set from a list specifying the names and values of each "
+"attribute. Each element of the list should be a set consisting of a string-"
+"valued attribute `name` specifying the name of the attribute, and an "
+"attribute `value` specifying its value."
+msgstr ""
+
+#: source/language/builtins.md:2109
+msgid ""
+"In case of duplicate occurrences of the same name, the first takes "
+"precedence."
+msgstr ""
+
+#: source/language/builtins.md:2114
+msgid ""
+"```nix\n"
+"builtins.listToAttrs\n"
+"  [ { name = \"foo\"; value = 123; }\n"
+"    { name = \"bar\"; value = 456; }\n"
+"    { name = \"bar\"; value = 420; }\n"
+"  ]\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2128
+msgid "Has `O(n log n)` time complexity, where `n` is size of the list."
+msgstr ""
+
+#: source/language/builtins.md:2137
+msgid "Apply the function _f_ to each element in the list _list_. For example,"
+msgstr ""
+
+#: source/language/builtins.md:2140
+msgid ""
+"```nix\n"
+"map (x: \"foo\" + x) [ \"bar\" \"bla\" \"abc\" ]\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2144
+msgid "evaluates to `[ \"foobar\" \"foobla\" \"fooabc\" ]`."
+msgstr ""
+
+#: source/language/builtins.md:2146
+msgid ""
+"Has `O(n)` time complexity, where `n` is the size of the _list_. Note that "
+"no calls to _f_ are performed by the builtin, but _f_ itself is evaluated "
+"and its type is checked eagerly. The function _f_ is called on demand when a "
+"resulting list element is evaluated."
+msgstr ""
+
+#: source/language/builtins.md:2157
+msgid "Apply function _f_ to every element of _attrset_. For example,"
+msgstr ""
+
+#: source/language/builtins.md:2163
+msgid "evaluates to `{ a = 10; b = 20; }`."
+msgstr ""
+
+#: source/language/builtins.md:2165
+msgid ""
+"Has `O(n)` time complexity, where `n` is the size of the _attrset_. Note "
+"that no calls to _f_ are performed by the builtin. The function _f_ is "
+"called on demand when a resulting attribute value is evaluated."
+msgstr ""
+
+#: source/language/builtins.md:2176
+msgid ""
+"Returns a list if the [extended POSIX regular expression](http://pubs."
+"opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04) "
+"_regex_ matches _str_ precisely, otherwise returns `null`. Each item in the "
+"list is a regex group."
+msgstr ""
+
+#: source/language/builtins.md:2181
+msgid ""
+"```nix\n"
+"builtins.match \"ab\" \"abc\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2185
+msgid "Evaluates to `null`."
+msgstr ""
+
+#: source/language/builtins.md:2187
+msgid ""
+"```nix\n"
+"builtins.match \"abc\" \"abc\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2191
+msgid "Evaluates to `[ ]`."
+msgstr ""
+
+#: source/language/builtins.md:2193
+msgid ""
+"```nix\n"
+"builtins.match \"a(b)(c)\" \"abc\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2197
+msgid "Evaluates to `[ \"b\" \"c\" ]`."
+msgstr ""
+
+#: source/language/builtins.md:2199
+msgid ""
+"```nix\n"
+"builtins.match \"[[:space:]]+([[:upper:]]+)[[:space:]]+\" \"  FOO   \"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2203
+msgid "Evaluates to `[ \"FOO\" ]`."
+msgstr ""
+
+#: source/language/builtins.md:2212
+msgid "Return the product of the numbers _e1_ and _e2_."
+msgstr ""
+
+#: source/language/builtins.md:2221
+msgid ""
+"A list of search path entries used to resolve [lookup paths](../language/"
+"constructs/lookup-path.md). Its value is primarily determined by the [`nix-"
+"path` configuration setting](../command-ref/conf-file.md#conf-nix-path), "
+"which are"
+msgstr ""
+
+#: source/language/builtins.md:2223
+msgid ""
+"Overridden by the [`NIX_PATH`](../command-ref/env-common.md#env-NIX_PATH) "
+"environment variable or the `--nix-path` option"
+msgstr ""
+
+#: source/language/builtins.md:2224
+msgid ""
+"Extended by the [`-I` option](../command-ref/opt-common.md#opt-I) or `--"
+"extra-nix-path`"
+msgstr ""
+
+#: source/language/builtins.md:2229
+msgid "\"builtins.nixPath\""
+msgstr ""
+
+#: source/language/builtins.md:2230
+msgid "\"bar\""
+msgstr ""
+
+#: source/language/builtins.md:2230
+msgid "\"foo\""
+msgstr ""
+
+#: source/language/builtins.md:2233
+msgid ""
+"Lookup path expressions are [desugared](https://en.wikipedia.org/wiki/"
+"Syntactic_sugar) using this and [`builtins.findFile`](./builtins."
+"html#builtins-findFile):"
+msgstr ""
+
+#: source/language/builtins.md:2253
+msgid "The version of Nix."
+msgstr ""
+
+#: source/language/builtins.md:2255
+msgid "For example, where the command line returns the current Nix version,"
+msgstr ""
+
+#: source/language/builtins.md:2262
+msgid "the Nix language evaluator returns the same value:"
+msgstr ""
+
+#: source/language/builtins.md:2264
+msgid ""
+"```nix-repl\n"
+"nix-repl> builtins.nixVersion\n"
+"\"2.16.0\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2278
+msgid "The name `null` is not special, and can be shadowed:"
+msgstr ""
+
+#: source/language/builtins.md:2294
+msgid ""
+"This function is only available if the [`dynamic-derivations` experimental "
+"feature](../development/experimental-features.md#xp-feature-dynamic-"
+"derivations) is enabled."
+msgstr ""
+
+#: source/language/builtins.md:2302
+msgid ""
+"Return the output path of a derivation, literally or using an [input "
+"placeholder string](../store/derivation/index.md#input-placeholder) if "
+"needed."
+msgstr ""
+
+#: source/language/builtins.md:2306
+msgid ""
+"If the derivation has a statically-known output path (i.e. the derivation "
+"output is input-addressed, or fixed content-addressed), the output path is "
+"returned. But if the derivation is content-addressed or if the derivation is "
+"itself not-statically produced (i.e. is the output of another derivation), "
+"an input placeholder is returned instead."
+msgstr ""
+
+#: source/language/builtins.md:2309
+msgid ""
+"_`derivation reference`_ must be a string that may contain a regular store "
+"path to a derivation, or may be an input placeholder reference. If the "
+"derivation is produced by a derivation, you must explicitly select `drv."
+"outPath`. This primop can be chained arbitrarily deeply. For instance,"
+msgstr ""
+
+#: source/language/builtins.md:2314
+msgid ""
+"```nix\n"
+"builtins.outputOf\n"
+"  (builtins.outputOf myDrv \"out\")\n"
+"  \"out\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2320
+msgid "returns an input placeholder for the output of the output of `myDrv`."
+msgstr ""
+
+#: source/language/builtins.md:2322
+msgid ""
+"This primop corresponds to the `^` sigil for [deriving paths](../glossary."
+"md#gloss-deriving-path), e.g. as part of installable syntax on the command "
+"line."
+msgstr ""
+
+#: source/language/builtins.md:2331
+msgid ""
+"Split the string _s_ into a package name and version. The package name is "
+"everything up to but not including the first dash not followed by a letter, "
+"and the version is everything following that dash. The result is returned in "
+"a set `{ name, version }`. Thus, `builtins.parseDrvName "
+"\"nix-0.12pre12876\"` returns `{ name = \"nix\"; version = "
+"\"0.12pre12876\"; }`."
+msgstr ""
+
+#: source/language/builtins.md:2355
+msgid "Parse a flake reference, and return its exploded form."
+msgstr ""
+
+#: source/language/builtins.md:2359
+msgid ""
+"```nix\n"
+"builtins.parseFlakeRef \"github:NixOS/nixpkgs/23.05?dir=lib\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2363
+msgid "evaluates to:"
+msgstr ""
+
+#: source/language/builtins.md:2365
+msgid ""
+"```nix\n"
+"{ dir = \"lib\"; owner = \"NixOS\"; ref = \"23.05\"; repo = \"nixpkgs\"; "
+"type = \"github\"; }\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2376
+msgid ""
+"Given a predicate function _pred_, this function returns an attrset "
+"containing a list named `right`, containing the elements in _list_ for which "
+"_pred_ returned `true`, and a list named `wrong`, containing the elements "
+"for which it returned `false`. For example,"
+msgstr ""
+
+#: source/language/builtins.md:2392
+msgid "Runs in linear time in the size of the _list_."
+msgstr ""
+
+#: source/language/builtins.md:2401
+msgid ""
+"An enrichment of the built-in path type, based on the attributes present in "
+"_args_. All are optional except `path`:"
+msgstr ""
+
+#: source/language/builtins.md:2404
+msgid ""
+"path  \n"
+"The underlying path."
+msgstr ""
+
+#: source/language/builtins.md:2407
+msgid ""
+"name  \n"
+"The name of the path when added to the store. This can used to reference "
+"paths that have nix-illegal characters in their names, like `@`."
+msgstr ""
+
+#: source/language/builtins.md:2412
+msgid ""
+"filter  \n"
+"A function of the type expected by [`builtins.filterSource`](#builtins-"
+"filterSource), with the same semantics."
+msgstr ""
+
+#: source/language/builtins.md:2416
+msgid ""
+"recursive  \n"
+"When `false`, when `path` is added to the store it is with a [flat hash](../"
+"store/file-system-object/content-address.md#serial-flat), rather than a hash "
+"of the [NAR serialization](../store/file-system-object/content-address."
+"md#serial-nix-archive) of the file. Thus, `path` must refer to a regular "
+"file, not a directory. This allows similar behavior to `fetchurl`. Defaults "
+"to `true`."
+msgstr ""
+
+#: source/language/builtins.md:2425
+msgid ""
+"sha256  \n"
+"When provided, this is the expected [content hash](../store/file-system-"
+"object/content-address.md) of the path. Evaluation fails if the hash is "
+"incorrect, and providing a hash allows `builtins.path` to be used even when "
+"the `pure-eval` nix config option is on."
+msgstr ""
+
+#: source/language/builtins.md:2439
+msgid ""
+"Return `true` if the path _path_ exists at evaluation time, and `false` "
+"otherwise."
+msgstr ""
+
+#: source/language/builtins.md:2449
+msgid ""
+"Return an [output placeholder string](../store/derivation/index.md#output-"
+"placeholder) for the specified _output_ that will be substituted by the "
+"corresponding [output path](../glossary.md#gloss-output-path) at build time."
+msgstr ""
+
+#: source/language/builtins.md:2455
+msgid "Typical outputs would be `\"out\"`, `\"bin\"` or `\"dev\"`."
+msgstr ""
+
+#: source/language/builtins.md:2464
+msgid ""
+"Return the contents of the directory _path_ as a set mapping directory "
+"entries to the corresponding file type. For instance, if directory `A` "
+"contains a regular file `B` and another directory `C`, then `builtins."
+"readDir ./A` returns the set"
+msgstr ""
+
+#: source/language/builtins.md:2469
+msgid ""
+"```nix\n"
+"{ B = \"regular\"; C = \"directory\"; }\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2473
+msgid ""
+"The possible values for the file type are `\"regular\"`, `\"directory\"`, "
+"`\"symlink\"` and `\"unknown\"`."
+msgstr ""
+
+#: source/language/builtins.md:2483
+msgid "Return the contents of the file _path_ as a string."
+msgstr ""
+
+#: source/language/builtins.md:2492
+msgid ""
+"Determine the directory entry type of a filesystem node, being one of "
+"`\"directory\"`, `\"regular\"`, `\"symlink\"`, or `\"unknown\"`."
+msgstr ""
+
+#: source/language/builtins.md:2502
+msgid ""
+"Remove the attributes listed in _list_ from _set_. The attributes don’t have "
+"to exist in _set_. For instance,"
+msgstr ""
+
+#: source/language/builtins.md:2505
+msgid ""
+"```nix\n"
+"removeAttrs { x = 1; y = 2; z = 3; } [ \"a\" \"x\" \"z\" ]\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2509
+msgid "evaluates to `{ y = 2; }`."
+msgstr ""
+
+#: source/language/builtins.md:2511
+msgid ""
+"Has `O(n + k log k)` time complexity, where `n` is number of attributes in "
+"the _set_ and `k` is the size of _list_."
+msgstr ""
+
+#: source/language/builtins.md:2520
+msgid ""
+"Given string _s_, replace every occurrence of the strings in _from_ with the "
+"corresponding string in _to_."
+msgstr ""
+
+#: source/language/builtins.md:2523
+msgid ""
+"The argument _to_ is lazy, that is, it is only evaluated when its "
+"corresponding pattern in _from_ is matched in the string _s_"
+msgstr ""
+
+#: source/language/builtins.md:2527
+msgid ""
+"```nix\n"
+"builtins.replaceStrings [\"oo\" \"a\"] [\"a\" \"i\"] \"foobar\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2531
+msgid "evaluates to `\"fabir\"`."
+msgstr ""
+
+#: source/language/builtins.md:2533
+msgid ""
+"Has `O(n k)` time complexity, where `n` is the length of _s_ and `k` is the "
+"number of replacements."
+msgstr ""
+
+#: source/language/builtins.md:2542
+msgid ""
+"Load, parse, and return the Nix expression in the file _path_, with the "
+"attributes from _scope_ available as variables in the lexical scope of the "
+"imported file."
+msgstr ""
+
+#: source/language/builtins.md:2544
+msgid ""
+"This function is similar to [`import`](#builtins-import), but allows you to "
+"provide additional variables that will be available in the scope of the "
+"imported expression. The _scope_ argument must be an attribute set; each "
+"attribute becomes a variable available in the imported file. Built-in "
+"functions and values remain accessible unless shadowed by _scope_ attributes."
+msgstr ""
+
+#: source/language/builtins.md:2550
+msgid ""
+"Variables from _scope_ shadow built-ins with the same name, allowing you to "
+"override built-ins for the imported expression."
+msgstr ""
+
+#: source/language/builtins.md:2554
+msgid ""
+"Unlike [`import`](#builtins-import), `scopedImport` does not memoize "
+"evaluation results. While the parsing result may be reused, each call "
+"produces a distinct value. This is observable through performance and side "
+"effects such as [`builtins.trace`](#builtins-trace)."
+msgstr ""
+
+#: source/language/builtins.md:2564
+msgid "Create a file `greet.nix`:"
+msgstr ""
+
+#: source/language/builtins.md:2566
+msgid ""
+"```nix\n"
+"# greet.nix\n"
+"\"${greeting}, ${name}!\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2571
+msgid "Import it with additional variables in scope:"
+msgstr ""
+
+#: source/language/builtins.md:2573
+msgid ""
+"```nix\n"
+"scopedImport { greeting = \"Hello\"; name = \"World\"; } ./greet.nix\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2577
+msgid ""
+"    \"Hello, World!\"\n"
+"    "
+msgstr ""
+
+#: source/language/builtins.md:2579
+msgid ""
+"Evaluation aborts if the file doesn't exist or contains an invalid Nix "
+"expression."
+msgstr ""
+
+#: source/language/builtins.md:2588
+msgid ""
+"Evaluate _e1_, then evaluate and return _e2_. This ensures that a "
+"computation is strict in the value of _e1_."
+msgstr ""
+
+#: source/language/builtins.md:2598
+msgid ""
+"Return _list_ in sorted order. It repeatedly calls the function _comparator_ "
+"with two elements. The comparator should return `true` if the first element "
+"is less than the second, and `false` otherwise. For example,"
+msgstr ""
+
+#: source/language/builtins.md:2607
+msgid "produces the list `[ 42 77 147 249 483 526 ]`."
+msgstr ""
+
+#: source/language/builtins.md:2609
+msgid ""
+"This is a stable sort: it preserves the relative order of elements deemed "
+"equal by the comparator."
+msgstr ""
+
+#: source/language/builtins.md:2612
+msgid ""
+"_comparator_ must impose a strict weak ordering on the set of values in the "
+"_list_. This means that for any elements _a_, _b_ and _c_ from the _list_, "
+"_comparator_ must satisfy the following relations:"
+msgstr ""
+
+#: source/language/builtins.md:2616
+msgid "Transitivity"
+msgstr ""
+
+#: source/language/builtins.md:2618
+msgid ""
+"If a is less than b and b is less than c, then it follows that a is less "
+"than c."
+msgstr ""
+
+#: source/language/builtins.md:2624
+msgid "Irreflexivity"
+msgstr ""
+
+#: source/language/builtins.md:2630
+msgid "Transitivity of equivalence"
+msgstr ""
+
+#: source/language/builtins.md:2632
+msgid ""
+"First, two values a and b are considered equivalent with respect to the "
+"comparator if:"
+msgstr ""
+
+#: source/language/builtins.md:2638
+msgid "In other words, neither is considered \"less than\" the other."
+msgstr ""
+
+#: source/language/builtins.md:2640
+msgid "Transitivity of equivalence means:"
+msgstr ""
+
+#: source/language/builtins.md:2642
+msgid ""
+"If a is equivalent to b, and b is equivalent to c, then a must also be "
+"equivalent to c."
+msgstr ""
+
+#: source/language/builtins.md:2651
+msgid ""
+"If the _comparator_ violates any of these properties, then `builtins.sort` "
+"reorders elements in an unspecified manner."
+msgstr ""
+
+#: source/language/builtins.md:2654
+msgid ""
+"Runs in `O(n log n)` time on average, where `n` is the size of the _list_. "
+"Uses an adaptive sort that exploits existing sorted runs in the input, down "
+"to `O(n)` when the list is already sorted."
+msgstr ""
+
+#: source/language/builtins.md:2664
+msgid ""
+"Returns a list composed of non matched strings interleaved with the lists of "
+"the [extended POSIX regular expression](http://pubs.opengroup.org/"
+"onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04) _regex_ matches of "
+"_str_. Each item in the lists of matched sequences is a regex group."
+msgstr ""
+
+#: source/language/builtins.md:2670
+msgid ""
+"```nix\n"
+"builtins.split \"(a)b\" \"abc\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2674
+msgid "Evaluates to `[ \"\" [ \"a\" ] \"c\" ]`."
+msgstr ""
+
+#: source/language/builtins.md:2676
+msgid ""
+"```nix\n"
+"builtins.split \"([ac])\" \"abc\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2680
+msgid "Evaluates to `[ \"\" [ \"a\" ] \"b\" [ \"c\" ] \"\" ]`."
+msgstr ""
+
+#: source/language/builtins.md:2682
+msgid ""
+"```nix\n"
+"builtins.split \"(a)|(c)\" \"abc\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2686
+msgid "Evaluates to `[ \"\" [ \"a\" null ] \"b\" [ null \"c\" ] \"\" ]`."
+msgstr ""
+
+#: source/language/builtins.md:2688
+msgid ""
+"```nix\n"
+"builtins.split \"([[:upper:]]+)\" \" FOO \"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2692
+msgid "Evaluates to `[ \" \" [ \"FOO\" ] \" \" ]`."
+msgstr ""
+
+#: source/language/builtins.md:2701
+msgid ""
+"Split a string representing a version into its components, by the same "
+"version splitting logic underlying the version comparison in [`nix-env -u`]"
+"(../command-ref/nix-env/upgrade.md)."
+msgstr ""
+
+#: source/language/builtins.md:2712
+msgid ""
+"Logical file system location of the [Nix store](../glossary.md#gloss-store) "
+"currently in use."
+msgstr ""
+
+#: source/language/builtins.md:2714
+msgid ""
+"This value is determined by the `store` parameter in [Store URLs](../store/"
+"types/index.md#store-url-format):"
+msgstr ""
+
+#: source/language/builtins.md:2716
+msgid ""
+"```shell-session\n"
+"$ nix-instantiate --store 'dummy://?store=/blah' --eval --expr builtins."
+"storeDir\n"
+"\"/blah\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2728
+msgid ""
+"This function allows you to define a dependency on an already existing store "
+"path. For example, the derivation attribute `src = builtins.storePath /nix/"
+"store/f1d18v1y…-source` causes the derivation to depend on the specified "
+"path, which must exist or be substitutable. Note that this differs from a "
+"plain path (e.g. `src = /nix/store/f1d18v1y…-source`) in that the latter "
+"causes the path to be _copied_ again to the Nix store, resulting in a new "
+"path (e.g. `/nix/store/ld01dnzc…-source-source`)."
+msgstr ""
+
+#: source/language/builtins.md:2739
+msgid "See also [`builtins.fetchClosure`](#builtins-fetchClosure)."
+msgstr ""
+
+#: source/language/builtins.md:2748
+msgid ""
+"Return the number of bytes of the string _e_. If _e_ is not a string, "
+"evaluation is aborted."
+msgstr ""
+
+#: source/language/builtins.md:2758
+msgid "Return the difference between the numbers _e1_ and _e2_."
+msgstr ""
+
+#: source/language/builtins.md:2767
+msgid ""
+"Return the substring of _s_ from byte position _start_ (zero-based) up to "
+"but not including _start + len_. If _start_ is greater than the length of "
+"the string, an empty string is returned. If _start + len_ lies beyond the "
+"end of the string or _len_ is `-1`, only the substring up to the end of the "
+"string is returned. _start_ must be non-negative. For example,"
+msgstr ""
+
+#: source/language/builtins.md:2775
+msgid ""
+"```nix\n"
+"builtins.substring 0 3 \"nixos\"\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2779
+msgid "evaluates to `\"nix\"`."
+msgstr ""
+
+#: source/language/builtins.md:2788
+msgid ""
+"Return the list without its first item; abort evaluation if the argument "
+"isn’t a list or is an empty list."
+msgstr ""
+
+#: source/language/builtins.md:2793
+msgid ""
+"This function should generally be avoided since it's inefficient: unlike "
+"Haskell's `tail`, it takes O(n) time, so recursing over a list by repeatedly "
+"calling `tail` takes O(n^2) time."
+msgstr ""
+
+#: source/language/builtins.md:2804
+msgid ""
+"Throw an error message _s_. This usually aborts Nix expression evaluation, "
+"but in `nix-env -qa` and other commands that try to evaluate a set of "
+"derivations to get information about those derivations, a derivation that "
+"throws an error is silently skipped (which is not the case for `abort`)."
+msgstr ""
+
+#: source/language/builtins.md:2817
+msgid ""
+"Store the string _s_ in a file in the Nix store and return its path.  The "
+"file has suffix _name_. This file can be used as an input to derivations. "
+"One application is to write builders “inline”. For instance, the following "
+"Nix expression combines the Nix expression for GNU Hello and its build "
+"script into one file:"
+msgstr ""
+
+#: source/language/builtins.md:2823
+msgid ""
+"```nix\n"
+"{ stdenv, fetchurl, perl }:\n"
+"\n"
+"stdenv.mkDerivation {\n"
+"  name = \"hello-2.1.1\";\n"
+"\n"
+"  builder = builtins.toFile \"builder.sh\" \"\n"
+"    source $stdenv/setup\n"
+"\n"
+"    PATH=$perl/bin:$PATH\n"
+"\n"
+"    tar xvfz $src\n"
+"    cd hello-*\n"
+"    ./configure --prefix=$out\n"
+"    make\n"
+"    make install\n"
+"  \";\n"
+"\n"
+"  src = fetchurl {\n"
+"    url = \"http://ftp.nluug.nl/pub/gnu/hello/hello-2.1.1.tar.gz\";\n"
+"    sha256 = \"1md7jsfd8pa45z73bz1kszpp01yw6x5ljkjk2hx7wl800any6465\";\n"
+"  };\n"
+"  inherit perl;\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2849
+msgid "It is even possible for one file to refer to another, e.g.,"
+msgstr ""
+
+#: source/language/builtins.md:2851
+msgid ""
+"```nix\n"
+"builder = let\n"
+"  configFile = builtins.toFile \"foo.conf\" \"\n"
+"    # This is some dummy configuration file.\n"
+"    ...\n"
+"  \";\n"
+"in builtins.toFile \"builder.sh\" \"\n"
+"  source $stdenv/setup\n"
+"  ...\n"
+"  cp ${configFile} $out/etc/foo.conf\n"
+"\";\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2864
+msgid ""
+"Note that `${configFile}` is a [string interpolation](../language/types."
+"md#type-string), so the result of the expression `configFile` (i.e., a path "
+"like `/nix/store/m7p7jfny445k...-foo.conf`) will be spliced into the "
+"resulting string."
+msgstr ""
+
+#: source/language/builtins.md:2870
+msgid ""
+"It is however _not_ allowed to have files mutually referring to each other, "
+"like so:"
+msgstr ""
+
+#: source/language/builtins.md:2873
+msgid ""
+"```nix\n"
+"let\n"
+"  foo = builtins.toFile \"foo\" \"...${bar}...\";\n"
+"  bar = builtins.toFile \"bar\" \"...${foo}...\";\n"
+"in foo\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2880
+msgid ""
+"This is not allowed because it would cause a cyclic dependency in the "
+"computation of the cryptographic hashes for `foo` and `bar`."
+msgstr ""
+
+#: source/language/builtins.md:2883
+msgid ""
+"It is also not possible to reference the result of a derivation. If you are "
+"using Nixpkgs, the `writeTextFile` function is able to do that."
+msgstr ""
+
+#: source/language/builtins.md:2894
+msgid ""
+"Return a string containing a JSON representation of _e_. Strings, integers, "
+"floats, booleans, nulls and lists are mapped to their JSON equivalents. Sets "
+"(except derivations) are represented as objects. Derivations are translated "
+"to a JSON string containing the derivation’s output path. Paths are copied "
+"to the store and represented as a JSON string of the resulting store path."
+msgstr ""
+
+#: source/language/builtins.md:2908
+msgid ""
+"**DEPRECATED.** Use `/. + \"/path\"` to convert a string into an absolute "
+"path. For relative paths, use `./. + \"/path\"`."
+msgstr ""
+
+#: source/language/builtins.md:2918
+msgid "Convert the expression _e_ to a string. _e_ can be:"
+msgstr ""
+
+#: source/language/builtins.md:2920
+msgid "A string (in which case the string is returned unmodified)."
+msgstr ""
+
+#: source/language/builtins.md:2922
+msgid "A path (e.g., `toString /foo/bar` yields `\"/foo/bar\"`."
+msgstr ""
+
+#: source/language/builtins.md:2924
+msgid "A set containing `{ __toString = self: ...; }` or `{ outPath = ...; }`."
+msgstr ""
+
+#: source/language/builtins.md:2926
+msgid "An integer."
+msgstr ""
+
+#: source/language/builtins.md:2928
+msgid ""
+"A list, in which case the string representations of its elements are joined "
+"with spaces."
+msgstr ""
+
+#: source/language/builtins.md:2931
+msgid "A Boolean (`false` yields `\"\"`, `true` yields `\"1\"`)."
+msgstr ""
+
+#: source/language/builtins.md:2933
+msgid "`null`, which yields the empty string."
+msgstr ""
+
+#: source/language/builtins.md:2942
+msgid ""
+"Return a string containing an XML representation of _e_. The main "
+"application for `toXML` is to communicate information with the builder in a "
+"more structured format than plain environment variables."
+msgstr ""
+
+#: source/language/builtins.md:2947
+msgid "Here is an example where this is the case:"
+msgstr ""
+
+#: source/language/builtins.md:2949
+msgid ""
+"```nix\n"
+"{ stdenv, fetchurl, libxslt, jira, uberwiki }:\n"
+"\n"
+"stdenv.mkDerivation (rec {\n"
+"  name = \"web-server\";\n"
+"\n"
+"  buildInputs = [ libxslt ];\n"
+"\n"
+"  builder = builtins.toFile \"builder.sh\" \"\n"
+"    source $stdenv/setup\n"
+"    mkdir $out\n"
+"    echo \"$servlets\" | xsltproc ${stylesheet} - > $out/server-conf.xml ①\n"
+"  \";\n"
+"\n"
+"  stylesheet = builtins.toFile \"stylesheet.xsl\" ②\n"
+"   \"<?xml version='1.0' encoding='UTF-8'?>\n"
+"    <xsl:stylesheet xmlns:xsl='http://www.w3.org/1999/XSL/Transform' "
+"version='1.0'>\n"
+"      <xsl:template match='/'>\n"
+"        <Configure>\n"
+"          <xsl:for-each select='/expr/list/attrs'>\n"
+"            <Call name='addWebApplication'>\n"
+"              <Arg><xsl:value-of select=\\\"attr[@name = 'path']/string/"
+"@value\\\" /></Arg>\n"
+"              <Arg><xsl:value-of select=\\\"attr[@name = 'war']/path/@value\\"
+"\" /></Arg>\n"
+"            </Call>\n"
+"          </xsl:for-each>\n"
+"        </Configure>\n"
+"      </xsl:template>\n"
+"    </xsl:stylesheet>\n"
+"  \";\n"
+"\n"
+"  servlets = builtins.toXML [ ③\n"
+"    { path = \"/bugtracker\"; war = jira + \"/lib/atlassian-jira.war\"; }\n"
+"    { path = \"/wiki\"; war = uberwiki + \"/uberwiki.war\"; }\n"
+"  ];\n"
+"})\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:2986
+msgid ""
+"The builder is supposed to generate the configuration file for a [Jetty "
+"servlet container](http://jetty.mortbay.org/). A servlet container contains "
+"a number of servlets (`*.war` files) each exported under a specific URI "
+"prefix. So the servlet configuration is a list of sets containing the `path` "
+"and `war` of the servlet (①). This kind of information is difficult to "
+"communicate with the normal method of passing information through an "
+"environment variable, which just concatenates everything together into a "
+"string (which might just work in this case, but wouldn’t work if fields are "
+"optional or contain lists themselves). Instead the Nix expression is "
+"converted to an XML representation with `toXML`, which is unambiguous and "
+"can easily be processed with the appropriate tools. For instance, in the "
+"example an XSLT stylesheet (at point ②) is applied to it (at point ①) to "
+"generate the XML configuration file for the Jetty server. The XML "
+"representation produced at point ③ by `toXML` is as follows:"
+msgstr ""
+
+#: source/language/builtins.md:3004
+msgid "'1.0'"
+msgstr ""
+
+#: source/language/builtins.md:3004
+msgid "'utf-8'"
+msgstr ""
+
+#: source/language/builtins.md:3008 source/language/builtins.md:3016
+msgid "\"path\""
+msgstr ""
+
+#: source/language/builtins.md:3009
+msgid "\"/bugtracker\""
+msgstr ""
+
+#: source/language/builtins.md:3011 source/language/builtins.md:3019
+msgid "\"war\""
+msgstr ""
+
+#: source/language/builtins.md:3012
+msgid "\"/nix/store/d1jh9pasa7k2...-jira/lib/atlassian-jira.war\""
+msgstr ""
+
+#: source/language/builtins.md:3017
+msgid "\"/wiki\""
+msgstr ""
+
+#: source/language/builtins.md:3020
+msgid "\"/nix/store/y6423b1yi4sx...-uberwiki/uberwiki.war\""
+msgstr ""
+
+#: source/language/builtins.md:3027
+msgid ""
+"Note that we used the `toFile` built-in to write the builder and the "
+"stylesheet “inline” in the Nix expression. The path of the stylesheet is "
+"spliced into the builder using the syntax `xsltproc ${stylesheet}`."
+msgstr ""
+
+#: source/language/builtins.md:3039
+msgid ""
+"Evaluate _e1_ and print its abstract syntax representation on standard "
+"error. Then return _e2_. This function is useful for debugging."
+msgstr ""
+
+#: source/language/builtins.md:3043
+msgid ""
+"If the [`debugger-on-trace`](../command-ref/conf-file.md#conf-debugger-on-"
+"trace) option is set to `true` and the `--debugger` flag is given, the "
+"interactive debugger is started when `trace` is called (like [`break`](../"
+"language/builtins.md#builtins-break))."
+msgstr ""
+
+#: source/language/builtins.md:3056
+msgid ""
+"Evaluate _e1_ and print its abstract syntax representation on standard error "
+"if `--trace-verbose` is enabled. Then return _e2_. This function is useful "
+"for debugging."
+msgstr ""
+
+#: source/language/builtins.md:3074
+msgid "The name `true` is not special, and can be shadowed:"
+msgstr ""
+
+#: source/language/builtins.md:3088
+msgid ""
+"Try to shallowly evaluate _e_. Return a set containing the attributes "
+"`success` (`true` if _e_ evaluated successfully, `false` if an error was "
+"thrown) and `value`, equalling _e_ if successful and `false` otherwise. "
+"`tryEval` only prevents errors created by `throw` or `assert` from being "
+"thrown. Errors `tryEval` doesn't catch are, for example, those created by "
+"`abort` and type errors generated by builtins. Also note that this doesn't "
+"evaluate _e_ deeply, so `let e = { x = throw \"\"; }; in (builtins.tryEval "
+"e).success` is `true`. Using `builtins.deepSeq` one can get the expected "
+"result: `let e = { x = throw \"\"; }; in (builtins.tryEval (builtins.deepSeq "
+"e e)).success` is `false`."
+msgstr ""
+
+#: source/language/builtins.md:3102
+msgid ""
+"`tryEval` intentionally does not return the error message, because that "
+"risks bringing non-determinism into the evaluation result, and it would "
+"become very difficult to improve error reporting without breaking existing "
+"expressions. Instead, use [`builtins.addErrorContext`](../language/builtins."
+"md#builtins-addErrorContext) to add context to the error message, and use a "
+"Nix unit testing tool for testing."
+msgstr ""
+
+#: source/language/builtins.md:3112
+msgid ""
+"Return a string representing the type of the value _e_, namely `\"int\"`, "
+"`\"bool\"`, `\"string\"`, `\"path\"`, `\"null\"`, `\"set\"`, `\"list\"`, "
+"`\"lambda\"` or `\"float\"`."
+msgstr ""
+
+#: source/language/builtins.md:3123
+msgid ""
+"Create a copy of the given string where every [derivation deep](../language/"
+"string-context.md#string-context-element-derivation-deep) string context "
+"element is turned into a [constant](../language/string-context.md#string-"
+"context-constant) string context element."
+msgstr ""
+
+#: source/language/builtins.md:3129
+msgid ""
+"This is the opposite of [`builtins.addDrvOutputDependencies`](#builtins-"
+"addDrvOutputDependencies)."
+msgstr ""
+
+#: source/language/builtins.md:3131
+msgid ""
+"This is unsafe because it allows us to \"forget\" store objects we would "
+"have otherwise referred to with the string context, whereas Nix normally "
+"tracks all dependencies consistently. Safe operations \"grow\" but never "
+"\"shrink\" string contexts. [`builtins.addDrvOutputDependencies`](#builtins-"
+"addDrvOutputDependencies) in contrast is safe because \"derivation deep\" "
+"string context element always refers to the underlying derivation (among "
+"many more things). Replacing a constant string context element with a "
+"\"derivation deep\" element is a safe operation that just enlargens the "
+"string context without forgetting anything."
+msgstr ""
+
+#: source/language/builtins.md:3146
+msgid ""
+"Discard the [string context](../language/string-context.md) from a value "
+"that can be coerced to a string."
+msgstr ""
+
+#: source/language/builtins.md:3155
+msgid ""
+"`unsafeGetAttrPos` returns the position of the attribute named _s_ from "
+"_set_. This is used by Nixpkgs to provide location information in error "
+"messages."
+msgstr ""
+
+#: source/language/builtins.md:3166
+msgid ""
+"Evaluate _e1_, which must be a string, and print it on standard error as a "
+"warning. Then return _e2_. This function is useful for non-critical "
+"situations where attention is advisable."
+msgstr ""
+
+#: source/language/builtins.md:3170
+msgid ""
+"If the [`debugger-on-trace`](../command-ref/conf-file.md#conf-debugger-on-"
+"trace) or [`debugger-on-warn`](../command-ref/conf-file.md#conf-debugger-on-"
+"warn) option is set to `true` and the `--debugger` flag is given, the "
+"interactive debugger will be started when `warn` is called (like [`break`]"
+"(../language/builtins.md#builtins-break))."
+msgstr ""
+
+#: source/language/builtins.md:3177
+msgid ""
+"If the [`abort-on-warn`](../command-ref/conf-file.md#conf-abort-on-warn) "
+"option is set, the evaluation is aborted after the warning is printed. This "
+"is useful to reveal the stack trace of the warning, when the context is non-"
+"interactive and a debugger can not be launched."
+msgstr ""
+
+#: source/language/builtins.md:3189
+msgid ""
+"Transpose a list of attribute sets into an attribute set of lists, then "
+"apply `mapAttrs`."
+msgstr ""
+
+#: source/language/builtins.md:3192
+msgid ""
+"`f` receives two arguments: the attribute name and a non-empty list of all "
+"values encountered for that attribute name."
+msgstr ""
+
+#: source/language/builtins.md:3195
+msgid ""
+"The result is an attribute set where the attribute names are the union of "
+"the attribute names in each element of `list`. The attribute values are the "
+"return values of `f`."
+msgstr ""
+
+#: source/language/builtins.md:3199
+msgid ""
+"```nix\n"
+"builtins.zipAttrsWith\n"
+"  (name: values: { inherit name values; })\n"
+"  [ { a = \"x\"; } { a = \"y\"; b = \"z\"; } ]\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:3207
+msgid ""
+"```\n"
+"{\n"
+"  a = { name = \"a\"; values = [ \"x\" \"y\" ]; };\n"
+"  b = { name = \"b\"; values = [ \"z\" ]; };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/builtins.md:3214
+msgid ""
+"Has `O(n log n)` time complexity, where `n` is the number of attributes "
+"across all sets."
+msgstr ""

@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/advanced-topics/diff-hook.md:1
+msgid "Verifying Build Reproducibility"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:3
+msgid ""
+"You can use Nix's `diff-hook` setting to compare build results. Note that "
+"this hook is only executed if the results differ; it is not used for "
+"determining if the results are the same."
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:7
+msgid ""
+"For purposes of demonstration, we'll use the following Nix file, "
+"`deterministic.nix` for testing:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:10
+msgid ""
+"```nix\n"
+"let\n"
+"  inherit (import <nixpkgs> {}) runCommand;\n"
+"in {\n"
+"  stable = runCommand \"stable\" {} ''\n"
+"    touch $out\n"
+"  '';\n"
+"\n"
+"  unstable = runCommand \"unstable\" {} ''\n"
+"    echo $RANDOM > $out\n"
+"  '';\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:24
+msgid "Additionally, `nix.conf` contains:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:29
+msgid "where `/etc/nix/my-diff-hook` is an executable file containing:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:32
+msgid "#!/bin/sh\n"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:34
+msgid "\"For derivation $3:\""
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:35
+msgid "\"$1\" \"$2\""
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:38
+msgid ""
+"The diff hook is executed by the same user and group who ran the build. "
+"However, the diff hook does not have write access to the store path just "
+"built."
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:42
+msgid "Spot-Checking Build Determinism"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:44
+msgid ""
+"Verify a path which already exists in the Nix store by passing `--check` to "
+"the build command."
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:47
+msgid ""
+"If the build passes and is deterministic, Nix will exit with a status code "
+"of 0:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:62
+msgid ""
+"If the build is not deterministic, Nix will exit with a status code of 1:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:78
+msgid "In the Nix daemon's log, we will now see:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:88
+msgid ""
+"Using `--check` with `--keep-failed` will cause Nix to keep the second "
+"build's output in a special, `.check` path:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:100
+msgid ""
+"In particular, notice the `/nix/store/krpqk0l9ib0ibi1d2w52z293zw455cap-"
+"unstable.check` output. Nix has copied the build results to that directory "
+"where you can examine it."
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:104
+msgid "\\[\\]{#check-dirs-are-unregistered} **Note**"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:106
+msgid ""
+"Check paths are not protected against garbage collection, and this path will "
+"be deleted on the next garbage collection."
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:109
+msgid ""
+"The path is guaranteed to be alive for the duration of the `diff-hook`'s "
+"execution, but may be deleted any time after."
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:112
+msgid ""
+"If the comparison is performed as part of automated tooling, please use the "
+"diff-hook or author your tooling to handle the case where the build was not "
+"deterministic and also a check path does not exist."
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:116
+msgid ""
+"`--check` is only usable if the derivation has been built on the system "
+"already. If the derivation has not been built Nix will fail with the error:"
+msgstr ""
+
+#: source/advanced-topics/diff-hook.md:123
+msgid "Run the build without `--check`, and then try with `--check` again."
+msgstr ""

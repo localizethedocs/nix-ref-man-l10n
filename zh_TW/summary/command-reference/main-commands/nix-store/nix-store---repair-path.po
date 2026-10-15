@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-store/repair-path.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-store/repair-path.md:3
+msgid "`nix --repair-path` - re-download path from substituter"
+msgstr ""
+
+#: source/command-ref/nix-store/repair-path.md:5
+msgid "Synopsis"
+msgstr "概要"
+
+#: source/command-ref/nix-store/repair-path.md:7
+msgid "`nix-store` `--repair-path` _paths…_"
+msgstr ""
+
+#: source/command-ref/nix-store/repair-path.md:9
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-store/repair-path.md:11
+msgid ""
+"The operation `--repair-path` attempts to “repair” the specified paths by "
+"redownloading them using the available substituters. If no substitutes are "
+"available, then repair is not possible."
+msgstr ""
+
+#: source/command-ref/nix-store/repair-path.md:15
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/nix-store/repair-path.md:17
+msgid ""
+"During repair, there is a very small time window during which the old path "
+"(if it exists) is moved out of the way and replaced with the new path. If "
+"repair is interrupted in between, then the system may be left in a broken "
+"state (e.g., if the path contains a critical system component like the GNU C "
+"Library)."
+msgstr ""
+
+#: source/command-ref/nix-store/repair-path.md:23
+msgid "Example"
+msgstr ""

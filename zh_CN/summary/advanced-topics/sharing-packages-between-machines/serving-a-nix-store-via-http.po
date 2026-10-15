@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/package-management/binary-cache-substituter.md:1
+msgid "Serving a Nix store via HTTP"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:3
+msgid ""
+"You can easily share the Nix store of a machine via HTTP. This allows other "
+"machines to fetch store paths from that machine to speed up installations. "
+"It uses the same _binary cache_ mechanism that Nix usually uses to fetch pre-"
+"built binaries from <https://cache.nixos.org>."
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:8
+msgid ""
+"The daemon that handles binary cache requests via HTTP, `nix-serve`, is not "
+"part of the Nix distribution, but you can install it from Nixpkgs:"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:15
+msgid ""
+"You can then start the server, listening for HTTP connections on whatever "
+"port you like:"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:22
+msgid ""
+"To check whether it works, try fetching the [`nix-cache-info`](../protocols/"
+"binary-cache/nix-cache-info.md) file on the client:"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:24
+msgid ""
+"```console\n"
+"$ curl http://avalon:8080/nix-cache-info\n"
+"StoreDir: /nix/store\n"
+"WantMassQuery: 1\n"
+"Priority: 30\n"
+"```"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:31
+msgid ""
+"When writing to a binary cache (e.g., with [`nix copy`](../command-ref/new-"
+"cli/nix3-copy.md)), Nix creates [`nix-cache-info`](../protocols/binary-cache/"
+"nix-cache-info.md) automatically if it doesn't exist."
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:33
+msgid ""
+"On the client side, you can tell Nix to use your binary cache using `--"
+"substituters`, e.g.:"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:36
+msgid ""
+"```console\n"
+"$ nix-env --install --attr nixpkgs.firefox --substituters http://"
+"avalon:8080/\n"
+"```"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:40
+msgid ""
+"The option `substituters` tells Nix to use this binary cache in addition to "
+"your default caches, such as <https://cache.nixos.org>. Thus, for any path "
+"in the closure of Firefox, Nix will first check if the path is available on "
+"the server `avalon` or another binary caches. If not, it will fall back to "
+"building from source."
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:46
+msgid ""
+"You can also tell Nix to always use your binary cache by adding a line to "
+"the `nix.conf` configuration file like this:"
+msgstr ""
+
+#: source/package-management/binary-cache-substituter.md:49
+msgid ""
+"    substituters = http://avalon:8080/ https://cache.nixos.org/\n"
+"    "
+msgstr ""

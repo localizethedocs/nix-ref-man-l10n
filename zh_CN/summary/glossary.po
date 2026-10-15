@@ -1,0 +1,892 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/glossary.md:1
+msgid "Glossary"
+msgstr ""
+
+#: source/glossary.md:3
+msgid "\\[`∅`\\]{#gloss-empty-set}"
+msgstr ""
+
+#: source/glossary.md:5
+msgid ""
+"The empty set symbol. In the context of profile history, this denotes a "
+"package is not present in a particular version of the profile."
+msgstr ""
+
+#: source/glossary.md:7
+msgid "\\[`ε`\\]{#gloss-epsilon}"
+msgstr ""
+
+#: source/glossary.md:9
+msgid ""
+"The epsilon symbol. In the context of a package, this means the version is "
+"empty. More precisely, the derivation does not have a version attribute."
+msgstr ""
+
+#: source/glossary.md:11
+msgid "[base directory](#gloss-base-directory){#gloss-base-directory}"
+msgstr ""
+
+#: source/glossary.md:13
+msgid "The location from which relative paths are resolved."
+msgstr ""
+
+#: source/glossary.md:15
+msgid ""
+"For expressions in a file, the base directory is the directory containing "
+"that file. This is analogous to the directory of a [base URL](https://"
+"datatracker.ietf.org/doc/html/rfc1808#section-3.3)."
+msgstr ""
+
+#: source/glossary.md:26
+msgid ""
+"For expressions written in command line arguments with [`--expr`](./command-"
+"ref/opt-common.html#opt-expr), the base directory is the current working "
+"directory."
+msgstr ""
+
+#: source/glossary.md:30
+msgid "\\[binary cache\\]{#gloss-binary-cache}"
+msgstr ""
+
+#: source/glossary.md:32
+msgid ""
+"A _binary cache_ is a Nix store which uses a different format: its metadata "
+"and signatures are kept in `.narinfo` files rather than in a [Nix database]"
+"(#gloss-nix-database). This different format simplifies serving store "
+"objects over the network, but cannot host builds. Examples of binary caches "
+"include S3 buckets and the [NixOS binary cache](https://cache.nixos.org)."
+msgstr ""
+
+#: source/glossary.md:38
+msgid "\\[build system\\]{#gloss-build-system}"
+msgstr ""
+
+#: source/glossary.md:40
+msgid ""
+"Generic term for software that facilitates the building of software by "
+"automating the invocation of compilers, linkers, and other tools."
+msgstr ""
+
+#: source/glossary.md:42
+msgid ""
+"Nix can be used as a generic build system. It has no knowledge of any "
+"particular programming language or toolchain. These details are specified in "
+"[derivation expressions](#gloss-derivation-expression)."
+msgstr ""
+
+#: source/glossary.md:46
+msgid "[closure](#gloss-closure){#gloss-closure}"
+msgstr ""
+
+#: source/glossary.md:48
+msgid ""
+"The closure of a store path is the set of store paths that are directly or "
+"indirectly “reachable” from that store path; that is, it’s the closure of "
+"the path under the _references_ relation. For a package, the closure of its "
+"derivation is equivalent to the build-time dependencies, while the closure "
+"of its [output path](#gloss-output-path) is equivalent to its runtime "
+"dependencies. For correct deployment it is necessary to deploy whole "
+"closures, since otherwise at runtime files could be missing. The command "
+"`nix-store --query --requisites ` prints out closures of store paths."
+msgstr ""
+
+#: source/glossary.md:58
+msgid ""
+"As an example, if the [store object](#gloss-store-object) at path `P` "
+"contains a [reference](#gloss-reference) to a store object at path `Q`, then "
+"`Q` is in the closure of `P`. Further, if `Q` references `R` then `R` is "
+"also in the closure of `P`."
+msgstr ""
+
+#: source/glossary.md:62 source/glossary.md:309 source/glossary.md:330
+#: source/glossary.md:334 source/glossary.md:345
+msgid "See [References](./store/store-object.md#references) for details."
+msgstr ""
+
+#: source/glossary.md:66
+msgid "\\[content address\\]{#gloss-content-address}"
+msgstr ""
+
+#: source/glossary.md:68
+msgid ""
+"A [_content address_](https://en.wikipedia.org/wiki/Content-"
+"addressable_storage) is a secure way to reference immutable data. The "
+"reference is calculated directly from the content of the data being "
+"referenced, which means the reference is [_tamper proof_](https://en."
+"wikipedia.org/wiki/Tamperproofing) \\--- variations of the data should "
+"always calculate to distinct content addresses."
+msgstr ""
+
+#: source/glossary.md:75
+msgid "For how Nix uses content addresses, see:"
+msgstr ""
+
+#: source/glossary.md:77
+msgid ""
+"[Content-Addressing File System Objects](./store/file-system-object/content-"
+"address.md)"
+msgstr ""
+
+#: source/glossary.md:78
+msgid ""
+"[Content-Addressing Store Objects](./store/store-object/content-address.md)"
+msgstr ""
+
+#: source/glossary.md:79
+msgid "[content-addressing derivation](#gloss-content-addressing-derivation)"
+msgstr ""
+
+#: source/glossary.md:81
+msgid ""
+"Software Heritage's writing on [_Intrinsic and Extrinsic identifiers_]"
+"(https://www.softwareheritage.org/2020/07/09/intrinsic-vs-extrinsic-"
+"identifiers) is also a good introduction to the value of content-addressing "
+"over other referencing schemes."
+msgstr ""
+
+#: source/glossary.md:83
+msgid ""
+"Besides content addressing, the Nix store also uses [input addressing]"
+"(#gloss-input-addressed-store-object)."
+msgstr ""
+
+#: source/glossary.md:85
+msgid "\\[content-addressed storage\\]{#gloss-content-addressed-store}"
+msgstr ""
+
+#: source/glossary.md:87
+msgid ""
+"The industry term for storage and retrieval systems using [content "
+"addressing](#gloss-content-address). A Nix store also has [input addressing]"
+"(#gloss-input-addressed-store-object), and metadata."
+msgstr ""
+
+#: source/glossary.md:89
+msgid ""
+"\\[content-addressed store object\\]{#gloss-content-addressed-store-object}"
+msgstr ""
+
+#: source/glossary.md:91
+msgid ""
+"A [store object](#gloss-store-object) which is [content-addressed](#gloss-"
+"content-address), i.e. whose [store path](#gloss-store-path) is determined "
+"by its contents. This includes derivations, the outputs of [content-"
+"addressing derivations](#gloss-content-addressing-derivation), and the "
+"outputs of [fixed-output derivations](#gloss-fixed-output-derivation)."
+msgstr ""
+
+#: source/glossary.md:95
+msgid ""
+"See [Content-Addressing Store Objects](./store/store-object/content-address."
+"md) for details."
+msgstr ""
+
+#: source/glossary.md:97
+msgid ""
+"\\[content-addressing derivation\\]{#gloss-content-addressing-derivation}"
+msgstr ""
+
+#: source/glossary.md:99
+msgid ""
+"A derivation which has the [`__contentAddressed`](./language/advanced-"
+"attributes.md#adv-attr-__contentAddressed) attribute set to `true`."
+msgstr ""
+
+#: source/glossary.md:103
+msgid "[derivation](#gloss-derivation){#gloss-derivation}"
+msgstr ""
+
+#: source/glossary.md:105
+msgid ""
+"A derivation can be thought of as a [pure function](https://en.wikipedia.org/"
+"wiki/Pure_function) that produces new [store objects](#gloss-store-object) "
+"from existing store objects."
+msgstr ""
+
+#: source/glossary.md:107
+msgid ""
+"Derivations are implemented as [operating system processes that run in a "
+"sandbox](./store/building.md). This sandbox by default only allows reading "
+"from store objects specified as inputs, and only allows writing to "
+"designated [outputs](#gloss-output) to be [captured as store objects](./"
+"store/building.md#processing-outputs)."
+msgstr ""
+
+#: source/glossary.md:110
+msgid ""
+"A derivation is typically specified as a [derivation expression](#gloss-"
+"derivation-expression) in the [Nix language](./language/index.md), and "
+"[instantiated](#gloss-instantiate) to a [store derivation](#gloss-store-"
+"derivation). There are multiple ways of obtaining store objects from store "
+"derivations, collectively called [realisation](#gloss-realise)."
+msgstr ""
+
+#: source/glossary.md:115
+msgid ""
+"[derivation expression](#gloss-derivation-expression){#gloss-derivation-"
+"expression}"
+msgstr ""
+
+#: source/glossary.md:117
+msgid ""
+"A description of a [store derivation](#gloss-store-derivation) using the "
+"[`derivation` primitive](./language/derivations.md) in the [Nix language](./"
+"language/index.md)."
+msgstr ""
+
+#: source/glossary.md:121
+msgid "[derivation path](#gloss-derivation-path){#gloss-derivation-path}"
+msgstr ""
+
+#: source/glossary.md:123
+msgid ""
+"A [store path](#gloss-store-path) which uniquely identifies a [store "
+"derivation](#gloss-store-derivation)."
+msgstr ""
+
+#: source/glossary.md:125
+msgid ""
+"See [Referencing Store Derivations](./store/derivation/index.md#derivation-"
+"path) for details."
+msgstr ""
+
+#: source/glossary.md:127
+msgid "Not to be confused with \\[deriving path\\]."
+msgstr ""
+
+#: source/glossary.md:131
+msgid "\\[deriver\\]{#gloss-deriver}"
+msgstr ""
+
+#: source/glossary.md:133
+msgid ""
+"The [store derivation](#gloss-store-derivation) that produced an [output "
+"path](#gloss-output-path)."
+msgstr ""
+
+#: source/glossary.md:135
+msgid ""
+"The deriver for an output path can be queried with the `--deriver` option to "
+"[`nix-store --query`](./command-ref/nix-store/query.md)."
+msgstr ""
+
+#: source/glossary.md:138
+msgid "\\[deriving path\\]{#gloss-deriving-path}"
+msgstr ""
+
+#: source/glossary.md:140
+msgid ""
+"Deriving paths are a way to refer to [store objects](#gloss-store-object) "
+"that might not yet be [realised](#gloss-realise)."
+msgstr ""
+
+#: source/glossary.md:142
+msgid ""
+"See [Deriving Path](./store/derivation/index.md#deriving-path) for details."
+msgstr ""
+
+#: source/glossary.md:144
+msgid "Not to be confused with [derivation path](#gloss-derivation-path)."
+msgstr ""
+
+#: source/glossary.md:146
+msgid "\\[directed acyclic graph\\]{#gloss-directed-acyclic-graph}"
+msgstr ""
+
+#: source/glossary.md:148
+msgid ""
+"A [directed acyclic graph](https://en.wikipedia.org/wiki/"
+"Directed_acyclic_graph) (DAG) is graph whose edges are given a direction "
+"(\"a to b\" is not the same edge as \"b to a\"), and for which no possible "
+"path (created by joining together edges) forms a cycle."
+msgstr ""
+
+#: source/glossary.md:150
+msgid ""
+"DAGs are very important to Nix. In particular, the non-self-[references]"
+"(#gloss-reference) of [store object](#gloss-store-object) form a cycle."
+msgstr ""
+
+#: source/glossary.md:153
+msgid "\\[experimental feature\\]{#gloss-experimental-feature}"
+msgstr ""
+
+#: source/glossary.md:155
+msgid ""
+"Not yet stabilized functionality guarded by named experimental feature "
+"flags. These flags are enabled or disabled with the [`experimental-features`]"
+"(./command-ref/conf-file.html#conf-experimental-features) setting."
+msgstr ""
+
+#: source/glossary.md:158
+msgid ""
+"See the contribution guide on the [purpose and lifecycle of experimental "
+"feaures](./development/experimental-features.md)."
+msgstr ""
+
+#: source/glossary.md:160
+msgid ""
+"[file system object](#gloss-file-system-object){#gloss-file-system-object}"
+msgstr ""
+
+#: source/glossary.md:162
+msgid "The Nix data model for representing simplified file system data."
+msgstr ""
+
+#: source/glossary.md:164
+msgid "See [File System Object](./store/file-system-object.md) for details."
+msgstr ""
+
+#: source/glossary.md:168
+msgid "\\[fixed-output derivation\\]{#gloss-fixed-output-derivation} (FOD)"
+msgstr ""
+
+#: source/glossary.md:170
+msgid ""
+"A [store derivation](#gloss-store-derivation) where a cryptographic hash of "
+"the [output](#gloss-output) is determined in advance using the [`outputHash`]"
+"(./language/advanced-attributes.md#adv-attr-outputHash) attribute, and where "
+"the [`builder`](./language/derivations.md#attr-builder) executable has "
+"access to the network."
+msgstr ""
+
+#: source/glossary.md:172
+msgid "\\[hermetic\\]{#gloss-hermetic}"
+msgstr ""
+
+#: source/glossary.md:174
+msgid ""
+"An evaluation or build process is hermetic when one can mechanically "
+"identify the set of all inputs that may affect it. At the build level this "
+"is achieved by sandboxing; at the evaluation level by restricting impure "
+"access (as in [pure evaluation](./command-ref/conf-file.md#conf-pure-eval)) "
+"together with [locking](#gloss-locking) or [pinning](#gloss-pinning) of the "
+"fetched inputs, taken transitively over [pure fetches](./command-ref/conf-"
+"file.md#pure-fetch)."
+msgstr ""
+
+#: source/glossary.md:177
+msgid "\\[IFD\\]{#gloss-ifd}"
+msgstr ""
+
+#: source/glossary.md:179
+msgid "[Import From Derivation](./language/import-from-derivation.md)"
+msgstr ""
+
+#: source/glossary.md:181
+msgid "\\[impure derivation\\]{#gloss-impure-derivation}"
+msgstr ""
+
+#: source/glossary.md:183
+msgid ""
+"[An experimental feature](./development/experimental-features.md#xp-feature-"
+"impure-derivations) that allows derivations to be explicitly marked as "
+"impure, so that they are always rebuilt, and their outputs not reused by "
+"subsequent calls to realise them."
+msgstr ""
+
+#: source/glossary.md:186
+msgid "\\[input-addressed store object\\]{#gloss-input-addressed-store-object}"
+msgstr ""
+
+#: source/glossary.md:188
+msgid ""
+"A store object produced by building a non-[content-addressed](#gloss-content-"
+"addressing-derivation), non-[fixed-output](#gloss-fixed-output-derivation) "
+"derivation."
+msgstr ""
+
+#: source/glossary.md:193
+msgid ""
+"See [input-addressing derivation outputs](store/derivation/outputs/input-"
+"address.md) for details."
+msgstr ""
+
+#: source/glossary.md:195
+msgid "\\[installable\\]{#gloss-installable}"
+msgstr ""
+
+#: source/glossary.md:197
+msgid "Something that can be realised in the Nix store."
+msgstr ""
+
+#: source/glossary.md:199
+msgid ""
+"See [installables](./command-ref/new-cli/nix.md#installables) for [`nix` "
+"commands](./command-ref/new-cli/nix.md) (experimental) for details."
+msgstr ""
+
+#: source/glossary.md:201
+msgid "[instantiate](#gloss-instantiate){#gloss-instantiate}, instantiation"
+msgstr ""
+
+#: source/glossary.md:203
+msgid ""
+"Translate a [derivation expression](#gloss-derivation-expression) into a "
+"[store derivation](#gloss-store-derivation)."
+msgstr ""
+
+#: source/glossary.md:205
+msgid ""
+"See [`nix-instantiate`](./command-ref/nix-instantiate.md), which produces a "
+"store derivation from a Nix expression that evaluates to a derivation."
+msgstr ""
+
+#: source/glossary.md:209
+msgid "\\[locking\\]{#gloss-locking}"
+msgstr ""
+
+#: source/glossary.md:211
+msgid ""
+"In package management, _locking_ is the concept or process of creating a "
+"lock file, which maps each mutable evaluation input to an immutable "
+"reference, so that future evaluations resolve to the same immutable versions "
+"rather than whatever the mutable references currently point to."
+msgstr ""
+
+#: source/glossary.md:213
+msgid "\\[Nix Archive (NAR)\\]{#gloss-nar}"
+msgstr ""
+
+#: source/glossary.md:215
+msgid ""
+"A _N_ix _AR_chive. This is a serialisation of a path in the Nix store. It "
+"can contain regular files, directories and symbolic links.  NARs are "
+"generated and unpacked using `nix-store --dump` and `nix-store --restore`."
+msgstr ""
+
+#: source/glossary.md:220
+msgid ""
+"See [Nix Archive](store/file-system-object/content-address.html#serial-nix-"
+"archive) for details."
+msgstr ""
+
+#: source/glossary.md:222
+msgid "[Nix database](#gloss-nix-database){#gloss-nix-database}"
+msgstr ""
+
+#: source/glossary.md:224
+msgid ""
+"An SQlite database to track [reference](#gloss-reference)s between [store "
+"object](#gloss-store-object)s. This is an implementation detail of the "
+"[local store](./store/types/local-store.md)."
+msgstr ""
+
+#: source/glossary.md:227
+msgid "Default location: `/nix/var/nix/db`."
+msgstr ""
+
+#: source/glossary.md:231
+msgid "\\[Nix expression\\]{#gloss-nix-expression}"
+msgstr ""
+
+#: source/glossary.md:233
+msgid "A syntactically valid use of the [Nix language](./language/index.md)."
+msgstr ""
+
+#: source/glossary.md:235 source/glossary.md:242 source/glossary.md:379
+msgid "**Example**"
+msgstr ""
+
+#: source/glossary.md:237
+msgid "The contents of a `.nix` file form a Nix expression."
+msgstr ""
+
+#: source/glossary.md:239
+msgid ""
+"Nix expressions specify [derivation expressions](#gloss-derivation-"
+"expression), which are [instantiated](#gloss-instantiate) into the Nix store "
+"as [store derivations](#gloss-store-derivation). These derivations can then "
+"be [realised](#gloss-realise) to produce [outputs](#gloss-output)."
+msgstr ""
+
+#: source/glossary.md:244
+msgid ""
+"Building and deploying software using Nix entails writing Nix expressions to "
+"describe [packages](#package) and compositions thereof."
+msgstr ""
+
+#: source/glossary.md:246
+msgid "\\[Nix instance\\]{#gloss-nix-instance}"
+msgstr ""
+
+#: source/glossary.md:248
+msgid ""
+"An installation of Nix, which includes the presence of a [store](#gloss-"
+"store), and the Nix package manager which operates on that store. A local "
+"Nix installation and a [remote builder](./advanced-topics/distributed-builds."
+"md) are two examples of Nix instances."
+msgstr ""
+
+#: source/glossary.md:250
+msgid "A running Nix process, such as the `nix` command."
+msgstr ""
+
+#: source/glossary.md:252
+msgid "[output](#gloss-output){#gloss-output}"
+msgstr ""
+
+#: source/glossary.md:254
+msgid ""
+"A [store object](#gloss-store-object) produced by a [store derivation]"
+"(#gloss-store-derivation). See [the `outputs` argument to the `derivation` "
+"function](./language/derivations.md#attr-outputs) for details."
+msgstr ""
+
+#: source/glossary.md:259
+msgid ""
+"\\[output closure\\]{#gloss-output-closure}  \n"
+"The [closure](#gloss-closure) of an [output path](#gloss-output-path). It "
+"only contains what is \\[reachable\\] from the output."
+msgstr ""
+
+#: source/glossary.md:262
+msgid "[output path](#gloss-output-path){#gloss-output-path}"
+msgstr ""
+
+#: source/glossary.md:264
+msgid ""
+"The [store path](#gloss-store-path) to the [output](#gloss-output) of a "
+"[store derivation](#gloss-store-derivation)."
+msgstr ""
+
+#: source/glossary.md:268
+msgid "[package](#package){#package}"
+msgstr ""
+
+#: source/glossary.md:270
+msgid ""
+"A software package; files that belong together for a particular purpose, and "
+"metadata."
+msgstr ""
+
+#: source/glossary.md:272
+msgid ""
+"Nix represents files as [file system objects](#gloss-file-system-object), "
+"and how they belong together is encoded as [references](#gloss-reference) "
+"between [store objects](#gloss-store-object) that contain these file system "
+"objects."
+msgstr ""
+
+#: source/glossary.md:274
+msgid ""
+"The [Nix language](./language/index.md) allows denoting packages in terms of "
+"[attribute sets](./language/types.md#type-attrs) containing:"
+msgstr ""
+
+#: source/glossary.md:275
+msgid ""
+"attributes that refer to the files of a package, typically in the form of "
+"[derivation outputs](#gloss-output),"
+msgstr ""
+
+#: source/glossary.md:276
+msgid ""
+"attributes with metadata, such as information about how the package is "
+"supposed to be used."
+msgstr ""
+
+#: source/glossary.md:278
+msgid "The exact shape of these attribute sets is up to convention."
+msgstr ""
+
+#: source/glossary.md:282
+msgid "\\[pinning\\]{#gloss-pinning}"
+msgstr ""
+
+#: source/glossary.md:284
+msgid ""
+"Like [locking](#gloss-locking), but a pin only locks a single input. A "
+"pinning solution may manage a collection of pins, but serves the bottom-up "
+"purpose of fixing an input's reference on demand, whereas locking implies a "
+"top down approach where all pins are \"coerced\" into a single place. This "
+"\"coercion\" is generally achieved by means of high-level mechanisms such as "
+"programming language module systems. Nix does not have such a restrictive "
+"module system, as even a flake can use expressions that pin or lock on their "
+"own. It does not rely on the lock being total, but on a transitive fetching "
+"property; see [hermeticity](#gloss-hermetic)."
+msgstr ""
+
+#: source/glossary.md:292
+msgid "\\[profile\\]{#gloss-profile}"
+msgstr ""
+
+#: source/glossary.md:294
+msgid ""
+"A symlink to the current _user environment_ of a user, e.g., `/nix/var/nix/"
+"profiles/default`."
+msgstr ""
+
+#: source/glossary.md:297
+msgid "\\[purity\\]{#gloss-purity}"
+msgstr ""
+
+#: source/glossary.md:299
+msgid ""
+"The assumption that equal Nix derivations when run always produce the same "
+"output. This cannot be guaranteed in general (e.g., a builder can rely on "
+"external inputs such as the network or the system time) but the Nix model "
+"assumes it."
+msgstr ""
+
+#: source/glossary.md:304
+msgid "\\[reachable\\]{#gloss-reachable}"
+msgstr ""
+
+#: source/glossary.md:306
+msgid ""
+"A store path `Q` is reachable from another store path `P` if `Q` is in the "
+"_closure_ of the _references_ relation."
+msgstr ""
+
+#: source/glossary.md:311
+msgid "[realise](#gloss-realise){#gloss-realise}, realisation"
+msgstr ""
+
+#: source/glossary.md:313
+msgid "Ensure a [store path](#gloss-store-path) is [valid](#gloss-validity)."
+msgstr ""
+
+#: source/glossary.md:315
+msgid "This can be achieved by:"
+msgstr ""
+
+#: source/glossary.md:316
+msgid ""
+"Fetching a pre-built [store object](#gloss-store-object) from a [substituter]"
+"(#gloss-substituter)"
+msgstr ""
+
+#: source/glossary.md:317
+msgid ""
+"[Building](./store/building.md) the corresponding [store derivation](#gloss-"
+"store-derivation)"
+msgstr ""
+
+#: source/glossary.md:318
+msgid ""
+"Delegating to a [remote machine](./command-ref/conf-file.md#conf-builders) "
+"and retrieving the outputs"
+msgstr ""
+
+#: source/glossary.md:320
+msgid ""
+"See [`nix-store --realise`](./command-ref/nix-store/realise.md) for a "
+"detailed description of the algorithm."
+msgstr ""
+
+#: source/glossary.md:322
+msgid ""
+"See also [`nix-build`](./command-ref/nix-build.md) and [`nix build`](./"
+"command-ref/new-cli/nix3-build.md) (experimental)."
+msgstr ""
+
+#: source/glossary.md:326
+msgid "[reference](#gloss-reference){#gloss-reference}"
+msgstr ""
+
+#: source/glossary.md:328
+msgid "An edge from one [store object](#gloss-store-object) to another."
+msgstr ""
+
+#: source/glossary.md:336
+msgid "\\[referrer\\]{#gloss-referrer}"
+msgstr ""
+
+#: source/glossary.md:338
+msgid ""
+"A reversed edge from one [store object](#gloss-store-object) to another."
+msgstr ""
+
+#: source/glossary.md:340
+msgid "\\[requisite\\]{#gloss-requisite}"
+msgstr ""
+
+#: source/glossary.md:342
+msgid ""
+"A store object \\[reachable\\] by a path (chain of references) from a given "
+"[store object](#gloss-store-object). The [closure](#gloss-closure) is the "
+"set of requisites."
+msgstr ""
+
+#: source/glossary.md:347
+msgid "[store](#gloss-store){#gloss-store}"
+msgstr ""
+
+#: source/glossary.md:349
+msgid ""
+"A collection of [store objects](#gloss-store-object), with operations to "
+"manipulate that collection. See [Nix Store](./store/index.md) for details."
+msgstr ""
+
+#: source/glossary.md:352
+msgid ""
+"There are many types of stores, see [Store Types](./store/types/index.md) "
+"for details."
+msgstr ""
+
+#: source/glossary.md:356
+msgid "[store derivation](#gloss-store-derivation){#gloss-store-derivation}"
+msgstr ""
+
+#: source/glossary.md:358
+msgid ""
+"A [derivation](#gloss-derivation) represented as a [store object](#gloss-"
+"store-object)."
+msgstr ""
+
+#: source/glossary.md:360
+msgid ""
+"See [Store Derivation](./store/derivation/index.md#store-derivation) for "
+"details."
+msgstr ""
+
+#: source/glossary.md:364
+msgid "[store object](#gloss-store-object){#gloss-store-object}"
+msgstr ""
+
+#: source/glossary.md:366
+msgid "Part of the contents of a [store](#gloss-store)."
+msgstr ""
+
+#: source/glossary.md:368
+msgid ""
+"A store object consists of a [file system object](#gloss-file-system-"
+"object), [references](#gloss-reference) to other store objects, and other "
+"metadata. It can be referred to by a [store path](#gloss-store-path)."
+msgstr ""
+
+#: source/glossary.md:371
+msgid "See [Store Object](./store/store-object.md) for details."
+msgstr ""
+
+#: source/glossary.md:375
+msgid "[store path](#gloss-store-path){#gloss-store-path}"
+msgstr ""
+
+#: source/glossary.md:377
+msgid ""
+"The location of a [store object](#gloss-store-object) in the file system, i."
+"e., an immediate child of the Nix store directory."
+msgstr ""
+
+#: source/glossary.md:381
+msgid "`/nix/store/jf6gn2dzna4nmsfbdxsd7kwhsk6gnnlr-git-2.38.1`"
+msgstr ""
+
+#: source/glossary.md:383
+msgid "See [Store Path](./store/store-path.md) for details."
+msgstr ""
+
+#: source/glossary.md:387
+msgid "\\[string interpolation\\]{#gloss-string-interpolation}"
+msgstr ""
+
+#: source/glossary.md:389
+msgid ""
+"Expanding expressions enclosed in `${ }` within a [string](./language/types."
+"md#type-string), [path](./language/types.md#type-path), or [attribute name]"
+"(./language/types.md#type-attrs)."
+msgstr ""
+
+#: source/glossary.md:391
+msgid ""
+"See [String interpolation](./language/string-interpolation.md) for details."
+msgstr ""
+
+#: source/glossary.md:397
+msgid "[SRI](#gloss-sri){#gloss-sri}"
+msgstr ""
+
+#: source/glossary.md:399
+msgid ""
+"[Subresource Integrity](https://www.w3.org/TR/SRI/) (SRI) is a [W3C "
+"specification](https://developer.mozilla.org/en-US/docs/Web/Security/"
+"Subresource_Integrity) for integrity metadata. Nix uses the SRI hash format "
+"(`<algorithm>-<Base64 hash>`) to specify content hashes in a way that is "
+"self-describing, since the hash algorithm is part of the format."
+msgstr ""
+
+#: source/glossary.md:404
+msgid "\\[substitute\\]{#gloss-substitute}"
+msgstr ""
+
+#: source/glossary.md:406
+msgid ""
+"A substitute is a command invocation stored in the [Nix database](#gloss-nix-"
+"database) that describes how to build a store object, bypassing the normal "
+"build mechanism (i.e., derivations). Typically, the substitute builds the "
+"store object by downloading a pre-built version of the store object from "
+"some server."
+msgstr ""
+
+#: source/glossary.md:412
+msgid "[substituter](#gloss-substituter){#gloss-substituter}"
+msgstr ""
+
+#: source/glossary.md:414
+msgid ""
+"An additional [store](#gloss-store){#gloss-store} from which Nix can obtain "
+"store objects instead of building them. Often the substituter is a [binary "
+"cache](#gloss-binary-cache), but any store can serve as substituter."
+msgstr ""
+
+#: source/glossary.md:417
+msgid ""
+"See the [`substituters` configuration option](./command-ref/conf-file."
+"md#conf-substituters) for details."
+msgstr ""
+
+#: source/glossary.md:421
+msgid "\\[user environment\\]{#gloss-user-env}"
+msgstr ""
+
+#: source/glossary.md:423
+msgid ""
+"An automatically generated store object that consists of a set of symlinks "
+"to “active” applications, i.e., other store paths. These are generated "
+"automatically by [`nix-env`](./command-ref/nix-env.md). See _profiles_."
+msgstr ""
+
+#: source/glossary.md:428
+msgid "[validity](#gloss-validity){#gloss-validity}"
+msgstr ""
+
+#: source/glossary.md:430
+msgid ""
+"A store path is valid if all [store object](#gloss-store-object)s in its "
+"[closure](#gloss-closure) can be read from the [store](#gloss-store)."
+msgstr ""
+
+#: source/glossary.md:432
+msgid "For a [local store](./store/types/local-store.md), this means:"
+msgstr ""
+
+#: source/glossary.md:433
+msgid ""
+"The store path leads to an existing [store object](#gloss-store-object) in "
+"that [store](#gloss-store)."
+msgstr ""
+
+#: source/glossary.md:434
+msgid ""
+"The store path is listed in the [Nix database](#gloss-nix-database) as being "
+"valid."
+msgstr ""
+
+#: source/glossary.md:435
+msgid "All paths in the store path's [closure](#gloss-closure) are valid."
+msgstr ""

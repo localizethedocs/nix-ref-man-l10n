@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/advanced-topics/distributed-builds.md:1
+msgid "Remote Builds"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:3
+msgid ""
+"A local Nix installation can forward Nix builds to other machines, this "
+"allows multiple builds to be performed in parallel."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:6
+msgid ""
+"Remote builds also allow Nix to perform multi-platform builds in a semi-"
+"transparent way. For example, if you perform a build for a `aarch64-darwin` "
+"on an `i686-linux` machine, Nix can automatically forward the build to a "
+"`aarch64-darwin` machine, if one is available."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:11
+msgid "Requirements"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:13
+msgid ""
+"For a local machine to forward a build to a remote machine, the remote "
+"machine must:"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:15
+msgid "Have Nix installed"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:16
+msgid "Be running an SSH server, e.g. `sshd`"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:17
+msgid "Be accessible via SSH from the local machine over the network"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:18
+msgid ""
+"Have the local machine's public SSH key in `/etc/ssh/authorized_keys.d/"
+"<username>`"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:19
+msgid ""
+"Have the username of the SSH user in the `trusted-users` setting in `nix."
+"conf`"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:21
+msgid "Testing"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:23
+msgid ""
+"To test connecting to a remote [Nix instance](../glossary.md#gloss-nix-"
+"instance) (in this case `mac`), run:"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:25
+msgid ""
+"```console\n"
+"nix store info --store ssh://username@mac\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:29
+msgid ""
+"To specify an SSH identity file as part of the remote store URI add a query "
+"parameter, e.g."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:32
+msgid ""
+"```console\n"
+"nix store info --store ssh://username@mac?ssh-key=/home/alice/my-key\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:36
+msgid ""
+"Since builds should be non-interactive, the key should not have a "
+"passphrase. Alternatively, you can load identities ahead of time into `ssh-"
+"agent` or `gpg-agent`."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:40
+msgid ""
+"In a multi-user installation (default), builds are executed by the Nix "
+"Daemon. The Nix Daemon cannot prompt for a passphrase via the terminal or "
+"`ssh-agent`, so the SSH key must not have a passphrase."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:44
+msgid ""
+"In addition, the Nix Daemon's user (typically root) needs to have SSH access "
+"to the remote builder."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:47
+msgid ""
+"Access can be verified by running `sudo su`, and then validating SSH access, "
+"e.g. by running `ssh mac`. SSH identity files for root users are usually "
+"stored in `/root/.ssh/` (Linux) or `/var/root/.ssh` (MacOS)."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:51
+msgid "If you get the error"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:58
+msgid ""
+"then you need to ensure that the `PATH` of non-interactive login shells "
+"contains Nix."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:61
+msgid ""
+"The [list of remote build machines](../command-ref/conf-file.md#conf-"
+"builders) can be specified on the command line or in the Nix configuration "
+"file. For example, the following command allows you to build a derivation "
+"for `aarch64-darwin` on a Linux machine:"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:72
+msgid ""
+"```console\n"
+"nix build --impure \\\n"
+" --expr '(with import <nixpkgs> { system = \"aarch64-darwin\"; }; runCommand "
+"\"foo\" {} \"uname > $out\")' \\\n"
+" --builders 'ssh://mac aarch64-darwin'\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:78
+msgid ""
+"```console\n"
+"[1/0/1 built, 0.0 MiB DL] building foo on ssh://mac\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:90
+msgid ""
+"It is possible to specify multiple build machines separated by a semicolon "
+"or a newline, e.g."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:92
+msgid ""
+"```console\n"
+"  --builders 'ssh://mac aarch64-darwin ; ssh://beastie x86_64-freebsd'\n"
+"```"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:96
+msgid ""
+"Remote build machines can also be configured in [`nix.conf`](../command-ref/"
+"conf-file.md), e.g."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:98
+msgid ""
+"    builders = ssh://mac aarch64-darwin ; ssh://beastie x86_64-freebsd\n"
+"    "
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:100
+msgid ""
+"After making changes to `nix.conf`, restart the Nix daemon for changes to "
+"take effect."
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:102
+msgid ""
+"Finally, remote build machines can be configured in a separate configuration "
+"file included in `builders` via the syntax `@/path/to/file`. For example,"
+msgstr ""
+
+#: source/advanced-topics/distributed-builds.md:107
+msgid ""
+"causes the list of machines in `/etc/nix/machines` to be included. (This is "
+"the default.)"
+msgstr ""

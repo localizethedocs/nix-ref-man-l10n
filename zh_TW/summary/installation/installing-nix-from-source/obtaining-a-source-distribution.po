@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/installation/obtaining-source.md:1
+msgid "Obtaining the Source"
+msgstr ""
+
+#: source/installation/obtaining-source.md:3
+msgid ""
+"The most recent sources of Nix can be obtained from its [Git repository]"
+"(https://github.com/NixOS/nix). For example, the following command will "
+"check out the latest revision into a directory called `nix`:"
+msgstr ""
+
+#: source/installation/obtaining-source.md:8
+msgid ""
+"```console\n"
+"$ git clone https://github.com/NixOS/nix\n"
+"```"
+msgstr ""
+
+#: source/installation/obtaining-source.md:12
+msgid ""
+"Likewise, specific releases can be obtained from the [tags](https://github."
+"com/NixOS/nix/tags) of the repository."
+msgstr ""
