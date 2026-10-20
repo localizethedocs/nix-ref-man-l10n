@@ -603,7 +603,7 @@ msgstr ""
 
 #: source/command-ref/nix-copy-closure.md:290
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-copy-closure.md:292
 msgid "`NIX_SSHOPTS`"
@@ -623,7 +623,7 @@ msgstr ""
 
 #: source/command-ref/nix-copy-closure.md:300
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-copy-closure.md:302
 msgid ""

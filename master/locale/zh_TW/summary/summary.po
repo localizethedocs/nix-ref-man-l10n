@@ -61,11 +61,11 @@ msgstr ""
 
 #: source/SUMMARY.md:14
 msgid "Single-User Mode"
-msgstr ""
+msgstr "單使用者模式"
 
 #: source/SUMMARY.md:15
 msgid "Multi-User Mode"
-msgstr ""
+msgstr "多使用者模式"
 
 #: source/SUMMARY.md:16
 msgid "Environment Variables"
@@ -73,11 +73,11 @@ msgstr ""
 
 #: source/SUMMARY.md:17
 msgid "Upgrading Nix"
-msgstr ""
+msgstr "升級 Nix"
 
 #: source/SUMMARY.md:18
 msgid "Uninstalling Nix"
-msgstr ""
+msgstr "解除安裝 Nix"
 
 #: source/SUMMARY.md:19
 msgid "Nix Store"

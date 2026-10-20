@@ -780,7 +780,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/install.md:426
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-env/install.md:428
 msgid "`NIX_PROFILE`"
@@ -802,7 +802,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/install.md:439
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/install.md:441
 msgid ""

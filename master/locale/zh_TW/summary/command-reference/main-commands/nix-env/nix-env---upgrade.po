@@ -679,7 +679,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/upgrade.md:349
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-env/upgrade.md:351
 msgid "`NIX_PROFILE`"
@@ -701,7 +701,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/upgrade.md:362
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/upgrade.md:364
 msgid ""

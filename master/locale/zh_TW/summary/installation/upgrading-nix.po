@@ -13,7 +13,7 @@ msgstr ""
 
 #: source/installation/upgrading.md:1
 msgid "Upgrading Nix"
-msgstr ""
+msgstr "升級 Nix"
 
 #: source/installation/upgrading.md:3
 msgid "**Note**"

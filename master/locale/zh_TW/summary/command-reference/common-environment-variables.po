@@ -21,7 +21,7 @@ msgstr ""
 
 #: source/command-ref/env-common.md:5
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/env-common.md:7
 msgid ""

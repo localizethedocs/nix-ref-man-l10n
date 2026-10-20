@@ -805,7 +805,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/query.md:423
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-env/query.md:425
 msgid "`NIX_PROFILE`"
@@ -827,7 +827,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/query.md:436
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/query.md:438
 msgid ""

@@ -572,7 +572,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/verify-path.md:293
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/verify-path.md:295
 msgid ""

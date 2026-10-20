@@ -59,7 +59,7 @@ msgstr ""
 
 #: source/introduction.md:32
 msgid "Complete dependencies"
-msgstr "往整的依賴"
+msgstr "完整的依賴"
 
 #: source/introduction.md:34
 msgid ""

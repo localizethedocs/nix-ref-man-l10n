@@ -422,7 +422,7 @@ msgstr ""
 
 #: source/protocols/json/derivation/resolved.md:62
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/protocols/json/derivation/resolved.md:63
 msgid "\\- [structuredAttrs](#structuredAttrs)"

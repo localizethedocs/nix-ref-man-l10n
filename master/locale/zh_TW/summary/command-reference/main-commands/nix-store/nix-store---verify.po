@@ -600,7 +600,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/verify.md:311
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/verify.md:313
 msgid ""

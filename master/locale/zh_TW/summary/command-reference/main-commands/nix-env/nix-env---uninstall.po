@@ -592,7 +592,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/uninstall.md:290
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-env/uninstall.md:292
 msgid "`NIX_PROFILE`"
@@ -614,7 +614,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/uninstall.md:303
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/uninstall.md:305
 msgid ""

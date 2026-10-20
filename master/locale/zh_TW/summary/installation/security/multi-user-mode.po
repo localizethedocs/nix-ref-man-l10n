@@ -13,7 +13,7 @@ msgstr ""
 
 #: source/installation/multi-user.md:1
 msgid "Multi-User Mode"
-msgstr ""
+msgstr "多使用者模式"
 
 #: source/installation/multi-user.md:3
 msgid ""

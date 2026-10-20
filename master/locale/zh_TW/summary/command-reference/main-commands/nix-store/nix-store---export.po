@@ -603,7 +603,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/export.md:305
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/export.md:307
 msgid ""

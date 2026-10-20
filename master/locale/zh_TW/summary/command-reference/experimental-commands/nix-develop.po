@@ -589,7 +589,7 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-develop.md:308
 msgid "Options that change environment variables"
-msgstr ""
+msgstr "變更環境變數的選項"
 
 #: source/command-ref/new-cli/nix3-develop.md:310
 msgid ""

@@ -639,7 +639,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/gc.md:330
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/gc.md:332
 msgid ""

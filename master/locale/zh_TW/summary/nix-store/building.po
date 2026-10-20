@@ -329,7 +329,7 @@ msgstr ""
 
 #: source/store/building.md:143
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/store/building.md:145
 msgid ""

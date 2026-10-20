@@ -579,7 +579,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/dump-db.md:299
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/dump-db.md:301
 msgid ""

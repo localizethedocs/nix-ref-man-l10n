@@ -571,7 +571,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/print-env.md:292
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/print-env.md:294
 msgid ""

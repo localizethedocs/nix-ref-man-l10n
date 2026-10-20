@@ -580,7 +580,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/read-log.md:298
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/read-log.md:300
 msgid ""

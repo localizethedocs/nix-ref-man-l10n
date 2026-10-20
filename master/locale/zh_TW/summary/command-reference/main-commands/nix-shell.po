@@ -670,7 +670,7 @@ msgstr ""
 
 #: source/command-ref/nix-shell.md:348
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-shell.md:350
 msgid ""
@@ -725,7 +725,7 @@ msgstr ""
 
 #: source/command-ref/nix-shell.md:379
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-shell.md:381
 msgid ""

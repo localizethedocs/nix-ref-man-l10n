@@ -678,7 +678,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/delete-generations.md:332
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-env/delete-generations.md:334
 msgid "`NIX_PROFILE`"
@@ -700,7 +700,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/delete-generations.md:345
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/delete-generations.md:347
 msgid ""

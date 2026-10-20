@@ -600,7 +600,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/switch-generation.md:294
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-env/switch-generation.md:296
 msgid "`NIX_PROFILE`"
@@ -622,7 +622,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/switch-generation.md:307
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/switch-generation.md:309
 msgid ""

@@ -592,7 +592,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/generate-binary-cache-key.md:302
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/generate-binary-cache-key.md:304
 msgid ""

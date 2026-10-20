@@ -593,7 +593,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/list-generations.md:291
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/command-ref/nix-env/list-generations.md:293
 msgid "`NIX_PROFILE`"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/list-generations.md:304
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/list-generations.md:306
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: source/installation/uninstall.md:1
 msgid "Uninstalling Nix"
-msgstr ""
+msgstr "解除安裝 Nix"
 
 #: source/installation/uninstall.md:3
 msgid "Multi User"

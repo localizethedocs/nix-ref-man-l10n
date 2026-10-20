@@ -798,7 +798,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/query.md:442
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/query.md:444
 msgid ""

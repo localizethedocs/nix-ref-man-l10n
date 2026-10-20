@@ -628,7 +628,7 @@ msgstr ""
 
 #: source/command-ref/nix-env/set-flag.md:314
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-env/set-flag.md:316
 msgid ""

@@ -2276,7 +2276,7 @@ msgstr ""
 
 #: source/protocols/json/store.md:889
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: source/protocols/json/store.md:890
 msgid "\\- [structuredAttrs](#derivations_pattern1_structuredAttrs)"

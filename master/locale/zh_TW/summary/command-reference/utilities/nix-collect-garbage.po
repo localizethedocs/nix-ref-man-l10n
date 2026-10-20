@@ -658,7 +658,7 @@ msgstr ""
 
 #: source/command-ref/nix-collect-garbage.md:313
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-collect-garbage.md:315
 msgid ""

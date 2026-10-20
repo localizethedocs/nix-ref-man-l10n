@@ -726,7 +726,7 @@ msgstr ""
 
 #: source/command-ref/nix-store/realise.md:377
 msgid "Configuration environment variables"
-msgstr ""
+msgstr "組態環境變數"
 
 #: source/command-ref/nix-store/realise.md:379
 msgid ""
