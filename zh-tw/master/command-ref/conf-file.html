@@ -1,0 +1,1627 @@
+<!DOCTYPE HTML>
+<html lang="zh_TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>nix.conf - Nix 2.36.0 Reference Manual</title>
+
+
+        <!-- Custom HTML head -->
+        <script>
+        MathJax = {
+          loader: {load: ['[tex]/bussproofs']},
+          tex: {
+            packages: {'[+]': ['bussproofs']},
+            // Doesn't seem to work in mathjax 3
+            //formatError: function(jax, error) {
+            //  console.log(`TeX error in "${jax.latex}": ${error.message}`);
+            //  return jax.formatError(error);
+            //}
+          }
+        };
+        </script>
+        <!-- Load a newer version of MathJax than mdbook does by default, and which in particular has working relative paths for the "bussproofs" extension. -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" src="../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom-80d08c7f.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-e0c53846.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-1a79eaaf.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nix 2.36.0 Reference Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix/tree/master/doc/manual/source/command-ref/conf-file.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="name"><a class="header" href="#name">Name</a></h1>
+<p><code>nix.conf</code> - Nix configuration file</p>
+<h1 id="description"><a class="header" href="#description">Description</a></h1>
+<p>Nix supports a variety of configuration settings, which are read from configuration files or taken as command line flags.</p>
+<h2 id="configuration-file"><a class="header" href="#configuration-file">Configuration file</a></h2>
+<p>By default Nix reads settings from each of the following places. Settings are applied on top of one another, so later settings overwrite earlier entries.</p>
+<ol>
+<li>
+<p>The system-wide configuration file <code>nix.conf</code> in the configuration directory.</p>
+<p>The configuration directory defaults to <code>${sysconfdir}/nix</code> (i.e. <code>/etc/nix</code> on most Unix systems) or <code>%PROGRAMDATA%\nix\conf</code> on Windows, and can be overridden with <a href="./env-common.html#env-NIX_CONF_DIR"><code>NIX_CONF_DIR</code></a>.</p>
+<p>Values loaded in this file are not forwarded to the Nix daemon. The client assumes that the daemon has already loaded them.</p>
+</li>
+<li>
+<p>If <a href="./env-common.html#env-NIX_USER_CONF_FILES"><code>NIX_USER_CONF_FILES</code></a> is set, then each path in the list will be loaded in reverse order. The list separator is <code>:</code> on Unix and <code>;</code> on Windows.</p>
+<p>Otherwise it will look for <code>nix.conf</code> in:</p>
+<ul>
+<li>The <a href="./env-common.html#user-conf-dir">user configuration directory</a></li>
+<li>On Unix additionally, <code>nix/nix.conf</code> under each directory in <a href="./env-common.html#env-XDG_CONFIG_DIRS"><code>XDG_CONFIG_DIRS</code></a></li>
+</ul>
+</li>
+<li>
+<p>If <a href="./env-common.html#env-NIX_CONFIG"><code>NIX_CONFIG</code></a> is set, its contents are treated as the contents of a configuration file. In particular, settings are separated by newlines, just as in the configuration file.</p>
+</li>
+</ol>
+<h3 id="file-format"><a class="header" href="#file-format">File format</a></h3>
+<p>Configuration files consist of <code>name = value</code> pairs, one per line. Comments start with a <code>#</code> character.</p>
+<p>Example:</p>
+<pre><code>keep-outputs = true       # Nice for developers
+keep-derivations = true   # Idem
+</code></pre>
+<p>Other files can be included with a line like <code>include &lt;path&gt;</code>, where <code>&lt;path&gt;</code> is interpreted relative to the current configuration file. A missing file is an error unless <code>!include</code> is used instead.</p>
+<p>A configuration setting usually overrides any previous value. However, for settings that take a list of items, you can prefix the name of the setting by <code>extra-</code> to <em>append</em> to the previous value.</p>
+<p>For instance,</p>
+<pre><code>substituters = a b
+extra-substituters = c d
+</code></pre>
+<p>defines the <code>substituters</code> setting to be <code>a b c d</code>.</p>
+<p>Unknown option names are not an error, and are simply ignored with a warning.</p>
+<h2 id="command-line-flags"><a class="header" href="#command-line-flags">Command line flags</a></h2>
+<p>Configuration options can be set on the command line, overriding the values set in the <a href="#configuration-file">configuration file</a>:</p>
+<ul>
+<li>
+<p>Every configuration setting has corresponding command line flag (e.g. <code>--max-jobs 16</code>). Boolean settings do not need an argument, and can be explicitly disabled with the <code>no-</code> prefix (e.g. <code>--keep-failed</code> and <code>--no-keep-failed</code>).</p>
+<p>Unknown option names are invalid flags (unless there is already a flag with that name), and are rejected with an error.</p>
+</li>
+<li>
+<p>The flag <code>--option &lt;name&gt; &lt;value&gt;</code> is interpreted exactly like a <code>&lt;name&gt; = &lt;value&gt;</code> in a setting file.</p>
+<p>Unknown option names are ignored with a warning.</p>
+</li>
+</ul>
+<p>The <code>extra-</code> prefix is supported for settings that take a list of items (e.g. <code>--extra-trusted users alice</code> or <code>--option extra-trusted-users alice</code>).</p>
+<h2 id="integer-settings"><a class="header" href="#integer-settings">Integer settings</a></h2>
+<p>Settings that have an integer type support the suffixes <code>K</code>, <code>M</code>, <code>G</code> and <code>T</code>. These cause the specified value to be multiplied by 2^10, 2^20, 2^30 and 2^40, respectively. For instance, <code>--min-free 1M</code> is equivalent to <code>--min-free 1048576</code>.</p>
+<h1 id="available-settings"><a class="header" href="#available-settings">Available settings</a></h1>
+<ul>
+<li>
+<p><span id="conf-abort-on-warn"><a href="#conf-abort-on-warn"><code>abort-on-warn</code></a></span></p>
+<p>If set to true, <a href="../language/builtins.html#builtins-warn"><code>builtins.warn</code></a> throws an error when logging a warning.</p>
+<p>This will give you a stack trace that leads to the location of the warning.</p>
+<p>This is useful for finding information about warnings in third-party Nix code when you can not start the interactive debugger, such as when Nix is called from a non-interactive script. See <a href="#conf-debugger-on-warn"><code>debugger-on-warn</code></a>.</p>
+<p>Currently, a stack trace can only be produced when the debugger is enabled, or when evaluation is aborted.</p>
+<p>This option can be enabled by setting <code>NIX_ABORT_ON_WARN=1</code> in the environment.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-accept-flake-config"><a href="#conf-accept-flake-config"><code>accept-flake-config</code></a></span></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>This setting is part of an <a href="../development/experimental-features.html">experimental feature</a>.</p>
+<p>To change this setting, make sure the <a href="../development/experimental-features.html#xp-feature-flakes"><code>flakes</code> experimental feature</a> is enabled. For example, include the following in <a href="../command-ref/conf-file.html"><code>nix.conf</code></a>:</p>
+<pre><code>extra-experimental-features = flakes
+accept-flake-config = ...
+</code></pre>
+</blockquote>
+<p>Whether to accept Nix configuration settings from a flake without prompting.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-access-tokens"><a href="#conf-access-tokens"><code>access-tokens</code></a></span></p>
+<p>Access tokens used to access protected GitHub, GitLab, or other locations requiring token-based authentication.</p>
+<p>Access tokens are specified as a string made up of space-separated <code>host=token</code> values.  The specific token used is selected by matching the <code>host</code> portion against the “host” specification of the input. The <code>host</code> portion may contain a path element which matches against the prefix URL for the input. (eg: <code>github.com/org=token</code>). The actual use of the <code>token</code> value is determined by the type of resource being accessed:</p>
+<ul>
+<li>
+<p>Github: the token value is the OAUTH-TOKEN string obtained as the Personal Access Token from the Github server (see https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps).</p>
+</li>
+<li>
+<p>Gitlab: the token value is either the OAuth2 token or the Personal Access Token (these are different types tokens for gitlab, see https://docs.gitlab.com/12.10/ee/api/README.html#authentication). The <code>token</code> value should be <code>type:tokenstring</code> where <code>type</code> is either <code>OAuth2</code> or <code>PAT</code> to indicate which type of token is being specified.</p>
+</li>
+</ul>
+<p>Example <code>~/.config/nix/nix.conf</code>:</p>
+<pre><code>access-tokens = github.com=23ac...b289 gitlab.mycompany.com=PAT:A123Bp_Cd..EfG gitlab.com=OAuth2:1jklw3jk
+</code></pre>
+<p>Example <code>~/code/flake.nix</code>:</p>
+<pre><code class="language-nix">input.foo = {
+  type = "gitlab";
+  host = "gitlab.mycompany.com";
+  owner = "mycompany";
+  repo = "pro";
+};
+</code></pre>
+<p>This example specifies three tokens, one each for accessing github.com, gitlab.mycompany.com, and gitlab.com.</p>
+<p>The <code>input.foo</code> uses the “gitlab” fetcher, which might requires specifying the token type along with the token value.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-allow-dirty"><a href="#conf-allow-dirty"><code>allow-dirty</code></a></span></p>
+<p>Whether to allow dirty Git/Mercurial trees.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-allow-dirty-locks"><a href="#conf-allow-dirty-locks"><code>allow-dirty-locks</code></a></span></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>This setting is part of an <a href="../development/experimental-features.html">experimental feature</a>.</p>
+<p>To change this setting, make sure the <a href="../development/experimental-features.html#xp-feature-flakes"><code>flakes</code> experimental feature</a> is enabled. For example, include the following in <a href="../command-ref/conf-file.html"><code>nix.conf</code></a>:</p>
+<pre><code>extra-experimental-features = flakes
+allow-dirty-locks = ...
+</code></pre>
+</blockquote>
+<p>Whether to allow dirty inputs (such as dirty Git workdirs) to be locked via their NAR hash. This is generally bad practice since Nix has no way to obtain such inputs if they are subsequently modified. Therefore lock files with dirty locks should generally only be used for local testing, and should not be pushed to other users.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-allow-import-from-derivation"><a href="#conf-allow-import-from-derivation"><code>allow-import-from-derivation</code></a></span></p>
+<p>By default, Nix allows <a href="../language/import-from-derivation.html">Import from Derivation</a>.</p>
+<p>With this option set to <code>false</code>, Nix throws an error when evaluating an expression that uses this feature, even when the required store object is readily available. This ensures that evaluation doesn’t require any builds to take place, regardless of the state of the store.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-allow-new-privileges"><a href="#conf-allow-new-privileges"><code>allow-new-privileges</code></a></span></p>
+<p>(Linux-specific.) By default, builders on Linux cannot acquire new privileges by calling setuid/setgid programs or programs that have file capabilities. For example, programs such as <code>sudo</code> or <code>ping</code> should fail. (Note that in sandbox builds, no such programs are available unless you bind-mount them into the sandbox via the <code>sandbox-paths</code> option.) You can allow the use of such programs by enabling this option. This is impure and usually undesirable, but may be useful in certain scenarios (e.g. to spin up containers or set up userspace network interfaces in tests).</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-allow-symlinked-store"><a href="#conf-allow-symlinked-store"><code>allow-symlinked-store</code></a></span></p>
+<p>If set to <code>true</code>, Nix stops complaining if the store directory (typically <code>/nix/store</code>) contains symlink components.</p>
+<p>This risks making some builds “impure” because builders sometimes “canonicalise” paths by resolving all symlink components. Problems occur if those builds are then deployed to machines where /nix/store resolves to a different location from that of the build machine. You can enable this setting if you are sure you’re not going to do that.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-allow-unsafe-native-code-during-evaluation"><a href="#conf-allow-unsafe-native-code-during-evaluation"><code>allow-unsafe-native-code-during-evaluation</code></a></span></p>
+<p>Enable built-in functions that allow executing native code.</p>
+<p>In particular, this adds:</p>
+<ul>
+<li>
+<p><code>builtins.importNative</code> <em>path</em> <em>symbol</em></p>
+<p>Opens dynamic shared object (DSO) at <em>path</em>, loads the function with the symbol name <em>symbol</em> from it and runs it. The loaded function must have the following signature:</p>
+<pre><code class="language-cpp">extern "C" typedef void (*ValueInitialiser) (EvalState &amp; state, Value &amp; v);
+</code></pre>
+<p>The <a href="../development/documentation.html#api-documentation">Nix C++ API documentation</a> has more details on evaluator internals.</p>
+</li>
+<li>
+<p><code>builtins.exec</code> <em>arguments</em></p>
+<p>Execute a program, where <em>arguments</em> are specified as a list of strings, and parse its output as a Nix expression.</p>
+</li>
+</ul>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-allowed-impure-host-deps"><a href="#conf-allowed-impure-host-deps"><code>allowed-impure-host-deps</code></a></span></p>
+<p>Which prefixes to allow derivations to ask for access to (primarily for Darwin).</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-allowed-uris"><a href="#conf-allowed-uris"><code>allowed-uris</code></a></span></p>
+<p>A list of URI prefixes to which access is allowed in restricted evaluation mode. For example, when set to <code>https://github.com/NixOS</code>, builtin functions such as <code>fetchGit</code> are allowed to access <code>https://github.com/NixOS/patchelf.git</code>.</p>
+<p>Access is granted when</p>
+<ul>
+<li>the URI is equal to the prefix,</li>
+<li>or the URI is a subpath of the prefix,</li>
+<li>or the prefix is a URI scheme ended by a colon <code>:</code> and the URI has the same scheme.
+<strong>Default:</strong> <em>empty</em></li>
+</ul>
+</li>
+<li>
+<p><span id="conf-allowed-users"><a href="#conf-allowed-users"><code>allowed-users</code></a></span></p>
+<p>A list of user names, separated by whitespace. These users are allowed to connect to the Nix daemon.</p>
+<p>You can specify groups by prefixing names with <code>@</code>. For instance, <code>@wheel</code> means all users in the <code>wheel</code> group. Also, you can allow all users by specifying <code>*</code>.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Trusted users (set in <a href="#conf-trusted-users"><code>trusted-users</code></a>) can always connect to the Nix daemon.</p>
+</blockquote>
+<p><strong>Default:</strong> <code>*</code></p>
+</li>
+<li>
+<p><span id="conf-always-allow-substitutes"><a href="#conf-always-allow-substitutes"><code>always-allow-substitutes</code></a></span></p>
+<p>If set to <code>true</code>, Nix ignores the <a href="../language/advanced-attributes.html"><code>allowSubstitutes</code></a> attribute in derivations and always attempt to use <a href="#conf-substituters">available substituters</a>.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-auto-allocate-uids"><a href="#conf-auto-allocate-uids"><code>auto-allocate-uids</code></a></span></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>This setting is part of an <a href="../development/experimental-features.html">experimental feature</a>.</p>
+<p>To change this setting, make sure the <a href="../development/experimental-features.html#xp-feature-auto-allocate-uids"><code>auto-allocate-uids</code> experimental feature</a> is enabled. For example, include the following in <a href="../command-ref/conf-file.html"><code>nix.conf</code></a>:</p>
+<pre><code>extra-experimental-features = auto-allocate-uids
+auto-allocate-uids = ...
+</code></pre>
+</blockquote>
+<p>Whether to select UIDs for builds automatically, instead of using the users in <code>build-users-group</code>.</p>
+<p>UIDs are allocated starting at 872415232 (0x34000000) on Linux and 56930 on macOS.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-auto-optimise-store"><a href="#conf-auto-optimise-store"><code>auto-optimise-store</code></a></span></p>
+<p>If set to <code>true</code>, Nix automatically detects files in the store that have identical contents, and replaces them with hard links to a single copy. This saves disk space. If set to <code>false</code> (the default), you can still run <code>nix-store --optimise</code> to get rid of duplicate files.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-bash-prompt"><a href="#conf-bash-prompt"><code>bash-prompt</code></a></span></p>
+<p>The bash prompt (<code>PS1</code>) in <code>nix develop</code> shells.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-bash-prompt-prefix"><a href="#conf-bash-prompt-prefix"><code>bash-prompt-prefix</code></a></span></p>
+<p>Prefix prepended to the <code>PS1</code> environment variable in <code>nix develop</code> shells.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-bash-prompt-suffix"><a href="#conf-bash-prompt-suffix"><code>bash-prompt-suffix</code></a></span></p>
+<p>Suffix appended to the <code>PS1</code> environment variable in <code>nix develop</code> shells.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-build-dir"><a href="#conf-build-dir"><code>build-dir</code></a></span></p>
+<p>Override the <code>build-dir</code> store setting for all stores that have this setting.</p>
+<p>See also the per-store <a href="../store/types/local-store.html#store-local-store-build-dir"><code>build-dir</code></a> setting.</p>
+<p><strong>Default:</strong> ``</p>
+</li>
+<li>
+<p><span id="conf-build-hook"><a href="#conf-build-hook"><code>build-hook</code></a></span></p>
+<p>The path to the helper program that executes remote builds.</p>
+<p>Nix communicates with the build hook over <code>stdio</code> using a custom protocol to request builds that cannot be performed directly by the Nix daemon. The default value is the internal Nix binary that implements remote building.</p>
+<blockquote>
+<p><strong>Important</strong></p>
+<p>Change this setting only if you really know what you’re doing.</p>
+</blockquote>
+<p><strong>Default:</strong> <code>nix __build-remote</code></p>
+</li>
+<li>
+<p><span id="conf-build-poll-interval"><a href="#conf-build-poll-interval"><code>build-poll-interval</code></a></span></p>
+<p>How often (in seconds) to poll for locks.</p>
+<p><strong>Default:</strong> <code>5</code></p>
+</li>
+<li>
+<p><span id="conf-build-users-group"><a href="#conf-build-users-group"><code>build-users-group</code></a></span></p>
+<p>This options specifies the Unix group containing the Nix build user accounts. In multi-user Nix installations, builds should not be performed by the Nix account since that would allow users to arbitrarily modify the Nix store and database by supplying specially crafted builders; and they cannot be performed by the calling user since that would allow him/her to influence the build result.</p>
+<p>Therefore, if this option is non-empty and specifies a valid group, builds are performed under the user accounts that are a member of the group specified here (as listed in <code>/etc/group</code>). Those user accounts should not be used for any other purpose!</p>
+<p>Nix never runs two builds under the same user account at the same time. This is to prevent an obvious security hole: a malicious user writing a Nix expression that modifies the build result of a legitimate Nix expression being built by another user. Therefore it is good to have as many Nix build user accounts as you can spare. (Remember: uids are cheap.)</p>
+<p>The build users should have permission to create files in the Nix store, but not delete them. Therefore, <code>/nix/store</code> should be owned by the Nix account, its group should be the group specified here, and its mode should be <code>1775</code>.</p>
+<p>If the build users group is empty, builds are performed under the uid of the Nix process (that is, the uid of the caller if <code>NIX_REMOTE</code> is empty, the uid under which the Nix daemon runs if <code>NIX_REMOTE</code> is <code>daemon</code>). Obviously, this should not be used with a nix daemon accessible to untrusted clients.</p>
+<p>Defaults to <code>nixbld</code> when running as root, <em>empty</em> otherwise.</p>
+<p><strong>Default:</strong> <em>machine-specific</em></p>
+</li>
+<li>
+<p><span id="conf-builders"><a href="#conf-builders"><code>builders</code></a></span></p>
+<p>A semicolon- or newline-separated list of build machines.</p>
+<p>In addition to the <a href="../command-ref/conf-file.html">usual ways of setting configuration options</a>, the value can be read from a file by prefixing its absolute path with <code>@</code>.</p>
+<blockquote>
+<p><strong>Example</strong></p>
+<p>This is the default setting:</p>
+<pre><code>builders = @/etc/nix/machines
+</code></pre>
+</blockquote>
+<p>Each machine specification consists of the following elements, separated by spaces. Only the first element is required. To leave a field at its default, set it to <code>-</code>.</p>
+<ol>
+<li>
+<p>The URI of the remote store in the format <code>ssh://[username@]hostname[:port]</code>.</p>
+<blockquote>
+<p><strong>Example</strong></p>
+<p><code>ssh://nix@mac</code></p>
+</blockquote>
+<p>For backward compatibility, <code>ssh://</code> may be omitted. The hostname may be an alias defined in <code>~/.ssh/config</code>.</p>
+</li>
+<li>
+<p>A comma-separated list of <a href="../development/building.html#system-type">Nix system types</a>. If omitted, this defaults to the local platform type.</p>
+<blockquote>
+<p><strong>Example</strong></p>
+<p><code>aarch64-darwin</code></p>
+</blockquote>
+<p>It is possible for a machine to support multiple platform types.</p>
+<blockquote>
+<p><strong>Example</strong></p>
+<p><code>i686-linux,x86_64-linux</code></p>
+</blockquote>
+</li>
+<li>
+<p>The SSH identity file to be used to log in to the remote machine. If omitted, SSH uses its regular identities.</p>
+<blockquote>
+<p><strong>Example</strong></p>
+<p><code>/home/user/.ssh/id_mac</code></p>
+</blockquote>
+</li>
+<li>
+<p>The maximum number of builds that Nix executes in parallel on the machine. Typically this should be equal to the number of CPU cores.</p>
+</li>
+<li>
+<p>The “speed factor”, indicating the relative speed of the machine as a positive integer or decimal number. If there are multiple machines of the right type, Nix prefers the fastest, taking load into account.</p>
+</li>
+<li>
+<p>A comma-separated list of supported <a href="#conf-system-features">system features</a>.</p>
+<p>A machine is only used to build a derivation if all the features in the derivation’s <a href="../language/advanced-attributes.html#adv-attr-requiredSystemFeatures"><code>requiredSystemFeatures</code></a> attribute are supported by that machine.</p>
+</li>
+<li>
+<p>A comma-separated list of required <a href="#conf-system-features">system features</a>.</p>
+<p>A machine is only used to build a derivation if all of the machine’s required features appear in the derivation’s <a href="../language/advanced-attributes.html#adv-attr-requiredSystemFeatures"><code>requiredSystemFeatures</code></a> attribute.</p>
+</li>
+<li>
+<p>The (base64-encoded) public host key of the remote machine. If omitted, SSH uses its regular <code>known_hosts</code> file.</p>
+<p>The value for this field can be obtained via <code>base64 -w0</code>.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Example</strong></p>
+<p>Multiple builders specified on the command line:</p>
+<pre><code class="language-console">--builders 'ssh://mac x86_64-darwin ; ssh://beastie x86_64-freebsd'
+</code></pre>
+</blockquote>
+<blockquote>
+<p><strong>Example</strong></p>
+<p>This specifies several machines that can perform <code>i686-linux</code> builds:</p>
+<pre><code>nix@scratchy.labs.cs.uu.nl i686-linux /home/nix/.ssh/id_scratchy 8 1 kvm
+nix@itchy.labs.cs.uu.nl    i686-linux /home/nix/.ssh/id_scratchy 8 2
+nix@poochie.labs.cs.uu.nl  i686-linux /home/nix/.ssh/id_scratchy 1 2 kvm benchmark
+</code></pre>
+<p>However, <code>poochie</code> only builds derivations that have the attribute</p>
+<pre><code class="language-nix">requiredSystemFeatures = [ "benchmark" ];
+</code></pre>
+<p>or</p>
+<pre><code class="language-nix">requiredSystemFeatures = [ "benchmark" "kvm" ];
+</code></pre>
+<p><code>itchy</code> cannot do builds that require <code>kvm</code>, but <code>scratchy</code> does support such builds. For regular builds, <code>itchy</code> is preferred over <code>scratchy</code> because it has a higher speed factor.</p>
+</blockquote>
+<p>For Nix to use substituters, the calling user must be in the <a href="#conf-trusted-users"><code>trusted-users</code></a> list.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>A build machine must be accessible via SSH and have Nix installed. <code>nix</code> must be available in <code>$PATH</code> for the user connecting over SSH.</p>
+</blockquote>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>If you are building via the Nix daemon (default), the Nix daemon user account on the local machine (that is, <code>root</code>) requires access to a user account on the remote machine (not necessarily <code>root</code>).</p>
+<p>If you can’t or don’t want to configure <code>root</code> to be able to access the remote machine, set <a href="#conf-store"><code>store</code></a> to any <a href="../store/types/local-store.html">local store</a>, e.g. by passing <code>--store /tmp</code> to the command on the local machine.</p>
+</blockquote>
+<p>To build only on remote machines and disable local builds, set <a href="#conf-max-jobs"><code>max-jobs</code></a> to 0.</p>
+<p>If you want the remote machines to use substituters, set <a href="#conf-builders-use-substitutes"><code>builders-use-substitutes</code></a> to <code>true</code>.</p>
+<p><strong>Default:</strong> <em>machine-specific</em></p>
+</li>
+<li>
+<p><span id="conf-builders-use-substitutes"><a href="#conf-builders-use-substitutes"><code>builders-use-substitutes</code></a></span></p>
+<p>If set to <code>true</code>, Nix instructs <a href="#conf-builders">remote build machines</a> to use their own <a href="#conf-substituters"><code>substituters</code></a> if available.</p>
+<p>It means that remote build hosts fetch as many dependencies as possible from their own substituters (e.g, from <code>cache.nixos.org</code>) instead of waiting for the local machine to upload them all. This can drastically reduce build times if the network connection between the local machine and the remote build host is slow.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-commit-lock-file-summary"><a href="#conf-commit-lock-file-summary"><code>commit-lock-file-summary</code></a></span></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>This setting is part of an <a href="../development/experimental-features.html">experimental feature</a>.</p>
+<p>To change this setting, make sure the <a href="../development/experimental-features.html#xp-feature-flakes"><code>flakes</code> experimental feature</a> is enabled. For example, include the following in <a href="../command-ref/conf-file.html"><code>nix.conf</code></a>:</p>
+<pre><code>extra-experimental-features = flakes
+commit-lock-file-summary = ...
+</code></pre>
+</blockquote>
+<p>The commit summary to use when committing changed flake lock files. If empty, the summary is generated based on the action performed.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+<p><strong>Deprecated alias:</strong> <code>commit-lockfile-summary</code></p>
+</li>
+<li>
+<p><span id="conf-compress-build-log"><a href="#conf-compress-build-log"><code>compress-build-log</code></a></span></p>
+<p>If set to <code>true</code> (the default), build logs written to <code>/nix/var/log/nix/drvs</code> are compressed on the fly using bzip2. Otherwise, they are not compressed.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-compress-log</code></p>
+</li>
+<li>
+<p><span id="conf-connect-timeout"><a href="#conf-connect-timeout"><code>connect-timeout</code></a></span></p>
+<p>The timeout (in seconds) for establishing connections in the binary cache substituter. It corresponds to <code>curl</code>’s <code>--connect-timeout</code> option. A value of 0 means no limit.</p>
+<p><strong>Default:</strong> <code>15</code></p>
+</li>
+<li>
+<p><span id="conf-cores"><a href="#conf-cores"><code>cores</code></a></span></p>
+<p>Sets the value of the <code>NIX_BUILD_CORES</code> environment variable in the <a href="../store/building.html#env-vars">invocation of the <code>builder</code> executable</a> of a derivation. The <code>builder</code> executable can use this variable to control its own maximum amount of parallelism.</p>
+<!--
+FIXME(@fricklerhandwerk): I don't think this should even be mentioned here.
+A very generic example using `derivation` and `xargs` may be more appropriate to explain the mechanism.
+Using `mkDerivation` as an example requires being aware of that there are multiple independent layers that are completely opaque here.
+-->
+<p>For instance, in Nixpkgs, if the attribute <code>enableParallelBuilding</code> for the <code>mkDerivation</code> build helper is set to <code>true</code>, it passes the <code>-j${NIX_BUILD_CORES}</code> flag to GNU Make.</p>
+<p>If set to <code>0</code>, nix will detect the number of CPU cores and pass this number via <code>NIX_BUILD_CORES</code>.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The number of parallel local Nix build jobs is independently controlled with the <a href="#conf-max-jobs"><code>max-jobs</code></a> setting.</p>
+</blockquote>
+<p><strong>Default:</strong> <code>0</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-cores</code></p>
+</li>
+<li>
+<p><span id="conf-debugger-on-trace"><a href="#conf-debugger-on-trace"><code>debugger-on-trace</code></a></span></p>
+<p>If set to true and the <code>--debugger</code> flag is given, the following functions enter the debugger like <a href="../language/builtins.html#builtins-break"><code>builtins.break</code></a>:</p>
+<ul>
+<li><a href="../language/builtins.html#builtins-trace"><code>builtins.trace</code></a></li>
+<li><a href="../language/builtins.html#builtins-traceVerbose"><code>builtins.traceVerbose</code></a> if <a href="#conf-trace-verbose"><code>trace-verbose</code></a> is set to true.</li>
+<li><a href="../language/builtins.html#builtins-warn"><code>builtins.warn</code></a>
+This is useful for debugging warnings in third-party Nix code.</li>
+</ul>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-debugger-on-warn"><a href="#conf-debugger-on-warn"><code>debugger-on-warn</code></a></span></p>
+<p>If set to true and the <code>--debugger</code> flag is given, <a href="../language/builtins.html#builtins-warn"><code>builtins.warn</code></a> will enter the debugger like <a href="../language/builtins.html#builtins-break"><code>builtins.break</code></a>.</p>
+<p>This is useful for debugging warnings in third-party Nix code.</p>
+<p>Use <a href="#conf-debugger-on-trace"><code>debugger-on-trace</code></a> to also enter the debugger on legacy warnings that are logged with <a href="../language/builtins.html#builtins-trace"><code>builtins.trace</code></a>.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-diff-hook"><a href="#conf-diff-hook"><code>diff-hook</code></a></span></p>
+<p>Absolute path to an executable capable of diffing build results. The hook is executed if <code>run-diff-hook</code> is true, and the output of a build is known to not be the same. This program is not executed to determine if two results are the same.</p>
+<p>The diff hook is executed by the same user and group who ran the build. However, the diff hook does not have write access to the store path just built.</p>
+<p>The diff hook program receives three parameters:</p>
+<ol>
+<li>
+<p>A path to the previous build’s results</p>
+</li>
+<li>
+<p>A path to the current build’s results</p>
+</li>
+<li>
+<p>The path to the build’s derivation</p>
+</li>
+<li>
+<p>The path to the build’s scratch directory. This directory exists only if the build was run with <code>--keep-failed</code>.</p>
+</li>
+</ol>
+<p>The stderr and stdout output from the diff hook isn’t displayed to the user. Instead, it prints to the nix-daemon’s log.</p>
+<p>When using the Nix daemon, <code>diff-hook</code> must be set in the <code>nix.conf</code> configuration file, and cannot be passed at the command line.</p>
+<p><strong>Default:</strong> ``</p>
+</li>
+<li>
+<p><span id="conf-download-buffer-size"><a href="#conf-download-buffer-size"><code>download-buffer-size</code></a></span></p>
+<p>The size of Nix’s internal download buffer in bytes during <code>curl</code> transfers. If data is not processed quickly enough to exceed the size of this buffer, downloads may stall. The default is 1048576 (1 MiB).</p>
+<p><strong>Default:</strong> <code>1048576</code></p>
+</li>
+<li>
+<p><span id="conf-download-speed"><a href="#conf-download-speed"><code>download-speed</code></a></span></p>
+<p>Specify the maximum transfer rate in kilobytes per second you want Nix to use for downloads.</p>
+<p><strong>Default:</strong> <code>0</code></p>
+</li>
+<li>
+<p><span id="conf-eval-attrset-update-layer-rhs-threshold"><a href="#conf-eval-attrset-update-layer-rhs-threshold"><code>eval-attrset-update-layer-rhs-threshold</code></a></span></p>
+<p>Tunes the maximum size of an attribute set that, when used as a right operand in an <a href="../language/operators.html#update">attribute set update expression</a>, uses a more space-efficient linked-list representation of attribute sets.</p>
+<p>Setting this to larger values generally leads to less memory allocations, but may lead to worse evaluation performance.</p>
+<p>A value of <code>0</code> disables this optimization completely.</p>
+<p>This is an advanced performance tuning option and typically should not be changed. The default value is chosen to balance performance and memory usage. On 32 bit systems where memory is scarce, the default is a large value to reduce the amount of allocations.</p>
+<p><strong>Default:</strong> <code>16</code></p>
+</li>
+<li>
+<p><span id="conf-eval-cache"><a href="#conf-eval-cache"><code>eval-cache</code></a></span></p>
+<p>Whether to use the flake evaluation cache. Certain commands won’t have to evaluate when invoked for the second time with a particular version of a flake. Intermediate results are not cached.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-eval-profile-file"><a href="#conf-eval-profile-file"><code>eval-profile-file</code></a></span></p>
+<p>Specifies the file where <a href="#conf-eval-profiler">evaluation profile</a> is saved.</p>
+<p><strong>Default:</strong> <code>nix.profile</code></p>
+</li>
+<li>
+<p><span id="conf-eval-profiler"><a href="#conf-eval-profiler"><code>eval-profiler</code></a></span></p>
+<p>Enables evaluation profiling. The following modes are supported:</p>
+<ul>
+<li><code>flamegraph</code> stack sampling profiler. Outputs folded format, one line per stack (suitable for <code>flamegraph.pl</code> and compatible tools).
+Use <a href="#conf-eval-profile-file"><code>eval-profile-file</code></a> to specify where the profile is saved.</li>
+</ul>
+<p>See <a href="../advanced-topics/eval-profiler.html">Using the <code>eval-profiler</code></a>.</p>
+<p><strong>Default:</strong> <code>disabled</code></p>
+</li>
+<li>
+<p><span id="conf-eval-profiler-frequency"><a href="#conf-eval-profiler-frequency"><code>eval-profiler-frequency</code></a></span></p>
+<p>Specifies the sampling rate in hertz for sampling evaluation profilers. Use <code>0</code> to sample the stack after each function call. See <a href="#conf-eval-profiler"><code>eval-profiler</code></a>.</p>
+<p><strong>Default:</strong> <code>99</code></p>
+</li>
+<li>
+<p><span id="conf-eval-system"><a href="#conf-eval-system"><code>eval-system</code></a></span></p>
+<p>This option defines <a href="../language/builtins.html#builtins-currentSystem"><code>builtins.currentSystem</code></a> in the Nix language if it is set as a non-empty string. Otherwise, if it is defined as the empty string (the default), the value of the <a href="#conf-system"><code>system</code> </a> configuration setting is used instead.</p>
+<p>Unlike <code>system</code>, this setting does not change what kind of derivations can be built locally. This is useful for evaluating Nix code on one system to produce derivations to be built on another type of system.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-experimental-features"><a href="#conf-experimental-features"><code>experimental-features</code></a></span></p>
+<p>Experimental features that are enabled.</p>
+<p>Example:</p>
+<pre><code>experimental-features = nix-command flakes
+</code></pre>
+<p>The following experimental features are available:</p>
+<ul>
+<li><a href="../development/experimental-features.html#xp-feature-auto-allocate-uids"><code>auto-allocate-uids</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-blake3-hashes"><code>blake3-hashes</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-ca-derivations"><code>ca-derivations</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-cgroups"><code>cgroups</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-configurable-impure-env"><code>configurable-impure-env</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-daemon-trust-override"><code>daemon-trust-override</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-dynamic-derivations"><code>dynamic-derivations</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-external-builders"><code>external-builders</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-fetch-closure"><code>fetch-closure</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-fetch-tree"><code>fetch-tree</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-flakes"><code>flakes</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-git-hashing"><code>git-hashing</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-impure-derivations"><code>impure-derivations</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-local-overlay-store"><code>local-overlay-store</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-mounted-ssh-store"><code>mounted-ssh-store</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-nix-command"><code>nix-command</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-parse-toml-timestamps"><code>parse-toml-timestamps</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-pipe-operators"><code>pipe-operators</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-read-only-local-store"><code>read-only-local-store</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-recursive-nix"><code>recursive-nix</code></a></li>
+<li><a href="../development/experimental-features.html#xp-feature-verified-fetches"><code>verified-fetches</code></a>
+Experimental features are <a href="../development/experimental-features.html">further documented in the manual</a>.</li>
+</ul>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-external-builders"><a href="#conf-external-builders"><code>external-builders</code></a></span></p>
+<p>Helper programs for building derivations, specified in JSON format, e.g.</p>
+<pre><code class="language-json">[ {"systems": ["aarch64-linux"], "program": "/path/to/helper", "args": ["bla"]} ]
+</code></pre>
+<p>Whenever Nix needs to build a derivation for a system contained in <em>systems</em>, it will invoke <em>program</em> with the command line arguments <em>args</em>, and an additional argument containing the path of a JSON document that describes the build environment. The JSON document looks like this:</p>
+<pre><code class="language-json">{
+  "args": [
+    "-e",
+    "/nix/store/vj1c3wf9…-source-stdenv.sh",
+    "/nix/store/shkw4qm9…-default-builder.sh"
+  ],
+  "builder": "/nix/store/s1qkj0ph…-bash-5.2p37/bin/bash",
+  "env": {
+    "HOME": "/homeless-shelter",
+    "builder": "/nix/store/s1qkj0ph…-bash-5.2p37/bin/bash",
+    "nativeBuildInputs": "/nix/store/l31j72f1…-version-check-hook",
+    "out": "/nix/store/2yx2prgx…-hello-2.12.2"
+    …
+  },
+  "inputPaths": [
+    "/nix/store/14dciax3…-glibc-2.32-54-dev",
+    "/nix/store/1azs5s8z…-gettext-0.21",
+    …
+  ],
+  "outputs": {
+    "out": "/nix/store/2yx2prgx…-hello-2.12.2"
+  },
+  "realStoreDir": "/nix/store",
+  "storeDir": "/nix/store",
+  "system": "aarch64-linux",
+  "tmpDir": "/private/tmp/nix-build-hello-2.12.2.drv-0/build",
+  "tmpDirInSandbox": "/build",
+  "topTmpDir": "/private/tmp/nix-build-hello-2.12.2.drv-0",
+  "version": 1
+}
+</code></pre>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-extra-platforms"><a href="#conf-extra-platforms"><code>extra-platforms</code></a></span></p>
+<p>System types of executables that can be run on this machine.</p>
+<p>Nix only builds a given <a href="../glossary.html#gloss-store-derivation">store derivation</a> locally when its <code>system</code> attribute equals any of the values specified here or in the <a href="#conf-system"><code>system</code> option</a>.</p>
+<p>Setting this can be useful to build derivations locally on compatible machines:</p>
+<ul>
+<li><code>i686-linux</code> executables can be run on <code>x86_64-linux</code> machines (set by default)</li>
+<li><code>x86_64-darwin</code> executables can be run on macOS <code>aarch64-darwin</code> with Rosetta 2 (set by default where applicable)</li>
+<li><code>armv6</code> and <code>armv5tel</code> executables can be run on <code>armv7</code></li>
+<li>some <code>aarch64</code> machines can also natively run 32-bit ARM code</li>
+<li><code>qemu-user</code> may be used to support non-native platforms (though this may be slow and buggy)
+Build systems usually detect the target platform to be the current physical system and therefore produce machine code incompatible with what may be intended in the derivation. You should design your derivation’s <code>builder</code> accordingly and cross-check the results when using this option against natively-built versions of your derivation.</li>
+</ul>
+<p><strong>Default:</strong> <em>machine-specific</em></p>
+</li>
+<li>
+<p><span id="conf-fallback"><a href="#conf-fallback"><code>fallback</code></a></span></p>
+<p>If set to <code>true</code>, Nix falls back to building from source if a binary substitute fails. This is equivalent to the <code>--fallback</code> flag. The default is <code>false</code>.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-fallback</code></p>
+</li>
+<li>
+<p><span id="conf-filetransfer-retry-attempts"><a href="#conf-filetransfer-retry-attempts"><code>filetransfer-retry-attempts</code></a></span></p>
+<p>The number of times Nix attempts a file transfer (download or upload) before giving up. Retries apply to transient failures: connection-level errors, HTTP 408, 429, and most 5xx responses. Authentication failures (401/403/407), 404/410, and other 4xx responses are not retried.</p>
+<p><strong>Default:</strong> <code>5</code></p>
+<p><strong>Deprecated alias:</strong> <code>download-attempts</code></p>
+</li>
+<li>
+<p><span id="conf-filetransfer-retry-delay"><a href="#conf-filetransfer-retry-delay"><code>filetransfer-retry-delay</code></a></span></p>
+<p>Initial delay in milliseconds before retrying a failed file transfer (download or upload). The delay doubles with each subsequent attempt (exponential backoff) and is subject to random jitter (see <code>filetransfer-retry-jitter</code>).</p>
+<p><strong>Default:</strong> <code>100</code></p>
+</li>
+<li>
+<p><span id="conf-filetransfer-retry-delay-rate-limited"><a href="#conf-filetransfer-retry-delay-rate-limited"><code>filetransfer-retry-delay-rate-limited</code></a></span></p>
+<p>Initial delay in milliseconds before retrying a file transfer that failed with a rate-limit response (HTTP 429 or 503). The delay doubles with each subsequent attempt.</p>
+<p>Servers may send a <code>Retry-After</code> header specifying a longer delay; when present, Nix respects the larger of the two values.</p>
+<p><strong>Default:</strong> <code>5000</code></p>
+</li>
+<li>
+<p><span id="conf-filetransfer-retry-jitter"><a href="#conf-filetransfer-retry-jitter"><code>filetransfer-retry-jitter</code></a></span></p>
+<p>Whether to apply random jitter to retry delays. When enabled, each retry waits for a random duration between 0 and the computed delay (“full jitter”), which spreads out retry storms from many clients.</p>
+<p>Disable for deterministic retry timing (primarily useful for tests).</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-filetransfer-retry-max-delay"><a href="#conf-filetransfer-retry-max-delay"><code>filetransfer-retry-max-delay</code></a></span></p>
+<p>Ceiling on the exponential backoff delay in milliseconds. This does not cap server-provided <code>Retry-After</code> values, which are honored as-is.</p>
+<p><strong>Default:</strong> <code>60000</code></p>
+</li>
+<li>
+<p><span id="conf-filter-syscalls"><a href="#conf-filter-syscalls"><code>filter-syscalls</code></a></span></p>
+<p>Whether to prevent certain dangerous system calls, such as creation of setuid/setgid files or adding ACLs or extended attributes. Only disable this if you’re aware of the security implications.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-flake-registry"><a href="#conf-flake-registry"><code>flake-registry</code></a></span></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>This setting is part of an <a href="../development/experimental-features.html">experimental feature</a>.</p>
+<p>To change this setting, make sure the <a href="../development/experimental-features.html#xp-feature-flakes"><code>flakes</code> experimental feature</a> is enabled. For example, include the following in <a href="../command-ref/conf-file.html"><code>nix.conf</code></a>:</p>
+<pre><code>extra-experimental-features = flakes
+flake-registry = ...
+</code></pre>
+</blockquote>
+<p>Path or URI of the global flake registry.</p>
+<p>When empty, disables the global flake registry.</p>
+<p><strong>Default:</strong> <code>https://channels.nixos.org/flake-registry.json</code></p>
+</li>
+<li>
+<p><span id="conf-fsync-metadata"><a href="#conf-fsync-metadata"><code>fsync-metadata</code></a></span></p>
+<p>If set to <code>true</code>, changes to the Nix store metadata (in <code>/nix/var/nix/db</code>) are synchronously flushed to disk. This improves robustness in case of system crashes, but reduces performance. The default is <code>true</code>.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-fsync-store-paths"><a href="#conf-fsync-store-paths"><code>fsync-store-paths</code></a></span></p>
+<p>Whether to call <code>fsync()</code> on store paths before registering them, to flush them to disk. This improves robustness in case of system crashes, but reduces performance. The default is <code>false</code>.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-gc-reserved-space"><a href="#conf-gc-reserved-space"><code>gc-reserved-space</code></a></span></p>
+<p>Amount of reserved disk space for the garbage collector.</p>
+<p><strong>Default:</strong> <code>8388608</code></p>
+</li>
+<li>
+<p><span id="conf-hashed-mirrors"><a href="#conf-hashed-mirrors"><code>hashed-mirrors</code></a></span></p>
+<p>A list of web servers used by <code>builtins.fetchurl</code> to obtain files by hash. Given a hash algorithm <em>ha</em> and a base-16 hash <em>h</em>, Nix tries to download the file from <em>hashed-mirror</em>/<em>ha</em>/<em>h</em>. This allows files to be downloaded even if they have disappeared from their original URI. For example, given an example mirror <code>http://tarballs.nixos.org/</code>, when building the derivation</p>
+<pre><code class="language-nix">builtins.fetchurl {
+  url = "https://example.org/foo-1.2.3.tar.xz";
+  sha256 = "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae";
+}
+</code></pre>
+<p>Nix will attempt to download this file from <code>http://tarballs.nixos.org/sha256/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae</code> first. If it is not available there, it tries the original URI.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-http-connections"><a href="#conf-http-connections"><code>http-connections</code></a></span></p>
+<p>The maximum number of parallel TCP connections used to fetch files from binary caches and by other downloads. It defaults to 25. 0 means no limit.</p>
+<p><strong>Default:</strong> <code>25</code></p>
+<p><strong>Deprecated alias:</strong> <code>binary-caches-parallel-connections</code></p>
+</li>
+<li>
+<p><span id="conf-http2"><a href="#conf-http2"><code>http2</code></a></span></p>
+<p>Whether to enable HTTP/2 support.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-http3"><a href="#conf-http3"><code>http3</code></a></span></p>
+<p>Whether to try enabling HTTP/3 (QUIC). When enabled, Nix requests HTTP/3 and transparently falls back to HTTP/2 or HTTP/1.1 for servers that do not support it. This option has no effect unless the <code>nix</code> binary is linked against a libcurl built with HTTP/3 (QUIC) support.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-id-count"><a href="#conf-id-count"><code>id-count</code></a></span></p>
+<p>The number of UIDs/GIDs to use for dynamic ID allocation.</p>
+<p><strong>Default:</strong> <code>8388608</code></p>
+</li>
+<li>
+<p><span id="conf-ignore-try"><a href="#conf-ignore-try"><code>ignore-try</code></a></span></p>
+<p>If set to true, ignore exceptions inside ‘tryEval’ calls when evaluating Nix expressions in debug mode (using the –debugger flag). By default the debugger pauses on all exceptions.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-ignored-acls"><a href="#conf-ignored-acls"><code>ignored-acls</code></a></span></p>
+<p>A list of ACLs that should be ignored, normally Nix attempts to remove all ACLs from files and directories in the Nix store, but some ACLs like <code>security.selinux</code> or <code>system.nfs4_acl</code> can’t be removed even by root. Therefore it’s best to just ignore them.</p>
+<p><strong>Default:</strong> <code>security.csm security.selinux system.nfs4_acl</code></p>
+</li>
+<li>
+<p><span id="conf-impersonate-linux-26"><a href="#conf-impersonate-linux-26"><code>impersonate-linux-26</code></a></span></p>
+<p>Whether to impersonate a Linux 2.6 machine on newer kernels.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-impersonate-linux-26</code></p>
+</li>
+<li>
+<p><span id="conf-impure-env"><a href="#conf-impure-env"><code>impure-env</code></a></span></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>This setting is part of an <a href="../development/experimental-features.html">experimental feature</a>.</p>
+<p>To change this setting, make sure the <a href="../development/experimental-features.html#xp-feature-configurable-impure-env"><code>configurable-impure-env</code> experimental feature</a> is enabled. For example, include the following in <a href="../command-ref/conf-file.html"><code>nix.conf</code></a>:</p>
+<pre><code>extra-experimental-features = configurable-impure-env
+impure-env = ...
+</code></pre>
+</blockquote>
+<p>A list of items, each in the format of:</p>
+<ul>
+<li><code>name=value</code>: Set environment variable <code>name</code> to <code>value</code>.
+If the user is trusted (see <code>trusted-users</code> option), when building a fixed-output derivation, environment variables set in this option is passed to the builder if they are listed in <a href="../language/advanced-attributes.html#adv-attr-impureEnvVars"><code>impureEnvVars</code></a>.</li>
+</ul>
+<p>This option is useful for, e.g., setting <code>https_proxy</code> for fixed-output derivations and in a multi-user Nix installation, or setting private access tokens when fetching a private repository.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-json-log-path"><a href="#conf-json-log-path"><code>json-log-path</code></a></span></p>
+<p>A file or unix socket to which JSON records of Nix’s log output are written, in the same format as <code>--log-format internal-json</code> (without the <code>@nix </code> prefixes on each line). Concurrent writes to the same file by multiple Nix processes are not supported and may result in interleaved or corrupted log records.</p>
+<p><strong>Default:</strong> ``</p>
+</li>
+<li>
+<p><span id="conf-keep-build-log"><a href="#conf-keep-build-log"><code>keep-build-log</code></a></span></p>
+<p>If set to <code>true</code> (the default), Nix writes the build log of a derivation (i.e. the standard output and error of its builder) to the directory <code>/nix/var/log/nix/drvs</code>. The build log can be retrieved using the command <code>nix-store -l path</code>.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-keep-log</code></p>
+</li>
+<li>
+<p><span id="conf-keep-derivations"><a href="#conf-keep-derivations"><code>keep-derivations</code></a></span></p>
+<p>If <code>true</code> (default), the garbage collector keeps the derivations from which non-garbage store paths were built. If <code>false</code>, they are deleted unless explicitly registered as a root (or reachable from other roots).</p>
+<p>Keeping derivation around is useful for querying and traceability (e.g., it allows you to ask with what dependencies or options a store path was built), so by default this option is on. Turn it off to save a bit of disk space (or a lot if <code>keep-outputs</code> is also turned on).</p>
+<p>This option only applies to garbage collection of the whole store and does not affect deleting explicit paths.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+<p><strong>Deprecated alias:</strong> <code>gc-keep-derivations</code></p>
+</li>
+<li>
+<p><span id="conf-keep-env-derivations"><a href="#conf-keep-env-derivations"><code>keep-env-derivations</code></a></span></p>
+<p>If <code>false</code> (default), derivations are not stored in Nix user environments. That is, the derivations of any build-time-only dependencies may be garbage-collected.</p>
+<p>If <code>true</code>, when you add a Nix derivation to a user environment, the path of the derivation is stored in the user environment. Thus, the derivation isn’t garbage-collected until the user environment generation is deleted (<code>nix-env --delete-generations</code>). To prevent build-time-only dependencies from being collected, you should also turn on <code>keep-outputs</code>.</p>
+<p>The difference between this option and <code>keep-derivations</code> is that this one is “sticky”: it applies to any user environment created while this option was enabled, while <code>keep-derivations</code> only applies at the moment the garbage collector is run.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+<p><strong>Deprecated alias:</strong> <code>env-keep-derivations</code></p>
+</li>
+<li>
+<p><span id="conf-keep-failed"><a href="#conf-keep-failed"><code>keep-failed</code></a></span></p>
+<p>Whether to keep temporary directories of failed builds.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-keep-going"><a href="#conf-keep-going"><code>keep-going</code></a></span></p>
+<p>Whether to keep building derivations when another build fails.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-keep-outputs"><a href="#conf-keep-outputs"><code>keep-outputs</code></a></span></p>
+<p>If <code>true</code>, the garbage collector keeps the outputs of non-garbage derivations. If <code>false</code> (default), outputs are deleted unless they are GC roots themselves (or reachable from other roots).</p>
+<p>In general, outputs must be registered as roots separately. However, even if the output of a derivation is registered as a root, the collector still deletes store paths that are used only at build time (e.g., the C compiler, or source tarballs downloaded from the network). To prevent it from doing so, set this option to <code>true</code>.</p>
+<p>This option only applies to garbage collection of the whole store and does not affect deleting explicit paths.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+<p><strong>Deprecated alias:</strong> <code>gc-keep-outputs</code></p>
+</li>
+<li>
+<p><span id="conf-lint-absolute-path-literals"><a href="#conf-lint-absolute-path-literals"><code>lint-absolute-path-literals</code></a></span></p>
+<p>Controls handling of absolute path literals (paths starting with <code>/</code>) and home path literals (paths starting with <code>~/</code>).</p>
+<ul>
+<li><code>ignore</code>: Ignore without warning (default)</li>
+<li><code>warn</code>: Emit a warning about non-portability</li>
+<li><code>fatal</code>: Treat as a parse error
+It is true that some files are more difficult to reference with relative paths, because they would require lots of <code>../../..</code> upward traversing to reach them. But firstly, it is probably not a good idea to reference these files — such paths often make Nix expressions less portable and reproducible, as they depend on the file system layout of the machine evaluating the expression.</li>
+</ul>
+<p>Secondly, with <a href="#conf-pure-eval">pure evaluation mode</a>, most such files are prohibited to access anyway, whether by absolute or relative paths. In that case, enabling this lint in fatal mode is less disruptive, because the paths pure eval allows are usually not the ones that would be ergonomically expressed with absolute paths anyway.</p>
+<p><strong>Default:</strong> <code>ignore</code></p>
+</li>
+<li>
+<p><span id="conf-lint-short-path-literals"><a href="#conf-lint-short-path-literals"><code>lint-short-path-literals</code></a></span></p>
+<p>Controls handling of relative path literals that don’t start with <code>./</code> or <code>../</code>.</p>
+<ul>
+<li><code>ignore</code>: Ignore without warning (default)</li>
+<li><code>warn</code>: Emit a warning suggesting to use <code>./</code> prefix</li>
+<li><code>fatal</code>: Treat as a parse error
+For example, with this setting set to <code>warn</code> or <code>fatal</code>, <code>foo/bar</code> would suggest using <code>./foo/bar</code> instead.</li>
+</ul>
+<p>This is useful for improving code readability and making path literals more explicit.</p>
+<p><strong>Default:</strong> <code>ignore</code></p>
+</li>
+<li>
+<p><span id="conf-lint-url-literals"><a href="#conf-lint-url-literals"><code>lint-url-literals</code></a></span></p>
+<p>Controls handling of unquoted URLs as part of the Nix language syntax. The Nix language allows for URL literals, like so:</p>
+<pre><code>$ nix repl
+nix-repl&gt; http://foo
+"http://foo"
+</code></pre>
+<p>Setting this to <code>warn</code> or <code>fatal</code> will cause the Nix parser to warn or throw an error when encountering a URL literal:</p>
+<pre><code>$ nix repl --lint-url-literals fatal
+nix-repl&gt; http://foo
+error: URL literal 'http://foo' is deprecated
+       at «string»:1:1:
+
+            1| http://foo
+             | ^
+</code></pre>
+<p>Unquoted URLs are being deprecated and their usage is discouraged.</p>
+<p>The reason is that, as opposed to path literals, URLs have no special properties that distinguish them from regular strings, URLs containing query parameters have to be quoted anyway, and unquoted URLs may confuse external tooling.</p>
+<p><strong>Default:</strong> <code>ignore</code></p>
+</li>
+<li>
+<p><span id="conf-log-lines"><a href="#conf-log-lines"><code>log-lines</code></a></span></p>
+<p>The number of lines of the tail of the log to show if a build fails.</p>
+<p><strong>Default:</strong> <code>25</code></p>
+</li>
+<li>
+<p><span id="conf-max-build-log-size"><a href="#conf-max-build-log-size"><code>max-build-log-size</code></a></span></p>
+<p>This option defines the maximum number of bytes that a builder can write to its stdout/stderr. If the builder exceeds this limit, it’s killed. A value of <code>0</code> (the default) means that there is no limit.</p>
+<p><strong>Default:</strong> <code>0</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-max-log-size</code></p>
+</li>
+<li>
+<p><span id="conf-max-call-depth"><a href="#conf-max-call-depth"><code>max-call-depth</code></a></span></p>
+<p>The maximum function call depth to allow before erroring.</p>
+<p><strong>Default:</strong> <code>10000</code></p>
+</li>
+<li>
+<p><span id="conf-max-free"><a href="#conf-max-free"><code>max-free</code></a></span></p>
+<p>When a garbage collection is triggered by the <code>min-free</code> option, it stops as soon as <code>max-free</code> bytes are available. The default is infinity (i.e. delete all garbage).</p>
+<p><strong>Default:</strong> <code>9223372036854775807</code></p>
+</li>
+<li>
+<p><span id="conf-max-jobs"><a href="#conf-max-jobs"><code>max-jobs</code></a></span></p>
+<p>Maximum number of jobs that Nix tries to build locally in parallel.</p>
+<p>The special value <code>auto</code> causes Nix to use the number of CPUs in your system. Use <code>0</code> to disable local builds and directly use the remote machines specified in <a href="#conf-builders"><code>builders</code></a>. This doesn’t affect derivations that have <a href="../language/advanced-attributes.html#adv-attr-preferLocalBuild"><code>preferLocalBuild = true</code></a>, which are always built locally.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The number of CPU cores to use for each build job is independently determined by the <a href="#conf-cores"><code>cores</code></a> setting.</p>
+</blockquote>
+<!-- TODO(@fricklerhandwerk): would be good to have those shorthands for common options as part of the specification -->
+<p>The setting can be overridden using the <code>--max-jobs</code> (<code>-j</code>) command line switch.</p>
+<p><strong>Default:</strong> <code>1</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-max-jobs</code></p>
+</li>
+<li>
+<p><span id="conf-max-silent-time"><a href="#conf-max-silent-time"><code>max-silent-time</code></a></span></p>
+<p>This option defines the maximum number of seconds that a builder can go without producing any data on standard output or standard error. This is useful (for instance in an automated build system) to catch builds that are stuck in an infinite loop, or to catch remote builds that are hanging due to network problems. It can be overridden using the <code>--max-silent-time</code> command line switch.</p>
+<p>The value <code>0</code> means that there is no timeout. This is also the default.</p>
+<p><strong>Default:</strong> <code>0</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-max-silent-time</code></p>
+</li>
+<li>
+<p><span id="conf-max-substitution-jobs"><a href="#conf-max-substitution-jobs"><code>max-substitution-jobs</code></a></span></p>
+<p>This option defines the maximum number of substitution jobs that Nix tries to run in parallel. The default is <code>16</code>. The minimum value one can choose is <code>1</code> and lower values are interpreted as <code>1</code>.</p>
+<p><strong>Default:</strong> <code>16</code></p>
+<p><strong>Deprecated alias:</strong> <code>substitution-max-jobs</code></p>
+</li>
+<li>
+<p><span id="conf-min-free"><a href="#conf-min-free"><code>min-free</code></a></span></p>
+<p>When free disk space in <code>/nix/store</code> drops below <code>min-free</code> during a build, Nix performs a garbage-collection until <code>max-free</code> bytes are available or there is no more garbage. A value of <code>0</code> (the default) disables this feature.</p>
+<p><strong>Default:</strong> <code>0</code></p>
+</li>
+<li>
+<p><span id="conf-min-free-check-interval"><a href="#conf-min-free-check-interval"><code>min-free-check-interval</code></a></span></p>
+<p>Number of seconds between checking free disk space.</p>
+<p><strong>Default:</strong> <code>5</code></p>
+</li>
+<li>
+<p><span id="conf-nar-buffer-size"><a href="#conf-nar-buffer-size"><code>nar-buffer-size</code></a></span></p>
+<p>Maximum size of NARs before spilling them to disk.</p>
+<p><strong>Default:</strong> <code>33554432</code></p>
+</li>
+<li>
+<p><span id="conf-narinfo-cache-meta-ttl"><a href="#conf-narinfo-cache-meta-ttl"><code>narinfo-cache-meta-ttl</code></a></span></p>
+<p>The TTL in seconds for caching binary cache metadata (i.e. <code>/nix-cache-info</code>). This determines how long information about a binary cache (such as its store directory, priority, and whether it wants mass queries) is considered valid before being refreshed.</p>
+<p><strong>Default:</strong> <code>604800</code></p>
+</li>
+<li>
+<p><span id="conf-narinfo-cache-negative-ttl"><a href="#conf-narinfo-cache-negative-ttl"><code>narinfo-cache-negative-ttl</code></a></span></p>
+<p>The TTL in seconds for negative lookups. If a store path is queried from a <a href="#conf-substituters">substituter</a> but was not found, a negative lookup is cached in the local disk cache database for the specified duration.</p>
+<p>Set to <code>0</code> to force updating the lookup cache.</p>
+<p>To wipe the lookup cache completely:</p>
+<pre><code class="language-shell-session">$ rm $HOME/.cache/nix/binary-cache-v*.sqlite*
+# rm /root/.cache/nix/binary-cache-v*.sqlite*
+</code></pre>
+<p><strong>Default:</strong> <code>3600</code></p>
+</li>
+<li>
+<p><span id="conf-narinfo-cache-positive-ttl"><a href="#conf-narinfo-cache-positive-ttl"><code>narinfo-cache-positive-ttl</code></a></span></p>
+<p>The TTL in seconds for positive lookups. If a store path is queried from a substituter, the result of the query is cached in the local disk cache database including some of the NAR metadata. The default TTL is a month, setting a shorter TTL for positive lookups can be useful for binary caches that have frequent garbage collection, in which case having a more frequent cache invalidation would prevent trying to pull the path again and failing with a hash mismatch if the build isn’t reproducible.</p>
+<p><strong>Default:</strong> <code>2592000</code></p>
+</li>
+<li>
+<p><span id="conf-netrc-file"><a href="#conf-netrc-file"><code>netrc-file</code></a></span></p>
+<p>If set to an absolute path to a <code>netrc</code> file, Nix uses the HTTP authentication credentials in this file when trying to download from a remote host through HTTP or HTTPS. Defaults to <code>$NIX_CONF_DIR/netrc</code>.</p>
+<p>The <code>netrc</code> file consists of a list of accounts in the following format:</p>
+<pre><code>machine my-machine
+login my-username
+password my-password
+</code></pre>
+<p>For the exact syntax, see <a href="https://ec.haxx.se/usingcurl-netrc.html">the <code>curl</code> documentation</a>.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>This must be an absolute path, and <code>~</code> is not resolved. For example, <code>~/.netrc</code> won’t resolve to your home directory’s <code>.netrc</code>.</p>
+</blockquote>
+<p><strong>Default:</strong> <code>/dummy/netrc</code></p>
+</li>
+<li>
+<p><span id="conf-nix-path"><a href="#conf-nix-path"><code>nix-path</code></a></span></p>
+<p>List of search paths to use for <a href="../language/constructs/lookup-path.html">lookup path</a> resolution. This setting determines the value of <a href="../language/builtins.html#builtins-nixPath"><code>builtins.nixPath</code></a> and can be used with <a href="../language/builtins.html#builtins-findFile"><code>builtins.findFile</code></a>.</p>
+<ul>
+<li>
+<p>The configuration setting is overridden by the <a href="../command-ref/env-common.html#env-NIX_PATH"><code>NIX_PATH</code></a> environment variable.</p>
+</li>
+<li>
+<p><code>NIX_PATH</code> is overridden by <a href="../command-ref/conf-file.html#command-line-flags">specifying the setting as the command line flag</a> <code>--nix-path</code>.</p>
+</li>
+<li>
+<p>Any current value is extended by the <a href="../command-ref/opt-common.html#opt-I"><code>-I</code> option</a> or <code>--extra-nix-path</code>.
+If the respective paths are accessible, the default values are:</p>
+</li>
+<li>
+<p><code>$HOME/.nix-defexpr/channels</code></p>
+<p>The <a href="../command-ref/files/default-nix-expression.html#user-channel-link">user channel link</a>, pointing to the current state of <a href="../command-ref/files/channels.html">channels</a> for the current user.</p>
+</li>
+<li>
+<p><code>nixpkgs=$NIX_STATE_DIR/profiles/per-user/root/channels/nixpkgs</code></p>
+<p>The current state of the <code>nixpkgs</code> channel for the <code>root</code> user.</p>
+</li>
+<li>
+<p><code>$NIX_STATE_DIR/profiles/per-user/root/channels</code></p>
+<p>The current state of all channels for the <code>root</code> user.</p>
+</li>
+</ul>
+<p>These files are set up by the <a href="../installation/installing-binary.html">Nix installer</a>. See <a href="../command-ref/env-common.html#env-NIX_STATE_DIR"><code>NIX_STATE_DIR</code></a> for details on the environment variable.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>If <a href="../command-ref/conf-file.html#conf-restrict-eval">restricted evaluation</a> is enabled, the default value is empty.</p>
+<p>If <a href="#conf-pure-eval">pure evaluation</a> is enabled, <code>builtins.nixPath</code> <em>always</em> evaluates to the empty list <code>[ ]</code>.</p>
+</blockquote>
+<p><strong>Default:</strong> <em>machine-specific</em></p>
+</li>
+<li>
+<p><span id="conf-nix-shell-always-looks-for-shell-nix"><a href="#conf-nix-shell-always-looks-for-shell-nix"><code>nix-shell-always-looks-for-shell-nix</code></a></span></p>
+<p>Before Nix 2.24, <a href="../command-ref/nix-shell.html"><code>nix-shell</code></a> would only look at <code>shell.nix</code> if it was in the working directory - when no file was specified.</p>
+<p>Since Nix 2.24, <code>nix-shell</code> always looks for a <code>shell.nix</code>, whether that’s in the working directory, or in a directory that was passed as an argument.</p>
+<p>You may set this to <code>false</code> to temporarily revert to the behavior of Nix 2.23 and older.</p>
+<p>Using this setting is not recommended. It will be deprecated and removed.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-nix-shell-shebang-arguments-relative-to-script"><a href="#conf-nix-shell-shebang-arguments-relative-to-script"><code>nix-shell-shebang-arguments-relative-to-script</code></a></span></p>
+<p>Before Nix 2.24, relative file path expressions in arguments in a <code>nix-shell</code> shebang were resolved relative to the working directory.</p>
+<p>Since Nix 2.24, <code>nix-shell</code> resolves these paths in a manner that is relative to the <a href="../glossary.html#gloss-base-directory">base directory</a>, defined as the script’s directory.</p>
+<p>You may set this to <code>false</code> to temporarily revert to the behavior of Nix 2.23 and older.</p>
+<p>Using this setting is not recommended. It will be deprecated and removed.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-plugin-files"><a href="#conf-plugin-files"><code>plugin-files</code></a></span></p>
+<p>A list of plugin files to be loaded by Nix. Each of these files is dlopened by Nix. If they contain the symbol <code>nix_plugin_entry()</code>, this symbol is called. Alternatively, they can affect execution through static initialization. In particular, these plugins may construct static instances of RegisterPrimOp to add new primops or constants to the expression language, RegisterStoreImplementation to add new store implementations, RegisterCommand to add new subcommands to the <code>nix</code> command, and RegisterSetting to add new nix config settings. See the constructors for those types for more details.</p>
+<p>Warning! These APIs are inherently unstable and may change from release to release.</p>
+<p>Since these files are loaded into the same address space as Nix itself, they must be DSOs compatible with the instance of Nix running at the time (i.e. compiled against the same headers, not linked to any incompatible libraries). They should not be linked to any Nix libraries directly, as those are already available at load time.</p>
+<p>If an entry in the list is a directory, all files in the directory are loaded as plugins (non-recursively).</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-post-build-hook"><a href="#conf-post-build-hook"><code>post-build-hook</code></a></span></p>
+<p>Optional. The path to a program to execute after each build.</p>
+<p>This option is only settable in the global <code>nix.conf</code>, or on the command line by trusted users.</p>
+<p>When using the nix-daemon, the daemon executes the hook as <code>root</code>. If the nix-daemon is not involved, the hook runs as the user executing the nix-build.</p>
+<ul>
+<li>
+<p>The hook executes after an evaluation-time build.</p>
+</li>
+<li>
+<p>The hook does not execute on substituted paths.</p>
+</li>
+<li>
+<p>The hook’s output always goes to the user’s terminal.</p>
+</li>
+<li>
+<p>If the hook fails, the build succeeds but no further builds execute.</p>
+</li>
+<li>
+<p>The hook executes synchronously, and blocks other builds from progressing while it runs.</p>
+</li>
+</ul>
+<p>The program executes with no arguments. The program’s environment contains the following environment variables:</p>
+<ul>
+<li>
+<p><code>DRV_PATH</code> The derivation for the built paths.</p>
+<p>Example: <code>/nix/store/5nihn1a7pa8b25l9zafqaqibznlvvp3f-bash-4.4-p23.drv</code></p>
+</li>
+<li>
+<p><code>OUT_PATHS</code> Output paths of the built derivation, separated by a space character.</p>
+<p>Example: <code>/nix/store/l88brggg9hpy96ijds34dlq4n8fan63g-bash-4.4-p23-dev /nix/store/vch71bhyi5akr5zs40k8h2wqxx69j80l-bash-4.4-p23-doc /nix/store/c5cxjywi66iwn9dcx5yvwjkvl559ay6p-bash-4.4-p23-info /nix/store/scz72lskj03ihkcn42ias5mlp4i4gr1k-bash-4.4-p23-man /nix/store/a724znygmd1cac856j3gfsyvih3lw07j-bash-4.4-p23</code>.</p>
+</li>
+</ul>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-pre-build-hook"><a href="#conf-pre-build-hook"><code>pre-build-hook</code></a></span></p>
+<p>If set, the path to a program that can set extra derivation-specific settings for this system. This is used for settings that can’t be captured by the derivation model itself and are too variable between different versions of the same system to be hard-coded into nix.</p>
+<p>The hook is passed the derivation path and, if sandboxes are enabled, the sandbox directory. It can then modify the sandbox and send a series of commands to modify various settings to stdout. The currently recognized commands are:</p>
+<ul>
+<li><code>extra-sandbox-paths</code><br>Pass a list of files and directories to be included in the sandbox for this build. One entry per line, terminated by an empty line. Entries have the same format as <code>sandbox-paths</code>.
+<strong>Default:</strong> <em>empty</em></li>
+</ul>
+</li>
+<li>
+<p><span id="conf-preallocate-contents"><a href="#conf-preallocate-contents"><code>preallocate-contents</code></a></span></p>
+<p>Whether to preallocate files when writing objects with known size.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-print-missing"><a href="#conf-print-missing"><code>print-missing</code></a></span></p>
+<p>Whether to print what paths need to be built or downloaded.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-pure-eval"><a href="#conf-pure-eval"><code>pure-eval</code></a></span></p>
+<p>Pure evaluation mode ensures that the result of Nix expressions is fully determined by explicitly declared inputs, and not influenced by external state:</p>
+<ul>
+<li>Restrict file system and network access to files specified by cryptographic hash</li>
+<li>Disable impure constants:
+<ul>
+<li><a href="../language/builtins.html#builtins-currentSystem"><code>builtins.currentSystem</code></a></li>
+<li><a href="../language/builtins.html#builtins-currentTime"><code>builtins.currentTime</code></a></li>
+<li><a href="../language/builtins.html#builtins-nixPath"><code>builtins.nixPath</code></a></li>
+<li><a href="../language/builtins.html#builtins-storePath"><code>builtins.storePath</code></a>
+<strong>Default:</strong> <code>false</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><span id="conf-require-drop-supplementary-groups"><a href="#conf-require-drop-supplementary-groups"><code>require-drop-supplementary-groups</code></a></span></p>
+<p>Following the principle of least privilege, Nix attempts to drop supplementary groups when building with sandboxing.</p>
+<p>However this can fail under some circumstances. For example, if the user lacks the <code>CAP_SETGID</code> capability. Search <code>setgroups(2)</code> for <code>EPERM</code> to find more detailed information on this.</p>
+<p>If you encounter such a failure, setting this option to <code>false</code> enables you to ignore it and continue. But before doing so, you should consider the security implications carefully. Not dropping supplementary groups means the build sandbox is less restricted than intended.</p>
+<p>This option defaults to <code>true</code> when the user is root (since <code>root</code> usually has permissions to call setgroups) and <code>false</code> otherwise.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-require-sigs"><a href="#conf-require-sigs"><code>require-sigs</code></a></span></p>
+<p>If set to <code>true</code> (the default), any non-content-addressed path added or copied to the Nix store (e.g. when substituting from a binary cache) must have a signature by a trusted key. A trusted key is one listed in <code>trusted-public-keys</code>, or a public key counterpart to a private key stored in a file listed in <code>secret-key-files</code>.</p>
+<p>Set to <code>false</code> to disable signature checking and trust all non-content-addressed paths unconditionally.</p>
+<p>(Content-addressed paths are inherently trustworthy and thus unaffected by this configuration option.)</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-restrict-eval"><a href="#conf-restrict-eval"><code>restrict-eval</code></a></span></p>
+<p>If set to <code>true</code>, the Nix evaluator doesn’t allow access to any files outside of <a href="../language/builtins.html#builtins-nixPath"><code>builtins.nixPath</code></a>, or to URIs outside of <a href="../command-ref/conf-file.html#conf-allowed-uris"><code>allowed-uris</code></a>.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-run-diff-hook"><a href="#conf-run-diff-hook"><code>run-diff-hook</code></a></span></p>
+<p>If true, enable the execution of the <code>diff-hook</code> program.</p>
+<p>When using the Nix daemon, <code>run-diff-hook</code> must be set in the <code>nix.conf</code> configuration file, and cannot be passed at the command line.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-sandbox"><a href="#conf-sandbox"><code>sandbox</code></a></span></p>
+<p>If set to <code>true</code>, builds are performed in a <em>sandboxed environment</em>, i.e., they’re isolated from the normal file system hierarchy and only see their dependencies in the Nix store, the temporary build directory, private versions of <code>/proc</code>, <code>/dev</code>, <code>/dev/shm</code> and <code>/dev/pts</code> (on Linux), and the paths configured with the <code>sandbox-paths</code> option. This is useful to prevent undeclared dependencies on files in directories such as <code>/usr/bin</code>. In addition, on Linux, builds run in private PID, mount, network, IPC and UTS namespaces to isolate them from other processes in the system (except that fixed-output derivations do not run in private network namespace to ensure they can access the network).</p>
+<p>Currently, sandboxing only work on Linux and macOS. The use of a sandbox requires that Nix is run as root (so you should use the “build users” feature to perform the actual builds under different users than root).</p>
+<p>If this option is set to <code>relaxed</code>, then fixed-output derivations and derivations that have the <code>__noChroot</code> attribute set to <code>true</code> do not run in sandboxes.</p>
+<p>The default is <code>true</code> on Linux and <code>false</code> on all other platforms.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-use-chroot</code>, <code>build-use-sandbox</code></p>
+</li>
+<li>
+<p><span id="conf-sandbox-build-dir"><a href="#conf-sandbox-build-dir"><code>sandbox-build-dir</code></a></span></p>
+<p><em>Linux only</em></p>
+<p>The build directory inside the sandbox.</p>
+<p>This directory is backed by <a href="#conf-build-dir"><code>build-dir</code></a> on the host.</p>
+<p><strong>Default:</strong> <code>/build</code></p>
+</li>
+<li>
+<p><span id="conf-sandbox-dev-shm-size"><a href="#conf-sandbox-dev-shm-size"><code>sandbox-dev-shm-size</code></a></span></p>
+<p><em>Linux only</em></p>
+<p>This option determines the maximum size of the <code>tmpfs</code> filesystem mounted on <code>/dev/shm</code> in Linux sandboxes. For the format, see the description of the <code>size</code> option of <code>tmpfs</code> in mount(8). The default is <code>50%</code>.</p>
+<p><strong>Default:</strong> <code>50%</code></p>
+</li>
+<li>
+<p><span id="conf-sandbox-fallback"><a href="#conf-sandbox-fallback"><code>sandbox-fallback</code></a></span></p>
+<p>Whether to disable sandboxing when the kernel doesn’t allow it.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-sandbox-paths"><a href="#conf-sandbox-paths"><code>sandbox-paths</code></a></span></p>
+<p>A list of paths bind-mounted into Nix sandbox environments. You can use the syntax <code>target=source</code> to mount a path in a different location in the sandbox; for instance, <code>/bin=/nix-bin</code> mounts the path <code>/nix-bin</code> as <code>/bin</code> inside the sandbox. If <em>source</em> is followed by <code>?</code>, then it is not an error if <em>source</em> does not exist; for example, <code>/dev/nvidiactl?</code> specifies that <code>/dev/nvidiactl</code> only be mounted in the sandbox if it exists in the host filesystem.</p>
+<p>If the source is in the Nix store, then its closure is added to the sandbox as well.</p>
+<p>Depending on how Nix was built, the default value for this option may be empty or provide <code>/bin/sh</code> as a bind-mount of <code>bash</code>.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+<p><strong>Deprecated alias:</strong> <code>build-chroot-dirs</code>, <code>build-sandbox-paths</code></p>
+</li>
+<li>
+<p><span id="conf-secret-key-files"><a href="#conf-secret-key-files"><code>secret-key-files</code></a></span></p>
+<p>A whitespace-separated list of files containing secret (private) keys. These are used to sign locally-built paths. They can be generated using <code>nix-store --generate-binary-cache-key</code>. The corresponding public key can be distributed to other users, who can add it to <code>trusted-public-keys</code> in their <code>nix.conf</code>.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-show-trace"><a href="#conf-show-trace"><code>show-trace</code></a></span></p>
+<p>Whether Nix should print out a stack trace in case of Nix expression evaluation errors.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-ssl-cert-file"><a href="#conf-ssl-cert-file"><code>ssl-cert-file</code></a></span></p>
+<p>The path of a file containing CA certificates used to authenticate <code>https://</code> downloads. Nix by default uses the first of the following files that exists:</p>
+<ol>
+<li>
+<p><code>/etc/ssl/certs/ca-certificates.crt</code></p>
+</li>
+<li>
+<p><code>/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt</code>
+The path can be overridden by the following environment variables, in order of precedence:</p>
+</li>
+<li>
+<p><code>NIX_SSL_CERT_FILE</code></p>
+</li>
+<li>
+<p><code>SSL_CERT_FILE</code>
+<strong>Default:</strong> <em>machine-specific</em></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="conf-stalled-download-timeout"><a href="#conf-stalled-download-timeout"><code>stalled-download-timeout</code></a></span></p>
+<p>The timeout (in seconds) for receiving data from servers during download. Nix cancels idle downloads after this timeout’s duration.</p>
+<p><strong>Default:</strong> <code>300</code></p>
+</li>
+<li>
+<p><span id="conf-start-id"><a href="#conf-start-id"><code>start-id</code></a></span></p>
+<p>The first UID and GID to use for dynamic ID allocation.</p>
+<p><strong>Default:</strong> <code>872415232</code></p>
+</li>
+<li>
+<p><span id="conf-store"><a href="#conf-store"><code>store</code></a></span></p>
+<p>The <a href="../store/types/index.html#store-url-format">URL of the Nix store</a> to use for most operations.</p>
+<p>See the <a href="../store/types/index.html">Store Types</a> section of the manual for supported store types and settings.</p>
+<p>Can be overridden by the <a href="../command-ref/env-common.html#env-NIX_REMOTE"><code>NIX_REMOTE</code></a> environment variable.</p>
+<p>The default value is <a href="../store/types/index.html#auto"><code>auto</code></a>.</p>
+<p><strong>Default:</strong> <code>auto</code></p>
+</li>
+<li>
+<p><span id="conf-substitute"><a href="#conf-substitute"><code>substitute</code></a></span></p>
+<p>If set to <code>true</code> (default), Nix uses binary substitutes if available. This option can be disabled to force building from source.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-use-substitutes</code></p>
+</li>
+<li>
+<p><span id="conf-substituters"><a href="#conf-substituters"><code>substituters</code></a></span></p>
+<p>A list of <a href="../store/types/index.html#store-url-format">URLs of Nix stores</a> to be used as substituters, separated by whitespace. A substituter is an additional <a href="../glossary.html#gloss-store">store</a> from which Nix can obtain <a href="../store/store-object.html">store objects</a> instead of building them.</p>
+<p>Substituters are tried based on their priority value, which each substituter can set independently. Lower value means higher priority. The default is <code>https://cache.nixos.org</code>, which has a priority of 40.</p>
+<p>At least one of the following conditions must be met for Nix to use a substituter:</p>
+<ul>
+<li>The substituter is in the <a href="#conf-trusted-substituters"><code>trusted-substituters</code></a> list</li>
+<li>The user calling Nix is in the <a href="#conf-trusted-users"><code>trusted-users</code></a> list
+In addition, each store path should be trusted as described in <a href="#conf-trusted-public-keys"><code>trusted-public-keys</code></a></li>
+</ul>
+<p><strong>Default:</strong> <code>https://cache.nixos.org/</code></p>
+<p><strong>Deprecated alias:</strong> <code>binary-caches</code></p>
+</li>
+<li>
+<p><span id="conf-sync-before-registering"><a href="#conf-sync-before-registering"><code>sync-before-registering</code></a></span></p>
+<p>Whether to call <code>sync()</code> before registering a path as valid.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-system"><a href="#conf-system"><code>system</code></a></span></p>
+<p>The system type of the current Nix installation. Nix only builds a given <a href="../glossary.html#gloss-store-derivation">store derivation</a> locally when its <code>system</code> attribute equals any of the values specified here or in <a href="#conf-extra-platforms"><code>extra-platforms</code></a>.</p>
+<p>The default value is set when Nix itself is compiled for the system it will run on. The following system types are widely used, as Nix is actively supported on these platforms:</p>
+<ul>
+<li><code>x86_64-linux</code></li>
+<li><code>x86_64-darwin</code></li>
+<li><code>i686-linux</code></li>
+<li><code>aarch64-linux</code></li>
+<li><code>aarch64-darwin</code></li>
+<li><code>armv6l-linux</code></li>
+<li><code>armv7l-linux</code>
+In general, you do not have to modify this setting. While you can force Nix to run a Darwin-specific <code>builder</code> executable on a Linux machine, the result would obviously be wrong.</li>
+</ul>
+<p>This value is available in the Nix language as <a href="../language/builtins.html#builtins-currentSystem"><code>builtins.currentSystem</code></a> if the <a href="#conf-eval-system"><code>eval-system</code></a> configuration option is set as the empty string.</p>
+<p><strong>Default:</strong> <code>x86_64-linux</code></p>
+</li>
+<li>
+<p><span id="conf-system-features"><a href="#conf-system-features"><code>system-features</code></a></span></p>
+<p>A set of system “features” supported by this machine.</p>
+<p>This complements the <a href="#conf-system"><code>system</code></a> and <a href="#conf-extra-platforms"><code>extra-platforms</code></a> configuration options and the corresponding <a href="../language/derivations.html#attr-system"><code>system</code></a> attribute on derivations.</p>
+<p>A derivation can require system features in the <a href="../language/advanced-attributes.html#adv-attr-requiredSystemFeatures"><code>requiredSystemFeatures</code> attribute</a>, and the machine to build the derivation must have them.</p>
+<p>System features are user-defined, but Nix sets the following defaults:</p>
+<ul>
+<li>
+<p><code>apple-virt</code></p>
+<p>Included on Darwin if virtualization is available.</p>
+</li>
+<li>
+<p><code>kvm</code></p>
+<p>Included on Linux if <code>/dev/kvm</code> is accessible.</p>
+</li>
+<li>
+<p><code>nixos-test</code>, <code>benchmark</code>, <code>big-parallel</code></p>
+<p>These historical pseudo-features are always enabled for backwards compatibility, as they are used in Nixpkgs to route Hydra builds to specific machines.</p>
+</li>
+<li>
+<p><code>ca-derivations</code></p>
+<p>Included by default if the <a href="../development/experimental-features.html#xp-feature-ca-derivations"><code>ca-derivations</code> experimental feature</a> is enabled.</p>
+<p>This system feature is implicitly required by derivations with the <a href="../language/advanced-attributes.html#adv-attr-__contentAddressed"><code>__contentAddressed</code> attribute</a>.</p>
+</li>
+<li>
+<p><code>recursive-nix</code></p>
+<p>Included by default if the <a href="../development/experimental-features.html#xp-feature-recursive-nix"><code>recursive-nix</code> experimental feature</a> is enabled.</p>
+</li>
+<li>
+<p><code>uid-range</code></p>
+<p>On Linux, Nix can run builds in a user namespace where they run as root (UID 0) and have 65,536 UIDs available. This is primarily useful for running containers such as <code>systemd-nspawn</code> inside a Nix build. For an example, see <a href="https://github.com/NixOS/nix/blob/67bcb99700a0da1395fa063d7c6586740b304598/tests/systemd-nspawn.nix"><code>tests/systemd-nspawn/nix</code></a>.</p>
+<p>Included by default on Linux if the <a href="#conf-auto-allocate-uids"><code>auto-allocate-uids</code></a> setting is enabled.</p>
+</li>
+</ul>
+<p><strong>Default:</strong> <em>machine-specific</em></p>
+</li>
+<li>
+<p><span id="conf-tarball-ttl"><a href="#conf-tarball-ttl"><code>tarball-ttl</code></a></span></p>
+<p>The number of seconds a downloaded tarball is considered fresh. If the cached tarball is stale, Nix checks whether it is still up to date using the ETag header. Nix downloads a new version if the ETag header is unsupported, or the cached ETag doesn’t match.</p>
+<p>Setting the TTL to <code>0</code> forces Nix to always check if the tarball is up to date.</p>
+<p>Nix caches tarballs in <code>$XDG_CACHE_HOME/nix/tarballs</code>.</p>
+<p>Files fetched via <code>NIX_PATH</code>, <code>fetchGit</code>, <code>fetchMercurial</code>, <code>fetchTarball</code>, and <code>fetchurl</code> respect this TTL.</p>
+<p><strong>Default:</strong> <code>3600</code></p>
+</li>
+<li>
+<p><span id="conf-timeout"><a href="#conf-timeout"><code>timeout</code></a></span></p>
+<p>This option defines the maximum number of seconds that a builder can run. This is useful (for instance in an automated build system) to catch builds that are stuck in an infinite loop but keep writing to their standard output or standard error. It can be overridden using the <code>--timeout</code> command line switch.</p>
+<p>The value <code>0</code> means that there is no timeout. This is also the default.</p>
+<p><strong>Default:</strong> <code>0</code></p>
+<p><strong>Deprecated alias:</strong> <code>build-timeout</code></p>
+</li>
+<li>
+<p><span id="conf-trace-function-calls"><a href="#conf-trace-function-calls"><code>trace-function-calls</code></a></span></p>
+<p>If set to <code>true</code>, the Nix evaluator traces every function call. Nix prints a log message at the “vomit” level for every function entrance and function exit.</p>
+<pre><code>function-trace entered undefined position at 1565795816999559622
+function-trace exited undefined position at 1565795816999581277
+function-trace entered /nix/store/.../example.nix:226:41 at 1565795253249935150
+function-trace exited /nix/store/.../example.nix:226:41 at 1565795253249941684
+</code></pre>
+<p>The <code>undefined position</code> means the function call is a builtin.</p>
+<p>Use the <code>contrib/stack-collapse.py</code> script distributed with the Nix source code to convert the trace logs in to a format suitable for <code>flamegraph.pl</code>.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-trace-import-from-derivation"><a href="#conf-trace-import-from-derivation"><code>trace-import-from-derivation</code></a></span></p>
+<p>By default, Nix allows <a href="../language/import-from-derivation.html">Import from Derivation</a>.</p>
+<p>When this setting is <code>true</code>, Nix logs a warning indicating that it performed such an import. This option has no effect if <code>allow-import-from-derivation</code> is disabled.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-trace-verbose"><a href="#conf-trace-verbose"><code>trace-verbose</code></a></span></p>
+<p>Whether <code>builtins.traceVerbose</code> should trace its first argument when evaluated.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-trust-tarballs-from-git-forges"><a href="#conf-trust-tarballs-from-git-forges"><code>trust-tarballs-from-git-forges</code></a></span></p>
+<p>If enabled (the default), Nix considers tarballs from GitHub and similar Git forges to be locked if a Git revision is specified, e.g. <code>github:NixOS/patchelf/7c2f768bf9601268a4e71c2ebe91e2011918a70f</code>. This requires Nix to trust that the provider returns the correct contents for the specified Git revision.</p>
+<p>If disabled, such tarballs are only considered locked if a <code>narHash</code> attribute is specified, e.g. <code>github:NixOS/patchelf/7c2f768bf9601268a4e71c2ebe91e2011918a70f?narHash=sha256-PPXqKY2hJng4DBVE0I4xshv/vGLUskL7jl53roB8UdU%3D</code>.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-trusted-public-keys"><a href="#conf-trusted-public-keys"><code>trusted-public-keys</code></a></span></p>
+<p>A whitespace-separated list of public keys.</p>
+<p>At least one of the following condition must be met for Nix to accept copying a store object from another Nix store (such as a <a href="#conf-substituters">substituter</a>):</p>
+<ul>
+<li>the store object has been signed using a key in the trusted keys list</li>
+<li>the <a href="#conf-require-sigs"><code>require-sigs</code></a> option has been set to <code>false</code></li>
+<li>the store URL is configured with <code>trusted=true</code></li>
+<li>the store object is <a href="../glossary.html#gloss-content-addressed-store-object">content-addressed</a>
+<strong>Default:</strong> <code>cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=</code></li>
+</ul>
+<p><strong>Deprecated alias:</strong> <code>binary-cache-public-keys</code></p>
+</li>
+<li>
+<p><span id="conf-trusted-substituters"><a href="#conf-trusted-substituters"><code>trusted-substituters</code></a></span></p>
+<p>A list of <a href="../store/types/index.html#store-url-format">Nix store URLs</a>, separated by whitespace. These are not used by default, but users of the Nix daemon can enable them by specifying <a href="#conf-substituters"><code>substituters</code></a>.</p>
+<p>Unprivileged users (those set in only <a href="#conf-allowed-users"><code>allowed-users</code></a> but not <a href="#conf-trusted-users"><code>trusted-users</code></a>) can pass as <code>substituters</code> only those URLs listed in <code>trusted-substituters</code>.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+<p><strong>Deprecated alias:</strong> <code>trusted-binary-caches</code></p>
+</li>
+<li>
+<p><span id="conf-trusted-users"><a href="#conf-trusted-users"><code>trusted-users</code></a></span></p>
+<p>A list of user names, separated by whitespace. These users will have additional rights when connecting to the Nix daemon, such as the ability to specify additional <a href="#conf-substituters">substituters</a>, or to import unsigned realisations or unsigned input-addressed store objects.</p>
+<p>You can also specify groups by prefixing names with <code>@</code>. For instance, <code>@wheel</code> means all users in the <code>wheel</code> group.</p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Adding a user to <code>trusted-users</code> is essentially equivalent to giving that user root access to the system. For example, the user can access or replace store path contents that are critical for system security.</p>
+</blockquote>
+<p><strong>Default:</strong> <code>root</code></p>
+</li>
+<li>
+<p><span id="conf-upgrade-nix-store-path-url"><a href="#conf-upgrade-nix-store-path-url"><code>upgrade-nix-store-path-url</code></a></span></p>
+<p>Used by <code>nix upgrade-nix</code>, the URL of the file that contains the store paths of the latest Nix release.</p>
+<p><strong>Default:</strong> <code>https://github.com/NixOS/nixpkgs/raw/master/nixos/modules/installer/tools/nix-fallback-paths.nix</code></p>
+</li>
+<li>
+<p><span id="conf-use-case-hack"><a href="#conf-use-case-hack"><code>use-case-hack</code></a></span></p>
+<p>Whether to enable a macOS-specific hack for dealing with file name case collisions.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-use-cgroups"><a href="#conf-use-cgroups"><code>use-cgroups</code></a></span></p>
+<p>Whether to execute builds inside cgroups. This is only supported on Linux.</p>
+<p>Cgroups are required and enabled automatically for derivations that require the <code>uid-range</code> system feature.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-use-registries"><a href="#conf-use-registries"><code>use-registries</code></a></span></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>This setting is part of an <a href="../development/experimental-features.html">experimental feature</a>.</p>
+<p>To change this setting, make sure the <a href="../development/experimental-features.html#xp-feature-flakes"><code>flakes</code> experimental feature</a> is enabled. For example, include the following in <a href="../command-ref/conf-file.html"><code>nix.conf</code></a>:</p>
+<pre><code>extra-experimental-features = flakes
+use-registries = ...
+</code></pre>
+</blockquote>
+<p>Whether to use flake registries to resolve flake references.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-use-sqlite-wal"><a href="#conf-use-sqlite-wal"><code>use-sqlite-wal</code></a></span></p>
+<p>Whether SQLite should use WAL mode.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-use-xdg-base-directories"><a href="#conf-use-xdg-base-directories"><code>use-xdg-base-directories</code></a></span></p>
+<p>If set to <code>true</code>, Nix conforms to the <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a> for files in <code>$HOME</code>. The environment variables used to implement this are documented in the <a href="../command-ref/env-common.html">Environment Variables section</a>.</p>
+<blockquote>
+<p><strong>Warning</strong> This changes the location of some well-known symlinks that Nix creates, which might break tools that rely on the old, non-XDG-conformant locations.</p>
+</blockquote>
+<p>In particular, the following locations change:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Old</th><th>New</th></tr>
+</thead>
+<tbody>
+<tr><td><code>~/.nix-profile</code></td><td><code>$XDG_STATE_HOME/nix/profile</code></td></tr>
+<tr><td><code>~/.nix-defexpr</code></td><td><code>$XDG_STATE_HOME/nix/defexpr</code></td></tr>
+<tr><td><code>~/.nix-channels</code></td><td><code>$XDG_STATE_HOME/nix/channels</code></td></tr>
+</tbody>
+</table>
+</div>
+<p>If you already have Nix installed and are using <a href="../package-management/profiles.html">profiles</a> or <a href="../command-ref/nix-channel.html">channels</a>, you should migrate manually when you enable this option. If <code>$XDG_STATE_HOME</code> is not set, use <code>$HOME/.local/state/nix</code> instead of <code>$XDG_STATE_HOME/nix</code>. This can be achieved with the following shell commands:</p>
+<pre><code class="language-sh">nix_state_home=${XDG_STATE_HOME-$HOME/.local/state}/nix
+mkdir -p $nix_state_home
+mv $HOME/.nix-profile $nix_state_home/profile
+mv $HOME/.nix-defexpr $nix_state_home/defexpr
+mv $HOME/.nix-channels $nix_state_home/channels
+</code></pre>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+<li>
+<p><span id="conf-user-agent-suffix"><a href="#conf-user-agent-suffix"><code>user-agent-suffix</code></a></span></p>
+<p>String appended to the user agent in HTTP requests.</p>
+<p><strong>Default:</strong> <em>empty</em></p>
+</li>
+<li>
+<p><span id="conf-warn-dirty"><a href="#conf-warn-dirty"><code>warn-dirty</code></a></span></p>
+<p>Whether to warn about dirty Git/Mercurial trees.</p>
+<p><strong>Default:</strong> <code>true</code></p>
+</li>
+<li>
+<p><span id="conf-warn-large-path-threshold"><a href="#conf-warn-large-path-threshold"><code>warn-large-path-threshold</code></a></span></p>
+<p>Warn when copying a path larger than this number of bytes to the Nix store (as determined by its NAR serialisation). Default is 0, which disables the warning. Set it to 1 to warn on all paths.</p>
+<p><strong>Default:</strong> <code>0</code></p>
+</li>
+<li>
+<p><span id="conf-warn-short-path-literals"><a href="#conf-warn-short-path-literals"><code>warn-short-path-literals</code></a></span></p>
+<p>Deprecated. Use <a href="#conf-lint-short-path-literals"><code>lint-short-path-literals</code></a><code> = warn</code> instead.</p>
+<p><strong>Default:</strong> <code>false</code></p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../command-ref/files.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../command-ref/files/profiles.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../command-ref/files.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../command-ref/files/profiles.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-862e895d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../redirects-d95376cb.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

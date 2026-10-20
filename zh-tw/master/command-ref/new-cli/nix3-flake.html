@@ -1,0 +1,853 @@
+<!DOCTYPE HTML>
+<html lang="zh_TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>nix flake - Nix 2.36.0 Reference Manual</title>
+
+
+        <!-- Custom HTML head -->
+        <script>
+        MathJax = {
+          loader: {load: ['[tex]/bussproofs']},
+          tex: {
+            packages: {'[+]': ['bussproofs']},
+            // Doesn't seem to work in mathjax 3
+            //formatError: function(jax, error) {
+            //  console.log(`TeX error in "${jax.latex}": ${error.message}`);
+            //  return jax.formatError(error);
+            //}
+          }
+        };
+        </script>
+        <!-- Load a newer version of MathJax than mdbook does by default, and which in particular has working relative paths for the "bussproofs" extension. -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" src="../../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../custom-80d08c7f.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-e0c53846.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-1a79eaaf.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nix 2.36.0 Reference Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix/tree/master/doc/manual/source/command-ref/new-cli/nix3-flake.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <blockquote>
+<p><strong>Warning</strong><br>This program is <a href="../../development/experimental-features.html#xp-feature-nix-command"><strong>experimental</strong></a> and its interface is subject to change.</p>
+</blockquote>
+<h1 id="name"><a class="header" href="#name">Name</a></h1>
+<p><code>nix flake</code> - manage Nix flakes</p>
+<h1 id="概要"><a class="header" href="#概要">概要</a></h1>
+<p><code>nix flake</code> [<em>option</em>…] <em>subcommand</em></p>
+<p>where <em>subcommand</em> is one of the following:</p>
+<ul>
+<li><a href="./nix3-flake-archive.html"><code>nix flake archive</code></a> - copy a flake and all its inputs to a store</li>
+<li><a href="./nix3-flake-check.html"><code>nix flake check</code></a> - check whether the flake evaluates and run its tests</li>
+<li><a href="./nix3-flake-clone.html"><code>nix flake clone</code></a> - clone flake repository</li>
+<li><a href="./nix3-flake-info.html"><code>nix flake info</code></a> - show flake metadata</li>
+<li><a href="./nix3-flake-init.html"><code>nix flake init</code></a> - create a flake in the current directory from a template</li>
+<li><a href="./nix3-flake-lock.html"><code>nix flake lock</code></a> - create missing lock file entries</li>
+<li><a href="./nix3-flake-metadata.html"><code>nix flake metadata</code></a> - show flake metadata</li>
+<li><a href="./nix3-flake-new.html"><code>nix flake new</code></a> - create a flake in the specified directory from a template</li>
+<li><a href="./nix3-flake-prefetch.html"><code>nix flake prefetch</code></a> - download the source tree denoted by a flake reference into the Nix store</li>
+<li><a href="./nix3-flake-prefetch-inputs.html"><code>nix flake prefetch-inputs</code></a> - fetch the inputs of a flake</li>
+<li><a href="./nix3-flake-show.html"><code>nix flake show</code></a> - show the outputs provided by a flake</li>
+<li><a href="./nix3-flake-update.html"><code>nix flake update</code></a> - update flake lock file</li>
+</ul>
+<h1 id="description"><a class="header" href="#description">Description</a></h1>
+<p><code>nix flake</code> provides subcommands for creating, modifying and querying <em>Nix flakes</em>. Flakes are the unit for packaging Nix code in a reproducible and discoverable way. They can have dependencies on other flakes, making it possible to have multi-repository Nix projects.</p>
+<p>A flake is a filesystem tree (typically fetched from a Git repository or a tarball) that contains a file named <code>flake.nix</code> in the root directory. <code>flake.nix</code> specifies some metadata about the flake such as dependencies (called <em>inputs</em>), as well as its <em>outputs</em> (the Nix values such as packages or NixOS modules provided by the flake).</p>
+<h1 id="flake-references"><a class="header" href="#flake-references">Flake references</a></h1>
+<p>Flake references (<em>flakerefs</em>) are a way to specify the location of a flake. These have two different forms:</p>
+<h2 id="attribute-set-representation"><a class="header" href="#attribute-set-representation">Attribute set representation</a></h2>
+<p>Example:</p>
+<pre><code class="language-nix">{
+  type = "github";
+  owner = "NixOS";
+  repo = "nixpkgs";
+}
+</code></pre>
+<p>The only required attribute is <code>type</code>. The supported types are listed below.</p>
+<h2 id="url-like-syntax"><a class="header" href="#url-like-syntax">URL-like syntax</a></h2>
+<p>Example:</p>
+<pre><code>github:NixOS/nixpkgs
+</code></pre>
+<p>These are used on the command line as a more convenient alternative to the attribute set representation. For instance, in the command</p>
+<pre><code class="language-console"># nix build github:NixOS/nixpkgs#hello
+</code></pre>
+<p><code>github:NixOS/nixpkgs</code> is a flake reference (while <code>hello</code> is an output attribute). They are also allowed in the <code>inputs</code> attribute of a flake, e.g.</p>
+<pre><code class="language-nix">inputs.nixpkgs.url = "github:NixOS/nixpkgs";
+</code></pre>
+<p>is equivalent to</p>
+<pre><code class="language-nix">inputs.nixpkgs = {
+  type = "github";
+  owner = "NixOS";
+  repo = "nixpkgs";
+};
+</code></pre>
+<p>Following <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.1">RFC 3986</a>, characters outside of the allowed range (i.e. neither <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.2">reserved characters</a> nor <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.3">unreserved characters</a>) must be percent-encoded.</p>
+<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<p>Here are some examples of flake references in their URL-like representation:</p>
+<ul>
+<li><code>nixpkgs</code>: The <code>nixpkgs</code> entry in the flake registry.</li>
+<li><code>nixpkgs/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293</code>: The <code>nixpkgs</code> entry in the flake registry, with its Git revision overridden to a specific value.</li>
+<li><code>github:NixOS/nixpkgs</code>: The <code>master</code> branch of the <code>NixOS/nixpkgs</code> repository on GitHub.</li>
+<li><code>github:NixOS/nixpkgs/nixos-20.09</code>: The <code>nixos-20.09</code> branch of the <code>nixpkgs</code> repository.</li>
+<li><code>github:NixOS/nixpkgs/pull/357207/head</code>: The <code>357207</code> pull request of the nixpkgs repository.</li>
+<li><code>github:NixOS/nixpkgs/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293</code>: A specific revision of the <code>nixpkgs</code> repository.</li>
+<li><code>github:edolstra/nix-warez?dir=blender</code>: A flake in a subdirectory of a GitHub repository.</li>
+<li><code>git+https://github.com/NixOS/patchelf</code>: A Git repository.</li>
+<li><code>git+https://github.com/NixOS/patchelf?ref=master</code>: A specific branch of a Git repository.</li>
+<li><code>git+https://github.com/NixOS/patchelf?ref=master&amp;rev=f34751b88bd07d7f44f5cd3200fb4122bf916c7e</code>: A specific branch <em>and</em> revision of a Git repository.</li>
+<li><code>git+https://github.com/NixOS/patchelf?ref=refs/tags/0.18.0</code>: A specific tag of a Git repository.</li>
+<li><code>https://github.com/NixOS/patchelf/archive/master.tar.gz</code>: A tarball flake.</li>
+</ul>
+<h2 id="path-like-syntax"><a class="header" href="#path-like-syntax">Path-like syntax</a></h2>
+<p>Flakes corresponding to a local path can also be referred to by a direct path reference, either <code>/absolute/path/to/the/flake</code> or<code>./relative/path/to/the/flake</code>. Note that the leading <code>./</code> is mandatory for relative paths. If it is omitted, the path will be interpreted as <a href="#url-like-syntax">URL-like syntax</a>, which will cause error messages like this:</p>
+<pre><code class="language-console">error: cannot find flake 'flake:relative/path/to/the/flake' in the flake registries
+</code></pre>
+<p>The semantic of such a path is as follows:</p>
+<ul>
+<li>If the directory is part of a Git repository, then the input will be treated as a <code>git+file:</code> URL, otherwise it will be treated as a <code>path:</code> url;</li>
+<li>If the directory doesn’t contain a <code>flake.nix</code> file, then Nix will search for such a file upwards in the file system hierarchy until it finds any of:
+<ol>
+<li>The Git repository root, or</li>
+<li>The filesystem root (/), or</li>
+<li>A folder on a different mount point.</li>
+</ol>
+</li>
+</ul>
+<p>Contrary to URL-like references, path-like flake references can contain arbitrary unicode characters (except <code>#</code> and <code>?</code>).</p>
+<h3 id="examples-1"><a class="header" href="#examples-1">Examples</a></h3>
+<ul>
+<li><code>.</code>: The flake to which the current directory belongs.</li>
+<li><code>/home/alice/src/patchelf</code>: A flake in some other directory.</li>
+<li><code>./../sub directory/with Ûñî©ôδ€</code>: A flake in another relative directory that has Unicode characters in its name.</li>
+</ul>
+<h2 id="flake-reference-attributes"><a class="header" href="#flake-reference-attributes">Flake reference attributes</a></h2>
+<p>The following generic flake reference attributes are supported:</p>
+<ul>
+<li>
+<p><code>dir</code>: The subdirectory of the flake in which <code>flake.nix</code> is located. This parameter enables having multiple flakes in a repository or tarball. The default is the root directory of the flake.</p>
+</li>
+<li>
+<p><code>narHash</code>: The hash of the <a href="../../store/file-system-object/content-address.html#serial-nix-archive">Nix Archive (NAR) serialisation</a> (in <a href="../../glossary.html#gloss-sri">SRI</a> format) of the contents of the flake. This is useful for flake types such as tarballs that lack a unique content identifier such as a Git commit hash.</p>
+</li>
+</ul>
+<p>In addition, the following attributes are common to several flake reference types:</p>
+<ul>
+<li>
+<p><code>rev</code>: A Git or Mercurial commit hash.</p>
+</li>
+<li>
+<p><code>ref</code>: A Git or Mercurial branch or tag name.</p>
+</li>
+</ul>
+<p>Finally, some attributes are typically not specified by the user, but can occur in <em>locked</em> flake references and are available to Nix code:</p>
+<ul>
+<li>
+<p><code>revCount</code>: The number of ancestors of the commit <code>rev</code>.</p>
+</li>
+<li>
+<p><code>lastModified</code>: The timestamp (in seconds since the Unix epoch) of the last modification of this version of the flake. For Git/Mercurial flakes, this is the commit time of commit <em>rev</em>, while for tarball flakes, it’s the most recent timestamp of any file inside the tarball.</p>
+</li>
+</ul>
+<h2 id="types"><a class="header" href="#types">Types</a></h2>
+<p>Currently the <code>type</code> attribute can be one of the following:</p>
+<ul>
+<li>
+<p><code>indirect</code>: <em>The default</em>. These are symbolic references to flakes that are looked up in <a href="./nix3-registry.html">the flake registries</a>. These have the form</p>
+<pre><code>[flake:]&lt;flake-id&gt;(/&lt;rev-or-ref&gt;(/rev)?)?
+</code></pre>
+<p>These perform a lookup of <code>&lt;flake-id&gt;</code> in the flake registry. For example, <code>nixpkgs</code> and <code>nixpkgs/release-20.09</code> are indirect flake references. The specified <code>rev</code> and/or <code>ref</code> are merged with the entry in the registry; see <a href="./nix3-registry.html">nix registry</a> for details.</p>
+<p>For example, these are valid indirect flake references:</p>
+<ul>
+<li><code>nixpkgs</code></li>
+<li><code>nixpkgs/nixos-unstable</code></li>
+<li><code>nixpkgs/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293</code></li>
+<li><code>nixpkgs/nixos-unstable/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293</code></li>
+<li><code>sub/dir</code> (if a flake named <code>sub</code> is in the registry)</li>
+</ul>
+</li>
+<li>
+<p><a id="path-fetcher"></a><code>path</code>: arbitrary local directories. The required attribute <code>path</code> specifies the path of the flake. The URL form is</p>
+<pre><code>path:&lt;path&gt;(\?&lt;params&gt;)?
+</code></pre>
+<p>where <em>path</em> is an absolute path to a directory in the file system containing a file named <code>flake.nix</code>.</p>
+<p>If the flake at <em>path</em> is not inside a git repository, the <code>path:</code> prefix is implied and can be omitted.</p>
+<p>If <em>path</em> is a relative path (i.e. if it does not start with <code>/</code>), it is interpreted as follows:</p>
+<ul>
+<li>
+<p>If <em>path</em> is a command line argument, it is interpreted relative to the current directory.</p>
+</li>
+<li>
+<p>If <em>path</em> is used in a <code>flake.nix</code>, it is interpreted relative to the directory containing that <code>flake.nix</code>. However, the resolved path must be in the same tree. For instance, a <code>flake.nix</code> in the root of a tree can use <code>path:./foo</code> to access the flake in subdirectory <code>foo</code>, but <code>path:../bar</code> is illegal. On the other hand, a flake in the <code>/foo</code> directory of a tree can use <code>path:../bar</code> to refer to the flake in <code>/bar</code>.</p>
+</li>
+</ul>
+<p>Path inputs can be specified with path values in <code>flake.nix</code>. Path values are a syntax for <code>path</code> inputs, and they are converted by</p>
+<ol>
+<li>resolving them into relative paths, relative to the base directory of <code>flake.nix</code></li>
+<li>escaping URL characters (refer to IETF RFC?)</li>
+<li>prepending <code>path:</code>
+Note that the allowed syntax for path values in flake <code>inputs</code> may be more restrictive than general Nix, so you may need to use <code>path:</code> if your path contains certain special characters. See <a href="../../language/syntax.html#path-literal">Path literals</a></li>
+</ol>
+<p>Note that if you omit <code>path:</code>, relative paths must start with <code>.</code> to avoid ambiguity with registry lookups (e.g. <code>nixpkgs</code> is a registry lookup; <code>./nixpkgs</code> is a relative path).</p>
+<p>For example, these are valid path flake references:</p>
+<ul>
+<li><code>path:/home/user/sub/dir</code></li>
+<li><code>/home/user/sub/dir</code> (if <code>dir/flake.nix</code> is <em>not</em> in a git repository)</li>
+<li><code>path:sub/dir</code></li>
+<li><code>./sub/dir</code></li>
+<li><code>path:../parent</code></li>
+</ul>
+</li>
+<li>
+<p><code>git</code>: Git repositories. The location of the repository is specified by the attribute <code>url</code>.</p>
+<p>They have the URL form</p>
+<pre><code>git(+http|+https|+ssh|+git|+file):(//&lt;server&gt;)?&lt;path&gt;(\?&lt;params&gt;)?
+</code></pre>
+<p>If <em>path</em> starts with <code>/</code> (or <code>./</code> when used as an argument on the command line) and is a local path to a git repository, the leading <code>git:</code> or <code>+file</code> prefixes are implied and can be omitted.</p>
+<p>The <code>ref</code> attribute defaults to resolving the <code>HEAD</code> reference.</p>
+<p>The <code>rev</code> attribute must denote a commit that exists in the branch or tag specified by the <code>ref</code> attribute, since Nix doesn’t do a full clone of the remote repository by default (and the Git protocol doesn’t allow fetching a <code>rev</code> without a known <code>ref</code>). The default is the commit currently pointed to by <code>ref</code>.</p>
+<p>When <code>git+file</code> is used without specifying <code>ref</code> or <code>rev</code>, files are fetched directly from the local <code>path</code> as long as they have been added to the Git repository. If there are uncommitted changes, the reference is treated as dirty and a warning is printed.</p>
+<p>For example, the following are valid Git flake references:</p>
+<ul>
+<li><code>git:/home/user/sub/dir</code></li>
+<li><code>/home/user/sub/dir</code> (if <code>dir/flake.nix</code> is in a git repository)</li>
+<li><code>./sub/dir</code> (when used on the command line and <code>dir/flake.nix</code> is in a git repository)</li>
+<li><code>git+https://example.org/my/repo</code></li>
+<li><code>git+https://example.org/my/repo?dir=flake1</code></li>
+<li><code>git+https://example.org/my/repo?shallow=1</code> A shallow clone of the repository. For large repositories, the shallow clone option can significantly speed up fresh clones compared to non-shallow clones, while still providing faster updates than other fetch methods such as <code>tarball:</code> or <code>github:</code>.</li>
+<li><code>git+ssh://git@github.com/NixOS/nix?ref=v1.2.3</code></li>
+<li><code>git://github.com/edolstra/dwarffs?ref=unstable&amp;rev=e486d8d40e626a20e06d792db8cc5ac5aba9a5b4</code></li>
+<li><code>git+file:///home/my-user/some-repo/some-repo</code></li>
+</ul>
+</li>
+<li>
+<p><code>mercurial</code>: Mercurial repositories. The URL form is similar to the <code>git</code> type, except that the URL schema must be one of <code>hg+http</code>, <code>hg+https</code>, <code>hg+ssh</code> or <code>hg+file</code>.</p>
+</li>
+<li>
+<p><code>tarball</code>: Tarballs. The location of the tarball is specified by the attribute <code>url</code>.</p>
+<p>In URL form, the schema must be <code>tarball+http://</code>, <code>tarball+https://</code> or <code>tarball+file://</code>. If the extension corresponds to a known archive format (<code>.zip</code>, <code>.tar</code>, <code>.tgz</code>, <code>.tar.gz</code>, <code>.tar.xz</code>, <code>.tar.bz2</code> or <code>.tar.zst</code>), then the <code>tarball+</code> can be dropped.</p>
+<p>This can also be used to set the location of gitea/forgejo branches. <a href="../../protocols/tarball-fetcher.html#gitea-and-forgejo-support">See here</a></p>
+</li>
+<li>
+<p><code>file</code>: Plain files or directory tarballs, either over http(s) or from the local disk.</p>
+<p>In URL form, the schema must be <code>file+http://</code>, <code>file+https://</code> or <code>file+file://</code>. If the extension doesn’t correspond to a known archive format (as defined by the <code>tarball</code> fetcher), then the <code>file+</code> prefix can be dropped.</p>
+</li>
+<li>
+<p><code>github</code>: A more efficient way to fetch repositories from GitHub. The following attributes are required:</p>
+<ul>
+<li>
+<p><code>owner</code>: The owner of the repository.</p>
+</li>
+<li>
+<p><code>repo</code>: The name of the repository.</p>
+</li>
+</ul>
+<p>These are downloaded as tarball archives, rather than through Git. This is often much faster and uses less disk space since it doesn’t require fetching the entire history of the repository. On the other hand, it doesn’t allow incremental fetching (but full downloads are often faster than incremental fetches!).</p>
+<p>The URL syntax for <code>github</code> flakes is:</p>
+<pre><code>github:&lt;owner&gt;/&lt;repo&gt;(/&lt;rev-or-ref&gt;)?(\?&lt;params&gt;)?
+</code></pre>
+<p><code>&lt;rev-or-ref&gt;</code> specifies the name of a branch or tag (<code>ref</code>), or a commit hash (<code>rev</code>). Note that unlike Git, GitHub allows fetching by commit hash without specifying a branch or tag.</p>
+<p>You can also specify <code>host</code> as a parameter, to point to a custom GitHub Enterprise server.</p>
+<p>Some examples:</p>
+<ul>
+<li><code>github:edolstra/dwarffs</code></li>
+<li><code>github:edolstra/dwarffs/unstable</code></li>
+<li><code>github:edolstra/dwarffs/d3f2baba8f425779026c6ec04021b2e927f61e31</code></li>
+<li><code>github:internal/project?host=company-github.example.org</code></li>
+</ul>
+</li>
+<li>
+<p><code>gitlab</code>: Similar to <code>github</code>, is a more efficient way to fetch GitLab repositories. The following attributes are required:</p>
+<ul>
+<li>
+<p><code>owner</code>: The owner of the repository.</p>
+</li>
+<li>
+<p><code>repo</code>: The name of the repository.</p>
+</li>
+</ul>
+<p>Like <code>github</code>, these are downloaded as tarball archives.</p>
+<p>The URL syntax for <code>gitlab</code> flakes is:</p>
+<p><code>gitlab:&lt;owner&gt;/&lt;repo&gt;(/&lt;rev-or-ref&gt;)?(\?&lt;params&gt;)?</code></p>
+<p><code>&lt;rev-or-ref&gt;</code> works the same as <code>github</code>. Either a branch or tag name (<code>ref</code>), or a commit hash (<code>rev</code>) can be specified.</p>
+<p>Since GitLab allows for self-hosting, you can specify <code>host</code> as a parameter, to point to any instances other than <code>gitlab.com</code>.</p>
+<p>Some examples:</p>
+<ul>
+<li>
+<p><code>gitlab:veloren/veloren</code></p>
+</li>
+<li>
+<p><code>gitlab:veloren/veloren/master</code></p>
+</li>
+<li>
+<p><code>gitlab:veloren/veloren/80a4d7f13492d916e47d6195be23acae8001985a</code></p>
+</li>
+<li>
+<p><code>gitlab:openldap/openldap?host=git.openldap.org</code>
+When accessing a project in a (nested) subgroup, make sure to URL-encode any slashes, i.e. replace <code>/</code> with <code>%2F</code>:</p>
+</li>
+<li>
+<p><code>gitlab:veloren%2Fdev/rfcs</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>sourcehut</code>: Similar to <code>github</code>, is a more efficient way to fetch SourceHut repositories. The following attributes are required:</p>
+<ul>
+<li>
+<p><code>owner</code>: The owner of the repository (including leading <code>~</code>).</p>
+</li>
+<li>
+<p><code>repo</code>: The name of the repository.</p>
+</li>
+</ul>
+<p>Like <code>github</code>, these are downloaded as tarball archives.</p>
+<p>The URL syntax for <code>sourcehut</code> flakes is:</p>
+<p><code>sourcehut:&lt;owner&gt;/&lt;repo&gt;(/&lt;rev-or-ref&gt;)?(\?&lt;params&gt;)?</code></p>
+<p><code>&lt;rev-or-ref&gt;</code> works the same as <code>github</code>. Either a branch or tag name (<code>ref</code>), or a commit hash (<code>rev</code>) can be specified.</p>
+<p>Since SourceHut allows for self-hosting, you can specify <code>host</code> as a parameter, to point to any instances other than <code>git.sr.ht</code>.</p>
+<p>Currently, <code>ref</code> name resolution only works for Git repositories. You can refer to Mercurial repositories by simply changing <code>host</code> to <code>hg.sr.ht</code> (or any other Mercurial instance). With the caveat that you must explicitly specify a commit hash (<code>rev</code>).</p>
+<p>Some examples:</p>
+<ul>
+<li><code>sourcehut:~misterio/nix-colors</code></li>
+<li><code>sourcehut:~misterio/nix-colors/main</code></li>
+<li><code>sourcehut:~misterio/nix-colors?host=git.example.org</code></li>
+<li><code>sourcehut:~misterio/nix-colors/182b4b8709b8ffe4e9774a4c5d6877bf6bb9a21c</code></li>
+<li><code>sourcehut:~misterio/nix-colors/21c1a380a6915d890d408e9f22203436a35bb2de?host=hg.sr.ht</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="flake-format"><a class="header" href="#flake-format">Flake format</a></h1>
+<p>As an example, here is a simple <code>flake.nix</code> that depends on the Nixpkgs flake and provides a single package (i.e. an <a href="./nix.html#installables">installable</a> derivation):</p>
+<pre><code class="language-nix">{
+  description = "A flake for building Hello World";
+
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03";
+
+  outputs = { self, nixpkgs }: {
+
+    packages.x86_64-linux.default =
+      # Notice the reference to nixpkgs here.
+      with import nixpkgs { system = "x86_64-linux"; };
+      stdenv.mkDerivation {
+        name = "hello";
+        src = self;
+        buildPhase = "gcc -o hello ./hello.c";
+        installPhase = "mkdir -p $out/bin; install -t $out/bin hello";
+      };
+
+  };
+}
+</code></pre>
+<p>The following attributes are supported in <code>flake.nix</code>:</p>
+<ul>
+<li>
+<p><code>description</code>: A short, one-line description of the flake.</p>
+</li>
+<li>
+<p><code>inputs</code>: An attrset specifying the dependencies of the flake (described below).</p>
+</li>
+<li>
+<p><code>outputs</code>: A function that, given an attribute set containing the outputs of each of the input flakes keyed by their identifier, yields the Nix values provided by this flake. Thus, in the example above, <code>inputs.nixpkgs</code> contains the result of the call to the <code>outputs</code> function of the <code>nixpkgs</code> flake.</p>
+<p>In addition to the outputs of each input, each input in <code>inputs</code> also contains some metadata about the inputs. These are:</p>
+<ul>
+<li>
+<p><code>outPath</code>: The path in the Nix store of the flake’s source tree. This way, the attribute set can be passed to <code>import</code> as if it was a path, as in the example above (<code>import nixpkgs</code>).</p>
+</li>
+<li>
+<p><code>rev</code>: The commit hash of the flake’s repository, if applicable.</p>
+</li>
+<li>
+<p><code>revCount</code>: The number of ancestors of the revision <code>rev</code>. This is not available for <code>github</code> repositories, since they’re fetched as tarballs rather than as Git repositories.</p>
+</li>
+<li>
+<p><code>lastModifiedDate</code>: The commit time of the revision <code>rev</code>, in the format <code>%Y%m%d%H%M%S</code> (e.g. <code>20181231100934</code>). Unlike <code>revCount</code>, this is available for both Git and GitHub repositories, so it’s useful for generating (hopefully) monotonically increasing version strings.</p>
+</li>
+<li>
+<p><code>lastModified</code>: The commit time of the revision <code>rev</code> as an integer denoting the number of seconds since 1970.</p>
+</li>
+<li>
+<p><code>narHash</code>: The SHA-256 (in <a href="../../glossary.html#gloss-sri">SRI</a> format) of the <a href="../../store/file-system-object/content-address.html#serial-nix-archive">Nix Archive (NAR) serialisation</a> NAR serialization of the flake’s source tree.</p>
+</li>
+</ul>
+<p>The value returned by the <code>outputs</code> function must be an attribute set. The attributes can have arbitrary values; however, various <code>nix</code> subcommands require specific attributes to have a specific value (e.g. <code>packages.x86_64-linux</code> must be an attribute set of derivations built for the <code>x86_64-linux</code> platform).</p>
+</li>
+<li>
+<p><code>nixConfig</code>: a set of <code>nix.conf</code> options to be set when evaluating any part of a flake. In the interests of security, only a small set of set of options is allowed to be set without confirmation so long as <a href="../../command-ref/conf-file.html#conf-accept-flake-config"><code>accept-flake-config</code></a> is not enabled in the global configuration:</p>
+<ul>
+<li><a href="../../command-ref/conf-file.html#conf-bash-prompt"><code>bash-prompt</code></a></li>
+<li><a href="../../command-ref/conf-file.html#conf-bash-prompt-prefix"><code>bash-prompt-prefix</code></a></li>
+<li><a href="../../command-ref/conf-file.html#conf-bash-prompt-suffix"><code>bash-prompt-suffix</code></a></li>
+<li><a href="../../command-ref/conf-file.html#conf-flake-registry"><code>flake-registry</code></a></li>
+<li><a href="../../command-ref/conf-file.html#conf-commit-lock-file-summary"><code>commit-lock-file-summary</code></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="flake-inputs"><a class="header" href="#flake-inputs">Flake inputs</a></h2>
+<p>The attribute <code>inputs</code> specifies the dependencies of a flake, as an attrset mapping input names to flake references. For example, the following specifies a dependency on the <code>nixpkgs</code> and <code>import-cargo</code> repositories:</p>
+<pre><code class="language-nix"># A GitHub repository.
+inputs.import-cargo = {
+  type = "github";
+  owner = "edolstra";
+  repo = "import-cargo";
+};
+
+# An indirection through the flake registry.
+inputs.nixpkgs = {
+  type = "indirect";
+  id = "nixpkgs";
+};
+</code></pre>
+<p>Alternatively, you can use the URL-like syntax:</p>
+<pre><code class="language-nix">inputs.import-cargo.url = "github:edolstra/import-cargo";
+inputs.nixpkgs.url = "nixpkgs";
+</code></pre>
+<p>Each input is fetched, evaluated and passed to the <code>outputs</code> function as a set of attributes with the same name as the corresponding input. The special input named <code>self</code> refers to the outputs and source tree of <em>this</em> flake. Thus, a typical <code>outputs</code> function looks like this:</p>
+<pre><code class="language-nix">outputs = { self, nixpkgs, import-cargo }: {
+  ... outputs ...
+};
+</code></pre>
+<p>It is also possible to omit an input entirely and <em>only</em> list it as expected function argument to <code>outputs</code>. Thus,</p>
+<pre><code class="language-nix">outputs = { self, nixpkgs }: ...;
+</code></pre>
+<p>without an <code>inputs.nixpkgs</code> attribute is equivalent to</p>
+<pre><code class="language-nix">inputs.nixpkgs = {
+  type = "indirect";
+  id = "nixpkgs";
+};
+</code></pre>
+<p>Repositories that don’t contain a <code>flake.nix</code> can also be used as inputs, by setting the input’s <code>flake</code> attribute to <code>false</code>:</p>
+<pre><code class="language-nix">inputs.grcov = {
+  type = "github";
+  owner = "mozilla";
+  repo = "grcov";
+  flake = false;
+};
+
+outputs = { self, nixpkgs, grcov }: {
+  packages.x86_64-linux.grcov = stdenv.mkDerivation {
+    src = grcov;
+    ...
+  };
+};
+</code></pre>
+<p>Transitive inputs can be overridden from a <code>flake.nix</code> file. For example, the following overrides the <code>nixpkgs</code> input of the <code>nixops</code> input:</p>
+<pre><code class="language-nix">inputs.nixops.inputs.nixpkgs = {
+  type = "github";
+  owner = "my-org";
+  repo = "nixpkgs";
+};
+</code></pre>
+<p>It is also possible to “inherit” an input from another input. This is useful to minimize flake dependencies. For example, the following sets the <code>nixpkgs</code> input of the top-level flake to be equal to the <code>nixpkgs</code> input of the <code>dwarffs</code> input of the top-level flake:</p>
+<pre><code class="language-nix">inputs.nixpkgs.follows = "dwarffs/nixpkgs";
+</code></pre>
+<p>The value of the <code>follows</code> attribute is a <code>/</code>-separated sequence of input names denoting the path of inputs to be followed from the root flake.</p>
+<h2 id="self-attributes"><a class="header" href="#self-attributes">Self-attributes</a></h2>
+<p>Flakes can declare attributes about themselves that affect how they are fetched. These attributes are specified using the special <code>self</code> input and are retroactively applied to it:</p>
+<pre><code class="language-nix">{
+  inputs.self.submodules = true;
+  inputs.self.lfs = true;
+}
+</code></pre>
+<p>The following self-attributes are supported:</p>
+<ul>
+<li>
+<p><code>submodules</code>: A Boolean denoting whether Git submodules should be fetched when this flake is used as an input. When set to <code>true</code>, Git submodules will be automatically fetched without requiring callers to specify <code>submodules=1</code> in the flake reference URL. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><code>lfs</code>: A Boolean denoting whether Git LFS (Large File Storage) files should be fetched when this flake is used as an input. When set to <code>true</code>, Git LFS files will be automatically fetched. Defaults to <code>false</code>.</p>
+</li>
+</ul>
+<p>These self-attributes eliminate the need for consumers of your flake to manually specify fetching options in their flake references.</p>
+<p>Overrides and <code>follows</code> can be combined, e.g.</p>
+<pre><code class="language-nix">inputs.nixops.inputs.nixpkgs.follows = "dwarffs/nixpkgs";
+</code></pre>
+<p>sets the <code>nixpkgs</code> input of <code>nixops</code> to be the same as the <code>nixpkgs</code> input of <code>dwarffs</code>. It is worth noting, however, that it is generally not useful to eliminate transitive <code>nixpkgs</code> flake inputs in this way. Most flakes provide their functionality through Nixpkgs overlays or NixOS modules, which are composed into the top-level flake’s <code>nixpkgs</code> input; so their own <code>nixpkgs</code> input is usually irrelevant.</p>
+<h1 id="lock-files"><a class="header" href="#lock-files">Lock files</a></h1>
+<p>Inputs specified in <code>flake.nix</code> are typically “unlocked” in the sense that they don’t specify an exact revision. To ensure reproducibility, Nix will automatically generate and use a <em>lock file</em> called <code>flake.lock</code> in the flake’s directory. The lock file is a UTF-8 JSON file. It contains a graph structure isomorphic to the graph of dependencies of the root flake. Each node in the graph (except the root node) maps the (usually) unlocked input specifications in <code>flake.nix</code> to locked input specifications. Each node also contains some metadata, such as the dependencies (outgoing edges) of the node.</p>
+<p>For example, if <code>flake.nix</code> has the inputs in the example above, then the resulting lock file might be:</p>
+<pre><code class="language-json">{
+  "version": 7,
+  "root": "n1",
+  "nodes": {
+    "n1": {
+      "inputs": {
+        "nixpkgs": "n2",
+        "import-cargo": "n3",
+        "grcov": "n4"
+      }
+    },
+    "n2": {
+      "inputs": {},
+      "locked": {
+        "owner": "edolstra",
+        "repo": "nixpkgs",
+        "rev": "7f8d4b088e2df7fdb6b513bc2d6941f1d422a013",
+        "type": "github",
+        "lastModified": 1580555482,
+        "narHash": "sha256-OnpEWzNxF/AU4KlqBXM2s5PWvfI5/BS6xQrPvkF5tO8="
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "n3": {
+      "inputs": {},
+      "locked": {
+        "owner": "edolstra",
+        "repo": "import-cargo",
+        "rev": "8abf7b3a8cbe1c8a885391f826357a74d382a422",
+        "type": "github",
+        "lastModified": 1567183309,
+        "narHash": "sha256-wIXWOpX9rRjK5NDsL6WzuuBJl2R0kUCnlpZUrASykSc="
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "import-cargo",
+        "type": "github"
+      }
+    },
+    "n4": {
+      "inputs": {},
+      "locked": {
+        "owner": "mozilla",
+        "repo": "grcov",
+        "rev": "989a84bb29e95e392589c4e73c29189fd69a1d4e",
+        "type": "github",
+        "lastModified": 1580729070,
+        "narHash": "sha256-235uMxYlHxJ5y92EXZWAYEsEb6mm+b069GAd+BOIOxI="
+      },
+      "original": {
+        "owner": "mozilla",
+        "repo": "grcov",
+        "type": "github"
+      },
+      "flake": false
+    }
+  }
+}
+</code></pre>
+<p>This graph has 4 nodes: the root flake, and its 3 dependencies. The nodes have arbitrary labels (e.g. <code>n1</code>). The label of the root node of the graph is specified by the <code>root</code> attribute. Nodes contain the following fields:</p>
+<ul>
+<li>
+<p><code>inputs</code>: The dependencies of this node, as a mapping from input names (e.g. <code>nixpkgs</code>) to node labels (e.g. <code>n2</code>).</p>
+</li>
+<li>
+<p><code>original</code>: The original input specification from <code>flake.nix</code>, as a set of <code>builtins.fetchTree</code> arguments.</p>
+</li>
+<li>
+<p><code>locked</code>: The locked input specification, as a set of <code>builtins.fetchTree</code> arguments. Thus, in the example above, when we build this flake, the input <code>nixpkgs</code> is mapped to revision <code>7f8d4b088e2df7fdb6b513bc2d6941f1d422a013</code> of the <code>edolstra/nixpkgs</code> repository on GitHub.</p>
+<p>It also includes the attribute <code>narHash</code>, specifying the expected contents of the tree in the Nix store (as computed by <code>nix hash-path</code>), and may include input-type-specific attributes such as the <code>lastModified</code> or <code>revCount</code>. The main reason for these attributes is to allow flake inputs to be substituted from a binary cache: <code>narHash</code> allows the store path to be computed, while the other attributes are necessary because they provide information not stored in the store path.</p>
+<p>The attributes in <code>locked</code> are considered “final”, meaning that they are the only ones that are passed via the arguments of the <code>outputs</code> function of a flake. For instance, if <code>locked</code> contains a <code>lastModified</code> attribute while the fetcher does not return a <code>lastModified</code> attribute, then the <code>lastModified</code> attribute will be passed to the <code>outputs</code> function. Conversely, if <code>locked</code> does <em>not</em> contain a <code>lastModified</code> attribute while the fetcher <em>does</em> return a <code>lastModified</code> attribute, then no <code>lastModified</code> attribute will be passed. If <code>locked</code> contains a <code>lastModified</code> attribute and the fetcher returns a <code>lastModified</code> attribute, then they must have the same value.</p>
+</li>
+<li>
+<p><code>flake</code>: A Boolean denoting whether this is a flake or non-flake dependency. Corresponds to the <code>flake</code> attribute in the <code>inputs</code> attribute in <code>flake.nix</code>.</p>
+</li>
+</ul>
+<p>The <code>original</code> and <code>locked</code> attributes are omitted for the root node. This is because we cannot record the commit hash or content hash of the root flake, since modifying <code>flake.lock</code> will invalidate these.</p>
+<p>The graph representation of lock files allows circular dependencies between flakes. For example, here are two flakes that reference each other:</p>
+<pre><code class="language-nix">{
+  inputs.b = ... location of flake B ...;
+  # Tell the 'b' flake not to fetch 'a' again, to ensure its 'a' is
+  # *this* 'a'.
+  inputs.b.inputs.a.follows = "";
+  outputs = { self, b }: {
+    foo = 123 + b.bar;
+    xyzzy = 1000;
+  };
+}
+</code></pre>
+<p>and</p>
+<pre><code class="language-nix">{
+  inputs.a = ... location of flake A ...;
+  inputs.a.inputs.b.follows = "";
+  outputs = { self, a }: {
+    bar = 456 + a.xyzzy;
+  };
+}
+</code></pre>
+<p>Lock files transitively lock direct as well as indirect dependencies. That is, if a lock file exists and is up to date, Nix will not look at the lock files of dependencies. However, lock file generation itself <em>does</em> use the lock files of dependencies by default.</p>
+<h1 id="options"><a class="header" href="#options">Options</a></h1>
+<h2 id="logging-related-options"><a class="header" href="#logging-related-options">Logging-related options</a></h2>
+<ul>
+<li>
+<p><span id="opt-debug"><a href="#opt-debug"><code>--debug</code></a></span></p>
+<p>Set the logging verbosity level to ‘debug’.</p>
+</li>
+<li>
+<p><span id="opt-log-format"><a href="#opt-log-format"><code>--log-format</code></a></span> <em>format</em></p>
+<p>Set the format of log output; one of <code>raw</code>, <code>internal-json</code>, <code>bar</code> or <code>bar-with-logs</code>.</p>
+</li>
+<li>
+<p><span id="opt-print-build-logs"><a href="#opt-print-build-logs"><code>--print-build-logs</code></a></span> / <code>-L</code></p>
+<p>Print full build logs on standard error.</p>
+</li>
+<li>
+<p><span id="opt-quiet"><a href="#opt-quiet"><code>--quiet</code></a></span></p>
+<p>Decrease the logging verbosity level.</p>
+</li>
+<li>
+<p><span id="opt-verbose"><a href="#opt-verbose"><code>--verbose</code></a></span> / <code>-v</code></p>
+<p>Increase the logging verbosity level.</p>
+</li>
+</ul>
+<h2 id="miscellaneous-global-options"><a class="header" href="#miscellaneous-global-options">Miscellaneous global options</a></h2>
+<ul>
+<li>
+<p><span id="opt-help"><a href="#opt-help"><code>--help</code></a></span></p>
+<p>Show usage information.</p>
+</li>
+<li>
+<p><span id="opt-offline"><a href="#opt-offline"><code>--offline</code></a></span></p>
+<p>Disable substituters and consider all previously downloaded files up-to-date.</p>
+</li>
+<li>
+<p><span id="opt-option"><a href="#opt-option"><code>--option</code></a></span> <em>name</em> <em>value</em></p>
+<p>Set the Nix configuration setting <em>name</em> to <em>value</em> (overriding <code>nix.conf</code>).</p>
+</li>
+<li>
+<p><span id="opt-refresh"><a href="#opt-refresh"><code>--refresh</code></a></span></p>
+<p>Consider all previously downloaded files out-of-date.</p>
+</li>
+<li>
+<p><span id="opt-version"><a href="#opt-version"><code>--version</code></a></span></p>
+<p>Show version information.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>See <a href="../../command-ref/conf-file.html#command-line-flags"><code>man nix.conf</code></a> for overriding configuration settings with command line flags.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../command-ref/new-cli/nix3-eval.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../command-ref/new-cli/nix3-flake-archive.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../command-ref/new-cli/nix3-eval.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../command-ref/new-cli/nix3-flake-archive.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-862e895d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../redirects-d95376cb.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
