@@ -1,0 +1,323 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/string-literals.md:1
+msgid "String literals"
+msgstr ""
+
+#: source/language/string-literals.md:3
+msgid "A _string literal_ represents a [string](types.md#type-string) value."
+msgstr ""
+
+#: source/language/string-literals.md:5
+msgid "**Syntax**"
+msgstr ""
+
+#: source/language/string-literals.md:7
+msgid "_expression_ → _string_"
+msgstr ""
+
+#: source/language/string-literals.md:9
+msgid ""
+"_string_ → `\"` ( _string_char_\\* [_interpolation_element_](./string-"
+"interpolation.md) )\\* _string_char_\\* `\"`"
+msgstr ""
+
+#: source/language/string-literals.md:11
+msgid ""
+"_string_ → `''` ( _indented_string_char_\\* [_interpolation_element_](./"
+"string-interpolation.md) )\\* _indented_string_char_\\* `''`"
+msgstr ""
+
+#: source/language/string-literals.md:13
+msgid "_string_ → _uri_"
+msgstr ""
+
+#: source/language/string-literals.md:15
+msgid "_string_char_ ~ `[^\"$\\\\]|\\$(?!\\{)|\\\\.`"
+msgstr ""
+
+#: source/language/string-literals.md:17
+msgid ""
+"_indented_string_char_ ~ `[^$']|\\$\\$|\\$(?!\\{)|''[$']|''\\\\.|'(?!')`"
+msgstr ""
+
+#: source/language/string-literals.md:19
+msgid "_uri_ ~ `[A-Za-z][+\\-.0-9A-Za-z]*:[!$%&'*+,\\-./0-9:=?@A-Z_a-z~]+`"
+msgstr ""
+
+#: source/language/string-literals.md:21
+msgid "Strings can be written in three ways."
+msgstr ""
+
+#: source/language/string-literals.md:23
+msgid ""
+"The most common way is to enclose the string between double quotes, e.g., "
+"`\"foo bar\"`. Strings can span multiple lines. The results of other "
+"expressions can be included into a string by enclosing them in `${ }`, a "
+"feature known as [string interpolation](./string-interpolation.md)."
+msgstr ""
+
+#: source/language/string-literals.md:29
+msgid ""
+"The following must be escaped to represent them within a string, by "
+"prefixing with a backslash (`\\`):"
+msgstr ""
+
+#: source/language/string-literals.md:31
+msgid "Double quote (`\"`)"
+msgstr ""
+
+#: source/language/string-literals.md:33 source/language/string-literals.md:43
+#: source/language/string-literals.md:53 source/language/string-literals.md:65
+#: source/language/string-literals.md:106
+#: source/language/string-literals.md:124
+#: source/language/string-literals.md:136
+#: source/language/string-literals.md:154
+#: source/language/string-literals.md:170
+msgid "**Example**"
+msgstr ""
+
+#: source/language/string-literals.md:35
+msgid ""
+"```nix\n"
+"\"\\\"\"\n"
+"```"
+msgstr ""
+
+#: source/language/string-literals.md:39
+msgid ""
+"    \"\\\"\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:41
+msgid "Backslash (`\\`)"
+msgstr ""
+
+#: source/language/string-literals.md:45
+msgid ""
+"```nix\n"
+"\"\\\\\"\n"
+"```"
+msgstr ""
+
+#: source/language/string-literals.md:49
+msgid ""
+"    \"\\\\\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:51
+msgid ""
+"Dollar sign followed by an opening curly bracket (`${`) – \"dollar-curly\""
+msgstr ""
+
+#: source/language/string-literals.md:55
+msgid ""
+"```nix\n"
+"\"\\${\"\n"
+"```"
+msgstr ""
+
+#: source/language/string-literals.md:59
+msgid ""
+"    \"\\${\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:61
+msgid ""
+"The newline, carriage return, and tab characters can be written as `\\n`, "
+"`\\r` and `\\t`, respectively."
+msgstr ""
+
+#: source/language/string-literals.md:63 source/language/string-literals.md:168
+msgid "A \"double-dollar-curly\" (`$${`) can be written literally."
+msgstr ""
+
+#: source/language/string-literals.md:67
+msgid ""
+"```nix\n"
+"\"$${\"\n"
+"```"
+msgstr ""
+
+#: source/language/string-literals.md:71
+msgid ""
+"    \"$\\${\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:73
+msgid ""
+"String values are output on the terminal with Nix-specific escaping. Strings "
+"written to files will contain the characters encoded by the escaping."
+msgstr ""
+
+#: source/language/string-literals.md:76
+msgid ""
+"The second way to write string literals is as an _indented string_, which is "
+"enclosed between pairs of _double single-quotes_ (`''`), like so:"
+msgstr ""
+
+#: source/language/string-literals.md:86
+msgid ""
+"This kind of string literal intelligently strips indentation from the start "
+"of each line. To be precise, it strips from each line a number of spaces "
+"equal to the minimal indentation of the string as a whole (disregarding the "
+"indentation of empty lines). For instance, the first and second line are "
+"indented two spaces, while the third line is indented four spaces. Thus, two "
+"spaces are stripped from each line, so the resulting string is"
+msgstr ""
+
+#: source/language/string-literals.md:94
+msgid ""
+"```nix\n"
+"\"This is the first line.\\nThis is the second line.\\n  This is the third "
+"line.\\n\"\n"
+"```"
+msgstr ""
+
+#: source/language/string-literals.md:98 source/language/string-literals.md:164
+msgid "**Note**"
+msgstr ""
+
+#: source/language/string-literals.md:100
+msgid ""
+"Whitespace and newline following the opening `''` is ignored if there is no "
+"non-whitespace text on the initial line."
+msgstr ""
+
+#: source/language/string-literals.md:102
+msgid "**Warning**"
+msgstr ""
+
+#: source/language/string-literals.md:104
+msgid "Prefixed tab characters are not stripped."
+msgstr ""
+
+#: source/language/string-literals.md:108
+msgid "The following indented string is prefixed with tabs:"
+msgstr ""
+
+#: source/language/string-literals.md:116
+msgid ""
+"    \"\\tall:\\n\\t\\t@echo hello\\n\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:118
+msgid ""
+"Indented strings support [string interpolation](./string-interpolation.md)."
+msgstr ""
+
+#: source/language/string-literals.md:120
+msgid "The following must be escaped to represent them in an indented string:"
+msgstr ""
+
+#: source/language/string-literals.md:122
+msgid "`$` is escaped by prefixing it with two single quotes (`''`)"
+msgstr ""
+
+#: source/language/string-literals.md:132
+msgid ""
+"    \"$\\n\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:134
+msgid "`''` is escaped by prefixing it with one single quote (`'`)"
+msgstr ""
+
+#: source/language/string-literals.md:144
+msgid ""
+"    \"''\\n\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:146
+msgid "These special characters are escaped as follows:"
+msgstr ""
+
+#: source/language/string-literals.md:147
+msgid "Linefeed (`\\n`): `''\\n`"
+msgstr ""
+
+#: source/language/string-literals.md:148
+msgid "Carriage return (`\\r`): `''\\r`"
+msgstr ""
+
+#: source/language/string-literals.md:149
+msgid "Tab (`\\t`): `''\\t`"
+msgstr ""
+
+#: source/language/string-literals.md:151
+msgid "`''\\` escapes any other character."
+msgstr ""
+
+#: source/language/string-literals.md:153
+msgid "A \"dollar-curly\" (`${`) can be written as follows:"
+msgstr ""
+
+#: source/language/string-literals.md:162
+msgid ""
+"    \"echo ${PATH}\\n\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:166
+msgid ""
+"This differs from the syntax for escaping a dollar-curly within double "
+"quotes (`\"\\${\"`). Be aware of which one is needed at a given moment."
+msgstr ""
+
+#: source/language/string-literals.md:178
+msgid ""
+"    \"$\\${\\n\"\n"
+"    "
+msgstr ""
+
+#: source/language/string-literals.md:180
+msgid ""
+"Indented strings are primarily useful in that they allow multi-line string "
+"literals to follow the indentation of the enclosing Nix expression, and that "
+"less escaping is typically necessary for strings representing languages such "
+"as shell scripts and configuration files because `''` is much less common "
+"than `\"`. Example:"
+msgstr ""
+
+#: source/language/string-literals.md:187
+msgid ""
+"```nix\n"
+"stdenv.mkDerivation {\n"
+"...\n"
+"postInstall =\n"
+"  ''\n"
+"    mkdir $out/bin $out/etc\n"
+"    cp foo $out/bin\n"
+"    echo \"Hello World\" > $out/etc/foo.conf\n"
+"    ${if enableBar then \"cp bar $out/bin\" else \"\"}\n"
+"  '';\n"
+"...\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/string-literals.md:201
+msgid ""
+"Finally, as a convenience, _URIs_ as defined in appendix B of [RFC 2396]"
+"(http://www.ietf.org/rfc/rfc2396.txt) can be written _as is_, without "
+"quotes. For instance, the string `\"http://example.org/foo.tar.bz2\"` can "
+"also be written as `http://example.org/foo.tar.bz2`."
+msgstr ""

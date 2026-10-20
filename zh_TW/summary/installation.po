@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/installation/index.md:1
+msgid "Installation"
+msgstr ""
+
+#: source/installation/index.md:3
+msgid ""
+"This section describes how to install and configure Nix for first-time use."
+msgstr ""
+
+#: source/installation/index.md:5
+msgid ""
+"The current recommended option on Linux and MacOS is [multi-user](#multi-"
+"user)."
+msgstr ""
+
+#: source/installation/index.md:7
+msgid "Multi-user"
+msgstr ""
+
+#: source/installation/index.md:9
+msgid ""
+"This installation offers better sharing, improved isolation, and more "
+"security over a single user installation."
+msgstr ""
+
+#: source/installation/index.md:12
+msgid "This option requires either:"
+msgstr ""
+
+#: source/installation/index.md:14
+msgid "Linux running systemd, with SELinux disabled"
+msgstr ""
+
+#: source/installation/index.md:15
+msgid "MacOS"
+msgstr ""
+
+#: source/installation/index.md:17
+msgid "**Updating to macOS 15 Sequoia**"
+msgstr ""
+
+#: source/installation/index.md:19
+msgid "If you recently updated to macOS 15 Sequoia and are getting"
+msgstr ""
+
+#: source/installation/index.md:23
+msgid ""
+"when running Nix commands, refer to GitHub issue [NixOS/nix#10892](https://"
+"github.com/NixOS/nix/issues/10892) for instructions to fix your installation "
+"without reinstalling."
+msgstr ""
+
+#: source/installation/index.md:25
+msgid ""
+"```console\n"
+"$ curl -L https://nixos.org/nix/install | sh -s -- --daemon\n"
+"```"
+msgstr ""
+
+#: source/installation/index.md:29
+msgid "Single-user"
+msgstr ""
+
+#: source/installation/index.md:31
+msgid "Single-user is not supported on Mac."
+msgstr ""
+
+#: source/installation/index.md:33
+msgid "`warning: installing Nix as root is not supported by this script!`"
+msgstr ""
+
+#: source/installation/index.md:35
+msgid ""
+"This installation has less requirements than the multi-user install, however "
+"it cannot offer equivalent sharing, isolation, or security."
+msgstr ""
+
+#: source/installation/index.md:38
+msgid "This option is suitable for systems without systemd."
+msgstr ""
+
+#: source/installation/index.md:40
+msgid ""
+"```console\n"
+"$ curl -L https://nixos.org/nix/install | sh -s -- --no-daemon\n"
+"```"
+msgstr ""
+
+#: source/installation/index.md:44
+msgid "Distributions"
+msgstr ""
+
+#: source/installation/index.md:46
+msgid "The Nix community maintains installers for several distributions."
+msgstr ""
+
+#: source/installation/index.md:48
+msgid ""
+"They can be found in the [`nix-community/nix-installers`](https://github.com/"
+"nix-community/nix-installers) repository."
+msgstr ""

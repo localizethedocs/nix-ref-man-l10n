@@ -1,0 +1,285 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/store-object/content-address.md:1
+msgid "Content-Addressing Store Objects"
+msgstr ""
+
+#: source/store/store-object/content-address.md:3
+msgid ""
+"Just [like](../file-system-object/content-address.md) [File System Objects]"
+"(../file-system-object.md), [Store Objects](../store-object.md) can also be "
+"[content-addressed](../../glossary.md#gloss-content-address), unless they "
+"are [input-addressed](../../glossary.md#gloss-input-addressed-store-object)."
+msgstr ""
+
+#: source/store/store-object/content-address.md:7
+msgid ""
+"For store objects, the content address we produce will take the form of a "
+"[Store Path](../store-path.md) rather than regular hash. In particular, the "
+"content-addressing scheme will ensure that the digest of the store path is "
+"solely computed from the"
+msgstr ""
+
+#: source/store/store-object/content-address.md:10
+msgid "file system object graph (the root one and its children, if it has any)"
+msgstr ""
+
+#: source/store/store-object/content-address.md:11
+msgid "references"
+msgstr ""
+
+#: source/store/store-object/content-address.md:12
+msgid "[store directory path](../store-path.md#store-directory-path)"
+msgstr ""
+
+#: source/store/store-object/content-address.md:13
+msgid "name"
+msgstr ""
+
+#: source/store/store-object/content-address.md:15
+msgid ""
+"of the store object, and not any other information, which would not be an "
+"intrinsic property of that store object."
+msgstr ""
+
+#: source/store/store-object/content-address.md:17
+msgid ""
+"For the full specification of the algorithms involved, see the "
+"[specification of store path digests](../../protocols/store-path.md)."
+msgstr ""
+
+#: source/store/store-object/content-address.md:23
+msgid "Content addressing each part of a store object"
+msgstr ""
+
+#: source/store/store-object/content-address.md:25
+msgid "File System Objects"
+msgstr ""
+
+#: source/store/store-object/content-address.md:27
+msgid ""
+"With all currently-supported store object content-addressing methods, the "
+"file system object is always [content-addressed](../file-system-object/"
+"content-address.md) first, and then that hash is incorporated into content "
+"address computation for the store object."
+msgstr ""
+
+#: source/store/store-object/content-address.md:29
+msgid "References"
+msgstr ""
+
+#: source/store/store-object/content-address.md:31
+msgid "References to other store objects"
+msgstr ""
+
+#: source/store/store-object/content-address.md:33
+msgid ""
+"With all currently supported store object content addressing methods, other "
+"objects are referred to by their regular (string-encoded-) [store paths](../"
+"store-path.md)."
+msgstr ""
+
+#: source/store/store-object/content-address.md:36
+msgid "Self-references"
+msgstr ""
+
+#: source/store/store-object/content-address.md:38
+msgid ""
+"Self-references however cannot be referred to by their path, because we are "
+"in the midst of describing how to compute that path!"
+msgstr ""
+
+#: source/store/store-object/content-address.md:40
+msgid ""
+"The alternative would require finding as hash function fixed point, i.e. the "
+"solution to an equation in the form"
+msgstr ""
+
+#: source/store/store-object/content-address.md:44
+msgid ""
+"which is computationally infeasible. As far as we know, this is equivalent "
+"to finding a hash collision."
+msgstr ""
+
+#: source/store/store-object/content-address.md:47
+msgid ""
+"Instead we have a \"has self-reference\" boolean, which ends up affecting "
+"the digest: In all currently-supported store object content-addressing "
+"methods, when hashing the file system object data, any occurrence of store "
+"object's own store path in the digested data is replaced with a [sentinel "
+"value](https://en.wikipedia.org/wiki/Sentinel_value). The hashes of these "
+"modified input streams are used instead."
+msgstr ""
+
+#: source/store/store-object/content-address.md:51
+msgid ""
+"When validating the content address of a store object after the fact, the "
+"above process works as written. However, when first creating the store "
+"object we don't know the store object's store path, as explained just above. "
+"We therefore, strictly speaking, do not know what value we will be replacing "
+"with the sentinel value in the inputs to hash functions. What instead "
+"happens is that the provisional store object --- the data from which we wish "
+"to create a store object --- is paired with a provisional \"scratch\" store "
+"path (that presumably was chosen when the data was created). That "
+"provisional store path is instead what is replaced with the sentinel value, "
+"rather than the final store object which we do not yet know."
+msgstr ""
+
+#: source/store/store-object/content-address.md:57
+msgid "**Design note**"
+msgstr ""
+
+#: source/store/store-object/content-address.md:59
+msgid ""
+"It is an informal property of content-addressed store objects that the "
+"choice of provisional store path should not matter. In other words, if a "
+"provisional store object is prepared in the same way except for the choice "
+"of provision store path, the provisional data need not be identical. But, "
+"after the sentinel value is substituted in place of each provisional store "
+"object's provision store path, the final so-normalized data _should_ be "
+"identical."
+msgstr ""
+
+#: source/store/store-object/content-address.md:63
+msgid ""
+"If, conversely, the data after this normalization process is still "
+"different, we'll compute a different content-address. The method of "
+"preparing the provisional self-referenced data has _failed_ to be "
+"deterministic in the sense of not _leaking_ the choice of provisional store "
+"path --- a choice which is supposed to be arbitrary --- into the final store "
+"object."
+msgstr ""
+
+#: source/store/store-object/content-address.md:66
+msgid ""
+"This property is informal at this stage, because we are just describing "
+"store objects, which have no formal notion of their origin. Without that, we "
+"cannot rigorously define what it would mean for the process to be "
+"insufficiently deterministic. When we cover [derivations](../../store/"
+"derivation/index.md), we will be able to make this a formal property — not "
+"of content-addressed store objects themselves, but of the derivations that "
+"_produce_ them."
+msgstr ""
+
+#: source/store/store-object/content-address.md:70
+msgid "Name and Store Directory"
+msgstr ""
+
+#: source/store/store-object/content-address.md:72
+msgid ""
+"These two items affect the digest in a way that is standard for store path "
+"digest computations and not specific to content-addressing. Consult the "
+"[specification of store path digests](../../protocols/store-path.md) for "
+"further details."
+msgstr ""
+
+#: source/store/store-object/content-address.md:75
+msgid "Content addressing Methods"
+msgstr ""
+
+#: source/store/store-object/content-address.md:77
+msgid ""
+"For historical reasons, we don't support all features in all combinations. "
+"Each currently supported method of content addressing chooses a single "
+"method of file system object hashing, and may offer some restrictions on "
+"references. The names and store directories are unrestricted however."
+msgstr ""
+
+#: source/store/store-object/content-address.md:81
+msgid "Flat"
+msgstr ""
+
+#: source/store/store-object/content-address.md:83
+msgid ""
+"This uses the corresponding [Flat](../file-system-object/content-address."
+"md#serial-flat) method of file system object content addressing."
+msgstr ""
+
+#: source/store/store-object/content-address.md:85
+msgid ""
+"References are not supported: store objects with flat hashing _and_ "
+"references can not be created."
+msgstr ""
+
+#: source/store/store-object/content-address.md:87
+msgid "Text"
+msgstr ""
+
+#: source/store/store-object/content-address.md:89
+msgid ""
+"This also uses the corresponding [Flat](../file-system-object/content-"
+"address.md#serial-flat) method of file system object content addressing."
+msgstr ""
+
+#: source/store/store-object/content-address.md:91
+msgid ""
+"References to other store objects are supported, but self-references are not."
+msgstr ""
+
+#: source/store/store-object/content-address.md:93
+msgid ""
+"This is the only store-object content-addressing method that is not named "
+"identically with a corresponding file system object method. It is somewhat "
+"obscure, mainly used for \"drv files\" (derivations serialized as store "
+"objects in their [\"ATerm\" file format](../../protocols/derivation-aterm."
+"md#use-for-encoding-to-store-object)). Prefer another method if possible."
+msgstr ""
+
+#: source/store/store-object/content-address.md:98
+msgid "Nix Archive"
+msgstr ""
+
+#: source/store/store-object/content-address.md:100
+msgid ""
+"This uses the corresponding [Nix Archive](../file-system-object/content-"
+"address.md#serial-nix-archive) method of file system object content "
+"addressing."
+msgstr ""
+
+#: source/store/store-object/content-address.md:102
+msgid ""
+"References (to other store objects and self-references alike) are supported "
+"so long as the hash algorithm is SHA-256, but not (neither kind) otherwise."
+msgstr ""
+
+#: source/store/store-object/content-address.md:104
+msgid "Git"
+msgstr ""
+
+#: source/store/store-object/content-address.md:106
+msgid "**Warning**"
+msgstr ""
+
+#: source/store/store-object/content-address.md:108
+msgid ""
+"This method is part of the [`git-hashing`](../../development/experimental-"
+"features.md#xp-feature-git-hashing) experimental feature."
+msgstr ""
+
+#: source/store/store-object/content-address.md:110
+msgid ""
+"This uses the corresponding [Git](../file-system-object/content-address."
+"md#git) method of file system object content addressing."
+msgstr ""
+
+#: source/store/store-object/content-address.md:112
+msgid "References are not supported."
+msgstr ""
+
+#: source/store/store-object/content-address.md:114
+msgid ""
+"Only SHA-1 is supported at this time. If [SHA-256-based Git](https://git-scm."
+"com/docs/hash-function-transition) becomes more widespread, this restriction "
+"will be revisited."
+msgstr ""

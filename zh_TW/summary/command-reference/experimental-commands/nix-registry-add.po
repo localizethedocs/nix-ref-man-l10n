@@ -1,0 +1,299 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-registry-add.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:8
+msgid "`nix registry add` - add/replace flake in user flake registry"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:10
+msgid "Synopsis"
+msgstr "概要"
+
+#: source/command-ref/new-cli/nix3-registry-add.md:12
+msgid "`nix registry add` \\[_option_...\\] _from-url_ _to-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:16
+msgid "Set the `nixpkgs` flake identifier to a specific branch of Nixpkgs:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:22
+msgid "Pin `nixpkgs` to a specific revision:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:28
+msgid ""
+"Add an entry that redirects a specific branch of `nixpkgs` to another fork:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:35
+msgid ""
+"Add `nixpkgs` pointing to `github:nixos/nixpkgs` to your custom flake "
+"registry:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:42
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:44
+msgid ""
+"This command adds an entry to the user registry that maps flake reference "
+"_from-url_ to flake reference _to-url_. If an entry for _from-url_ already "
+"exists, it is overwritten."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:48
+msgid ""
+"Entries can be removed using [`nix registry remove`](./nix3-registry-remove."
+"md)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:51
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:53
+msgid ""
+"<span id=\"opt-registry\">[`--registry`](#opt-registry)</span> _registry_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:55
+msgid "The registry to operate on."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:57
+msgid "Common evaluation options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:59
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:61
+msgid "Pass the value _expr_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:63
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:65
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:67
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:69
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:71
+msgid ""
+"<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _string_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:73
+msgid "Pass the string _string_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:75
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:77
+msgid ""
+"The [URL of the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:80
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:82
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:84
+msgid ""
+"<span id=\"opt-include\">[`--include`](#opt-include)</span> / `-I` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:86
+msgid ""
+"Add _path_ to search path entries used to resolve [lookup paths](../../"
+"language/constructs/lookup-path.md)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:88
+msgid "This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:90
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:92
+msgid ""
+"<span id=\"opt-override-flake\">[`--override-flake`](#opt-override-flake)</"
+"span> _original-ref_ _resolved-ref_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:94
+msgid ""
+"Override the flake registries, redirecting _original-ref_ to _resolved-ref_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:96
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:98
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:100
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:102
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:104
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:106
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:108
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:110
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:112
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:114
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:116
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:118
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:120
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:122
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:124
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:126
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:128
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:130
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:132
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:134
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:136
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:138
+msgid ""
+"During evaluation, rewrite missing or corrupted files in the Nix store. "
+"During building, rebuild missing or corrupted store paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:140
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:142
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:144
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry-add.md:146
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

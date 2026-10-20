@@ -1,0 +1,1070 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-copy-closure.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:3
+msgid ""
+"`nix-copy-closure` - copy store objects to or from a remote machine via SSH"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:5
+msgid "Synopsis"
+msgstr "概要"
+
+#: source/command-ref/nix-copy-closure.md:7
+msgid ""
+"`nix-copy-closure` \\[`--to` | `--from` \\] \\[`--gzip`\\] \\[`--include-"
+"outputs`\\] \\[`--use-substitutes` | `-s`\\] \\[`-v`\\] "
+"\\[_user_@\\]_machine_\\[:_port_\\] _paths_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:15
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:17
+msgid ""
+"Given _paths_ from one machine, `nix-copy-closure` computes the [closure](../"
+"glossary.md#gloss-closure) of those paths (i.e. all their dependencies in "
+"the Nix store), and copies [store objects](../glossary.md#gloss-store-"
+"object) in that closure to another machine via SSH. It doesn’t copy store "
+"objects that are already present on the other machine."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:20
+#: source/command-ref/nix-copy-closure.md:285
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:22
+msgid ""
+"While the Nix store to use on the local machine can be specified on the "
+"command line with the [`--store`](../command-ref/conf-file.md#conf-store) "
+"option, the Nix store to be accessed on the remote machine can only be "
+"[configured statically](../command-ref/conf-file.md#configuration-file) on "
+"that remote machine."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:24
+msgid ""
+"Since `nix-copy-closure` calls `ssh`, you may need to authenticate with the "
+"remote machine. In fact, you may be asked for authentication _twice_ because "
+"`nix-copy-closure` currently connects twice to the remote machine: first to "
+"get the set of paths missing on the target machine, and second to send the "
+"dump of those paths. When using public key authentication, you can avoid "
+"typing the passphrase with `ssh-agent`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:28
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:30
+msgid "`--to`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:32
+msgid ""
+"Copy the closure of _paths_ from a Nix store accessible from the local "
+"machine to the Nix store on the remote _machine_. This is the default "
+"behavior."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:35
+msgid "`--from`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:37
+msgid ""
+"Copy the closure of _paths_ from the Nix store on the remote _machine_ to "
+"the local machine's specified Nix store."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:39
+msgid "`--gzip`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:41
+msgid "Enable compression of the SSH connection."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:43
+msgid "`--include-outputs`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:45
+msgid ""
+"Also copy the outputs of [store derivation](../glossary.md#gloss-store-"
+"derivation)s included in the closure."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:49
+msgid "`--use-substitutes` / `-s`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:51
+msgid ""
+"Attempt to download missing store objects on the target from [substituters]"
+"(../command-ref/conf-file.md#conf-substituters). Any store objects that "
+"cannot be substituted on the target are still copied normally from the "
+"source. This is useful, for instance, if the connection between the source "
+"and target machine is slow, but the connection between the target machine "
+"and `cache.nixos.org` (the default binary cache server) is fast."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:59
+msgid "Common Options"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:61
+msgid "Most Nix commands accept the following command-line options:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:63
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:65
+msgid "Prints out a summary of the command syntax and exits."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:67
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:69
+msgid "Prints out the Nix version number on standard output and exits."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:71
+msgid ""
+"For machine-readable output, including versions of the libraries Nix links "
+"against, see the [`nix version`](../command-ref/new-cli/nix3-version.md) "
+"command."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:74
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:76
+msgid ""
+"Increases the level of verbosity of diagnostic messages printed on standard "
+"error. For each Nix operation, the information printed on standard output is "
+"well-defined; any diagnostic information is printed on standard error, never "
+"on standard output."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:80
+msgid ""
+"This option may be specified repeatedly. Currently, the following verbosity "
+"levels exist:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:83
+msgid "`0` “Errors only”"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:85
+msgid "Only print messages explaining why the Nix invocation failed."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:87
+msgid "`1` “Informational”"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:89
+msgid "Print _useful_ messages about what Nix is doing. This is the default."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:92
+msgid "`2` “Talkative”"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:94
+msgid "Print more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:96
+msgid "`3` “Chatty”"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:98
+msgid "Print even more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:100
+msgid "`4` “Debug”"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:102
+msgid "Print debug information."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:104
+msgid "`5` “Vomit”"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:106
+msgid "Print vast amounts of debug information."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:108
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:110
+msgid ""
+"Decreases the level of verbosity of diagnostic messages printed on standard "
+"error. This is the inverse option to `-v` / `--verbose`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:113
+msgid ""
+"This option may be specified repeatedly. See the previous verbosity levels "
+"list."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:116
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:118
+msgid ""
+"This option can be used to change the output of the log format, with "
+"_format_ being one of:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:120
+msgid "`raw`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:122
+msgid "This is the raw format, as outputted by nix-build."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:124
+msgid "`internal-json`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:126
+msgid "Outputs the logs in a structured manner."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:128
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:130
+msgid ""
+"While the schema itself is relatively stable, the format of the error-"
+"messages (namely of the `msg`\\-field) can change between releases."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:134
+msgid "`bar`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:136
+msgid "Only display a progress bar during the builds."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:138
+msgid "`bar-with-logs`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:140
+msgid "Display the raw logs, with the progress bar at the bottom."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:142
+msgid ""
+"<span id=\"opt-no-build-output\">[`--no-build-output`](#opt-no-build-"
+"output)</span> / `-Q`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:144
+msgid ""
+"By default, output written by builders to standard output and standard error "
+"is echoed to the Nix command's standard error. This option suppresses this "
+"behaviour. Note that the builder's standard output and error are always "
+"written to a log file in `prefix/nix/var/log/nix`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:148
+msgid ""
+"<span id=\"opt-max-jobs\">[`--max-jobs`](#opt-max-jobs)</span> / `-j` "
+"_number_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:150
+msgid ""
+"Sets the maximum number of build jobs that Nix will perform in parallel to "
+"the specified number. Specify `auto` to use the number of CPUs in the "
+"system. The default is specified by the `max-jobs` configuration setting, "
+"which itself defaults to `1`. A higher value is useful on SMP systems or to "
+"exploit I/O latency."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:155
+msgid ""
+"Setting it to `0` disallows building on the local machine, which is useful "
+"when you want builds to happen only on remote builders."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:157
+msgid "<span id=\"opt-cores\">[`--cores`](#opt-cores)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:159
+msgid ""
+"Sets the value of the `NIX_BUILD_CORES` environment variable in the "
+"invocation of builders. Builders can use this variable at their discretion "
+"to control the maximum amount of parallelism. For instance, in Nixpkgs, if "
+"the derivation attribute `enableParallelBuilding` is set to `true`, the "
+"builder passes the `-jN` flag to GNU Make. It defaults to the value of the "
+"`cores` configuration setting, if set, or `1` otherwise. The value `0` means "
+"that the builder should use all available CPU cores in the system."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:165
+msgid ""
+"<span id=\"opt-max-silent-time\">[`--max-silent-time`](#opt-max-silent-"
+"time)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:167
+msgid ""
+"Sets the maximum number of seconds that a builder can go without producing "
+"any data on standard output or standard error. The default is specified by "
+"the `max-silent-time` configuration setting. `0` means no time-out."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:171
+msgid "<span id=\"opt-timeout\">[`--timeout`](#opt-timeout)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:173
+msgid ""
+"Sets the maximum number of seconds that a builder can run. The default is "
+"specified by the `timeout` configuration setting. `0` means no timeout."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:177
+msgid ""
+"<span id=\"opt-keep-going\">[`--keep-going`](#opt-keep-going)</span> / `-k`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:179
+msgid ""
+"Keep going in case of failed builds, to the greatest extent possible. That "
+"is, if building an input of some derivation fails, Nix will still build the "
+"other inputs, but not the derivation itself. Without this option, Nix stops "
+"if any build fails (except for builds of substitutes), possibly killing "
+"builds in progress (in case of parallel or distributed builds)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:183
+msgid ""
+"<span id=\"opt-keep-failed\">[`--keep-failed`](#opt-keep-failed)</span> / `-"
+"K`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:185
+msgid ""
+"Specifies that in case of a build failure, the temporary directory (usually "
+"in `/tmp`) in which the build takes place should not be deleted. The path of "
+"the build directory is printed as an informational message."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:188
+msgid "<span id=\"opt-fallback\">[`--fallback`](#opt-fallback)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:190
+msgid ""
+"Whenever Nix attempts to build a derivation for which substitutes are known "
+"for each output path, but realising the output paths through the substitutes "
+"fails, fall back on building the derivation."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:192
+msgid ""
+"The most common scenario in which this is useful is when we have registered "
+"substitutes in order to perform binary distribution from, say, a network "
+"repository. If the repository is down, the realisation of the derivation "
+"will fail. When this option is specified, Nix will build the derivation "
+"instead. Thus, installation from binaries falls back on installation from "
+"source. This option is not the default since it is generally not desirable "
+"for a transient failure in obtaining the substitutes to lead to a full build "
+"from source (with the related consumption of resources)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:198
+msgid ""
+"<span id=\"opt-readonly-mode\">[`--readonly-mode`](#opt-readonly-mode)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:200
+msgid ""
+"When this option is used, no attempt is made to open the Nix database. Most "
+"Nix operations do need database access, so those operations will fail."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:203
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:205
+msgid ""
+"This option is accepted by `nix-env`, `nix-instantiate`, `nix-shell` and "
+"`nix-build`. When evaluating Nix expressions, the expression evaluator will "
+"automatically try to call functions that it encounters. It can automatically "
+"call functions for which every argument has a [default value](../language/"
+"syntax.md#functions) (e.g., `{ argName ?  defaultValue }: ...`)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:209
+msgid ""
+"With `--arg`, you can also call functions that have arguments without a "
+"default value (or override a default value). That is, if the evaluator "
+"encounters a function with an argument named _name_, it will call it with "
+"value _value_."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:212
+msgid ""
+"For instance, the top-level `default.nix` in Nixpkgs is actually a function:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:221
+msgid ""
+"So if you call this Nix expression (e.g., when you do `nix-env --install --"
+"attr pkgname`), the function will be called automatically using the value "
+"[`builtins.currentSystem`](../language/builtins.md) for the `system` "
+"argument. You can override this using `--arg`, e.g., `nix-env --install --"
+"attr pkgname --arg system \\\"i686-freebsd\\\"`. (Note that since the "
+"argument is a Nix string literal, you have to escape the quotes.)"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:225
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:227
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:229
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:231
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:233
+msgid "<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:235
+msgid ""
+"This option is like `--arg`, only the value is not a Nix expression but a "
+"string. So instead of `--arg system \\\"i686-linux\\\"` (the outer quotes "
+"are to keep the shell happy) you can say `--argstr system i686-linux`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:238
+msgid "<span id=\"opt-attr\">[`--attr`](#opt-attr)</span> / `-A` _attrPath_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:240
+msgid ""
+"Select an attribute from the top-level Nix expression being evaluated. (`nix-"
+"env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
+"path_ _attrPath_ is a sequence of attribute names separated by dots. For "
+"instance, given a top-level Nix expression _e_, the attribute path `xorg."
+"xorgserver` would cause the expression `e.xorg.xorgserver` to be used. See "
+"[`nix-env --install`](../command-ref/nix-env/install.md) for some concrete "
+"examples."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:246
+msgid ""
+"In addition to attribute names, you can also specify array indices. For "
+"instance, the attribute path `foo.3.bar` selects the `bar` attribute of the "
+"fourth element of the array in the `foo` attribute of the top-level "
+"expression."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:251
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:253
+msgid ""
+"The [URL to the Nix store](../store/types/index.md#store-url-format) to use "
+"for evaluation, i.e. where to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:255
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> / `-E`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:257
+msgid ""
+"Interpret the command line arguments as a list of Nix expressions to be "
+"parsed and evaluated, rather than as a list of file names of Nix "
+"expressions. (`nix-instantiate`, `nix-build` and `nix-shell` only.)"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:260
+msgid ""
+"For `nix-shell`, this option is commonly used to give you a shell in which "
+"you can build the packages returned by the expression. If you want to get a "
+"shell which contain the _built_ packages ready for use, give your expression "
+"to the `nix-shell --packages ` convenience flag instead."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:263
+msgid "<span id=\"opt-I\">[`-I` / `--include`](#opt-I)</span> _path_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:265
+msgid ""
+"Add an entry to the list of search paths used to resolve [lookup paths](../"
+"language/constructs/lookup-path.md). This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:268
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:270
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:272
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:274
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:276
+msgid ""
+"Set the Nix configuration option _name_ to _value_. This overrides settings "
+"in the Nix configuration file (see nix.conf5)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:279
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:281
+msgid ""
+"Fix corrupted or missing store paths by redownloading or rebuilding them. "
+"Note that this is slow because it requires computing a cryptographic hash of "
+"the contents of every path in the closure of the build. Also note the "
+"warning under `nix-store --repair-path`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:287
+msgid ""
+"See [`man nix.conf`](../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:290
+msgid "Environment variables"
+msgstr "環境變數"
+
+#: source/command-ref/nix-copy-closure.md:292
+msgid "`NIX_SSHOPTS`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:294
+msgid "Additional options to be passed to `ssh` on the command line."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:296
+msgid "Common Environment Variables"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:298
+msgid "Most Nix commands interpret the following environment variables."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:300
+msgid "Configuration environment variables"
+msgstr "組態環境變數"
+
+#: source/command-ref/nix-copy-closure.md:302
+msgid ""
+"The following environment variables affect how Nix loads its configuration. "
+"See the [configuration file](../command-ref/conf-file.md#configuration-file) "
+"documentation for full details."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:305
+msgid ""
+"<span id=\"env-NIX_CONF_DIR\">[`NIX_CONF_DIR`](#env-NIX_CONF_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:307
+msgid "Overrides the system configuration directory."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:309
+msgid ""
+"<span id=\"env-NIX_USER_CONF_FILES\">[`NIX_USER_CONF_FILES`](#env-"
+"NIX_USER_CONF_FILES)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:311
+msgid "Overrides the user configuration file locations."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:313
+msgid "<span id=\"env-NIX_CONFIG\">[`NIX_CONFIG`](#env-NIX_CONFIG)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:315
+msgid "Provides configuration settings inline."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:317
+msgid "Store setting environment variables"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:319
+msgid ""
+"<span id=\"env-NIX_IGNORE_SYMLINK_STORE\">[`NIX_IGNORE_SYMLINK_STORE`](#env-"
+"NIX_IGNORE_SYMLINK_STORE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:321
+msgid ""
+"Normally, the Nix store directory (typically `/nix/store`) is not allowed to "
+"contain any symlink components. This is to prevent “impure” builds. Builders "
+"sometimes “canonicalise” paths by resolving all symlink components. Thus, "
+"builds on different machines (with `/nix/store` resolving to different "
+"locations) could yield different results. This is generally not a problem, "
+"except when builds are deployed to machines where `/nix/store` resolves "
+"differently. If you are sure that you’re not going to do that, you can set "
+"`NIX_IGNORE_SYMLINK_STORE` to `1`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:331
+msgid ""
+"Note that if you’re symlinking the Nix store so that you can put it on "
+"another file system than the root file system, on Linux you’re better off "
+"using `bind` mount points, e.g.,"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:340
+msgid "Consult the mount 8 manual page for details."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:342
+msgid ""
+"<span id=\"env-NIX_STORE_DIR\">[`NIX_STORE_DIR`](#env-NIX_STORE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:344
+msgid ""
+"Overrides the location of the Nix store. On Unix, the default is `/nix/"
+"store`, set at compile time by the `libstore:store-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\store`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:348
+msgid ""
+"See the [Store Types](../store/types/index.md) chapter; each store has a "
+"`store` setting linking back to this as its default."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:350
+msgid "<span id=\"env-NIX_LOG_DIR\">[`NIX_LOG_DIR`](#env-NIX_LOG_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:352
+msgid ""
+"Overrides the location of the Nix log directory. On Unix, the default is `/"
+"nix/var/log/nix`, set at compile time by the `log-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\log`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:356
+#: source/command-ref/nix-copy-closure.md:364
+msgid ""
+"The [Local Store](../store/types/local-store.md), [Local Daemon Store](../"
+"store/types/local-daemon-store.md), and [Experimental SSH Store with "
+"filesystem mounted](../store/types/experimental-ssh-store-with-filesystem-"
+"mounted.md) have per-store settings that override this."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:358
+msgid ""
+"<span id=\"env-NIX_STATE_DIR\">[`NIX_STATE_DIR`](#env-NIX_STATE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:360
+msgid ""
+"Overrides the location of the Nix state directory. On Unix, the default is "
+"`${localstatedir}/nix`, where `localstatedir` is a compile-time build option "
+"defaulting to `/nix/var`. On Windows, there is no compile-time setting; the "
+"default is `%PROGRAMDATA%\\nix\\state`, determined at runtime using the "
+"[`%PROGRAMDATA%` Known Folder](#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:366
+msgid ""
+"<span id=\"env-NIX_DAEMON_SOCKET_PATH\">[`NIX_DAEMON_SOCKET_PATH`](#env-"
+"NIX_DAEMON_SOCKET_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:368
+msgid ""
+"Overrides the path to the Unix domain socket used to communicate with the "
+"Nix daemon. Defaults to `daemon-socket/socket` within the state directory "
+"(see [`NIX_STATE_DIR`](#env-NIX_STATE_DIR))."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:371
+msgid ""
+"See the [Local Daemon Store](../store/types/local-daemon-store.md) "
+"documentation for details on how the socket path is resolved."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:373
+msgid "<span id=\"env-TMPDIR\">[`TMPDIR`](#env-TMPDIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:375
+msgid ""
+"Use the specified directory to store temporary files. In particular, this "
+"includes temporary build directories; these can take up substantial amounts "
+"of disk space. The default is `/tmp`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:379
+msgid "<span id=\"env-NIX_REMOTE\">[`NIX_REMOTE`](#env-NIX_REMOTE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:381
+msgid ""
+"Overrides the [`store`](../command-ref/conf-file.md#conf-store) setting."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:389
+msgid "Nix language evaluator settings"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:391
+msgid ""
+"<span id=\"env-NIX_SHOW_STATS\">[`NIX_SHOW_STATS`](#env-NIX_SHOW_STATS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:393
+msgid ""
+"If set to `1`, Nix will print some evaluation statistics, such as the number "
+"of values allocated."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:396
+msgid ""
+"<span id=\"env-NIX_COUNT_CALLS\">[`NIX_COUNT_CALLS`](#env-NIX_COUNT_CALLS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:398
+msgid ""
+"If set to `1`, Nix will print how often functions were called during Nix "
+"expression evaluation. This is useful for profiling your Nix expressions."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:402
+msgid ""
+"<span id=\"env-GC_INITIAL_HEAP_SIZE\">[`GC_INITIAL_HEAP_SIZE`](#env-"
+"GC_INITIAL_HEAP_SIZE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:404
+msgid ""
+"If Nix has been configured to use the Boehm garbage collector, this variable "
+"sets the initial size of the heap in bytes. It defaults to 384 MiB. Setting "
+"it to a low value reduces memory consumption, but will increase runtime due "
+"to the overhead of garbage collection."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:409
+msgid "<span id=\"env-NIX_PATH\">[`NIX_PATH`](#env-NIX_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:411
+msgid ""
+"A colon-separated list of search path entries used to resolve [lookup paths]"
+"(../language/constructs/lookup-path.md)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:413
+msgid ""
+"This environment variable overrides the value of the [`nix-path` "
+"configuration setting](../command-ref/conf-file.md#conf-nix-path)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:415
+msgid ""
+"It can be extended using the [`-I` option](../command-ref/opt-common.md#opt-"
+"I)."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:417
+#: source/command-ref/nix-copy-closure.md:425
+#: source/command-ref/nix-copy-closure.md:497
+#: source/command-ref/nix-copy-closure.md:512
+msgid "**Example**"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:423
+msgid ""
+"If `NIX_PATH` is set to an empty string, resolving search paths will always "
+"fail."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:428
+msgid "'<nixpkgs>'"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:429
+msgid "'nixpkgs'"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:432
+msgid "User Directories"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:434
+msgid ""
+"Nix supports per-user **configuration**, **state**, and **cache** "
+"directories. The following environment variables override the locations for "
+"these directories:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:437
+msgid ""
+"\\[user configuration directory\\]{#user-conf-dir}: \\[`NIX_CONFIG_HOME`\\]"
+"{#env-NIX_CONFIG_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:438
+msgid "user state directory: \\[`NIX_STATE_HOME`\\]{#env-NIX_STATE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:439
+msgid "user cache directory: \\[`NIX_CACHE_HOME`\\]{#env-NIX_CACHE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:441
+msgid "When these are not set, the defaults depend on the platform:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:443
+msgid ""
+"On Unix, the [XDG base directories](#xdg-base-directories): "
+"`$XDG_CONFIG_HOME/nix`, `$XDG_STATE_HOME/nix`, `$XDG_CACHE_HOME/nix`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:444
+msgid ""
+"On Windows, the [Windows Known Folders](#known-folders): `%APPDATA%"
+"\\nix\\config`, `%LOCALAPPDATA%\\nix\\state`, `%LOCALAPPDATA%\\nix\\cache`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:448
+msgid ""
+"For backwards compatibility, legacy Nix commands (e.g. `nix-env`, `nix-"
+"channel`) use dotfiles in `$HOME` instead of these directories unless [`use-"
+"xdg-base-directories`](../command-ref/conf-file.md#conf-use-xdg-base-"
+"directories) is enabled. [New Nix commands](../command-ref/new-cli/nix.md) "
+"(experimental) use the proper directories by default."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:451
+msgid ""
+"When [`use-xdg-base-directories`](../command-ref/conf-file.md#conf-use-xdg-"
+"base-directories) is enabled, the configuration directory is resolved as:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:453
+msgid "`$NIX_CONFIG_HOME`, if it is defined"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:454
+msgid "Otherwise, the platform default (e.g. `$XDG_CONFIG_HOME/nix` on Unix)"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:456
+msgid "Likewise for the state and cache directories."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:458
+msgid "Miscellaneous environment variables"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:460
+msgid ""
+"<span id=\"env-IN_NIX_SHELL\">[`IN_NIX_SHELL`](#env-IN_NIX_SHELL)</span>"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:462
+msgid ""
+"Indicator that tells if the current environment was set up by `nix-shell`. "
+"It can have the values `pure` or `impure`."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:465
+msgid "Appendix: OS-specific conventions"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:467
+msgid "This information is not Nix-specific, but is referenced above."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:469
+msgid "Unix: XDG Base Directories"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:471
+msgid ""
+"The [XDG Base Directory Specification](https://specifications.freedesktop."
+"org/basedir-spec/basedir-spec-latest.html) defines standard locations for "
+"user-specific configuration, state, and cache files on Unix systems."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:475
+msgid "The following environment variables are used:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:477
+msgid "\\[`XDG_CONFIG_HOME`\\]{#env-XDG_CONFIG_HOME} (default `~/.config`)"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:478
+msgid "\\[`XDG_STATE_HOME`\\]{#env-XDG_STATE_HOME} (default `~/.local/state`)"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:479
+msgid "\\[`XDG_CACHE_HOME`\\]{#env-XDG_CACHE_HOME} (default `~/.cache`)"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:480
+msgid ""
+"\\[`XDG_CONFIG_DIRS`\\]{#env-XDG_CONFIG_DIRS} (default `/etc/xdg`) — colon-"
+"separated list of additional configuration base directories, searched after "
+"`XDG_CONFIG_HOME`"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:482
+msgid "Windows: Known Folders"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:484
+msgid ""
+"On Windows, [Known Folders](https://learn.microsoft.com/en-us/windows/win32/"
+"shell/known-folders) provide standard locations for application data on "
+"Windows."
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:488
+msgid "The relevant folders are:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:490
+msgid "\\[`%APPDATA%`\\]{#env-APPDATA} — per-user roaming application data"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:491
+msgid ""
+"\\[`%LOCALAPPDATA%`\\]{#env-LOCALAPPDATA} — per-user local application data"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:492
+msgid "\\[`%PROGRAMDATA%`\\]{#env-PROGRAMDATA} — system-wide application data"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:495
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:499
+msgid "Copy GNU Hello with all its dependencies to a remote machine:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:501
+msgid ""
+"```shell-session\n"
+"$ storePath=\"$(nix-build '<nixpkgs>' -I nixpkgs=channel:nixpkgs-unstable -A "
+"hello --no-out-link)\"\n"
+"$ nix-copy-closure --to alice@itchy.example.org \"$storePath\"\n"
+"copying 5 paths...\n"
+"copying path '/nix/store/h6q8sqsqfbd3252f9gixqn3z282wds7m-xgcc-13.2.0-"
+"libgcc' to 'ssh://alice@itchy.example.org'...\n"
+"copying path '/nix/store/imnwvn96lw355giswsk36hx105j4wnpj-libunistring-1.1' "
+"to 'ssh://alice@itchy.example.org'...\n"
+"copying path '/nix/store/85301indj7scg34spnfczkz72jgv8wa9-libidn2-2.3.7' to "
+"'ssh://alice@itchy.example.org'...\n"
+"copying path '/nix/store/ypwfsaljwhzw9iffiysxmxnhjj8v7np0-glibc-2.39-31' to "
+"'ssh://alice@itchy.example.org'...\n"
+"copying path '/nix/store/0dklv59zppdsqdvgf0qdvjgzcs5wbwxa-hello-2.12.1' to "
+"'ssh://alice@itchy.example.org'...\n"
+"```"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:514
+msgid ""
+"Copy GNU Hello from a remote machine using a known store path, and run it:"
+msgstr ""
+
+#: source/command-ref/nix-copy-closure.md:516
+msgid ""
+"```shell-session\n"
+"$ storePath=\"$(nix-instantiate --eval --raw '<nixpkgs>' -I nixpkgs=channel:"
+"nixpkgs-unstable -A hello.outPath)\"\n"
+"$ nix-copy-closure --from alice@itchy.example.org \"$storePath\"\n"
+"$ \"$storePath\"/bin/hello\n"
+"Hello, world!\n"
+"```"
+msgstr ""

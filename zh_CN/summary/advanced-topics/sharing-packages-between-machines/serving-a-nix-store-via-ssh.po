@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/package-management/ssh-substituter.md:1
+msgid "Serving a Nix store via SSH"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:3
+msgid ""
+"You can tell Nix to automatically fetch needed binaries from a remote Nix "
+"store via SSH. For example, the following installs Firefox, automatically "
+"fetching any store paths in Firefox’s closure if they are available on the "
+"server `avalon`:"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:8
+msgid ""
+"```console\n"
+"$ nix-env --install --attr nixpkgs.firefox --substituters ssh://"
+"alice@avalon\n"
+"```"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:12
+msgid ""
+"This works similar to the binary cache substituter that Nix usually uses, "
+"only using SSH instead of HTTP: if a store path `P` is needed, Nix will "
+"first check if it’s available in the Nix store on `avalon`. If not, it will "
+"fall back to using the binary cache substituter, and then to building from "
+"source."
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:18
+msgid "**Note**"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:20
+msgid ""
+"The SSH substituter currently does not allow you to enter an SSH passphrase "
+"interactively. Therefore, you should use `ssh-add` to load the decrypted "
+"private key into `ssh-agent`."
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:24
+msgid ""
+"You can also copy the closure of some store path, without installing it into "
+"your profile, e.g."
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:27
+msgid ""
+"```console\n"
+"$ nix-store --realise /nix/store/m85bxg…-firefox-34.0.5 --substituters\n"
+"ssh://alice@avalon\n"
+"```"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:32
+msgid "This is essentially equivalent to doing"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:39
+msgid ""
+"You can use SSH’s _forced command_ feature to set up a restricted user "
+"account for SSH substituter access, allowing read-only access to the local "
+"Nix store, but nothing more. For example, add the following lines to "
+"`sshd_config` to restrict the user `nix-ssh`:"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:53
+msgid ""
+"On NixOS, you can accomplish the same by adding the following to your "
+"`configuration.nix`:"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:56
+msgid ""
+"```nix\n"
+"nix.sshServe.enable = true;\n"
+"nix.sshServe.keys = [ \"ssh-dss AAAAB3NzaC1k... bob@example.org\" ];\n"
+"```"
+msgstr ""
+
+#: source/package-management/ssh-substituter.md:61
+msgid ""
+"where the latter line lists the public keys of users that are allowed to "
+"connect."
+msgstr ""

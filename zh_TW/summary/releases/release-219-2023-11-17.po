@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.19.md:1
+msgid "Release 2.19 (2023-11-17)"
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:3
+msgid ""
+"The experimental `nix` command can now act as a [shebang interpreter](../"
+"command-ref/new-cli/nix.md#shebang-interpreter) by appending the contents of "
+"any `#! nix` lines and the script's location into a single call."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:6
+msgid ""
+"[URL flake references](../command-ref/new-cli/nix3-flake.md#flake-"
+"references) now support [percent-encoded](https://datatracker.ietf.org/doc/"
+"html/rfc3986#section-2.1) characters."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:8
+msgid ""
+"[Path-like flake references](../command-ref/new-cli/nix3-flake.md#path-like-"
+"syntax) now accept arbitrary unicode characters (except `#` and `?`)."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:10
+msgid ""
+"The experimental feature `repl-flake` is no longer needed, as its "
+"functionality is now part of the `flakes` experimental feature. To get the "
+"previous behavior, use the `--file/--expr` flags accordingly."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:12
+msgid ""
+"There is a new flake installable syntax `flakeref#.attrPath` where the \".\" "
+"prefix specifies that `attrPath` is interpreted from the root of the flake "
+"outputs, with no searching of default attribute prefixes like `packages."
+"<SYSTEM>` or `legacyPackages.<SYSTEM>`."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:14
+msgid ""
+"Nix adds `apple-virt` to the default system features on macOS systems that "
+"support virtualization. This is similar to what's done for the `kvm` system "
+"feature on Linux hosts."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:16
+msgid ""
+"Add a new built-in function [`builtins.convertHash`](../language/builtins."
+"md#builtins-convertHash)."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:18
+msgid "`nix-shell` shebang lines now support single-quoted arguments."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:20
+msgid ""
+"`builtins.fetchTree` is now its own experimental feature, [`fetch-tree`](../"
+"development/experimental-features.md#xp-feature-fetch-tree). This allows "
+"stabilising it independently of the rest of what is encompassed by [`flakes`]"
+"(../development/experimental-features.md#xp-feature-flakes)."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:23
+msgid "The interface for creating and updating lock files has been overhauled:"
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:25
+msgid ""
+"[`nix flake lock`](../command-ref/new-cli/nix3-flake-lock.md) only creates "
+"lock files and adds missing inputs now. It will _never_ update existing "
+"inputs."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:28
+msgid ""
+"[`nix flake update`](../command-ref/new-cli/nix3-flake-update.md) does the "
+"same, but _will_ update inputs."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:29
+msgid ""
+"Passing no arguments will update all inputs of the current flake, just like "
+"it already did."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:30
+msgid ""
+"Passing input names as arguments will ensure only those are updated. This "
+"replaces the functionality of `nix flake lock --update-input`"
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:31
+msgid ""
+"To operate on a flake outside the current directory, you must now pass `--"
+"flake path/to/flake`."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:33
+msgid ""
+"The flake-specific flags `--recreate-lock-file` and `--update-input` have "
+"been removed from all commands operating on installables. They are "
+"superseded by `nix flake update`."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:36
+msgid ""
+"Commit signature verification for the [`builtins.fetchGit`](../language/"
+"builtins.md#builtins-fetchGit) is added as the new [`verified-fetches` "
+"experimental feature](../development/experimental-features.md#xp-feature-"
+"verified-fetches)."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:38
+msgid ""
+"[`nix path-info --json`](../command-ref/new-cli/nix3-path-info.md) "
+"(experimental) now returns a JSON map rather than JSON list. The `path` "
+"field of each object has instead become the key in the outer map, since it "
+"is unique. The `valid` field also goes away because we just use `null` "
+"instead."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:43
+msgid "Old way:"
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:45
+msgid ""
+"```json5\n"
+"[\n"
+"  {\n"
+"    \"path\": \"/nix/store/fvqsvk65d38p8qqir371ii0hyqxvjcw6-bash-5.2-p15\",\n"
+"    \"valid\": true,\n"
+"    // ...\n"
+"  },\n"
+"  {\n"
+"    \"path\": \"/nix/store/wffw7l0alvs3iw94cbgi1gmmbmw99sqb-home-manager-"
+"path\",\n"
+"    \"valid\": false\n"
+"  }\n"
+"]\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:59
+msgid "New way"
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:61
+msgid ""
+"```json5\n"
+"{\n"
+"  \"/nix/store/fvqsvk65d38p8qqir371ii0hyqxvjcw6-bash-5.2-p15\": {\n"
+"    // ...\n"
+"  },\n"
+"  \"/nix/store/wffw7l0alvs3iw94cbgi1gmmbmw99sqb-home-manager-path\": null,\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:70
+msgid ""
+"This makes it match `nix derivation show`, which also maps store paths to "
+"information."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:72
+msgid ""
+"When Nix is installed using the [binary installer](../installation/"
+"installing-binary.md), in supported shells (Bash, Zsh, Fish) "
+"[`XDG_DATA_DIRS`](https://specifications.freedesktop.org/basedir-spec/"
+"basedir-spec-latest.html#variables) is now populated with the path to the `/"
+"share` subdirectory of the current profile. This means that command "
+"completion scripts, `.desktop` files, and similar artifacts installed via "
+"[`nix-env`](../command-ref/nix-env.md) or [`nix profile`](../command-ref/new-"
+"cli/nix3-profile.md) (experimental) can be found by any program that follows "
+"the [XDG Base Directory Specification](https://specifications.freedesktop."
+"org/basedir-spec/basedir-spec-latest.html)."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:77
+msgid ""
+"A new command `nix store add` has been added. It replaces `nix store add-"
+"file` and `nix store add-path` which are now deprecated."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:79
+msgid ""
+"A new option [`always-allow-substitutes`](../command-ref/conf-file.md#conf-"
+"always-allow-substitutes) has been added."
+msgstr ""
+
+#: source/release-notes/rl-2.19.md:81
+msgid ""
+"When set to `true`, Nix will always try to substitute a derivation, even if "
+"it has the \\[`allowSubstitutes`\\]{#adv-attr-allowSubstitutes} attribute "
+"set to `false`."
+msgstr ""

@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/installation/env-variables.md:1
+msgid "Environment Variables"
+msgstr ""
+
+#: source/installation/env-variables.md:3
+msgid ""
+"To use Nix, some environment variables should be set. In particular, `PATH` "
+"should contain the directories `prefix/bin` and `~/.nix-profile/bin`. The "
+"first directory contains the Nix tools themselves, while `~/.nix-profile` is "
+"a symbolic link to the current _user environment_ (an automatically "
+"generated package consisting of symlinks to installed packages). The "
+"simplest way to set the required environment variables is to include the "
+"file `prefix/etc/profile.d/nix.sh` in your `~/.profile` (or similar), like "
+"this:"
+msgstr ""
+
+#: source/installation/env-variables.md:17
+msgid "`NIX_SSL_CERT_FILE`"
+msgstr ""
+
+#: source/installation/env-variables.md:19
+msgid ""
+"If you need to specify a custom certificate bundle to account for an HTTPS-"
+"intercepting man in the middle proxy, you must specify the path to the "
+"certificate bundle in the environment variable `NIX_SSL_CERT_FILE`."
+msgstr ""
+
+#: source/installation/env-variables.md:23
+msgid ""
+"If you don't specify a `NIX_SSL_CERT_FILE` manually, Nix will install and "
+"use its own certificate bundle."
+msgstr ""
+
+#: source/installation/env-variables.md:26
+msgid "Set the environment variable and install Nix"
+msgstr ""
+
+#: source/installation/env-variables.md:28
+msgid ""
+"```console\n"
+"$ export NIX_SSL_CERT_FILE=/etc/ssl/my-certificate-bundle.crt\n"
+"$ curl -L https://nixos.org/nix/install | sh\n"
+"```"
+msgstr ""
+
+#: source/installation/env-variables.md:33
+msgid ""
+"In the shell profile and rc files (for example, `/etc/bashrc`, `/etc/"
+"zshrc`), add the following line:"
+msgstr ""
+
+#: source/installation/env-variables.md:37
+msgid "/etc/ssl/my-certificate-bundle.crt"
+msgstr ""
+
+#: source/installation/env-variables.md:40
+msgid "**Note**"
+msgstr ""
+
+#: source/installation/env-variables.md:42
+msgid ""
+"You must not add the export and then do the install, as the Nix installer "
+"will detect the presence of Nix configuration, and abort."
+msgstr ""
+
+#: source/installation/env-variables.md:45
+msgid ""
+"If you use the Nix daemon, you should also add the following to `/etc/nix/"
+"nix.conf`:"
+msgstr ""
+
+#: source/installation/env-variables.md:52
+msgid "Proxy Environment Variables"
+msgstr ""
+
+#: source/installation/env-variables.md:54
+msgid ""
+"The Nix installer has special handling for these proxy-related environment "
+"variables: `http_proxy`, `https_proxy`, `ftp_proxy`, `all_proxy`, "
+"`no_proxy`, `HTTP_PROXY`, `HTTPS_PROXY`, `FTP_PROXY`, `ALL_PROXY`, "
+"`NO_PROXY`."
+msgstr ""
+
+#: source/installation/env-variables.md:59
+msgid ""
+"If any of these variables are set when running the Nix installer, then the "
+"installer will create an override file at `/etc/systemd/system/nix-daemon."
+"service.d/override.conf` so `nix-daemon` will use them."
+msgstr ""

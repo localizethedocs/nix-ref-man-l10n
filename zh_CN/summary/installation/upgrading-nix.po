@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/installation/upgrading.md:1
+msgid "Upgrading Nix"
+msgstr ""
+
+#: source/installation/upgrading.md:3
+msgid "**Note**"
+msgstr ""
+
+#: source/installation/upgrading.md:5
+msgid ""
+"These upgrade instructions apply where Nix was installed following the "
+"[installation instructions in this manual](./index.md)."
+msgstr ""
+
+#: source/installation/upgrading.md:7
+msgid ""
+"Check which Nix version will be installed, for example from one of the "
+"[release channels](http://channels.nixos.org/) such as `nixpkgs-unstable`:"
+msgstr ""
+
+#: source/installation/upgrading.md:9
+msgid ""
+"```console\n"
+"$ nix-shell -p nix -I nixpkgs=channel:nixpkgs-unstable --run \"nix --"
+"version\"\n"
+"nix (Nix) 2.18.1\n"
+"```"
+msgstr ""
+
+#: source/installation/upgrading.md:14
+msgid "**Warning**"
+msgstr ""
+
+#: source/installation/upgrading.md:16
+msgid ""
+"Writing to the [local store](../store/types/local-store.md) with a newer "
+"version of Nix, for example by building derivations with [`nix-build`](../"
+"command-ref/nix-build.md) or [`nix-store --realise`](../command-ref/nix-"
+"store/realise.md), may change the database schema! Reverting to an older "
+"version of Nix may therefore require purging the store database before it "
+"can be used."
+msgstr ""
+
+#: source/installation/upgrading.md:19
+msgid "Linux multi-user"
+msgstr ""
+
+#: source/installation/upgrading.md:28
+msgid "macOS multi-user"
+msgstr ""
+
+#: source/installation/upgrading.md:36
+msgid "Single-user all platforms"
+msgstr ""

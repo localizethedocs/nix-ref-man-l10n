@@ -1,0 +1,1607 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-flake.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-features."
+"md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:8
+msgid "`nix flake` - manage Nix flakes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:10
+msgid "Synopsis"
+msgstr "概要"
+
+#: source/command-ref/new-cli/nix3-flake.md:12
+msgid "`nix flake` \\[_option_...\\] _subcommand_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:14
+msgid "where _subcommand_ is one of the following:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:16
+msgid ""
+"[`nix flake archive`](./nix3-flake-archive.md) - copy a flake and all its "
+"inputs to a store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:17
+msgid ""
+"[`nix flake check`](./nix3-flake-check.md) - check whether the flake "
+"evaluates and run its tests"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:18
+msgid "[`nix flake clone`](./nix3-flake-clone.md) - clone flake repository"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:19
+msgid "[`nix flake info`](./nix3-flake-info.md) - show flake metadata"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:20
+msgid ""
+"[`nix flake init`](./nix3-flake-init.md) - create a flake in the current "
+"directory from a template"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:21
+msgid ""
+"[`nix flake lock`](./nix3-flake-lock.md) - create missing lock file entries"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:22
+msgid "[`nix flake metadata`](./nix3-flake-metadata.md) - show flake metadata"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:23
+msgid ""
+"[`nix flake new`](./nix3-flake-new.md) - create a flake in the specified "
+"directory from a template"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:24
+msgid ""
+"[`nix flake prefetch`](./nix3-flake-prefetch.md) - download the source tree "
+"denoted by a flake reference into the Nix store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:25
+msgid ""
+"[`nix flake prefetch-inputs`](./nix3-flake-prefetch-inputs.md) - fetch the "
+"inputs of a flake"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:26
+msgid ""
+"[`nix flake show`](./nix3-flake-show.md) - show the outputs provided by a "
+"flake"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:27
+msgid "[`nix flake update`](./nix3-flake-update.md) - update flake lock file"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:29
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:31
+msgid ""
+"`nix flake` provides subcommands for creating, modifying and querying _Nix "
+"flakes_. Flakes are the unit for packaging Nix code in a reproducible and "
+"discoverable way. They can have dependencies on other flakes, making it "
+"possible to have multi-repository Nix projects."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:36
+msgid ""
+"A flake is a filesystem tree (typically fetched from a Git repository or a "
+"tarball) that contains a file named `flake.nix` in the root directory. "
+"`flake.nix` specifies some metadata about the flake such as dependencies "
+"(called _inputs_), as well as its _outputs_ (the Nix values such as packages "
+"or NixOS modules provided by the flake)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:42
+msgid "Flake references"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:44
+msgid ""
+"Flake references (_flakerefs_) are a way to specify the location of a flake. "
+"These have two different forms:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:47
+msgid "Attribute set representation"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:49
+#: source/command-ref/new-cli/nix3-flake.md:64
+msgid "Example:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:51
+msgid ""
+"```nix\n"
+"{\n"
+"  type = \"github\";\n"
+"  owner = \"NixOS\";\n"
+"  repo = \"nixpkgs\";\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:59
+msgid ""
+"The only required attribute is `type`. The supported types are listed below."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:62
+msgid "URL-like syntax"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:70
+msgid ""
+"These are used on the command line as a more convenient alternative to the "
+"attribute set representation. For instance, in the command"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:77
+msgid ""
+"`github:NixOS/nixpkgs` is a flake reference (while `hello` is an output "
+"attribute). They are also allowed in the `inputs` attribute of a flake, e.g."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:81
+msgid ""
+"```nix\n"
+"inputs.nixpkgs.url = \"github:NixOS/nixpkgs\";\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:85
+msgid "is equivalent to"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:87
+msgid ""
+"```nix\n"
+"inputs.nixpkgs = {\n"
+"  type = \"github\";\n"
+"  owner = \"NixOS\";\n"
+"  repo = \"nixpkgs\";\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:95
+msgid ""
+"Following [RFC 3986](https://datatracker.ietf.org/doc/html/"
+"rfc3986#section-2.1), characters outside of the allowed range (i.e. neither "
+"[reserved characters](https://datatracker.ietf.org/doc/html/"
+"rfc3986#section-2.2) nor [unreserved characters](https://datatracker.ietf."
+"org/doc/html/rfc3986#section-2.3)) must be percent-encoded."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:100
+#: source/command-ref/new-cli/nix3-flake.md:150
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:102
+msgid ""
+"Here are some examples of flake references in their URL-like representation:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:104
+msgid "`nixpkgs`: The `nixpkgs` entry in the flake registry."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:105
+msgid ""
+"`nixpkgs/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293`: The `nixpkgs` entry in "
+"the flake registry, with its Git revision overridden to a specific value."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:108
+msgid ""
+"`github:NixOS/nixpkgs`: The `master` branch of the `NixOS/nixpkgs` "
+"repository on GitHub."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:110
+msgid ""
+"`github:NixOS/nixpkgs/nixos-20.09`: The `nixos-20.09` branch of the "
+"`nixpkgs` repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:112
+msgid ""
+"`github:NixOS/nixpkgs/pull/357207/head`: The `357207` pull request of the "
+"nixpkgs repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:114
+msgid ""
+"`github:NixOS/nixpkgs/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293`: A specific "
+"revision of the `nixpkgs` repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:116
+msgid ""
+"`github:edolstra/nix-warez?dir=blender`: A flake in a subdirectory of a "
+"GitHub repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:118
+msgid "`git+https://github.com/NixOS/patchelf`: A Git repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:119
+msgid ""
+"`git+https://github.com/NixOS/patchelf?ref=master`: A specific branch of a "
+"Git repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:121
+msgid ""
+"`git+https://github.com/NixOS/patchelf?"
+"ref=master&rev=f34751b88bd07d7f44f5cd3200fb4122bf916c7e`: A specific branch "
+"_and_ revision of a Git repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:123
+msgid ""
+"`git+https://github.com/NixOS/patchelf?ref=refs/tags/0.18.0`: A specific tag "
+"of a Git repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:125
+msgid ""
+"`https://github.com/NixOS/patchelf/archive/master.tar.gz`: A tarball flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:128
+msgid "Path-like syntax"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:130
+msgid ""
+"Flakes corresponding to a local path can also be referred to by a direct "
+"path reference, either `/absolute/path/to/the/flake` or`./relative/path/to/"
+"the/flake`. Note that the leading `./` is mandatory for relative paths. If "
+"it is omitted, the path will be interpreted as [URL-like syntax](#url-like-"
+"syntax), which will cause error messages like this:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:140
+msgid "The semantic of such a path is as follows:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:142
+msgid ""
+"If the directory is part of a Git repository, then the input will be treated "
+"as a `git+file:` URL, otherwise it will be treated as a `path:` url;"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:143
+msgid ""
+"If the directory doesn't contain a `flake.nix` file, then Nix will search "
+"for such a file upwards in the file system hierarchy until it finds any of:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:144
+msgid "The Git repository root, or"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:145
+msgid "The filesystem root (/), or"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:146
+msgid "A folder on a different mount point."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:148
+msgid ""
+"Contrary to URL-like references, path-like flake references can contain "
+"arbitrary unicode characters (except `#` and `?`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:152
+msgid "`.`: The flake to which the current directory belongs."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:153
+msgid "`/home/alice/src/patchelf`: A flake in some other directory."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:154
+msgid ""
+"`./../sub directory/with Ûñî©ôδ€`: A flake in another relative directory "
+"that has Unicode characters in its name."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:157
+msgid "Flake reference attributes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:159
+msgid "The following generic flake reference attributes are supported:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:161
+msgid ""
+"`dir`: The subdirectory of the flake in which `flake.nix` is located. This "
+"parameter enables having multiple flakes in a repository or tarball. The "
+"default is the root directory of the flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:166
+msgid ""
+"`narHash`: The hash of the [Nix Archive (NAR) serialisation](../../store/"
+"file-system-object/content-address.md#serial-nix-archive) (in [SRI](../../"
+"glossary.md#gloss-sri) format) of the contents of the flake. This is useful "
+"for flake types such as tarballs that lack a unique content identifier such "
+"as a Git commit hash."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:173
+msgid ""
+"In addition, the following attributes are common to several flake reference "
+"types:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:176
+msgid "`rev`: A Git or Mercurial commit hash."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:178
+msgid "`ref`: A Git or Mercurial branch or tag name."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:180
+msgid ""
+"Finally, some attributes are typically not specified by the user, but can "
+"occur in _locked_ flake references and are available to Nix code:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:183
+msgid "`revCount`: The number of ancestors of the commit `rev`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:185
+msgid ""
+"`lastModified`: The timestamp (in seconds since the Unix epoch) of the last "
+"modification of this version of the flake. For Git/Mercurial flakes, this is "
+"the commit time of commit _rev_, while for tarball flakes, it's the most "
+"recent timestamp of any file inside the tarball."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:191
+msgid "Types"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:193
+msgid "Currently the `type` attribute can be one of the following:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:195
+msgid ""
+"`indirect`: _The default_. These are symbolic references to flakes that are "
+"looked up in [the flake registries](./nix3-registry.md). These have the form"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:203
+msgid ""
+"These perform a lookup of `<flake-id>` in the flake registry. For example, "
+"`nixpkgs` and `nixpkgs/release-20.09` are indirect flake references. The "
+"specified `rev` and/or `ref` are merged with the entry in the registry; see "
+"[nix registry](./nix3-registry.md) for details."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:209
+msgid "For example, these are valid indirect flake references:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:211
+msgid "`nixpkgs`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:212
+msgid "`nixpkgs/nixos-unstable`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:213
+msgid "`nixpkgs/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:214
+msgid "`nixpkgs/nixos-unstable/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:215
+msgid "`sub/dir` (if a flake named `sub` is in the registry)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:217
+msgid ""
+"<a id=\"path-fetcher\"></a>`path`: arbitrary local directories. The required "
+"attribute `path` specifies the path of the flake. The URL form is"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:224
+msgid ""
+"where _path_ is an absolute path to a directory in the file system "
+"containing a file named `flake.nix`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:227
+msgid ""
+"If the flake at _path_ is not inside a git repository, the `path:` prefix is "
+"implied and can be omitted."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:230
+msgid ""
+"If _path_ is a relative path (i.e. if it does not start with `/`), it is "
+"interpreted as follows:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:233
+msgid ""
+"If _path_ is a command line argument, it is interpreted relative to the "
+"current directory."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:236
+msgid ""
+"If _path_ is used in a `flake.nix`, it is interpreted relative to the "
+"directory containing that `flake.nix`. However, the resolved path must be in "
+"the same tree. For instance, a `flake.nix` in the root of a tree can use "
+"`path:./foo` to access the flake in subdirectory `foo`, but `path:../bar` is "
+"illegal. On the other hand, a flake in the `/foo` directory of a tree can "
+"use `path:../bar` to refer to the flake in `/bar`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:244
+msgid ""
+"Path inputs can be specified with path values in `flake.nix`. Path values "
+"are a syntax for `path` inputs, and they are converted by"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:245
+msgid ""
+"resolving them into relative paths, relative to the base directory of `flake."
+"nix`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:246
+msgid "escaping URL characters (refer to IETF RFC?)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:247
+msgid "prepending `path:`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:249
+msgid ""
+"Note that the allowed syntax for path values in flake `inputs` may be more "
+"restrictive than general Nix, so you may need to use `path:` if your path "
+"contains certain special characters. See [Path literals](../../language/"
+"syntax.md#path-literal)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:251
+msgid ""
+"Note that if you omit `path:`, relative paths must start with `.` to avoid "
+"ambiguity with registry lookups (e.g. `nixpkgs` is a registry lookup; `./"
+"nixpkgs` is a relative path)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:255
+msgid "For example, these are valid path flake references:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:257
+msgid "`path:/home/user/sub/dir`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:258
+msgid "`/home/user/sub/dir` (if `dir/flake.nix` is _not_ in a git repository)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:259
+msgid "`path:sub/dir`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:260
+msgid "`./sub/dir`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:261
+msgid "`path:../parent`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:263
+msgid ""
+"`git`: Git repositories. The location of the repository is specified by the "
+"attribute `url`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:266
+msgid "They have the URL form"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:268
+msgid ""
+"```\n"
+"git(+http|+https|+ssh|+git|+file):(//<server>)?<path>(\\?<params>)?\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:272
+msgid ""
+"If _path_ starts with `/` (or `./` when used as an argument on the command "
+"line) and is a local path to a git repository, the leading `git:` or `+file` "
+"prefixes are implied and can be omitted."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:276
+msgid "The `ref` attribute defaults to resolving the `HEAD` reference."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:278
+msgid ""
+"The `rev` attribute must denote a commit that exists in the branch or tag "
+"specified by the `ref` attribute, since Nix doesn't do a full clone of the "
+"remote repository by default (and the Git protocol doesn't allow fetching a "
+"`rev` without a known `ref`). The default is the commit currently pointed to "
+"by `ref`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:284
+msgid ""
+"When `git+file` is used without specifying `ref` or `rev`, files are fetched "
+"directly from the local `path` as long as they have been added to the Git "
+"repository. If there are uncommitted changes, the reference is treated as "
+"dirty and a warning is printed."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:289
+msgid "For example, the following are valid Git flake references:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:291
+msgid "`git:/home/user/sub/dir`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:292
+msgid "`/home/user/sub/dir` (if `dir/flake.nix` is in a git repository)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:293
+msgid ""
+"`./sub/dir` (when used on the command line and `dir/flake.nix` is in a git "
+"repository)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:294
+msgid "`git+https://example.org/my/repo`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:295
+msgid "`git+https://example.org/my/repo?dir=flake1`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:296
+msgid ""
+"`git+https://example.org/my/repo?shallow=1` A shallow clone of the "
+"repository. For large repositories, the shallow clone option can "
+"significantly speed up fresh clones compared to non-shallow clones, while "
+"still providing faster updates than other fetch methods such as `tarball:` "
+"or `github:`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:299
+msgid "`git+ssh://git@github.com/NixOS/nix?ref=v1.2.3`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:300
+msgid ""
+"`git://github.com/edolstra/dwarffs?"
+"ref=unstable&rev=e486d8d40e626a20e06d792db8cc5ac5aba9a5b4`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:301
+msgid "`git+file:///home/my-user/some-repo/some-repo`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:303
+msgid ""
+"`mercurial`: Mercurial repositories. The URL form is similar to the `git` "
+"type, except that the URL schema must be one of `hg+http`, `hg+https`, "
+"`hg+ssh` or `hg+file`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:307
+msgid ""
+"`tarball`: Tarballs. The location of the tarball is specified by the "
+"attribute `url`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:310
+msgid ""
+"In URL form, the schema must be `tarball+http://`, `tarball+https://` or "
+"`tarball+file://`. If the extension corresponds to a known archive format (`."
+"zip`, `.tar`, `.tgz`, `.tar.gz`, `.tar.xz`, `.tar.bz2` or `.tar.zst`), then "
+"the `tarball+` can be dropped."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:315
+msgid ""
+"This can also be used to set the location of gitea/forgejo branches. [See "
+"here](../../protocols/tarball-fetcher.md#gitea-and-forgejo-support)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:317
+msgid ""
+"`file`: Plain files or directory tarballs, either over http(s) or from the "
+"local disk."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:320
+msgid ""
+"In URL form, the schema must be `file+http://`, `file+https://` or "
+"`file+file://`. If the extension doesn’t correspond to a known archive "
+"format (as defined by the `tarball` fetcher), then the `file+` prefix can be "
+"dropped."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:324
+msgid ""
+"`github`: A more efficient way to fetch repositories from GitHub. The "
+"following attributes are required:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:327
+#: source/command-ref/new-cli/nix3-flake.md:360
+msgid "`owner`: The owner of the repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:329
+#: source/command-ref/new-cli/nix3-flake.md:362
+#: source/command-ref/new-cli/nix3-flake.md:393
+msgid "`repo`: The name of the repository."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:331
+msgid ""
+"These are downloaded as tarball archives, rather than through Git. This is "
+"often much faster and uses less disk space since it doesn't require fetching "
+"the entire history of the repository. On the other hand, it doesn't allow "
+"incremental fetching (but full downloads are often faster than incremental "
+"fetches!)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:337
+msgid "The URL syntax for `github` flakes is:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:343
+msgid ""
+"`<rev-or-ref>` specifies the name of a branch or tag (`ref`), or a commit "
+"hash (`rev`). Note that unlike Git, GitHub allows fetching by commit hash "
+"without specifying a branch or tag."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:347
+msgid ""
+"You can also specify `host` as a parameter, to point to a custom GitHub "
+"Enterprise server."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:350
+#: source/command-ref/new-cli/nix3-flake.md:376
+#: source/command-ref/new-cli/nix3-flake.md:412
+msgid "Some examples:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:352
+msgid "`github:edolstra/dwarffs`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:353
+msgid "`github:edolstra/dwarffs/unstable`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:354
+msgid "`github:edolstra/dwarffs/d3f2baba8f425779026c6ec04021b2e927f61e31`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:355
+msgid "`github:internal/project?host=company-github.example.org`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:357
+msgid ""
+"`gitlab`: Similar to `github`, is a more efficient way to fetch GitLab "
+"repositories. The following attributes are required:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:364
+#: source/command-ref/new-cli/nix3-flake.md:395
+msgid "Like `github`, these are downloaded as tarball archives."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:366
+msgid "The URL syntax for `gitlab` flakes is:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:368
+msgid "`gitlab:<owner>/<repo>(/<rev-or-ref>)?(\\?<params>)?`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:370
+#: source/command-ref/new-cli/nix3-flake.md:401
+msgid ""
+"`<rev-or-ref>` works the same as `github`. Either a branch or tag name "
+"(`ref`), or a commit hash (`rev`) can be specified."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:373
+msgid ""
+"Since GitLab allows for self-hosting, you can specify `host` as a parameter, "
+"to point to any instances other than `gitlab.com`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:378
+msgid "`gitlab:veloren/veloren`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:379
+msgid "`gitlab:veloren/veloren/master`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:380
+msgid "`gitlab:veloren/veloren/80a4d7f13492d916e47d6195be23acae8001985a`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:381
+msgid "`gitlab:openldap/openldap?host=git.openldap.org`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:383
+msgid ""
+"When accessing a project in a (nested) subgroup, make sure to URL-encode any "
+"slashes, i.e. replace `/` with `%2F`:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:386
+msgid "`gitlab:veloren%2Fdev/rfcs`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:388
+msgid ""
+"`sourcehut`: Similar to `github`, is a more efficient way to fetch SourceHut "
+"repositories. The following attributes are required:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:391
+msgid "`owner`: The owner of the repository (including leading `~`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:397
+msgid "The URL syntax for `sourcehut` flakes is:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:399
+msgid "`sourcehut:<owner>/<repo>(/<rev-or-ref>)?(\\?<params>)?`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:404
+msgid ""
+"Since SourceHut allows for self-hosting, you can specify `host` as a "
+"parameter, to point to any instances other than `git.sr.ht`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:407
+msgid ""
+"Currently, `ref` name resolution only works for Git repositories. You can "
+"refer to Mercurial repositories by simply changing `host` to `hg.sr.ht` (or "
+"any other Mercurial instance). With the caveat that you must explicitly "
+"specify a commit hash (`rev`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:414
+msgid "`sourcehut:~misterio/nix-colors`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:415
+msgid "`sourcehut:~misterio/nix-colors/main`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:416
+msgid "`sourcehut:~misterio/nix-colors?host=git.example.org`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:417
+msgid ""
+"`sourcehut:~misterio/nix-colors/182b4b8709b8ffe4e9774a4c5d6877bf6bb9a21c`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:418
+msgid ""
+"`sourcehut:~misterio/nix-colors/21c1a380a6915d890d408e9f22203436a35bb2de?"
+"host=hg.sr.ht`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:420
+msgid "Flake format"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:422
+msgid ""
+"As an example, here is a simple `flake.nix` that depends on the Nixpkgs "
+"flake and provides a single package (i.e. an [installable](./nix."
+"md#installables) derivation):"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:426
+msgid ""
+"```nix\n"
+"{\n"
+"  description = \"A flake for building Hello World\";\n"
+"\n"
+"  inputs.nixpkgs.url = \"github:NixOS/nixpkgs/nixos-20.03\";\n"
+"\n"
+"  outputs = { self, nixpkgs }: {\n"
+"\n"
+"    packages.x86_64-linux.default =\n"
+"      # Notice the reference to nixpkgs here.\n"
+"      with import nixpkgs { system = \"x86_64-linux\"; };\n"
+"      stdenv.mkDerivation {\n"
+"        name = \"hello\";\n"
+"        src = self;\n"
+"        buildPhase = \"gcc -o hello ./hello.c\";\n"
+"        installPhase = \"mkdir -p $out/bin; install -t $out/bin hello\";\n"
+"      };\n"
+"\n"
+"  };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:448
+msgid "The following attributes are supported in `flake.nix`:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:450
+msgid "`description`: A short, one-line description of the flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:452
+msgid ""
+"`inputs`: An attrset specifying the dependencies of the flake (described "
+"below)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:455
+msgid ""
+"`outputs`: A function that, given an attribute set containing the outputs of "
+"each of the input flakes keyed by their identifier, yields the Nix values "
+"provided by this flake. Thus, in the example above, `inputs.nixpkgs` "
+"contains the result of the call to the `outputs` function of the `nixpkgs` "
+"flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:461
+msgid ""
+"In addition to the outputs of each input, each input in `inputs` also "
+"contains some metadata about the inputs. These are:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:464
+msgid ""
+"`outPath`: The path in the Nix store of the flake's source tree. This way, "
+"the attribute set can be passed to `import` as if it was a path, as in the "
+"example above (`import nixpkgs`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:468
+msgid "`rev`: The commit hash of the flake's repository, if applicable."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:470
+msgid ""
+"`revCount`: The number of ancestors of the revision `rev`. This is not "
+"available for `github` repositories, since they're fetched as tarballs "
+"rather than as Git repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:474
+msgid ""
+"`lastModifiedDate`: The commit time of the revision `rev`, in the format "
+"`%Y%m%d%H%M%S` (e.g. `20181231100934`). Unlike `revCount`, this is available "
+"for both Git and GitHub repositories, so it's useful for generating "
+"(hopefully) monotonically increasing version strings."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:480
+msgid ""
+"`lastModified`: The commit time of the revision `rev` as an integer denoting "
+"the number of seconds since 1970."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:483
+msgid ""
+"`narHash`: The SHA-256 (in [SRI](../../glossary.md#gloss-sri) format) of the "
+"[Nix Archive (NAR) serialisation](../../store/file-system-object/content-"
+"address.md#serial-nix-archive) NAR serialization of the flake's source tree."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:487
+msgid ""
+"The value returned by the `outputs` function must be an attribute set. The "
+"attributes can have arbitrary values; however, various `nix` subcommands "
+"require specific attributes to have a specific value (e.g. `packages.x86_64-"
+"linux` must be an attribute set of derivations built for the `x86_64-linux` "
+"platform)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:493
+msgid ""
+"`nixConfig`: a set of `nix.conf` options to be set when evaluating any part "
+"of a flake. In the interests of security, only a small set of set of options "
+"is allowed to be set without confirmation so long as [`accept-flake-config`]"
+"(../../command-ref/conf-file.md#conf-accept-flake-config) is not enabled in "
+"the global configuration:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:496
+msgid "[`bash-prompt`](../../command-ref/conf-file.md#conf-bash-prompt)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:497
+msgid ""
+"[`bash-prompt-prefix`](../../command-ref/conf-file.md#conf-bash-prompt-"
+"prefix)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:498
+msgid ""
+"[`bash-prompt-suffix`](../../command-ref/conf-file.md#conf-bash-prompt-"
+"suffix)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:499
+msgid "[`flake-registry`](../../command-ref/conf-file.md#conf-flake-registry)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:500
+msgid ""
+"[`commit-lock-file-summary`](../../command-ref/conf-file.md#conf-commit-lock-"
+"file-summary)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:502
+msgid "Flake inputs"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:504
+msgid ""
+"The attribute `inputs` specifies the dependencies of a flake, as an attrset "
+"mapping input names to flake references. For example, the following "
+"specifies a dependency on the `nixpkgs` and `import-cargo` repositories:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:509
+msgid ""
+"```nix\n"
+"# A GitHub repository.\n"
+"inputs.import-cargo = {\n"
+"  type = \"github\";\n"
+"  owner = \"edolstra\";\n"
+"  repo = \"import-cargo\";\n"
+"};\n"
+"\n"
+"# An indirection through the flake registry.\n"
+"inputs.nixpkgs = {\n"
+"  type = \"indirect\";\n"
+"  id = \"nixpkgs\";\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:524
+msgid "Alternatively, you can use the URL-like syntax:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:526
+msgid ""
+"```nix\n"
+"inputs.import-cargo.url = \"github:edolstra/import-cargo\";\n"
+"inputs.nixpkgs.url = \"nixpkgs\";\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:531
+msgid ""
+"Each input is fetched, evaluated and passed to the `outputs` function as a "
+"set of attributes with the same name as the corresponding input. The special "
+"input named `self` refers to the outputs and source tree of _this_ flake. "
+"Thus, a typical `outputs` function looks like this:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:543
+msgid ""
+"It is also possible to omit an input entirely and _only_ list it as expected "
+"function argument to `outputs`. Thus,"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:550
+msgid "without an `inputs.nixpkgs` attribute is equivalent to"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:552
+msgid ""
+"```nix\n"
+"inputs.nixpkgs = {\n"
+"  type = \"indirect\";\n"
+"  id = \"nixpkgs\";\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:559
+msgid ""
+"Repositories that don't contain a `flake.nix` can also be used as inputs, by "
+"setting the input's `flake` attribute to `false`:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:562
+msgid ""
+"```nix\n"
+"inputs.grcov = {\n"
+"  type = \"github\";\n"
+"  owner = \"mozilla\";\n"
+"  repo = \"grcov\";\n"
+"  flake = false;\n"
+"};\n"
+"\n"
+"outputs = { self, nixpkgs, grcov }: {\n"
+"  packages.x86_64-linux.grcov = stdenv.mkDerivation {\n"
+"    src = grcov;\n"
+"    ...\n"
+"  };\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:578
+msgid ""
+"Transitive inputs can be overridden from a `flake.nix` file. For example, "
+"the following overrides the `nixpkgs` input of the `nixops` input:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:582
+msgid ""
+"```nix\n"
+"inputs.nixops.inputs.nixpkgs = {\n"
+"  type = \"github\";\n"
+"  owner = \"my-org\";\n"
+"  repo = \"nixpkgs\";\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:590
+msgid ""
+"It is also possible to \"inherit\" an input from another input. This is "
+"useful to minimize flake dependencies. For example, the following sets the "
+"`nixpkgs` input of the top-level flake to be equal to the `nixpkgs` input of "
+"the `dwarffs` input of the top-level flake:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:595
+msgid ""
+"```nix\n"
+"inputs.nixpkgs.follows = \"dwarffs/nixpkgs\";\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:599
+msgid ""
+"The value of the `follows` attribute is a `/`\\-separated sequence of input "
+"names denoting the path of inputs to be followed from the root flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:603
+msgid "Self-attributes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:605
+msgid ""
+"Flakes can declare attributes about themselves that affect how they are "
+"fetched. These attributes are specified using the special `self` input and "
+"are retroactively applied to it:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:616
+msgid "The following self-attributes are supported:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:618
+msgid ""
+"`submodules`: A Boolean denoting whether Git submodules should be fetched "
+"when this flake is used as an input. When set to `true`, Git submodules will "
+"be automatically fetched without requiring callers to specify `submodules=1` "
+"in the flake reference URL. Defaults to `false`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:620
+msgid ""
+"`lfs`: A Boolean denoting whether Git LFS (Large File Storage) files should "
+"be fetched when this flake is used as an input. When set to `true`, Git LFS "
+"files will be automatically fetched. Defaults to `false`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:622
+msgid ""
+"These self-attributes eliminate the need for consumers of your flake to "
+"manually specify fetching options in their flake references."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:624
+msgid "Overrides and `follows` can be combined, e.g."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:626
+msgid ""
+"```nix\n"
+"inputs.nixops.inputs.nixpkgs.follows = \"dwarffs/nixpkgs\";\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:630
+msgid ""
+"sets the `nixpkgs` input of `nixops` to be the same as the `nixpkgs` input "
+"of `dwarffs`. It is worth noting, however, that it is generally not useful "
+"to eliminate transitive `nixpkgs` flake inputs in this way. Most flakes "
+"provide their functionality through Nixpkgs overlays or NixOS modules, which "
+"are composed into the top-level flake's `nixpkgs` input; so their own "
+"`nixpkgs` input is usually irrelevant."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:637
+msgid "Lock files"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:639
+msgid ""
+"Inputs specified in `flake.nix` are typically \"unlocked\" in the sense that "
+"they don't specify an exact revision. To ensure reproducibility, Nix will "
+"automatically generate and use a _lock file_ called `flake.lock` in the "
+"flake's directory. The lock file is a UTF-8 JSON file. It contains a graph "
+"structure isomorphic to the graph of dependencies of the root flake. Each "
+"node in the graph (except the root node) maps the (usually) unlocked input "
+"specifications in `flake.nix` to locked input specifications. Each node also "
+"contains some metadata, such as the dependencies (outgoing edges) of the "
+"node."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:650
+msgid ""
+"For example, if `flake.nix` has the inputs in the example above, then the "
+"resulting lock file might be:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:655
+msgid "\"version\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:656
+msgid "\"root\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:656
+#: source/command-ref/new-cli/nix3-flake.md:658
+msgid "\"n1\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:657
+msgid "\"nodes\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:659
+#: source/command-ref/new-cli/nix3-flake.md:666
+#: source/command-ref/new-cli/nix3-flake.md:681
+#: source/command-ref/new-cli/nix3-flake.md:697
+msgid "\"inputs\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:660
+#: source/command-ref/new-cli/nix3-flake.md:669
+#: source/command-ref/new-cli/nix3-flake.md:676
+msgid "\"nixpkgs\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:660
+#: source/command-ref/new-cli/nix3-flake.md:665
+msgid "\"n2\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:661
+#: source/command-ref/new-cli/nix3-flake.md:684
+#: source/command-ref/new-cli/nix3-flake.md:692
+msgid "\"import-cargo\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:661
+#: source/command-ref/new-cli/nix3-flake.md:680
+msgid "\"n3\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:662
+#: source/command-ref/new-cli/nix3-flake.md:700
+#: source/command-ref/new-cli/nix3-flake.md:708
+msgid "\"grcov\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:662
+#: source/command-ref/new-cli/nix3-flake.md:696
+msgid "\"n4\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:667
+#: source/command-ref/new-cli/nix3-flake.md:682
+#: source/command-ref/new-cli/nix3-flake.md:698
+msgid "\"locked\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:668
+#: source/command-ref/new-cli/nix3-flake.md:683
+#: source/command-ref/new-cli/nix3-flake.md:691
+#: source/command-ref/new-cli/nix3-flake.md:699
+#: source/command-ref/new-cli/nix3-flake.md:707
+msgid "\"owner\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:668
+#: source/command-ref/new-cli/nix3-flake.md:683
+#: source/command-ref/new-cli/nix3-flake.md:691
+msgid "\"edolstra\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:669
+#: source/command-ref/new-cli/nix3-flake.md:684
+#: source/command-ref/new-cli/nix3-flake.md:692
+#: source/command-ref/new-cli/nix3-flake.md:700
+#: source/command-ref/new-cli/nix3-flake.md:708
+msgid "\"repo\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:670
+#: source/command-ref/new-cli/nix3-flake.md:685
+#: source/command-ref/new-cli/nix3-flake.md:701
+msgid "\"rev\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:670
+msgid "\"7f8d4b088e2df7fdb6b513bc2d6941f1d422a013\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:671
+#: source/command-ref/new-cli/nix3-flake.md:677
+#: source/command-ref/new-cli/nix3-flake.md:686
+#: source/command-ref/new-cli/nix3-flake.md:693
+#: source/command-ref/new-cli/nix3-flake.md:702
+#: source/command-ref/new-cli/nix3-flake.md:709
+msgid "\"type\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:671
+#: source/command-ref/new-cli/nix3-flake.md:686
+#: source/command-ref/new-cli/nix3-flake.md:693
+#: source/command-ref/new-cli/nix3-flake.md:702
+#: source/command-ref/new-cli/nix3-flake.md:709
+msgid "\"github\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:672
+#: source/command-ref/new-cli/nix3-flake.md:687
+#: source/command-ref/new-cli/nix3-flake.md:703
+msgid "\"lastModified\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:673
+#: source/command-ref/new-cli/nix3-flake.md:688
+#: source/command-ref/new-cli/nix3-flake.md:704
+msgid "\"narHash\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:673
+msgid "\"sha256-OnpEWzNxF/AU4KlqBXM2s5PWvfI5/BS6xQrPvkF5tO8=\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:675
+#: source/command-ref/new-cli/nix3-flake.md:690
+#: source/command-ref/new-cli/nix3-flake.md:706
+msgid "\"original\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:676
+msgid "\"id\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:677
+msgid "\"indirect\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:685
+msgid "\"8abf7b3a8cbe1c8a885391f826357a74d382a422\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:688
+msgid "\"sha256-wIXWOpX9rRjK5NDsL6WzuuBJl2R0kUCnlpZUrASykSc=\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:699
+#: source/command-ref/new-cli/nix3-flake.md:707
+msgid "\"mozilla\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:701
+msgid "\"989a84bb29e95e392589c4e73c29189fd69a1d4e\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:704
+msgid "\"sha256-235uMxYlHxJ5y92EXZWAYEsEb6mm+b069GAd+BOIOxI=\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:711
+msgid "\"flake\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:717
+msgid ""
+"This graph has 4 nodes: the root flake, and its 3 dependencies. The nodes "
+"have arbitrary labels (e.g. `n1`). The label of the root node of the graph "
+"is specified by the `root` attribute. Nodes contain the following fields:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:722
+msgid ""
+"`inputs`: The dependencies of this node, as a mapping from input names (e.g. "
+"`nixpkgs`) to node labels (e.g. `n2`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:725
+msgid ""
+"`original`: The original input specification from `flake.nix`, as a set of "
+"`builtins.fetchTree` arguments."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:728
+msgid ""
+"`locked`: The locked input specification, as a set of `builtins.fetchTree` "
+"arguments. Thus, in the example above, when we build this flake, the input "
+"`nixpkgs` is mapped to revision `7f8d4b088e2df7fdb6b513bc2d6941f1d422a013` "
+"of the `edolstra/nixpkgs` repository on GitHub."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:734
+msgid ""
+"It also includes the attribute `narHash`, specifying the expected contents "
+"of the tree in the Nix store (as computed by `nix hash-path`), and may "
+"include input-type-specific attributes such as the `lastModified` or "
+"`revCount`. The main reason for these attributes is to allow flake inputs to "
+"be substituted from a binary cache: `narHash` allows the store path to be "
+"computed, while the other attributes are necessary because they provide "
+"information not stored in the store path."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:743
+msgid ""
+"The attributes in `locked` are considered \"final\", meaning that they are "
+"the only ones that are passed via the arguments of the `outputs` function of "
+"a flake. For instance, if `locked` contains a `lastModified` attribute while "
+"the fetcher does not return a `lastModified` attribute, then the "
+"`lastModified` attribute will be passed to the `outputs` function. "
+"Conversely, if `locked` does _not_ contain a `lastModified` attribute while "
+"the fetcher _does_ return a `lastModified` attribute, then no `lastModified` "
+"attribute will be passed. If `locked` contains a `lastModified` attribute "
+"and the fetcher returns a `lastModified` attribute, then they must have the "
+"same value."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:748
+msgid ""
+"`flake`: A Boolean denoting whether this is a flake or non-flake dependency. "
+"Corresponds to the `flake` attribute in the `inputs` attribute in `flake."
+"nix`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:752
+msgid ""
+"The `original` and `locked` attributes are omitted for the root node. This "
+"is because we cannot record the commit hash or content hash of the root "
+"flake, since modifying `flake.lock` will invalidate these."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:756
+msgid ""
+"The graph representation of lock files allows circular dependencies between "
+"flakes. For example, here are two flakes that reference each other:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:760
+msgid ""
+"```nix\n"
+"{\n"
+"  inputs.b = ... location of flake B ...;\n"
+"  # Tell the 'b' flake not to fetch 'a' again, to ensure its 'a' is\n"
+"  # *this* 'a'.\n"
+"  inputs.b.inputs.a.follows = \"\";\n"
+"  outputs = { self, b }: {\n"
+"    foo = 123 + b.bar;\n"
+"    xyzzy = 1000;\n"
+"  };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:773
+msgid "and"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:775
+msgid ""
+"```nix\n"
+"{\n"
+"  inputs.a = ... location of flake A ...;\n"
+"  inputs.a.inputs.b.follows = \"\";\n"
+"  outputs = { self, a }: {\n"
+"    bar = 456 + a.xyzzy;\n"
+"  };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:785
+msgid ""
+"Lock files transitively lock direct as well as indirect dependencies. That "
+"is, if a lock file exists and is up to date, Nix will not look at the lock "
+"files of dependencies. However, lock file generation itself _does_ use the "
+"lock files of dependencies by default."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:793
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:795
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:797
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:799
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:801
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:803
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:805
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:807
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:809
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:811
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:813
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:815
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:817
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:819
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:821
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:823
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:825
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:827
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:829
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:831
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:833
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:835
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:837
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:839
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-flake.md:841
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

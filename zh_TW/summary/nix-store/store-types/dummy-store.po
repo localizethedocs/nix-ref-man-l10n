@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/dummy-store.md:1
+msgid "Dummy Store"
+msgstr ""
+
+#: source/store/types/dummy-store.md:3
+msgid "**Store URL format**: `dummy://`"
+msgstr ""
+
+#: source/store/types/dummy-store.md:5
+msgid ""
+"This store type represents a store in memory. Store objects can be read and "
+"written, but only so long as the store is open. Once the store is closed, "
+"all data will be discarded."
+msgstr ""
+
+#: source/store/types/dummy-store.md:9
+msgid ""
+"It's useful when you want to use the Nix evaluator when no actual Nix store "
+"exists, e.g."
+msgstr ""
+
+#: source/store/types/dummy-store.md:11
+msgid ""
+"```console\n"
+"# nix eval --store dummy:// --expr '1 + 2'\n"
+"```"
+msgstr ""
+
+#: source/store/types/dummy-store.md:15
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/dummy-store.md:17
+msgid ""
+"<span id=\"store-dummy-store-path-info-cache-size\">[`path-info-cache-size`]"
+"(#store-dummy-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/dummy-store.md:19
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/dummy-store.md:21
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/dummy-store.md:23
+msgid ""
+"<span id=\"store-dummy-store-priority\">[`priority`](#store-dummy-store-"
+"priority)</span>"
+msgstr ""
+
+#: source/store/types/dummy-store.md:25
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/dummy-store.md:28
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/dummy-store.md:30
+msgid ""
+"<span id=\"store-dummy-store-read-only\">[`read-only`](#store-dummy-store-"
+"read-only)</span>"
+msgstr ""
+
+#: source/store/types/dummy-store.md:32
+msgid ""
+"Make any sort of write fail instead of succeeding. No additional memory will "
+"be used, because no information needs to be stored."
+msgstr ""
+
+#: source/store/types/dummy-store.md:35
+msgid "**Default:** `true`"
+msgstr ""
+
+#: source/store/types/dummy-store.md:37
+msgid ""
+"<span id=\"store-dummy-store-store\">[`store`](#store-dummy-store-store)</"
+"span>"
+msgstr ""
+
+#: source/store/types/dummy-store.md:39
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/dummy-store.md:41
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/dummy-store.md:43
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/dummy-store.md:45
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/dummy-store.md:47
+msgid ""
+"<span id=\"store-dummy-store-system-features\">[`system-features`](#store-"
+"dummy-store-system-features)</span>"
+msgstr ""
+
+#: source/store/types/dummy-store.md:49
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/dummy-store.md:51
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/dummy-store.md:53
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/dummy-store.md:55
+msgid ""
+"<span id=\"store-dummy-store-trusted\">[`trusted`](#store-dummy-store-"
+"trusted)</span>"
+msgstr ""
+
+#: source/store/types/dummy-store.md:57
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/dummy-store.md:62 source/store/types/dummy-store.md:68
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/dummy-store.md:64
+msgid ""
+"<span id=\"store-dummy-store-want-mass-query\">[`want-mass-query`](#store-"
+"dummy-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/dummy-store.md:66
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""

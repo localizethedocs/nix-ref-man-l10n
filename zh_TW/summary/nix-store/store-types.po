@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/index.md:1
+msgid "Nix supports different types of stores:"
+msgstr ""
+
+#: source/store/types/index.md:3
+msgid "[Dummy Store](./dummy-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:4
+msgid ""
+"[Experimental Local Overlay Store](./experimental-local-overlay-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:5
+msgid "[Experimental SSH Store](./experimental-ssh-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:6
+msgid ""
+"[Experimental SSH Store with filesystem mounted](./experimental-ssh-store-"
+"with-filesystem-mounted.md)"
+msgstr ""
+
+#: source/store/types/index.md:7
+msgid "[HTTP Binary Cache Store](./http-binary-cache-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:8
+msgid "[Local Binary Cache Store](./local-binary-cache-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:9
+msgid "[Local Daemon Store](./local-daemon-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:10
+msgid "[Local Store](./local-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:11
+msgid "[S3 Binary Cache Store](./s3-binary-cache-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:12
+msgid "[SSH Store](./ssh-store.md)"
+msgstr ""
+
+#: source/store/types/index.md:14
+msgid "Store URL format"
+msgstr ""
+
+#: source/store/types/index.md:16
+msgid "Stores are specified using a URL-like syntax. For example, the command"
+msgstr ""
+
+#: source/store/types/index.md:18
+msgid ""
+"```console\n"
+"# nix path-info --store https://cache.nixos.org/ --json \\\n"
+"  /nix/store/1542dip9i7k4f24y6hqgd04hmvid9hr5-coreutils-9.1\n"
+"```"
+msgstr ""
+
+#: source/store/types/index.md:23
+msgid ""
+"fetches information about a store path in the HTTP binary cache located at "
+"https://cache.nixos.org/, which is a type of store."
+msgstr ""
+
+#: source/store/types/index.md:26
+msgid ""
+"Store URLs can specify **store settings** using URL query strings, i.e. by "
+"appending `?name1=value1&name2=value2&...` to the URL. For instance,"
+msgstr ""
+
+#: source/store/types/index.md:30
+msgid ""
+"```\n"
+"--store ssh://machine.example.org?ssh-key=/path/to/my/key\n"
+"```"
+msgstr ""
+
+#: source/store/types/index.md:34
+msgid ""
+"tells Nix to access the store on a remote machine via the SSH protocol, "
+"using `/path/to/my/key` as the SSH private key. The supported settings for "
+"each store type are documented below."
+msgstr ""
+
+#: source/store/types/index.md:38
+msgid "`auto` special URL"
+msgstr ""
+
+#: source/store/types/index.md:40
+msgid ""
+"The special store URL `auto` causes Nix to automatically select a store as "
+"follows:"
+msgstr ""
+
+#: source/store/types/index.md:43
+msgid ""
+"Use the [local store](./local-store.md) `/nix/store` if `/nix/var/nix` is "
+"writable by the current user."
+msgstr ""
+
+#: source/store/types/index.md:46
+msgid ""
+"Otherwise, if `/nix/var/nix/daemon-socket/socket` exists, [connect to the "
+"Nix daemon listening on that socket](./local-daemon-store.md)."
+msgstr ""
+
+#: source/store/types/index.md:49
+msgid ""
+"Otherwise, on Linux only, use the [local chroot store](../../store/types/"
+"local-store.md#chroot) `~/.local/share/nix/root`, which will be created "
+"automatically if it does not exist."
+msgstr ""
+
+#: source/store/types/index.md:53
+msgid "Otherwise, use the [local store](./local-store.md) `/nix/store`."
+msgstr ""

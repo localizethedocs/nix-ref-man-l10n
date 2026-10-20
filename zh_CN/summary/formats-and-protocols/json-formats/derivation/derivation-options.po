@@ -1,0 +1,2289 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/derivation/options.md:1
+msgid "Derivation Options"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:3
+msgid "[1. Property `outputChecks`](#outputChecks)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:4
+msgid "[1.1. Property `Output Checks For All Outputs`](#outputChecks_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:5
+msgid "[1.1.1. Property `forAllOutputs`](#outputChecks_oneOf_i0_forAllOutputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:6
+msgid ""
+"[1.1.1.1. Property `ignoreSelfRefs`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_ignoreSelfRefs)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:7
+msgid ""
+"[1.1.1.2. Property `maxSize`](#outputChecks_oneOf_i0_forAllOutputs_maxSize)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:8
+msgid ""
+"[1.1.1.3. Property `maxClosureSize`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_maxClosureSize)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:9
+msgid ""
+"[1.1.1.4. Property `allowedReferences`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:10
+msgid ""
+"[1.1.1.4.1. Property `item 0`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:11
+msgid ""
+"[1.1.1.4.1.1. drvRef]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:12
+msgid ""
+"[1.1.1.4.1.1.1. Property `Current derivation Output Reference`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:13
+msgid ""
+"[1.1.1.4.1.1.1.1. Property `drvPath`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0_drvPath)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:14
+msgid ""
+"[1.1.1.4.1.1.1.2. Property `output`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0_output)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:15
+msgid ""
+"[1.1.1.4.1.1.2. Property `Deriving Path`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:16
+msgid ""
+"[1.1.1.4.1.1.2.1. Property `Constant`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:17
+msgid ""
+"[1.1.1.4.1.1.2.2. Property `Output`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:18
+msgid ""
+"[1.1.1.4.1.1.2.2.1. Property `drvPath`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1_drvPath)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:19
+msgid ""
+"[1.1.1.4.1.1.2.2.2. Property `output`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1_output)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:20
+msgid ""
+"[1.1.1.4.2. Property `item 1`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:21
+msgid ""
+"[1.1.1.5. Property `allowedRequisites`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:22
+msgid ""
+"[1.1.1.5.1. Property `item 0`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:23
+msgid ""
+"[1.1.1.5.1.1. drvRef]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i0_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:24
+msgid ""
+"[1.1.1.5.2. Property `item 1`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:25
+msgid ""
+"[1.1.1.6. Property `disallowedReferences`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_disallowedReferences)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:26
+msgid ""
+"[1.1.1.6.1. drvRef]"
+"(#outputChecks_oneOf_i0_forAllOutputs_disallowedReferences_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:27
+msgid ""
+"[1.1.1.7. Property `disallowedRequisites`]"
+"(#outputChecks_oneOf_i0_forAllOutputs_disallowedRequisites)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:28
+msgid ""
+"[1.1.1.7.1. drvRef]"
+"(#outputChecks_oneOf_i0_forAllOutputs_disallowedRequisites_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:29
+msgid "[1.2. Property `Output Checks Per Output`](#outputChecks_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:30
+msgid "[1.2.1. Property `perOutput`](#outputChecks_oneOf_i1_perOutput)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:31
+msgid ""
+"[1.2.1.1. Property `Output Check Specification`]"
+"(#outputChecks_oneOf_i1_perOutput_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:32
+msgid "[2. Property `unsafeDiscardReferences`](#unsafeDiscardReferences)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:33
+msgid ""
+"[2.1. Property `additionalProperties`]"
+"(#unsafeDiscardReferences_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:34
+msgid ""
+"[2.1.1. additionalProperties items]"
+"(#unsafeDiscardReferences_additionalProperties_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:35
+msgid "[3. Property `passAsFile`](#passAsFile)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:36
+msgid "[3.1. passAsFile items](#passAsFile_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:37
+msgid "[4. Property `exportReferencesGraph`](#exportReferencesGraph)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:38
+msgid ""
+"[4.1. Property `additionalProperties`]"
+"(#exportReferencesGraph_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:39
+msgid ""
+"[4.1.1. Deriving Path](#exportReferencesGraph_additionalProperties_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:40
+msgid "[5. Property `additionalSandboxProfile`](#additionalSandboxProfile)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:41
+msgid "[6. Property `noChroot`](#noChroot)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:42
+msgid "[7. Property `impureHostDeps`](#impureHostDeps)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:43
+msgid "[7.1. impureHostDeps items](#impureHostDeps_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:44
+msgid "[8. Property `impureEnvVars`](#impureEnvVars)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:45
+msgid "[8.1. impureEnvVars items](#impureEnvVars_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:46
+msgid "[9. Property `allowLocalNetworking`](#allowLocalNetworking)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:47
+msgid "[10. Property `requiredSystemFeatures`](#requiredSystemFeatures)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:48
+msgid "[10.1. requiredSystemFeatures items](#requiredSystemFeatures_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:49
+msgid "[11. Property `preferLocalBuild`](#preferLocalBuild)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:50
+msgid "[12. Property `allowSubstitutes`](#allowSubstitutes)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:52
+msgid "**Title:** Derivation Options"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:56
+#: source/protocols/json/derivation/options.md:91
+#: source/protocols/json/derivation/options.md:109
+#: source/protocols/json/derivation/options.md:125
+#: source/protocols/json/derivation/options.md:148
+#: source/protocols/json/derivation/options.md:159
+#: source/protocols/json/derivation/options.md:174
+#: source/protocols/json/derivation/options.md:189
+#: source/protocols/json/derivation/options.md:205
+#: source/protocols/json/derivation/options.md:224
+#: source/protocols/json/derivation/options.md:240
+#: source/protocols/json/derivation/options.md:257
+#: source/protocols/json/derivation/options.md:270
+#: source/protocols/json/derivation/options.md:281
+#: source/protocols/json/derivation/options.md:299
+#: source/protocols/json/derivation/options.md:316
+#: source/protocols/json/derivation/options.md:333
+#: source/protocols/json/derivation/options.md:344
+#: source/protocols/json/derivation/options.md:353
+#: source/protocols/json/derivation/options.md:362
+#: source/protocols/json/derivation/options.md:378
+#: source/protocols/json/derivation/options.md:397
+#: source/protocols/json/derivation/options.md:406
+#: source/protocols/json/derivation/options.md:415
+#: source/protocols/json/derivation/options.md:436
+#: source/protocols/json/derivation/options.md:447
+#: source/protocols/json/derivation/options.md:468
+#: source/protocols/json/derivation/options.md:479
+#: source/protocols/json/derivation/options.md:493
+#: source/protocols/json/derivation/options.md:507
+#: source/protocols/json/derivation/options.md:520
+#: source/protocols/json/derivation/options.md:535
+#: source/protocols/json/derivation/options.md:554
+#: source/protocols/json/derivation/options.md:563
+#: source/protocols/json/derivation/options.md:584
+#: source/protocols/json/derivation/options.md:593
+#: source/protocols/json/derivation/options.md:607
+#: source/protocols/json/derivation/options.md:628
+#: source/protocols/json/derivation/options.md:641
+#: source/protocols/json/derivation/options.md:652
+#: source/protocols/json/derivation/options.md:663
+#: source/protocols/json/derivation/options.md:684
+#: source/protocols/json/derivation/options.md:693
+#: source/protocols/json/derivation/options.md:714
+#: source/protocols/json/derivation/options.md:723
+#: source/protocols/json/derivation/options.md:734
+#: source/protocols/json/derivation/options.md:755
+#: source/protocols/json/derivation/options.md:764
+#: source/protocols/json/derivation/options.md:775
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:56
+#: source/protocols/json/derivation/options.md:109
+#: source/protocols/json/derivation/options.md:125
+#: source/protocols/json/derivation/options.md:240
+#: source/protocols/json/derivation/options.md:316
+#: source/protocols/json/derivation/options.md:479
+#: source/protocols/json/derivation/options.md:493
+#: source/protocols/json/derivation/options.md:507
+#: source/protocols/json/derivation/options.md:520
+#: source/protocols/json/derivation/options.md:593
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:57
+#: source/protocols/json/derivation/options.md:92
+#: source/protocols/json/derivation/options.md:110
+#: source/protocols/json/derivation/options.md:126
+#: source/protocols/json/derivation/options.md:149
+#: source/protocols/json/derivation/options.md:160
+#: source/protocols/json/derivation/options.md:175
+#: source/protocols/json/derivation/options.md:190
+#: source/protocols/json/derivation/options.md:206
+#: source/protocols/json/derivation/options.md:225
+#: source/protocols/json/derivation/options.md:241
+#: source/protocols/json/derivation/options.md:258
+#: source/protocols/json/derivation/options.md:271
+#: source/protocols/json/derivation/options.md:282
+#: source/protocols/json/derivation/options.md:300
+#: source/protocols/json/derivation/options.md:317
+#: source/protocols/json/derivation/options.md:334
+#: source/protocols/json/derivation/options.md:345
+#: source/protocols/json/derivation/options.md:354
+#: source/protocols/json/derivation/options.md:363
+#: source/protocols/json/derivation/options.md:379
+#: source/protocols/json/derivation/options.md:398
+#: source/protocols/json/derivation/options.md:407
+#: source/protocols/json/derivation/options.md:416
+#: source/protocols/json/derivation/options.md:437
+#: source/protocols/json/derivation/options.md:448
+#: source/protocols/json/derivation/options.md:469
+#: source/protocols/json/derivation/options.md:480
+#: source/protocols/json/derivation/options.md:494
+#: source/protocols/json/derivation/options.md:508
+#: source/protocols/json/derivation/options.md:521
+#: source/protocols/json/derivation/options.md:536
+#: source/protocols/json/derivation/options.md:555
+#: source/protocols/json/derivation/options.md:564
+#: source/protocols/json/derivation/options.md:585
+#: source/protocols/json/derivation/options.md:594
+#: source/protocols/json/derivation/options.md:608
+#: source/protocols/json/derivation/options.md:629
+#: source/protocols/json/derivation/options.md:642
+#: source/protocols/json/derivation/options.md:653
+#: source/protocols/json/derivation/options.md:664
+#: source/protocols/json/derivation/options.md:685
+#: source/protocols/json/derivation/options.md:694
+#: source/protocols/json/derivation/options.md:715
+#: source/protocols/json/derivation/options.md:724
+#: source/protocols/json/derivation/options.md:735
+#: source/protocols/json/derivation/options.md:756
+#: source/protocols/json/derivation/options.md:765
+#: source/protocols/json/derivation/options.md:776
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:57
+#: source/protocols/json/derivation/options.md:72
+#: source/protocols/json/derivation/options.md:73
+#: source/protocols/json/derivation/options.md:74
+#: source/protocols/json/derivation/options.md:75
+#: source/protocols/json/derivation/options.md:76
+#: source/protocols/json/derivation/options.md:77
+#: source/protocols/json/derivation/options.md:78
+#: source/protocols/json/derivation/options.md:79
+#: source/protocols/json/derivation/options.md:80
+#: source/protocols/json/derivation/options.md:81
+#: source/protocols/json/derivation/options.md:82
+#: source/protocols/json/derivation/options.md:83
+#: source/protocols/json/derivation/options.md:110
+#: source/protocols/json/derivation/options.md:117
+#: source/protocols/json/derivation/options.md:134
+#: source/protocols/json/derivation/options.md:135
+#: source/protocols/json/derivation/options.md:136
+#: source/protocols/json/derivation/options.md:137
+#: source/protocols/json/derivation/options.md:138
+#: source/protocols/json/derivation/options.md:139
+#: source/protocols/json/derivation/options.md:140
+#: source/protocols/json/derivation/options.md:206
+#: source/protocols/json/derivation/options.md:225
+#: source/protocols/json/derivation/options.md:241
+#: source/protocols/json/derivation/options.md:248
+#: source/protocols/json/derivation/options.md:249
+#: source/protocols/json/derivation/options.md:282
+#: source/protocols/json/derivation/options.md:300
+#: source/protocols/json/derivation/options.md:317
+#: source/protocols/json/derivation/options.md:324
+#: source/protocols/json/derivation/options.md:325
+#: source/protocols/json/derivation/options.md:354
+#: source/protocols/json/derivation/options.md:379
+#: source/protocols/json/derivation/options.md:398
+#: source/protocols/json/derivation/options.md:407
+#: source/protocols/json/derivation/options.md:437
+#: source/protocols/json/derivation/options.md:469
+#: source/protocols/json/derivation/options.md:480
+#: source/protocols/json/derivation/options.md:487
+#: source/protocols/json/derivation/options.md:499
+#: source/protocols/json/derivation/options.md:508
+#: source/protocols/json/derivation/options.md:529
+#: source/protocols/json/derivation/options.md:536
+#: source/protocols/json/derivation/options.md:555
+#: source/protocols/json/derivation/options.md:585
+#: source/protocols/json/derivation/options.md:601
+#: source/protocols/json/derivation/options.md:608
+#: source/protocols/json/derivation/options.md:629
+#: source/protocols/json/derivation/options.md:685
+#: source/protocols/json/derivation/options.md:715
+#: source/protocols/json/derivation/options.md:756
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:58
+#: source/protocols/json/derivation/options.md:93
+#: source/protocols/json/derivation/options.md:111
+#: source/protocols/json/derivation/options.md:127
+#: source/protocols/json/derivation/options.md:191
+#: source/protocols/json/derivation/options.md:226
+#: source/protocols/json/derivation/options.md:242
+#: source/protocols/json/derivation/options.md:283
+#: source/protocols/json/derivation/options.md:318
+#: source/protocols/json/derivation/options.md:335
+#: source/protocols/json/derivation/options.md:364
+#: source/protocols/json/derivation/options.md:399
+#: source/protocols/json/derivation/options.md:438
+#: source/protocols/json/derivation/options.md:470
+#: source/protocols/json/derivation/options.md:481
+#: source/protocols/json/derivation/options.md:495
+#: source/protocols/json/derivation/options.md:509
+#: source/protocols/json/derivation/options.md:522
+#: source/protocols/json/derivation/options.md:595
+#: source/protocols/json/derivation/options.md:630
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:58
+#: source/protocols/json/derivation/options.md:111
+#: source/protocols/json/derivation/options.md:127
+#: source/protocols/json/derivation/options.md:242
+#: source/protocols/json/derivation/options.md:318
+#: source/protocols/json/derivation/options.md:481
+#: source/protocols/json/derivation/options.md:509
+msgid "Not allowed"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:60
+msgid "**Description:** JSON representation of Nix's `DerivationOptions` type."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:62
+msgid ""
+"This schema describes various build-time options and constraints that can be "
+"specified for a derivation."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:64
+msgid "**Warning**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:66
+msgid ""
+"This JSON format is currently [**experimental**](../../../development/"
+"experimental-features.md#xp-feature-nix-command) and subject to change."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:70
+#: source/protocols/json/derivation/options.md:115
+#: source/protocols/json/derivation/options.md:132
+#: source/protocols/json/derivation/options.md:246
+#: source/protocols/json/derivation/options.md:322
+#: source/protocols/json/derivation/options.md:485
+#: source/protocols/json/derivation/options.md:497
+#: source/protocols/json/derivation/options.md:527
+#: source/protocols/json/derivation/options.md:599
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:70
+#: source/protocols/json/derivation/options.md:115
+#: source/protocols/json/derivation/options.md:132
+#: source/protocols/json/derivation/options.md:246
+#: source/protocols/json/derivation/options.md:322
+#: source/protocols/json/derivation/options.md:485
+#: source/protocols/json/derivation/options.md:497
+#: source/protocols/json/derivation/options.md:527
+#: source/protocols/json/derivation/options.md:599
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:70
+#: source/protocols/json/derivation/options.md:115
+#: source/protocols/json/derivation/options.md:132
+#: source/protocols/json/derivation/options.md:246
+#: source/protocols/json/derivation/options.md:322
+#: source/protocols/json/derivation/options.md:485
+#: source/protocols/json/derivation/options.md:497
+#: source/protocols/json/derivation/options.md:527
+#: source/protocols/json/derivation/options.md:599
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:70
+#: source/protocols/json/derivation/options.md:115
+#: source/protocols/json/derivation/options.md:132
+#: source/protocols/json/derivation/options.md:246
+#: source/protocols/json/derivation/options.md:322
+#: source/protocols/json/derivation/options.md:485
+#: source/protocols/json/derivation/options.md:497
+#: source/protocols/json/derivation/options.md:527
+#: source/protocols/json/derivation/options.md:599
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:72
+msgid "+ [outputChecks](#outputChecks)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:72
+#: source/protocols/json/derivation/options.md:137
+#: source/protocols/json/derivation/options.md:138
+msgid "Combination"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:72
+msgid "Output Check"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:73
+msgid "+ [unsafeDiscardReferences](#unsafeDiscardReferences)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:73
+#: source/protocols/json/derivation/options.md:75
+#: source/protocols/json/derivation/options.md:117
+#: source/protocols/json/derivation/options.md:324
+#: source/protocols/json/derivation/options.md:487
+#: source/protocols/json/derivation/options.md:499
+msgid "object"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:73
+msgid "Unsafe Discard References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:74
+msgid "+ [passAsFile](#passAsFile)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:74
+#: source/protocols/json/derivation/options.md:78
+#: source/protocols/json/derivation/options.md:79
+#: source/protocols/json/derivation/options.md:81
+#: source/protocols/json/derivation/options.md:529
+msgid "array of string"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:74
+msgid "Pass As File"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:75
+msgid "+ [exportReferencesGraph](#exportReferencesGraph)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:75
+msgid "Export References Graph"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:76
+msgid "+ [additionalSandboxProfile](#additionalSandboxProfile)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:76
+#: source/protocols/json/derivation/options.md:249
+#: source/protocols/json/derivation/options.md:325
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:76
+msgid "Additional Sandbox Profile"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:77
+msgid "+ [noChroot](#noChroot)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:77
+#: source/protocols/json/derivation/options.md:80
+#: source/protocols/json/derivation/options.md:82
+#: source/protocols/json/derivation/options.md:83
+#: source/protocols/json/derivation/options.md:134
+msgid "boolean"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:77
+msgid "No Chroot"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:78
+msgid "+ [impureHostDeps](#impureHostDeps)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:78
+msgid "Impure Host Dependencies"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:79
+msgid "+ [impureEnvVars](#impureEnvVars)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:79
+msgid "Impure Environment Variables"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:80
+msgid "+ [allowLocalNetworking](#allowLocalNetworking)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:80
+msgid "Allow Local Networking"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:81
+msgid "+ [requiredSystemFeatures](#requiredSystemFeatures)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:81
+msgid "Required System Features"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:82
+msgid "+ [preferLocalBuild](#preferLocalBuild)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:82
+msgid "Prefer Local Build"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:83
+msgid "+ [allowSubstitutes](#allowSubstitutes)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:83
+msgid "Allow Substitutes"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:85
+msgid "<a name=\"outputChecks\"></a>1. Property `outputChecks`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:87
+msgid "**Title:** Output Check"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:91
+#: source/protocols/json/derivation/options.md:189
+#: source/protocols/json/derivation/options.md:224
+#: source/protocols/json/derivation/options.md:281
+#: source/protocols/json/derivation/options.md:333
+#: source/protocols/json/derivation/options.md:362
+#: source/protocols/json/derivation/options.md:397
+#: source/protocols/json/derivation/options.md:436
+#: source/protocols/json/derivation/options.md:468
+#: source/protocols/json/derivation/options.md:628
+msgid "`combining`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:92
+#: source/protocols/json/derivation/options.md:126
+#: source/protocols/json/derivation/options.md:149
+#: source/protocols/json/derivation/options.md:160
+#: source/protocols/json/derivation/options.md:175
+#: source/protocols/json/derivation/options.md:190
+#: source/protocols/json/derivation/options.md:258
+#: source/protocols/json/derivation/options.md:271
+#: source/protocols/json/derivation/options.md:334
+#: source/protocols/json/derivation/options.md:345
+#: source/protocols/json/derivation/options.md:363
+#: source/protocols/json/derivation/options.md:416
+#: source/protocols/json/derivation/options.md:448
+#: source/protocols/json/derivation/options.md:494
+#: source/protocols/json/derivation/options.md:521
+#: source/protocols/json/derivation/options.md:564
+#: source/protocols/json/derivation/options.md:594
+#: source/protocols/json/derivation/options.md:642
+#: source/protocols/json/derivation/options.md:653
+#: source/protocols/json/derivation/options.md:664
+#: source/protocols/json/derivation/options.md:694
+#: source/protocols/json/derivation/options.md:724
+#: source/protocols/json/derivation/options.md:735
+#: source/protocols/json/derivation/options.md:765
+#: source/protocols/json/derivation/options.md:776
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:93
+#: source/protocols/json/derivation/options.md:191
+#: source/protocols/json/derivation/options.md:226
+#: source/protocols/json/derivation/options.md:283
+#: source/protocols/json/derivation/options.md:335
+#: source/protocols/json/derivation/options.md:364
+#: source/protocols/json/derivation/options.md:399
+#: source/protocols/json/derivation/options.md:438
+#: source/protocols/json/derivation/options.md:470
+#: source/protocols/json/derivation/options.md:630
+msgid "Any type allowed"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:95
+msgid ""
+"**Description:** Constraints on what the derivation's outputs can and cannot "
+"reference. Can either apply to all outputs or be specified per output."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:98
+#: source/protocols/json/derivation/options.md:196
+#: source/protocols/json/derivation/options.md:288
+#: source/protocols/json/derivation/options.md:369
+msgid "One of(Option)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:100
+msgid "[Output Checks For All Outputs](#outputChecks_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:101
+msgid "[Output Checks Per Output](#outputChecks_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:103
+msgid ""
+"<a name=\"outputChecks_oneOf_i0\"></a>1.1. Property `Output Checks For All "
+"Outputs`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:105
+msgid "**Title:** Output Checks For All Outputs"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:113
+msgid ""
+"**Description:** Output checks that apply to all outputs of the derivation."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:117
+msgid "+ [forAllOutputs](#outputChecks_oneOf_i0_forAllOutputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:117
+#: source/protocols/json/derivation/options.md:499
+msgid "Output Check Specification"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:119
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs\"></a>1.1.1. Property "
+"`forAllOutputs`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:121
+#: source/protocols/json/derivation/options.md:503
+msgid "**Title:** Output Check Specification"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:128
+#: source/protocols/json/derivation/options.md:227
+#: source/protocols/json/derivation/options.md:284
+#: source/protocols/json/derivation/options.md:301
+msgid "**Defined in**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:128
+msgid "\\#/$defs/outputCheckSpec"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:130
+#: source/protocols/json/derivation/options.md:512
+msgid "**Description:** Constraints on what a specific output can reference."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:134
+msgid "+ [ignoreSelfRefs](#outputChecks_oneOf_i0_forAllOutputs_ignoreSelfRefs)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:134
+msgid "Ignore Self References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:135
+msgid "+ [maxSize](#outputChecks_oneOf_i0_forAllOutputs_maxSize)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:135
+#: source/protocols/json/derivation/options.md:136
+msgid "integer or null"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:135
+msgid "Maximum Size"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:136
+msgid "+ [maxClosureSize](#outputChecks_oneOf_i0_forAllOutputs_maxClosureSize)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:136
+msgid "Maximum Closure Size"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:137
+msgid ""
+"+ [allowedReferences](#outputChecks_oneOf_i0_forAllOutputs_allowedReferences)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:137
+msgid "Allowed References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:138
+msgid ""
+"+ [allowedRequisites](#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:138
+msgid "Allowed Requisites"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:139
+msgid ""
+"+ [disallowedReferences]"
+"(#outputChecks_oneOf_i0_forAllOutputs_disallowedReferences)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:139
+#: source/protocols/json/derivation/options.md:140
+#: source/protocols/json/derivation/options.md:601
+msgid "array"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:139
+msgid "Disallowed References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:140
+msgid ""
+"+ [disallowedRequisites]"
+"(#outputChecks_oneOf_i0_forAllOutputs_disallowedRequisites)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:140
+msgid "Disallowed Requisites"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:142
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_ignoreSelfRefs\"></a>1.1.1.1. "
+"Property `ignoreSelfRefs`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:144
+msgid "**Title:** Ignore Self References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:148
+#: source/protocols/json/derivation/options.md:652
+#: source/protocols/json/derivation/options.md:723
+#: source/protocols/json/derivation/options.md:764
+#: source/protocols/json/derivation/options.md:775
+msgid "`boolean`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:151
+msgid ""
+"**Description:** Whether references from this output to itself should be "
+"ignored when checking references."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:153
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_maxSize\"></a>1.1.1.2. "
+"Property `maxSize`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:155
+msgid "**Title:** Maximum Size"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:159
+#: source/protocols/json/derivation/options.md:174
+msgid "`integer or null`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:162
+msgid ""
+"**Description:** Maximum allowed size of this output in bytes, or null for "
+"no limit."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:164
+#: source/protocols/json/derivation/options.md:179
+#: source/protocols/json/derivation/options.md:305
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:166
+#: source/protocols/json/derivation/options.md:181
+msgid "**Minimum**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:166
+#: source/protocols/json/derivation/options.md:181
+msgid "≥ 0"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:168
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_maxClosureSize\"></a>1.1.1.3. "
+"Property `maxClosureSize`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:170
+msgid "**Title:** Maximum Closure Size"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:177
+msgid ""
+"**Description:** Maximum allowed size of this output's closure in bytes, or "
+"null for no limit."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:183
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences\"></"
+"a>1.1.1.4. Property `allowedReferences`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:185
+msgid "**Title:** Allowed References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:193
+msgid ""
+"**Description:** If set, the output can only reference paths in this list. "
+"If null, no restrictions apply."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:198
+msgid ""
+"[item 0](#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:199
+msgid ""
+"[item 1](#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:201
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0\"></"
+"a>1.1.1.4.1. Property `item 0`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:205
+#: source/protocols/json/derivation/options.md:378
+#: source/protocols/json/derivation/options.md:415
+#: source/protocols/json/derivation/options.md:447
+#: source/protocols/json/derivation/options.md:607
+msgid "`array`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:208
+#: source/protocols/json/derivation/options.md:381
+#: source/protocols/json/derivation/options.md:420
+#: source/protocols/json/derivation/options.md:452
+#: source/protocols/json/derivation/options.md:538
+#: source/protocols/json/derivation/options.md:568
+#: source/protocols/json/derivation/options.md:610
+#: source/protocols/json/derivation/options.md:668
+#: source/protocols/json/derivation/options.md:698
+#: source/protocols/json/derivation/options.md:739
+msgid "Array restrictions"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:210
+#: source/protocols/json/derivation/options.md:383
+#: source/protocols/json/derivation/options.md:422
+#: source/protocols/json/derivation/options.md:454
+#: source/protocols/json/derivation/options.md:540
+#: source/protocols/json/derivation/options.md:570
+#: source/protocols/json/derivation/options.md:612
+#: source/protocols/json/derivation/options.md:670
+#: source/protocols/json/derivation/options.md:700
+#: source/protocols/json/derivation/options.md:741
+msgid "**Min items**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:210
+#: source/protocols/json/derivation/options.md:211
+#: source/protocols/json/derivation/options.md:383
+#: source/protocols/json/derivation/options.md:384
+#: source/protocols/json/derivation/options.md:422
+#: source/protocols/json/derivation/options.md:423
+#: source/protocols/json/derivation/options.md:454
+#: source/protocols/json/derivation/options.md:455
+#: source/protocols/json/derivation/options.md:540
+#: source/protocols/json/derivation/options.md:541
+#: source/protocols/json/derivation/options.md:570
+#: source/protocols/json/derivation/options.md:571
+#: source/protocols/json/derivation/options.md:612
+#: source/protocols/json/derivation/options.md:613
+#: source/protocols/json/derivation/options.md:670
+#: source/protocols/json/derivation/options.md:671
+#: source/protocols/json/derivation/options.md:700
+#: source/protocols/json/derivation/options.md:701
+#: source/protocols/json/derivation/options.md:741
+#: source/protocols/json/derivation/options.md:742
+msgid "N/A"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:211
+#: source/protocols/json/derivation/options.md:384
+#: source/protocols/json/derivation/options.md:423
+#: source/protocols/json/derivation/options.md:455
+#: source/protocols/json/derivation/options.md:541
+#: source/protocols/json/derivation/options.md:571
+#: source/protocols/json/derivation/options.md:613
+#: source/protocols/json/derivation/options.md:671
+#: source/protocols/json/derivation/options.md:701
+#: source/protocols/json/derivation/options.md:742
+msgid "**Max items**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:212
+#: source/protocols/json/derivation/options.md:385
+#: source/protocols/json/derivation/options.md:424
+#: source/protocols/json/derivation/options.md:456
+#: source/protocols/json/derivation/options.md:542
+#: source/protocols/json/derivation/options.md:572
+#: source/protocols/json/derivation/options.md:614
+#: source/protocols/json/derivation/options.md:672
+#: source/protocols/json/derivation/options.md:702
+#: source/protocols/json/derivation/options.md:743
+msgid "**Items unicity**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:212
+#: source/protocols/json/derivation/options.md:213
+#: source/protocols/json/derivation/options.md:385
+#: source/protocols/json/derivation/options.md:386
+#: source/protocols/json/derivation/options.md:424
+#: source/protocols/json/derivation/options.md:425
+#: source/protocols/json/derivation/options.md:456
+#: source/protocols/json/derivation/options.md:457
+#: source/protocols/json/derivation/options.md:542
+#: source/protocols/json/derivation/options.md:543
+#: source/protocols/json/derivation/options.md:572
+#: source/protocols/json/derivation/options.md:573
+#: source/protocols/json/derivation/options.md:614
+#: source/protocols/json/derivation/options.md:615
+#: source/protocols/json/derivation/options.md:672
+#: source/protocols/json/derivation/options.md:673
+#: source/protocols/json/derivation/options.md:702
+#: source/protocols/json/derivation/options.md:703
+#: source/protocols/json/derivation/options.md:743
+#: source/protocols/json/derivation/options.md:744
+msgid "False"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:213
+#: source/protocols/json/derivation/options.md:386
+#: source/protocols/json/derivation/options.md:425
+#: source/protocols/json/derivation/options.md:457
+#: source/protocols/json/derivation/options.md:543
+#: source/protocols/json/derivation/options.md:573
+#: source/protocols/json/derivation/options.md:615
+#: source/protocols/json/derivation/options.md:673
+#: source/protocols/json/derivation/options.md:703
+#: source/protocols/json/derivation/options.md:744
+msgid "**Additional items**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:214
+#: source/protocols/json/derivation/options.md:387
+#: source/protocols/json/derivation/options.md:426
+#: source/protocols/json/derivation/options.md:458
+#: source/protocols/json/derivation/options.md:544
+#: source/protocols/json/derivation/options.md:574
+#: source/protocols/json/derivation/options.md:616
+#: source/protocols/json/derivation/options.md:674
+#: source/protocols/json/derivation/options.md:704
+#: source/protocols/json/derivation/options.md:745
+msgid "**Tuple validation**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:214
+#: source/protocols/json/derivation/options.md:387
+#: source/protocols/json/derivation/options.md:426
+#: source/protocols/json/derivation/options.md:458
+#: source/protocols/json/derivation/options.md:544
+#: source/protocols/json/derivation/options.md:574
+#: source/protocols/json/derivation/options.md:616
+#: source/protocols/json/derivation/options.md:674
+#: source/protocols/json/derivation/options.md:704
+#: source/protocols/json/derivation/options.md:745
+msgid "See below"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:216
+#: source/protocols/json/derivation/options.md:389
+#: source/protocols/json/derivation/options.md:428
+#: source/protocols/json/derivation/options.md:460
+#: source/protocols/json/derivation/options.md:546
+#: source/protocols/json/derivation/options.md:576
+#: source/protocols/json/derivation/options.md:618
+#: source/protocols/json/derivation/options.md:676
+#: source/protocols/json/derivation/options.md:706
+#: source/protocols/json/derivation/options.md:747
+msgid "Each item of this array must be"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:216
+#: source/protocols/json/derivation/options.md:389
+#: source/protocols/json/derivation/options.md:428
+#: source/protocols/json/derivation/options.md:460
+#: source/protocols/json/derivation/options.md:546
+#: source/protocols/json/derivation/options.md:576
+#: source/protocols/json/derivation/options.md:618
+#: source/protocols/json/derivation/options.md:676
+#: source/protocols/json/derivation/options.md:706
+#: source/protocols/json/derivation/options.md:747
+msgid "Description"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:218
+msgid ""
+"[drvRef]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:218
+#: source/protocols/json/derivation/options.md:391
+#: source/protocols/json/derivation/options.md:430
+#: source/protocols/json/derivation/options.md:462
+#: source/protocols/json/derivation/options.md:487
+#: source/protocols/json/derivation/options.md:529
+#: source/protocols/json/derivation/options.md:548
+#: source/protocols/json/derivation/options.md:578
+#: source/protocols/json/derivation/options.md:601
+#: source/protocols/json/derivation/options.md:678
+#: source/protocols/json/derivation/options.md:708
+#: source/protocols/json/derivation/options.md:749
+msgid "\\-"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:220
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items\"></"
+"a>1.1.1.4.1.1. drvRef"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:227
+msgid "\\#/$defs/drvRef"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:229
+msgid "Any of(Option)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:231
+msgid ""
+"[Current derivation Output Reference]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:232
+#: source/protocols/json/derivation/options.md:336
+#: source/protocols/json/derivation/options.md:631
+msgid ""
+"[Deriving Path]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:234
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0\"></"
+"a>1.1.1.4.1.1.1. Property `Current derivation Output Reference`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:236
+msgid "**Title:** Current derivation Output Reference"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:244
+msgid ""
+"**Description:** A reference to a specific output of the current derivation."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:248
+msgid ""
+"+ [drvPath]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0_drvPath)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:248
+msgid "const"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:248
+msgid "This derivation"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:249
+msgid ""
+"+ [output]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0_output)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:249
+msgid "Output Name"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:251
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0_drvPath\"></"
+"a>1.1.1.4.1.1.1.1. Property `drvPath`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:253
+msgid "**Title:** This derivation"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:257
+msgid "`const`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:260
+msgid "**Description:** Won't be confused for a deriving path"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:262
+msgid "Specific value: `\"self\"`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:264
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i0_output\"></"
+"a>1.1.1.4.1.1.1.2. Property `output`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:266
+msgid "**Title:** Output Name"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:270
+#: source/protocols/json/derivation/options.md:299
+#: source/protocols/json/derivation/options.md:344
+#: source/protocols/json/derivation/options.md:554
+#: source/protocols/json/derivation/options.md:584
+#: source/protocols/json/derivation/options.md:641
+#: source/protocols/json/derivation/options.md:684
+#: source/protocols/json/derivation/options.md:714
+#: source/protocols/json/derivation/options.md:755
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:273
+msgid "**Description:** The name of the output being referenced."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:275
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1\"></"
+"a>1.1.1.4.1.1.2. Property `Deriving Path`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:277
+#: source/protocols/json/derivation/options.md:329
+#: source/protocols/json/derivation/options.md:624
+msgid "**Title:** Deriving Path"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:284
+msgid "deriving-path-v1.yaml"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:286
+#: source/protocols/json/derivation/options.md:633
+msgid ""
+"**Description:** This schema describes the JSON representation of Nix's "
+"[Deriving Path](../../../store/derivation/index.md#deriving-path)."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:290
+msgid ""
+"[Constant]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:291
+msgid ""
+"[Output]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:293
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i0\"></"
+"a>1.1.1.4.1.1.2.1. Property `Constant`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:295
+msgid "**Title:** Constant"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:301
+msgid "store-path-v1.yaml"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:303
+msgid ""
+"**Description:** See [Constant](../../../store/derivation/index.md#deriving-"
+"path-constant) deriving path."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:307
+msgid "**Min length**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:307
+msgid "34"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:308
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:308
+msgid ""
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+$` [Test](https://regex101.com/?"
+"regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%24)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:310
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1\"></"
+"a>1.1.1.4.1.1.2.2. Property `Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:312
+msgid "**Title:** Output"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:320
+msgid ""
+"**Description:** See [Output](../../../store/derivation/index.md#deriving-"
+"path-output) deriving path."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:324
+msgid ""
+"+ [drvPath]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1_drvPath)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:324
+msgid "Deriving Path"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:325
+msgid ""
+"+ [output]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1_output)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:325
+msgid ""
+"The name of an output produced by that derivation (e.g. \"out\", \"doc\", "
+"etc.).<br />"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:327
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1_drvPath\"></"
+"a>1.1.1.4.1.1.2.2.1. Property `drvPath`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:336
+#: source/protocols/json/derivation/options.md:400
+#: source/protocols/json/derivation/options.md:439
+#: source/protocols/json/derivation/options.md:471
+#: source/protocols/json/derivation/options.md:510
+#: source/protocols/json/derivation/options.md:631
+msgid "**Same definition as**"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:338
+msgid ""
+"**Description:** A deriving path to a [Derivation](../../../store/derivation/"
+"index.md#store-derivation), whose output is being referred to."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:340
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items_anyOf_i1_oneOf_i1_output\"></"
+"a>1.1.1.4.1.1.2.2.2. Property `output`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:347
+msgid ""
+"**Description:** The name of an output produced by that derivation (e.g. "
+"\"out\", \"doc\", etc.)."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:349
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i1\"></"
+"a>1.1.1.4.2. Property `item 1`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:353
+#: source/protocols/json/derivation/options.md:406
+msgid "`null`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:356
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_allowedRequisites\"></"
+"a>1.1.1.5. Property `allowedRequisites`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:358
+msgid "**Title:** Allowed Requisites"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:366
+msgid ""
+"**Description:** If set, the output's closure can only contain paths in this "
+"list. If null, no restrictions apply."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:371
+msgid ""
+"[item 0](#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:372
+msgid ""
+"[item 1](#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:374
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i0\"></"
+"a>1.1.1.5.1. Property `item 0`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:391
+msgid ""
+"[drvRef]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i0_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:393
+msgid ""
+"<a "
+"name=\"outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i0_items\"></"
+"a>1.1.1.5.1.1. drvRef"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:400
+#: source/protocols/json/derivation/options.md:439
+#: source/protocols/json/derivation/options.md:471
+msgid ""
+"[outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items]"
+"(#outputChecks_oneOf_i0_forAllOutputs_allowedReferences_oneOf_i0_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:402
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_allowedRequisites_oneOf_i1\"></"
+"a>1.1.1.5.2. Property `item 1`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:409
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_disallowedReferences\"></"
+"a>1.1.1.6. Property `disallowedReferences`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:411
+msgid "**Title:** Disallowed References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:418
+msgid "**Description:** The output must not reference any paths in this list."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:430
+msgid ""
+"[drvRef](#outputChecks_oneOf_i0_forAllOutputs_disallowedReferences_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:432
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_disallowedReferences_items\"></"
+"a>1.1.1.6.1. drvRef"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:441
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_disallowedRequisites\"></"
+"a>1.1.1.7. Property `disallowedRequisites`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:443
+msgid "**Title:** Disallowed Requisites"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:450
+msgid ""
+"**Description:** The output's closure must not contain any paths in this "
+"list."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:462
+msgid ""
+"[drvRef](#outputChecks_oneOf_i0_forAllOutputs_disallowedRequisites_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:464
+msgid ""
+"<a name=\"outputChecks_oneOf_i0_forAllOutputs_disallowedRequisites_items\"></"
+"a>1.1.1.7.1. drvRef"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:473
+msgid ""
+"<a name=\"outputChecks_oneOf_i1\"></a>1.2. Property `Output Checks Per "
+"Output`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:475
+msgid "**Title:** Output Checks Per Output"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:483
+msgid "**Description:** Output checks specified individually for each output."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:487
+msgid "+ [perOutput](#outputChecks_oneOf_i1_perOutput)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:489
+msgid ""
+"<a name=\"outputChecks_oneOf_i1_perOutput\"></a>1.2.1. Property `perOutput`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:495
+msgid ""
+"[Each additional property must conform to the schema]"
+"(#outputChecks_oneOf_i1_perOutput_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:499
+msgid "\\- [](#outputChecks_oneOf_i1_perOutput_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:501
+msgid ""
+"<a name=\"outputChecks_oneOf_i1_perOutput_additionalProperties\"></"
+"a>1.2.1.1. Property `Output Check Specification`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:510
+msgid "[forAllOutputs](#outputChecks_oneOf_i0_forAllOutputs)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:514
+msgid ""
+"<a name=\"unsafeDiscardReferences\"></a>2. Property `unsafeDiscardReferences`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:516
+msgid "**Title:** Unsafe Discard References"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:522
+msgid ""
+"[Each additional property must conform to the schema]"
+"(#unsafeDiscardReferences_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:524
+msgid ""
+"**Description:** A map specifying which references should be unsafely "
+"discarded from each output. This is generally not recommended and requires "
+"special permissions."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:529
+msgid "\\- [](#unsafeDiscardReferences_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:531
+msgid ""
+"<a name=\"unsafeDiscardReferences_additionalProperties\"></a>2.1. Property "
+"`additionalProperties`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:535
+#: source/protocols/json/derivation/options.md:563
+#: source/protocols/json/derivation/options.md:663
+#: source/protocols/json/derivation/options.md:693
+#: source/protocols/json/derivation/options.md:734
+msgid "`array of string`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:548
+msgid ""
+"[additionalProperties items]"
+"(#unsafeDiscardReferences_additionalProperties_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:550
+msgid ""
+"<a name=\"unsafeDiscardReferences_additionalProperties_items\"></a>2.1.1. "
+"additionalProperties items"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:557
+msgid "<a name=\"passAsFile\"></a>3. Property `passAsFile`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:559
+msgid "**Title:** Pass As File"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:566
+msgid ""
+"**Description:** List of environment variable names whose values should be "
+"passed as files rather than directly."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:578
+msgid "[passAsFile items](#passAsFile_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:580
+msgid "<a name=\"passAsFile_items\"></a>3.1. passAsFile items"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:587
+msgid ""
+"<a name=\"exportReferencesGraph\"></a>4. Property `exportReferencesGraph`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:589
+msgid "**Title:** Export References Graph"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:595
+msgid ""
+"[Each additional property must conform to the schema]"
+"(#exportReferencesGraph_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:597
+msgid ""
+"**Description:** Specify paths whose references graph should be exported to "
+"files."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:601
+msgid "\\- [](#exportReferencesGraph_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:603
+msgid ""
+"<a name=\"exportReferencesGraph_additionalProperties\"></a>4.1. Property "
+"`additionalProperties`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:620
+msgid "[Deriving Path](#exportReferencesGraph_additionalProperties_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:620
+msgid ""
+"This schema describes the JSON representation of Nix's [Deriving Path]"
+"(../../../store/derivation/index.md#deriving-path)."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:622
+msgid ""
+"<a name=\"exportReferencesGraph_additionalProperties_items\"></a>4.1.1. "
+"Deriving Path"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:635
+msgid ""
+"<a name=\"additionalSandboxProfile\"></a>5. Property "
+"`additionalSandboxProfile`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:637
+msgid "**Title:** Additional Sandbox Profile"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:644
+msgid ""
+"**Description:** Additional sandbox profile directives (macOS specific)."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:646
+msgid "<a name=\"noChroot\"></a>6. Property `noChroot`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:648
+msgid "**Title:** No Chroot"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:655
+msgid "**Description:** Whether to disable the build sandbox, if allowed."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:657
+msgid "<a name=\"impureHostDeps\"></a>7. Property `impureHostDeps`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:659
+msgid "**Title:** Impure Host Dependencies"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:666
+msgid "**Description:** List of host paths that the build can access."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:678
+msgid "[impureHostDeps items](#impureHostDeps_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:680
+msgid "<a name=\"impureHostDeps_items\"></a>7.1. impureHostDeps items"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:687
+msgid "<a name=\"impureEnvVars\"></a>8. Property `impureEnvVars`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:689
+msgid "**Title:** Impure Environment Variables"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:696
+msgid ""
+"**Description:** List of environment variable names that should be passed "
+"through to the build from the calling environment."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:708
+msgid "[impureEnvVars items](#impureEnvVars_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:710
+msgid "<a name=\"impureEnvVars_items\"></a>8.1. impureEnvVars items"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:717
+msgid "<a name=\"allowLocalNetworking\"></a>9. Property `allowLocalNetworking`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:719
+msgid "**Title:** Allow Local Networking"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:726
+msgid ""
+"**Description:** Whether the build should have access to local network "
+"(macOS specific)."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:728
+msgid ""
+"<a name=\"requiredSystemFeatures\"></a>10. Property `requiredSystemFeatures`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:730
+msgid "**Title:** Required System Features"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:737
+msgid ""
+"**Description:** List of system features required to build this derivation "
+"(e.g., \"kvm\", \"nixos-test\")."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:749
+msgid "[requiredSystemFeatures items](#requiredSystemFeatures_items)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:751
+msgid ""
+"<a name=\"requiredSystemFeatures_items\"></a>10.1. requiredSystemFeatures "
+"items"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:758
+msgid "<a name=\"preferLocalBuild\"></a>11. Property `preferLocalBuild`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:760
+msgid "**Title:** Prefer Local Build"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:767
+msgid ""
+"**Description:** Whether this derivation should preferably be built locally "
+"rather than its outputs substituted."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:769
+msgid "<a name=\"allowSubstitutes\"></a>12. Property `allowSubstitutes`"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:771
+msgid "**Title:** Allow Substitutes"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:778
+msgid ""
+"**Description:** Whether substituting from other stores should be allowed "
+"for this derivation's outputs."
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:783
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:785
+msgid "Input-addressed derivations"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:787
+msgid "Default options"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:791
+#: source/protocols/json/derivation/options.md:821
+#: source/protocols/json/derivation/options.md:881
+#: source/protocols/json/derivation/options.md:903
+#: source/protocols/json/derivation/options.md:985
+#: source/protocols/json/derivation/options.md:1060
+msgid "\"additionalSandboxProfile\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:791
+#: source/protocols/json/derivation/options.md:881
+msgid "\"\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:792
+#: source/protocols/json/derivation/options.md:822
+#: source/protocols/json/derivation/options.md:882
+#: source/protocols/json/derivation/options.md:904
+#: source/protocols/json/derivation/options.md:986
+#: source/protocols/json/derivation/options.md:1061
+msgid "\"allowLocalNetworking\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:793
+#: source/protocols/json/derivation/options.md:823
+#: source/protocols/json/derivation/options.md:883
+#: source/protocols/json/derivation/options.md:905
+#: source/protocols/json/derivation/options.md:987
+#: source/protocols/json/derivation/options.md:1062
+msgid "\"allowSubstitutes\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:794
+#: source/protocols/json/derivation/options.md:824
+#: source/protocols/json/derivation/options.md:884
+#: source/protocols/json/derivation/options.md:906
+#: source/protocols/json/derivation/options.md:988
+#: source/protocols/json/derivation/options.md:1063
+msgid "\"exportReferencesGraph\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:795
+#: source/protocols/json/derivation/options.md:832
+#: source/protocols/json/derivation/options.md:885
+#: source/protocols/json/derivation/options.md:914
+#: source/protocols/json/derivation/options.md:999
+#: source/protocols/json/derivation/options.md:1074
+msgid "\"impureEnvVars\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:796
+#: source/protocols/json/derivation/options.md:835
+#: source/protocols/json/derivation/options.md:886
+#: source/protocols/json/derivation/options.md:917
+#: source/protocols/json/derivation/options.md:1002
+#: source/protocols/json/derivation/options.md:1077
+msgid "\"impureHostDeps\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:797
+#: source/protocols/json/derivation/options.md:838
+#: source/protocols/json/derivation/options.md:887
+#: source/protocols/json/derivation/options.md:920
+#: source/protocols/json/derivation/options.md:1005
+#: source/protocols/json/derivation/options.md:1080
+msgid "\"noChroot\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:798
+#: source/protocols/json/derivation/options.md:839
+#: source/protocols/json/derivation/options.md:888
+#: source/protocols/json/derivation/options.md:921
+#: source/protocols/json/derivation/options.md:1006
+#: source/protocols/json/derivation/options.md:1081
+msgid "\"outputChecks\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:799
+#: source/protocols/json/derivation/options.md:840
+#: source/protocols/json/derivation/options.md:1007
+msgid "\"forAllOutputs\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:800
+#: source/protocols/json/derivation/options.md:841
+#: source/protocols/json/derivation/options.md:924
+#: source/protocols/json/derivation/options.md:941
+#: source/protocols/json/derivation/options.md:950
+#: source/protocols/json/derivation/options.md:1008
+#: source/protocols/json/derivation/options.md:1084
+#: source/protocols/json/derivation/options.md:1107
+#: source/protocols/json/derivation/options.md:1116
+msgid "\"allowedReferences\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:801
+#: source/protocols/json/derivation/options.md:844
+#: source/protocols/json/derivation/options.md:925
+#: source/protocols/json/derivation/options.md:942
+#: source/protocols/json/derivation/options.md:953
+#: source/protocols/json/derivation/options.md:1014
+#: source/protocols/json/derivation/options.md:1085
+#: source/protocols/json/derivation/options.md:1108
+#: source/protocols/json/derivation/options.md:1122
+msgid "\"allowedRequisites\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:802
+#: source/protocols/json/derivation/options.md:851
+#: source/protocols/json/derivation/options.md:926
+#: source/protocols/json/derivation/options.md:943
+#: source/protocols/json/derivation/options.md:960
+#: source/protocols/json/derivation/options.md:1024
+#: source/protocols/json/derivation/options.md:1086
+#: source/protocols/json/derivation/options.md:1109
+#: source/protocols/json/derivation/options.md:1132
+msgid "\"disallowedReferences\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:803
+#: source/protocols/json/derivation/options.md:858
+#: source/protocols/json/derivation/options.md:933
+#: source/protocols/json/derivation/options.md:944
+#: source/protocols/json/derivation/options.md:961
+#: source/protocols/json/derivation/options.md:1034
+#: source/protocols/json/derivation/options.md:1096
+#: source/protocols/json/derivation/options.md:1110
+#: source/protocols/json/derivation/options.md:1133
+msgid "\"disallowedRequisites\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:804
+#: source/protocols/json/derivation/options.md:861
+#: source/protocols/json/derivation/options.md:936
+#: source/protocols/json/derivation/options.md:945
+#: source/protocols/json/derivation/options.md:962
+#: source/protocols/json/derivation/options.md:1040
+#: source/protocols/json/derivation/options.md:1102
+#: source/protocols/json/derivation/options.md:1111
+#: source/protocols/json/derivation/options.md:1134
+msgid "\"ignoreSelfRefs\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:805
+#: source/protocols/json/derivation/options.md:862
+#: source/protocols/json/derivation/options.md:937
+#: source/protocols/json/derivation/options.md:946
+#: source/protocols/json/derivation/options.md:963
+#: source/protocols/json/derivation/options.md:1041
+#: source/protocols/json/derivation/options.md:1103
+#: source/protocols/json/derivation/options.md:1112
+#: source/protocols/json/derivation/options.md:1135
+msgid "\"maxClosureSize\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:806
+#: source/protocols/json/derivation/options.md:863
+#: source/protocols/json/derivation/options.md:938
+#: source/protocols/json/derivation/options.md:947
+#: source/protocols/json/derivation/options.md:964
+#: source/protocols/json/derivation/options.md:1042
+#: source/protocols/json/derivation/options.md:1104
+#: source/protocols/json/derivation/options.md:1113
+#: source/protocols/json/derivation/options.md:1136
+msgid "\"maxSize\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:809
+#: source/protocols/json/derivation/options.md:866
+#: source/protocols/json/derivation/options.md:891
+#: source/protocols/json/derivation/options.md:968
+#: source/protocols/json/derivation/options.md:1045
+#: source/protocols/json/derivation/options.md:1140
+msgid "\"passAsFile\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:810
+#: source/protocols/json/derivation/options.md:867
+#: source/protocols/json/derivation/options.md:892
+#: source/protocols/json/derivation/options.md:969
+#: source/protocols/json/derivation/options.md:1046
+#: source/protocols/json/derivation/options.md:1141
+msgid "\"preferLocalBuild\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:811
+#: source/protocols/json/derivation/options.md:868
+#: source/protocols/json/derivation/options.md:893
+#: source/protocols/json/derivation/options.md:970
+#: source/protocols/json/derivation/options.md:1047
+#: source/protocols/json/derivation/options.md:1142
+msgid "\"requiredSystemFeatures\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:812
+#: source/protocols/json/derivation/options.md:872
+#: source/protocols/json/derivation/options.md:894
+#: source/protocols/json/derivation/options.md:974
+#: source/protocols/json/derivation/options.md:1051
+#: source/protocols/json/derivation/options.md:1146
+msgid "\"unsafeDiscardReferences\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:817
+#: source/protocols/json/derivation/options.md:981
+msgid "All options set"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:821
+#: source/protocols/json/derivation/options.md:903
+#: source/protocols/json/derivation/options.md:985
+#: source/protocols/json/derivation/options.md:1060
+msgid "\"sandcastle\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:825
+#: source/protocols/json/derivation/options.md:907
+#: source/protocols/json/derivation/options.md:989
+#: source/protocols/json/derivation/options.md:1064
+msgid "\"refs1\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:826
+#: source/protocols/json/derivation/options.md:842
+#: source/protocols/json/derivation/options.md:908
+#: source/protocols/json/derivation/options.md:951
+msgid "\"p0hax2lzvjpfc2gwkk62xdglz0fcqfzn-foo\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:828
+#: source/protocols/json/derivation/options.md:910
+#: source/protocols/json/derivation/options.md:995
+#: source/protocols/json/derivation/options.md:1070
+msgid "\"refs2\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:829
+#: source/protocols/json/derivation/options.md:911
+msgid "\"vj2i49jm2868j2fmqvxm70vlzmzvgv14-bar.drv\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:833
+#: source/protocols/json/derivation/options.md:915
+#: source/protocols/json/derivation/options.md:1000
+#: source/protocols/json/derivation/options.md:1075
+msgid "\"UNICORN\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:836
+#: source/protocols/json/derivation/options.md:918
+#: source/protocols/json/derivation/options.md:1003
+#: source/protocols/json/derivation/options.md:1078
+msgid "\"/usr/bin/ditto\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:846
+#: source/protocols/json/derivation/options.md:853
+#: source/protocols/json/derivation/options.md:928
+#: source/protocols/json/derivation/options.md:955
+#: source/protocols/json/derivation/options.md:991
+#: source/protocols/json/derivation/options.md:1010
+#: source/protocols/json/derivation/options.md:1016
+#: source/protocols/json/derivation/options.md:1020
+#: source/protocols/json/derivation/options.md:1026
+#: source/protocols/json/derivation/options.md:1030
+#: source/protocols/json/derivation/options.md:1036
+#: source/protocols/json/derivation/options.md:1066
+#: source/protocols/json/derivation/options.md:1088
+#: source/protocols/json/derivation/options.md:1092
+#: source/protocols/json/derivation/options.md:1098
+#: source/protocols/json/derivation/options.md:1118
+#: source/protocols/json/derivation/options.md:1124
+#: source/protocols/json/derivation/options.md:1128
+msgid "\"drvPath\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:846
+#: source/protocols/json/derivation/options.md:853
+#: source/protocols/json/derivation/options.md:928
+#: source/protocols/json/derivation/options.md:955
+#: source/protocols/json/derivation/options.md:1016
+#: source/protocols/json/derivation/options.md:1026
+#: source/protocols/json/derivation/options.md:1088
+#: source/protocols/json/derivation/options.md:1124
+msgid "\"self\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:847
+#: source/protocols/json/derivation/options.md:854
+#: source/protocols/json/derivation/options.md:929
+#: source/protocols/json/derivation/options.md:956
+#: source/protocols/json/derivation/options.md:992
+#: source/protocols/json/derivation/options.md:1011
+#: source/protocols/json/derivation/options.md:1017
+#: source/protocols/json/derivation/options.md:1021
+#: source/protocols/json/derivation/options.md:1027
+#: source/protocols/json/derivation/options.md:1031
+#: source/protocols/json/derivation/options.md:1037
+#: source/protocols/json/derivation/options.md:1067
+#: source/protocols/json/derivation/options.md:1089
+#: source/protocols/json/derivation/options.md:1093
+#: source/protocols/json/derivation/options.md:1099
+#: source/protocols/json/derivation/options.md:1119
+#: source/protocols/json/derivation/options.md:1125
+#: source/protocols/json/derivation/options.md:1129
+msgid "\"output\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:847
+#: source/protocols/json/derivation/options.md:923
+#: source/protocols/json/derivation/options.md:956
+#: source/protocols/json/derivation/options.md:1017
+#: source/protocols/json/derivation/options.md:1083
+#: source/protocols/json/derivation/options.md:1125
+msgid "\"bin\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:849
+#: source/protocols/json/derivation/options.md:958
+msgid "\"z0rjzy29v9k5qa4nqpykrbzirj7sd43v-foo-dev\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:854
+#: source/protocols/json/derivation/options.md:929
+#: source/protocols/json/derivation/options.md:940
+#: source/protocols/json/derivation/options.md:1021
+#: source/protocols/json/derivation/options.md:1027
+#: source/protocols/json/derivation/options.md:1037
+#: source/protocols/json/derivation/options.md:1089
+#: source/protocols/json/derivation/options.md:1099
+#: source/protocols/json/derivation/options.md:1106
+#: source/protocols/json/derivation/options.md:1129
+msgid "\"dev\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:856
+#: source/protocols/json/derivation/options.md:931
+msgid "\"r5cff30838majxk5mp3ip2diffi8vpaj-bar\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:859
+#: source/protocols/json/derivation/options.md:934
+msgid "\"9b61w26b4avv870dw0ymb6rw4r1hzpws-bar-dev\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:869
+#: source/protocols/json/derivation/options.md:971
+#: source/protocols/json/derivation/options.md:1048
+#: source/protocols/json/derivation/options.md:1143
+msgid "\"rainbow\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:870
+#: source/protocols/json/derivation/options.md:972
+#: source/protocols/json/derivation/options.md:1049
+#: source/protocols/json/derivation/options.md:1144
+msgid "\"uid-range\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:877
+msgid "Default options (structured attributes)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:889
+#: source/protocols/json/derivation/options.md:922
+#: source/protocols/json/derivation/options.md:1082
+msgid "\"perOutput\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:899
+#: source/protocols/json/derivation/options.md:1056
+msgid "All options set (structured attributes)"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:949
+#: source/protocols/json/derivation/options.md:992
+#: source/protocols/json/derivation/options.md:1011
+#: source/protocols/json/derivation/options.md:1031
+#: source/protocols/json/derivation/options.md:1067
+#: source/protocols/json/derivation/options.md:1093
+#: source/protocols/json/derivation/options.md:1115
+#: source/protocols/json/derivation/options.md:1119
+msgid "\"out\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:979
+msgid "Content-addressed derivations"
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:991
+#: source/protocols/json/derivation/options.md:1010
+#: source/protocols/json/derivation/options.md:1020
+#: source/protocols/json/derivation/options.md:1066
+#: source/protocols/json/derivation/options.md:1118
+#: source/protocols/json/derivation/options.md:1128
+msgid "\"j56sf12rxpcv5swr14vsjn5cwm6bj03h-foo.drv\""
+msgstr ""
+
+#: source/protocols/json/derivation/options.md:996
+#: source/protocols/json/derivation/options.md:1030
+#: source/protocols/json/derivation/options.md:1036
+#: source/protocols/json/derivation/options.md:1071
+#: source/protocols/json/derivation/options.md:1092
+#: source/protocols/json/derivation/options.md:1098
+msgid "\"qnml92yh97a6fbrs2m5qg5cqlc8vni58-bar.drv\""
+msgstr ""

@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/package-management/garbage-collection.md:1
+msgid "Garbage Collection"
+msgstr ""
+
+#: source/package-management/garbage-collection.md:3
+msgid ""
+"`nix-env` operations such as upgrades (`-u`) and uninstall (`-e`) never "
+"actually delete packages from the system. All they do (as shown above) is to "
+"create a new user environment that no longer contains symlinks to the "
+"“deleted” packages."
+msgstr ""
+
+#: source/package-management/garbage-collection.md:8
+msgid ""
+"Of course, since disk space is not infinite, unused packages should be "
+"removed at some point. You can do this by running the Nix garbage collector. "
+"It will remove from the Nix store any package not used (directly or "
+"indirectly) by any generation of any profile."
+msgstr ""
+
+#: source/package-management/garbage-collection.md:13
+msgid ""
+"Note however that as long as old generations reference a package, it will "
+"not be deleted. After all, we wouldn’t be able to do a rollback otherwise. "
+"So in order for garbage collection to be effective, you should also delete "
+"(some) old generations. Of course, this should only be done if you are "
+"certain that you will not need to roll back."
+msgstr ""
+
+#: source/package-management/garbage-collection.md:19
+msgid "To delete all old (non-current) generations of your current profile:"
+msgstr ""
+
+#: source/package-management/garbage-collection.md:25
+msgid "Instead of `old` you can also specify a list of generations, e.g.,"
+msgstr ""
+
+#: source/package-management/garbage-collection.md:31
+msgid ""
+"To delete all generations older than a specified number of days (except the "
+"current generation), use the `d` suffix. For example,"
+msgstr ""
+
+#: source/package-management/garbage-collection.md:38
+msgid "deletes all generations older than two weeks."
+msgstr ""
+
+#: source/package-management/garbage-collection.md:40
+msgid ""
+"After removing appropriate old generations you can run the garbage collector "
+"as follows:"
+msgstr ""
+
+#: source/package-management/garbage-collection.md:47
+msgid ""
+"The behaviour of the garbage collector is affected by the `keep-derivations` "
+"(default: true) and `keep-outputs` (default: false) options in the Nix "
+"configuration file. The defaults will ensure that all derivations that are "
+"build-time dependencies of garbage collector roots will be kept and that all "
+"output paths that are runtime dependencies will be kept as well. All other "
+"derivations or paths will be collected. (This is usually what you want, but "
+"while you are developing it may make sense to keep outputs to ensure that "
+"rebuild times are quick.) If you are feeling uncertain, you can also first "
+"view what files would be deleted:"
+msgstr ""
+
+#: source/package-management/garbage-collection.md:62
+msgid ""
+"Likewise, the option `--print-live` will show the paths that _won’t_ be "
+"deleted."
+msgstr ""
+
+#: source/package-management/garbage-collection.md:65
+msgid ""
+"There is also a convenient little utility `nix-collect-garbage`, which when "
+"invoked with the `-d` (`--delete-old`) switch deletes all old generations of "
+"all profiles in `/nix/var/nix/profiles`. So"
+msgstr ""
+
+#: source/package-management/garbage-collection.md:73
+msgid "is a quick and easy way to clean up your system."
+msgstr ""

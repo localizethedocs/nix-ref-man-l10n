@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/files/channels.md:1
+msgid "Channels"
+msgstr ""
+
+#: source/command-ref/files/channels.md:3
+msgid ""
+"A directory containing symlinks to Nix channels, managed by [`nix-channel`]"
+"(../../command-ref/nix-channel.md):"
+msgstr ""
+
+#: source/command-ref/files/channels.md:5
+msgid "`$XDG_STATE_HOME/nix/profiles/channels` for regular users"
+msgstr ""
+
+#: source/command-ref/files/channels.md:6
+msgid "`$NIX_STATE_DIR/profiles/per-user/root/channels` for `root`"
+msgstr ""
+
+#: source/command-ref/files/channels.md:8
+msgid ""
+"[`nix-channel`](../../command-ref/nix-channel.md) uses a [profile](../../"
+"command-ref/files/profiles.md) to store channels. This profile contains "
+"symlinks to the contents of those channels."
+msgstr ""
+
+#: source/command-ref/files/channels.md:11
+msgid "Subscribed channels"
+msgstr ""
+
+#: source/command-ref/files/channels.md:13
+msgid "The list of subscribed channels is stored in"
+msgstr ""
+
+#: source/command-ref/files/channels.md:15
+msgid "`~/.nix-channels`"
+msgstr ""
+
+#: source/command-ref/files/channels.md:16
+msgid ""
+"`$XDG_STATE_HOME/nix/channels` if [`use-xdg-base-directories`](../../command-"
+"ref/conf-file.md#conf-use-xdg-base-directories) is set to `true`"
+msgstr ""
+
+#: source/command-ref/files/channels.md:18
+msgid "in the following format:"
+msgstr ""

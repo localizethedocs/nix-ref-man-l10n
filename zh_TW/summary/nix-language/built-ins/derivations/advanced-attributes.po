@@ -1,0 +1,567 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/advanced-attributes.md:1
+msgid "Advanced Attributes"
+msgstr ""
+
+#: source/language/advanced-attributes.md:3
+msgid "Derivations can declare some infrequently used optional attributes."
+msgstr ""
+
+#: source/language/advanced-attributes.md:5
+msgid "Inputs"
+msgstr ""
+
+#: source/language/advanced-attributes.md:7
+msgid ""
+"\\[`exportReferencesGraph`\\]{#adv-attr-exportReferencesGraph}  \n"
+"Specifies the [_export references graph_](../store/derivation/index."
+"md#export-references-graph) option. The value of this attribute should be a "
+"list of pairs `[ name1 path1 name2 path2 ...  ]`. For example, when the "
+"following derivation is built:"
+msgstr ""
+
+#: source/language/advanced-attributes.md:12
+msgid ""
+"```nix\n"
+"derivation {\n"
+"  ...\n"
+"  exportReferencesGraph = [ \"libfoo-graph\" libfoo ];\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/language/advanced-attributes.md:19
+msgid ""
+"the references graph of `libfoo` is placed in the file `libfoo-graph` in the "
+"temporary build directory."
+msgstr ""
+
+#: source/language/advanced-attributes.md:22
+msgid ""
+"\\[`passAsFile`\\]{#adv-attr-passAsFile}  \n"
+"A list of names of attributes whose environment variables should be marked "
+"[_pass as file_](../store/derivation/index.md#pass-as-file). For example, if "
+"you have"
+msgstr ""
+
+#: source/language/advanced-attributes.md:27
+msgid ""
+"```nix\n"
+"passAsFile = [\"big\"];\n"
+"big = \"a very long string\";\n"
+"```"
+msgstr ""
+
+#: source/language/advanced-attributes.md:32
+msgid ""
+"then when the builder runs, the environment variable `bigPath` will contain "
+"the absolute path to a temporary file containing `a very long string`."
+msgstr ""
+
+#: source/language/advanced-attributes.md:36
+msgid ""
+"\\[`__structuredAttrs`\\]{#adv-attr-structuredAttrs}  \n"
+"If the special attribute `__structuredAttrs` is set to `true`, the other "
+"derivation attributes are serialised into a file in JSON format."
+msgstr ""
+
+#: source/language/advanced-attributes.md:40
+msgid ""
+"See the [corresponding section in the derivation page](../store/derivation/"
+"index.md#structured-attrs) for further details."
+msgstr ""
+
+#: source/language/advanced-attributes.md:42
+#: source/language/advanced-attributes.md:250
+#: source/language/advanced-attributes.md:256
+#: source/language/advanced-attributes.md:288
+msgid "**Warning**"
+msgstr ""
+
+#: source/language/advanced-attributes.md:44
+msgid ""
+"If set to `true`, the top-level attributes [`allowedReferences`](#adv-attr-"
+"allowedReferences), [`allowedRequisites`](#adv-attr-allowedRequisites), "
+"[`disallowedReferences`](#adv-attr-disallowedReferences) and "
+"[`disallowedRequisites`](#adv-attr-disallowedRequisites) will have no "
+"effect; use [`outputChecks`](#adv-attr-outputChecks) instead."
+msgstr ""
+
+#: source/language/advanced-attributes.md:48
+msgid "Output checks"
+msgstr ""
+
+#: source/language/advanced-attributes.md:50
+msgid ""
+"These attributes specify [checks on the derivation's outputs](../store/"
+"derivation/outputs/index.md#output-checks). The concepts behind them are "
+"documented there; this section gives the syntax for specifying them from the "
+"Nix language."
+msgstr ""
+
+#: source/language/advanced-attributes.md:53
+msgid ""
+"Store paths in these lists may be given as strings with context (i.e. by "
+"interpolating a derivation), and outputs of the derivation itself are "
+"denoted by their plain output names, e.g. `\"out\"`."
+msgstr ""
+
+#: source/language/advanced-attributes.md:55
+msgid ""
+"\\[`allowedReferences`\\]{#adv-attr-allowedReferences}  \n"
+"Specifies the [_allowed references_](../store/derivation/outputs/index."
+"md#allowed-references) check. For example,"
+msgstr ""
+
+#: source/language/advanced-attributes.md:62
+msgid ""
+"enforces that the output of a derivation cannot have any runtime "
+"dependencies on its inputs. To allow an output to have a runtime dependency "
+"on itself, use `\"out\"` as a list item."
+msgstr ""
+
+#: source/language/advanced-attributes.md:66
+msgid ""
+"\\[`allowedRequisites`\\]{#adv-attr-allowedRequisites}  \n"
+"Specifies the [_allowed requisites_](../store/derivation/outputs/index."
+"md#allowed-requisites) check. For example,"
+msgstr ""
+
+#: source/language/advanced-attributes.md:73
+msgid ""
+"enforces that the output of a derivation cannot have any other runtime "
+"dependency than `foobar`, and in addition it enforces that `foobar` itself "
+"doesn't introduce any other dependency itself."
+msgstr ""
+
+#: source/language/advanced-attributes.md:77
+msgid ""
+"\\[`disallowedReferences`\\]{#adv-attr-disallowedReferences}  \n"
+"Specifies the [_disallowed references_](../store/derivation/outputs/index."
+"md#disallowed-references) check. For example,"
+msgstr ""
+
+#: source/language/advanced-attributes.md:84
+msgid ""
+"enforces that the output of a derivation cannot have a direct runtime "
+"dependency on the derivation `foo`."
+msgstr ""
+
+#: source/language/advanced-attributes.md:87
+msgid ""
+"\\[`disallowedRequisites`\\]{#adv-attr-disallowedRequisites}  \n"
+"Specifies the [_disallowed requisites_](../store/derivation/outputs/index."
+"md#disallowed-requisites) check. For example,"
+msgstr ""
+
+#: source/language/advanced-attributes.md:94
+msgid ""
+"enforces that the output of a derivation cannot have any runtime dependency "
+"on `foobar` or any other derivation depending recursively on `foobar`."
+msgstr ""
+
+#: source/language/advanced-attributes.md:98
+msgid ""
+"\\[`outputChecks`\\]{#adv-attr-outputChecks}  \n"
+"When using [structured attributes](#adv-attr-structuredAttrs), the "
+"`outputChecks` attribute allows defining checks per-output."
+msgstr ""
+
+#: source/language/advanced-attributes.md:102
+msgid ""
+"In addition to [`allowedReferences`](#adv-attr-allowedReferences), "
+"[`allowedRequisites`](#adv-attr-allowedRequisites), [`disallowedReferences`]"
+"(#adv-attr-disallowedReferences) and [`disallowedRequisites`](#adv-attr-"
+"disallowedRequisites), the following attributes are available:"
+msgstr ""
+
+#: source/language/advanced-attributes.md:107
+msgid ""
+"`maxSize` specifies the [_max size_](../store/derivation/outputs/index."
+"md#max-size) check."
+msgstr ""
+
+#: source/language/advanced-attributes.md:108
+msgid ""
+"`maxClosureSize` specifies the [_max closure size_](../store/derivation/"
+"outputs/index.md#max-closure-size) check."
+msgstr ""
+
+#: source/language/advanced-attributes.md:109
+msgid ""
+"`ignoreSelfRefs` controls the [_ignore self references_](../store/derivation/"
+"outputs/index.md#ignore-self-refs) behavior."
+msgstr ""
+
+#: source/language/advanced-attributes.md:111
+#: source/language/advanced-attributes.md:139
+msgid "Example:"
+msgstr ""
+
+#: source/language/advanced-attributes.md:113
+msgid ""
+"```nix\n"
+"__structuredAttrs = true;\n"
+"\n"
+"outputChecks.out = {\n"
+"  # The closure of 'out' must not be larger than 256 MiB.\n"
+"  maxClosureSize = 256 * 1024 * 1024;\n"
+"\n"
+"  # It must not refer to the C compiler or to the 'dev' output.\n"
+"  disallowedRequisites = [ stdenv.cc \"dev\" ];\n"
+"};\n"
+"\n"
+"outputChecks.dev = {\n"
+"  # The 'dev' output must not be larger than 128 KiB.\n"
+"  maxSize = 128 * 1024;\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/language/advanced-attributes.md:130
+msgid "Other output modifications"
+msgstr ""
+
+#: source/language/advanced-attributes.md:132
+msgid ""
+"\\[`unsafeDiscardReferences`\\]{#adv-attr-unsafeDiscardReferences}  \n"
+"When using [structured attributes](#adv-attr-structuredAttrs), the attribute "
+"`unsafeDiscardReferences` is an attribute set with a boolean value for each "
+"output name. If set to `true`, it enables the [_unsafe discard references_]"
+"(../store/derivation/outputs/index.md#unsafe-discard-references) behavior "
+"for that output."
+msgstr ""
+
+#: source/language/advanced-attributes.md:146
+msgid "Build scheduling"
+msgstr ""
+
+#: source/language/advanced-attributes.md:148
+msgid ""
+"\\[`preferLocalBuild`\\]{#adv-attr-preferLocalBuild}  \n"
+"If set to `true`, enables the [_prefer local build_](../store/derivation/"
+"index.md#prefer-local-build) option. This is useful for derivations that are "
+"cheapest to build locally."
+msgstr ""
+
+#: source/language/advanced-attributes.md:152
+msgid ""
+"\\[`allowSubstitutes`\\]{#adv-attr-allowSubstitutes}  \n"
+"If set to `false`, disables the [_allow substitutes_](../store/derivation/"
+"index.md#allow-substitutes) option, so Nix will always build this derivation "
+"(locally or remotely) rather than substituting its outputs. This is useful "
+"for derivations that are cheaper to build than to substitute."
+msgstr ""
+
+#: source/language/advanced-attributes.md:156
+msgid ""
+"\\[`requiredSystemFeatures`\\]{#adv-attr-requiredSystemFeatures}  \n"
+"Specifies the [_required system features_](../store/derivation/index."
+"md#required-system-features) option: Nix will only build the derivation on a "
+"machine that has the corresponding features set in its [`system-features` "
+"configuration](../command-ref/conf-file.md#conf-system-features)."
+msgstr ""
+
+#: source/language/advanced-attributes.md:160
+msgid "For example, setting"
+msgstr ""
+
+#: source/language/advanced-attributes.md:162
+msgid ""
+"```nix\n"
+"requiredSystemFeatures = [ \"kvm\" ];\n"
+"```"
+msgstr ""
+
+#: source/language/advanced-attributes.md:166
+msgid ""
+"ensures that the derivation can only be built on a machine with the `kvm` "
+"feature."
+msgstr ""
+
+#: source/language/advanced-attributes.md:168
+msgid "Impure builder configuration"
+msgstr ""
+
+#: source/language/advanced-attributes.md:170
+msgid ""
+"\\[`impureEnvVars`\\]{#adv-attr-impureEnvVars}  \n"
+"Specifies the [_impure environment variables_](../store/derivation/index."
+"md#impure-env-vars) option: a list of environment variables that should be "
+"passed from the environment of the calling user to the builder. For example, "
+"`fetchurl` in Nixpkgs has the line"
+msgstr ""
+
+#: source/language/advanced-attributes.md:175
+msgid ""
+"```nix\n"
+"impureEnvVars = [ \"http_proxy\" \"https_proxy\" ... ];\n"
+"```"
+msgstr ""
+
+#: source/language/advanced-attributes.md:179
+msgid ""
+"to make it use the proxy server configuration specified by the user in the "
+"environment variables `http_proxy` and friends."
+msgstr ""
+
+#: source/language/advanced-attributes.md:182
+msgid "Setting the derivation type"
+msgstr ""
+
+#: source/language/advanced-attributes.md:184
+msgid ""
+"As discussed in [Derivation Outputs and Types of Derivations](../store/"
+"derivation/outputs/index.md), there are multiples kinds of derivations / "
+"kinds of derivation outputs. The choice of the following attributes "
+"determines which kind of derivation we are making."
+msgstr ""
+
+#: source/language/advanced-attributes.md:187
+msgid "[`__contentAddressed`](#adv-attr-__contentAddressed)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:189
+msgid "[`outputHash`](#adv-attr-outputHash)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:191
+msgid "[`outputHashAlgo`](#adv-attr-outputHashAlgo)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:193
+msgid "[`outputHashMode`](#adv-attr-outputHashMode)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:195
+msgid ""
+"The three types of derivations are chosen based on the following "
+"combinations of these attributes. All other combinations are invalid."
+msgstr ""
+
+#: source/language/advanced-attributes.md:198
+msgid ""
+"[Input-addressing derivations](../store/derivation/outputs/input-address.md)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:200
+msgid ""
+"This is the default for `builtins.derivation`. Nix only currently supports "
+"one kind of input-addressing, so no other information is needed."
+msgstr ""
+
+#: source/language/advanced-attributes.md:203
+msgid ""
+"`__contentAddressed = false;` may also be included, but is not needed, and "
+"will trigger the experimental feature check."
+msgstr ""
+
+#: source/language/advanced-attributes.md:205
+msgid ""
+"[Fixed-output derivations](../glossary.md#gloss-fixed-output-derivation)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:207
+msgid ""
+"All of [`outputHash`](#adv-attr-outputHash), [`outputHashAlgo`](#adv-attr-"
+"outputHashAlgo), and [`outputHashMode`](#adv-attr-outputHashMode)."
+msgstr ""
+
+#: source/language/advanced-attributes.md:217
+msgid ""
+"[(Floating) content-addressing derivations](../store/derivation/outputs/"
+"content-address.md)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:219
+msgid ""
+"Both [`outputHashAlgo`](#adv-attr-outputHashAlgo) and [`outputHashMode`]"
+"(#adv-attr-outputHashMode), `__contentAddressed = true;`, and _not_ "
+"`outputHash`."
+msgstr ""
+
+#: source/language/advanced-attributes.md:221
+msgid ""
+"If an output hash was given, then the derivation output would be \"fixed\" "
+"not \"floating\"."
+msgstr ""
+
+#: source/language/advanced-attributes.md:223
+msgid ""
+"Here is more information on the `output*` attributes, and what values they "
+"may be set to:"
+msgstr ""
+
+#: source/language/advanced-attributes.md:225
+msgid "[`outputHashMode`](#adv-attr-outputHashMode){#adv-attr-outputHashMode}"
+msgstr ""
+
+#: source/language/advanced-attributes.md:227
+msgid ""
+"This specifies how the files of a content-addressing derivation output are "
+"digested to produce a content address."
+msgstr ""
+
+#: source/language/advanced-attributes.md:229
+msgid ""
+"This works in conjunction with [`outputHashAlgo`](#adv-attr-outputHashAlgo). "
+"Specifying one without the other is an error (unless \\[`outputHash` is also "
+"specified and includes its own hash algorithm as described below)."
+msgstr ""
+
+#: source/language/advanced-attributes.md:232
+msgid ""
+"The `outputHashMode` attribute determines how the hash is computed. It must "
+"be one of the following values:"
+msgstr ""
+
+#: source/language/advanced-attributes.md:235
+msgid "[`\"flat\"`](../store/store-object/content-address.md#method-flat)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:237
+msgid "This is the default."
+msgstr ""
+
+#: source/language/advanced-attributes.md:239
+msgid ""
+"[`\"recursive\"` or `\"nar\"`](../store/store-object/content-address."
+"md#method-nix-archive)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:241
+msgid "**Compatibility**"
+msgstr ""
+
+#: source/language/advanced-attributes.md:243
+msgid ""
+"`\"recursive\"` is the traditional way of indicating this, and is supported "
+"since 2005 (virtually the entire history of Nix). `\"nar\"` is more clear, "
+"and consistent with other parts of Nix (such as the CLI), however support "
+"for it is only added in Nix version 2.21."
+msgstr ""
+
+#: source/language/advanced-attributes.md:248
+msgid "[`\"text\"`](../store/store-object/content-address.md#method-text)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:252
+msgid ""
+"The use of this method for derivation outputs is part of the [`dynamic-"
+"derivations`](../development/experimental-features.md#xp-feature-dynamic-"
+"derivations) experimental feature."
+msgstr ""
+
+#: source/language/advanced-attributes.md:254
+msgid "[`\"git\"`](../store/store-object/content-address.md#method-git)"
+msgstr ""
+
+#: source/language/advanced-attributes.md:258
+msgid ""
+"This method is part of the [`git-hashing`](../development/experimental-"
+"features.md#xp-feature-git-hashing) experimental feature."
+msgstr ""
+
+#: source/language/advanced-attributes.md:260
+msgid ""
+"See [content-addressing store objects](../store/store-object/content-address."
+"md) for more information about the process this flag controls."
+msgstr ""
+
+#: source/language/advanced-attributes.md:262
+msgid "[`outputHashAlgo`](#adv-attr-outputHashAlgo){#adv-attr-outputHashAlgo}"
+msgstr ""
+
+#: source/language/advanced-attributes.md:264
+msgid ""
+"This specifies the hash algorithm used to digest the [file system object](../"
+"store/file-system-object.md) data of a content-addressing derivation output."
+msgstr ""
+
+#: source/language/advanced-attributes.md:266
+msgid ""
+"This works in conjunction with [`outputHashMode`](#adv-attr-outputHashAlgo). "
+"Specifying one without the other is an error (unless `outputHash` is also "
+"specified and includes its own hash algorithm as described below)."
+msgstr ""
+
+#: source/language/advanced-attributes.md:269
+msgid ""
+"The `outputHashAlgo` attribute specifies the hash algorithm used to compute "
+"the hash. It can currently be `\"blake3\"`, `\"sha1\"`, `\"sha256\"`, "
+"`\"sha512\"`, or `null`."
+msgstr ""
+
+#: source/language/advanced-attributes.md:272
+msgid ""
+"`outputHashAlgo` can only be `null` when `outputHash` follows the SRI "
+"format, because in that case the choice of hash algorithm is determined by "
+"`outputHash`."
+msgstr ""
+
+#: source/language/advanced-attributes.md:274
+msgid "[`outputHash`](#adv-attr-outputHash){#adv-attr-outputHash}"
+msgstr ""
+
+#: source/language/advanced-attributes.md:276
+msgid ""
+"This will specify the output hash of the single output of a [fixed-output "
+"derivation](../glossary.md#gloss-fixed-output-derivation)."
+msgstr ""
+
+#: source/language/advanced-attributes.md:278
+msgid ""
+"The `outputHash` attribute must be a string containing the hash in either "
+"hexadecimal or \"nix32\" encoding, or following the format for integrity "
+"metadata as defined by [SRI](../glossary.md#gloss-sri). The [\"nix32\" "
+"encoding](../protocols/nix32.md) is Nix's variant of Base32 encoding."
+msgstr ""
+
+#: source/language/advanced-attributes.md:281
+msgid "**Note**"
+msgstr ""
+
+#: source/language/advanced-attributes.md:283
+msgid ""
+"The [`convertHash`](../language/builtins.md#builtins-convertHash) function "
+"shows how to convert between different encodings. The [`nix-hash` command]"
+"(../command-ref/nix-hash.md) has information about obtaining the hash for "
+"some contents, as well as converting to and from encodings."
+msgstr ""
+
+#: source/language/advanced-attributes.md:286
+msgid ""
+"[`__contentAddressed`](#adv-attr-__contentAddressed){#adv-attr-"
+"\\_\\_contentAddressed}"
+msgstr ""
+
+#: source/language/advanced-attributes.md:290
+msgid ""
+"This attribute is part of an [experimental feature](../development/"
+"experimental-features.md)."
+msgstr ""
+
+#: source/language/advanced-attributes.md:292
+msgid ""
+"To use this attribute, you must enable the \\[`ca-derivations`\\]\\[xp-"
+"feature-ca-derivations\\] experimental feature. For example, in [nix.conf]"
+"(../command-ref/conf-file.md) you could add:"
+msgstr ""
+
+#: source/language/advanced-attributes.md:300
+msgid ""
+"This is a boolean with a default of `false`. It determines whether the "
+"derivation is floating content-addressing."
+msgstr ""

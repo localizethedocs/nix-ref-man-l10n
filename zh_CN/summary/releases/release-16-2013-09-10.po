@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-1.6.md:1
+msgid "Release 1.6 (2013-09-10)"
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:3
+msgid ""
+"In addition to the usual bug fixes, this release has several new features:"
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:6
+msgid "The command `nix-build --run-env` has been renamed to `nix-shell`."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:8
+msgid ""
+"`nix-shell` now sources `$stdenv/setup` _inside_ the interactive shell, "
+"rather than in a parent shell. This ensures that shell functions defined by "
+"`stdenv` can be used in the interactive shell."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:12
+msgid ""
+"`nix-shell` has a new flag `--pure` to clear the environment, so you get an "
+"environment that more closely corresponds to the “real” Nix build."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:16
+msgid ""
+"`nix-shell` now sets the shell prompt (`PS1`) to ensure that Nix shells are "
+"distinguishable from your regular shells."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:19
+msgid ""
+"`nix-env` no longer requires a `*` argument to match all packages, so `nix-"
+"env -qa` is equivalent to `nix-env                 -qa '*'`."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:23
+msgid ""
+"`nix-env -i` has a new flag `--remove-all` (`-r`) to remove all previous "
+"packages from the profile. This makes it easier to do declarative package "
+"management similar to NixOS’s `environment.systemPackages`. For instance, if "
+"you have a specification `my-packages.nix` like this:"
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:35
+msgid "then after any change to this file, you can run:"
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:39
+msgid "to update your profile to match the specification."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:41
+msgid ""
+"The ‘`with`’ language construct is now more lazy. It only evaluates its "
+"argument if a variable might actually refer to an attribute in the argument. "
+"For instance, this now works:"
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:45
+msgid ""
+"    let\n"
+"      pkgs = with pkgs; { foo = \"old\"; bar = foo; } // overrides;\n"
+"      overrides = { foo = \"new\"; };\n"
+"    in pkgs.bar\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:50
+msgid ""
+"This evaluates to `\"new\"`, while previously it gave an “infinite "
+"recursion” error."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:53
+msgid ""
+"Nix now has proper integer arithmetic operators. For instance, you can write "
+"`x + y` instead of `builtins.add x y`, or `x <                 y` instead of "
+"`builtins.lessThan x y`. The comparison operators also work on strings."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:58
+msgid "On 64-bit systems, Nix integers are now 64 bits rather than 32 bits."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:60
+msgid ""
+"When using the Nix daemon, the `nix-daemon` worker process now runs on the "
+"same CPU as the client, on systems that support setting CPU affinity. This "
+"gives a significant speedup on some systems."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:64
+msgid ""
+"If a stack overflow occurs in the Nix evaluator, you now get a proper error "
+"message (rather than “Segmentation fault”) on some systems."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:68
+msgid ""
+"In addition to directories, you can now bind-mount regular files in chroots "
+"through the (now misnamed) option `build-chroot-dirs`."
+msgstr ""
+
+#: source/release-notes/rl-1.6.md:71
+msgid ""
+"This release has contributions from Domen Kožar, Eelco Dolstra, Florian "
+"Friesdorf, Gergely Risko, Ivan Kozik, Ludovic Courtès and Shea Levy."
+msgstr ""
