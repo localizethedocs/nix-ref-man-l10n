@@ -16,9 +16,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-13 16:43:52 +0000",
-        "hash" : "a9f38ea0ee89f550616f342386f45e896f4abd18",
-        "title" : "Revert accidentally merged PR (#16602)"
+        "date" : "2026-10-20 08:25:44 +0000",
+        "hash" : "f3f184834895f45030d69f20a311b2eac99ebf1d",
+        "title" : "PR template: Replace \"Context\" with \"Implementation\" (#16647)"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-13 16:43:52 +0000",
-        "hash" : "a9f38ea0ee89f550616f342386f45e896f4abd18",
-        "title" : "Revert accidentally merged PR (#16602)"
+        "date" : "2026-10-20 08:25:44 +0000",
+        "hash" : "f3f184834895f45030d69f20a311b2eac99ebf1d",
+        "title" : "PR template: Replace \"Context\" with \"Implementation\" (#16647)"
       }
     }
   },

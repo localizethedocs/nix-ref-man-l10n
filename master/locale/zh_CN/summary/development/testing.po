@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -135,8 +135,8 @@ msgstr ""
 msgid "Putting the first two together, one might run"
 msgstr ""
 
-#: source/development/testing.md:98 source/development/testing.md:108
-#: source/development/testing.md:268
+#: source/development/testing.md:98 source/development/testing.md:118
+#: source/development/testing.md:278
 msgid "1"
 msgstr ""
 
@@ -149,54 +149,68 @@ msgid "for short but comprensive output."
 msgstr ""
 
 #: source/development/testing.md:103
-msgid "Debugging tests"
+msgid "Unit tests requiring root"
 msgstr ""
 
 #: source/development/testing.md:105
+msgid ""
+"In `nix-util-tests`, suites beginning with `Root` require root and are "
+"excluded by default. To run them on macOS:"
+msgstr ""
+
+#: source/development/testing.md:110
+msgid "'Root*'"
+msgstr ""
+
+#: source/development/testing.md:113
+msgid "Debugging tests"
+msgstr ""
+
+#: source/development/testing.md:115
 msgid ""
 "For debugging, it is useful to combine the third option above with Meson's "
 "[`--gdb`](https://mesonbuild.com/Unit-tests.html#other-test-options) flag:"
 msgstr ""
 
-#: source/development/testing.md:108
+#: source/development/testing.md:118
 msgid "'Group.my-failing-test'"
 msgstr ""
 
-#: source/development/testing.md:111
+#: source/development/testing.md:121
 msgid "This will:"
 msgstr ""
 
-#: source/development/testing.md:113
+#: source/development/testing.md:123
 msgid "Run the unit test with GDB"
 msgstr ""
 
-#: source/development/testing.md:115
+#: source/development/testing.md:125
 msgid "Run just `Group.my-failing-test`"
 msgstr ""
 
-#: source/development/testing.md:117
+#: source/development/testing.md:127
 msgid ""
 "Stop the program when the test fails, allowing the user to then issue "
 "arbitrary commands to GDB."
 msgstr ""
 
-#: source/development/testing.md:119 source/development/testing.md:257
+#: source/development/testing.md:129 source/development/testing.md:267
 msgid "Characterisation testing"
 msgstr ""
 
-#: source/development/testing.md:121
+#: source/development/testing.md:131
 msgid ""
 "See [functional characterisation testing](#characterisation-testing-"
 "functional) for a broader discussion of characterisation testing."
 msgstr ""
 
-#: source/development/testing.md:123
+#: source/development/testing.md:133
 msgid ""
 "Like with the functional characterisation, `_NIX_TEST_ACCEPT=1` is also "
 "used. For example:"
 msgstr ""
 
-#: source/development/testing.md:134
+#: source/development/testing.md:144
 msgid ""
 "will regenerate the \"golden master\" expected result for the `libnixstore` "
 "characterisation tests. The characterisation tests will mark themselves "
@@ -204,11 +218,11 @@ msgid ""
 "testing anything."
 msgstr ""
 
-#: source/development/testing.md:137
+#: source/development/testing.md:147
 msgid "JSON Schema testing"
 msgstr ""
 
-#: source/development/testing.md:139
+#: source/development/testing.md:149
 msgid ""
 "In `doc/manual/source/protocols/json/` we have a number of manual pages "
 "generated from [JSON Schema](https://json-schema.org/). That JSON schema is "
@@ -219,11 +233,11 @@ msgid ""
 "implementation, and a machine-readable schema are are all in sync."
 msgstr ""
 
-#: source/development/testing.md:143
+#: source/development/testing.md:153
 msgid "Unit test support libraries"
 msgstr ""
 
-#: source/development/testing.md:145
+#: source/development/testing.md:155
 msgid ""
 "There are headers and code which are not just used to test the library in "
 "question, but also downstream libraries. For example, we do [property "
@@ -238,7 +252,7 @@ msgid ""
 "libraries' property tests can also use them."
 msgstr ""
 
-#: source/development/testing.md:151
+#: source/development/testing.md:161
 msgid ""
 "It is important that these testing libraries don't contain any actual tests "
 "themselves. On some platforms they would be run as part of every test "
@@ -246,35 +260,35 @@ msgid ""
 "wouldn't be run at all."
 msgstr ""
 
-#: source/development/testing.md:155
+#: source/development/testing.md:165
 msgid "Functional tests"
 msgstr ""
 
-#: source/development/testing.md:157
+#: source/development/testing.md:167
 msgid ""
 "The functional tests reside under the `tests/functional` directory and are "
 "listed in `tests/functional/meson.build`. Each test is a bash script."
 msgstr ""
 
-#: source/development/testing.md:160
+#: source/development/testing.md:170
 msgid ""
 "Functional tests are run during `installCheck` in the `nix` package build, "
 "as well as separately from the build, in VM tests."
 msgstr ""
 
-#: source/development/testing.md:162
+#: source/development/testing.md:172
 msgid "Running the whole test suite"
 msgstr ""
 
-#: source/development/testing.md:164
+#: source/development/testing.md:174
 msgid "The whole test suite (functional and unit tests) can be run with:"
 msgstr ""
 
-#: source/development/testing.md:170
+#: source/development/testing.md:180
 msgid "Grouping tests"
 msgstr ""
 
-#: source/development/testing.md:172
+#: source/development/testing.md:182
 msgid ""
 "Sometimes it is useful to group related tests so they can be easily run "
 "together without running the entire test suite. Each test group is in a "
@@ -282,19 +296,19 @@ msgid ""
 "defines a `ca` test group for content-addressing derivation outputs."
 msgstr ""
 
-#: source/development/testing.md:176
+#: source/development/testing.md:186
 msgid "That test group can be run like this:"
 msgstr ""
 
-#: source/development/testing.md:186
+#: source/development/testing.md:196
 msgid "Running individual tests"
 msgstr ""
 
-#: source/development/testing.md:188
+#: source/development/testing.md:198
 msgid "Individual tests can be run with `meson`:"
 msgstr ""
 
-#: source/development/testing.md:206
+#: source/development/testing.md:216
 msgid ""
 "The `--verbose` flag will make Meson also show the console output of each "
 "test for easier debugging. The test script will then be traced with `set -x` "
@@ -302,49 +316,49 @@ msgid ""
 "succeeds or fails."
 msgstr ""
 
-#: source/development/testing.md:210
+#: source/development/testing.md:220
 msgid "Tests can be also run directly without `meson`:"
 msgstr ""
 
-#: source/development/testing.md:221
+#: source/development/testing.md:231
 msgid "Debugging failing functional tests"
 msgstr ""
 
-#: source/development/testing.md:223
+#: source/development/testing.md:233
 msgid ""
 "When a functional test fails, it usually does so somewhere in the middle of "
 "the script."
 msgstr ""
 
-#: source/development/testing.md:225
+#: source/development/testing.md:235
 msgid ""
 "To figure out what's wrong, it is convenient to run the test regularly up to "
 "the failing `nix` command, and then run that command with a debugger like "
 "GDB."
 msgstr ""
 
-#: source/development/testing.md:227
+#: source/development/testing.md:237
 msgid "For example, if the script looks like:"
 msgstr ""
 
-#: source/development/testing.md:234
+#: source/development/testing.md:244
 msgid "edit it like so:"
 msgstr ""
 
-#: source/development/testing.md:243
+#: source/development/testing.md:253
 msgid ""
 "Then, running the test with [`--interactive`](https://mesonbuild.com/Unit-"
 "tests.html#other-test-options) will prevent Meson from hijacking the "
 "terminal so you can drop you into GDB once the script reaches that point:"
 msgstr ""
 
-#: source/development/testing.md:254
+#: source/development/testing.md:264
 msgid ""
 "One can debug the Nix invocation in all the usual ways. For example, enter "
 "`run` to start the Nix invocation."
 msgstr ""
 
-#: source/development/testing.md:259
+#: source/development/testing.md:269
 msgid ""
 "Occasionally, Nix utilizes a technique called [Characterisation Testing]"
 "(https://en.wikipedia.org/wiki/Characterization_test) as part of the "
@@ -353,26 +367,26 @@ msgid ""
 "produce the same behavior going forward."
 msgstr ""
 
-#: source/development/testing.md:262
+#: source/development/testing.md:272
 msgid ""
 "For example, this technique is used for the language tests, to check both "
 "the printed final value if evaluation was successful, and any errors and "
 "warnings encountered."
 msgstr ""
 
-#: source/development/testing.md:264
+#: source/development/testing.md:274
 msgid ""
 "It is frequently useful to regenerate the expected output. To do that, rerun "
 "the failed test(s) with `_NIX_TEST_ACCEPT=1`. For example:"
 msgstr ""
 
-#: source/development/testing.md:270
+#: source/development/testing.md:280
 msgid ""
 "This convention is shared with the [characterisation unit tests]"
 "(#characterisation-testing-unit) too."
 msgstr ""
 
-#: source/development/testing.md:272
+#: source/development/testing.md:282
 msgid ""
 "An interesting situation to document is the case when these tests are "
 "\"overfitted\". The language tests are, again, an example of this. The "
@@ -383,7 +397,7 @@ msgid ""
 "displayed at any time."
 msgstr ""
 
-#: source/development/testing.md:278
+#: source/development/testing.md:288
 msgid ""
 "It may be surprising that we would test non-normative behavior like "
 "diagnostic outputs. Diagnostic outputs are indeed not a stable interface, "
@@ -394,18 +408,18 @@ msgid ""
 "review."
 msgstr ""
 
-#: source/development/testing.md:283
+#: source/development/testing.md:293
 msgid ""
 "To ensure that characterisation testing doesn't make it harder to "
 "intentionally change these interfaces, there always must be an easy way to "
 "regenerate the expected output, as we do with `_NIX_TEST_ACCEPT=1`."
 msgstr ""
 
-#: source/development/testing.md:285
+#: source/development/testing.md:295
 msgid "Running functional tests on NixOS"
 msgstr ""
 
-#: source/development/testing.md:287
+#: source/development/testing.md:297
 msgid ""
 "We run the functional tests not just in the build, but also in VM tests. "
 "This helps us ensure that Nix works correctly on NixOS, and environments "
@@ -413,22 +427,22 @@ msgid ""
 "environment."
 msgstr ""
 
-#: source/development/testing.md:290
+#: source/development/testing.md:300
 msgid "These can be run with:"
 msgstr ""
 
-#: source/development/testing.md:296
+#: source/development/testing.md:306
 msgid ""
 "Generally, this build is sufficient, but in nightly or CI we also test the "
 "attributes `functional_root` and `functional_trusted`, in which the test "
 "suite is run with different levels of authorization."
 msgstr ""
 
-#: source/development/testing.md:298
+#: source/development/testing.md:308
 msgid "Integration tests"
 msgstr ""
 
-#: source/development/testing.md:300
+#: source/development/testing.md:310
 msgid ""
 "The integration tests are defined in the Nix flake under the `hydraJobs."
 "tests` attribute. These tests include everything that needs to interact with "
@@ -438,17 +452,17 @@ msgid ""
 "<https://hydra.nixos.org/jobset/nix/master>)."
 msgstr ""
 
-#: source/development/testing.md:304
+#: source/development/testing.md:314
 msgid ""
 "You can run them manually with `nix build .#hydraJobs.tests.{testName}` or "
 "`nix-build -A hydraJobs.tests.{testName}`."
 msgstr ""
 
-#: source/development/testing.md:306
+#: source/development/testing.md:316
 msgid "Fuzzing"
 msgstr ""
 
-#: source/development/testing.md:308
+#: source/development/testing.md:318
 msgid ""
 "The project uses [`libFuzzer`](https://llvm.org/docs/LibFuzzer.html) and "
 "LLVM coverage instrumentation to fuzz sensitive pieces of code. The "
@@ -461,7 +475,7 @@ msgid ""
 "harnesses with libFuzzer and libstdc++."
 msgstr ""
 
-#: source/development/testing.md:315
+#: source/development/testing.md:325
 msgid ""
 "```shell\n"
 "nix develop .#native-clangStdenv\n"
@@ -478,11 +492,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/development/testing.md:327
+#: source/development/testing.md:337
 msgid "To use an external fuzzing engine, set `fuzzing-engine`:"
 msgstr ""
 
-#: source/development/testing.md:329
+#: source/development/testing.md:339
 msgid ""
 "```shell\n"
 "mesonFlagsArray+=(\n"
@@ -493,20 +507,20 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/development/testing.md:337
+#: source/development/testing.md:347
 msgid ""
 "Nix passes this value as one compiler-driver argument. The caller must also "
 "choose a compatible compiler and C++ runtime and provide any required "
 "instrumentation and sanitizer flags."
 msgstr ""
 
-#: source/development/testing.md:340
+#: source/development/testing.md:350
 msgid ""
 "If you want to collect coverage metrics you also need to specify the "
 "following compiler flags before running the `configurePhase`:"
 msgstr ""
 
-#: source/development/testing.md:342
+#: source/development/testing.md:352
 msgid ""
 "```shell\n"
 "export CXXFLAGS=\"-fprofile-instr-generate -fcoverage-mapping\"\n"
@@ -514,20 +528,20 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/development/testing.md:347
+#: source/development/testing.md:357
 msgid ""
 "For now, the testbenches are mostly rudimentary and are supposed to catch "
 "memory safety bugs, but fuzzing is also crucial for validating invariants. "
 "Contributions improving harnesses and corpus/dictionaries are welcome."
 msgstr ""
 
-#: source/development/testing.md:350
+#: source/development/testing.md:360
 msgid ""
 "To run the harness (e.g. for NAR deserialisation) you can execute the "
 "following:"
 msgstr ""
 
-#: source/development/testing.md:352
+#: source/development/testing.md:362
 msgid ""
 "```shell\n"
 "export LLVM_PROFILE_FILE=\"default.%p.profraw\"\n"
@@ -538,7 +552,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/development/testing.md:358
+#: source/development/testing.md:368
 msgid ""
 "Note that to achieve better results, tuning `libFuzzer` parameters or "
 "improvements to the initial corpus and dictionaries is likely required. For "
@@ -546,25 +560,25 @@ msgid ""
 "LibFuzzer.html)."
 msgstr ""
 
-#: source/development/testing.md:360
+#: source/development/testing.md:370
 msgid ""
 "If you want to inspect the coverage, wait for the harness to run to "
 "completion (interrupting it won't produce a non-empty `.profraw` file) and "
 "assemble the final coverage report:"
 msgstr ""
 
-#: source/development/testing.md:368
+#: source/development/testing.md:378
 msgid ""
 "If you have found a memory safety issue using fuzzing, consider reporting it "
 "[privately](https://github.com/NixOS/nix/security/) if you deem the issue to "
 "be security relevant."
 msgstr ""
 
-#: source/development/testing.md:370
+#: source/development/testing.md:380
 msgid "Checks that defeat fuzzing"
 msgstr ""
 
-#: source/development/testing.md:372
+#: source/development/testing.md:382
 msgid ""
 "Fuzzing is crucial for validating invariants, but a few invariants are ones "
 "a fuzzer can never satisfy. A check that a field equals a cryptographic hash "
@@ -576,13 +590,13 @@ msgid ""
 "should be gated."
 msgstr ""
 
-#: source/development/testing.md:377
+#: source/development/testing.md:387
 msgid ""
 "Such checks are compiled out under "
 "`FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION`, e.g.:"
 msgstr ""
 
-#: source/development/testing.md:386
+#: source/development/testing.md:396
 msgid ""
 "The macro name is a convention from [OSS-Fuzz](https://google.github.io/oss-"
 "fuzz/) and libFuzzer. `nix-meson-build-support/common/meson.build` defines "
@@ -592,7 +606,7 @@ msgid ""
 "does."
 msgstr ""
 
-#: source/development/testing.md:390
+#: source/development/testing.md:400
 msgid ""
 "Anything gated this way is no longer exercised by the fuzzer, so it must be "
 "covered by a unit test instead. For an example of both halves, see the fixed-"
@@ -600,11 +614,11 @@ msgid ""
 "aterm.cc`) and its test `CAFixedPathMismatch`."
 msgstr ""
 
-#: source/development/testing.md:393
+#: source/development/testing.md:403
 msgid "Installer tests"
 msgstr ""
 
-#: source/development/testing.md:395
+#: source/development/testing.md:405
 msgid ""
 "GitHub Actions CI in the Nix repository also tests the installer on PRs. It "
 "does not require additional setup and utilises [GHA Artifacts](https://docs."
@@ -612,77 +626,77 @@ msgid ""
 "Nix repository fork."
 msgstr ""
 
-#: source/development/testing.md:397
+#: source/development/testing.md:407
 msgid ""
 "The `tests` job generates installers for the platforms below and uploads "
 "them as an artifact:"
 msgstr ""
 
-#: source/development/testing.md:398
+#: source/development/testing.md:408
 msgid "`x86_64-linux`"
 msgstr ""
 
-#: source/development/testing.md:399
+#: source/development/testing.md:409
 msgid "`aarch64-darwin`"
 msgstr ""
 
-#: source/development/testing.md:401
+#: source/development/testing.md:411
 msgid ""
 "The `installer_test` job (which runs on Linux and macOS) will try to install "
 "Nix with the cached installer and run a trivial Nix command."
 msgstr ""
 
-#: source/development/testing.md:402
+#: source/development/testing.md:412
 msgid ""
 "Both the scripted installer and the [standalone Rust-based installer]"
 "(https://github.com/NixOS/nix-installer) are tested."
 msgstr ""
 
-#: source/development/testing.md:404
+#: source/development/testing.md:414
 msgid ""
 "You can generate the installer tarball and script manually by running `nix "
 "build .#hydraJobs.installerScriptForGHA.<system-double>`."
 msgstr ""
 
-#: source/development/testing.md:406
+#: source/development/testing.md:416
 msgid "Working on documentation"
 msgstr ""
 
-#: source/development/testing.md:408
+#: source/development/testing.md:418
 msgid "Using the CI-generated installer for manual testing"
 msgstr ""
 
-#: source/development/testing.md:410
+#: source/development/testing.md:420
 msgid ""
 "After the CI run completes, you can check the output to extract the "
 "installer artifact:"
 msgstr ""
 
-#: source/development/testing.md:411
+#: source/development/testing.md:421
 msgid "Click into the detailed view of the CI run."
 msgstr ""
 
-#: source/development/testing.md:412
+#: source/development/testing.md:422
 msgid "Scroll down to `Artifacts` section."
 msgstr ""
 
-#: source/development/testing.md:413
+#: source/development/testing.md:423
 msgid ""
 "Download the corresponding installer artifact (`installer-darwin` for "
 "`aarch64-darwin` and `installer-linux` for `x86_64-linux`)."
 msgstr ""
 
-#: source/development/testing.md:414
+#: source/development/testing.md:424
 msgid "Unpack the downloaded `.zip` artifact."
 msgstr ""
 
-#: source/development/testing.md:415
+#: source/development/testing.md:425
 msgid ""
 "To generate an install command, plug the path to the unpacked artifact into "
 "this template:"
 msgstr ""
 
-#: source/development/testing.md:417
+#: source/development/testing.md:427
 msgid ""
 "```console\n"
 "sh <path/to/artifact>/install --tarball-url-prefix file://<path/to/"
