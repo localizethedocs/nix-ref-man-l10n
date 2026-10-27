@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -162,8 +162,8 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:74
 msgid ""
-"The `extra-` prefix is supported for settings that take a list of items (e."
-"g. `--extra-trusted users alice` or `--option extra-trusted-users alice`)."
+"The `extra-` prefix is supported for settings that take a list of items "
+"(e.g. `--extra-trusted users alice` or `--option extra-trusted-users alice`)."
 msgstr ""
 
 #: source/command-ref/conf-file.md:76
@@ -307,10 +307,10 @@ msgstr ""
 #: source/command-ref/conf-file.md:138
 msgid ""
 "Gitlab: the token value is either the OAuth2 token or the Personal Access "
-"Token (these are different types tokens for gitlab, see https://docs.gitlab."
-"com/12.10/ee/api/README.html#authentication). The `token` value should be "
-"`type:tokenstring` where `type` is either `OAuth2` or `PAT` to indicate "
-"which type of token is being specified."
+"Token (these are different types tokens for gitlab, see https://"
+"docs.gitlab.com/12.10/ee/api/README.html#authentication). The `token` value "
+"should be `type:tokenstring` where `type` is either `OAuth2` or `PAT` to "
+"indicate which type of token is being specified."
 msgstr ""
 
 #: source/command-ref/conf-file.md:146
@@ -521,8 +521,8 @@ msgstr ""
 msgid ""
 "A list of URI prefixes to which access is allowed in restricted evaluation "
 "mode. For example, when set to `https://github.com/NixOS`, builtin functions "
-"such as `fetchGit` are allowed to access `https://github.com/NixOS/patchelf."
-"git`."
+"such as `fetchGit` are allowed to access `https://github.com/NixOS/"
+"patchelf.git`."
 msgstr ""
 
 #: source/command-ref/conf-file.md:276
@@ -830,8 +830,9 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:446
 msgid ""
-"A comma-separated list of [Nix system types](../development/building."
-"md#system-type). If omitted, this defaults to the local platform type."
+"A comma-separated list of [Nix system types](../development/"
+"building.md#system-type). If omitted, this defaults to the local platform "
+"type."
 msgstr ""
 
 #: source/command-ref/conf-file.md:451 source/command-ref/conf-file.md:1817
@@ -877,9 +878,9 @@ msgstr ""
 #: source/command-ref/conf-file.md:474
 msgid ""
 "A machine is only used to build a derivation if all the features in the "
-"derivation's [`requiredSystemFeatures`](../language/advanced-attributes."
-"html#adv-attr-requiredSystemFeatures) attribute are supported by that "
-"machine."
+"derivation's [`requiredSystemFeatures`](../language/advanced-"
+"attributes.html#adv-attr-requiredSystemFeatures) attribute are supported by "
+"that machine."
 msgstr ""
 
 #: source/command-ref/conf-file.md:476
@@ -1073,8 +1074,8 @@ msgstr ""
 #: source/command-ref/conf-file.md:598
 msgid ""
 "For instance, in Nixpkgs, if the attribute `enableParallelBuilding` for the "
-"`mkDerivation` build helper is set to `true`, it passes the `-"
-"j${NIX_BUILD_CORES}` flag to GNU Make."
+"`mkDerivation` build helper is set to `true`, it passes the `-j$"
+"{NIX_BUILD_CORES}` flag to GNU Make."
 msgstr ""
 
 #: source/command-ref/conf-file.md:600
@@ -1140,8 +1141,8 @@ msgstr ""
 #: source/command-ref/conf-file.md:626
 msgid ""
 "If set to true and the `--debugger` flag is given, [`builtins.warn`](../"
-"language/builtins.md#builtins-warn) will enter the debugger like [`builtins."
-"break`](../language/builtins.md#builtins-break)."
+"language/builtins.md#builtins-warn) will enter the debugger like "
+"[`builtins.break`](../language/builtins.md#builtins-break)."
 msgstr ""
 
 #: source/command-ref/conf-file.md:631
@@ -1243,9 +1244,9 @@ msgstr ""
 #: source/command-ref/conf-file.md:682
 msgid ""
 "Tunes the maximum size of an attribute set that, when used as a right "
-"operand in an [attribute set update expression](../language/operators."
-"md#update), uses a more space-efficient linked-list representation of "
-"attribute sets."
+"operand in an [attribute set update expression](../language/"
+"operators.md#update), uses a more space-efficient linked-list representation "
+"of attribute sets."
 msgstr ""
 
 #: source/command-ref/conf-file.md:686
@@ -1348,10 +1349,11 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:733
 msgid ""
-"This option defines [`builtins.currentSystem`](../language/builtins."
-"md#builtins-currentSystem) in the Nix language if it is set as a non-empty "
-"string. Otherwise, if it is defined as the empty string (the default), the "
-"value of the [`system` ](#conf-system) configuration setting is used instead."
+"This option defines [`builtins.currentSystem`](../language/"
+"builtins.md#builtins-currentSystem) in the Nix language if it is set as a "
+"non-empty string. Otherwise, if it is defined as the empty string (the "
+"default), the value of the [`system` ](#conf-system) configuration setting "
+"is used instead."
 msgstr ""
 
 #: source/command-ref/conf-file.md:740
@@ -2069,10 +2071,10 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:1084
 msgid ""
-"If set to `true` (the default), Nix writes the build log of a derivation (i."
-"e. the standard output and error of its builder) to the directory `/nix/var/"
-"log/nix/drvs`. The build log can be retrieved using the command `nix-store -"
-"l path`."
+"If set to `true` (the default), Nix writes the build log of a derivation "
+"(i.e. the standard output and error of its builder) to the directory `/nix/"
+"var/log/nix/drvs`. The build log can be retrieved using the command `nix-"
+"store -l path`."
 msgstr ""
 
 #: source/command-ref/conf-file.md:1091
@@ -2568,8 +2570,8 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:1390
 msgid ""
-"This must be an absolute path, and `~` is not resolved. For example, `~/."
-"netrc` won't resolve to your home directory's `.netrc`."
+"This must be an absolute path, and `~` is not resolved. For example, "
+"`~/.netrc` won't resolve to your home directory's `.netrc`."
 msgstr ""
 
 #: source/command-ref/conf-file.md:1394
@@ -2583,9 +2585,9 @@ msgstr ""
 #: source/command-ref/conf-file.md:1398
 msgid ""
 "List of search paths to use for [lookup path](../language/constructs/lookup-"
-"path.md) resolution. This setting determines the value of [`builtins."
-"nixPath`](../language/builtins.md#builtins-nixPath) and can be used with "
-"[`builtins.findFile`](../language/builtins.md#builtins-findFile)."
+"path.md) resolution. This setting determines the value of "
+"[`builtins.nixPath`](../language/builtins.md#builtins-nixPath) and can be "
+"used with [`builtins.findFile`](../language/builtins.md#builtins-findFile)."
 msgstr ""
 
 #: source/command-ref/conf-file.md:1402
@@ -2602,8 +2604,8 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:1405
 msgid ""
-"Any current value is extended by the [`-I` option](../command-ref/opt-common."
-"md#opt-I) or `--extra-nix-path`."
+"Any current value is extended by the [`-I` option](../command-ref/opt-"
+"common.md#opt-I) or `--extra-nix-path`."
 msgstr ""
 
 #: source/command-ref/conf-file.md:1407
@@ -3459,8 +3461,8 @@ msgid ""
 "On Linux, Nix can run builds in a user namespace where they run as root (UID "
 "0) and have 65,536 UIDs available. This is primarily useful for running "
 "containers such as `systemd-nspawn` inside a Nix build. For an example, see "
-"[`tests/systemd-nspawn/nix`](https://github.com/NixOS/nix/"
-"blob/67bcb99700a0da1395fa063d7c6586740b304598/tests/systemd-nspawn.nix)."
+"[`tests/systemd-nspawn/nix`](https://github.com/NixOS/nix/blob/"
+"67bcb99700a0da1395fa063d7c6586740b304598/tests/systemd-nspawn.nix)."
 msgstr ""
 
 #: source/command-ref/conf-file.md:1871
@@ -3579,8 +3581,8 @@ msgstr ""
 #: source/command-ref/conf-file.md:1950
 msgid ""
 "If disabled, such tarballs are only considered locked if a `narHash` "
-"attribute is specified, e.g. `github:NixOS/"
-"patchelf/7c2f768bf9601268a4e71c2ebe91e2011918a70f?narHash=sha256-"
+"attribute is specified, e.g. `github:NixOS/patchelf/"
+"7c2f768bf9601268a4e71c2ebe91e2011918a70f?narHash=sha256-"
 "PPXqKY2hJng4DBVE0I4xshv/vGLUskL7jl53roB8UdU%3D`."
 msgstr ""
 
@@ -3755,10 +3757,10 @@ msgstr ""
 #: source/command-ref/conf-file.md:2051
 msgid ""
 "If set to `true`, Nix conforms to the [XDG Base Directory Specification]"
-"(https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest."
-"html) for files in `$HOME`. The environment variables used to implement this "
-"are documented in the [Environment Variables section](../command-ref/env-"
-"common.md)."
+"(https://specifications.freedesktop.org/basedir-spec/basedir-spec-"
+"latest.html) for files in `$HOME`. The environment variables used to "
+"implement this are documented in the [Environment Variables section](../"
+"command-ref/env-common.md)."
 msgstr ""
 
 #: source/command-ref/conf-file.md:2056

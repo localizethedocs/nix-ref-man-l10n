@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -73,11 +73,11 @@ msgstr ""
 
 #: source/language/types.md:22
 msgid ""
-"Non-negative integers can be expressed as [integer literals](syntax."
-"md#number-literal). Negative integers are created with the [arithmetic "
-"negation operator](./operators.md#arithmetic). The function [`builtins."
-"isInt`](builtins.md#builtins-isInt) can be used to determine if a value is "
-"an integer."
+"Non-negative integers can be expressed as [integer literals]"
+"(syntax.md#number-literal). Negative integers are created with the "
+"[arithmetic negation operator](./operators.md#arithmetic). The function "
+"[`builtins.isInt`](builtins.md#builtins-isInt) can be used to determine if a "
+"value is an integer."
 msgstr ""
 
 #: source/language/types.md:26
@@ -86,17 +86,17 @@ msgstr ""
 
 #: source/language/types.md:28
 msgid ""
-"A _float_ in the Nix language is a 64-bit [IEEE 754](https://en.wikipedia."
-"org/wiki/IEEE_754) floating-point number."
+"A _float_ in the Nix language is a 64-bit [IEEE 754](https://"
+"en.wikipedia.org/wiki/IEEE_754) floating-point number."
 msgstr ""
 
 #: source/language/types.md:30
 msgid ""
-"Most non-negative floats can be expressed as [float literals](syntax."
-"md#number-literal). Negative floats are created with the [arithmetic "
-"negation operator](./operators.md#arithmetic). The function [`builtins."
-"isFloat`](builtins.md#builtins-isFloat) can be used to determine if a value "
-"is a float."
+"Most non-negative floats can be expressed as [float literals]"
+"(syntax.md#number-literal). Negative floats are created with the [arithmetic "
+"negation operator](./operators.md#arithmetic). The function "
+"[`builtins.isFloat`](builtins.md#builtins-isFloat) can be used to determine "
+"if a value is a float."
 msgstr ""
 
 #: source/language/types.md:34
@@ -109,11 +109,11 @@ msgstr ""
 
 #: source/language/types.md:40
 msgid ""
-"These values are available as attributes of [`builtins`](builtins."
-"md#builtins-builtins) as [`builtins.true`](builtins.md#builtins-true) and "
-"[`builtins.false`](builtins.md#builtins-false). The function [`builtins."
-"isBool`](builtins.md#builtins-isBool) can be used to determine if a value is "
-"a boolean."
+"These values are available as attributes of [`builtins`]"
+"(builtins.md#builtins-builtins) as [`builtins.true`](builtins.md#builtins-"
+"true) and [`builtins.false`](builtins.md#builtins-false). The function "
+"[`builtins.isBool`](builtins.md#builtins-isBool) can be used to determine if "
+"a value is a boolean."
 msgstr ""
 
 #: source/language/types.md:43
@@ -130,8 +130,9 @@ msgstr ""
 #: source/language/types.md:48
 msgid ""
 "String values without string context can be expressed as [string literals]"
-"(string-literals.md). The function [`builtins.isString`](builtins."
-"md#builtins-isString) can be used to determine if a value is a string."
+"(string-literals.md). The function [`builtins.isString`]"
+"(builtins.md#builtins-isString) can be used to determine if a value is a "
+"string."
 msgstr ""
 
 #: source/language/types.md:51
@@ -180,9 +181,9 @@ msgid ""
 "resolve to a readable file or directory which will be copied into the Nix "
 "store. For instance, evaluating `\"${./foo.txt}\"` will cause `foo.txt` from "
 "the same directory to be copied into the Nix store and result in the string "
-"`\"/nix/store/<hash>-foo.txt\"`. Operations such as [`import`](builtins."
-"md#builtins-import) can also expect a path to resolve to a readable file or "
-"directory."
+"`\"/nix/store/<hash>-foo.txt\"`. Operations such as [`import`]"
+"(builtins.md#builtins-import) can also expect a path to resolve to a "
+"readable file or directory."
 msgstr ""
 
 #: source/language/types.md:74
@@ -217,9 +218,9 @@ msgstr ""
 
 #: source/language/types.md:92
 msgid ""
-"This value is available as an attribute on the [`builtins`](builtins."
-"md#builtins-builtins) attribute set as [`builtins.null`](builtins."
-"md#builtins-null)."
+"This value is available as an attribute on the [`builtins`]"
+"(builtins.md#builtins-builtins) attribute set as [`builtins.null`]"
+"(builtins.md#builtins-null)."
 msgstr ""
 
 #: source/language/types.md:94
@@ -232,9 +233,10 @@ msgstr ""
 
 #: source/language/types.md:100
 msgid ""
-"An attribute set can be constructed with an [attribute set literal](syntax."
-"md#attrs-literal). The function [`builtins.isAttrs`](builtins.md#builtins-"
-"isAttrs) can be used to determine if a value is an attribute set."
+"An attribute set can be constructed with an [attribute set literal]"
+"(syntax.md#attrs-literal). The function [`builtins.isAttrs`]"
+"(builtins.md#builtins-isAttrs) can be used to determine if a value is an "
+"attribute set."
 msgstr ""
 
 #: source/language/types.md:103
@@ -254,9 +256,10 @@ msgstr ""
 
 #: source/language/types.md:114
 msgid ""
-"A function can be constructed with a [function expression](syntax."
-"md#functions). The function [`builtins.isFunction`](builtins.md#builtins-"
-"isFunction) can be used to determine if a value is a function."
+"A function can be constructed with a [function expression]"
+"(syntax.md#functions). The function [`builtins.isFunction`]"
+"(builtins.md#builtins-isFunction) can be used to determine if a value is a "
+"function."
 msgstr ""
 
 #: source/language/types.md:117

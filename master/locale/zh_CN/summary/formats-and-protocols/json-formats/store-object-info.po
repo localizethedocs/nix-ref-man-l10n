@@ -461,8 +461,8 @@ msgstr ""
 
 #: source/protocols/json/store-object-info.md:67
 msgid ""
-"**Description:** Information about a [store object](../../store/store-object."
-"md)."
+"**Description:** Information about a [store object](../../store/store-"
+"object.md)."
 msgstr ""
 
 #: source/protocols/json/store-object-info.md:69
@@ -835,8 +835,8 @@ msgstr ""
 #: source/protocols/json/store-object-info.md:438
 #: source/protocols/json/store-object-info.md:880
 msgid ""
-"Version 1: Original JSON format, with ugly `\"r:sha256\"` inherited from `."
-"narinfo` format."
+"Version 1: Original JSON format, with ugly `\"r:sha256\"` inherited from "
+"`.narinfo` format."
 msgstr ""
 
 #: source/protocols/json/store-object-info.md:138
@@ -1393,8 +1393,8 @@ msgstr ""
 
 #: source/protocols/json/store-object-info.md:336
 msgid ""
-"[JSON format for `ContentAddress`](../../protocols/json/content-address."
-"html#method)"
+"[JSON format for `ContentAddress`](../../protocols/json/content-"
+"address.html#method)"
 msgstr ""
 
 #: source/protocols/json/store-object-info.md:338
@@ -1480,8 +1480,8 @@ msgstr ""
 #: source/protocols/json/store-object-info.md:638
 #: source/protocols/json/store-object-info.md:962
 msgid ""
-"**Description:** The [path to the store directory](../../store/store-path."
-"md#store-directory-path) this store object belongs within (e.g. `/nix/"
+"**Description:** The [path to the store directory](../../store/store-"
+"path.md#store-directory-path) this store object belongs within (e.g. `/nix/"
 "store`)."
 msgstr ""
 
@@ -1686,9 +1686,9 @@ msgstr ""
 #: source/protocols/json/store-object-info.md:650
 #: source/protocols/json/store-object-info.md:975
 msgid ""
-"**Description:** If known, the path to the [store derivation](../../glossary."
-"md#gloss-store-derivation) from which this store object was produced. "
-"Otherwise `null`."
+"**Description:** If known, the path to the [store derivation](../../"
+"glossary.md#gloss-store-derivation) from which this store object was "
+"produced. Otherwise `null`."
 msgstr ""
 
 #: source/protocols/json/store-object-info.md:653
@@ -1895,9 +1895,9 @@ msgstr ""
 #: source/protocols/json/store-object-info.md:819
 #: source/protocols/json/store-object-info.md:1121
 msgid ""
-"**Description:** The [_closure NAR size_](../../store/store-object."
-"md#closure-nar-size) of the store object: the total size of this store "
-"object and every other object in its [closure](../../glossary.md#gloss-"
+"**Description:** The [_closure NAR size_](../../store/store-"
+"object.md#closure-nar-size) of the store object: the total size of this "
+"store object and every other object in its [closure](../../glossary.md#gloss-"
 "closure)."
 msgstr ""
 

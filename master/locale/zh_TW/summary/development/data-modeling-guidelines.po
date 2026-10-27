@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -117,9 +117,9 @@ msgstr ""
 
 #: source/development/data-modeling.md:46
 msgid ""
-"An example of a streaming JSON format is [JSON lines](https://jsonlines."
-"org/), where each line represents a JSON value. These JSON values can be "
-"considered top-level values or list items, and they must be records."
+"An example of a streaming JSON format is [JSON lines](https://"
+"jsonlines.org/), where each line represents a JSON value. These JSON values "
+"can be considered top-level values or list items, and they must be records."
 msgstr ""
 
 #: source/development/data-modeling.md:49

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -861,8 +861,8 @@ msgstr ""
 
 #: source/protocols/json/derivation/resolved.md:227
 msgid ""
-"[JSON format for `ContentAddress`](../../../protocols/json/content-address."
-"html#method)"
+"[JSON format for `ContentAddress`](../../../protocols/json/content-"
+"address.html#method)"
 msgstr ""
 
 #: source/protocols/json/derivation/resolved.md:229
@@ -1129,8 +1129,8 @@ msgstr ""
 
 #: source/protocols/json/derivation/resolved.md:400
 msgid ""
-"**Description:** The system type on which this derivation is to be built (e."
-"g. `x86_64-linux`)."
+"**Description:** The system type on which this derivation is to be built "
+"(e.g. `x86_64-linux`)."
 msgstr ""
 
 #: source/protocols/json/derivation/resolved.md:403
@@ -1268,8 +1268,8 @@ msgstr ""
 
 #: source/protocols/json/derivation/resolved.md:483
 msgid ""
-"**Description:** [Structured Attributes](../../../store/derivation/index."
-"md#structured-attrs), only defined if the derivation contains them. "
+"**Description:** [Structured Attributes](../../../store/derivation/"
+"index.md#structured-attrs), only defined if the derivation contains them. "
 "Structured attributes are JSON, and thus embedded as-is."
 msgstr ""
 

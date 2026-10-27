@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -33,10 +33,10 @@ msgstr ""
 
 #: source/installation/installing-docker.md:23
 msgid ""
-"The official Docker image is created using `pkgs.dockerTools."
-"buildLayeredImage` (and not with `Dockerfile` as it is usual with Docker "
-"images). You can still base your custom Docker image on it as you would do "
-"with any other Docker image."
+"The official Docker image is created using "
+"`pkgs.dockerTools.buildLayeredImage` (and not with `Dockerfile` as it is "
+"usual with Docker images). You can still base your custom Docker image on it "
+"as you would do with any other Docker image."
 msgstr ""
 
 #: source/installation/installing-docker.md:28

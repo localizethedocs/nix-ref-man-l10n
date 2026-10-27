@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -239,8 +239,8 @@ msgstr ""
 #: source/language/index.md:224
 msgid ""
 "A [lookup path](../language/constructs/lookup-path.md) for Nix files. Value "
-"determined by [`$NIX_PATH` environment variable](../command-ref/env-common."
-"md#env-NIX_PATH)."
+"determined by [`$NIX_PATH` environment variable](../command-ref/env-"
+"common.md#env-NIX_PATH)."
 msgstr ""
 
 #: source/language/index.md:231
@@ -427,8 +427,8 @@ msgstr ""
 msgid ""
 "Adds the attributes, from the attribute set in parentheses, to the current "
 "scope (attribute set or `let` binding). Desugars to `lib = pkgs.lib; stdenv "
-"= pkgs.stdenv;`. See [Inheriting attributes](../language/syntax."
-"md#inheriting-attributes)."
+"= pkgs.stdenv;`. See [Inheriting attributes](../language/"
+"syntax.md#inheriting-attributes)."
 msgstr ""
 
 #: source/language/index.md:493

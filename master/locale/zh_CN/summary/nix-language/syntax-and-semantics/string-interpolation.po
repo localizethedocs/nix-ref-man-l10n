@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -76,8 +76,8 @@ msgstr ""
 
 #: source/language/string-interpolation.md:35
 msgid ""
-"A more complicated example (from the Nix expression for [Qt](http://www."
-"trolltech.com/products/qt)):"
+"A more complicated example (from the Nix expression for [Qt](http://"
+"www.trolltech.com/products/qt)):"
 msgstr ""
 
 #: source/language/string-interpolation.md:37
@@ -160,8 +160,8 @@ msgstr ""
 
 #: source/language/string-interpolation.md:87
 msgid ""
-"    \"MAKEVAR = Hello\\nall:\\n\\t@export BASHVAR=world; echo $(MAKEVAR) $\\"
-"${BASHVAR}\\n\"\n"
+"    \"MAKEVAR = Hello\\nall:\\n\\t@export BASHVAR=world; echo $(MAKEVAR) $\\$"
+"{BASHVAR}\\n\"\n"
 "    "
 msgstr ""
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -76,8 +76,8 @@ msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:15
 msgid ""
-"[`compression`](../../protocols/json/store-object-info."
-"md#oneOf_i2_compression)"
+"[`compression`](../../protocols/json/store-object-"
+"info.md#oneOf_i2_compression)"
 msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:15
@@ -90,8 +90,8 @@ msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:16
 msgid ""
-"[`downloadHash`](../../protocols/json/store-object-info."
-"md#oneOf_i2_downloadHash)"
+"[`downloadHash`](../../protocols/json/store-object-"
+"info.md#oneOf_i2_downloadHash)"
 msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:16
@@ -105,8 +105,8 @@ msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:17
 msgid ""
-"[`downloadSize`](../../protocols/json/store-object-info."
-"md#oneOf_i2_downloadSize)"
+"[`downloadSize`](../../protocols/json/store-object-"
+"info.md#oneOf_i2_downloadSize)"
 msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:18
@@ -177,8 +177,8 @@ msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:23
 msgid ""
-"String-encoded [content address](../../store/store-object/content-address."
-"md) rather than structured"
+"String-encoded [content address](../../store/store-object/content-"
+"address.md) rather than structured"
 msgstr ""
 
 #: source/protocols/binary-cache/narinfo.md:25

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -344,8 +344,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.4.md:214
 msgid ""
-"`nix edit` now supports non-derivation attributes, e.g. `nix edit ."
-"#nixosConfigurations.bla`."
+"`nix edit` now supports non-derivation attributes, e.g. `nix "
+"edit .#nixosConfigurations.bla`."
 msgstr ""
 
 #: source/release-notes/rl-2.4.md:217
@@ -382,8 +382,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.4.md:235
 msgid ""
-"Many `nix` commands now support the flag `--derivation` to operate on a `."
-"drv` file itself instead of its outputs."
+"Many `nix` commands now support the flag `--derivation` to operate on a "
+"`.drv` file itself instead of its outputs."
 msgstr ""
 
 #: source/release-notes/rl-2.4.md:238

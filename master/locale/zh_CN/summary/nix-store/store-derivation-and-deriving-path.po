@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -180,8 +180,8 @@ msgid ""
 "But rather than somehow scanning all the other fields for inputs, Nix "
 "requires that all inputs be explicitly collected in the inputs field. It is "
 "instead the responsibility of the creator of a derivation (e.g. the "
-"evaluator) to ensure that every store object referenced in another field (e."
-"g. referenced by store path) is included in this inputs field."
+"evaluator) to ensure that every store object referenced in another field "
+"(e.g. referenced by store path) is included in this inputs field."
 msgstr ""
 
 #: source/store/derivation/index.md:103
@@ -300,8 +300,8 @@ msgstr ""
 #: source/store/derivation/index.md:155
 msgid ""
 "The environment variable `NIX_ATTRS_JSON_FILE` points to the exact location "
-"of that file both in a build and a [`nix-shell`](../../command-ref/nix-shell."
-"md)."
+"of that file both in a build and a [`nix-shell`](../../command-ref/nix-"
+"shell.md)."
 msgstr ""
 
 #: source/store/derivation/index.md:157
@@ -329,8 +329,8 @@ msgstr ""
 
 #: source/store/derivation/index.md:167
 msgid ""
-"Options that apply to individual outputs — [output checks](outputs/index."
-"md#output-checks) and [reference scanning](outputs/index.md#reference-"
+"Options that apply to individual outputs — [output checks](outputs/"
+"index.md#output-checks) and [reference scanning](outputs/index.md#reference-"
 "scanning) — are documented with [derivation outputs](outputs/index.md). The "
 "remaining options apply to the derivation as a whole:"
 msgstr ""

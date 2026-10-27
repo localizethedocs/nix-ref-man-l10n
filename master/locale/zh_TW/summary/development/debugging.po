@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -53,10 +53,10 @@ msgstr ""
 
 #: source/development/debugging.md:22
 msgid ""
-"Nix can be built with [Address](https://clang.llvm.org/docs/AddressSanitizer."
-"html) and [UB](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) "
-"sanitizers using LLVM or GCC. This is useful when debugging memory "
-"corruption issues."
+"Nix can be built with [Address](https://clang.llvm.org/docs/"
+"AddressSanitizer.html) and [UB](https://clang.llvm.org/docs/"
+"UndefinedBehaviorSanitizer.html) sanitizers using LLVM or GCC. This is "
+"useful when debugging memory corruption issues."
 msgstr ""
 
 #: source/development/debugging.md:26

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,9 +22,9 @@ msgstr ""
 #: source/release-notes/rl-2.0.md:5
 msgid ""
 "The manifest-based substituter mechanism (`download-using-manifests`) has "
-"been [removed](https://github.com/NixOS/nix/"
-"commit/867967265b80946dfe1db72d40324b4f9af988ed). It has been superseded by "
-"the binary cache substituter mechanism since several years. As a result, the "
+"been [removed](https://github.com/NixOS/nix/commit/"
+"867967265b80946dfe1db72d40324b4f9af988ed). It has been superseded by the "
+"binary cache substituter mechanism since several years. As a result, the "
 "following programs have been removed:"
 msgstr ""
 
@@ -50,8 +50,8 @@ msgid ""
 "and the `NIX_OTHER_STORES` environment variable) has been removed. It was "
 "primarily used by the NixOS installer to copy available paths from the "
 "installation medium. The replacement is to use a chroot store as a "
-"substituter (e.g. `--substituters /mnt`), or to build into a chroot store (e."
-"g. `--store /mnt --substituters /`)."
+"substituter (e.g. `--substituters /mnt`), or to build into a chroot store "
+"(e.g. `--store /mnt --substituters /`)."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:28
@@ -77,10 +77,9 @@ msgstr ""
 
 #: source/release-notes/rl-2.0.md:43
 msgid ""
-"Failed build caching has been [removed](https://github.com/NixOS/nix/"
-"commit/8cffec84859cec8b610a2a22ab0c4d462a9351ff). This feature was "
-"introduced to support the Hydra continuous build system, but Hydra no longer "
-"uses it."
+"Failed build caching has been [removed](https://github.com/NixOS/nix/commit/"
+"8cffec84859cec8b610a2a22ab0c4d462a9351ff). This feature was introduced to "
+"support the Hydra continuous build system, but Hydra no longer uses it."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:48
@@ -271,10 +270,10 @@ msgstr ""
 
 #: source/release-notes/rl-2.0.md:172
 msgid ""
-"`nix path-info` shows information about store paths, replacing `nix-store -"
-"q`. A useful feature is the option `--closure-size` (`-S`). For example, the "
-"following command show the closure sizes of every path in the current NixOS "
-"system closure, sorted by size:"
+"`nix path-info` shows information about store paths, replacing `nix-store "
+"-q`. A useful feature is the option `--closure-size` (`-S`). For example, "
+"the following command show the closure sizes of every path in the current "
+"NixOS system closure, sorted by size:"
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:180
@@ -457,9 +456,9 @@ msgstr ""
 
 #: source/release-notes/rl-2.0.md:287
 msgid ""
-"The command `nix verify` checks whether the specified paths are trusted, i."
-"e., have a certain number of trusted signatures, are ultimately trusted, or "
-"are content-addressed."
+"The command `nix verify` checks whether the specified paths are trusted, "
+"i.e., have a certain number of trusted signatures, are ultimately trusted, "
+"or are content-addressed."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:291
@@ -506,12 +505,12 @@ msgid ""
 "There are several new features to support binary reproducibility (i.e. to "
 "help ensure that multiple builds of the same derivation produce exactly the "
 "same output). When `enforce-determinism` is set to `false`, it’s [no longer]"
-"(https://github.com/NixOS/nix/"
-"commit/8bdf83f936adae6f2c907a6d2541e80d4120f051) a fatal error if build "
-"rounds produce different output. Also, a hook named `diff-hook` is [provided]"
-"(https://github.com/NixOS/nix/"
-"commit/9a313469a4bdea2d1e8df24d16289dc2a172a169) to allow you to run tools "
-"such as `diffoscope` when build rounds produce different output."
+"(https://github.com/NixOS/nix/commit/"
+"8bdf83f936adae6f2c907a6d2541e80d4120f051) a fatal error if build rounds "
+"produce different output. Also, a hook named `diff-hook` is [provided]"
+"(https://github.com/NixOS/nix/commit/"
+"9a313469a4bdea2d1e8df24d16289dc2a172a169) to allow you to run tools such as "
+"`diffoscope` when build rounds produce different output."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:334
@@ -571,8 +570,8 @@ msgstr ""
 #: source/release-notes/rl-2.0.md:371
 msgid ""
 "HTTP/2 is now supported. This makes binary cache lookups [much more "
-"efficient](https://github.com/NixOS/nix/"
-"commit/90ad02bf626b885a5dd8967894e2eafc953bdf92)."
+"efficient](https://github.com/NixOS/nix/commit/"
+"90ad02bf626b885a5dd8967894e2eafc953bdf92)."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:375
@@ -589,9 +588,9 @@ msgstr ""
 #: source/release-notes/rl-2.0.md:381
 msgid ""
 "If S3 support is enabled at compile time, <s3://> URIs are [supported]"
-"(https://github.com/NixOS/nix/"
-"commit/9ff9c3f2f80ba4108e9c945bbfda2c64735f987b) in all places where Nix "
-"allows URIs."
+"(https://github.com/NixOS/nix/commit/"
+"9ff9c3f2f80ba4108e9c945bbfda2c64735f987b) in all places where Nix allows "
+"URIs."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:385
@@ -619,9 +618,9 @@ msgstr ""
 
 #: source/release-notes/rl-2.0.md:400
 msgid ""
-"The `max-jobs` option can [now](https://github.com/NixOS/nix/"
-"commit/7251d048fa812d2551b7003bc9f13a8f5d4c95a5) be set to `auto` to use the "
-"number of CPUs in the system."
+"The `max-jobs` option can [now](https://github.com/NixOS/nix/commit/"
+"7251d048fa812d2551b7003bc9f13a8f5d4c95a5) be set to `auto` to use the number "
+"of CPUs in the system."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:404
@@ -677,8 +676,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.0.md:435
 msgid ""
-"    configureFlags = \"--prefix=${placeholder \"out\"} --"
-"includedir=${placeholder \"dev\"}\";\n"
+"    configureFlags = \"--prefix=${placeholder \"out\"} --includedir=$"
+"{placeholder \"dev\"}\";\n"
 "    "
 msgstr ""
 
@@ -761,19 +760,19 @@ msgstr ""
 #: source/release-notes/rl-2.0.md:479
 msgid ""
 "Values such as Booleans, integers, (nested) lists and attribute sets can "
-"[now](https://github.com/NixOS/nix/"
-"commit/6de33a9c675b187437a2e1abbcb290981a89ecb1) be passed to builders in a "
-"non-lossy way. If the special attribute `__structuredAttrs` is set to "
-"`true`, the other derivation attributes are serialised in JSON format and "
-"made available to the builder via the file `.attrs.json` in the builder’s "
+"[now](https://github.com/NixOS/nix/commit/"
+"6de33a9c675b187437a2e1abbcb290981a89ecb1) be passed to builders in a non-"
+"lossy way. If the special attribute `__structuredAttrs` is set to `true`, "
+"the other derivation attributes are serialised in JSON format and made "
+"available to the builder via the file `.attrs.json` in the builder’s "
 "temporary directory. This obviates the need for `passAsFile` since JSON "
 "files have no size restrictions, unlike process environments."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:489
 msgid ""
-"[As a convenience to Bash builders](https://github.com/NixOS/nix/"
-"commit/2d5b1b24bf70a498e4c0b378704cfdb6471cc699), Nix writes a script named "
+"[As a convenience to Bash builders](https://github.com/NixOS/nix/commit/"
+"2d5b1b24bf70a498e4c0b378704cfdb6471cc699), Nix writes a script named "
 "`.attrs.sh` to the builder’s directory that initialises shell variables "
 "corresponding to all attributes that are representable in Bash. This "
 "includes non-nested (associative) arrays. For example, the attribute "
@@ -783,10 +782,10 @@ msgstr ""
 
 #: source/release-notes/rl-2.0.md:498
 msgid ""
-"Builders can [now](https://github.com/NixOS/nix/"
-"commit/88e6bb76de5564b3217be9688677d1c89101b2a3) communicate what build "
-"phase they are in by writing messages to the file descriptor specified in "
-"`NIX_LOG_FD`. The current phase is shown by the `nix` progress indicator."
+"Builders can [now](https://github.com/NixOS/nix/commit/"
+"88e6bb76de5564b3217be9688677d1c89101b2a3) communicate what build phase they "
+"are in by writing messages to the file descriptor specified in `NIX_LOG_FD`. "
+"The current phase is shown by the `nix` progress indicator."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:504
@@ -807,10 +806,10 @@ msgstr ""
 
 #: source/release-notes/rl-2.0.md:514
 msgid ""
-"Builds are [now](https://github.com/NixOS/nix/"
-"commit/21948deed99a3295e4d5666e027a6ca42dc00b40) killed as soon as Nix "
-"receives EOF on the builder’s stdout or stderr. This fixes a bug that "
-"allowed builds to hang Nix indefinitely, regardless of timeouts."
+"Builds are [now](https://github.com/NixOS/nix/commit/"
+"21948deed99a3295e4d5666e027a6ca42dc00b40) killed as soon as Nix receives EOF "
+"on the builder’s stdout or stderr. This fixes a bug that allowed builds to "
+"hang Nix indefinitely, regardless of timeouts."
 msgstr ""
 
 #: source/release-notes/rl-2.0.md:520

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -55,8 +55,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.20.md:17
 msgid ""
-"Add new `eval-system` setting [\\#4093](https://github.com/NixOS/nix/"
-"pull/4093)"
+"Add new `eval-system` setting [\\#4093](https://github.com/NixOS/nix/pull/"
+"4093)"
 msgstr ""
 
 #: source/release-notes/rl-2.20.md:19
@@ -122,8 +122,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.20.md:42
 msgid ""
-"Add command `nix hash convert` [\\#9452](https://github.com/NixOS/nix/"
-"pull/9452)"
+"Add command `nix hash convert` [\\#9452](https://github.com/NixOS/nix/pull/"
+"9452)"
 msgstr ""
 
 #: source/release-notes/rl-2.20.md:44
@@ -178,8 +178,8 @@ msgstr ""
 msgid ""
 "[`nix profile`](../command-ref/new-cli/nix3-profile.md) now uses names to "
 "refer to installed packages when running [`list`](../command-ref/new-cli/"
-"nix3-profile-list.md), [`remove`](../command-ref/new-cli/nix3-profile-remove."
-"md) or [`upgrade`](../command-ref/new-cli/nix3-profile-upgrade.md) as "
+"nix3-profile-list.md), [`remove`](../command-ref/new-cli/nix3-profile-"
+"remove.md) or [`upgrade`](../command-ref/new-cli/nix3-profile-upgrade.md) as "
 "opposed to indices. Profile element names are generated when a package is "
 "installed and remain the same until the package is removed."
 msgstr ""
@@ -235,8 +235,8 @@ msgstr ""
 #: source/release-notes/rl-2.20.md:108
 msgid ""
 "Source locations are printed more consistently in errors [\\#561](https://"
-"github.com/NixOS/nix/issues/561) [\\#9555](https://github.com/NixOS/nix/"
-"pull/9555)"
+"github.com/NixOS/nix/issues/561) [\\#9555](https://github.com/NixOS/nix/pull/"
+"9555)"
 msgstr ""
 
 #: source/release-notes/rl-2.20.md:110
@@ -351,9 +351,9 @@ msgstr ""
 
 #: source/release-notes/rl-2.20.md:204
 msgid ""
-"`nix copy` to a `ssh-ng` store now needs `--substitute-on-destination` (a.k."
-"a. `-s`) in order to substitute paths on the remote store instead of copying "
-"them. The behavior is consistent with `nix copy` to a different kind of "
-"remote store. Previously this behavior was controlled by the `builders-use-"
-"substitutes` setting and `--substitute-on-destination` was ignored."
+"`nix copy` to a `ssh-ng` store now needs `--substitute-on-destination` "
+"(a.k.a. `-s`) in order to substitute paths on the remote store instead of "
+"copying them. The behavior is consistent with `nix copy` to a different kind "
+"of remote store. Previously this behavior was controlled by the `builders-"
+"use-substitutes` setting and `--substitute-on-destination` was ignored."
 msgstr ""

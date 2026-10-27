@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: source/release-notes/rl-2.18.md:3
 msgid ""
-"Two new builtin functions, [`builtins.parseFlakeRef`](../language/builtins."
-"md#builtins-parseFlakeRef) and [`builtins.flakeRefToString`](../language/"
-"builtins.md#builtins-flakeRefToString), have been added. These functions are "
-"useful for converting between flake references encoded as attribute sets and "
-"URLs."
+"Two new builtin functions, [`builtins.parseFlakeRef`](../language/"
+"builtins.md#builtins-parseFlakeRef) and [`builtins.flakeRefToString`](../"
+"language/builtins.md#builtins-flakeRefToString), have been added. These "
+"functions are useful for converting between flake references encoded as "
+"attribute sets and URLs."
 msgstr ""
 
 #: source/release-notes/rl-2.18.md:10

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -62,8 +62,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.29.md:20
 msgid ""
-"REPL `:load-flake` and `:reload` now work together [\\#8753](https://github."
-"com/NixOS/nix/issues/8753) [\\#13180](https://github.com/NixOS/nix/"
+"REPL `:load-flake` and `:reload` now work together [\\#8753](https://"
+"github.com/NixOS/nix/issues/8753) [\\#13180](https://github.com/NixOS/nix/"
 "pull/13180)"
 msgstr ""
 
@@ -116,8 +116,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.29.md:39
 msgid ""
-"C API: functions for locking and loading a flake [\\#10435](https://github."
-"com/NixOS/nix/issues/10435) [\\#12877](https://github.com/NixOS/nix/"
+"C API: functions for locking and loading a flake [\\#10435](https://"
+"github.com/NixOS/nix/issues/10435) [\\#12877](https://github.com/NixOS/nix/"
 "pull/12877) [\\#13098](https://github.com/NixOS/nix/pull/13098)"
 msgstr ""
 
@@ -165,8 +165,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.29.md:55
 msgid ""
-"No longer copy flakes that are in the nix store [\\#10435](https://github."
-"com/NixOS/nix/issues/10435) [\\#12877](https://github.com/NixOS/nix/"
+"No longer copy flakes that are in the nix store [\\#10435](https://"
+"github.com/NixOS/nix/issues/10435) [\\#12877](https://github.com/NixOS/nix/"
 "pull/12877) [\\#13098](https://github.com/NixOS/nix/pull/13098)"
 msgstr ""
 
@@ -200,8 +200,8 @@ msgstr ""
 #: source/release-notes/rl-2.29.md:68
 msgid ""
 "The implementation for blake3 hashing is now multi-threaded and used memory-"
-"mapped IO. Benchmark results can be found the [pull request](https://github."
-"com/NixOS/nix/pull/12676)."
+"mapped IO. Benchmark results can be found the [pull request](https://"
+"github.com/NixOS/nix/pull/12676)."
 msgstr ""
 
 #: source/release-notes/rl-2.29.md:71

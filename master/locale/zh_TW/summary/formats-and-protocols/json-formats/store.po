@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -947,8 +947,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:185
 msgid ""
-"**Description:** Metadata about the [store object](../../store/store-object."
-"md) including hash, size, references, etc."
+"**Description:** Metadata about the [store object](../../store/store-"
+"object.md) including hash, size, references, etc."
 msgstr ""
 
 #: source/protocols/json/store.md:189
@@ -1103,8 +1103,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:218
 msgid ""
-"Version 1: Original JSON format, with ugly `\"r:sha256\"` inherited from `."
-"narinfo` format."
+"Version 1: Original JSON format, with ugly `\"r:sha256\"` inherited from "
+"`.narinfo` format."
 msgstr ""
 
 #: source/protocols/json/store.md:220
@@ -1562,8 +1562,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:421 source/protocols/json/store.md:1054
 msgid ""
-"[JSON format for `ContentAddress`](../../protocols/json/content-address."
-"html#method)"
+"[JSON format for `ContentAddress`](../../protocols/json/content-"
+"address.html#method)"
 msgstr ""
 
 #: source/protocols/json/store.md:423
@@ -1651,8 +1651,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:477
 msgid ""
-"**Description:** The [path to the store directory](../../store/store-path."
-"md#store-directory-path) this store object belongs within (e.g. `/nix/"
+"**Description:** The [path to the store directory](../../store/store-"
+"path.md#store-directory-path) this store object belongs within (e.g. `/nix/"
 "store`)."
 msgstr ""
 
@@ -1667,9 +1667,9 @@ msgstr ""
 
 #: source/protocols/json/store.md:489
 msgid ""
-"**Description:** If known, the path to the [store derivation](../../glossary."
-"md#gloss-store-derivation) from which this store object was produced. "
-"Otherwise `null`."
+"**Description:** If known, the path to the [store derivation](../../"
+"glossary.md#gloss-store-derivation) from which this store object was "
+"produced. Otherwise `null`."
 msgstr ""
 
 #: source/protocols/json/store.md:492 source/protocols/json/store.md:553
@@ -1864,9 +1864,9 @@ msgstr ""
 
 #: source/protocols/json/store.md:658
 msgid ""
-"**Description:** The [_closure NAR size_](../../store/store-object."
-"md#closure-nar-size) of the store object: the total size of this store "
-"object and every other object in its [closure](../../glossary.md#gloss-"
+"**Description:** The [_closure NAR size_](../../store/store-"
+"object.md#closure-nar-size) of the store object: the total size of this "
+"store object and every other object in its [closure](../../glossary.md#gloss-"
 "closure)."
 msgstr ""
 
@@ -1939,8 +1939,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:701
 msgid ""
-"**Description:** See [Regular File](../../store/file-system-object."
-"md#regular) in the manual for details."
+"**Description:** See [Regular File](../../store/file-system-"
+"object.md#regular) in the manual for details."
 msgstr ""
 
 #: source/protocols/json/store.md:705
@@ -2013,8 +2013,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:748
 msgid ""
-"**Description:** See [Directory](../../store/file-system-object."
-"md#directory) in the manual for details."
+"**Description:** See [Directory](../../store/file-system-"
+"object.md#directory) in the manual for details."
 msgstr ""
 
 #: source/protocols/json/store.md:752
@@ -2105,8 +2105,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:804
 msgid ""
-"**Description:** See [Symbolic Link](../../store/file-system-object."
-"md#symlink) in the manual for details."
+"**Description:** See [Symbolic Link](../../store/file-system-"
+"object.md#symlink) in the manual for details."
 msgstr ""
 
 #: source/protocols/json/store.md:808
@@ -2189,9 +2189,9 @@ msgstr ""
 #: source/protocols/json/store.md:858 source/protocols/json/store.md:1429
 msgid ""
 "All properties whose name matches the regular expression "
-"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+\\.drv$` ([Test](https://regex101."
-"com/?regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%5C."
-"drv%24)) must respect the following conditions"
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+\\.drv$` ([Test](https://"
+"regex101.com/?regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-."
+"%2B%5C.drv%24)) must respect the following conditions"
 msgstr ""
 
 #: source/protocols/json/store.md:862
@@ -2781,8 +2781,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:1227
 msgid ""
-"**Description:** The system type on which this derivation is to be built (e."
-"g. `x86_64-linux`)."
+"**Description:** The system type on which this derivation is to be built "
+"(e.g. `x86_64-linux`)."
 msgstr ""
 
 #: source/protocols/json/store.md:1230
@@ -2864,8 +2864,8 @@ msgstr ""
 
 #: source/protocols/json/store.md:1310
 msgid ""
-"**Description:** [Structured Attributes](../../store/derivation/index."
-"md#structured-attrs), only defined if the derivation contains them. "
+"**Description:** [Structured Attributes](../../store/derivation/"
+"index.md#structured-attrs), only defined if the derivation contains them. "
 "Structured attributes are JSON, and thus embedded as-is."
 msgstr ""
 

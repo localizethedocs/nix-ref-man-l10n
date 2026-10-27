@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -265,16 +265,16 @@ msgid ""
 "([`retry-delay`](../store/types/http-binary-cache-store.md#store-http-binary-"
 "cache-store-retry-delay), [`retry-delay-rate-limited`](../store/types/http-"
 "binary-cache-store.md#store-http-binary-cache-store-retry-delay-rate-"
-"limited), [`retry-max-delay`](../store/types/http-binary-cache-store."
-"md#store-http-binary-cache-store-retry-max-delay), [`retry-attempts`](../"
-"store/types/http-binary-cache-store.md#store-http-binary-cache-store-retry-"
-"attempts)), e.g. `s3://my-cache?retry-attempts=8`."
+"limited), [`retry-max-delay`](../store/types/http-binary-cache-"
+"store.md#store-http-binary-cache-store-retry-max-delay), [`retry-attempts`]"
+"(../store/types/http-binary-cache-store.md#store-http-binary-cache-store-"
+"retry-attempts)), e.g. `s3://my-cache?retry-attempts=8`."
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:89
 msgid ""
-"Improve daemon socket path logic for chroot stores [\\#15190](https://github."
-"com/NixOS/nix/pull/15190)"
+"Improve daemon socket path logic for chroot stores [\\#15190](https://"
+"github.com/NixOS/nix/pull/15190)"
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:91
@@ -399,11 +399,11 @@ msgstr ""
 
 #: source/release-notes/rl-2.35.md:155
 msgid ""
-"`nix flake check` now supports `--print-out-paths` [\\#13470](https://github."
-"com/NixOS/nix/issues/13470) [\\#15476](https://github.com/NixOS/nix/"
-"pull/15476) and `--out-link` [\\#13470](https://github.com/NixOS/nix/"
-"issues/13470) [\\#15476](https://github.com/NixOS/nix/pull/15476) defaulting "
-"to not creating out links if the flag is not specified."
+"`nix flake check` now supports `--print-out-paths` [\\#13470](https://"
+"github.com/NixOS/nix/issues/13470) [\\#15476](https://github.com/NixOS/nix/"
+"pull/15476) and `--out-link` [\\#13470](https://github.com/NixOS/nix/issues/"
+"13470) [\\#15476](https://github.com/NixOS/nix/pull/15476) defaulting to not "
+"creating out links if the flag is not specified."
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:157
@@ -433,11 +433,11 @@ msgstr ""
 #: source/release-notes/rl-2.35.md:164
 msgid ""
 "`builtins.getFlake` now accepts path values in addition to flakerefs. This "
-"improves the usability of relative flakes, allowing you to write `builtins."
-"getFlake ./subflake`. This change does not allow specifying paths that are "
-"not already in the store (though they do not have valid store objects, i.e. "
-"this will not force a copy if the flake has only been hashed -- and not "
-"copied to the store). This may change in a future release."
+"improves the usability of relative flakes, allowing you to write "
+"`builtins.getFlake ./subflake`. This change does not allow specifying paths "
+"that are not already in the store (though they do not have valid store "
+"objects, i.e. this will not force a copy if the flake has only been hashed "
+"-- and not copied to the store). This may change in a future release."
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:167
@@ -449,8 +449,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.35.md:169
 msgid ""
-"`nix` binary now exports symbols from C bindings [\\#15696](https://github."
-"com/NixOS/nix/pull/15696)"
+"`nix` binary now exports symbols from C bindings [\\#15696](https://"
+"github.com/NixOS/nix/pull/15696)"
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:171
@@ -463,8 +463,8 @@ msgstr ""
 msgid ""
 "The computed Git LFS endpoint URLs have been fixed to follow the spec "
 "[\\#15891](https://github.com/NixOS/nix/pull/15891) and memory usage of LFS "
-"fetches has been decreased [\\#15912](https://github.com/NixOS/nix/"
-"pull/15912)"
+"fetches has been decreased [\\#15912](https://github.com/NixOS/nix/pull/"
+"15912)"
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:175
@@ -527,8 +527,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.35.md:194
 msgid ""
-"Now, build trace entries are keyed by the regular derivation store path (`."
-"drvPath`) plus the output name. For example, instead of:"
+"Now, build trace entries are keyed by the regular derivation store path "
+"(`.drvPath`) plus the output name. For example, instead of:"
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:200
@@ -701,8 +701,8 @@ msgid ""
 "zstd-compressed NARs are now written as a sequence of independent 16 MiB "
 "frames instead of a single large frame. This lays the groundwork for "
 "parallel decompression in a future release without requiring caches to be "
-"repopulated, and significantly lowers peak memory use during compression (e."
-"g. from ~600 MiB to ~100 MiB for a 1 GiB store path)."
+"repopulated, and significantly lowers peak memory use during compression "
+"(e.g. from ~600 MiB to ~100 MiB for a 1 GiB store path)."
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:260
@@ -787,8 +787,8 @@ msgstr ""
 msgid ""
 "Querying the existence and path metadata in binary caches is now more "
 "asynchronous. Operations like `nix path-info` on large closures are faster "
-"and more efficient. The build scheduler event loop now doesn't block on `."
-"narinfo` queries, which improves performance with passthru binary caches."
+"and more efficient. The build scheduler event loop now doesn't block on "
+"`.narinfo` queries, which improves performance with passthru binary caches."
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:290
@@ -940,8 +940,8 @@ msgstr ""
 #: source/release-notes/rl-2.35.md:339
 msgid ""
 "Fixed `nixbld` gid in `/etc/group` in the Linux build sandbox when user "
-"namespaces are not supported [\\#15131](https://github.com/NixOS/nix/"
-"pull/15131)"
+"namespaces are not supported [\\#15131](https://github.com/NixOS/nix/pull/"
+"15131)"
 msgstr ""
 
 #: source/release-notes/rl-2.35.md:341

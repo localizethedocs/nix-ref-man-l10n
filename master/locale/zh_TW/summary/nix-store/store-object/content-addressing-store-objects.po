@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -202,8 +202,8 @@ msgstr ""
 
 #: source/store/store-object/content-address.md:83
 msgid ""
-"This uses the corresponding [Flat](../file-system-object/content-address."
-"md#serial-flat) method of file system object content addressing."
+"This uses the corresponding [Flat](../file-system-object/content-"
+"address.md#serial-flat) method of file system object content addressing."
 msgstr ""
 
 #: source/store/store-object/content-address.md:85
@@ -232,8 +232,9 @@ msgid ""
 "This is the only store-object content-addressing method that is not named "
 "identically with a corresponding file system object method. It is somewhat "
 "obscure, mainly used for \"drv files\" (derivations serialized as store "
-"objects in their [\"ATerm\" file format](../../protocols/derivation-aterm."
-"md#use-for-encoding-to-store-object)). Prefer another method if possible."
+"objects in their [\"ATerm\" file format](../../protocols/derivation-"
+"aterm.md#use-for-encoding-to-store-object)). Prefer another method if "
+"possible."
 msgstr ""
 
 #: source/store/store-object/content-address.md:98
@@ -269,8 +270,8 @@ msgstr ""
 
 #: source/store/store-object/content-address.md:110
 msgid ""
-"This uses the corresponding [Git](../file-system-object/content-address."
-"md#git) method of file system object content addressing."
+"This uses the corresponding [Git](../file-system-object/content-"
+"address.md#git) method of file system object content addressing."
 msgstr ""
 
 #: source/store/store-object/content-address.md:112
@@ -279,7 +280,7 @@ msgstr ""
 
 #: source/store/store-object/content-address.md:114
 msgid ""
-"Only SHA-1 is supported at this time. If [SHA-256-based Git](https://git-scm."
-"com/docs/hash-function-transition) becomes more widespread, this restriction "
-"will be revisited."
+"Only SHA-1 is supported at this time. If [SHA-256-based Git](https://git-"
+"scm.com/docs/hash-function-transition) becomes more widespread, this "
+"restriction will be revisited."
 msgstr ""

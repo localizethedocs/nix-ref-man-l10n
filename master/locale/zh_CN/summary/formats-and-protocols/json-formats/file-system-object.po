@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -255,8 +255,8 @@ msgstr ""
 
 #: source/protocols/json/file-system-object.md:49
 msgid ""
-"**Description:** See [Regular File](../../store/file-system-object."
-"md#regular) in the manual for details."
+"**Description:** See [Regular File](../../store/file-system-"
+"object.md#regular) in the manual for details."
 msgstr ""
 
 #: source/protocols/json/file-system-object.md:53
@@ -358,8 +358,8 @@ msgstr ""
 
 #: source/protocols/json/file-system-object.md:96
 msgid ""
-"**Description:** See [Directory](../../store/file-system-object."
-"md#directory) in the manual for details."
+"**Description:** See [Directory](../../store/file-system-"
+"object.md#directory) in the manual for details."
 msgstr ""
 
 #: source/protocols/json/file-system-object.md:100
@@ -431,8 +431,8 @@ msgstr ""
 
 #: source/protocols/json/file-system-object.md:152
 msgid ""
-"**Description:** See [Symbolic Link](../../store/file-system-object."
-"md#symlink) in the manual for details."
+"**Description:** See [Symbolic Link](../../store/file-system-"
+"object.md#symlink) in the manual for details."
 msgstr ""
 
 #: source/protocols/json/file-system-object.md:156

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -140,8 +140,8 @@ msgstr ""
 
 #: source/protocols/json/content-address.md:48
 msgid ""
-"[JSON format for `ContentAddress`](../../protocols/json/content-address."
-"html#method)"
+"[JSON format for `ContentAddress`](../../protocols/json/content-"
+"address.html#method)"
 msgstr ""
 
 #: source/protocols/json/content-address.md:50

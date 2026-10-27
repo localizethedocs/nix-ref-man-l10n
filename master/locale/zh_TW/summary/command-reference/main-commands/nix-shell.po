@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,10 +25,10 @@ msgstr "概要"
 
 #: source/command-ref/nix-shell.md:7
 msgid ""
-"`nix-shell` \\[`--arg` _name_ _value_\\] \\[`--argstr` _name_ _value_\\] "
-"\\[{`--attr` | `-A`} _attrPath_\\] \\[`--command` _cmd_\\] \\[`--run` "
-"_cmd_\\] \\[`--exclude` _regexp_\\] \\[`--pure`\\] \\[`--keep` _name_\\] "
-"{{`--packages` | `-p`} {_packages_ | _expressions_} … | \\[_path_\\]}"
+"`nix-shell` \\[`--arg` _name_ _value_\\] \\[`--argstr` _name_ _value_\\] \\"
+"[{`--attr` | `-A`} _attrPath_\\] \\[`--command` _cmd_\\] \\[`--run` _cmd_\\] "
+"\\[`--exclude` _regexp_\\] \\[`--pure`\\] \\[`--keep` _name_\\] {{`--"
+"packages` | `-p`} {_packages_ | _expressions_} … | \\[_path_\\]}"
 msgstr ""
 
 #: source/command-ref/nix-shell.md:18
@@ -564,10 +564,10 @@ msgid ""
 "Select an attribute from the top-level Nix expression being evaluated. (`nix-"
 "env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
 "path_ _attrPath_ is a sequence of attribute names separated by dots. For "
-"instance, given a top-level Nix expression _e_, the attribute path `xorg."
-"xorgserver` would cause the expression `e.xorg.xorgserver` to be used. See "
-"[`nix-env --install`](../command-ref/nix-env/install.md) for some concrete "
-"examples."
+"instance, given a top-level Nix expression _e_, the attribute path "
+"`xorg.xorgserver` would cause the expression `e.xorg.xorgserver` to be used. "
+"See [`nix-env --install`](../command-ref/nix-env/install.md) for some "
+"concrete examples."
 msgstr ""
 
 #: source/command-ref/nix-shell.md:304
@@ -706,8 +706,8 @@ msgid ""
 "```nix\n"
 "#!/usr/bin/env -S nix-shell --pure\n"
 "let\n"
-"  pkgs = import (fetchTarball \"https://github.com/NixOS/nixpkgs/"
-"archive/854fdc68881791812eddd33b2fed94b954979a8e.tar.gz\") {};\n"
+"  pkgs = import (fetchTarball \"https://github.com/NixOS/nixpkgs/archive/"
+"854fdc68881791812eddd33b2fed94b954979a8e.tar.gz\") {};\n"
 "in\n"
 "pkgs.mkShell {\n"
 "  buildInputs = pkgs.bashInteractive;\n"
@@ -842,8 +842,8 @@ msgstr ""
 
 #: source/command-ref/nix-shell.md:439
 msgid ""
-"Overrides the location of the Nix state directory. On Unix, the default is "
-"`${localstatedir}/nix`, where `localstatedir` is a compile-time build option "
+"Overrides the location of the Nix state directory. On Unix, the default is `$"
+"{localstatedir}/nix`, where `localstatedir` is a compile-time build option "
 "defaulting to `/nix/var`. On Windows, there is no compile-time setting; the "
 "default is `%PROGRAMDATA%\\nix\\state`, determined at runtime using the "
 "[`%PROGRAMDATA%` Known Folder](#known-folders)."
@@ -1067,9 +1067,10 @@ msgstr ""
 
 #: source/command-ref/nix-shell.md:550
 msgid ""
-"The [XDG Base Directory Specification](https://specifications.freedesktop."
-"org/basedir-spec/basedir-spec-latest.html) defines standard locations for "
-"user-specific configuration, state, and cache files on Unix systems."
+"The [XDG Base Directory Specification](https://"
+"specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) "
+"defines standard locations for user-specific configuration, state, and cache "
+"files on Unix systems."
 msgstr ""
 
 #: source/command-ref/nix-shell.md:554
@@ -1158,8 +1159,8 @@ msgstr ""
 #: source/command-ref/nix-shell.md:607
 msgid ""
 "```console\n"
-"$ nix-shell --expr 'with import <nixpkgs> { }; runCommand "
-"\"dummy\" { buildInputs = [ sqlite xorg.libX11 ]; } \"\"'\n"
+"$ nix-shell --expr 'with import <nixpkgs> { }; runCommand \"dummy\" "
+"{ buildInputs = [ sqlite xorg.libX11 ]; } \"\"'\n"
 "```"
 msgstr ""
 
@@ -1308,8 +1309,8 @@ msgstr ""
 
 #: source/command-ref/nix-shell.md:718
 msgid ""
-"--packages 'haskellPackages.ghcWithPackages (ps: [ps.download-curl ps."
-"tagsoup])'\n"
+"--packages 'haskellPackages.ghcWithPackages (ps: [ps.download-curl "
+"ps.tagsoup])'\n"
 msgstr ""
 
 #: source/command-ref/nix-shell.md:725
@@ -1332,8 +1333,8 @@ msgstr ""
 
 #: source/command-ref/nix-shell.md:737
 msgid ""
-"    #! nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/"
-"archive/0672315759b3e15e2121365f067c1c8c56bb4722.tar.gz\n"
+"    #! nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/"
+"0672315759b3e15e2121365f067c1c8c56bb4722.tar.gz\n"
 "    "
 msgstr ""
 
@@ -1361,8 +1362,8 @@ msgid ""
 "```nix\n"
 "with import <nixpkgs> {};\n"
 "\n"
-"runCommand \"dummy\" { buildInputs = [ python3 python3Packages."
-"prettytable ]; } \"\"\n"
+"runCommand \"dummy\" { buildInputs = [ python3 "
+"python3Packages.prettytable ]; } \"\"\n"
 "```"
 msgstr ""
 

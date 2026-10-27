@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-profile.md:1
 msgid ""
 "**Warning**   \n"
-"This program is [**experimental**](../../development/experimental-features."
-"md#xp-feature-nix-command) and its interface is subject to change."
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-profile.md:6
@@ -194,9 +194,9 @@ msgstr ""
 msgid ""
 "The `PATH` environment variable should include `/bin` subdirectory of the "
 "profile link (e.g. `~/.nix-profile/bin`) for the user environment to be "
-"visible to the user. The [installer](../../installation/installing-binary."
-"md) sets this up by default, unless you enable [`use-xdg-base-directories`]"
-"(../../command-ref/conf-file.md#conf-use-xdg-base-directories)."
+"visible to the user. The [installer](../../installation/installing-"
+"binary.md) sets this up by default, unless you enable [`use-xdg-base-"
+"directories`](../../command-ref/conf-file.md#conf-use-xdg-base-directories)."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-profile.md:109
@@ -210,9 +210,9 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-profile.md:113
 msgid ""
-"Once you have used [`nix profile`](../../command-ref/new-cli/nix3-profile."
-"md) you can no longer use [`nix-env`](../../command-ref/nix-env.md) without "
-"first deleting `$XDG_STATE_HOME/nix/profiles/profile`"
+"Once you have used [`nix profile`](../../command-ref/new-cli/nix3-"
+"profile.md) you can no longer use [`nix-env`](../../command-ref/nix-env.md) "
+"without first deleting `$XDG_STATE_HOME/nix/profiles/profile`"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-profile.md:118

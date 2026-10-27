@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-store-delete.md:1
 msgid ""
 "**Warning**   \n"
-"This program is [**experimental**](../../development/experimental-features."
-"md#xp-feature-nix-command) and its interface is subject to change."
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store-delete.md:6
@@ -56,11 +56,11 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-store-delete.md:36
 msgid ""
-"This command deletes the store paths specified by [_installables_](./nix."
-"md#installables), but only if it is safe to do so; that is, when the path is "
-"not reachable from a root of the garbage collector. This means that you can "
-"only delete paths that would also be deleted by `nix store gc`. Thus, `nix "
-"store delete` is a more targeted version of `nix store gc`."
+"This command deletes the store paths specified by [_installables_](./"
+"nix.md#installables), but only if it is safe to do so; that is, when the "
+"path is not reachable from a root of the garbage collector. This means that "
+"you can only delete paths that would also be deleted by `nix store gc`. "
+"Thus, `nix store delete` is a more targeted version of `nix store gc`."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store-delete.md:43

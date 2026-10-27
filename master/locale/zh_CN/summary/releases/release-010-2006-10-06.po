@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -316,8 +316,8 @@ msgstr ""
 
 #: source/release-notes/rl-0.10.md:189
 msgid ""
-"Substantial performance improvements in expression evaluation and `nix-env -"
-"qa`, all thanks to [Valgrind](http://valgrind.org/). Memory use has been "
+"Substantial performance improvements in expression evaluation and `nix-env "
+"-qa`, all thanks to [Valgrind](http://valgrind.org/). Memory use has been "
 "reduced by a factor 8 or so. Big speedup by memoisation of path hashing."
 msgstr ""
 

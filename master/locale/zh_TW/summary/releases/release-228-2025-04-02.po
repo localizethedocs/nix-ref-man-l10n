@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,9 +31,9 @@ msgstr ""
 
 #: source/release-notes/rl-2.28.md:7
 msgid ""
-"This completes the infrastructure overhaul for the [RFC 132](https://github."
-"com/NixOS/rfcs/blob/master/rfcs/0132-meson-builds-nix.md) switchover to "
-"meson as our build system."
+"This completes the infrastructure overhaul for the [RFC 132](https://"
+"github.com/NixOS/rfcs/blob/master/rfcs/0132-meson-builds-nix.md) switchover "
+"to meson as our build system."
 msgstr ""
 
 #: source/release-notes/rl-2.28.md:9
@@ -42,8 +42,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.28.md:11
 msgid ""
-"Unstable C++ API reworked [\\#12836](https://github.com/NixOS/nix/"
-"pull/12836) [\\#12798](https://github.com/NixOS/nix/pull/12798) [\\#12773]"
+"Unstable C++ API reworked [\\#12836](https://github.com/NixOS/nix/pull/"
+"12836) [\\#12798](https://github.com/NixOS/nix/pull/12798) [\\#12773]"
 "(https://github.com/NixOS/nix/pull/12773)"
 msgstr ""
 
@@ -55,9 +55,9 @@ msgstr ""
 #: source/release-notes/rl-2.28.md:18
 msgid ""
 "All headers are expected to be included with the initial `nix/`, e.g. as "
-"`#include \"nix/....hh\"` (what Nix's headers now do) or `#include <nix/...."
-"hh>` (what downstream projects may choose to do). Likewise, the pkg-config "
-"files have `-I${includedir}` not `-I${includedir}/nix` or similar."
+"`#include \"nix/....hh\"` (what Nix's headers now do) or `#include "
+"<nix/....hh>` (what downstream projects may choose to do). Likewise, the pkg-"
+"config files have `-I${includedir}` not `-I${includedir}/nix` or similar."
 msgstr ""
 
 #: source/release-notes/rl-2.28.md:21

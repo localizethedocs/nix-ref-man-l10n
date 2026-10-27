@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -61,8 +61,8 @@ msgstr ""
 
 #: source/development/documentation.md:28
 msgid ""
-"To build the manual incrementally, [enter the development shell](./building."
-"md) and configure with `doc-gen` enabled:"
+"To build the manual incrementally, [enter the development shell](./"
+"building.md) and configure with `doc-gen` enabled:"
 msgstr ""
 
 #: source/development/documentation.md:30
@@ -96,8 +96,8 @@ msgstr ""
 
 #: source/development/documentation.md:51
 msgid ""
-"The HTML manual will be generated at `build/src/nix-manual/manual/index."
-"html`."
+"The HTML manual will be generated at `build/src/nix-manual/manual/"
+"index.html`."
 msgstr ""
 
 #: source/development/documentation.md:53
@@ -146,8 +146,8 @@ msgstr ""
 
 #: source/development/documentation.md:72
 msgid ""
-"Please take the time to read the [plain language guidelines](https://www."
-"plainlanguage.gov/guidelines/) for details."
+"Please take the time to read the [plain language guidelines](https://"
+"www.plainlanguage.gov/guidelines/) for details."
 msgstr ""
 
 #: source/development/documentation.md:74
@@ -304,9 +304,9 @@ msgstr ""
 
 #: source/development/documentation.md:142
 msgid ""
-"The manual is written in markdown, and rendered with [mdBook](https://github."
-"com/rust-lang/mdBook) for the web and with [lowdown](https://github.com/"
-"kristapsdz/lowdown) for `man` pages and `--help` output."
+"The manual is written in markdown, and rendered with [mdBook](https://"
+"github.com/rust-lang/mdBook) for the web and with [lowdown](https://"
+"github.com/kristapsdz/lowdown) for `man` pages and `--help` output."
 msgstr ""
 
 #: source/development/documentation.md:144
@@ -315,8 +315,8 @@ msgstr ""
 
 #: source/development/documentation.md:145
 msgid ""
-"[mdBook documentation](https://rust-lang.github.io/mdBook/format/markdown."
-"html)"
+"[mdBook documentation](https://rust-lang.github.io/mdBook/format/"
+"markdown.html)"
 msgstr ""
 
 #: source/development/documentation.md:146
@@ -410,8 +410,8 @@ msgstr ""
 
 #: source/development/documentation.md:225
 msgid ""
-"Note that the C API is not yet stable. [C API documentation](https://hydra."
-"nixos.org/job/nix/master/external-api-docs/latest/download-by-type/doc/"
+"Note that the C API is not yet stable. [C API documentation](https://"
+"hydra.nixos.org/job/nix/master/external-api-docs/latest/download-by-type/doc/"
 "external-api-docs) is available online. You can also build and view it "
 "yourself:"
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -240,20 +240,20 @@ msgstr ""
 
 #: source/protocols/derivation-aterm.md:118
 msgid ""
-"[deferred input-addressed](../store/derivation/outputs/input-address."
-"md#deferred)"
+"[deferred input-addressed](../store/derivation/outputs/input-"
+"address.md#deferred)"
 msgstr ""
 
 #: source/protocols/derivation-aterm.md:119
 msgid ""
-"[fixed-output content-addressed](../store/derivation/outputs/content-address."
-"md#fixed)"
+"[fixed-output content-addressed](../store/derivation/outputs/content-"
+"address.md#fixed)"
 msgstr ""
 
 #: source/protocols/derivation-aterm.md:120
 msgid ""
-"[floating content-addressed](../store/derivation/outputs/content-address."
-"md#floating)"
+"[floating content-addressed](../store/derivation/outputs/content-"
+"address.md#floating)"
 msgstr ""
 
 #: source/protocols/derivation-aterm.md:121
@@ -369,8 +369,8 @@ msgstr ""
 msgid ""
 "```ebnf\n"
 "input-drv-node = output-names\n"
-"               | \"(\" output-names \",\" \"[\" [ child { \",\" child } ] "
-"\"]\" \")\" ;\n"
+"               | \"(\" output-names \",\" \"[\" [ child { \",\" child } ] \"]"
+"\" \")\" ;\n"
 "child          = \"(\" output-name \",\" input-drv-node \")\" ;\n"
 "```"
 msgstr ""

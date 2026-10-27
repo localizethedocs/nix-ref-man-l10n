@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-flake.md:1
 msgid ""
 "**Warning**   \n"
-"This program is [**experimental**](../../development/experimental-features."
-"md#xp-feature-nix-command) and its interface is subject to change."
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-flake.md:6
@@ -200,8 +200,8 @@ msgid ""
 "Following [RFC 3986](https://datatracker.ietf.org/doc/html/"
 "rfc3986#section-2.1), characters outside of the allowed range (i.e. neither "
 "[reserved characters](https://datatracker.ietf.org/doc/html/"
-"rfc3986#section-2.2) nor [unreserved characters](https://datatracker.ietf."
-"org/doc/html/rfc3986#section-2.3)) must be percent-encoded."
+"rfc3986#section-2.2) nor [unreserved characters](https://"
+"datatracker.ietf.org/doc/html/rfc3986#section-2.3)) must be percent-encoded."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-flake.md:100
@@ -493,8 +493,8 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-flake.md:245
 msgid ""
-"resolving them into relative paths, relative to the base directory of `flake."
-"nix`"
+"resolving them into relative paths, relative to the base directory of "
+"`flake.nix`"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-flake.md:246
@@ -654,9 +654,9 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-flake.md:310
 msgid ""
 "In URL form, the schema must be `tarball+http://`, `tarball+https://` or "
-"`tarball+file://`. If the extension corresponds to a known archive format (`."
-"zip`, `.tar`, `.tgz`, `.tar.gz`, `.tar.xz`, `.tar.bz2` or `.tar.zst`), then "
-"the `tarball+` can be dropped."
+"`tarball+file://`. If the extension corresponds to a known archive format "
+"(`.zip`, `.tar`, `.tgz`, `.tar.gz`, `.tar.xz`, `.tar.bz2` or `.tar.zst`), "
+"then the `tarball+` can be dropped."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-flake.md:315
@@ -864,8 +864,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-flake.md:422
 msgid ""
 "As an example, here is a simple `flake.nix` that depends on the Nixpkgs "
-"flake and provides a single package (i.e. an [installable](./nix."
-"md#installables) derivation):"
+"flake and provides a single package (i.e. an [installable](./"
+"nix.md#installables) derivation):"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-flake.md:426
@@ -1439,8 +1439,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-flake.md:748
 msgid ""
 "`flake`: A Boolean denoting whether this is a flake or non-flake dependency. "
-"Corresponds to the `flake` attribute in the `inputs` attribute in `flake."
-"nix`."
+"Corresponds to the `flake` attribute in the `inputs` attribute in "
+"`flake.nix`."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-flake.md:752

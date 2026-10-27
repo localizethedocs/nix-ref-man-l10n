@@ -68,8 +68,8 @@ msgstr ""
 msgid ""
 "Data for unit tests is stored in a `data` subdir of the directory for each "
 "unit test executable. For example, `libnixstore` code is in `src/libstore`, "
-"and its test data is in `src/libstore-tests/data`. The path to the `src/"
-"${library_name_without-nix}-test/data` directory is passed to the unit test "
+"and its test data is in `src/libstore-tests/data`. The path to the `src/$"
+"{library_name_without-nix}-test/data` directory is passed to the unit test "
 "executable with the environment variable `_NIX_TEST_UNIT_DATA`. Note that "
 "each executable only gets the data for its tests."
 msgstr ""
@@ -111,8 +111,8 @@ msgstr ""
 
 #: source/development/testing.md:87
 msgid ""
-"[`GTEST_BRIEF`](https://google.github.io/googletest/advanced."
-"html#suppressing-test-passes)"
+"[`GTEST_BRIEF`](https://google.github.io/googletest/"
+"advanced.html#suppressing-test-passes)"
 msgstr ""
 
 #: source/development/testing.md:89
@@ -121,8 +121,8 @@ msgstr ""
 
 #: source/development/testing.md:91
 msgid ""
-"[`GTEST_BREAK_ON_FAILURE`](https://google.github.io/googletest/advanced."
-"html#turning-assertion-failures-into-break-points)"
+"[`GTEST_BREAK_ON_FAILURE`](https://google.github.io/googletest/"
+"advanced.html#turning-assertion-failures-into-break-points)"
 msgstr ""
 
 #: source/development/testing.md:93
@@ -444,12 +444,12 @@ msgstr ""
 
 #: source/development/testing.md:310
 msgid ""
-"The integration tests are defined in the Nix flake under the `hydraJobs."
-"tests` attribute. These tests include everything that needs to interact with "
-"external services or run Nix in a non-trivial distributed setup. Because "
-"these tests are expensive and require more than what the standard github-"
-"actions setup provides, most of them only run on the master branch (on "
-"<https://hydra.nixos.org/jobset/nix/master>)."
+"The integration tests are defined in the Nix flake under the "
+"`hydraJobs.tests` attribute. These tests include everything that needs to "
+"interact with external services or run Nix in a non-trivial distributed "
+"setup. Because these tests are expensive and require more than what the "
+"standard github-actions setup provides, most of them only run on the master "
+"branch (on <https://hydra.nixos.org/jobset/nix/master>)."
 msgstr ""
 
 #: source/development/testing.md:314
@@ -546,8 +546,8 @@ msgid ""
 "```shell\n"
 "export LLVM_PROFILE_FILE=\"default.%p.profraw\"\n"
 "mkdir /tmp/parse-dump\n"
-"build/src/libutil-tests/fuzz/harnesses/fuzz-parse-dump -runs=1000000 -"
-"max_len=65536 -dict=./src/libutil-tests/fuzz/data/nars.dict /tmp/parse-"
+"build/src/libutil-tests/fuzz/harnesses/fuzz-parse-dump -runs=1000000 "
+"-max_len=65536 -dict=./src/libutil-tests/fuzz/data/nars.dict /tmp/parse-"
 "dump ./src/libutil-tests/fuzz/data/nars\n"
 "```"
 msgstr ""
@@ -621,9 +621,9 @@ msgstr ""
 #: source/development/testing.md:405
 msgid ""
 "GitHub Actions CI in the Nix repository also tests the installer on PRs. It "
-"does not require additional setup and utilises [GHA Artifacts](https://docs."
-"github.com/en/actions/tutorials/store-and-share-data) and can be run in any "
-"Nix repository fork."
+"does not require additional setup and utilises [GHA Artifacts](https://"
+"docs.github.com/en/actions/tutorials/store-and-share-data) and can be run in "
+"any Nix repository fork."
 msgstr ""
 
 #: source/development/testing.md:407

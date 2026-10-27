@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -42,8 +42,8 @@ msgid ""
 "The idea is that a user can reference other files when creating text files "
 "through Nix expressions, without manually keeping track of the exact paths. "
 "Nix will ensure that the all referenced files are accessible – that all "
-"[store paths](../glossary.md#gloss-store-path) are [valid](../glossary."
-"md#gloss-validity)."
+"[store paths](../glossary.md#gloss-store-path) are [valid](../"
+"glossary.md#gloss-validity)."
 msgstr ""
 
 #: source/language/string-context.md:21
@@ -64,10 +64,10 @@ msgstr ""
 
 #: source/language/string-context.md:27
 msgid ""
-"A string context element of this type is a [deriving path](../glossary."
-"md#gloss-deriving-path). They can be either of type [constant](#string-"
-"context-constant) or [output](#string-context-output), which correspond to "
-"the types of deriving paths."
+"A string context element of this type is a [deriving path](../"
+"glossary.md#gloss-deriving-path). They can be either of type [constant]"
+"(#string-context-constant) or [output](#string-context-output), which "
+"correspond to the types of deriving paths."
 msgstr ""
 
 #: source/language/string-context.md:30
@@ -116,8 +116,8 @@ msgstr ""
 #: source/language/string-context.md:56
 msgid ""
 "The behavior of string contexts are best demonstrated with a built-in "
-"function that is still experimental: [`builtins.outputOf`](./builtins."
-"md#builtins-outputOf). This example will _not_ work with stable Nix!"
+"function that is still experimental: [`builtins.outputOf`](./"
+"builtins.md#builtins-outputOf). This example will _not_ work with stable Nix!"
 msgstr ""
 
 #: source/language/string-context.md:59
@@ -149,11 +149,11 @@ msgstr ""
 #: source/language/string-context.md:78
 msgid ""
 "_derivation deep_ is an advanced feature intended to be used with the "
-"[`exportReferencesGraph` derivation attribute](./advanced-attributes."
-"html#adv-attr-exportReferencesGraph). A _derivation deep_ string context "
-"element is a derivation path, and refers to both its outputs and the entire "
-"build closure of that derivation: all its outputs, all the other derivations "
-"the given derivation depends on, and all the outputs of those."
+"[`exportReferencesGraph` derivation attribute](./advanced-"
+"attributes.html#adv-attr-exportReferencesGraph). A _derivation deep_ string "
+"context element is a derivation path, and refers to both its outputs and the "
+"entire build closure of that derivation: all its outputs, all the other "
+"derivations the given derivation depends on, and all the outputs of those."
 msgstr ""
 
 #: source/language/string-context.md:85
@@ -198,10 +198,10 @@ msgstr ""
 
 #: source/language/string-context.md:109
 msgid ""
-"When more granular information is needed, [`builtins.getContext`](./builtins."
-"md#builtins-getContext) can be used. It creates an [attribute set](./types."
-"md#type-attrs) representing the string context, which can be inspected as "
-"usual."
+"When more granular information is needed, [`builtins.getContext`](./"
+"builtins.md#builtins-getContext) can be used. It creates an [attribute set]"
+"(./types.md#type-attrs) representing the string context, which can be "
+"inspected as usual."
 msgstr ""
 
 #: source/language/string-context.md:116

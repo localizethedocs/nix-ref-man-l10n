@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -55,8 +55,8 @@ msgstr ""
 msgid ""
 "Try to fetch from [substituters](../../command-ref/conf-file.md#conf-"
 "substituters) the [store objects](../../store/store-object.md) associated "
-"with the output paths in the store derivation's [closure](../../glossary."
-"md#gloss-closure)."
+"with the output paths in the store derivation's [closure](../../"
+"glossary.md#gloss-closure)."
 msgstr ""
 
 #: source/command-ref/nix-store/realise.md:18
@@ -87,8 +87,8 @@ msgstr ""
 msgid ""
 "Otherwise, and if the path is not already valid: Try to fetch the associated "
 "[store objects](../../store/store-object.md) in the path's [closure](../../"
-"glossary.md#gloss-closure) from [substituters](../../command-ref/conf-file."
-"md#conf-substituters)."
+"glossary.md#gloss-closure) from [substituters](../../command-ref/conf-"
+"file.md#conf-substituters)."
 msgstr ""
 
 #: source/command-ref/nix-store/realise.md:26
@@ -193,8 +193,8 @@ msgid ""
 "identical with the existing outputs, printing an error if that’s not the "
 "case. The outputs of the specified derivation must already exist. When used "
 "with `-K`, if an output path is not identical to the corresponding output "
-"from the previous build, the new output path is left in `/nix/store/name."
-"check.`"
+"from the previous build, the new output path is left in `/nix/store/"
+"name.check.`"
 msgstr ""
 
 #: source/command-ref/nix-store/realise.md:102
@@ -612,9 +612,9 @@ msgid ""
 "Select an attribute from the top-level Nix expression being evaluated. (`nix-"
 "env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
 "path_ _attrPath_ is a sequence of attribute names separated by dots. For "
-"instance, given a top-level Nix expression _e_, the attribute path `xorg."
-"xorgserver` would cause the expression `e.xorg.xorgserver` to be used. See "
-"[`nix-env --install`](../../command-ref/nix-env/install.md) for some "
+"instance, given a top-level Nix expression _e_, the attribute path "
+"`xorg.xorgserver` would cause the expression `e.xorg.xorgserver` to be used. "
+"See [`nix-env --install`](../../command-ref/nix-env/install.md) for some "
 "concrete examples."
 msgstr ""
 
@@ -844,8 +844,8 @@ msgstr ""
 
 #: source/command-ref/nix-store/realise.md:437
 msgid ""
-"Overrides the location of the Nix state directory. On Unix, the default is "
-"`${localstatedir}/nix`, where `localstatedir` is a compile-time build option "
+"Overrides the location of the Nix state directory. On Unix, the default is `$"
+"{localstatedir}/nix`, where `localstatedir` is a compile-time build option "
 "defaulting to `/nix/var`. On Windows, there is no compile-time setting; the "
 "default is `%PROGRAMDATA%\\nix\\state`, determined at runtime using the "
 "[`%PROGRAMDATA%` Known Folder](#known-folders)."
@@ -950,8 +950,8 @@ msgstr ""
 
 #: source/command-ref/nix-store/realise.md:492
 msgid ""
-"It can be extended using the [`-I` option](../../command-ref/opt-common."
-"md#opt-I)."
+"It can be extended using the [`-I` option](../../command-ref/opt-"
+"common.md#opt-I)."
 msgstr ""
 
 #: source/command-ref/nix-store/realise.md:494
@@ -1019,8 +1019,8 @@ msgid ""
 "For backwards compatibility, legacy Nix commands (e.g. `nix-env`, `nix-"
 "channel`) use dotfiles in `$HOME` instead of these directories unless [`use-"
 "xdg-base-directories`](../../command-ref/conf-file.md#conf-use-xdg-base-"
-"directories) is enabled. [New Nix commands](../../command-ref/new-cli/nix."
-"md) (experimental) use the proper directories by default."
+"directories) is enabled. [New Nix commands](../../command-ref/new-cli/"
+"nix.md) (experimental) use the proper directories by default."
 msgstr ""
 
 #: source/command-ref/nix-store/realise.md:528
@@ -1070,9 +1070,10 @@ msgstr ""
 
 #: source/command-ref/nix-store/realise.md:548
 msgid ""
-"The [XDG Base Directory Specification](https://specifications.freedesktop."
-"org/basedir-spec/basedir-spec-latest.html) defines standard locations for "
-"user-specific configuration, state, and cache files on Unix systems."
+"The [XDG Base Directory Specification](https://"
+"specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) "
+"defines standard locations for user-specific configuration, state, and cache "
+"files on Unix systems."
 msgstr ""
 
 #: source/command-ref/nix-store/realise.md:552
@@ -1132,9 +1133,9 @@ msgstr ""
 
 #: source/command-ref/nix-store/realise.md:574
 msgid ""
-"This operation is typically used to build [store derivation](../../glossary."
-"md#gloss-store-derivation)s produced by [`nix-instantiate`](../../command-"
-"ref/nix-instantiate.md):"
+"This operation is typically used to build [store derivation](../../"
+"glossary.md#gloss-store-derivation)s produced by [`nix-instantiate`](../../"
+"command-ref/nix-instantiate.md):"
 msgstr ""
 
 #: source/command-ref/nix-store/realise.md:582

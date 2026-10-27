@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -306,8 +306,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.21.md:166
 msgid ""
-"`nix repl` pretty-prints values [\\#9931](https://github.com/NixOS/nix/"
-"pull/9931)"
+"`nix repl` pretty-prints values [\\#9931](https://github.com/NixOS/nix/pull/"
+"9931)"
 msgstr ""
 
 #: source/release-notes/rl-2.21.md:168
@@ -395,8 +395,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.21.md:296
 msgid ""
-"Stack size is increased on macOS [\\#9860](https://github.com/NixOS/nix/"
-"pull/9860)"
+"Stack size is increased on macOS [\\#9860](https://github.com/NixOS/nix/pull/"
+"9860)"
 msgstr ""
 
 #: source/release-notes/rl-2.21.md:298

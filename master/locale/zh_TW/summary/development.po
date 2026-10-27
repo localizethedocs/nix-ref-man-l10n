@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,8 +17,9 @@ msgstr ""
 
 #: source/development/index.md:3
 msgid ""
-"Nix is developed on GitHub. Check the [contributing guide](https://github."
-"com/NixOS/nix/blob/master/CONTRIBUTING.md) if you want to get involved."
+"Nix is developed on GitHub. Check the [contributing guide](https://"
+"github.com/NixOS/nix/blob/master/CONTRIBUTING.md) if you want to get "
+"involved."
 msgstr ""
 
 #: source/development/index.md:6

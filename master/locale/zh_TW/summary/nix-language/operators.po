@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -541,8 +541,8 @@ msgstr ""
 
 #: source/language/operators.md:178
 msgid ""
-"lexicographic for [strings](./types.md#type-string) and [paths](./types."
-"md#type-path)"
+"lexicographic for [strings](./types.md#type-string) and [paths](./"
+"types.md#type-path)"
 msgstr ""
 
 #: source/language/operators.md:179
@@ -717,9 +717,9 @@ msgstr ""
 #: source/language/operators.md:259
 msgid ""
 "The precedence of `&&` and `||` aligns with disjunctive normal form. Without "
-"parentheses, an expression describes multiple \"permissible "
-"situations\" (connected by `||`), where each situation consists of multiple "
-"simultaneous conditions (connected by `&&`)."
+"parentheses, an expression describes multiple \"permissible situations\" "
+"(connected by `||`), where each situation consists of multiple simultaneous "
+"conditions (connected by `&&`)."
 msgstr ""
 
 #: source/language/operators.md:262
@@ -776,6 +776,6 @@ msgstr ""
 msgid ""
 "To use this syntax, make sure the [`pipe-operators` experimental feature](../"
 "development/experimental-features.md#xp-feature-pipe-operators) is enabled. "
-"For example, include the following in [`nix.conf`](../command-ref/conf-file."
-"md):"
+"For example, include the following in [`nix.conf`](../command-ref/conf-"
+"file.md):"
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -74,8 +74,9 @@ msgstr ""
 #: source/store/file-system-object.md:27
 msgid ""
 "Nix does not encode any other file system notions such as [hard links]"
-"(https://en.m.wikipedia.org/wiki/Hard_link), [permissions](https://en.m."
-"wikipedia.org/wiki/File-system_permissions), timestamps, or other metadata."
+"(https://en.m.wikipedia.org/wiki/Hard_link), [permissions](https://"
+"en.m.wikipedia.org/wiki/File-system_permissions), timestamps, or other "
+"metadata."
 msgstr ""
 
 #: source/store/file-system-object.md:29

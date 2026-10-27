@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -26,9 +26,9 @@ msgstr ""
 #: source/language/advanced-attributes.md:7
 msgid ""
 "\\[`exportReferencesGraph`\\]{#adv-attr-exportReferencesGraph}  \n"
-"Specifies the [_export references graph_](../store/derivation/index."
-"md#export-references-graph) option. The value of this attribute should be a "
-"list of pairs `[ name1 path1 name2 path2 ...  ]`. For example, when the "
+"Specifies the [_export references graph_](../store/derivation/"
+"index.md#export-references-graph) option. The value of this attribute should "
+"be a list of pairs `[ name1 path1 name2 path2 ...  ]`. For example, when the "
 "following derivation is built:"
 msgstr ""
 
@@ -121,8 +121,8 @@ msgstr ""
 #: source/language/advanced-attributes.md:55
 msgid ""
 "\\[`allowedReferences`\\]{#adv-attr-allowedReferences}  \n"
-"Specifies the [_allowed references_](../store/derivation/outputs/index."
-"md#allowed-references) check. For example,"
+"Specifies the [_allowed references_](../store/derivation/outputs/"
+"index.md#allowed-references) check. For example,"
 msgstr ""
 
 #: source/language/advanced-attributes.md:62
@@ -135,8 +135,8 @@ msgstr ""
 #: source/language/advanced-attributes.md:66
 msgid ""
 "\\[`allowedRequisites`\\]{#adv-attr-allowedRequisites}  \n"
-"Specifies the [_allowed requisites_](../store/derivation/outputs/index."
-"md#allowed-requisites) check. For example,"
+"Specifies the [_allowed requisites_](../store/derivation/outputs/"
+"index.md#allowed-requisites) check. For example,"
 msgstr ""
 
 #: source/language/advanced-attributes.md:73
@@ -149,8 +149,8 @@ msgstr ""
 #: source/language/advanced-attributes.md:77
 msgid ""
 "\\[`disallowedReferences`\\]{#adv-attr-disallowedReferences}  \n"
-"Specifies the [_disallowed references_](../store/derivation/outputs/index."
-"md#disallowed-references) check. For example,"
+"Specifies the [_disallowed references_](../store/derivation/outputs/"
+"index.md#disallowed-references) check. For example,"
 msgstr ""
 
 #: source/language/advanced-attributes.md:84
@@ -162,8 +162,8 @@ msgstr ""
 #: source/language/advanced-attributes.md:87
 msgid ""
 "\\[`disallowedRequisites`\\]{#adv-attr-disallowedRequisites}  \n"
-"Specifies the [_disallowed requisites_](../store/derivation/outputs/index."
-"md#disallowed-requisites) check. For example,"
+"Specifies the [_disallowed requisites_](../store/derivation/outputs/"
+"index.md#disallowed-requisites) check. For example,"
 msgstr ""
 
 #: source/language/advanced-attributes.md:94
@@ -189,8 +189,8 @@ msgstr ""
 
 #: source/language/advanced-attributes.md:107
 msgid ""
-"`maxSize` specifies the [_max size_](../store/derivation/outputs/index."
-"md#max-size) check."
+"`maxSize` specifies the [_max size_](../store/derivation/outputs/"
+"index.md#max-size) check."
 msgstr ""
 
 #: source/language/advanced-attributes.md:108
@@ -268,10 +268,11 @@ msgstr ""
 #: source/language/advanced-attributes.md:156
 msgid ""
 "\\[`requiredSystemFeatures`\\]{#adv-attr-requiredSystemFeatures}  \n"
-"Specifies the [_required system features_](../store/derivation/index."
-"md#required-system-features) option: Nix will only build the derivation on a "
-"machine that has the corresponding features set in its [`system-features` "
-"configuration](../command-ref/conf-file.md#conf-system-features)."
+"Specifies the [_required system features_](../store/derivation/"
+"index.md#required-system-features) option: Nix will only build the "
+"derivation on a machine that has the corresponding features set in its "
+"[`system-features` configuration](../command-ref/conf-file.md#conf-system-"
+"features)."
 msgstr ""
 
 #: source/language/advanced-attributes.md:160
@@ -298,10 +299,10 @@ msgstr ""
 #: source/language/advanced-attributes.md:170
 msgid ""
 "\\[`impureEnvVars`\\]{#adv-attr-impureEnvVars}  \n"
-"Specifies the [_impure environment variables_](../store/derivation/index."
-"md#impure-env-vars) option: a list of environment variables that should be "
-"passed from the environment of the calling user to the builder. For example, "
-"`fetchurl` in Nixpkgs has the line"
+"Specifies the [_impure environment variables_](../store/derivation/"
+"index.md#impure-env-vars) option: a list of environment variables that "
+"should be passed from the environment of the calling user to the builder. "
+"For example, `fetchurl` in Nixpkgs has the line"
 msgstr ""
 
 #: source/language/advanced-attributes.md:175
@@ -437,8 +438,8 @@ msgstr ""
 
 #: source/language/advanced-attributes.md:239
 msgid ""
-"[`\"recursive\"` or `\"nar\"`](../store/store-object/content-address."
-"md#method-nix-archive)"
+"[`\"recursive\"` or `\"nar\"`](../store/store-object/content-"
+"address.md#method-nix-archive)"
 msgstr ""
 
 #: source/language/advanced-attributes.md:241
@@ -476,8 +477,8 @@ msgstr ""
 
 #: source/language/advanced-attributes.md:260
 msgid ""
-"See [content-addressing store objects](../store/store-object/content-address."
-"md) for more information about the process this flag controls."
+"See [content-addressing store objects](../store/store-object/content-"
+"address.md) for more information about the process this flag controls."
 msgstr ""
 
 #: source/language/advanced-attributes.md:262

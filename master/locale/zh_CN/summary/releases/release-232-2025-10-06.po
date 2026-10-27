@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -66,8 +66,8 @@ msgstr ""
 #: source/release-notes/rl-2.32.md:17
 msgid ""
 "C API: `nix_get_attr_name_byidx`, `nix_get_attr_byidx` take a `nix_value *` "
-"instead of `const nix_value *` [\\#13987](https://github.com/NixOS/nix/"
-"pull/13987)"
+"instead of `const nix_value *` [\\#13987](https://github.com/NixOS/nix/pull/"
+"13987)"
 msgstr ""
 
 #: source/release-notes/rl-2.32.md:19
@@ -84,8 +84,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.32.md:24
 msgid ""
-"C API: Add lazy attribute and list item accessors [\\#14030](https://github."
-"com/NixOS/nix/pull/14030)"
+"C API: Add lazy attribute and list item accessors [\\#14030](https://"
+"github.com/NixOS/nix/pull/14030)"
 msgstr ""
 
 #: source/release-notes/rl-2.32.md:26
@@ -192,8 +192,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.32.md:59
 msgid ""
-"External derivation builders [\\#14145](https://github.com/NixOS/nix/"
-"pull/14145)"
+"External derivation builders [\\#14145](https://github.com/NixOS/nix/pull/"
+"14145)"
 msgstr ""
 
 #: source/release-notes/rl-2.32.md:61
@@ -233,8 +233,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.32.md:75
 msgid ""
-"See [eval-attrset-update-layer-rhs-threshold](../command-ref/conf-file."
-"md#conf-eval-attrset-update-layer-rhs-threshold)"
+"See [eval-attrset-update-layer-rhs-threshold](../command-ref/conf-"
+"file.md#conf-eval-attrset-update-layer-rhs-threshold)"
 msgstr ""
 
 #: source/release-notes/rl-2.32.md:77

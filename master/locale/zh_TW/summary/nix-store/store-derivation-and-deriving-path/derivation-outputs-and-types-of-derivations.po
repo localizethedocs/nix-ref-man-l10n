@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -224,9 +224,9 @@ msgstr ""
 
 #: source/store/derivation/outputs/index.md:94
 msgid ""
-"\\[_max size_\\]{#max-size}: The [NAR size](../../../store/store-object."
-"md#nar-size) of the output's store object may not exceed the given number of "
-"bytes."
+"\\[_max size_\\]{#max-size}: The [NAR size](../../../store/store-"
+"object.md#nar-size) of the output's store object may not exceed the given "
+"number of bytes."
 msgstr ""
 
 #: source/store/derivation/outputs/index.md:97
@@ -372,8 +372,8 @@ msgstr ""
 #: source/store/derivation/outputs/index.md:163
 msgid ""
 "If it is impure, it may be fixed (typical), or it may be floating if the "
-"additional [`impure-derivations`](../../../development/experimental-features."
-"md#xp-feature-impure-derivations) experimental feature is enabled."
+"additional [`impure-derivations`](../../../development/experimental-"
+"features.md#xp-feature-impure-derivations) experimental feature is enabled."
 msgstr ""
 
 #: source/store/derivation/outputs/index.md:165

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -42,8 +42,8 @@ msgstr ""
 msgid ""
 "If your binary cache is publicly accessible and does not require "
 "authentication, it is simplest to use the \\[HTTP Binary Cache Store\\] "
-"rather than S3 Binary Cache Store with <https://example-nix-cache.s3."
-"amazonaws.com> instead of <s3://example-nix-cache>."
+"rather than S3 Binary Cache Store with <https://example-nix-"
+"cache.s3.amazonaws.com> instead of <s3://example-nix-cache>."
 msgstr ""
 
 #: source/store/types/s3-binary-cache-store.md:17
@@ -143,9 +143,9 @@ msgstr ""
 
 #: source/store/types/s3-binary-cache-store.md:46
 msgid ""
-"Nix will use the [default credential provider chain](https://docs.aws.amazon."
-"com/sdk-for-cpp/v1/developer-guide/credentials.html) for authenticating "
-"requests to Amazon S3."
+"Nix will use the [default credential provider chain](https://"
+"docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/credentials.html) for "
+"authenticating requests to Amazon S3."
 msgstr ""
 
 #: source/store/types/s3-binary-cache-store.md:50
@@ -228,8 +228,8 @@ msgstr ""
 msgid ""
 "```console\n"
 "$ nix copy nixpkgs.hello --to \\\n"
-"  's3://example-nix-cache?profile=cache-upload&scheme=https&endpoint=minio."
-"example.com'\n"
+"  's3://example-nix-cache?profile=cache-"
+"upload&scheme=https&endpoint=minio.example.com'\n"
 "```"
 msgstr ""
 
@@ -568,8 +568,8 @@ msgstr ""
 
 #: source/store/types/s3-binary-cache-store.md:258
 msgid ""
-"Override [`filetransfer-retry-max-delay`](../../command-ref/conf-file."
-"md#conf-filetransfer-retry-max-delay) for requests to this store "
+"Override [`filetransfer-retry-max-delay`](../../command-ref/conf-"
+"file.md#conf-filetransfer-retry-max-delay) for requests to this store "
 "(milliseconds)."
 msgstr ""
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -43,8 +43,8 @@ msgstr ""
 
 #: source/language/syntax.md:18
 msgid ""
-"Integers in the Nix language are 64-bit [two's complement](https://en."
-"wikipedia.org/wiki/Two%27s_complement) signed integers, with a range of "
+"Integers in the Nix language are 64-bit [two's complement](https://"
+"en.wikipedia.org/wiki/Two%27s_complement) signed integers, with a range of "
 "-9223372036854775808 to 9223372036854775807, inclusive."
 msgstr ""
 
@@ -58,8 +58,8 @@ msgstr ""
 
 #: source/language/syntax.md:25
 msgid ""
-"See [arithmetic](./operators.md#arithmetic) and [comparison](./operators."
-"md#comparison) operators for semantics."
+"See [arithmetic](./operators.md#arithmetic) and [comparison](./"
+"operators.md#comparison) operators for semantics."
 msgstr ""
 
 #: source/language/syntax.md:30
@@ -79,9 +79,9 @@ msgstr ""
 
 #: source/language/syntax.md:38
 msgid ""
-"Path literals are resolved relative to their [base directory](../glossary."
-"md#gloss-base-directory). Path literals may also refer to absolute paths by "
-"starting with a slash."
+"Path literals are resolved relative to their [base directory](../"
+"glossary.md#gloss-base-directory). Path literals may also refer to absolute "
+"paths by starting with a slash."
 msgstr ""
 
 #: source/language/syntax.md:41 source/language/syntax.md:338
@@ -109,9 +109,9 @@ msgstr ""
 
 #: source/language/syntax.md:52
 msgid ""
-"Path literals can also include [string interpolation](./string-interpolation."
-"md), besides being [interpolated into other expressions](./string-"
-"interpolation.md#interpolated-expression)."
+"Path literals can also include [string interpolation](./string-"
+"interpolation.md), besides being [interpolated into other expressions](./"
+"string-interpolation.md#interpolated-expression)."
 msgstr ""
 
 #: source/language/syntax.md:57
@@ -175,8 +175,8 @@ msgstr ""
 
 #: source/language/syntax.md:86
 msgid ""
-"Elements in a list can be accessed using [`builtins.elemAt`](./builtins."
-"md#builtins-elemAt)."
+"Elements in a list can be accessed using [`builtins.elemAt`](./"
+"builtins.md#builtins-elemAt)."
 msgstr ""
 
 #: source/language/syntax.md:88
@@ -480,8 +480,8 @@ msgstr ""
 
 #: source/language/syntax.md:292
 msgid ""
-"_let_ = `let` `{` _identifier_ = _expr_ `;` \\[ _identifier_ = _expr_ `;"
-"`\\]...  `}`"
+"_let_ = `let` `{` _identifier_ = _expr_ `;` \\[ _identifier_ = _expr_ "
+"`;`\\]...  `}`"
 msgstr ""
 
 #: source/language/syntax.md:294

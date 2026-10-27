@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,8 +23,8 @@ msgstr ""
 
 #: source/release-notes/rl-1.7.md:6
 msgid ""
-"Antiquotation is now allowed inside of quoted attribute names (e.g. `set."
-"\"${foo}\"`). In the case where the attribute name is just a single "
+"Antiquotation is now allowed inside of quoted attribute names (e.g. `set.\"$"
+"{foo}\"`). In the case where the attribute name is just a single "
 "antiquotation, the quotes can be dropped (e.g. the above example can be "
 "written `set.${foo}`). If an attribute name inside of a set declaration "
 "evaluates to `null` (e.g. `{ ${null} = false; }`), then that attribute is "
@@ -34,8 +34,8 @@ msgstr ""
 #: source/release-notes/rl-1.7.md:13
 msgid ""
 "Experimental support for cryptographically signed binary caches. See [the "
-"commit for details](https://github.com/NixOS/nix/"
-"commit/0fdf4da0e979f992db75cc17376e455ddc5a96d8)."
+"commit for details](https://github.com/NixOS/nix/commit/"
+"0fdf4da0e979f992db75cc17376e455ddc5a96d8)."
 msgstr ""
 
 #: source/release-notes/rl-1.7.md:17
@@ -85,9 +85,9 @@ msgstr ""
 
 #: source/release-notes/rl-1.7.md:55
 msgid ""
-"It now uses `shell.nix` as the default expression, falling back to `default."
-"nix` if the former doesn’t exist. This makes it convenient to have a `shell."
-"nix` in your project to set up a nice development environment."
+"It now uses `shell.nix` as the default expression, falling back to "
+"`default.nix` if the former doesn’t exist. This makes it convenient to have "
+"a `shell.nix` in your project to set up a nice development environment."
 msgstr ""
 
 #: source/release-notes/rl-1.7.md:60
@@ -139,8 +139,8 @@ msgstr ""
 
 #: source/release-notes/rl-1.7.md:86
 msgid ""
-"    $ nix-instantiate --eval '<nixos>' -A 'config.systemd.units.\"nscd."
-"service\".text'\n"
+"    $ nix-instantiate --eval '<nixos>' -A 'config.systemd.units."
+"\"nscd.service\".text'\n"
 "    "
 msgstr ""
 

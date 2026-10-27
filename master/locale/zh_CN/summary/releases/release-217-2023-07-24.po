@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,9 +30,9 @@ msgstr ""
 
 #: source/release-notes/rl-2.17.md:7
 msgid ""
-"Nix now allows unprivileged/[`allowed-users`](../command-ref/conf-file."
-"md#conf-allowed-users) to sign paths. Previously, only [`trusted-users`](../"
-"command-ref/conf-file.md#conf-trusted-users) users could sign paths."
+"Nix now allows unprivileged/[`allowed-users`](../command-ref/conf-"
+"file.md#conf-allowed-users) to sign paths. Previously, only [`trusted-users`]"
+"(../command-ref/conf-file.md#conf-trusted-users) users could sign paths."
 msgstr ""
 
 #: source/release-notes/rl-2.17.md:10

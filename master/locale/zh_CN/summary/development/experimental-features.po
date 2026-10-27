@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -358,8 +358,8 @@ msgstr ""
 
 #: source/development/experimental-features.md:174
 msgid ""
-"Refer to [fetch-tree tracking issue](https://github.com/NixOS/nix/"
-"milestone/31) for feature tracking."
+"Refer to [fetch-tree tracking issue](https://github.com/NixOS/nix/milestone/"
+"31) for feature tracking."
 msgstr ""
 
 #: source/development/experimental-features.md:176
@@ -391,8 +391,8 @@ msgstr ""
 
 #: source/development/experimental-features.md:188
 msgid ""
-"Refer to [git-hashing tracking issue](https://github.com/NixOS/nix/"
-"milestone/41) for feature tracking."
+"Refer to [git-hashing tracking issue](https://github.com/NixOS/nix/milestone/"
+"41) for feature tracking."
 msgstr ""
 
 #: source/development/experimental-features.md:190
@@ -490,8 +490,8 @@ msgstr ""
 
 #: source/development/experimental-features.md:236
 msgid ""
-"Refer to [nix-command tracking issue](https://github.com/NixOS/nix/"
-"milestone/28) for feature tracking."
+"Refer to [nix-command tracking issue](https://github.com/NixOS/nix/milestone/"
+"28) for feature tracking."
 msgstr ""
 
 #: source/development/experimental-features.md:238

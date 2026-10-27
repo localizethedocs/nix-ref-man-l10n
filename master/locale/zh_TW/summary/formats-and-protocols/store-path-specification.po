@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,8 +17,8 @@ msgstr ""
 
 #: source/protocols/store-path.md:3
 msgid ""
-"This is the complete specification for how [store path](../store/store-path."
-"md)s are calculated."
+"This is the complete specification for how [store path](../store/store-"
+"path.md)s are calculated."
 msgstr ""
 
 #: source/protocols/store-path.md:5
@@ -72,8 +72,8 @@ msgstr ""
 #: source/protocols/store-path.md:25
 msgid ""
 "For the definition of the hash compression algorithm, please refer to "
-"section 5.1 of the [Nix thesis](https://edolstra.github.io/pubs/phd-thesis."
-"pdf)."
+"section 5.1 of the [Nix thesis](https://edolstra.github.io/pubs/phd-"
+"thesis.pdf)."
 msgstr ""
 
 #: source/protocols/store-path.md:27
@@ -122,12 +122,12 @@ msgstr ""
 
 #: source/protocols/store-path.md:51
 msgid ""
-"This is for the [\"Nix Archive\"](../store/store-object/content-address."
-"md#method-nix-archive) method of content addressing store objects, if the "
-"hash algorithm is [SHA-256](https://en.m.wikipedia.org/wiki/SHA-256). Just "
-"like in the \"Text\" case, we can have the store objects referenced by their "
-"paths. Additionally, we can have an optional `:self` label to denote self-"
-"reference."
+"This is for the [\"Nix Archive\"](../store/store-object/content-"
+"address.md#method-nix-archive) method of content addressing store objects, "
+"if the hash algorithm is [SHA-256](https://en.m.wikipedia.org/wiki/SHA-256). "
+"Just like in the \"Text\" case, we can have the store objects referenced by "
+"their paths. Additionally, we can have an optional `:self` label to denote "
+"self-reference."
 msgstr ""
 
 #: source/protocols/store-path.md:58
@@ -193,9 +193,9 @@ msgstr ""
 
 #: source/protocols/store-path.md:86
 msgid ""
-"the [Nix Archive (NAR)](../store/file-system-object/content-address."
-"md#serial-nix-archive) serialization of the [file system object](../store/"
-"file-system-object.md) of the store object."
+"the [Nix Archive (NAR)](../store/file-system-object/content-"
+"address.md#serial-nix-archive) serialization of the [file system object](../"
+"store/file-system-object.md) of the store object."
 msgstr ""
 
 #: source/protocols/store-path.md:88
@@ -315,7 +315,8 @@ msgid ""
 "addressed data like this was not useful. Now, data that is content-addressed "
 "with SHA-256 + NAR-serialization always uses the `source:...` construction, "
 "regardless of how it was produced (manually or by derivation). This allows "
-"freely switching between using [fixed-output derivations](../glossary."
-"md#gloss-fixed-output-derivation) for fetching, and fetching out-of-band and "
-"then manually adding. It also removes the ambiguity from the grammar."
+"freely switching between using [fixed-output derivations](../"
+"glossary.md#gloss-fixed-output-derivation) for fetching, and fetching out-of-"
+"band and then manually adding. It also removes the ambiguity from the "
+"grammar."
 msgstr ""

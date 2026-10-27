@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -260,6 +260,6 @@ msgstr ""
 
 #: source/installation/uninstall.md:196
 msgid ""
-"You might also want to manually remove references to Nix from your `~/."
-"profile`."
+"You might also want to manually remove references to Nix from your "
+"`~/.profile`."
 msgstr ""

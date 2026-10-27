@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -94,8 +94,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.30.md:36
 msgid ""
-"Add [stack sampling evaluation profiler](../advanced-topics/eval-profiler."
-"md) [\\#13220](https://github.com/NixOS/nix/pull/13220)"
+"Add [stack sampling evaluation profiler](../advanced-topics/eval-"
+"profiler.md) [\\#13220](https://github.com/NixOS/nix/pull/13220)"
 msgstr ""
 
 #: source/release-notes/rl-2.30.md:38
@@ -113,8 +113,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.30.md:44
 msgid ""
-"Unlike the existing [`--trace-function-calls`](../command-ref/conf-file."
-"md#conf-trace-function-calls), this profiler includes the name of the "
+"Unlike the existing [`--trace-function-calls`](../command-ref/conf-"
+"file.md#conf-trace-function-calls), this profiler includes the name of the "
 "function being called when it's available."
 msgstr ""
 
@@ -235,12 +235,11 @@ msgstr ""
 
 #: source/release-notes/rl-2.30.md:85
 msgid ""
-"Since Nix 1.3 ([commit `299141e`](https://github.com/NixOS/nix/"
-"commit/299141ecbd08bae17013226dbeae71e842b4fdd7) in 2013) Nix has attempted "
-"to mix together upstream fresh builds and downstream substitutions when "
-"remote substuters contain an \"incomplete closure\" (have some store "
-"objects, but not the store objects they reference). This feature is now "
-"removed."
+"Since Nix 1.3 ([commit `299141e`](https://github.com/NixOS/nix/commit/"
+"299141ecbd08bae17013226dbeae71e842b4fdd7) in 2013) Nix has attempted to mix "
+"together upstream fresh builds and downstream substitutions when remote "
+"substuters contain an \"incomplete closure\" (have some store objects, but "
+"not the store objects they reference). This feature is now removed."
 msgstr ""
 
 #: source/release-notes/rl-2.30.md:88

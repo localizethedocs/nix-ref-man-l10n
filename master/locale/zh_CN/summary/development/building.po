@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -194,8 +194,8 @@ msgstr ""
 #: source/development/building.md:157
 msgid ""
 "or for Nix with the [`flakes`](../development/experimental-features.md#xp-"
-"feature-flakes) and [`nix-command`](../development/experimental-features."
-"md#xp-feature-nix-command) experimental features enabled:"
+"feature-flakes) and [`nix-command`](../development/experimental-"
+"features.md#xp-feature-nix-command) experimental features enabled:"
 msgstr ""
 
 #: source/development/building.md:163
@@ -458,8 +458,8 @@ msgstr ""
 
 #: source/development/building.md:293
 msgid ""
-"This installs [pre-commit](https://pre-commit.com) using [cachix/git-hooks."
-"nix](https://github.com/cachix/git-hooks.nix)."
+"This installs [pre-commit](https://pre-commit.com) using [cachix/git-"
+"hooks.nix](https://github.com/cachix/git-hooks.nix)."
 msgstr ""
 
 #: source/development/building.md:295

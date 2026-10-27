@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -212,8 +212,8 @@ msgid ""
 "\n"
 "       … while calling the 'throw' builtin\n"
 "         at «string»:1:56:\n"
-"            1| with builtins; addErrorContext \"while evaluating "
-"foo\" (throw \"bar\")\n"
+"            1| with builtins; addErrorContext \"while evaluating foo\" "
+"(throw \"bar\")\n"
 "             |                                                        ^\n"
 "\n"
 "       error: bar\n"
@@ -339,8 +339,8 @@ msgstr ""
 
 #: source/language/builtins.md:267
 msgid ""
-"Rounds and converts _number_ to the next higher NixInt value if possible, i."
-"e. `ceil *number* >= *number*` and `ceil *number* - *number* < 1`."
+"Rounds and converts _number_ to the next higher NixInt value if possible, "
+"i.e. `ceil *number* >= *number*` and `ceil *number* - *number* < 1`."
 msgstr ""
 
 #: source/language/builtins.md:270
@@ -523,8 +523,8 @@ msgstr ""
 msgid ""
 "```nix\n"
 "builtins.convertHash {\n"
-"  hash = \"sha256:"
-"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\n"
+"  hash = "
+"\"sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\";\n"
 "  toHashFormat = \"sri\";\n"
 "}\n"
 "```"
@@ -553,8 +553,8 @@ msgstr ""
 #: source/language/builtins.md:420
 msgid ""
 "```console\n"
-"$ nix-instantiate --system \"mips64-linux\" --eval --expr 'builtins."
-"currentSystem'\n"
+"$ nix-instantiate --system \"mips64-linux\" --eval --expr "
+"'builtins.currentSystem'\n"
 "\"mips64-linux\"\n"
 "```"
 msgstr ""
@@ -592,8 +592,8 @@ msgstr ""
 #: source/language/builtins.md:452
 msgid ""
 "The [store path](../store/store-path.md) of a derivation depending on "
-"`currentTime` differs for each evaluation, unless both evaluate `builtins."
-"currentTime` in the same second."
+"`currentTime` differs for each evaluation, unless both evaluate "
+"`builtins.currentTime` in the same second."
 msgstr ""
 
 #: source/language/builtins.md:465
@@ -632,9 +632,9 @@ msgstr ""
 
 #: source/language/builtins.md:519 source/language/builtins.md:3069
 msgid ""
-"It can be returned by [comparison operators](../language/operators."
-"md#comparison) and used in [conditional expressions](../language/syntax."
-"md#conditionals)."
+"It can be returned by [comparison operators](../language/"
+"operators.md#comparison) and used in [conditional expressions](../language/"
+"syntax.md#conditionals)."
 msgstr ""
 
 #: source/language/builtins.md:524
@@ -652,8 +652,8 @@ msgstr ""
 #: source/language/builtins.md:1505 source/language/builtins.md:1782
 #: source/language/builtins.md:2296 source/language/builtins.md:2349
 msgid ""
-"For example, include the following in [`nix.conf`](../command-ref/conf-file."
-"md):"
+"For example, include the following in [`nix.conf`](../command-ref/conf-"
+"file.md):"
 msgstr ""
 
 #: source/language/builtins.md:548
@@ -685,8 +685,8 @@ msgstr ""
 #: source/language/builtins.md:563
 msgid ""
 "This is the simplest invocation, and it does not require the user of the "
-"expression to configure [`trusted-public-keys`](../command-ref/conf-file."
-"md#conf-trusted-public-keys) to ensure their authenticity."
+"expression to configure [`trusted-public-keys`](../command-ref/conf-"
+"file.md#conf-trusted-public-keys) to ensure their authenticity."
 msgstr ""
 
 #: source/language/builtins.md:565
@@ -861,8 +861,8 @@ msgstr ""
 
 #: source/language/builtins.md:665
 msgid ""
-"A Boolean parameter that specifies whether `export-ignore` from `."
-"gitattributes` should be applied. This approximates part of the `git "
+"A Boolean parameter that specifies whether `export-ignore` from "
+"`.gitattributes` should be applied. This approximates part of the `git "
 "archive` behavior."
 msgstr ""
 
@@ -1129,8 +1129,8 @@ msgstr ""
 
 #: source/language/builtins.md:817
 msgid ""
-"This behavior is disabled in [pure evaluation mode](../command-ref/conf-file."
-"md#conf-pure-eval)."
+"This behavior is disabled in [pure evaluation mode](../command-ref/conf-"
+"file.md#conf-pure-eval)."
 msgstr ""
 
 #: source/language/builtins.md:819
@@ -1201,8 +1201,8 @@ msgstr ""
 
 #: source/language/builtins.md:873 source/language/builtins.md:1293
 msgid ""
-"Not available in [restricted evaluation mode](../command-ref/conf-file."
-"md#conf-restrict-eval)."
+"Not available in [restricted evaluation mode](../command-ref/conf-"
+"file.md#conf-restrict-eval)."
 msgstr ""
 
 #: source/language/builtins.md:884
@@ -1223,8 +1223,8 @@ msgstr ""
 
 #: source/language/builtins.md:895
 msgid ""
-"the corresponding [NAR](../store/file-system-object/content-address."
-"md#serial-nix-archive) hash"
+"the corresponding [NAR](../store/file-system-object/content-"
+"address.md#serial-nix-archive) hash"
 msgstr ""
 
 #: source/language/builtins.md:896
@@ -1256,8 +1256,8 @@ msgid ""
 "The `narHash` parameter can be used to substitute the source of the tree. It "
 "also allows for verification of tree contents that may not be provided by "
 "the underlying transfer mechanism. If `narHash` is set, the source is first "
-"looked up is the Nix store and [substituters](../command-ref/conf-file."
-"md#conf-substituters), and only fetched if not available."
+"looked up is the Nix store and [substituters](../command-ref/conf-"
+"file.md#conf-substituters), and only fetched if not available."
 msgstr ""
 
 #: source/language/builtins.md:911
@@ -1306,8 +1306,8 @@ msgstr ""
 
 #: source/language/builtins.md:935
 msgid ""
-"Place a plain file into the Nix store. This is similar to [`builtins."
-"fetchurl`](../language/builtins.md#builtins-fetchurl)"
+"Place a plain file into the Nix store. This is similar to "
+"[`builtins.fetchurl`](../language/builtins.md#builtins-fetchurl)"
 msgstr ""
 
 #: source/language/builtins.md:939 source/language/builtins.md:1111
@@ -1411,8 +1411,8 @@ msgstr ""
 
 #: source/language/builtins.md:993
 msgid ""
-"Fetch a Git tree and copy it to the Nix store. This is similar to [`builtins."
-"fetchGit`](../language/builtins.md#builtins-fetchGit)."
+"Fetch a Git tree and copy it to the Nix store. This is similar to "
+"[`builtins.fetchGit`](../language/builtins.md#builtins-fetchGit)."
 msgstr ""
 
 #: source/language/builtins.md:997
@@ -1626,8 +1626,8 @@ msgstr ""
 #: source/language/builtins.md:1200
 msgid ""
 "Download a tar archive and extract it into the Nix store. This has the same "
-"underlying implementation as [`builtins.fetchTarball`](../language/builtins."
-"md#builtins-fetchTarball)"
+"underlying implementation as [`builtins.fetchTarball`](../language/"
+"builtins.md#builtins-fetchTarball)"
 msgstr ""
 
 #: source/language/builtins.md:1221
@@ -1650,10 +1650,10 @@ msgstr ""
 
 #: source/language/builtins.md:1237
 msgid ""
-"_input_ can also be a [URL-like reference](../command-ref/new-cli/nix3-flake."
-"md#flake-references). The additional input types and the URL-like syntax "
-"requires the [`flakes` experimental feature](../development/experimental-"
-"features.md#xp-feature-flakes) to be enabled."
+"_input_ can also be a [URL-like reference](../command-ref/new-cli/nix3-"
+"flake.md#flake-references). The additional input types and the URL-like "
+"syntax requires the [`flakes` experimental feature](../development/"
+"experimental-features.md#xp-feature-flakes) to be enabled."
 msgstr ""
 
 #: source/language/builtins.md:1242
@@ -2034,8 +2034,8 @@ msgstr ""
 
 #: source/language/builtins.md:1534
 msgid ""
-"Rounds and converts _number_ to the next lower NixInt value if possible, i."
-"e. `floor *number* <= *number*` and `*number* - floor *number* < 1`."
+"Rounds and converts _number_ to the next lower NixInt value if possible, "
+"i.e. `floor *number* <= *number*` and `*number* - floor *number* < 1`."
 msgstr ""
 
 #: source/language/builtins.md:1537
@@ -2303,8 +2303,8 @@ msgstr ""
 #: source/language/builtins.md:1790
 msgid ""
 "```nix\n"
-"(builtins.getFlake \"nix/55bc52401966fbffa525c574c14f67b00bc4fb3a\")."
-"packages.x86_64-linux.nix\n"
+"(builtins.getFlake \"nix/"
+"55bc52401966fbffa525c574c14f67b00bc4fb3a\").packages.x86_64-linux.nix\n"
 "```"
 msgstr ""
 
@@ -2370,8 +2370,9 @@ msgstr ""
 msgid ""
 "Many operations require a string context to be empty because they are "
 "intended only to work with \"regular\" strings, and also to help users avoid "
-"unintentionally loosing track of string context elements. `builtins."
-"hasContext` can help create better domain-specific errors in those case."
+"unintentionally loosing track of string context elements. "
+"`builtins.hasContext` can help create better domain-specific errors in those "
+"case."
 msgstr ""
 
 #: source/language/builtins.md:1857
@@ -2606,8 +2607,8 @@ msgstr ""
 
 #: source/language/builtins.md:2176
 msgid ""
-"Returns a list if the [extended POSIX regular expression](http://pubs."
-"opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04) "
+"Returns a list if the [extended POSIX regular expression](http://"
+"pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04) "
 "_regex_ matches _str_ precisely, otherwise returns `null`. Each item in the "
 "list is a regex group."
 msgstr ""
@@ -2695,8 +2696,8 @@ msgstr ""
 #: source/language/builtins.md:2233
 msgid ""
 "Lookup path expressions are [desugared](https://en.wikipedia.org/wiki/"
-"Syntactic_sugar) using this and [`builtins.findFile`](./builtins."
-"html#builtins-findFile):"
+"Syntactic_sugar) using this and [`builtins.findFile`](./"
+"builtins.html#builtins-findFile):"
 msgstr ""
 
 #: source/language/builtins.md:2253
@@ -2750,8 +2751,8 @@ msgstr ""
 msgid ""
 "_`derivation reference`_ must be a string that may contain a regular store "
 "path to a derivation, or may be an input placeholder reference. If the "
-"derivation is produced by a derivation, you must explicitly select `drv."
-"outPath`. This primop can be chained arbitrarily deeply. For instance,"
+"derivation is produced by a derivation, you must explicitly select "
+"`drv.outPath`. This primop can be chained arbitrarily deeply. For instance,"
 msgstr ""
 
 #: source/language/builtins.md:2314
@@ -2769,9 +2770,9 @@ msgstr ""
 
 #: source/language/builtins.md:2322
 msgid ""
-"This primop corresponds to the `^` sigil for [deriving paths](../glossary."
-"md#gloss-deriving-path), e.g. as part of installable syntax on the command "
-"line."
+"This primop corresponds to the `^` sigil for [deriving paths](../"
+"glossary.md#gloss-deriving-path), e.g. as part of installable syntax on the "
+"command line."
 msgstr ""
 
 #: source/language/builtins.md:2331
@@ -2850,10 +2851,10 @@ msgid ""
 "recursive  \n"
 "When `false`, when `path` is added to the store it is with a [flat hash](../"
 "store/file-system-object/content-address.md#serial-flat), rather than a hash "
-"of the [NAR serialization](../store/file-system-object/content-address."
-"md#serial-nix-archive) of the file. Thus, `path` must refer to a regular "
-"file, not a directory. This allows similar behavior to `fetchurl`. Defaults "
-"to `true`."
+"of the [NAR serialization](../store/file-system-object/content-"
+"address.md#serial-nix-archive) of the file. Thus, `path` must refer to a "
+"regular file, not a directory. This allows similar behavior to `fetchurl`. "
+"Defaults to `true`."
 msgstr ""
 
 #: source/language/builtins.md:2425
@@ -2886,8 +2887,8 @@ msgstr ""
 msgid ""
 "Return the contents of the directory _path_ as a set mapping directory "
 "entries to the corresponding file type. For instance, if directory `A` "
-"contains a regular file `B` and another directory `C`, then `builtins."
-"readDir ./A` returns the set"
+"contains a regular file `B` and another directory `C`, then "
+"`builtins.readDir ./A` returns the set"
 msgstr ""
 
 #: source/language/builtins.md:2469
@@ -3114,9 +3115,9 @@ msgstr ""
 #: source/language/builtins.md:2664
 msgid ""
 "Returns a list composed of non matched strings interleaved with the lists of "
-"the [extended POSIX regular expression](http://pubs.opengroup.org/"
-"onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04) _regex_ matches of "
-"_str_. Each item in the lists of matched sequences is a regex group."
+"the [extended POSIX regular expression](http://pubs.opengroup.org/onlinepubs/"
+"9699919799/basedefs/V1_chap09.html#tag_09_04) _regex_ matches of _str_. Each "
+"item in the lists of matched sequences is a regex group."
 msgstr ""
 
 #: source/language/builtins.md:2670
@@ -3185,8 +3186,8 @@ msgstr ""
 #: source/language/builtins.md:2716
 msgid ""
 "```shell-session\n"
-"$ nix-instantiate --store 'dummy://?store=/blah' --eval --expr builtins."
-"storeDir\n"
+"$ nix-instantiate --store 'dummy://?store=/blah' --eval --expr "
+"builtins.storeDir\n"
 "\"/blah\"\n"
 "```"
 msgstr ""
@@ -3317,9 +3318,9 @@ msgstr ""
 
 #: source/language/builtins.md:2864
 msgid ""
-"Note that `${configFile}` is a [string interpolation](../language/types."
-"md#type-string), so the result of the expression `configFile` (i.e., a path "
-"like `/nix/store/m7p7jfny445k...-foo.conf`) will be spliced into the "
+"Note that `${configFile}` is a [string interpolation](../language/"
+"types.md#type-string), so the result of the expression `configFile` (i.e., a "
+"path like `/nix/store/m7p7jfny445k...-foo.conf`) will be spliced into the "
 "resulting string."
 msgstr ""
 
@@ -3555,9 +3556,9 @@ msgid ""
 "`tryEval` intentionally does not return the error message, because that "
 "risks bringing non-determinism into the evaluation result, and it would "
 "become very difficult to improve error reporting without breaking existing "
-"expressions. Instead, use [`builtins.addErrorContext`](../language/builtins."
-"md#builtins-addErrorContext) to add context to the error message, and use a "
-"Nix unit testing tool for testing."
+"expressions. Instead, use [`builtins.addErrorContext`](../language/"
+"builtins.md#builtins-addErrorContext) to add context to the error message, "
+"and use a Nix unit testing tool for testing."
 msgstr ""
 
 #: source/language/builtins.md:3112

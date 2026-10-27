@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -949,8 +949,8 @@ msgstr ""
 
 #: source/protocols/json/derivation/index.md:229
 msgid ""
-"[JSON format for `ContentAddress`](../../../protocols/json/content-address."
-"html#method)"
+"[JSON format for `ContentAddress`](../../../protocols/json/content-"
+"address.html#method)"
 msgstr ""
 
 #: source/protocols/json/derivation/index.md:231
@@ -1219,8 +1219,8 @@ msgstr ""
 
 #: source/protocols/json/derivation/index.md:402
 msgid ""
-"**Description:** The system type on which this derivation is to be built (e."
-"g. `x86_64-linux`)."
+"**Description:** The system type on which this derivation is to be built "
+"(e.g. `x86_64-linux`)."
 msgstr ""
 
 #: source/protocols/json/derivation/index.md:405
@@ -1371,8 +1371,8 @@ msgstr ""
 
 #: source/protocols/json/derivation/index.md:485
 msgid ""
-"**Description:** [Structured Attributes](../../../store/derivation/index."
-"md#structured-attrs), only defined if the derivation contains them. "
+"**Description:** [Structured Attributes](../../../store/derivation/"
+"index.md#structured-attrs), only defined if the derivation contains them. "
 "Structured attributes are JSON, and thus embedded as-is."
 msgstr ""
 
@@ -1575,9 +1575,9 @@ msgstr ""
 #: source/protocols/json/derivation/index.md:604
 msgid ""
 "All properties whose name matches the regular expression "
-"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+\\.drv$` ([Test](https://regex101."
-"com/?regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%5C."
-"drv%24)) must respect the following conditions"
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+\\.drv$` ([Test](https://"
+"regex101.com/?regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-."
+"%2B%5C.drv%24)) must respect the following conditions"
 msgstr ""
 
 #: source/protocols/json/derivation/index.md:616

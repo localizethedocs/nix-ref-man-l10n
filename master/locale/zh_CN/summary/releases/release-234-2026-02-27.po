@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:14Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -177,8 +177,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.34.md:78
 msgid ""
-"Improved parser error messages [\\#15092](https://github.com/NixOS/nix/"
-"pull/15092)"
+"Improved parser error messages [\\#15092](https://github.com/NixOS/nix/pull/"
+"15092)"
 msgstr ""
 
 #: source/release-notes/rl-2.34.md:80
@@ -347,8 +347,8 @@ msgid ""
 "inputs (e.g. `github:NixOS/nixpkgs`, `https://channels.nixos.org/nixos-25.11/"
 "nixexprs.tar.xz`) now writes git blobs (files) to the `tarball-cache-v2` "
 "repository concurrently, which significantly reduces the wall time for "
-"tarball unpacking (up to ~1.8x faster unpacking for `https://channels.nixos."
-"org/nixos-25.11/nixexprs.tar.xz` in our testing)."
+"tarball unpacking (up to ~1.8x faster unpacking for `https://"
+"channels.nixos.org/nixos-25.11/nixexprs.tar.xz` in our testing)."
 msgstr ""
 
 #: source/release-notes/rl-2.34.md:164
@@ -468,11 +468,11 @@ msgstr ""
 
 #: source/release-notes/rl-2.34.md:213
 msgid ""
-"S3 binary caches now use virtual-hosted-style URLs (`https://bucket.s3."
-"region.amazonaws.com/key`) instead of path-style URLs (`https://s3.region."
-"amazonaws.com/bucket/key`) when connecting to standard AWS S3 endpoints. "
-"This enables HTTP/2 multiplexing and fixes TCP connection exhaustion "
-"(TIME_WAIT socket accumulation) under high-concurrency workloads."
+"S3 binary caches now use virtual-hosted-style URLs (`https://"
+"bucket.s3.region.amazonaws.com/key`) instead of path-style URLs (`https://"
+"s3.region.amazonaws.com/bucket/key`) when connecting to standard AWS S3 "
+"endpoints. This enables HTTP/2 multiplexing and fixes TCP connection "
+"exhaustion (TIME_WAIT socket accumulation) under high-concurrency workloads."
 msgstr ""
 
 #: source/release-notes/rl-2.34.md:219
@@ -535,8 +535,8 @@ msgstr ""
 #: source/release-notes/rl-2.34.md:246
 msgid ""
 "Prevent runaway processes when Nix is killed with `SIGKILL` when building in "
-"a local store with build users [\\#15193](https://github.com/NixOS/nix/"
-"pull/15193)"
+"a local store with build users [\\#15193](https://github.com/NixOS/nix/pull/"
+"15193)"
 msgstr ""
 
 #: source/release-notes/rl-2.34.md:248
@@ -600,8 +600,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.34.md:266
 msgid ""
-"`builtins.flakeRefToString` no longer fails with \"attribute is a "
-"thunk\" [\\#15160](https://github.com/NixOS/nix/pull/15160)"
+"`builtins.flakeRefToString` no longer fails with \"attribute is a thunk\" "
+"[\\#15160](https://github.com/NixOS/nix/pull/15160)"
 msgstr ""
 
 #: source/release-notes/rl-2.34.md:268
@@ -688,8 +688,8 @@ msgstr ""
 
 #: source/release-notes/rl-2.34.md:294
 msgid ""
-"Improved error message for empty derivation files [\\#15298](https://github."
-"com/NixOS/nix/pull/15298)"
+"Improved error message for empty derivation files [\\#15298](https://"
+"github.com/NixOS/nix/pull/15298)"
 msgstr ""
 
 #: source/release-notes/rl-2.34.md:296
@@ -721,13 +721,13 @@ msgstr ""
 msgid ""
 "Historically, only pre-release builds of `amd64` docker images have been "
 "uploaded to ghcr.io with the `latest` tag pointing to the last built image "
-"from `master` branch. This has been fixed and going forward, <https://github."
-"com/NixOS/nix/pkgs/container/nix> will include the same images as <https://"
-"hub.docker.com/r/nixos/nix/> that are built by [Hydra](https://hydra.nixos."
-"org/project/nix) for [arm64](https://hydra.nixos.org/job/nix/"
-"maintenance-2.34/dockerImage.aarch64-linux) and [amd64](https://hydra.nixos."
-"org/job/nix/maintenance-2.34/dockerImage.x86_64-linux). Pre-release versions "
-"are no longer pushed to the registry."
+"from `master` branch. This has been fixed and going forward, <https://"
+"github.com/NixOS/nix/pkgs/container/nix> will include the same images as "
+"<https://hub.docker.com/r/nixos/nix/> that are built by [Hydra](https://"
+"hydra.nixos.org/project/nix) for [arm64](https://hydra.nixos.org/job/nix/"
+"maintenance-2.34/dockerImage.aarch64-linux) and [amd64](https://"
+"hydra.nixos.org/job/nix/maintenance-2.34/dockerImage.x86_64-linux). Pre-"
+"release versions are no longer pushed to the registry."
 msgstr ""
 
 #: source/release-notes/rl-2.34.md:306

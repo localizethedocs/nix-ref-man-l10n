@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-14T09:25:13Z\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,10 +17,10 @@ msgstr ""
 
 #: source/language/scope.md:3
 msgid ""
-"A _scope_ in the Nix language is a dictionary keyed by [name](./identifiers."
-"md#names), mapping each name to an expression and a _definition type_. The "
-"definition type is either _explicit_ or _implicit_. Each entry in this "
-"dictionary is a _definition_."
+"A _scope_ in the Nix language is a dictionary keyed by [name](./"
+"identifiers.md#names), mapping each name to an expression and a _definition "
+"type_. The definition type is either _explicit_ or _implicit_. Each entry in "
+"this dictionary is a _definition_."
 msgstr ""
 
 #: source/language/scope.md:7
