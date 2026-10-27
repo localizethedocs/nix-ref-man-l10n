@@ -1,0 +1,265 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/installation/uninstall.md:1
+msgid "Uninstalling Nix"
+msgstr "解除安裝 Nix"
+
+#: source/installation/uninstall.md:3
+msgid "Multi User"
+msgstr ""
+
+#: source/installation/uninstall.md:5
+msgid ""
+"Removing a [multi-user installation](./installing-binary.md#multi-user-"
+"installation) depends on the operating system."
+msgstr ""
+
+#: source/installation/uninstall.md:7
+msgid "Linux"
+msgstr ""
+
+#: source/installation/uninstall.md:9
+msgid "If you are on Linux with systemd:"
+msgstr ""
+
+#: source/installation/uninstall.md:11
+msgid "Remove the Nix daemon service:"
+msgstr ""
+
+#: source/installation/uninstall.md:19 source/installation/uninstall.md:53
+msgid "Remove files created by Nix:"
+msgstr ""
+
+#: source/installation/uninstall.md:25 source/installation/uninstall.md:59
+msgid "Remove build users and their group:"
+msgstr ""
+
+#: source/installation/uninstall.md:34
+msgid "There may also be references to Nix in"
+msgstr ""
+
+#: source/installation/uninstall.md:35
+msgid "`/etc/bash.bashrc`"
+msgstr ""
+
+#: source/installation/uninstall.md:36
+msgid "`/etc/bashrc`"
+msgstr ""
+
+#: source/installation/uninstall.md:37
+msgid "`/etc/profile`"
+msgstr ""
+
+#: source/installation/uninstall.md:38
+msgid "`/etc/zsh/zshrc`"
+msgstr ""
+
+#: source/installation/uninstall.md:39
+msgid "`/etc/zshrc`"
+msgstr ""
+
+#: source/installation/uninstall.md:41 source/installation/uninstall.md:73
+msgid "which you may remove."
+msgstr ""
+
+#: source/installation/uninstall.md:43
+msgid "FreeBSD"
+msgstr ""
+
+#: source/installation/uninstall.md:45
+msgid "Stop and remove the Nix daemon service:"
+msgstr ""
+
+#: source/installation/uninstall.md:68
+msgid "There may also be references to Nix in:"
+msgstr ""
+
+#: source/installation/uninstall.md:69
+msgid "`/usr/local/etc/bashrc`"
+msgstr ""
+
+#: source/installation/uninstall.md:70
+msgid "`/usr/local/etc/zshrc`"
+msgstr ""
+
+#: source/installation/uninstall.md:71
+msgid "Shell configuration files in users' home directories"
+msgstr ""
+
+#: source/installation/uninstall.md:75
+msgid "macOS"
+msgstr ""
+
+#: source/installation/uninstall.md:77
+msgid "**Updating to macOS 15 Sequoia**"
+msgstr ""
+
+#: source/installation/uninstall.md:79
+msgid "If you recently updated to macOS 15 Sequoia and are getting"
+msgstr ""
+
+#: source/installation/uninstall.md:83
+msgid ""
+"when running Nix commands, refer to GitHub issue [NixOS/nix#10892](https://"
+"github.com/NixOS/nix/issues/10892) for instructions to fix your installation "
+"without reinstalling."
+msgstr ""
+
+#: source/installation/uninstall.md:85
+msgid ""
+"If system-wide shell initialisation files haven't been altered since "
+"installing Nix, use the backups made by the installer:"
+msgstr ""
+
+#: source/installation/uninstall.md:93
+msgid ""
+"Otherwise, edit `/etc/zshrc`, `/etc/bashrc`, and `/etc/bash.bashrc` to "
+"remove the lines sourcing `nix-daemon.sh`, which should look like this:"
+msgstr ""
+
+#: source/installation/uninstall.md:96
+msgid "# Nix\n"
+msgstr ""
+
+#: source/installation/uninstall.md:97 source/installation/uninstall.md:98
+msgid "'/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'"
+msgstr ""
+
+#: source/installation/uninstall.md:100
+msgid "# End Nix\n"
+msgstr ""
+
+#: source/installation/uninstall.md:103
+msgid "Stop and remove the Nix daemon services:"
+msgstr ""
+
+#: source/installation/uninstall.md:112
+msgid ""
+"This stops the Nix daemon and prevents it from being started next time you "
+"boot the system."
+msgstr ""
+
+#: source/installation/uninstall.md:114
+msgid "Remove the `nixbld` group and the `_nixbuildN` users:"
+msgstr ""
+
+#: source/installation/uninstall.md:121
+msgid "This will remove all the build users that no longer serve a purpose."
+msgstr ""
+
+#: source/installation/uninstall.md:123
+msgid ""
+"Edit fstab using `sudo vifs` to remove the line mounting the Nix Store "
+"volume on `/nix`, which looks like"
+msgstr ""
+
+#: source/installation/uninstall.md:128
+msgid "or"
+msgstr ""
+
+#: source/installation/uninstall.md:134
+msgid ""
+"by setting the cursor on the respective line using the arrow keys, and "
+"pressing `dd`, and then `:wq` to save the file."
+msgstr ""
+
+#: source/installation/uninstall.md:136
+msgid "This will prevent automatic mounting of the Nix Store volume."
+msgstr ""
+
+#: source/installation/uninstall.md:138
+msgid ""
+"Edit `/etc/synthetic.conf` to remove the `nix` line. If this is the only "
+"line in the file you can remove it entirely:"
+msgstr ""
+
+#: source/installation/uninstall.md:143
+msgid "\"$(cat /etc/synthetic.conf)\""
+msgstr ""
+
+#: source/installation/uninstall.md:143
+msgid "\"nix\""
+msgstr ""
+
+#: source/installation/uninstall.md:151
+msgid "This will prevent the creation of the empty `/nix` directory."
+msgstr ""
+
+#: source/installation/uninstall.md:153
+msgid "Remove the files Nix added to your system, except for the store:"
+msgstr ""
+
+#: source/installation/uninstall.md:160
+msgid "Remove the Nix Store volume:"
+msgstr ""
+
+#: source/installation/uninstall.md:166
+msgid ""
+"This will remove the Nix Store volume and everything that was added to the "
+"store."
+msgstr ""
+
+#: source/installation/uninstall.md:168
+msgid ""
+"If the output indicates that the command couldn't remove the volume, you "
+"should make sure you don't have an _unmounted_ Nix Store volume. Look for a "
+"\"Nix Store\" volume in the output of the following command:"
+msgstr ""
+
+#: source/installation/uninstall.md:175
+msgid ""
+"If you _do_ find a \"Nix Store\" volume, delete it by running `diskutil apfs "
+"deleteVolume` with the store volume's `diskXsY` identifier."
+msgstr ""
+
+#: source/installation/uninstall.md:177
+msgid ""
+"If you get an error that the volume is in use by the kernel, reboot and "
+"immediately delete the volume before starting any other process."
+msgstr ""
+
+#: source/installation/uninstall.md:179
+msgid "**Note**"
+msgstr ""
+
+#: source/installation/uninstall.md:181
+msgid ""
+"After you complete the steps here, you will still have an empty `/nix` "
+"directory. This is an expected sign of a successful uninstall. The empty `/"
+"nix` directory will disappear the next time you reboot."
+msgstr ""
+
+#: source/installation/uninstall.md:185
+msgid ""
+"You do not have to reboot to finish uninstalling Nix. The uninstall is "
+"complete. macOS (Catalina+) directly controls root directories, and its read-"
+"only root will prevent you from manually deleting the empty `/nix` "
+"mountpoint."
+msgstr ""
+
+#: source/installation/uninstall.md:189
+msgid "Single User"
+msgstr ""
+
+#: source/installation/uninstall.md:191
+msgid ""
+"To remove a [single-user installation](./installing-binary.md#single-user-"
+"installation) of Nix, run:"
+msgstr ""
+
+#: source/installation/uninstall.md:196
+msgid ""
+"You might also want to manually remove references to Nix from your "
+"`~/.profile`."
+msgstr ""

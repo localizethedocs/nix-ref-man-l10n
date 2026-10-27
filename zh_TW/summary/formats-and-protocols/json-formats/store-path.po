@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/store-path.md:1
+msgid "Store Path"
+msgstr ""
+
+#: source/protocols/json/store-path.md:3
+msgid "**Title:** Store Path"
+msgstr ""
+
+#: source/protocols/json/store-path.md:7
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/store-path.md:7
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/store-path.md:8
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/store-path.md:8
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/store-path.md:10
+msgid ""
+"**Description:** A [store path](../../store/store-path.md) identifying a "
+"store object."
+msgstr ""
+
+#: source/protocols/json/store-path.md:12
+msgid ""
+"This schema describes the JSON representation of store paths as used in "
+"various Nix JSON APIs."
+msgstr ""
+
+#: source/protocols/json/store-path.md:14
+msgid "**Warning**"
+msgstr ""
+
+#: source/protocols/json/store-path.md:16
+msgid ""
+"This JSON format is currently [**experimental**](../../development/"
+"experimental-features.md#xp-feature-nix-command) and subject to change."
+msgstr ""
+
+#: source/protocols/json/store-path.md:20
+msgid "Format"
+msgstr ""
+
+#: source/protocols/json/store-path.md:22
+msgid ""
+"Store paths in JSON are represented as strings containing just the hash and "
+"name portion, without the store directory prefix."
+msgstr ""
+
+#: source/protocols/json/store-path.md:24
+msgid "For example: `\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv\"`"
+msgstr ""
+
+#: source/protocols/json/store-path.md:26
+msgid ""
+"(If the store dir is `/nix/store`, then this corresponds to the path `/nix/"
+"store/g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv`.)"
+msgstr ""
+
+#: source/protocols/json/store-path.md:28
+msgid "Structure"
+msgstr ""
+
+#: source/protocols/json/store-path.md:30
+msgid "The format follows this pattern: `${digest}-${name}`"
+msgstr ""
+
+#: source/protocols/json/store-path.md:32
+msgid ""
+"**hash**: Digest rendered in [Nix32](../../protocols/nix32.md) (20 hash "
+"bytes become 32 ASCII characters)"
+msgstr ""
+
+#: source/protocols/json/store-path.md:33
+msgid "**name**: The package name and optional version/suffix information"
+msgstr ""
+
+#: source/protocols/json/store-path.md:35
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/store-path.md:37
+msgid "**Min length**"
+msgstr ""
+
+#: source/protocols/json/store-path.md:37
+msgid "34"
+msgstr ""
+
+#: source/protocols/json/store-path.md:38
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/store-path.md:38
+msgid ""
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+$` [Test](https://regex101.com/?"
+"regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%24)"
+msgstr ""
+
+#: source/protocols/json/store-path.md:43
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/store-path.md:45
+msgid "Simple store path"
+msgstr ""
+
+#: source/protocols/json/store-path.md:48
+msgid "\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv\""
+msgstr ""

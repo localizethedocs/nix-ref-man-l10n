@@ -1,0 +1,608 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/experimental-features.md:1
+msgid ""
+"This section describes the notion of _experimental features_, and how it "
+"fits into the big picture of the development of Nix."
+msgstr ""
+
+#: source/development/experimental-features.md:3
+msgid "What are experimental features?"
+msgstr ""
+
+#: source/development/experimental-features.md:5
+msgid ""
+"Experimental features are considered unstable, which means that they can be "
+"changed or removed at any time. Users must explicitly enable them by "
+"toggling the associated [experimental feature flags](../command-ref/conf-"
+"file.md#conf-experimental-features). This allows accessing unstable "
+"functionality without unwittingly relying on it."
+msgstr ""
+
+#: source/development/experimental-features.md:9
+msgid ""
+"Experimental feature flags were first introduced in [Nix 2.4](../release-"
+"notes/rl-2.4.md). Before that, Nix did have experimental features, but they "
+"were not guarded by flags and were merely documented as unstable. This was a "
+"source of confusion and controversy."
+msgstr ""
+
+#: source/development/experimental-features.md:13
+msgid "When should a new feature be marked experimental?"
+msgstr ""
+
+#: source/development/experimental-features.md:15
+msgid ""
+"A change in the Nix codebase should be guarded by an experimental feature "
+"flag if it is considered likely to be reverted or adapted in a backwards-"
+"incompatible manner after gathering more experience with it in practice."
+msgstr ""
+
+#: source/development/experimental-features.md:17
+msgid "Examples:"
+msgstr ""
+
+#: source/development/experimental-features.md:19
+msgid ""
+"Changes to the Nix language, such as new built-ins, syntactic or semantic "
+"changes, etc."
+msgstr ""
+
+#: source/development/experimental-features.md:20
+msgid "Changes to the command-line interface"
+msgstr ""
+
+#: source/development/experimental-features.md:22
+msgid "Lifecycle of an experimental feature"
+msgstr ""
+
+#: source/development/experimental-features.md:24
+msgid ""
+"Experimental features have to be treated on a case-by-case basis. However, "
+"the standard workflow for an experimental feature is as follows:"
+msgstr ""
+
+#: source/development/experimental-features.md:27
+msgid "A new feature is implemented in a _pull request_"
+msgstr ""
+
+#: source/development/experimental-features.md:28
+msgid ""
+"It is guarded by an experimental feature flag that is disabled by default"
+msgstr ""
+
+#: source/development/experimental-features.md:29
+msgid ""
+"The pull request is merged, the _experimental_ feature ends up in a release"
+msgstr ""
+
+#: source/development/experimental-features.md:30
+msgid ""
+"Using the feature requires explicitly enabling it, signifying awareness of "
+"the potential risks"
+msgstr ""
+
+#: source/development/experimental-features.md:31
+msgid "Being experimental, the feature can still be changed arbitrarily"
+msgstr ""
+
+#: source/development/experimental-features.md:32
+msgid "The feature can be _removed_"
+msgstr ""
+
+#: source/development/experimental-features.md:33
+msgid "The associated experimental feature flag is also removed"
+msgstr ""
+
+#: source/development/experimental-features.md:34
+msgid "The feature can be declared _stable_"
+msgstr ""
+
+#: source/development/experimental-features.md:35
+msgid "The associated experimental feature flag is removed"
+msgstr ""
+
+#: source/development/experimental-features.md:36
+msgid ""
+"There should be enough evidence of users having tried the feature, such as "
+"feedback, fixed bugs, demonstrations of how it is put to use"
+msgstr ""
+
+#: source/development/experimental-features.md:37
+msgid "Maintainers must feel confident that:"
+msgstr ""
+
+#: source/development/experimental-features.md:38
+msgid ""
+"The feature is designed and implemented sensibly, that it is fit for purpose"
+msgstr ""
+
+#: source/development/experimental-features.md:39
+msgid "Potential interactions are well-understood"
+msgstr ""
+
+#: source/development/experimental-features.md:40
+msgid ""
+"Stabilising the feature will not incur an outsized maintenance burden in the "
+"future"
+msgstr ""
+
+#: source/development/experimental-features.md:42
+msgid "The following diagram illustrates the process:"
+msgstr ""
+
+#: source/development/experimental-features.md:80
+msgid "Relation to the RFC process"
+msgstr ""
+
+#: source/development/experimental-features.md:82
+msgid ""
+"Experimental features and [RFCs](https://github.com/NixOS/rfcs/) both allow "
+"approaching substantial changes while minimizing the risk. However they "
+"serve different purposes:"
+msgstr ""
+
+#: source/development/experimental-features.md:85
+msgid ""
+"An experimental feature enables developers to iterate on and deliver a new "
+"idea without committing to it or requiring a costly long-running fork. It is "
+"primarily an issue of _implementation_, targeting Nix developers and early "
+"testers."
+msgstr ""
+
+#: source/development/experimental-features.md:87
+msgid ""
+"The goal of an RFC is to make explicit all the implications of a change: "
+"Explain why it is wanted, which new use-cases it enables, which interface "
+"changes it requires, etc. It is primarily an issue of _design_ and "
+"_communication_, targeting the broader community."
+msgstr ""
+
+#: source/development/experimental-features.md:91
+msgid ""
+"This means that experimental features and RFCs are orthogonal mechanisms, "
+"and can be used independently or together as needed."
+msgstr ""
+
+#: source/development/experimental-features.md:93
+msgid "Currently available experimental features"
+msgstr ""
+
+#: source/development/experimental-features.md:95
+msgid "\\[`auto-allocate-uids`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:97
+msgid ""
+"Allows Nix to automatically pick UIDs for builds, rather than creating "
+"`nixbld*` user accounts. See the [`auto-allocate-uids`](../command-ref/conf-"
+"file.md#conf-auto-allocate-uids) setting for details."
+msgstr ""
+
+#: source/development/experimental-features.md:100
+msgid ""
+"Refer to [auto-allocate-uids tracking issue](https://github.com/NixOS/nix/"
+"milestone/34) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:102
+msgid "\\[`blake3-hashes`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:104
+msgid "Enables support for BLAKE3 hashes."
+msgstr ""
+
+#: source/development/experimental-features.md:106
+msgid ""
+"Refer to [blake3-hashes tracking issue](https://github.com/NixOS/nix/"
+"milestone/60) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:108
+msgid "\\[`ca-derivations`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:110
+msgid ""
+"Allow derivations to be content-addressed in order to prevent rebuilds when "
+"changes to the derivation do not result in changes to the derivation's "
+"output. See [\\_\\_contentAddressed](../language/advanced-attributes.md#adv-"
+"attr-__contentAddressed) for details."
+msgstr ""
+
+#: source/development/experimental-features.md:116
+msgid ""
+"Refer to [ca-derivations tracking issue](https://github.com/NixOS/nix/"
+"milestone/35) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:118
+msgid "\\[`cgroups`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:120
+msgid ""
+"Allows Nix to execute builds inside cgroups. See the [`use-cgroups`](../"
+"command-ref/conf-file.md#conf-use-cgroups) setting for details."
+msgstr ""
+
+#: source/development/experimental-features.md:123
+msgid ""
+"Refer to [cgroups tracking issue](https://github.com/NixOS/nix/milestone/36) "
+"for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:125
+msgid "\\[`configurable-impure-env`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:127
+msgid ""
+"Allow the use of the [impure-env](../command-ref/conf-file.md#conf-impure-"
+"env) setting."
+msgstr ""
+
+#: source/development/experimental-features.md:129
+msgid ""
+"Refer to [configurable-impure-env tracking issue](https://github.com/NixOS/"
+"nix/milestone/37) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:131
+msgid "\\[`daemon-trust-override`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:133
+msgid ""
+"Allow forcing trusting or not trusting clients with `nix-daemon`. This is "
+"useful for testing, but possibly also useful for various experiments with "
+"`nix-daemon --stdio` networking."
+msgstr ""
+
+#: source/development/experimental-features.md:138
+msgid ""
+"Refer to [daemon-trust-override tracking issue](https://github.com/NixOS/nix/"
+"milestone/38) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:140
+msgid "\\[`dynamic-derivations`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:142
+msgid "Allow the use of a few things related to dynamic derivations:"
+msgstr ""
+
+#: source/development/experimental-features.md:144
+msgid "\"text hashing\" derivation outputs, so we can build .drv files."
+msgstr ""
+
+#: source/development/experimental-features.md:147
+msgid ""
+"dependencies in derivations on the outputs of derivations that are "
+"themselves derivations outputs."
+msgstr ""
+
+#: source/development/experimental-features.md:150
+msgid ""
+"Refer to [dynamic-derivations tracking issue](https://github.com/NixOS/nix/"
+"milestone/39) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:152
+msgid "\\[`external-builders`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:154
+msgid "Enables support for external builders / sandbox providers."
+msgstr ""
+
+#: source/development/experimental-features.md:156
+msgid ""
+"Refer to [external-builders tracking issue](https://github.com/NixOS/nix/"
+"milestone/62) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:158
+msgid "\\[`fetch-closure`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:160
+msgid ""
+"Enable the use of the [`fetchClosure`](../language/builtins.md#builtins-"
+"fetchClosure) built-in function in the Nix language."
+msgstr ""
+
+#: source/development/experimental-features.md:162
+msgid ""
+"Refer to [fetch-closure tracking issue](https://github.com/NixOS/nix/"
+"milestone/40) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:164
+msgid "\\[`fetch-tree`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:166
+msgid ""
+"Enable the use of the [`fetchTree`](../language/builtins.md#builtins-"
+"fetchTree) built-in function in the Nix language."
+msgstr ""
+
+#: source/development/experimental-features.md:168
+msgid ""
+"`fetchTree` exposes a generic interface for fetching remote file system "
+"trees from different types of remote sources. The [`flakes`](#xp-feature-"
+"flakes) feature flag always enables `fetch-tree`. This built-in was "
+"previously guarded by the `flakes` experimental feature because of that "
+"overlap."
+msgstr ""
+
+#: source/development/experimental-features.md:172
+msgid ""
+"Enabling just this feature serves as a \"release candidate\", allowing users "
+"to try it out in isolation."
+msgstr ""
+
+#: source/development/experimental-features.md:174
+msgid ""
+"Refer to [fetch-tree tracking issue](https://github.com/NixOS/nix/milestone/"
+"31) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:176
+msgid "\\[`flakes`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:178
+msgid ""
+"Enable flakes. See the manual entry for [`nix flake`](../command-ref/new-cli/"
+"nix3-flake.md) for details."
+msgstr ""
+
+#: source/development/experimental-features.md:181
+msgid ""
+"Refer to [flakes tracking issue](https://github.com/NixOS/nix/milestone/27) "
+"for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:183
+msgid "\\[`git-hashing`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:185
+msgid ""
+"Allow creating (content-addressed) store objects which are hashed via Git's "
+"hashing algorithm. These store objects aren't understandable by older "
+"versions of Nix."
+msgstr ""
+
+#: source/development/experimental-features.md:188
+msgid ""
+"Refer to [git-hashing tracking issue](https://github.com/NixOS/nix/milestone/"
+"41) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:190
+msgid "\\[`impure-derivations`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:192
+msgid ""
+"Allow derivations to produce non-fixed outputs by setting the `__impure` "
+"derivation attribute to `true`. An impure derivation can have differing "
+"outputs each time it is built."
+msgstr ""
+
+#: source/development/experimental-features.md:196
+#: source/development/experimental-features.md:261
+msgid "Example:"
+msgstr ""
+
+#: source/development/experimental-features.md:198
+msgid ""
+"```\n"
+"derivation {\n"
+"  name = \"impure\";\n"
+"  builder = /bin/sh;\n"
+"  __impure = true; # mark this derivation as impure\n"
+"  args = [ \"-c\" \"read -n 10 random < /dev/random; echo $random > "
+"$out\" ];\n"
+"  system = builtins.currentSystem;\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/development/experimental-features.md:208
+msgid ""
+"Each time this derivation is built, it can produce a different output (as "
+"the builder outputs random bytes to `$out`).  Impure derivations also have "
+"access to the network, and only fixed-output or other impure derivations can "
+"rely on impure derivations. Finally, an impure derivation cannot also be "
+"[content-addressed](#xp-feature-ca-derivations)."
+msgstr ""
+
+#: source/development/experimental-features.md:215
+msgid ""
+"This is a more explicit alternative to using [`builtins.currentTime`](../"
+"language/builtins.md#builtins-currentTime)."
+msgstr ""
+
+#: source/development/experimental-features.md:217
+msgid ""
+"Refer to [impure-derivations tracking issue](https://github.com/NixOS/nix/"
+"milestone/42) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:219
+msgid "\\[`local-overlay-store`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:221
+msgid ""
+"Allow the use of [local overlay store](../command-ref/new-cli/nix3-help-"
+"stores.md#experimental-local-overlay-store)."
+msgstr ""
+
+#: source/development/experimental-features.md:223
+msgid ""
+"Refer to [local-overlay-store tracking issue](https://github.com/NixOS/nix/"
+"milestone/50) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:225
+msgid "\\[`mounted-ssh-store`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:227
+msgid ""
+"Allow the use of the [`mounted SSH store`](../command-ref/new-cli/nix3-help-"
+"stores.html#experimental-ssh-store-with-filesystem-mounted)."
+msgstr ""
+
+#: source/development/experimental-features.md:229
+msgid ""
+"Refer to [mounted-ssh-store tracking issue](https://github.com/NixOS/nix/"
+"milestone/43) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:231
+msgid "\\[`nix-command`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:233
+msgid ""
+"Enable the new `nix` subcommands. See the manual on [`nix`](../command-ref/"
+"new-cli/nix.md) for details."
+msgstr ""
+
+#: source/development/experimental-features.md:236
+msgid ""
+"Refer to [nix-command tracking issue](https://github.com/NixOS/nix/milestone/"
+"28) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:238
+msgid "\\[`parse-toml-timestamps`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:240
+msgid "Allow parsing of timestamps in builtins.fromTOML."
+msgstr ""
+
+#: source/development/experimental-features.md:242
+msgid ""
+"Refer to [parse-toml-timestamps tracking issue](https://github.com/NixOS/nix/"
+"milestone/45) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:244
+msgid "\\[`pipe-operators`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:246
+msgid "Add `|>` and `<|` operators to the Nix language."
+msgstr ""
+
+#: source/development/experimental-features.md:248
+msgid ""
+"Refer to [pipe-operators tracking issue](https://github.com/NixOS/nix/"
+"milestone/55) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:250
+msgid "\\[`read-only-local-store`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:252
+msgid ""
+"Allow the use of the `read-only` parameter in [local store](../store/types/"
+"local-store.md) URIs."
+msgstr ""
+
+#: source/development/experimental-features.md:254
+msgid ""
+"Refer to [read-only-local-store tracking issue](https://github.com/NixOS/nix/"
+"milestone/46) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:256
+msgid "\\[`recursive-nix`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:258
+msgid ""
+"Allow derivation builders to call Nix, and thus build derivations "
+"recursively."
+msgstr ""
+
+#: source/development/experimental-features.md:263
+msgid ""
+"```\n"
+"with import <nixpkgs> {};\n"
+"\n"
+"runCommand \"foo\"\n"
+"  {\n"
+"     # Optional: let Nix know \"foo\" requires the experimental feature\n"
+"     requiredSystemFeatures = [ \"recursive-nix\" ];\n"
+"     buildInputs = [ nix jq ];\n"
+"     NIX_PATH = \"nixpkgs=${<nixpkgs>}\";\n"
+"  }\n"
+"  ''\n"
+"    hello=$(nix-build -E '(import <nixpkgs> {}).hello.overrideDerivation "
+"(args: { name = \"recursive-hello\"; })')\n"
+"\n"
+"    mkdir -p $out/bin\n"
+"    ln -s $hello/bin/hello $out/bin/hello\n"
+"  ''\n"
+"```"
+msgstr ""
+
+#: source/development/experimental-features.md:281
+msgid ""
+"An important restriction on recursive builders is disallowing arbitrary "
+"substitutions. For example, running"
+msgstr ""
+
+#: source/development/experimental-features.md:288
+msgid ""
+"in the above `runCommand` script would be disallowed, as this could lead to "
+"derivations with hidden dependencies or breaking reproducibility by relying "
+"on the current state of the Nix store. An exception would be if `/nix/store/"
+"lrs9qfm60jcgsk83qhyypj3m4jqsgdid-hello-2.10` were already in the build "
+"inputs or built by a previous recursive Nix call."
+msgstr ""
+
+#: source/development/experimental-features.md:296
+msgid ""
+"Refer to [recursive-nix tracking issue](https://github.com/NixOS/nix/"
+"milestone/47) for feature tracking."
+msgstr ""
+
+#: source/development/experimental-features.md:298
+msgid "\\[`verified-fetches`\\]"
+msgstr ""
+
+#: source/development/experimental-features.md:300
+msgid ""
+"Enables verification of git commit signatures through the [`fetchGit`](../"
+"language/builtins.md#builtins-fetchGit) built-in."
+msgstr ""
+
+#: source/development/experimental-features.md:302
+msgid ""
+"Refer to [verified-fetches tracking issue](https://github.com/NixOS/nix/"
+"milestone/48) for feature tracking."
+msgstr ""

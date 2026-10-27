@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/scope.md:1
+msgid "Scoping rules"
+msgstr ""
+
+#: source/language/scope.md:3
+msgid ""
+"A _scope_ in the Nix language is a dictionary keyed by [name](./"
+"identifiers.md#names), mapping each name to an expression and a _definition "
+"type_. The definition type is either _explicit_ or _implicit_. Each entry in "
+"this dictionary is a _definition_."
+msgstr ""
+
+#: source/language/scope.md:7
+msgid "Explicit definitions are created by the following expressions:"
+msgstr ""
+
+#: source/language/scope.md:8
+msgid "[let-expressions](syntax.md#let-expressions)"
+msgstr ""
+
+#: source/language/scope.md:9
+msgid "[recursive attribute set literals](syntax.md#recursive-sets) (`rec`)"
+msgstr ""
+
+#: source/language/scope.md:10
+msgid "[function literals](syntax.md#functions)"
+msgstr ""
+
+#: source/language/scope.md:12
+msgid ""
+"Implicit definitions are only created by [with-expressions](./syntax.md#with-"
+"expressions)."
+msgstr ""
+
+#: source/language/scope.md:14
+msgid ""
+"Every expression is _enclosed_ by a scope. The outermost expression is "
+"enclosed by the [built-in, global scope](./builtins.md), which contains only "
+"explicit definitions. The expressions listed above _extend_ their enclosing "
+"scope by adding new definitions, or replacing existing ones with the same "
+"name. An explicit definition can replace a definition of any type; an "
+"implicit definition can only replace another implicit definition."
+msgstr ""
+
+#: source/language/scope.md:19
+msgid ""
+"Each of the above expressions defines which of its subexpressions are "
+"enclosed by the extended scope. In all other cases, the same scope that "
+"encloses an expression is the enclosing scope for its subexpressions."
+msgstr ""
+
+#: source/language/scope.md:22
+msgid ""
+"The Nix language is [statically scoped](https://en.wikipedia.org/wiki/"
+"Scope_(computer_science)#Lexical_scope); the value of a variable is "
+"determined only by the variable's enclosing scope, and not by the dynamic "
+"context in which the variable is evaluated."
+msgstr ""
+
+#: source/language/scope.md:25
+msgid "**Note**"
+msgstr ""
+
+#: source/language/scope.md:27
+msgid ""
+"Expressions entered into the [Nix REPL](../command-ref/new-cli/nix3-repl.md) "
+"are enclosed by a scope that can be extended by command line arguments or "
+"previous REPL commands. These ways of extending scope are not, strictly "
+"speaking, part of the Nix language."
+msgstr ""

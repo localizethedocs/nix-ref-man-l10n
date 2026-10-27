@@ -1,0 +1,427 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/documentation.md:1
+msgid "Contributing documentation"
+msgstr ""
+
+#: source/development/documentation.md:3
+msgid ""
+"Improvements to documentation are very much appreciated, and a good way to "
+"start out with contributing to Nix."
+msgstr ""
+
+#: source/development/documentation.md:5
+msgid "This is how you can help:"
+msgstr ""
+
+#: source/development/documentation.md:6
+msgid ""
+"Address [open issues with documentation](https://github.com/NixOS/nix/issues?"
+"q=is%3Aissue+is%3Aopen+label%3Adocumentation)"
+msgstr ""
+
+#: source/development/documentation.md:7
+msgid ""
+"Review [pull requests concerning documentation](https://github.com/NixOS/nix/"
+"pulls?q=is%3Apr+is%3Aopen+label%3Adocumentation)"
+msgstr ""
+
+#: source/development/documentation.md:9
+msgid ""
+"Incremental refactorings of the documentation build setup to make it faster "
+"or easier to understand and maintain are also welcome."
+msgstr ""
+
+#: source/development/documentation.md:11
+msgid "Building the manual"
+msgstr ""
+
+#: source/development/documentation.md:13
+msgid "Build the manual from scratch:"
+msgstr ""
+
+#: source/development/documentation.md:19
+msgid "or"
+msgstr ""
+
+#: source/development/documentation.md:25
+msgid "and open `./result/share/doc/nix/manual/index.html`."
+msgstr ""
+
+#: source/development/documentation.md:28
+msgid ""
+"To build the manual incrementally, [enter the development shell](./"
+"building.md) and configure with `doc-gen` enabled:"
+msgstr ""
+
+#: source/development/documentation.md:30
+msgid "**If using interactive `nix develop`:**"
+msgstr ""
+
+#: source/development/documentation.md:32
+msgid ""
+"```console\n"
+"$ nix develop\n"
+"$ mesonFlags=\"$mesonFlags -Ddoc-gen=true\" mesonConfigurePhase\n"
+"```"
+msgstr ""
+
+#: source/development/documentation.md:37
+msgid "**If using direnv:**"
+msgstr ""
+
+#: source/development/documentation.md:39
+msgid ""
+"```console\n"
+"$ direnv allow\n"
+"$ bash -c 'source $stdenv/setup && mesonFlags=\"$mesonFlags -Ddoc-gen=true\" "
+"mesonConfigurePhase'\n"
+"```"
+msgstr ""
+
+#: source/development/documentation.md:44
+msgid "Then build the manual:"
+msgstr ""
+
+#: source/development/documentation.md:51
+msgid ""
+"The HTML manual will be generated at `build/src/nix-manual/manual/"
+"index.html`."
+msgstr ""
+
+#: source/development/documentation.md:53
+msgid "Style guide"
+msgstr ""
+
+#: source/development/documentation.md:55
+msgid "The goal of this style guide is to make it such that"
+msgstr ""
+
+#: source/development/documentation.md:56
+msgid "The manual is easy to search and skim for relevant information"
+msgstr ""
+
+#: source/development/documentation.md:57
+msgid "Documentation sources are easy to edit"
+msgstr ""
+
+#: source/development/documentation.md:58
+msgid "Changes to documentation are easy to review"
+msgstr ""
+
+#: source/development/documentation.md:60
+msgid ""
+"You will notice that this is not implemented consistently yet. Please follow "
+"the guide when making additions or changes to existing documentation. Do not "
+"make sweeping changes, unless they are programmatic and can be validated "
+"easily."
+msgstr ""
+
+#: source/development/documentation.md:64
+msgid "Language"
+msgstr ""
+
+#: source/development/documentation.md:66
+msgid ""
+"This manual is [reference documentation](https://diataxis.fr/reference/). "
+"The typical usage pattern is to look up isolated pieces of information. It "
+"should therefore aim to be correct, consistent, complete, and easy to "
+"navigate at a glance."
+msgstr ""
+
+#: source/development/documentation.md:70
+msgid "Aim for clarity and brevity."
+msgstr ""
+
+#: source/development/documentation.md:72
+msgid ""
+"Please take the time to read the [plain language guidelines](https://"
+"www.plainlanguage.gov/guidelines/) for details."
+msgstr ""
+
+#: source/development/documentation.md:74
+msgid "Describe the subject factually."
+msgstr ""
+
+#: source/development/documentation.md:76
+msgid ""
+"In particular, do not make value judgements or recommendations. Check the "
+"code or add tests if in doubt."
+msgstr ""
+
+#: source/development/documentation.md:79
+msgid "Provide complete, minimal examples, and explain them."
+msgstr ""
+
+#: source/development/documentation.md:81
+msgid ""
+"Readers should be able to try examples verbatim and get the same results as "
+"shown in the manual. Always describe in words what a given example does."
+msgstr ""
+
+#: source/development/documentation.md:84
+msgid ""
+"Non-trivial examples may need additional explanation, especially if they use "
+"concepts from outside the given context."
+msgstr ""
+
+#: source/development/documentation.md:86
+msgid "Always explain code examples in the text."
+msgstr ""
+
+#: source/development/documentation.md:88
+msgid ""
+"Use comments in code samples very sparingly, for instance to highlight a "
+"particular aspect. Readers tend to glance over large amounts of code when "
+"scanning for information."
+msgstr ""
+
+#: source/development/documentation.md:91
+msgid ""
+"Especially beginners will likely find reading more complex-looking code "
+"strenuous and may therefore avoid it altogether."
+msgstr ""
+
+#: source/development/documentation.md:93
+msgid ""
+"If a code sample appears to require a lot of inline explanation, consider "
+"replacing it with a simpler one. If that's not possible, break the example "
+"down into multiple parts, explain them separately, and then show the "
+"combined result at the end. This should be a last resort, as that would "
+"amount to writing a [tutorial](https://diataxis.fr/tutorials/) on the given "
+"subject."
+msgstr ""
+
+#: source/development/documentation.md:97
+msgid "Use British English."
+msgstr ""
+
+#: source/development/documentation.md:99
+msgid ""
+"This is a somewhat arbitrary choice to force consistency, and accounts for "
+"the fact that a majority of Nix users and developers are from Europe."
+msgstr ""
+
+#: source/development/documentation.md:101
+msgid "Links and anchors"
+msgstr ""
+
+#: source/development/documentation.md:103
+msgid ""
+"Reference documentation must be readable in arbitrary order. Readers cannot "
+"be expected to have any particular prerequisite knowledge about Nix. While "
+"the table of contents can provide guidance and full-text search can help, "
+"they are most likely to find what they need by following sensible cross-"
+"references."
+msgstr ""
+
+#: source/development/documentation.md:107
+msgid "Link to technical terms"
+msgstr ""
+
+#: source/development/documentation.md:109
+msgid ""
+"When mentioning Nix-specific concepts, commands, options, settings, etc., "
+"link to appropriate documentation. Also link to external tools or concepts, "
+"especially if their meaning may be ambiguous. You may also want to link to "
+"definitions of less common technical terms."
+msgstr ""
+
+#: source/development/documentation.md:113
+msgid ""
+"Then readers won't have to actively search for definitions and are more "
+"likely to discover relevant information on their own."
+msgstr ""
+
+#: source/development/documentation.md:115
+msgid "**Note**"
+msgstr ""
+
+#: source/development/documentation.md:117
+msgid ""
+"`man` and `--help` pages don't display links. Use appropriate link texts "
+"such that readers of terminal output can infer search terms."
+msgstr ""
+
+#: source/development/documentation.md:120
+msgid "Do not break existing URLs between releases."
+msgstr ""
+
+#: source/development/documentation.md:122
+msgid ""
+"There are countless links in the wild pointing to old versions of the "
+"manual. We want people to find up-to-date documentation when following "
+"popular advice."
+msgstr ""
+
+#: source/development/documentation.md:125
+msgid ""
+"When moving files, update [redirects on nixos.org](https://github.com/NixOS/"
+"nixos-homepage/blob/master/netlify.toml)."
+msgstr ""
+
+#: source/development/documentation.md:127
+msgid ""
+"This is especially important when moving information out of the Nix manual "
+"to other resources."
+msgstr ""
+
+#: source/development/documentation.md:129
+msgid ""
+"When changing anchors, update [client-side redirects](https://github.com/"
+"NixOS/nix/blob/master/doc/manual/redirects.js)"
+msgstr ""
+
+#: source/development/documentation.md:131
+msgid ""
+"The current setup is cumbersome, and help making better automation is "
+"appreciated."
+msgstr ""
+
+#: source/development/documentation.md:133
+msgid ""
+"The build checks for broken internal links with. This happens late in the "
+"process, so [building the whole manual](#building-the-manual) is not "
+"suitable for iterating quickly. [`mdbook-linkcheck`](https://github.com/"
+"Michael-F-Bryan/mdbook-linkcheck) does not implement checking [URI fragments]"
+"(https://en.wikipedia.org/wiki/URI_fragment) yet."
+msgstr ""
+
+#: source/development/documentation.md:140
+msgid "Markdown conventions"
+msgstr ""
+
+#: source/development/documentation.md:142
+msgid ""
+"The manual is written in markdown, and rendered with [mdBook](https://"
+"github.com/rust-lang/mdBook) for the web and with [lowdown](https://"
+"github.com/kristapsdz/lowdown) for `man` pages and `--help` output."
+msgstr ""
+
+#: source/development/documentation.md:144
+msgid "For supported markdown features, refer to:"
+msgstr ""
+
+#: source/development/documentation.md:145
+msgid ""
+"[mdBook documentation](https://rust-lang.github.io/mdBook/format/"
+"markdown.html)"
+msgstr ""
+
+#: source/development/documentation.md:146
+msgid "[lowdown documentation](https://kristaps.bsd.lv/lowdown/)"
+msgstr ""
+
+#: source/development/documentation.md:148
+msgid "Please observe these guidelines to ease reviews:"
+msgstr ""
+
+#: source/development/documentation.md:150
+msgid "Write one sentence per line."
+msgstr ""
+
+#: source/development/documentation.md:152
+msgid ""
+"This makes long sentences immediately visible, and makes it easier to review "
+"changes and make direct suggestions."
+msgstr ""
+
+#: source/development/documentation.md:154
+msgid ""
+"Use reference links – sparingly – to ease source readability. Put "
+"definitions close to their first use."
+msgstr ""
+
+#: source/development/documentation.md:157
+msgid "Example:"
+msgstr ""
+
+#: source/development/documentation.md:167
+msgid "Use admonitions of the following form:"
+msgstr ""
+
+#: source/development/documentation.md:175
+msgid "Highlight examples as such:"
+msgstr ""
+
+#: source/development/documentation.md:185
+msgid ""
+"Highlight syntax definitions as such, using [EBNF](https://en.wikipedia.org/"
+"wiki/Extended_Backus%E2%80%93Naur_form) notation:"
+msgstr ""
+
+#: source/development/documentation.md:193
+msgid "The `..` variable"
+msgstr ""
+
+#: source/development/documentation.md:195
+msgid ""
+"`..` provides a base path for links that occur in reusable snippets or other "
+"documentation that doesn't have a base path of its own."
+msgstr ""
+
+#: source/development/documentation.md:197
+msgid ""
+"If a broken link occurs in a snippet that was inserted into multiple "
+"generated files in different directories, use `..` to reference the `doc/"
+"manual/source` directory."
+msgstr ""
+
+#: source/development/documentation.md:199
+msgid ""
+"If the `..` literal appears in an error message from the [`mdbook-linkcheck`]"
+"(https://github.com/Michael-F-Bryan/mdbook-linkcheck) tool, the `..` "
+"replacement needs to be applied to the generated source file that mentions "
+"it. See existing `..` logic in the \\[Makefile for the manual\\]. Regular "
+"markdown files used for the manual have a base path of their own and they "
+"can use relative paths instead of `..`."
+msgstr ""
+
+#: source/development/documentation.md:203
+msgid "API documentation"
+msgstr ""
+
+#: source/development/documentation.md:205
+msgid ""
+"[Doxygen API documentation](https://hydra.nixos.org/job/nix/master/internal-"
+"api-docs/latest/download-by-type/doc/internal-api-docs) is available online. "
+"You can also build and view it yourself:"
+msgstr ""
+
+#: source/development/documentation.md:215
+#: source/development/documentation.md:236
+msgid "or inside `nix-shell` or `nix develop`:"
+msgstr ""
+
+#: source/development/documentation.md:223
+msgid "C API documentation"
+msgstr ""
+
+#: source/development/documentation.md:225
+msgid ""
+"Note that the C API is not yet stable. [C API documentation](https://"
+"hydra.nixos.org/job/nix/master/external-api-docs/latest/download-by-type/doc/"
+"external-api-docs) is available online. You can also build and view it "
+"yourself:"
+msgstr ""
+
+#: source/development/documentation.md:244
+msgid ""
+"If you use direnv, or otherwise want to run `configurePhase` in a transient "
+"shell, use:"
+msgstr ""
+
+#: source/development/documentation.md:247
+msgid "'appendToVar mesonFlags \"-Ddoc-gen=true\"; mesonConfigurePhase'"
+msgstr ""

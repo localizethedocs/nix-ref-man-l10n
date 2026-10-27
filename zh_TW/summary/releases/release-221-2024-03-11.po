@@ -1,0 +1,408 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.21.md:1
+msgid "Release 2.21.0 (2024-03-11)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:3
+msgid "Fix a fixed-output derivation sandbox escape (CVE-2024-27297)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:5
+msgid ""
+"Cooperating Nix derivations could send file descriptors to files in the Nix "
+"store to each other via Unix domain sockets in the abstract namespace. This "
+"allowed one derivation to modify the output of the other derivation, after "
+"Nix has registered the path as \"valid\" and immutable in the Nix database. "
+"In particular, this allowed the output of fixed-output derivations to be "
+"modified from their expected content."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:12
+msgid "This isn't the case any more."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:14
+msgid ""
+"CLI options `--arg-from-file` and `--arg-from-stdin` [\\#10122](https://"
+"github.com/NixOS/nix/pull/10122)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:16
+msgid ""
+"The new CLI option `--arg-from-file` _name_ _path_ passes the contents of "
+"file _path_ as a string value via the function argument _name_ to a Nix "
+"expression. Similarly, the new option `--arg-from-stdin` _name_ reads the "
+"contents of the string from standard input."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:21
+msgid ""
+"Concise error printing in `nix repl` [\\#9928](https://github.com/NixOS/nix/"
+"pull/9928)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:23
+msgid ""
+"Previously, if an element of a list or attribute set threw an error while "
+"evaluating, `nix repl` would print the entire error (including source "
+"location information) inline. This output was clumsy and difficult to parse:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:27
+msgid ""
+"```\n"
+"nix-repl> { err = builtins.throw \"uh oh!\"; }\n"
+"{ err = «error:\n"
+"       … while calling the 'throw' builtin\n"
+"         at «string»:1:9:\n"
+"            1| { err = builtins.throw \"uh oh!\"; }\n"
+"             |         ^\n"
+"\n"
+"       error: uh oh!»; }\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:38
+msgid ""
+"Now, only the error message is displayed, making the output much more "
+"readable."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:39
+msgid ""
+"```\n"
+"nix-repl> { err = builtins.throw \"uh oh!\"; }\n"
+"{ err = «error: uh oh!»; }\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:44
+msgid ""
+"However, if the whole expression being evaluated throws an error, source "
+"locations and (if applicable) a stack trace are printed, just like you'd "
+"expect:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:47
+msgid ""
+"```\n"
+"nix-repl> builtins.throw \"uh oh!\"\n"
+"error:\n"
+"       … while calling the 'throw' builtin\n"
+"         at «string»:1:1:\n"
+"            1| builtins.throw \"uh oh!\"\n"
+"             | ^\n"
+"\n"
+"       error: uh oh!\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:58
+msgid ""
+"`--debugger` can now access bindings from `let` expressions [\\#8827]"
+"(https://github.com/NixOS/nix/issues/8827) [\\#9918](https://github.com/"
+"NixOS/nix/pull/9918)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:60
+msgid ""
+"Breakpoints and errors in the bindings of a `let` expression can now access "
+"those bindings in the debugger. Previously, only the body of `let` "
+"expressions could access those bindings."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:64
+msgid ""
+"Enter the `--debugger` when `builtins.trace` is called if `debugger-on-"
+"trace` is set [\\#9914](https://github.com/NixOS/nix/pull/9914)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:66
+msgid ""
+"If the `debugger-on-trace` option is set and `--debugger` is given, "
+"`builtins.trace` calls will behave similarly to `builtins.break` and will "
+"enter the debug REPL. This is useful for determining where warnings are "
+"being emitted from."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:71
+msgid ""
+"Debugger prints source position information [\\#9913](https://github.com/"
+"NixOS/nix/pull/9913)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:73
+msgid ""
+"The `--debugger` now prints source location information, instead of the "
+"pointers of source location information. Before:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:82 source/release-notes/rl-2.21.md:243
+#: source/release-notes/rl-2.21.md:269 source/release-notes/rl-2.21.md:284
+msgid "After:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:94
+msgid ""
+"The `--debugger` will start more reliably in `let` expressions and function "
+"calls [\\#6649](https://github.com/NixOS/nix/issues/6649) [\\#9917](https://"
+"github.com/NixOS/nix/pull/9917)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:96
+msgid "Previously, if you attempted to evaluate this file with the debugger:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:98
+msgid ""
+"```nix\n"
+"let\n"
+"  a = builtins.trace \"before inner break\" (\n"
+"    builtins.break \"hello\"\n"
+"  );\n"
+"  b = builtins.trace \"before outer break\" (\n"
+"    builtins.break a\n"
+"  );\n"
+"in\n"
+"  b\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:110
+msgid ""
+"Nix would correctly enter the debugger at `builtins.break a`, but if you "
+"asked it to `:continue`, it would skip over the `builtins.break \"hello\"` "
+"expression entirely."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:114
+msgid "Now, Nix will correctly enter the debugger at both breakpoints."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:116
+msgid ""
+"Nested debuggers are no longer supported [\\#9920](https://github.com/NixOS/"
+"nix/pull/9920)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:118
+msgid ""
+"Previously, evaluating an expression that throws an error in the debugger "
+"would enter a second, nested debugger:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:121
+msgid ""
+"```\n"
+"nix-repl> builtins.throw \"what\"\n"
+"error: what\n"
+"\n"
+"\n"
+"Starting REPL to allow you to inspect the current state of the evaluator.\n"
+"\n"
+"Welcome to Nix 2.18.1. Type :? for help.\n"
+"\n"
+"nix-repl>\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:133
+msgid "Now, it just prints the error message like `nix repl`:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:135
+msgid ""
+"```\n"
+"nix-repl> builtins.throw \"what\"\n"
+"error:\n"
+"       … while calling the 'throw' builtin\n"
+"         at «string»:1:1:\n"
+"            1| builtins.throw \"what\"\n"
+"             | ^\n"
+"\n"
+"       error: what\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:146
+msgid ""
+"Consistent order of function arguments in printed expressions [\\#9874]"
+"(https://github.com/NixOS/nix/pull/9874)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:148
+msgid ""
+"Function arguments are now printed in lexicographic order rather than the "
+"internal, creation-time based symbol order."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:150
+msgid ""
+"Fix duplicate attribute error positions for `inherit` [\\#9874](https://"
+"github.com/NixOS/nix/pull/9874)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:152
+msgid ""
+"When an `inherit` caused a duplicate attribute error the position of the "
+"error was not reported correctly, placing the error with the inherit itself "
+"or at the start of the bindings block instead of the offending attribute "
+"name."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:154
+msgid ""
+"`inherit (x) ...` evaluates `x` only once [\\#9847](https://github.com/NixOS/"
+"nix/pull/9847)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:156
+msgid ""
+"`inherit (x) a b ...` now evaluates the expression `x` only once for all "
+"inherited attributes rather than once for each inherited attribute. This "
+"does not usually have a measurable impact, but side-effects (such as "
+"`builtins.trace`) would be duplicated and expensive expressions (such as "
+"derivations) could cause a measurable slowdown."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:159
+msgid ""
+"Store paths are allowed to start with `.` [\\#912](https://github.com/NixOS/"
+"nix/issues/912) [\\#9091](https://github.com/NixOS/nix/pull/9091) [\\#9095]"
+"(https://github.com/NixOS/nix/pull/9095) [\\#9120](https://github.com/NixOS/"
+"nix/pull/9120) [\\#9121](https://github.com/NixOS/nix/pull/9121) [\\#9122]"
+"(https://github.com/NixOS/nix/pull/9122) [\\#9130](https://github.com/NixOS/"
+"nix/pull/9130) [\\#9219](https://github.com/NixOS/nix/pull/9219) [\\#9224]"
+"(https://github.com/NixOS/nix/pull/9224) [\\#9867](https://github.com/NixOS/"
+"nix/pull/9867)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:161
+msgid ""
+"Leading periods were allowed by accident in Nix 2.4. The Nix team has "
+"considered this to be a bug, but this behavior has since been relied on by "
+"users, leading to unnecessary difficulties. From now on, leading periods are "
+"supported. The names `.` and `..` are disallowed, as well as those starting "
+"with `.-` or `..-`."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:164
+msgid ""
+"Nix versions that denied leading periods are documented [in the issue]"
+"(https://github.com/NixOS/nix/issues/912#issuecomment-1919583286)."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:166
+msgid ""
+"`nix repl` pretty-prints values [\\#9931](https://github.com/NixOS/nix/pull/"
+"9931)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:168
+msgid "`nix repl` will now pretty-print values:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:188
+msgid ""
+"Introduction of `--regex` and `--all` in `nix profile remove` and `nix "
+"profile upgrade` [\\#10166](https://github.com/NixOS/nix/pull/10166)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:190
+msgid ""
+"Previously the command-line arguments for `nix profile remove` and `nix "
+"profile upgrade` matched the package entries using regular expression. For "
+"instance:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:197
+msgid "This would remove all packages that contain `vim` in their name."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:199
+msgid ""
+"In most cases, only singular package names were used to remove and upgrade "
+"packages. Mixing this with regular expressions sometimes lead to unintended "
+"behavior. For instance, `python3.1` could match `python311`."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:201
+msgid ""
+"To avoid unintended behavior, the arguments are now only matching exact "
+"names."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:203
+msgid ""
+"Matching using regular expressions is still possible by using the new `--"
+"regex` flag:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:209
+msgid ""
+"One of the most useful cases for using regular expressions was to upgrade "
+"all packages. This was previously accomplished by:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:215
+msgid ""
+"With the introduction of the `--all` flag, this now becomes more "
+"straightforward:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:221
+msgid ""
+"Visual clutter in `--debugger` is reduced [\\#9919](https://github.com/NixOS/"
+"nix/pull/9919)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:223 source/release-notes/rl-2.21.md:262
+#: source/release-notes/rl-2.21.md:277
+msgid "Before:"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:256
+msgid ""
+"Cycle detection in `nix repl` is simpler and more reliable [\\#8672](https://"
+"github.com/NixOS/nix/issues/8672) [\\#9926](https://github.com/NixOS/nix/"
+"pull/9926)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:258
+msgid ""
+"The cycle detection in `nix repl`, `nix eval`, `builtins.trace`, and "
+"everywhere else values are printed is now simpler and matches the cycle "
+"detection in `nix-instantiate --eval` output."
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:275
+msgid ""
+"In the debugger, `while evaluating the attribute` errors now include "
+"position information [\\#9915](https://github.com/NixOS/nix/pull/9915)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:296
+msgid ""
+"Stack size is increased on macOS [\\#9860](https://github.com/NixOS/nix/pull/"
+"9860)"
+msgstr ""
+
+#: source/release-notes/rl-2.21.md:298
+msgid ""
+"Previously, Nix would set the stack size to 64MiB on Linux, but would leave "
+"the stack size set to the default (approximately 8KiB) on macOS. Now, the "
+"stack size is correctly set to 64MiB on macOS as well, which should reduce "
+"stack overflow segfaults in deeply-recursive Nix expressions."
+msgstr ""

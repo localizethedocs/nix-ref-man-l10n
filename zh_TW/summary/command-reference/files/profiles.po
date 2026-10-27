@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/files/profiles.md:1
+msgid "Profiles"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:3
+msgid ""
+"A directory that contains links to profiles managed by [`nix-env`](../../"
+"command-ref/nix-env.md) and [`nix profile`](../../command-ref/new-cli/nix3-"
+"profile.md):"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:5
+msgid "`$XDG_STATE_HOME/nix/profiles` for regular users"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:6
+msgid "`$NIX_STATE_DIR/profiles/per-user/root` if the user is `root`"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:8
+msgid "A profile is a directory of symlinks to files in the Nix store."
+msgstr ""
+
+#: source/command-ref/files/profiles.md:10
+msgid "Filesystem layout"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:12
+msgid ""
+"Profiles are versioned as follows. When using a profile named _path_, _path_ "
+"is a symlink to _path_`-`_N_`-link`, where _N_ is the version of the "
+"profile. In turn, _path_`-`_N_`-link` is a symlink to a path in the Nix "
+"store. For example:"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:24
+msgid "Each of these symlinks is a root for the Nix garbage collector."
+msgstr ""
+
+#: source/command-ref/files/profiles.md:26
+msgid ""
+"The contents of the store path corresponding to each version of the profile "
+"is a tree of symlinks to the files of the installed packages, e.g."
+msgstr ""
+
+#: source/command-ref/files/profiles.md:53
+msgid "Each profile version contains a manifest file:"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:54
+msgid ""
+"[`manifest.nix`](../../command-ref/files/manifest.nix.md) used by [`nix-env`]"
+"(../../command-ref/nix-env.md)."
+msgstr ""
+
+#: source/command-ref/files/profiles.md:55
+msgid ""
+"[`manifest.json`](../../command-ref/files/manifest.json.md) used by [`nix "
+"profile`](../../command-ref/new-cli/nix3-profile.md) (experimental)."
+msgstr ""
+
+#: source/command-ref/files/profiles.md:57
+msgid "User profile link"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:59
+msgid "A symbolic link to the user's current profile:"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:61
+msgid "`~/.nix-profile`"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:62
+msgid ""
+"`$XDG_STATE_HOME/nix/profile` if [`use-xdg-base-directories`](../../command-"
+"ref/conf-file.md#conf-use-xdg-base-directories) is set to `true`."
+msgstr ""
+
+#: source/command-ref/files/profiles.md:64
+msgid "By default, this symlink points to:"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:66
+msgid "`$XDG_STATE_HOME/nix/profiles/profile` for regular users"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:67
+msgid "`$NIX_STATE_DIR/profiles/per-user/root/profile` for `root`"
+msgstr ""
+
+#: source/command-ref/files/profiles.md:69
+msgid ""
+"The `PATH` environment variable should include `/bin` subdirectory of the "
+"profile link (e.g. `~/.nix-profile/bin`) for the user environment to be "
+"visible to the user. The [installer](../../installation/installing-"
+"binary.md) sets this up by default, unless you enable [`use-xdg-base-"
+"directories`](../../command-ref/conf-file.md#conf-use-xdg-base-directories)."
+msgstr ""

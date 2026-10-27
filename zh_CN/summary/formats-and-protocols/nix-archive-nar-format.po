@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/nix-archive/index.md:1
+msgid "Nix Archive (NAR) format"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:3
+msgid ""
+"This is the complete specification of the [Nix Archive](../../store/file-"
+"system-object/content-address.md#serial-nix-archive) format. The Nix Archive "
+"format closely follows the abstract specification of a [file system object]"
+"(../../store/file-system-object.md) tree, because it is designed to "
+"serialize exactly that data structure."
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:10
+msgid ""
+"The format of this specification is close to [Extended Backus–Naur form]"
+"(https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form), with the "
+"exception of the `str(..)` function / parameterized rule, which length-"
+"prefixes and pads strings. This makes the resulting binary format easier to "
+"parse."
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:13
+msgid ""
+"Regular users do _not_ need to know this information. But for those "
+"interested in exactly how Nix works, e.g. if they are reimplementing it, "
+"this information can be useful."
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:16
+msgid ""
+"```ebnf\n"
+"nar = str(\"nix-archive-1\"), nar-obj;\n"
+"\n"
+"nar-obj = str(\"(\"), nar-obj-inner, str(\")\");\n"
+"\n"
+"nar-obj-inner\n"
+"  = str(\"type\"), str(\"regular\") regular\n"
+"  | str(\"type\"), str(\"symlink\") symlink\n"
+"  | str(\"type\"), str(\"directory\") directory\n"
+"  ;\n"
+"\n"
+"regular = [ str(\"executable\"), str(\"\") ], str(\"contents\"), "
+"str(contents);\n"
+"\n"
+"symlink = str(\"target\"), str(target);\n"
+"\n"
+"(* side condition: directory entries must be ordered by their names *)\n"
+"directory = { directory-entry };\n"
+"\n"
+"directory-entry = str(\"entry\"), str(\"(\"), str(\"name\"), str(name), "
+"str(\"node\"), nar-obj, str(\")\");\n"
+"```"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:37
+msgid "The `str` function / parameterized rule is defined as follows:"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:39
+msgid "`str(s)` = `int(|s|), pad(s);`"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:41
+msgid "`int(n)` = the 64-bit little endian representation of the number `n`"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:43
+msgid ""
+"`pad(s)` = the byte sequence `s`, padded with 0s to a multiple of 8 byte"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:45
+msgid "Kaitai Struct Specification"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:47
+msgid ""
+"The Nix Archive (NAR) format is also formally described using [Kaitai Struct]"
+"(https://kaitai.io/), an Interface Description Language (IDL) for defining "
+"binary data structures."
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:49
+msgid ""
+"Kaitai Struct provides a language-agnostic, machine-readable specification "
+"that can be compiled into parsers for various programming languages (e.g., C+"
+"+, Python, Java, Rust)."
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:52
+msgid "meta"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:53
+msgid "id"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:53
+msgid "nix_nar"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:54
+msgid "title"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:54
+msgid "Nix Archive (NAR)"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:55
+msgid "file-extension"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:55
+msgid "nar"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:56
+msgid "endian"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:56
+msgid "le"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:56
+msgid "doc"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:167
+msgid "# Read attributes (like 'executable') until we hit 'contents'\n"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:172
+msgid "# After the 'contents' token, read the file data\n"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:199
+msgid ""
+"# # This relies on the property of instances that they are lazily evaluated "
+"and cached.\n"
+msgstr ""
+
+#: source/protocols/nix-archive/index.md:224
+msgid ""
+"The source of the spec can be found [here](https://github.com/nixos/nix/blob/"
+"master/src/nix-manual/source/protocols/nix-archive/nar.ksy). Contributions "
+"and improvements to the spec are welcomed."
+msgstr ""

@@ -1,0 +1,946 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/syntax.md:1
+msgid "Language Constructs"
+msgstr ""
+
+#: source/language/syntax.md:3
+msgid "This section covers syntax and semantics of the Nix language."
+msgstr ""
+
+#: source/language/syntax.md:5
+msgid "Basic Literals"
+msgstr ""
+
+#: source/language/syntax.md:7
+msgid "String"
+msgstr ""
+
+#: source/language/syntax.md:9
+msgid "See [String literals](string-literals.md)."
+msgstr ""
+
+#: source/language/syntax.md:11
+msgid "Number"
+msgstr ""
+
+#: source/language/syntax.md:15
+msgid ""
+"Numbers, which can be _integers_ (like `123`) or _floating point_ (like "
+"`123.43` or `.27e13`)."
+msgstr ""
+
+#: source/language/syntax.md:18
+msgid ""
+"Integers in the Nix language are 64-bit [two's complement](https://"
+"en.wikipedia.org/wiki/Two%27s_complement) signed integers, with a range of "
+"-9223372036854775808 to 9223372036854775807, inclusive."
+msgstr ""
+
+#: source/language/syntax.md:22
+msgid ""
+"Note that negative numeric literals are actually parsed as unary negation of "
+"positive numeric literals. This means that the minimum integer "
+"`-9223372036854775808` cannot be written as-is as a literal, since the "
+"positive number `9223372036854775808` is one past the maximum range."
+msgstr ""
+
+#: source/language/syntax.md:25
+msgid ""
+"See [arithmetic](./operators.md#arithmetic) and [comparison](./"
+"operators.md#comparison) operators for semantics."
+msgstr ""
+
+#: source/language/syntax.md:30
+msgid "Path"
+msgstr ""
+
+#: source/language/syntax.md:32
+msgid "_Paths_ can be expressed by path literals such as `./builder.sh`."
+msgstr ""
+
+#: source/language/syntax.md:34
+msgid ""
+"A path literal must contain at least one slash to be recognised as such. For "
+"instance, `builder.sh` is not a path: it's parsed as an expression that "
+"selects the attribute `sh` from the variable `builder`."
+msgstr ""
+
+#: source/language/syntax.md:38
+msgid ""
+"Path literals are resolved relative to their [base directory](../"
+"glossary.md#gloss-base-directory). Path literals may also refer to absolute "
+"paths by starting with a slash."
+msgstr ""
+
+#: source/language/syntax.md:41 source/language/syntax.md:338
+msgid "**Note**"
+msgstr ""
+
+#: source/language/syntax.md:43
+msgid ""
+"Absolute paths make expressions less portable. In the case where a function "
+"translates a path literal into an absolute path string for a configuration "
+"file, it is recommended to write a string literal instead. This avoids some "
+"confusion about whether files at that location will be used during "
+"evaluation. It also avoids unintentional situations where some function "
+"might try to copy everything at the location into the store."
+msgstr ""
+
+#: source/language/syntax.md:48
+msgid ""
+"If the first component of a path is a `~`, it is interpreted such that the "
+"rest of the path were relative to the user's home directory. For example, `~/"
+"foo` would be equivalent to `/home/edolstra/foo` for a user whose home "
+"directory is `/home/edolstra`. Path literals that start with `~` are not "
+"allowed in [pure](../command-ref/conf-file.md#conf-pure-eval) evaluation."
+msgstr ""
+
+#: source/language/syntax.md:52
+msgid ""
+"Path literals can also include [string interpolation](./string-"
+"interpolation.md), besides being [interpolated into other expressions](./"
+"string-interpolation.md#interpolated-expression)."
+msgstr ""
+
+#: source/language/syntax.md:57
+msgid ""
+"At least one slash (`/`) must appear _before_ any interpolated expression "
+"for the result to be recognized as a path."
+msgstr ""
+
+#: source/language/syntax.md:59
+msgid ""
+"`a.${foo}/b.${bar}` is a syntactically valid number division operation. `./a."
+"${foo}/b.${bar}` is a path."
+msgstr ""
+
+#: source/language/syntax.md:62
+msgid ""
+"[Lookup path](./constructs/lookup-path.md) literals such as `<nixpkgs>` also "
+"resolve to path values."
+msgstr ""
+
+#: source/language/syntax.md:64
+msgid "List"
+msgstr ""
+
+#: source/language/syntax.md:66
+msgid ""
+"Lists are formed by enclosing a whitespace-separated list of values between "
+"square brackets. For example,"
+msgstr ""
+
+#: source/language/syntax.md:69
+msgid ""
+"```nix\n"
+"[ 123 ./foo.nix \"abc\" (f { x = y; }) ]\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:73
+msgid ""
+"defines a list of four elements, the last being the result of a call to the "
+"function `f`. Note that function calls have to be enclosed in parentheses. "
+"If they had been omitted, e.g.,"
+msgstr ""
+
+#: source/language/syntax.md:77
+msgid ""
+"```nix\n"
+"[ 123 ./foo.nix \"abc\" f { x = y; } ]\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:81
+msgid ""
+"the result would be a list of five elements, the fourth one being a function "
+"and the fifth being a set."
+msgstr ""
+
+#: source/language/syntax.md:84
+msgid "Note that lists are only lazy in values, and they are strict in length."
+msgstr ""
+
+#: source/language/syntax.md:86
+msgid ""
+"Elements in a list can be accessed using [`builtins.elemAt`](./"
+"builtins.md#builtins-elemAt)."
+msgstr ""
+
+#: source/language/syntax.md:88
+msgid "Attribute Set"
+msgstr ""
+
+#: source/language/syntax.md:90
+msgid ""
+"An attribute set is a collection of name-value-pairs called _attributes_."
+msgstr ""
+
+#: source/language/syntax.md:92
+msgid ""
+"Attribute sets are written enclosed in curly brackets (`{ }`). Attribute "
+"names and attribute values are separated by an equal sign (`=`). Each value "
+"can be an arbitrary expression, terminated by a semicolon (`;`)"
+msgstr ""
+
+#: source/language/syntax.md:96
+msgid ""
+"An attribute name is a string without context, and is denoted by a [name](./"
+"identifiers.md#names) (an [identifier](./identifiers.md#identifiers) or "
+"[string literal](string-literals.md))."
+msgstr ""
+
+#: source/language/syntax.md:100 source/language/syntax.md:124
+#: source/language/syntax.md:131
+msgid "**Syntax**"
+msgstr ""
+
+#: source/language/syntax.md:102
+msgid "_attrset_ → `{` { _name_ `=` _expr_ `;` } `}`"
+msgstr ""
+
+#: source/language/syntax.md:104
+msgid ""
+"Attributes can appear in any order. An attribute name may only occur once in "
+"each attribute set."
+msgstr ""
+
+#: source/language/syntax.md:107 source/language/syntax.md:137
+#: source/language/syntax.md:154 source/language/syntax.md:532
+#: source/language/syntax.md:551 source/language/syntax.md:714
+#: source/language/syntax.md:727 source/language/syntax.md:742
+#: source/language/syntax.md:759
+msgid "**Example**"
+msgstr ""
+
+#: source/language/syntax.md:109
+msgid "This defines an attribute set with attributes named:"
+msgstr ""
+
+#: source/language/syntax.md:110
+msgid "`x` with the value `123`, an integer"
+msgstr ""
+
+#: source/language/syntax.md:111
+msgid "`text` with the value `\"Hello\"`, a string"
+msgstr ""
+
+#: source/language/syntax.md:112
+msgid ""
+"`y` where the value is the result of applying the function `f` to the "
+"attribute set `{ bla = 456; }`"
+msgstr ""
+
+#: source/language/syntax.md:114
+msgid ""
+"```nix\n"
+"{\n"
+"  x = 123;\n"
+"  text = \"Hello\";\n"
+"  y = f { bla = 456; };\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:122
+msgid ""
+"Attributes in nested attribute sets can be written using _attribute paths_."
+msgstr ""
+
+#: source/language/syntax.md:126
+msgid "_attrset_ → `{` { _attrpath_ `=` _expr_ `;` } `}`"
+msgstr ""
+
+#: source/language/syntax.md:133
+msgid "_attrpath_ = _name_ { `.` _name_ }"
+msgstr ""
+
+#: source/language/syntax.md:152
+msgid ""
+"Attribute names can also be set implicitly by using the [`inherit` keyword]"
+"(#inheriting-attributes)."
+msgstr ""
+
+#: source/language/syntax.md:162
+msgid ""
+"Attributes can be accessed with the [`.` operator](./operators.md#attribute-"
+"selection)."
+msgstr ""
+
+#: source/language/syntax.md:164 source/language/syntax.md:174
+#: source/language/syntax.md:244 source/language/syntax.md:279
+#: source/language/syntax.md:299 source/language/syntax.md:316
+#: source/language/syntax.md:344
+msgid "Example:"
+msgstr ""
+
+#: source/language/syntax.md:166
+msgid ""
+"```nix\n"
+"{ a = \"Foo\"; b = \"Bar\"; }.a\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:170
+msgid "This evaluates to `\"Foo\"`."
+msgstr ""
+
+#: source/language/syntax.md:172
+msgid ""
+"It is possible to provide a default value in an attribute selection using "
+"the `or` keyword."
+msgstr ""
+
+#: source/language/syntax.md:176
+msgid ""
+"```nix\n"
+"{ a = \"Foo\"; b = \"Bar\"; }.c or \"Xyzzy\"\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:180
+msgid ""
+"```nix\n"
+"{ a = \"Foo\"; b = \"Bar\"; }.c.d.e.f.g or \"Xyzzy\"\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:184
+msgid ""
+"will both evaluate to `\"Xyzzy\"` because there is no `c` attribute in the "
+"set."
+msgstr ""
+
+#: source/language/syntax.md:186
+msgid "You can use arbitrary double-quoted strings as attribute names:"
+msgstr ""
+
+#: source/language/syntax.md:188
+msgid ""
+"```nix\n"
+"{ \"$!@#?\" = 123; }.\"$!@#?\"\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:192
+msgid ""
+"```nix\n"
+"let bar = \"bar\"; in\n"
+"{ \"foo ${bar}\" = 123; }.\"foo ${bar}\"\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:197 source/language/syntax.md:211
+msgid "Both will evaluate to `123`."
+msgstr ""
+
+#: source/language/syntax.md:199
+msgid ""
+"Attribute names support [string interpolation](./string-interpolation.md):"
+msgstr ""
+
+#: source/language/syntax.md:201
+msgid ""
+"```nix\n"
+"let bar = \"foo\"; in\n"
+"{ foo = 123; }.${bar}\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:206
+msgid ""
+"```nix\n"
+"let bar = \"foo\"; in\n"
+"{ ${bar} = 123; }.foo\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:213
+msgid ""
+"In the special case where an attribute name inside of a set declaration "
+"evaluates to `null` (which is normally an error, as `null` cannot be coerced "
+"to a string), that attribute is simply not added to the set:"
+msgstr ""
+
+#: source/language/syntax.md:217
+msgid ""
+"```nix\n"
+"{ ${if foo then \"bar\" else null} = true; }\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:221
+msgid "This will evaluate to `{}` if `foo` evaluates to `false`."
+msgstr ""
+
+#: source/language/syntax.md:223
+msgid ""
+"A set that has a \\[`__functor`\\]{#attr-\\_\\_functor} attribute whose "
+"value is callable (i.e. is itself a function or a set with a `__functor` "
+"attribute whose value is callable) can be applied as if it were a function, "
+"with the set itself passed in first , e.g.,"
+msgstr ""
+
+#: source/language/syntax.md:228
+msgid ""
+"```nix\n"
+"let add = { __functor = self: x: x + self.x; };\n"
+"    inc = add // { x = 1; }; # inc is { x = 1; __functor = (...) }\n"
+"in inc 1 # equivalent of `add.__functor add 1` i.e. `1 + self.x`\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:234
+msgid ""
+"evaluates to `2`. This can be used to attach metadata to a function without "
+"the caller needing to treat it specially, or to implement a form of object-"
+"oriented programming, for example."
+msgstr ""
+
+#: source/language/syntax.md:238
+msgid "Recursive sets"
+msgstr ""
+
+#: source/language/syntax.md:240
+msgid ""
+"Recursive sets are like normal [attribute sets](./types.md#type-attrs), but "
+"the attributes can refer to each other."
+msgstr ""
+
+#: source/language/syntax.md:242
+msgid "_rec-attrset_ = `rec {` \\[ _name_ `=` _expr_ `;` `]`... `}`"
+msgstr ""
+
+#: source/language/syntax.md:253
+msgid "This evaluates to `123`."
+msgstr ""
+
+#: source/language/syntax.md:255
+msgid ""
+"Note that without `rec` the binding `x = y;` would refer to the variable `y` "
+"in the surrounding scope, if one exists, and would be invalid if no such "
+"variable exists. That is, in a normal (non-recursive) set, attributes are "
+"not added to the lexical scope; in a recursive set, they are."
+msgstr ""
+
+#: source/language/syntax.md:261
+msgid ""
+"Recursive sets of course introduce the danger of infinite recursion. For "
+"example, the expression"
+msgstr ""
+
+#: source/language/syntax.md:271
+msgid "will crash with an `infinite recursion encountered` error message."
+msgstr ""
+
+#: source/language/syntax.md:273
+msgid "Let-expressions"
+msgstr ""
+
+#: source/language/syntax.md:275
+msgid ""
+"A let-expression allows you to define local variables for an expression."
+msgstr ""
+
+#: source/language/syntax.md:277
+msgid "_let-in_ = `let` \\[ _identifier_ = _expr_ `;` \\]... `in` _expr_"
+msgstr ""
+
+#: source/language/syntax.md:281
+msgid ""
+"```nix\n"
+"let\n"
+"  x = \"foo\";\n"
+"  y = \"bar\";\n"
+"in x + y\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:288
+msgid "This evaluates to `\"foobar\"`."
+msgstr ""
+
+#: source/language/syntax.md:290
+msgid ""
+"There is also another, older, syntax for let expressions that should not be "
+"used in new code:"
+msgstr ""
+
+#: source/language/syntax.md:292
+msgid ""
+"_let_ = `let` `{` _identifier_ = _expr_ `;` \\[ _identifier_ = _expr_ "
+"`;`\\]...  `}`"
+msgstr ""
+
+#: source/language/syntax.md:294
+msgid "In this form, the attribute set between the `{` `}` is recursive."
+msgstr ""
+
+#: source/language/syntax.md:296
+msgid ""
+"One of the attributes must have the special name `body`, which is the result "
+"of the expression."
+msgstr ""
+
+#: source/language/syntax.md:301
+msgid ""
+"```nix\n"
+"let {\n"
+"  foo = bar;\n"
+"  bar = \"baz\";\n"
+"  body = foo;\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:309
+msgid "This evaluates to \"baz\"."
+msgstr ""
+
+#: source/language/syntax.md:311
+msgid "Inheriting attributes"
+msgstr ""
+
+#: source/language/syntax.md:313
+msgid ""
+"When defining an [attribute set](./types.md#type-attrs) or in a [let-"
+"expression](#let-expressions) it is often convenient to copy variables from "
+"the surrounding lexical scope (e.g., when you want to propagate attributes). "
+"This can be shortened using the `inherit` keyword."
+msgstr ""
+
+#: source/language/syntax.md:326 source/language/syntax.md:379
+#: source/language/syntax.md:404 source/language/syntax.md:514
+msgid "is equivalent to"
+msgstr ""
+
+#: source/language/syntax.md:336
+msgid "and both evaluate to `{ x = 123; y = 456; }`."
+msgstr ""
+
+#: source/language/syntax.md:340
+msgid ""
+"This works because `x` is added to the lexical scope by the `let` construct."
+msgstr ""
+
+#: source/language/syntax.md:342
+msgid "It is also possible to inherit attributes from another attribute set."
+msgstr ""
+
+#: source/language/syntax.md:346
+msgid "In this fragment from `all-packages.nix`,"
+msgstr ""
+
+#: source/language/syntax.md:365
+msgid ""
+"the set used in the function call to the function defined in `../tools/"
+"graphics/graphviz` inherits a number of variables from the surrounding scope "
+"(`fetchurl` ... `yacc`), but also inherits `libXaw` (the X Athena Widgets) "
+"from the `xorg` set."
+msgstr ""
+
+#: source/language/syntax.md:370
+msgid "Summarizing the fragment"
+msgstr ""
+
+#: source/language/syntax.md:388
+msgid ""
+"when used while defining local variables in a let-expression or while "
+"defining a set."
+msgstr ""
+
+#: source/language/syntax.md:391
+msgid ""
+"In a `let` expression, `inherit` can be used to selectively bring specific "
+"attributes of a set into scope. For example"
+msgstr ""
+
+#: source/language/syntax.md:415
+msgid "both evaluate to `{ names = [ \"a\" \"b\" ]; }`."
+msgstr ""
+
+#: source/language/syntax.md:417
+msgid "Functions"
+msgstr ""
+
+#: source/language/syntax.md:419
+msgid "Functions have the following form:"
+msgstr ""
+
+#: source/language/syntax.md:425
+msgid ""
+"The pattern specifies what the argument of the function must look like, and "
+"binds variables in the body to (parts of) the argument. There are three "
+"kinds of patterns:"
+msgstr ""
+
+#: source/language/syntax.md:429
+msgid ""
+"If a pattern is a single identifier, then the function matches any argument. "
+"Example:"
+msgstr ""
+
+#: source/language/syntax.md:432
+msgid ""
+"```nix\n"
+"let negate = x: !x;\n"
+"    concat = x: y: x + y;\n"
+"in if negate true then concat \"foo\" \"bar\" else \"\"\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:438
+msgid ""
+"Note that `concat` is a function that takes one argument and returns a "
+"function that takes another argument. This allows partial parameterisation "
+"(i.e., only filling some of the arguments of a function); e.g.,"
+msgstr ""
+
+#: source/language/syntax.md:443
+msgid ""
+"```nix\n"
+"map (concat \"foo\") [ \"bar\" \"bla\" \"abc\" ]\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:447
+msgid "evaluates to `[ \"foobar\" \"foobla\" \"fooabc\" ]`."
+msgstr ""
+
+#: source/language/syntax.md:449
+msgid ""
+"A _set pattern_ of the form `{ name1, name2, …, nameN }` matches a set "
+"containing the listed attributes, and binds the values of those attributes "
+"to variables in the function body. For example, the function"
+msgstr ""
+
+#: source/language/syntax.md:458
+msgid ""
+"can only be called with a set containing exactly the attributes `x`, `y` and "
+"`z`. No other attributes are allowed. If you want to allow additional "
+"arguments, you can use an ellipsis (`...`):"
+msgstr ""
+
+#: source/language/syntax.md:466
+msgid ""
+"This works on any set that contains at least the three named attributes."
+msgstr ""
+
+#: source/language/syntax.md:469
+msgid ""
+"It is possible to provide _default values_ for attributes, in which case "
+"they are allowed to be missing. A default value is specified by writing "
+"`name ?  e`, where _e_ is an arbitrary expression. For example,"
+msgstr ""
+
+#: source/language/syntax.md:474
+msgid ""
+"```nix\n"
+"{ x, y ? \"foo\", z ? \"bar\" }: z + y + x\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:478
+msgid ""
+"specifies a function that only requires an attribute named `x`, but "
+"optionally accepts `y` and `z`."
+msgstr ""
+
+#: source/language/syntax.md:481
+msgid ""
+"An `@`\\-pattern provides a means of referring to the whole value being "
+"matched:"
+msgstr ""
+
+#: source/language/syntax.md:488
+msgid "but can also be written as:"
+msgstr ""
+
+#: source/language/syntax.md:494
+msgid ""
+"Here `args` is bound to the argument _as passed_, which is further matched "
+"against the pattern `{ x, y, z, ... }`. The `@`\\-pattern makes mainly sense "
+"with an ellipsis(`...`) as you can access attribute names as `a`, using "
+"`args.a`, which was given as an additional attribute to the function."
+msgstr ""
+
+#: source/language/syntax.md:500
+msgid "**Warning**"
+msgstr ""
+
+#: source/language/syntax.md:502
+msgid ""
+"`args@` binds the name `args` to the attribute set that is passed to the "
+"function. In particular, `args` does _not_ include any default values "
+"specified with `?` in the function's set pattern."
+msgstr ""
+
+#: source/language/syntax.md:505
+msgid "For instance"
+msgstr ""
+
+#: source/language/syntax.md:523
+msgid "and both expressions will evaluate to:"
+msgstr ""
+
+#: source/language/syntax.md:529
+msgid ""
+"All bindings introduced by the function are in scope in the entire function "
+"expression; not just in the body. It can therefore be used in default values."
+msgstr ""
+
+#: source/language/syntax.md:534
+msgid ""
+"A parameter (`x`), is used in the default value for another parameter (`y`):"
+msgstr ""
+
+#: source/language/syntax.md:543 source/language/syntax.md:562
+msgid "This evaluates to:"
+msgstr ""
+
+#: source/language/syntax.md:553
+msgid ""
+"The binding of an `@` pattern, `args`, is used in the default value for a "
+"parameter, `x`:"
+msgstr ""
+
+#: source/language/syntax.md:568
+msgid ""
+"Note that functions do not have names. If you want to give them a name, you "
+"can bind them to an attribute, e.g.,"
+msgstr ""
+
+#: source/language/syntax.md:571
+msgid ""
+"```nix\n"
+"let concat = { x, y }: x + y;\n"
+"in concat { x = \"foo\"; y = \"bar\"; }\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:576
+msgid "Conditionals"
+msgstr ""
+
+#: source/language/syntax.md:578
+msgid "Conditionals look like this:"
+msgstr ""
+
+#: source/language/syntax.md:584
+msgid ""
+"where _e1_ is an expression that should evaluate to a Boolean value (`true` "
+"or `false`)."
+msgstr ""
+
+#: source/language/syntax.md:587
+msgid "Assertions"
+msgstr ""
+
+#: source/language/syntax.md:589
+msgid ""
+"Assertions are generally used to check that certain requirements on or "
+"between features and dependencies hold. They look like this:"
+msgstr ""
+
+#: source/language/syntax.md:596
+msgid ""
+"where _e1_ is an expression that should evaluate to a Boolean value. If it "
+"evaluates to `true`, _e2_ is returned; otherwise expression evaluation is "
+"aborted and a backtrace is printed."
+msgstr ""
+
+#: source/language/syntax.md:600
+msgid ""
+"Here is a Nix expression for the Subversion package that shows how "
+"assertions can be used:."
+msgstr ""
+
+#: source/language/syntax.md:603
+msgid ""
+"```nix\n"
+"{ localServer ? false\n"
+", httpServer ? false\n"
+", sslSupport ? false\n"
+", pythonBindings ? false\n"
+", javaSwigBindings ? false\n"
+", javahlBindings ? false\n"
+", stdenv, fetchurl\n"
+", openssl ? null, httpd ? null, db4 ? null, expat, swig ? null, j2sdk ? "
+"null\n"
+"}:\n"
+"\n"
+"assert localServer -> db4 != null; ①\n"
+"assert httpServer -> httpd != null && httpd.expat == expat; ②\n"
+"assert sslSupport -> openssl != null && (httpServer -> httpd.openssl == "
+"openssl); ③\n"
+"assert pythonBindings -> swig != null && swig.pythonSupport;\n"
+"assert javaSwigBindings -> swig != null && swig.javaSupport;\n"
+"assert javahlBindings -> j2sdk != null;\n"
+"\n"
+"stdenv.mkDerivation {\n"
+"  name = \"subversion-1.1.1\";\n"
+"  ...\n"
+"  openssl = if sslSupport then openssl else null; ④\n"
+"  ...\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:629
+msgid "The points of interest are:"
+msgstr ""
+
+#: source/language/syntax.md:631
+msgid ""
+"This assertion states that if Subversion is to have support for local "
+"repositories, then Berkeley DB is needed. So if the Subversion function is "
+"called with the `localServer` argument set to `true` but the `db4` argument "
+"set to `null`, then the evaluation fails."
+msgstr ""
+
+#: source/language/syntax.md:636
+msgid ""
+"Note that `->` is the [logical implication](https://en.wikipedia.org/wiki/"
+"Truth_table#Logical_implication) Boolean operation."
+msgstr ""
+
+#: source/language/syntax.md:640
+msgid ""
+"This is a more subtle condition: if Subversion is built with Apache "
+"(`httpServer`) support, then the Expat library (an XML library) used by "
+"Subversion should be same as the one used by Apache. This is because in this "
+"configuration Subversion code ends up being linked with Apache code, and if "
+"the Expat libraries do not match, a build- or runtime link error or "
+"incompatibility might occur."
+msgstr ""
+
+#: source/language/syntax.md:647
+msgid ""
+"This assertion says that in order for Subversion to have SSL support (so "
+"that it can access `https` URLs), an OpenSSL library must be passed. "
+"Additionally, it says that _if_ Apache support is enabled, then Apache's "
+"OpenSSL should match Subversion's. (Note that if Apache support is not "
+"enabled, we don't care about Apache's OpenSSL.)"
+msgstr ""
+
+#: source/language/syntax.md:654
+msgid ""
+"The conditional here is not really related to assertions, but is worth "
+"pointing out: it ensures that if SSL support is disabled, then the "
+"Subversion derivation is not dependent on OpenSSL, even if a non-`null` "
+"value was passed. This prevents an unnecessary rebuild of Subversion if "
+"OpenSSL changes."
+msgstr ""
+
+#: source/language/syntax.md:660
+msgid "With-expressions"
+msgstr ""
+
+#: source/language/syntax.md:662
+msgid "A _with-expression_,"
+msgstr ""
+
+#: source/language/syntax.md:668
+msgid ""
+"introduces the set _e1_ into the lexical scope of the expression _e2_. For "
+"instance,"
+msgstr ""
+
+#: source/language/syntax.md:671
+msgid ""
+"```nix\n"
+"let as = { x = \"foo\"; y = \"bar\"; };\n"
+"in with as; x + y\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:676
+msgid ""
+"evaluates to `\"foobar\"` since the `with` adds the `x` and `y` attributes "
+"of `as` to the lexical scope in the expression `x + y`. The most common use "
+"of `with` is in conjunction with the `import` function. E.g.,"
+msgstr ""
+
+#: source/language/syntax.md:684
+msgid ""
+"makes all attributes defined in the file `definitions.nix` available as if "
+"they were defined locally in a `let`\\-expression."
+msgstr ""
+
+#: source/language/syntax.md:687
+msgid ""
+"The bindings introduced by `with` do not shadow bindings introduced by other "
+"means, e.g."
+msgstr ""
+
+#: source/language/syntax.md:694
+msgid "establishes the same scope as"
+msgstr ""
+
+#: source/language/syntax.md:700
+msgid "Variables coming from outer `with` expressions _are_ shadowed:"
+msgstr ""
+
+#: source/language/syntax.md:702
+msgid ""
+"```nix\n"
+"with { a = \"outer\"; };\n"
+"with { a = \"inner\"; };\n"
+"a\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:708
+msgid "Does evaluate to `\"inner\"`."
+msgstr ""
+
+#: source/language/syntax.md:710
+msgid "Comments"
+msgstr ""
+
+#: source/language/syntax.md:712
+msgid "Inline comments start with `#` and run until the end of the line."
+msgstr ""
+
+#: source/language/syntax.md:725
+msgid ""
+"Block comments start with `/*` and run until the next occurrence of `*/`."
+msgstr ""
+
+#: source/language/syntax.md:729
+msgid ""
+"```nix\n"
+"/*\n"
+"Block comments\n"
+"can span multiple lines.\n"
+"*/ \"hello\"\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:736
+msgid ""
+"```console\n"
+"\"hello\"\n"
+"```"
+msgstr ""
+
+#: source/language/syntax.md:740
+msgid "This means that block comments cannot be nested."
+msgstr ""
+
+#: source/language/syntax.md:757
+msgid ""
+"Consider escaping nested comments and unescaping them in post-processing."
+msgstr ""

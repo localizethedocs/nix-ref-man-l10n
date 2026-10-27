@@ -1,0 +1,796 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.33.md:1
+msgid "Release 2.33.0 (2025-12-09)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:3
+msgid "New features"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:5
+msgid ""
+"New command `nix registry resolve` [\\#14595](https://github.com/NixOS/nix/"
+"pull/14595)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:7
+msgid ""
+"This command looks up a flake registry input name and returns the flakeref "
+"it resolves to."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:9
+msgid "For example, looking up Nixpkgs:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:16
+msgid ""
+"Upstreamed from [Determinate Nix 3.14.0](https://github.com/"
+"DeterminateSystems/nix-src/pull/273)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:18
+msgid ""
+"`nix flake clone` supports all input types [\\#14581](https://github.com/"
+"NixOS/nix/pull/14581)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:20
+msgid ""
+"`nix flake clone` now supports arbitrary input types. In particular, this "
+"allows you to clone tarball flakes, such as flakes on FlakeHub."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:22
+msgid ""
+"Upstreamed from [Determinate Nix 3.12.0](https://github.com/"
+"DeterminateSystems/nix-src/pull/229)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:24
+msgid "Performance improvements"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:26
+msgid ""
+"Git fetcher computes `revCount`s using multiple threads [\\#14462](https://"
+"github.com/NixOS/nix/pull/14462)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:28
+msgid ""
+"When using Git repositories with a long history, calculating the `revCount` "
+"attribute can take a long time. Nix now computes `revCount` using multiple "
+"threads, making it much faster (e.g. 9.1s to 3.7s for Nixpkgs)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:30
+msgid ""
+"Note that if you don't need `revCount`, you can disable it altogether by "
+"setting the flake input attribute `shallow = true`."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:32
+msgid ""
+"Upstreamed from [Determinate Nix 3.12.2](https://github.com/"
+"DeterminateSystems/nix-src/pull/245)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:34
+msgid ""
+"`builtins.stringLength` now runs in constant time [\\#14442](https://"
+"github.com/NixOS/nix/pull/14442)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:36
+msgid ""
+"The internal representation of strings has been replaced with a size-"
+"prefixed Pascal style string. Previously Nix stored strings as a NUL-"
+"terminated array of bytes, necessitating a linear scan to calculate the "
+"length."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:38
+msgid ""
+"Uploads to `http://` and `https://` binary cache stores now run in constant "
+"memory [\\#14390](https://github.com/NixOS/nix/pull/14390)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:40
+msgid ""
+"Nix used to buffer the whole compressed NAR contents in memory. It now reads "
+"it in a streaming fashion."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:42
+msgid ""
+"Channel URLs migrated to channels.nixos.org subdomain [\\#14517](https://"
+"github.com/NixOS/nix/issues/14517) [\\#14518](https://github.com/NixOS/nix/"
+"pull/14518)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:44
+msgid ""
+"Channel URLs have been updated from `https://nixos.org/channels/` to "
+"`https://channels.nixos.org/` throughout Nix. This subdomain provides better "
+"reliability with IPv6 support and improved CDN distribution. The old domain "
+"apex (`nixos.org/channels/`) currently redirects to the new location but may "
+"be deprecated in the future."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:46
+msgid ""
+"Fix `download buffer is full; consider increasing the 'download-buffer-size' "
+"setting` warning [\\#11728](https://github.com/NixOS/nix/issues/11728) "
+"[\\#14614](https://github.com/NixOS/nix/pull/14614)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:48
+msgid ""
+"The underlying issue that led to [\\#11728](https://github.com/NixOS/nix/"
+"issues/11728) has been resolved by utilizing [libcurl write pausing "
+"functionality](https://curl.se/libcurl/c/curl_easy_pause.html) to control "
+"backpressure when unpacking to slow destinations like the git-backed tarball "
+"cache. The default value of `download-buffer-size` is now 1 MiB and it's no "
+"longer recommended to increase it, since the root cause has been fixed."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:51
+msgid ""
+"This is expected to improve download performance on fast connections, since "
+"previously a single slow download consumer would stall the thread and "
+"prevent any other transfers from progressing."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:53
+msgid ""
+"Many thanks go out to the [Lix project](https://lix.systems/) for the "
+"[implementation](https://git.lix.systems/lix-project/lix/commit/"
+"4ae6fb5a8f0d456b8d2ba2aaca3712b4e49057fc) that served as inspiration for "
+"this change and for triaging libcurl [issues with pausing](https://"
+"github.com/curl/curl/issues/19334)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:55
+msgid ""
+"Significantly improve tarball unpacking performance [\\#14689](https://"
+"github.com/NixOS/nix/pull/14689) [\\#14696](https://github.com/NixOS/nix/"
+"pull/14696) [\\#10683](https://github.com/NixOS/nix/issues/10683) [\\#11098]"
+"(https://github.com/NixOS/nix/issues/11098)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:57
+msgid ""
+"Nix uses a content-addressed cache backed by libgit2 for deduplicating files "
+"fetched via `fetchTarball` and `github`, `tarball` flake inputs. Its usage "
+"has been significantly optimised to reduce the amount of I/O operations that "
+"are performed. For a typical nixpkgs source tarball this results in 200 "
+"times fewer system calls on Linux. In combination with libcurl pausing this "
+"alleviates performance regressions stemming from the tarball cache."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:59
+msgid ""
+"Already valid derivations are no longer copied to the store [\\#14219]"
+"(https://github.com/NixOS/nix/pull/14219)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:61
+msgid "This results in a modest speedup when using the Nix daemon."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:63
+msgid ""
+"`nix nar ls` and `nix nar cat` are significantly faster and no longer buffer "
+"the whole NAR in memory [\\#14273](https://github.com/NixOS/nix/pull/14273) "
+"[\\#14732](https://github.com/NixOS/nix/pull/14732)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:65
+msgid "S3 improvements"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:67
+msgid ""
+"Improved S3 binary cache support via HTTP [\\#11748](https://github.com/"
+"NixOS/nix/issues/11748) [\\#12403](https://github.com/NixOS/nix/issues/"
+"12403) [\\#12671](https://github.com/NixOS/nix/issues/12671) [\\#13084]"
+"(https://github.com/NixOS/nix/issues/13084) [\\#13752](https://github.com/"
+"NixOS/nix/pull/13752) [\\#13823](https://github.com/NixOS/nix/pull/13823) "
+"[\\#14026](https://github.com/NixOS/nix/pull/14026) [\\#14120](https://"
+"github.com/NixOS/nix/pull/14120) [\\#14131](https://github.com/NixOS/nix/"
+"pull/14131) [\\#14135](https://github.com/NixOS/nix/pull/14135) [\\#14144]"
+"(https://github.com/NixOS/nix/pull/14144) [\\#14170](https://github.com/"
+"NixOS/nix/pull/14170) [\\#14190](https://github.com/NixOS/nix/pull/14190) "
+"[\\#14198](https://github.com/NixOS/nix/pull/14198) [\\#14206](https://"
+"github.com/NixOS/nix/pull/14206) [\\#14209](https://github.com/NixOS/nix/"
+"pull/14209) [\\#14222](https://github.com/NixOS/nix/pull/14222) [\\#14223]"
+"(https://github.com/NixOS/nix/pull/14223) [\\#14330](https://github.com/"
+"NixOS/nix/pull/14330) [\\#14333](https://github.com/NixOS/nix/pull/14333) "
+"[\\#14335](https://github.com/NixOS/nix/pull/14335) [\\#14336](https://"
+"github.com/NixOS/nix/pull/14336) [\\#14337](https://github.com/NixOS/nix/"
+"pull/14337) [\\#14350](https://github.com/NixOS/nix/pull/14350) [\\#14356]"
+"(https://github.com/NixOS/nix/pull/14356) [\\#14357](https://github.com/"
+"NixOS/nix/pull/14357) [\\#14374](https://github.com/NixOS/nix/pull/14374) "
+"[\\#14375](https://github.com/NixOS/nix/pull/14375) [\\#14376](https://"
+"github.com/NixOS/nix/pull/14376) [\\#14377](https://github.com/NixOS/nix/"
+"pull/14377) [\\#14391](https://github.com/NixOS/nix/pull/14391) [\\#14393]"
+"(https://github.com/NixOS/nix/pull/14393) [\\#14420](https://github.com/"
+"NixOS/nix/pull/14420) [\\#14421](https://github.com/NixOS/nix/pull/14421)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:69
+msgid ""
+"S3 binary cache operations now happen via HTTP, leveraging `libcurl`'s "
+"native AWS SigV4 authentication instead of the AWS C++ SDK, providing "
+"significant improvements:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:71
+msgid ""
+"**Reduced memory usage**: Eliminates memory buffering issues that caused "
+"segfaults with large files"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:72
+msgid ""
+"**Fixed upload reliability**: Resolves AWS SDK chunking errors "
+"(`InvalidChunkSizeError`)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:73
+msgid ""
+"**Lighter dependencies**: Uses lightweight `aws-crt-cpp` instead of full "
+"`aws-cpp-sdk`, reducing build complexity"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:75
+msgid ""
+"The new implementation requires curl >= 7.75.0 and `aws-crt-cpp` for "
+"credential management."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:77
+msgid ""
+"All existing S3 URL formats and parameters remain supported, however the "
+"store settings for configuring multipart uploads have changed:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:79
+msgid ""
+"**`multipart-upload`** (default: `false`): Enable multipart uploads for "
+"large files. When enabled, files exceeding the multipart threshold will be "
+"uploaded in multiple parts."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:81
+msgid ""
+"**`multipart-threshold`** (default: `100 MiB`): Minimum file size for using "
+"multipart uploads. Files smaller than this will use regular PUT requests. "
+"Only takes effect when `multipart-upload` is enabled."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:83
+msgid ""
+"**`multipart-chunk-size`** (default: `5 MiB`): Size of each part in "
+"multipart uploads. Must be at least 5 MiB (AWS S3 requirement). Larger chunk "
+"sizes reduce the number of requests but use more memory."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:85
+msgid ""
+"**`buffer-size`**: Has been replaced by `multipart-chunk-size` and is now an "
+"alias to it."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:87
+msgid ""
+"Note that this change also means Nix now supports S3 binary cache stores "
+"even if built without `aws-crt-cpp`, but only for public buckets which do "
+"not require authentication."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:89
+msgid ""
+"S3 URLs now support object versioning via `versionId` parameter [\\#13955]"
+"(https://github.com/NixOS/nix/issues/13955) [\\#14274](https://github.com/"
+"NixOS/nix/pull/14274)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:91
+msgid ""
+"S3 URLs now support a `versionId` query parameter to fetch specific versions "
+"of objects from S3 buckets with versioning enabled. This allows pinning to "
+"exact object versions for reproducibility and protection against unexpected "
+"changes:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:96
+msgid ""
+"```\n"
+"s3://bucket/key?region=us-east-1&versionId=abc123def456\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:100
+msgid ""
+"S3 binary cache stores now support storage class configuration [\\#7015]"
+"(https://github.com/NixOS/nix/issues/7015) [\\#14464](https://github.com/"
+"NixOS/nix/pull/14464)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:102
+msgid ""
+"S3 binary cache stores now support configuring the storage class for "
+"uploaded objects via the `storage-class` parameter. This allows users to "
+"optimize costs by selecting appropriate storage tiers based on access "
+"patterns."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:104
+msgid "Example usage:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:107
+msgid "# Use Glacier storage for long-term archival\n"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:108
+msgid "'s3://my-bucket?storage-class=GLACIER'"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:110
+msgid "# Use Intelligent Tiering for automatic cost optimization\n"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:111
+msgid "'s3://my-bucket?storage-class=INTELLIGENT_TIERING'"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:114
+msgid ""
+"The storage class applies to both regular uploads and multipart uploads. "
+"When not specified, objects use the bucket's default storage class."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:116
+msgid ""
+"See the [S3 storage classes documentation](https://docs.aws.amazon.com/"
+"AmazonS3/latest/userguide/storage-class-intro.html) for available storage "
+"classes and their characteristics."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:119
+msgid "Store path info JSON format changes"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:121
+msgid ""
+"The JSON format emitted by `nix path-info --json` has been updated to a new "
+"version with improved structure."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:123
+msgid ""
+"To maintain compatibility, `nix path-info --json` now requires a `--json-"
+"format` flag to specify the output format version. Using `--json` without `--"
+"json-format` is deprecated and will become an error in a future release. For "
+"now, it defaults to version 1 with a warning, for a smoother migration."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:127
+msgid "Version 1 (`--json-format 1`)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:129
+msgid "This is the legacy format, preserved for backwards compatibility:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:131
+msgid "String-based hash values (e.g., `\"narHash\": \"sha256:FePFYIlM...\"`)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:132
+msgid ""
+"String-based content addresses (e.g., `\"ca\": \"fixed:r:sha256:1abc...\"`)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:133
+msgid ""
+"Full store paths for map keys and references (e.g., `\"/nix/store/abc...-"
+"foo\"`)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:134
+msgid "Now includes `\"storeDir\"` field at the top level"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:136
+msgid "Version 2 (`--json-format 2`)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:138
+msgid ""
+"The new structured format follows the [data modeling guidelines](../"
+"development/data-modeling.md) with the following changes:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:140 source/release-notes/rl-2.33.md:183
+msgid "**Nested structure with top-level metadata**:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:142
+msgid ""
+"The output is now wrapped in an object with `version`, `storeDir`, and "
+"`info` fields:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:146 source/release-notes/rl-2.33.md:189
+msgid "\"version\""
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:147
+msgid "\"storeDir\""
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:147
+msgid "\"/nix/store\""
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:148
+msgid "\"info\""
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:152
+msgid ""
+"The map from [store path base names](../store/store-path.md#base-name) to "
+"store object info is nested under the `info` field."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:154
+msgid ""
+"**[Store path base names](../store/store-path.md#base-name) instead of full "
+"paths**:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:156
+msgid ""
+"Map keys and references use store path base names (e.g., `\"abc...-foo\"`) "
+"instead of full absolute store paths. Combined with `storeDir`, the full "
+"path can be reconstructed."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:159
+msgid "**Structured `ca` field**:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:161
+msgid "Content address is now a structured JSON object instead of a string:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:163
+msgid "Old: `\"ca\": \"fixed:r:sha256:1abc...\"`"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:164
+msgid ""
+"New: `\"ca\": {\"method\": \"nar\", \"hash\": \"sha256-"
+"ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=\"}`"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:165
+msgid "Still `null` values for input-addressed store objects"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:167
+msgid ""
+"The `hash` field uses the [SRI](https://developer.mozilla.org/en-US/docs/Web/"
+"Security/Subresource_Integrity) format like other hashes."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:169
+msgid "Additionally the following fields are added to both formats:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:171
+msgid "**`version` field**:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:173
+msgid ""
+"All store path info JSON now includes `\"version\": <1|2>`. The `version` "
+"tracks breaking changes, and adding fields to outputted JSON is not a "
+"breaking change."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:175
+msgid "**`storeDir` field**:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:177
+msgid ""
+"Top-level `\"storeDir\"` field contains the store directory path (e.g., `\"/"
+"nix/store\"`)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:179
+msgid "Derivation JSON format changes"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:181
+msgid ""
+"The derivation JSON format has been updated from version 3 to version 4:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:185
+msgid ""
+"The output of `nix derivation show` is now wrapped in an object with "
+"`version` and `derivations` fields:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:190
+msgid "\"derivations\""
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:194
+msgid ""
+"The map from derivation paths to derivation info is nested under the "
+"`derivations` field."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:196
+msgid ""
+"This matches the structure used for `nix path-info --json --json-format 2`, "
+"and likewise brings this command into compliance with the JSON guidelines."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:198
+msgid "**Restructured inputs**:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:200
+msgid "Inputs are now nested under an `inputs` object:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:202
+msgid "Old: `\"inputSrcs\": [...], \"inputDrvs\": {...}`"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:203
+msgid "New: `\"inputs\": {\"srcs\": [...], \"drvs\": {...}}`"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:205
+msgid "**Consistent content addresses**:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:207
+msgid ""
+"Fixed content-addressed outputs now use structured JSON format. This is the "
+"same format as `ca` in store path info (after the new version)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:210
+msgid "Version 3 and earlier formats are _not_ accepted when reading."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:212
+msgid ""
+"**Affected command**: `nix derivation`, namely its `show` and `add` sub-"
+"commands."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:214
+msgid "Miscellaneous changes"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:216
+msgid ""
+"Git fetcher: Restore progress indication [\\#14487](https://github.com/NixOS/"
+"nix/pull/14487)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:218
+msgid ""
+"Nix used to feel \"stuck\" while it was cloning large repositories. Nix now "
+"shows Git's native progress indicator while fetching."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:220
+msgid ""
+"Upstreamed from [Determinate Nix 3.13.0](https://github.com/"
+"DeterminateSystems/nix-src/pull/250)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:222
+msgid ""
+"Interrupting REPL commands works more than once [\\#13481](https://"
+"github.com/NixOS/nix/issues/13481)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:224
+msgid ""
+"Previously, this only worked once per REPL session; further attempts would "
+"be ignored. This issue is now fixed, so REPL commands such as `:b` or `:p` "
+"can be canceled consistently. This is a cherry-pick of the change from the "
+"[Lix project](https://gerrit.lix.systems/c/lix/+/1097)."
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:228
+msgid ""
+"NAR unpacking code has been rewritten to make use of dirfd-based `openat` "
+"and `openat2` system calls when available [\\#14597](https://github.com/"
+"NixOS/nix/pull/14597)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:230
+msgid ""
+"Dynamic size unit rendering [\\#14423](https://github.com/NixOS/nix/pull/"
+"14423) [\\#14364](https://github.com/NixOS/nix/pull/14364)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:232
+msgid ""
+"Various commands and the progress bar now use dynamically determined size "
+"units instead of always using `MiB`. For example, the progress bar now "
+"reports download status like:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:239
+msgid "Instead of:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:245
+msgid "Contributors"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:247
+msgid "This release was made possible by the following 33 contributors:"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:249
+msgid "Adam Dinwoodie [**(@me-and)**](https://github.com/me-and)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:250
+msgid "jonhermansen [**(@jonhermansen)**](https://github.com/jonhermansen)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:251
+msgid "Arnout Engelen [**(@raboof)**](https://github.com/raboof)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:252
+msgid "Jean-François Roche [**(@jfroche)**](https://github.com/jfroche)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:253
+msgid "tomberek [**(@tomberek)**](https://github.com/tomberek)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:254
+msgid "Eelco Dolstra [**(@edolstra)**](https://github.com/edolstra)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:255
+msgid "Marcel [**(@MarcelCoding)**](https://github.com/MarcelCoding)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:256
+msgid "David McFarland [**(@corngood)**](https://github.com/corngood)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:257
+msgid ""
+"Soumyadip Sarkar [**(@neuralsorcerer)**](https://github.com/neuralsorcerer)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:258
+msgid "Cole Helbling [**(@cole-h)**](https://github.com/cole-h)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:259
+msgid "John Ericson [**(@Ericson2314)**](https://github.com/Ericson2314)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:260
+msgid ""
+"Tristan Ross [**(@RossComputerGuy)**](https://github.com/RossComputerGuy)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:261
+msgid "Alex Auvolat [**(@Alexis211)**](https://github.com/Alexis211)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:262
+msgid "edef [**(@edef1c)**](https://github.com/edef1c)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:263
+msgid "Sergei Zimmerman [**(@xokdvium)**](https://github.com/xokdvium)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:264
+msgid ""
+"Vinayak Goyal [**(@vinayakankugoyal)**](https://github.com/vinayakankugoyal)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:265
+msgid "Graham Dennis [**(@GrahamDennis)**](https://github.com/GrahamDennis)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:266
+msgid "Aspen Smith [**(@glittershark)**](https://github.com/glittershark)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:267
+msgid "Jens Petersen [**(@juhp)**](https://github.com/juhp)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:268
+msgid "Bernardo Meurer [**(@lovesegfault)**](https://github.com/lovesegfault)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:269
+msgid "Peter Bynum [**(@pkpbynum)**](https://github.com/pkpbynum)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:270
+msgid "Jörg Thalheim [**(@Mic92)**](https://github.com/Mic92)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:271
+msgid "Alex Decious [**(@adeci)**](https://github.com/adeci)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:272
+msgid "Matthieu Coudron [**(@teto)**](https://github.com/teto)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:273
+msgid "Domen Kožar [**(@domenkozar)**](https://github.com/domenkozar)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:274
+msgid "Taeer Bar-Yam [**(@Radvendii)**](https://github.com/Radvendii)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:275
+msgid "Seth Flynn [**(@getchoo)**](https://github.com/getchoo)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:276
+msgid "Robert Hensing [**(@roberth)**](https://github.com/roberth)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:277
+msgid "Vladimir Panteleev [**(@CyberShadow)**](https://github.com/CyberShadow)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:278
+msgid "bryango [**(@bryango)**](https://github.com/bryango)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:279
+msgid "Henry [**(@cootshk)**](https://github.com/cootshk)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:280
+msgid "Martin Joerg [**(@mjoerg)**](https://github.com/mjoerg)"
+msgstr ""
+
+#: source/release-notes/rl-2.33.md:281
+msgid "Farid Zakaria [**(@fzakaria)**](https://github.com/fzakaria)"
+msgstr ""

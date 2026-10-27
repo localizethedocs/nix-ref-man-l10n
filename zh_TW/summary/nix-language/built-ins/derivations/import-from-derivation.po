@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/import-from-derivation.md:1
+msgid "Import From Derivation"
+msgstr ""
+
+#: source/language/import-from-derivation.md:3
+msgid ""
+"The value of a Nix expression can depend on the contents of a [store object]"
+"(../store/store-object.md)."
+msgstr ""
+
+#: source/language/import-from-derivation.md:7
+msgid ""
+"Passing an expression `expr` that evaluates to a [store path](../store/store-"
+"path.md) to any built-in function which reads from the filesystem "
+"constitutes Import From Derivation (IFD):"
+msgstr ""
+
+#: source/language/import-from-derivation.md:9
+msgid "[`import`](./builtins.md#builtins-import)` expr`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:10
+msgid "[`builtins.readFile`](./builtins.md#builtins-readFile)` expr`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:11
+msgid "[`builtins.readFileType`](./builtins.md#builtins-readFileType)` expr`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:12
+msgid "[`builtins.readDir`](./builtins.md#builtins-readDir)` expr`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:13
+msgid "[`builtins.pathExists`](./builtins.md#builtins-pathExists)` expr`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:14
+msgid "[`builtins.filterSource`](./builtins.md#builtins-filterSource)` f expr`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:15
+msgid "[`builtins.path`](./builtins.md#builtins-path)` { path = expr; }`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:16
+msgid "[`builtins.hashFile`](./builtins.md#builtins-hashFile)` t expr`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:17
+msgid "`builtins.scopedImport x drv`"
+msgstr ""
+
+#: source/language/import-from-derivation.md:19
+msgid ""
+"When the store path needs to be accessed, evaluation will be paused, the "
+"corresponding store object [realised](../glossary.md#gloss-realise), and "
+"then evaluation resumed."
+msgstr ""
+
+#: source/language/import-from-derivation.md:23
+msgid ""
+"This has performance implications: Evaluation can only finish when all "
+"required store objects are realised. Since the Nix language evaluator is "
+"sequential, it only finds store paths to read from one at a time. While "
+"realisation is always parallel, in this case it cannot be done for all "
+"required store paths at once, and is therefore much slower than otherwise."
+msgstr ""
+
+#: source/language/import-from-derivation.md:28
+msgid ""
+"Realising store objects during evaluation can be disabled by setting [`allow-"
+"import-from-derivation`](../command-ref/conf-file.md#conf-allow-import-from-"
+"derivation) to `false`. Without IFD it is ensured that evaluation is "
+"complete and Nix can produce a build plan before starting any realisation."
+msgstr ""
+
+#: source/language/import-from-derivation.md:31
+msgid "Example"
+msgstr ""
+
+#: source/language/import-from-derivation.md:33
+msgid ""
+"In the following Nix expression, the inner derivation `drv` produces a file "
+"with contents `hello`."
+msgstr ""
+
+#: source/language/import-from-derivation.md:35
+msgid ""
+"```nix\n"
+"# IFD.nix\n"
+"let\n"
+"  drv = derivation {\n"
+"    name = \"hello\";\n"
+"    builder = \"/bin/sh\";\n"
+"    args = [ \"-c\" \"echo -n hello > $out\" ];\n"
+"    system = builtins.currentSystem;\n"
+"  };\n"
+"in \"${builtins.readFile drv} world\"\n"
+"```"
+msgstr ""
+
+#: source/language/import-from-derivation.md:51
+msgid ""
+"```\n"
+"building '/nix/store/348q1cal6sdgfxs8zqi9v8llrsn4kqkq-hello.drv'...\n"
+"\"hello world\"\n"
+"```"
+msgstr ""
+
+#: source/language/import-from-derivation.md:56
+msgid ""
+"The contents of the derivation's output have to be [realised](../"
+"glossary.md#gloss-realise) before they can be read with [`readFile`](./"
+"builtins.md#builtins-readFile). Only then evaluation can continue to produce "
+"the final result."
+msgstr ""
+
+#: source/language/import-from-derivation.md:59
+msgid "Illustration"
+msgstr ""
+
+#: source/language/import-from-derivation.md:61
+msgid ""
+"As a first approximation, the following data flow graph shows how evaluation "
+"and building are interleaved, if the value of a Nix expression depends on "
+"realising a [store object](../store/store-object.md). Boxes are data "
+"structures, arrow labels are transformations."
+msgstr ""
+
+#: source/language/import-from-derivation.md:95
+msgid ""
+"In more detail, the following sequence diagram shows how the expression is "
+"evaluated step by step, and where evaluation is blocked to wait for the "
+"build output to appear."
+msgstr ""
+
+#: source/language/import-from-derivation.md:97
+msgid ""
+"```\n"
+".-------.     .-------------.                        .---------.\n"
+"|Nix CLI|     |Nix evaluator|                        |Nix store|\n"
+"'-------'     '-------------'                        '---------'\n"
+"    |                |                                    |\n"
+"    |evaluate IFD.nix|                                    |\n"
+"    |--------------->|                                    |\n"
+"    |                |                                    |\n"
+"    |  evaluate `\"${readFile drv} world\"`                 |\n"
+"    |                |                                    |\n"
+"    |    evaluate `readFile drv`                          |\n"
+"    |                |                                    |\n"
+"    |   evaluate `drv` as string                          |\n"
+"    |                |                                    |\n"
+"    |                |instantiate /nix/store/...-hello.drv|\n"
+"    |                |----------------------------------->|\n"
+"    |                :                                    |\n"
+"    |                :  realise /nix/store/...-hello.drv  |\n"
+"    |                :----------------------------------->|\n"
+"    |                :                                    |\n"
+"    |                                                     |--------.\n"
+"    |                :                                    |        |\n"
+"    |      (evaluation blocked)                           |  echo hello > "
+"$out\n"
+"    |                :                                    |        |\n"
+"    |                                                     |<-------'\n"
+"    |                :        /nix/store/...-hello        |\n"
+"    |                |<-----------------------------------|\n"
+"    |                |                                    |\n"
+"    |  resume `readFile /nix/store/...-hello`             |\n"
+"    |                |                                    |\n"
+"    |                |   readFile /nix/store/...-hello    |\n"
+"    |                |----------------------------------->|\n"
+"    |                |                                    |\n"
+"    |                |               hello                |\n"
+"    |                |<-----------------------------------|\n"
+"    |                |                                    |\n"
+"    |      resume `\"${\"hello\"} world\"`                    |\n"
+"    |                |                                    |\n"
+"    |        resume `\"hello world\"`                       |\n"
+"    |                |                                    |\n"
+"    | \"hello world\"  |                                    |\n"
+"    |<---------------|                                    |\n"
+".-------.     .-------------.                        .---------.\n"
+"|Nix CLI|     |Nix evaluator|                        |Nix store|\n"
+"'-------'     '-------------'                        '---------'\n"
+"```"
+msgstr ""
