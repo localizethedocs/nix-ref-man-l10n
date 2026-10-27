@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="zh_TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Building - Nix 2.36.0 Reference Manual</title>
+
+
+        <!-- Custom HTML head -->
+        <script>
+        MathJax = {
+          loader: {load: ['[tex]/bussproofs']},
+          tex: {
+            packages: {'[+]': ['bussproofs']},
+            // Doesn't seem to work in mathjax 3
+            //formatError: function(jax, error) {
+            //  console.log(`TeX error in "${jax.latex}": ${error.message}`);
+            //  return jax.formatError(error);
+            //}
+          }
+        };
+        </script>
+        <!-- Load a newer version of MathJax than mdbook does by default, and which in particular has working relative paths for the "bussproofs" extension. -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" src="../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom-80d08c7f.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-18979ed8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-1a79eaaf.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nix 2.36.0 Reference Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix/tree/master/doc/manual/source/store/building.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="building"><a class="header" href="#building">Building</a></h1>
+<p>As discussed in the <a href="./derivation/index.html">main page on derivations</a>:</p>
+<blockquote>
+<p>A derivation is a specification for running an executable on precisely defined input to produce one or more <a href="./store-object.html">store objects</a>.</p>
+</blockquote>
+<p>This page describes <em>building</em> a derivation, which is to say following the instructions in the derivation to actually run the executable. Some elements of derivations are self-explanatory. For example, the arguments specified in the derivation really are the arguments passed to the executable. In other cases, however, there is additional common steps performed by Nix for all derivations — mostly for setting up the build environment and collecting the built outputs.</p>
+<p>The chief design consideration for the building process is <em>determinism</em>. Conventional operating systems are typically not designed with determinism in mind. But determinism is needed to make Nix’s build caching a transparent abstraction.</p>
+<blockquote>
+<p><strong>Explanation</strong></p>
+<p>For example, no one wants to slightly modify a derivation, and then find that it no longer builds for an unrelated reason, because the original derivation <em>also</em> doesn’t build anymore, but the cache hit on the original derivation was hiding this. We want builds that succeed once to continue succeeding, to encourage fearless modification of old build recipes. Determinism is what enables things that once worked to keep working.</p>
+</blockquote>
+<p>The life cycle of a build can be broken down into 3 parts:</p>
+<ol>
+<li>
+<p>Spawn the builder process with the proper environment, including the correct process arguments, environment variables, and file system state.</p>
+</li>
+<li>
+<p>Wait for the builder process to exit and collect its exit status. Exit code 0 means success; anything else is a build failure. (Strictly speaking, Nix detects process exit by waiting for the standard output and error streams to close. If a builder explicitly closes these streams without exiting, Nix will kill it, and deem the build a failure. Processes should therefore exit <em>without</em> explicitly closing those standard streams, and let the exiting of the process close them implicitly.)</p>
+<p>Nix also logs the standard output and error of the process, but this is just for human convenience and does not influence the behavior of the system. (Builder processes have no idea what the consumer of their standard output and error does with the pseudo-terminal master, only that they are indeed consumed so buffers do not fill up etc. and writes to each output standard stream will continue to succeed. In practice, Nix will store the log in <code>/nix/var/log/nix</code>)</p>
+</li>
+<li>
+<p>Processing the outputs.</p>
+<p>Traditionally, this happens only after the builder has exited: the builder process should have left behind files for each output the derivation is supposed to produce, and those files are processed to turn them into bona fide store objects. Alternatively, the builder may send messages to Nix while it’s running, creating filesystem objects and linking them to an output name. This allows outputs to be processed concurrently during the build, allows outputs to depend on other newly created store objects, and also resolves some tricky issues with content-addressing and output-to-output references. If the processing succeeds, the resulting store objects are associated with the derivation as (the results of) a successful build.</p>
+</li>
+</ol>
+<p>Step (3) is done by Nix, either externally to the build (in the traditional case, operating on the inert data left behind after the builder has exited or been killed) or concurrently with it (in the IPC case). Step (1) however is best described not from Nix’s perspective, but from the build process’s perspective.</p>
+<blockquote>
+<p><strong>Explanation</strong></p>
+<p>Ultimately, what matters for determinism is what the build process can observe: what resources (files, networking, etc.) it can see, what syscalls succeed or fail, etc. Nix can achieve this through many different sandboxing strategies (namespaces, VMs, chroots, …), but the process shouldn’t be able to tell them apart. We therefore specify building from the process’s perspective, not Nix’s perspective, to focus on <em>what</em>, not <em>how</em>.</p>
+</blockquote>
+<h2 id="what-derivations-can-be-built"><a class="header" href="#what-derivations-can-be-built">What derivations can be built</a></h2>
+<p>Actually only some derivations are ready to be built. In particular, only <a href="./resolution.html"><em>resolved</em></a> derivations can be built. That is to say, a derivation that depends on other derivations is not ready yet to be built, because some of those other derivations might not have yet been built. If the other derivations are indeed all built, we can witness this fact by resolving the derivation, and converting all the derivation’s input references into plain store paths.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Note that <a href="derivation/outputs/input-address.html">input-addressing</a> derivations are improperly resolved. As discussed on the linked page, the current input-addressing algorithm does not respect resolution-equivalence of derivations (\(\sim_\mathrm{Drv}\)). That means that if Nix properly resolved an input-addressed derivation, the resolved derivation would have different input addresses, violating expectations. Nix therefore improperly resolves the derivation, keeping its original input-addressed output paths, creating an invalid derivation that is both resolved and instructed to create the outputs at the originally expected paths.</p>
+</blockquote>
+<h2 id="environment-of-the-builder-process"><a class="header" href="#environment-of-the-builder-process">Environment of the builder process</a></h2>
+<p>This section describes how the <a href="./derivation/index.html#builder"><code>builder</code></a> is executed.</p>
+<blockquote>
+<p><strong>Implementation detail</strong></p>
+<p>Nix prevents multiple <a href="../glossary.html#gloss-nix-instance">Nix instances</a> from performing the same build at the same time, for example by acquiring exclusive file locks.</p>
+</blockquote>
+<h3 id="file-system"><a class="header" href="#file-system">File system</a></h3>
+<p>The builder should have access to a limited file system where only certain objects are available. The most important exposed files are the inputs (other store objects) of the (resolved) derivation. Additionally, some other files are exposed.</p>
+<h4 id="store-inputs"><a class="header" href="#store-inputs">Store inputs</a></h4>
+<p>The builder will be run against a file system in which the <a href="./store-path.html#store-directory-path">store directory</a> contains the <a href="../glossary.html#gloss-closure">closure</a> of the inputs. In particular, consider a store that just contains this closure. That store is exposed to the file system according to the rules specified in the <a href="./store-path.html#exposing">Exposing Store Objects in OS File Systems</a> documentation. This precisely defines the file system layout of the store that should be visible to the builder process.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Historically, Nix exposed <em>at least</em> the following store contents to the builder, but also arbitrarily other store objects, due to limitations around operating systems’ file system virtualization capabilities, and wanting to avoid copying or moving files. It still can do this in so-called <em>unsandboxed</em> builds.</p>
+<p>Such builds should be considered discouraged, but one that works less badly against non-mischievous derivations than might be expected. This is because store paths are relatively unpredictable, so a well-behaved program is unlikely to stumble upon a store object it wasn’t supposed to know about.</p>
+<p>As operating systems developed better file system primitives, the need for disabling sandboxing has lessened greatly over the years, and this trend should continue into the future.</p>
+</blockquote>
+<p>The outputs are expected to be created in that store directory as if they were valid store objects. (They are just files during builder execution, but during <a href="#processing-outputs">processing outputs</a> they will be turned into proper store objects.) The <a href="#env-vars">environment variables</a> for each output indicate where the builder should write them; Nix ensures that those paths do not yet exist when the builder is run.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>In sandboxed builds, ensuring that the outputs do not exist in the store directory is trivial. In unsandboxed builds, it is harder in general. In the worst case, the derivation is in fact rewritten so different output paths are used instead, and then the outputs are rewritten back to the intended output paths after. In the content-addressing case rewriting would be needed either way, but in the input-addressing case, this is a significant degradation, as the point of input addressing is to avoid rewrites by knowing output paths in advance.</p>
+</blockquote>
+<h3 id="other-file-system-state"><a class="header" href="#other-file-system-state">Other file system state</a></h3>
+<ul>
+<li>
+<p>The current working directory of the builder process will be a fresh temporary directory. It is initially empty when the process starts except for a few input files:</p>
+<ul>
+<li>
+<p>If <a href="../language/advanced-attributes.html#adv-attr-structuredAttrs"><code>__structuredAttrs</code></a> is enabled: <code>.attrs.json</code> (the derivation attributes as JSON) and <code>.attrs.sh</code> (a Bash-compatible rendering of the same). The environment variables <code>NIX_ATTRS_JSON_FILE</code> and <code>NIX_ATTRS_SH_FILE</code> point to these files, respectively.</p>
+</li>
+<li>
+<p>If <a href="../language/advanced-attributes.html#adv-attr-passAsFile"><code>passAsFile</code></a> is used (only without <code>__structuredAttrs</code>): for each attribute name listed, a file <code>.attr-&lt;hash&gt;</code> where <code>&lt;hash&gt;</code> is the <a href="../protocols/nix32.html">Nix32</a>-encoded SHA-256 hash of the attribute name. The environment variable <code>&lt;name&gt;Path</code> points to the file containing the attribute’s value.</p>
+</li>
+</ul>
+<p>In sandboxed builds, this directory is at a deterministic path inside the sandbox (controlled by the <a href="../command-ref/conf-file.html#conf-sandbox-build-dir"><code>sandbox-build-dir</code></a> setting, default <code>/build</code>). See also the per-store <a href="../store/types/local-store.html#store-local-store-build-dir"><code>build-dir</code></a> setting for the host-side location.</p>
+</li>
+<li>
+<p>Basic device nodes for essential operations (null device, random number generation, standard streams as a pseudo terminal)</p>
+<p>(A pseudo terminal would not be strictly necessary since the standard streams are passively logging, not there to facilitate interaction. But it is still useful to entice programs to do nicer logging with e.g. colors etc.)</p>
+</li>
+<li>
+<p>On Linux: Process information via <code>/proc</code></p>
+</li>
+<li>
+<p>Minimal user and group identity information</p>
+</li>
+<li>
+<p>A loopback-only network configuration with hostname set to <code>localhost</code></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Fixed-output derivations have access to additional operating system state to facilitate communication with the outside world, such as network name resolution and TLS certificate verification. This is necessary because these derivations are allowed to access the network, unlike regular derivations which are fully sandboxed.</p>
+</blockquote>
+<h3 id="env-vars"><a class="header" href="#env-vars">環境變數</a></h3>
+<p>The environment is cleared and set to the derivation attributes, as specified above.</p>
+<p>For most derivations types this must contain at least:</p>
+<ul>
+<li>For each output declared in <code>outputs</code>, the corresponding environment variable is set to point to the intended path in the Nix store for that output. Each output path is a concatenation of the cryptographic hash of all build inputs, the <code>name</code> attribute and the output name. (The output name is omitted if it’s <code>out</code>.)</li>
+</ul>
+<p>In addition, the following variables are set:</p>
+<ul>
+<li>
+<p><code>NIX_BUILD_TOP</code> contains the path of the temporary directory for this build.</p>
+</li>
+<li>
+<p>Also, <code>TMPDIR</code>, <code>TEMPDIR</code>, <code>TMP</code>, <code>TEMP</code> are set to point to the temporary directory. This is to prevent the builder from accidentally writing temporary files anywhere else. Doing so might cause interference by other processes.</p>
+</li>
+<li>
+<p><code>PATH</code> is set to <code>/path-not-set</code> to prevent shells from initialising it to their built-in default value.</p>
+</li>
+<li>
+<p><code>HOME</code> is set to <code>/homeless-shelter</code>. (Without sandboxing, this discourages programs from using <code>/etc/passwd</code> or the like to find the user’s home directory, which could cause impurity.) Usually, when <code>HOME</code> is set, it is used as the location of the home directory, even if it points to a non-existent path.</p>
+</li>
+<li>
+<p><code>NIX_STORE</code> is set to the path of the top-level Nix <a href="./store-path.html#store-directory-path">store directory path</a> (typically, <code>/nix/store</code>).</p>
+</li>
+<li>
+<p><code>NIX_ATTRS_JSON_FILE</code> &amp; <code>NIX_ATTRS_SH_FILE</code> if <code>__structuredAttrs</code> is set to <code>true</code> for the derivation. A detailed explanation of this behavior can be found in the <a href="../language/advanced-attributes.html#adv-attr-structuredAttrs">section about structured attrs</a>.</p>
+</li>
+</ul>
+<h3 id="arguments"><a class="header" href="#arguments">Arguments</a></h3>
+<p>The builder is passed the arguments specified by the derivation attribute <code>args</code>.</p>
+<h2 id="processing-outputs"><a class="header" href="#processing-outputs">Processing outputs</a></h2>
+<p>There are two methods for processing outputs. But first, let us cover the requirements common to both methods.</p>
+<p>Regardless of which method is used, each output must be turned into a valid store object. This involves two steps:</p>
+<ul>
+<li>
+<p><strong>Normalize the file permissions</strong></p>
+<p>The files must conform to the model described in the <a href="./file-system-object/os-file-system.html">Exposing in OS file systems</a> section. For example, timestamps and permissions are canonicalised.</p>
+</li>
+<li>
+<p><a href="#scanning-for-references" id="scanning-for-references"><strong>Calculate the references</strong></a></p>
+<p>Nix scans each output path for <a href="./store-object.html#references">references</a> to input store objects by looking for the <a href="./store-path.html#digest">digest</a> of each input. (The name part and the <a href="./store-path.html#store-directory-path">store directory path</a> are ignored when scanning; an input’s hash part that is neither followed by a <code>-</code> nor proceeded by a <code>/</code> still scans as a reference.) Since these are potential runtime dependencies, Nix will register them as references of the output store object they occur in.</p>
+<p>This scanning can be disabled per output with the <a href="derivation/outputs/index.html#unsafe-discard-references"><em>unsafe discard references</em></a> setting.</p>
+</li>
+</ul>
+<h3 id="traditional-post-build-processing"><a class="header" href="#traditional-post-build-processing">Traditional (post-build) processing</a></h3>
+<p>With the traditional method, the builder process on exit should have left behind files for each output the derivation is supposed to produce. The files must be processed to turn them into bona fide store objects. If the processing succeeds, those store objects are associated with the derivation as (the results of) a successful build.</p>
+<p>Nix also scans for references from one output to another in the same way, because outputs are allowed to refer to each other. The outputs’ references must form a <a href="../glossary.html#gloss-directed-acyclic-graph">directed acyclic graph</a>. (This is not a special restriction for outputs; it is true for the references of all store objects in general.)</p>
+<p>In the case of derivations with output paths that are fixed in advance (i.e. <a href="./derivation/outputs/input-address.html">input-addressing</a> derivations, or <a href="./derivation/outputs/content-address.html#fixed">fixed content-addressing</a> derivations), the actual final store path to each output is used during the build if possible. For <a href="./derivation/outputs/content-address.html#floating">floating content-addressing</a> derivations, however, the final store path is not known in advance by definition. Scratch store paths must therefore be used instead. Scanning will use those scratch paths, but then any output-to-be that contains such a scanned scratch path must be rewritten to instead use the final (content-addressed) path of the output in question.</p>
+<p>In addition to output-to-output references, rewriting is also needed to support self-references in the content-addressing case. An output may contain its own store path digest, which is a self-reference. Hash functions which are secure cannot allow the easy calculation of the quasi-fixed points needed to support self-references “natively”, so instead we replace all would-be self-references with a sentinel value, and then rewrite the sentinel value to be the final store path digest. Superficially, this post-hashing rewriting breaks the content address, but as the self-references are easily identified, the rewriting can be inverted to yield the original hashed data, allowing verifying the content address after all.</p>
+<p>At this point, the file system data is in the proper form, and the valid acyclic reference data for each output is also calculated, so the outputs are added to the store as proper store objects. Additionally, those store objects (at least in the case that they are <a href="./derivation/outputs/content-address.html">content-addressed</a>) can be associated with the derivation in the <a href="./build-trace.html">build trace</a> in the record for a successful build.</p>
+<blockquote>
+<p><strong>Implementation detail</strong></p>
+<p>Nix will normally clean up and remove the temporary build directory after every build, successful or unsuccessful. The builder doesn’t know whether Nix does or not, however, as it will have exited before the build directory is cleaned up, and it will not see any old build directory if (after a failed build) it is run again. The <a href="../command-ref/opt-common.html#opt-keep-failed"><code>--keep-failed</code></a> option can be specified to keep the build directory in the case of a failing build.</p>
+</blockquote>
+<h3 id="concurrent-processing-via-ipc"><a class="header" href="#concurrent-processing-via-ipc">Concurrent processing via IPC</a></h3>
+<p>With this method, the builder communicates with Nix during the build using inter-process communication (IPC).</p>
+<blockquote>
+<p><strong>Implementation detail</strong></p>
+<p>The current implementation, <code>builder-rpc-v0</code>, exposes its interface over a limited form of the Nix daemon socket. Builders may use it either with their own implementation of the Nix protocol, or with the <code>nix store add</code> and <code>nix store submit-output</code> commands.</p>
+<p>Derivations with <code>builder-rpc-v0</code> in their set of <a href="../language/advanced-attributes.html#adv-attr-requiredSystemFeatures"><code>requiredSystemFeatures</code></a> will not receive output paths in their environment, and are expected to submit all outputs with the aforementioned commands or protocol.</p>
+</blockquote>
+<p>Instead of leaving files behind for Nix to process after exit, the builder explicitly requests the daemon create store objects one at a time, then sends commands assigning output names to the just-created store objects.</p>
+<p>Scanning for references proceeds as usual for each store object creation request, but the set of potential references to be scanned is greater: it includes both all inputs (as before) and also all previously-added store objects. This means, if output <code>bar</code> is supposed to reference output <code>foo</code>, <code>foo</code> should be created first, and <code>bar</code> second.</p>
+<p>All store objects being created are content-addressed (there is no support for input-addressed outputs with the IPC approach). When a store object is created, its content address store path will be calculated by Nix and then returned in the IPC response message. The builder then knows what store path to use in subsequent store objects in order for reference scanning to pick them up.</p>
+<p>This overall approach has several advantages:</p>
+<ul>
+<li>
+<p><strong>No Nix-side rewriting</strong></p>
+<p>For content-addressed outputs, the builder is responsible for adding outputs in reference order, using the store paths from earlier adds in later ones. This avoids the fragile rewriting that would otherwise be needed to fix up output-to-output references described above. The builder, unlike Nix itself, is free to leverage domain-specific knowledge to do a better job. For example it can</p>
+<ul>
+<li>
+<p>uncompress, rewrite, and then recompress man pages, to not miss references hidden by compression.</p>
+</li>
+<li>
+<p>make sure to rewrite data that is to be signed, like Apple binaries, before signing that data, so as not to invalidate any signatures by mistake.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Pipelining</strong></p>
+<p>Downstream builds that only need some outputs (e.g., a “dev” or “headers” output) can start without waiting for all outputs to be ready. Nix doesn’t yet implement this, but it could and should.</p>
+</li>
+</ul>
+<p>The major <em>disadvantage</em> of this approach is that it doesn’t yet support self-references. Unlike acyclic output-to-output references, self-references fundamentally do require rewriting. The output-to-output case was only a challenge in the traditional case because all the outputs were submitted simultaneously, whereas the self-reference case is fundamentally challenging because of what it means for a hash function to be secure, as described above. Neither batched (traditional) nor serial (IPC) submission of outputs can avoid this fundamental property of secure hash functions. We could add support for such rewriting just for self-references, as is done for the traditional post-build processing, but we haven’t yet done so as the very point of the IPC approach is to free Nix from any obligation to rewrite black-box data in unsound ways.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../store/resolution.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../store/secrets.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../store/resolution.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../store/secrets.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-862e895d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../redirects-d95376cb.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

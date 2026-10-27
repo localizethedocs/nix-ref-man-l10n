@@ -1,0 +1,612 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Release 2.0 (2018-02-22) - Nix 2.36.0 Reference Manual</title>
+
+
+        <!-- Custom HTML head -->
+        <script>
+        MathJax = {
+          loader: {load: ['[tex]/bussproofs']},
+          tex: {
+            packages: {'[+]': ['bussproofs']},
+            // Doesn't seem to work in mathjax 3
+            //formatError: function(jax, error) {
+            //  console.log(`TeX error in "${jax.latex}": ${error.message}`);
+            //  return jax.formatError(error);
+            //}
+          }
+        };
+        </script>
+        <!-- Load a newer version of MathJax than mdbook does by default, and which in particular has working relative paths for the "bussproofs" extension. -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.1/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" src="../ltd-provenance.js"></script>
+        <script type="text/javascript" src="../ltd-current.js"></script>
+        <script type="text/javascript" src="../../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom-80d08c7f.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-12ceb7f0.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-aa95ae84.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nix 2.36.0 Reference Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/NixOS/nix/tree/master/doc/manual/source/release-notes/rl-2.0.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="release-20-2018-02-22"><a class="header" href="#release-20-2018-02-22">Release 2.0 (2018-02-22)</a></h1>
+<p>The following incompatible changes have been made:</p>
+<ul>
+<li>
+<p>The manifest-based substituter mechanism (<code>download-using-manifests</code>) has been <a href="https://github.com/NixOS/nix/commit/867967265b80946dfe1db72d40324b4f9af988ed">removed</a>. It has been superseded by the binary cache substituter mechanism since several years. As a result, the following programs have been removed:</p>
+<ul>
+<li>
+<p><code>nix-pull</code></p>
+</li>
+<li>
+<p><code>nix-generate-patches</code></p>
+</li>
+<li>
+<p><code>bsdiff</code></p>
+</li>
+<li>
+<p><code>bspatch</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>The “copy from other stores” substituter mechanism (<code>copy-from-other-stores</code> and the <code>NIX_OTHER_STORES</code> environment variable) has been removed. It was primarily used by the NixOS installer to copy available paths from the installation medium. The replacement is to use a chroot store as a substituter (e.g. <code>--substituters /mnt</code>), or to build into a chroot store (e.g. <code>--store /mnt --substituters /</code>).</p>
+</li>
+<li>
+<p>The command <code>nix-push</code> has been removed as part of the effort to eliminate Nix’s dependency on Perl. You can use <code>nix copy</code> instead, e.g. <code>nix copy                 --to file:///tmp/my-binary-cache paths…</code></p>
+</li>
+<li>
+<p>The “nested” log output feature (<code>--log-type                 pretty</code>) has been removed. As a result, <code>nix-log2xml</code> was also removed.</p>
+</li>
+<li>
+<p>OpenSSL-based signing has been <a href="https://github.com/NixOS/nix/commit/f435f8247553656774dd1b2c88e9de5d59cab203">removed</a>. This feature was never well-supported. A better alternative is provided by the <code>secret-key-files</code> and <code>trusted-public-keys</code> options.</p>
+</li>
+<li>
+<p>Failed build caching has been <a href="https://github.com/NixOS/nix/commit/8cffec84859cec8b610a2a22ab0c4d462a9351ff">removed</a>. This feature was introduced to support the Hydra continuous build system, but Hydra no longer uses it.</p>
+</li>
+<li>
+<p><code>nix-mode.el</code> has been removed from Nix. It is now <a href="https://github.com/NixOS/nix-mode">a separate repository</a> and can be installed through the MELPA package repository.</p>
+</li>
+</ul>
+<p>This release has the following new features:</p>
+<ul>
+<li>
+<p>It introduces a new command named <code>nix</code>, which is intended to eventually replace all <code>nix-*</code> commands with a more consistent and better designed user interface. It currently provides replacements for some (but not all) of the functionality provided by <code>nix-store</code>, <code>nix-build</code>, <code>nix-shell -p</code>, <code>nix-env -qa</code>, <code>nix-instantiate --eval</code>, <code>nix-push</code> and <code>nix-copy-closure</code>. It has the following major features:</p>
+<ul>
+<li>
+<p>Unlike the legacy commands, it has a consistent way to refer to packages and package-like arguments (like store paths). For example, the following commands all copy the GNU Hello package to a remote machine:</p>
+<pre><code>nix copy --to ssh://machine nixpkgs.hello
+
+nix copy --to ssh://machine /nix/store/qbhyj3blxpw2i6pb7c6grc9185nbnpvy-hello-2.10
+
+nix copy --to ssh://machine '(with import &lt;nixpkgs&gt; {}; hello)'
+</code></pre>
+<p>By contrast, <code>nix-copy-closure</code> only accepted store paths as arguments.</p>
+</li>
+<li>
+<p>It is self-documenting: <code>--help</code> shows all available command-line arguments. If <code>--help</code> is given after a subcommand, it shows examples for that subcommand. <code>nix                                                                 --help-config</code> shows all configuration options.</p>
+</li>
+<li>
+<p>It is much less verbose. By default, it displays a single-line progress indicator that shows how many packages are left to be built or downloaded, and (if there are running builds) the most recent line of builder output. If a build fails, it shows the last few lines of builder output. The full build log can be retrieved using <code>nix                                                                 log</code>.</p>
+</li>
+<li>
+<p>It <a href="https://github.com/NixOS/nix/commit/b8283773bd64d7da6859ed520ee19867742a03ba">provides</a> all <code>nix.conf</code> configuration options as command line flags. For example, instead of <code>--option                                                                 http-connections 100</code> you can write <code>--http-connections 100</code>. Boolean options can be written as <code>--foo</code> or <code>--no-foo</code> (e.g. <code>--no-auto-optimise-store</code>).</p>
+</li>
+<li>
+<p>Many subcommands have a <code>--json</code> flag to write results to stdout in JSON format.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Please note that the <code>nix</code> command is a work in progress and the interface is subject to change.</p>
+</blockquote>
+<p>It provides the following high-level (“porcelain”) subcommands:</p>
+<ul>
+<li>
+<p><code>nix build</code> is a replacement for <code>nix-build</code>.</p>
+</li>
+<li>
+<p><code>nix run</code> executes a command in an environment in which the specified packages are available. It is (roughly) a replacement for <code>nix-shell                                                                 -p</code>. Unlike that command, it does not execute the command in a shell, and has a flag (<code>-c</code>) that specifies the unquoted command line to be executed.</p>
+<p>It is particularly useful in conjunction with chroot stores, allowing Linux users who do not have permission to install Nix in <code>/nix/store</code> to still use binary substitutes that assume <code>/nix/store</code>. For example,</p>
+<pre><code>nix run --store ~/my-nix nixpkgs.hello -c hello --greeting 'Hi everybody!'
+</code></pre>
+<p>downloads (or if not substitutes are available, builds) the GNU Hello package into <code>~/my-nix/nix/store</code>, then runs <code>hello</code> in a mount namespace where <code>~/my-nix/nix/store</code> is mounted onto <code>/nix/store</code>.</p>
+</li>
+<li>
+<p><code>nix search</code> replaces <code>nix-env                                                                 -qa</code>. It searches the available packages for occurrences of a search string in the attribute name, package name or description. Unlike <code>nix-env -qa</code>, it has a cache to speed up subsequent searches.</p>
+</li>
+<li>
+<p><code>nix copy</code> copies paths between arbitrary Nix stores, generalising <code>nix-copy-closure</code> and <code>nix-push</code>.</p>
+</li>
+<li>
+<p><code>nix repl</code> replaces the external program <code>nix-repl</code>. It provides an interactive environment for evaluating and building Nix expressions. Note that it uses <code>linenoise-ng</code> instead of GNU Readline.</p>
+</li>
+<li>
+<p><code>nix upgrade-nix</code> upgrades Nix to the latest stable version. This requires that Nix is installed in a profile. (Thus it won’t work on NixOS, or if it’s installed outside of the Nix store.)</p>
+</li>
+<li>
+<p><code>nix verify</code> checks whether store paths are unmodified and/or “trusted” (see below). It replaces <code>nix-store --verify</code> and <code>nix-store                                                                 --verify-path</code>.</p>
+</li>
+<li>
+<p><code>nix log</code> shows the build log of a package or path. If the build log is not available locally, it will try to obtain it from the configured substituters (such as <a href="https://cache.nixos.org/">cache.nixos.org</a>, which now provides build logs).</p>
+</li>
+<li>
+<p><code>nix edit</code> opens the source code of a package in your editor.</p>
+</li>
+<li>
+<p><code>nix eval</code> replaces <code>nix-instantiate --eval</code>.</p>
+</li>
+<li>
+<p><code>nix                                                                 why-depends</code> shows why one store path has another in its closure. This is primarily useful to finding the causes of closure bloat. For example,</p>
+<pre><code>nix why-depends nixpkgs.vlc nixpkgs.libdrm.dev
+</code></pre>
+<p>shows a chain of files and fragments of file contents that cause the VLC package to have the “dev” output of <code>libdrm</code> in its closure — an undesirable situation.</p>
+</li>
+<li>
+<p><code>nix path-info</code> shows information about store paths, replacing <code>nix-store -q</code>. A useful feature is the option <code>--closure-size</code> (<code>-S</code>). For example, the following command show the closure sizes of every path in the current NixOS system closure, sorted by size:</p>
+<pre><code>nix path-info -rS /run/current-system | sort -nk2
+</code></pre>
+</li>
+<li>
+<p><code>nix optimise-store</code> replaces <code>nix-store --optimise</code>. The main difference is that it has a progress indicator.</p>
+</li>
+</ul>
+<p>A number of low-level (“plumbing”) commands are also available:</p>
+<ul>
+<li>
+<p><code>nix ls-store</code> and <code>nix                                                                 ls-nar</code> list the contents of a store path or NAR file. The former is primarily useful in conjunction with remote stores, e.g.</p>
+<pre><code>nix ls-store --store https://cache.nixos.org/ -lR /nix/store/qbhyj3blxpw2i6pb7c6grc9185nbnpvy-hello-2.10
+</code></pre>
+<p>lists the contents of path in a binary cache.</p>
+</li>
+<li>
+<p><code>nix cat-store</code> and <code>nix                                                                 cat-nar</code> allow extracting a file from a store path or NAR file.</p>
+</li>
+<li>
+<p><code>nix dump-path</code> writes the contents of a store path to stdout in NAR format. This replaces <code>nix-store --dump</code>.</p>
+</li>
+<li>
+<p><code>nix                                                                 show-derivation</code> displays a store derivation in JSON format. This is an alternative to <code>pp-aterm</code>.</p>
+</li>
+<li>
+<p><code>nix                                                                 add-to-store</code> replaces <code>nix-store                                                                 --add</code>.</p>
+</li>
+<li>
+<p><code>nix sign-paths</code> signs store paths.</p>
+</li>
+<li>
+<p><code>nix copy-sigs</code> copies signatures from one store to another.</p>
+</li>
+<li>
+<p><code>nix show-config</code> shows all configuration options and their current values.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The store abstraction that Nix has had for a long time to support store access via the Nix daemon has been extended significantly. In particular, substituters (which used to be external programs such as <code>download-from-binary-cache</code>) are now subclasses of the abstract <code>Store</code> class. This allows many Nix commands to operate on such store types. For example, <code>nix path-info</code> shows information about paths in your local Nix store, while <code>nix path-info --store https://cache.nixos.org/</code> shows information about paths in the specified binary cache. Similarly, <code>nix-copy-closure</code>, <code>nix-push</code> and substitution are all instances of the general notion of copying paths between different kinds of Nix stores.</p>
+<p>Stores are specified using an URI-like syntax, e.g. <a href="https://cache.nixos.org/">https://cache.nixos.org/</a> or <a href="ssh://machine">ssh://machine</a>. The following store types are supported:</p>
+<ul>
+<li>
+<p><code>LocalStore</code> (stori URI <code>local</code> or an absolute path) and the misnamed <code>RemoteStore</code> (<code>daemon</code>) provide access to a local Nix store, the latter via the Nix daemon. You can use <code>auto</code> or the empty string to auto-select a local or daemon store depending on whether you have write permission to the Nix store. It is no longer necessary to set the <code>NIX_REMOTE</code> environment variable to use the Nix daemon.</p>
+<p>As noted above, <code>LocalStore</code> now supports chroot builds, allowing the “physical” location of the Nix store (e.g. <code>/home/alice/nix/store</code>) to differ from its “logical” location (typically <code>/nix/store</code>). This allows non-root users to use Nix while still getting the benefits from prebuilt binaries from <a href="https://cache.nixos.org/">cache.nixos.org</a>.</p>
+</li>
+<li>
+<p><code>BinaryCacheStore</code> is the abstract superclass of all binary cache stores. It supports writing build logs and NAR content listings in JSON format.</p>
+</li>
+<li>
+<p><code>HttpBinaryCacheStore</code> (<code>http://</code>, <code>https://</code>) supports binary caches via HTTP or HTTPS. If the server supports <code>PUT</code> requests, it supports uploading store paths via commands such as <code>nix                                                                 copy</code>.</p>
+</li>
+<li>
+<p><code>LocalBinaryCacheStore</code> (<code>file://</code>) supports binary caches in the local filesystem.</p>
+</li>
+<li>
+<p><code>S3BinaryCacheStore</code> (<code>s3://</code>) supports binary caches stored in Amazon S3, if enabled at compile time.</p>
+</li>
+<li>
+<p><code>LegacySSHStore</code> (<code>ssh://</code>) is used to implement remote builds and <code>nix-copy-closure</code>.</p>
+</li>
+<li>
+<p><code>SSHStore</code> (<code>ssh-ng://</code>) supports arbitrary Nix operations on a remote machine via the same protocol used by <code>nix-daemon</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Security has been improved in various ways:</p>
+<ul>
+<li>
+<p>Nix now stores signatures for local store paths. When paths are copied between stores (e.g., copied from a binary cache to a local store), signatures are propagated.</p>
+<p>Locally-built paths are signed automatically using the secret keys specified by the <code>secret-key-files</code> store option. Secret/public key pairs can be generated using <code>nix-store                                                                 --generate-binary-cache-key</code>.</p>
+<p>In addition, locally-built store paths are marked as “ultimately trusted”, but this bit is not propagated when paths are copied between stores.</p>
+</li>
+<li>
+<p>Content-addressable store paths no longer require signatures — they can be imported into a store by unprivileged users even if they lack signatures.</p>
+</li>
+<li>
+<p>The command <code>nix verify</code> checks whether the specified paths are trusted, i.e., have a certain number of trusted signatures, are ultimately trusted, or are content-addressed.</p>
+</li>
+<li>
+<p>Substitutions from binary caches <a href="https://github.com/NixOS/nix/commit/ecbc3fedd3d5bdc5a0e1a0a51b29062f2874ac8b">now</a> require signatures by default. This was already the case on NixOS.</p>
+</li>
+<li>
+<p>In Linux sandbox builds, we <a href="https://github.com/NixOS/nix/commit/eba840c8a13b465ace90172ff76a0db2899ab11b">now</a> use <code>/build</code> instead of <code>/tmp</code> as the temporary build directory. This fixes potential security problems when a build accidentally stores its <code>TMPDIR</code> in some security-sensitive place, such as an RPATH.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Pure evaluation mode</em>. With the <code>--pure-eval</code> flag, Nix enables a variant of the existing restricted evaluation mode that forbids access to anything that could cause different evaluations of the same command line arguments to produce a different result. This includes builtin functions such as <code>builtins.getEnv</code>, but more importantly, <em>all</em> filesystem or network access unless a content hash or commit hash is specified. For example, calls to <code>builtins.fetchGit</code> are only allowed if a <code>rev</code> attribute is specified.</p>
+<p>The goal of this feature is to enable true reproducibility and traceability of builds (including NixOS system configurations) at the evaluation level. For example, in the future, <code>nixos-rebuild</code> might build configurations from a Nix expression in a Git repository in pure mode. That expression might fetch other repositories such as Nixpkgs via <code>builtins.fetchGit</code>. The commit hash of the top-level repository then uniquely identifies a running system, and, in conjunction with that repository, allows it to be reproduced or modified.</p>
+</li>
+<li>
+<p>There are several new features to support binary reproducibility (i.e. to help ensure that multiple builds of the same derivation produce exactly the same output). When <code>enforce-determinism</code> is set to <code>false</code>, it’s <a href="https://github.com/NixOS/nix/commit/8bdf83f936adae6f2c907a6d2541e80d4120f051">no longer</a> a fatal error if build rounds produce different output. Also, a hook named <code>diff-hook</code> is <a href="https://github.com/NixOS/nix/commit/9a313469a4bdea2d1e8df24d16289dc2a172a169">provided</a> to allow you to run tools such as <code>diffoscope</code> when build rounds produce different output.</p>
+</li>
+<li>
+<p>Configuring remote builds is a lot easier now. Provided you are not using the Nix daemon, you can now just specify a remote build machine on the command line, e.g. <code>--option builders                 'ssh://my-mac x86_64-darwin'</code>. The environment variable <code>NIX_BUILD_HOOK</code> has been removed and is no longer needed. The environment variable <code>NIX_REMOTE_SYSTEMS</code> is still supported for compatibility, but it is also possible to specify builders in <code>nix.conf</code> by setting the option <code>builders =                 @path</code>.</p>
+</li>
+<li>
+<p>If a fixed-output derivation produces a result with an incorrect hash, the output path is moved to the location corresponding to the actual hash and registered as valid. Thus, a subsequent build of the fixed-output derivation with the correct hash is unnecessary.</p>
+</li>
+<li>
+<p><code>nix-shell</code> <a href="https://github.com/NixOS/nix/commit/ea59f39326c8e9dc42dfed4bcbf597fbce58797c">now</a> sets the <code>IN_NIX_SHELL</code> environment variable during evaluation and in the shell itself. This can be used to perform different actions depending on whether you’re in a Nix shell or in a regular build. Nixpkgs provides <code>lib.inNixShell</code> to check this variable during evaluation.</p>
+</li>
+<li>
+<p><code>NIX_PATH</code> is now lazy, so URIs in the path are only downloaded if they are needed for evaluation.</p>
+</li>
+<li>
+<p>You can now use <code>channel:</code> as a short-hand for <a href="https://nixos.org/channels//nixexprs.tar.xz">https://nixos.org/channels//nixexprs.tar.xz</a> [now <a href="https://channels.nixos.org//nixexprs.tar.xz">https://channels.nixos.org//nixexprs.tar.xz</a>]. For example, <code>nix-build channel:nixos-15.09 -A hello</code> will build the GNU Hello package from the <code>nixos-15.09</code> channel. In the future, this may use Git to fetch updates more efficiently.</p>
+</li>
+<li>
+<p>When <code>--no-build-output</code> is given, the last 10 lines of the build log will be shown if a build fails.</p>
+</li>
+<li>
+<p>Networking has been improved:</p>
+<ul>
+<li>
+<p>HTTP/2 is now supported. This makes binary cache lookups <a href="https://github.com/NixOS/nix/commit/90ad02bf626b885a5dd8967894e2eafc953bdf92">much more efficient</a>.</p>
+</li>
+<li>
+<p>We now retry downloads on many HTTP errors, making binary caches substituters more resilient to temporary failures.</p>
+</li>
+<li>
+<p>HTTP credentials can now be configured via the standard <code>netrc</code> mechanism.</p>
+</li>
+<li>
+<p>If S3 support is enabled at compile time, <a href="s3://">s3://</a> URIs are <a href="https://github.com/NixOS/nix/commit/9ff9c3f2f80ba4108e9c945bbfda2c64735f987b">supported</a> in all places where Nix allows URIs.</p>
+</li>
+<li>
+<p>Brotli compression is now supported. In particular, <a href="https://cache.nixos.org/">cache.nixos.org</a> build logs are now compressed using Brotli.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>nix-env</code> <a href="https://github.com/NixOS/nix/commit/b0cb11722626e906a73f10dd9a0c9eea29faf43a">now</a> ignores packages with bad derivation names (in particular those starting with a digit or containing a dot).</p>
+</li>
+<li>
+<p>Many configuration options have been renamed, either because they were unnecessarily verbose (e.g. <code>build-use-sandbox</code> is now just <code>sandbox</code>) or to reflect generalised behaviour (e.g. <code>binary-caches</code> is now <code>substituters</code> because it allows arbitrary store URIs). The old names are still supported for compatibility.</p>
+</li>
+<li>
+<p>The <code>max-jobs</code> option can <a href="https://github.com/NixOS/nix/commit/7251d048fa812d2551b7003bc9f13a8f5d4c95a5">now</a> be set to <code>auto</code> to use the number of CPUs in the system.</p>
+</li>
+<li>
+<p>Hashes can <a href="https://github.com/NixOS/nix/commit/c0015e87af70f539f24d2aa2bc224a9d8b84276b">now</a> be specified in base-64 format, in addition to base-16 and the non-standard base-32.</p>
+</li>
+<li>
+<p><code>nix-shell</code> now uses <code>bashInteractive</code> from Nixpkgs, rather than the <code>bash</code> command that happens to be in the caller’s <code>PATH</code>. This is especially important on macOS where the <code>bash</code> provided by the system is seriously outdated and cannot execute <code>stdenv</code>’s setup script.</p>
+</li>
+<li>
+<p>Nix can now automatically trigger a garbage collection if free disk space drops below a certain level during a build. This is configured using the <code>min-free</code> and <code>max-free</code> options.</p>
+</li>
+<li>
+<p><code>nix-store -q --roots</code> and <code>nix-store --gc --print-roots</code> now show temporary and in-memory roots.</p>
+</li>
+<li>
+<p>Nix can now be extended with plugins. See the documentation of the <code>plugin-files</code> option for more details.</p>
+</li>
+</ul>
+<p>The Nix language has the following new features:</p>
+<ul>
+<li>
+<p>It supports floating point numbers. They are based on the C++ <code>float</code> type and are supported by the existing numerical operators. Export and import to and from JSON and XML works, too.</p>
+</li>
+<li>
+<p>Derivation attributes can now reference the outputs of the derivation using the <code>placeholder</code> builtin function. For example, the attribute</p>
+<pre><code>configureFlags = "--prefix=${placeholder "out"} --includedir=${placeholder "dev"}";
+</code></pre>
+<p>will cause the <code>configureFlags</code> environment variable to contain the actual store paths corresponding to the <code>out</code> and <code>dev</code> outputs.</p>
+</li>
+</ul>
+<p>The following builtin functions are new or extended:</p>
+<ul>
+<li>
+<p><code>builtins.fetchGit</code> allows Git repositories to be fetched at evaluation time. Thus it differs from the <code>fetchgit</code> function in Nixpkgs, which fetches at build time and cannot be used to fetch Nix expressions during evaluation. A typical use case is to import external NixOS modules from your configuration, e.g.</p>
+<pre><code>imports = [ (builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix") ];
+</code></pre>
+</li>
+<li>
+<p>Similarly, <code>builtins.fetchMercurial</code> allows you to fetch Mercurial repositories.</p>
+</li>
+<li>
+<p><code>builtins.path</code> generalises <code>builtins.filterSource</code> and path literals (e.g. <code>./foo</code>). It allows specifying a store path name that differs from the source path name (e.g. <code>builtins.path { path = ./foo; name = "bar";                 }</code>) and also supports filtering out unwanted files.</p>
+</li>
+<li>
+<p><code>builtins.fetchurl</code> and <code>builtins.fetchTarball</code> now support <code>sha256</code> and <code>name</code> attributes.</p>
+</li>
+<li>
+<p><code>builtins.split</code> splits a string using a POSIX extended regular expression as the separator.</p>
+</li>
+<li>
+<p><code>builtins.partition</code> partitions the elements of a list into two lists, depending on a Boolean predicate.</p>
+</li>
+<li>
+<p><code>&lt;nix/fetchurl.nix&gt;</code> now uses the content-addressable tarball cache at <a href="http://tarballs.nixos.org/">http://tarballs.nixos.org/</a>, just like <code>fetchurl</code> in Nixpkgs. (f2682e6e18a76ecbfb8a12c17e3a0ca15c084197)</p>
+</li>
+<li>
+<p>In restricted and pure evaluation mode, builtin functions that download from the network (such as <code>fetchGit</code>) are permitted to fetch underneath a list of URI prefixes specified in the option <code>allowed-uris</code>.</p>
+</li>
+</ul>
+<p>The Nix build environment has the following changes:</p>
+<ul>
+<li>
+<p>Values such as Booleans, integers, (nested) lists and attribute sets can <a href="https://github.com/NixOS/nix/commit/6de33a9c675b187437a2e1abbcb290981a89ecb1">now</a> be passed to builders in a non-lossy way. If the special attribute <code>__structuredAttrs</code> is set to <code>true</code>, the other derivation attributes are serialised in JSON format and made available to the builder via the file <code>.attrs.json</code> in the builder’s temporary directory. This obviates the need for <code>passAsFile</code> since JSON files have no size restrictions, unlike process environments.</p>
+<p><a href="https://github.com/NixOS/nix/commit/2d5b1b24bf70a498e4c0b378704cfdb6471cc699">As a convenience to Bash builders</a>, Nix writes a script named <code>.attrs.sh</code> to the builder’s directory that initialises shell variables corresponding to all attributes that are representable in Bash. This includes non-nested (associative) arrays. For example, the attribute <code>hardening.format =                 true</code> ends up as the Bash associative array element <code>${hardening[format]}</code>.</p>
+</li>
+<li>
+<p>Builders can <a href="https://github.com/NixOS/nix/commit/88e6bb76de5564b3217be9688677d1c89101b2a3">now</a> communicate what build phase they are in by writing messages to the file descriptor specified in <code>NIX_LOG_FD</code>. The current phase is shown by the <code>nix</code> progress indicator.</p>
+</li>
+<li>
+<p>In Linux sandbox builds, we <a href="https://github.com/NixOS/nix/commit/a2d92bb20e82a0957067ede60e91fab256948b41">now</a> provide a default <code>/bin/sh</code> (namely <code>ash</code> from BusyBox).</p>
+</li>
+<li>
+<p>In structured attribute mode, <code>exportReferencesGraph</code> <a href="https://github.com/NixOS/nix/commit/c2b0d8749f7e77afc1c4b3e8dd36b7ee9720af4a">exports</a> extended information about closures in JSON format. In particular, it includes the sizes and hashes of paths. This is primarily useful for NixOS image builders.</p>
+</li>
+<li>
+<p>Builds are <a href="https://github.com/NixOS/nix/commit/21948deed99a3295e4d5666e027a6ca42dc00b40">now</a> killed as soon as Nix receives EOF on the builder’s stdout or stderr. This fixes a bug that allowed builds to hang Nix indefinitely, regardless of timeouts.</p>
+</li>
+<li>
+<p>The <code>sandbox-paths</code> configuration option can now specify optional paths by appending a <code>?</code>, e.g. <code>/dev/nvidiactl?</code> will bind-mount <code>/dev/nvidiactl</code> only if it exists.</p>
+</li>
+<li>
+<p>On Linux, builds are now executed in a user namespace with UID 1000 and GID 100.</p>
+</li>
+</ul>
+<p>A number of significant internal changes were made:</p>
+<ul>
+<li>
+<p>Nix no longer depends on Perl and all Perl components have been rewritten in C++ or removed. The Perl bindings that used to be part of Nix have been moved to a separate package, <code>nix-perl</code>.</p>
+</li>
+<li>
+<p>All <code>Store</code> classes are now thread-safe. <code>RemoteStore</code> supports multiple concurrent connections to the daemon. This is primarily useful in multi-threaded programs such as <code>hydra-queue-runner</code>.</p>
+</li>
+</ul>
+<p>This release has contributions from Adrien Devresse, Alexander Ried, Alex Cruice, Alexey Shmalko, AmineChikhaoui, Andy Wingo, Aneesh Agrawal, Anthony Cowley, Armijn Hemel, aszlig, Ben Gamari, Benjamin Hipple, Benjamin Staffin, Benno Fünfstück, Bjørn Forsman, Brian McKenna, Charles Strahan, Chase Adams, Chris Martin, Christian Theune, Chris Warburton, Daiderd Jordan, Dan Connolly, Daniel Peebles, Dan Peebles, davidak, David McFarland, Dmitry Kalinkin, Domen Kožar, Eelco Dolstra, Emery Hemingway, Eric Litak, Eric Wolf, Fabian Schmitthenner, Frederik Rietdijk, Gabriel Gonzalez, Giorgio Gallo, Graham Christensen, Guillaume Maudoux, Harmen, Iavael, James Broadhead, James Earl Douglas, Janus Troelsen, Jeremy Shaw, Joachim Schiele, Joe Hermaszewski, Joel Moberg, Johannes ‘fish’ Ziemke, Jörg Thalheim, Jude Taylor, kballou, Keshav Kini, Kjetil Orbekk, Langston Barrett, Linus Heckemann, Ludovic Courtès, Manav Rathi, Marc Scholten, Markus Hauck, Matt Audesse, Matthew Bauer, Matthias Beyer, Matthieu Coudron, N1X, Nathan Zadoks, Neil Mayhew, Nicolas B. Pierron, Niklas Hambüchen, Nikolay Amiantov, Ole Jørgen Brønner, Orivej Desh, Peter Simons, Peter Stuart, Pyry Jahkola, regnat, Renzo Carbonara, Rhys, Robert Vollmert, Scott Olson, Scott R. Parish, Sergei Trofimovich, Shea Levy, Sheena Artrip, Spencer Baugh, Stefan Junker, Susan Potter, Thomas Tuegel, Timothy Allen, Tristan Hume, Tuomas Tynkkynen, tv, Tyson Whitehead, Vladimír Čunát, Will Dietz, wmertens, Wout Mertens, zimbatm and Zoran Plesivčak.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../release-notes/rl-2.1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../release-notes/rl-1.11.10.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../release-notes/rl-2.1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../release-notes/rl-1.11.10.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-862e895d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../redirects-d95376cb.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
