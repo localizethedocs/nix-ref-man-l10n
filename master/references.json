@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-10-20 08:25:44 +0000",
-      "hash" : "f3f184834895f45030d69f20a311b2eac99ebf1d",
-      "title" : "PR template: Replace \"Context\" with \"Implementation\" (#16647)"
+      "date" : "2026-10-27 13:20:28 +0000",
+      "hash" : "119059651cf3a5f8a42770943788092a1b95b918",
+      "title" : "Escape paths given to sandbox-exec (#16701)"
     }
   },
   "type" : "branch",
