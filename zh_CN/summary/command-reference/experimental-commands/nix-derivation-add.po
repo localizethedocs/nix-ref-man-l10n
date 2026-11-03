@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:8
+msgid "`nix derivation add` - add a store derivation"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:12
+msgid "`nix derivation add` \\[_option_...\\]"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:14
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:16
+msgid ""
+"This command reads from standard input a JSON representation of a [store "
+"derivation](../../glossary.md#gloss-store-derivation)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:19
+msgid ""
+"Store derivations are used internally by Nix. They are store paths with "
+"extension `.drv` that represent the build-time dependency graph to which a "
+"Nix expression evaluates."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:25
+msgid ""
+"`nix derivation add` takes a single derivation in the JSON format. See [the "
+"manual](../../protocols/json/derivation/index.md) for a documentation of "
+"this format."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:28
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:30
+msgid "<span id=\"opt-dry-run\">[`--dry-run`](#opt-dry-run)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:32
+msgid "Show what this command would do without doing it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:34
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:36
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:38
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:40
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:42
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:44
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:46
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:48
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:50
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:52
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:54
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:56
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:58
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:60
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:62
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:64
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:66
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:68
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:70
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:72
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:74
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:76
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:78
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-derivation-add.md:80
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

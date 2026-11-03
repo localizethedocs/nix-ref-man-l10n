@@ -1,0 +1,210 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.27.md:1
+msgid "Release 2.27.0 (2025-03-03)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:3
+msgid ""
+"`inputs.self.submodules` flake attribute [\\#12421](https://github.com/NixOS/"
+"nix/pull/12421)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:5
+msgid ""
+"Flakes in Git repositories can now declare that they need Git submodules to "
+"be enabled:"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:11
+msgid ""
+"Thus, it's no longer needed for the caller of the flake to pass `submodules "
+"= true`."
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:13
+msgid ""
+"Git LFS support [\\#10153](https://github.com/NixOS/nix/pull/10153) "
+"[\\#12468](https://github.com/NixOS/nix/pull/12468)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:15
+msgid ""
+"The Git fetcher now supports Large File Storage (LFS). This can be enabled "
+"by passing the attribute `lfs = true` to the fetcher, e.g."
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:16
+msgid ""
+"```console\n"
+"nix flake prefetch 'git+ssh://git@github.com/Apress/repo-with-large-file-"
+"storage.git?lfs=1'\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:20
+msgid "A flake can also declare that it requires LFS to be enabled:"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:27
+msgid ""
+"Author: [**@b-camacho**](https://github.com/b-camacho), [**@kip93**](https://"
+"github.com/kip93)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:29
+msgid ""
+"Handle the case where a chroot store is used and some inputs are in the "
+"\"host\" `/nix/store` [\\#12512](https://github.com/NixOS/nix/pull/12512)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:31
+msgid ""
+"The evaluator now presents a \"union\" filesystem view of the `/nix/store` "
+"in the host and the chroot."
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:33
+msgid ""
+"This change also removes some hacks that broke `builtins.{path,filterSource}"
+"` in chroot stores [\\#11503](https://github.com/NixOS/nix/issues/11503)."
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:35
+msgid ""
+"`nix flake prefetch` now has a `--out-link` option [\\#12443](https://"
+"github.com/NixOS/nix/pull/12443)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:37
+msgid ""
+"Set `FD_CLOEXEC` on sockets created by curl [\\#12439](https://github.com/"
+"NixOS/nix/pull/12439)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:39
+msgid ""
+"Curl created sockets without setting `FD_CLOEXEC`/`SOCK_CLOEXEC`. This could "
+"previously cause connections to remain open forever when using commands like "
+"`nix shell`. This change sets the `FD_CLOEXEC` flag using a "
+"`CURLOPT_SOCKOPTFUNCTION` callback."
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:41
+msgid ""
+"Add BLAKE3 hash algorithm [\\#12379](https://github.com/NixOS/nix/pull/12379)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:43
+msgid ""
+"Nix now supports the BLAKE3 hash algorithm as an experimental feature "
+"(`blake3-hashes`):"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:50
+msgid "Contributors"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:52
+msgid "This release was made possible by the following 21 contributors:"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:54
+msgid "Aiden Fox Ivey [**(@aidenfoxivey)**](https://github.com/aidenfoxivey)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:55
+msgid "Ben Millwood [**(@bmillwood)**](https://github.com/bmillwood)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:56
+msgid "Brian Camacho [**(@b-camacho)**](https://github.com/b-camacho)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:57
+msgid "Brian McKenna [**(@puffnfresh)**](https://github.com/puffnfresh)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:58
+msgid "Eelco Dolstra [**(@edolstra)**](https://github.com/edolstra)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:59
+msgid "Fabian Möller [**(@B4dM4n)**](https://github.com/B4dM4n)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:60
+msgid "Illia Bobyr [**(@ilya-bobyr)**](https://github.com/ilya-bobyr)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:61
+msgid "Ivan Trubach [**(@tie)**](https://github.com/tie)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:62
+msgid "John Ericson [**(@Ericson2314)**](https://github.com/Ericson2314)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:63
+msgid "Jörg Thalheim [**(@Mic92)**](https://github.com/Mic92)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:64
+msgid ""
+"Leandro Emmanuel Reina Kiperman [**(@kip93)**](https://github.com/kip93)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:65
+msgid "MaxHearnden [**(@MaxHearnden)**](https://github.com/MaxHearnden)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:66
+msgid "Philipp Otterbein"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:67
+msgid "Robert Hensing [**(@roberth)**](https://github.com/roberth)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:68
+msgid "Sandro [**(@SuperSandro2000)**](https://github.com/SuperSandro2000)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:69
+msgid "Sergei Zimmerman [**(@xokdvium)**](https://github.com/xokdvium)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:70
+msgid "Silvan Mosberger [**(@infinisil)**](https://github.com/infinisil)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:71
+msgid "Someone [**(@SomeoneSerge)**](https://github.com/SomeoneSerge)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:72
+msgid "Steve Walker [**(@stevalkr)**](https://github.com/stevalkr)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:73
+msgid "bcamacho2 [**(@bcamacho2)**](https://github.com/bcamacho2)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:74
+msgid "silvanshade [**(@silvanshade)**](https://github.com/silvanshade)"
+msgstr ""
+
+#: source/release-notes/rl-2.27.md:75
+msgid "tomberek [**(@tomberek)**](https://github.com/tomberek)"
+msgstr ""

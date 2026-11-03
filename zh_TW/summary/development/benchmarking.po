@@ -1,0 +1,321 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/development/benchmarking.md:1 source/development/benchmarking.md:48
+msgid "Running Benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:3
+msgid ""
+"This guide explains how to build and run performance benchmarks in the Nix "
+"codebase."
+msgstr ""
+
+#: source/development/benchmarking.md:5
+msgid "Overview"
+msgstr ""
+
+#: source/development/benchmarking.md:7
+msgid ""
+"Nix uses the [Google Benchmark](https://github.com/google/benchmark) "
+"framework for performance testing. Benchmarks help measure and track the "
+"performance of critical operations like derivation parsing."
+msgstr ""
+
+#: source/development/benchmarking.md:9
+msgid "Building Benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:11
+msgid ""
+"Benchmarks are disabled by default and must be explicitly enabled during the "
+"build configuration. For accurate results, use a debug-optimized release "
+"build."
+msgstr ""
+
+#: source/development/benchmarking.md:13
+msgid "Development Environment Setup"
+msgstr ""
+
+#: source/development/benchmarking.md:15
+msgid ""
+"First, enter the development shell which includes the necessary dependencies:"
+msgstr ""
+
+#: source/development/benchmarking.md:21
+msgid "Configure Build with Benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:23
+msgid ""
+"From the project root, configure the build with benchmarks enabled and "
+"optimization:"
+msgstr ""
+
+#: source/development/benchmarking.md:30
+msgid "The `debugoptimized` build type provides:"
+msgstr ""
+
+#: source/development/benchmarking.md:31
+msgid "Compiler optimizations for realistic performance measurements"
+msgstr ""
+
+#: source/development/benchmarking.md:32
+msgid "Debug symbols for profiling and analysis"
+msgstr ""
+
+#: source/development/benchmarking.md:33
+msgid "Balance between performance and debuggability"
+msgstr ""
+
+#: source/development/benchmarking.md:35
+msgid "Build the Benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:37
+msgid "Build the project including benchmarks:"
+msgstr ""
+
+#: source/development/benchmarking.md:43
+msgid ""
+"This will create benchmark executables in the build directory. Currently "
+"available:"
+msgstr ""
+
+#: source/development/benchmarking.md:44
+msgid ""
+"`build/src/libstore-tests/nix-store-benchmarks` - Store-related performance "
+"benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:46
+msgid ""
+"Additional benchmark executables will be created as more benchmarks are "
+"added to the codebase."
+msgstr ""
+
+#: source/development/benchmarking.md:50
+msgid "Basic Usage"
+msgstr ""
+
+#: source/development/benchmarking.md:52
+msgid ""
+"Run benchmark executables directly. For example, to run store benchmarks:"
+msgstr ""
+
+#: source/development/benchmarking.md:58
+msgid ""
+"As more benchmark executables are added, run them similarly from their "
+"respective build directories."
+msgstr ""
+
+#: source/development/benchmarking.md:60
+msgid "Filtering Benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:62
+msgid "Run specific benchmarks using regex patterns:"
+msgstr ""
+
+#: source/development/benchmarking.md:65
+msgid "# Run only derivation parser benchmarks\n"
+msgstr ""
+
+#: source/development/benchmarking.md:66
+msgid "\"derivation.*\""
+msgstr ""
+
+#: source/development/benchmarking.md:67
+msgid "# Run only benchmarks for hello.drv\n"
+msgstr ""
+
+#: source/development/benchmarking.md:69
+msgid "\".*hello.*\""
+msgstr ""
+
+#: source/development/benchmarking.md:72
+msgid "Output Formats"
+msgstr ""
+
+#: source/development/benchmarking.md:74
+msgid "Generate benchmark results in different formats:"
+msgstr ""
+
+#: source/development/benchmarking.md:77
+msgid "# JSON output\n"
+msgstr ""
+
+#: source/development/benchmarking.md:79
+msgid "# CSV output\n"
+msgstr ""
+
+#: source/development/benchmarking.md:84
+msgid "Advanced Options"
+msgstr ""
+
+#: source/development/benchmarking.md:87
+msgid "# Run benchmarks multiple times for better statistics\n"
+msgstr ""
+
+#: source/development/benchmarking.md:89
+msgid "# Set minimum benchmark time (useful for micro-benchmarks)\n"
+msgstr ""
+
+#: source/development/benchmarking.md:92
+msgid "# Compare against baseline\n"
+msgstr ""
+
+#: source/development/benchmarking.md:95
+msgid "# Display time in custom units\n"
+msgstr ""
+
+#: source/development/benchmarking.md:100
+msgid "Writing New Benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:102
+msgid "To add new benchmarks:"
+msgstr ""
+
+#: source/development/benchmarking.md:104
+msgid "Create a new `.cc` file in the appropriate `*-tests` directory"
+msgstr ""
+
+#: source/development/benchmarking.md:105
+msgid "Include the benchmark header:"
+msgstr ""
+
+#: source/development/benchmarking.md:107
+msgid "<benchmark/benchmark.h>"
+msgstr ""
+
+#: source/development/benchmarking.md:110
+msgid "Write benchmark functions:"
+msgstr ""
+
+#: source/development/benchmarking.md:114
+msgid "// Setup code here\n"
+msgstr ""
+
+#: source/development/benchmarking.md:117
+msgid "// Code to benchmark\n"
+msgstr ""
+
+#: source/development/benchmarking.md:123
+msgid "Add the file to the corresponding `meson.build`:"
+msgstr ""
+
+#: source/development/benchmarking.md:131
+msgid "Profiling with Benchmarks"
+msgstr ""
+
+#: source/development/benchmarking.md:133
+msgid ""
+"For deeper performance analysis, combine benchmarks with profiling tools:"
+msgstr ""
+
+#: source/development/benchmarking.md:136
+msgid "# Using Linux perf\n"
+msgstr ""
+
+#: source/development/benchmarking.md:141
+msgid "Using Valgrind Callgrind"
+msgstr ""
+
+#: source/development/benchmarking.md:143
+msgid ""
+"Valgrind's callgrind tool provides detailed profiling information that can "
+"be visualized with kcachegrind:"
+msgstr ""
+
+#: source/development/benchmarking.md:146
+msgid "# Profile with callgrind\n"
+msgstr ""
+
+#: source/development/benchmarking.md:148
+msgid "# Visualize the results with kcachegrind\n"
+msgstr ""
+
+#: source/development/benchmarking.md:153
+msgid "This provides:"
+msgstr ""
+
+#: source/development/benchmarking.md:154
+msgid "Function call graphs"
+msgstr ""
+
+#: source/development/benchmarking.md:155
+msgid "Instruction-level profiling"
+msgstr ""
+
+#: source/development/benchmarking.md:156
+msgid "Source code annotation"
+msgstr ""
+
+#: source/development/benchmarking.md:157
+msgid "Interactive visualization of performance bottlenecks"
+msgstr ""
+
+#: source/development/benchmarking.md:159
+msgid "Continuous Performance Testing"
+msgstr ""
+
+#: source/development/benchmarking.md:162
+msgid "# Save baseline results\n"
+msgstr ""
+
+#: source/development/benchmarking.md:164
+msgid "# Compare against baseline in CI\n"
+msgstr ""
+
+#: source/development/benchmarking.md:169
+msgid "Troubleshooting"
+msgstr ""
+
+#: source/development/benchmarking.md:171
+msgid "Benchmarks not building"
+msgstr ""
+
+#: source/development/benchmarking.md:173
+msgid "Ensure benchmarks are enabled:"
+msgstr ""
+
+#: source/development/benchmarking.md:175
+msgid "# Should show: benchmarks true\n"
+msgstr ""
+
+#: source/development/benchmarking.md:179
+msgid "Inconsistent results"
+msgstr ""
+
+#: source/development/benchmarking.md:181
+msgid "Ensure your system is not under heavy load"
+msgstr ""
+
+#: source/development/benchmarking.md:182
+msgid "Disable CPU frequency scaling for consistent results"
+msgstr ""
+
+#: source/development/benchmarking.md:183
+msgid "Run benchmarks multiple times with `--benchmark_repetitions`"
+msgstr ""
+
+#: source/development/benchmarking.md:185
+msgid "See Also"
+msgstr ""
+
+#: source/development/benchmarking.md:187
+msgid ""
+"[Google Benchmark documentation](https://github.com/google/benchmark/blob/"
+"main/docs/user_guide.md)"
+msgstr ""

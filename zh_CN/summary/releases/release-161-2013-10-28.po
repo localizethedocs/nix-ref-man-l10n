@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-1.6.1.md:1
+msgid "Release 1.6.1 (2013-10-28)"
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:3
+msgid "This is primarily a bug fix release. Changes of interest are:"
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:5
+msgid ""
+"Nix 1.6 accidentally changed the semantics of antiquoted paths in strings, "
+"such as `\"${/foo}/bar\"`. This release reverts to the Nix 1.5.3 behaviour."
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:9
+msgid ""
+"Previously, Nix optimised expressions such as `\"${expr}\"` to _expr_. Thus "
+"it neither checked whether _expr_ could be coerced to a string, nor applied "
+"such coercions. This meant that `\"${123}\"` evaluatued to `123`, and `\"${./"
+"foo}\"` evaluated to `./foo` (even though `\"${./foo} \"` evaluates to `\"/"
+"nix/store/hash-foo \"`). Nix now checks the type of antiquoted expressions "
+"and applies coercions."
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:16
+msgid ""
+"Nix now shows the exact position of undefined variables. In particular, "
+"undefined variable errors in a `with` previously didn't show _any_ position "
+"information, so this makes it a lot easier to fix such errors."
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:21
+msgid ""
+"Undefined variables are now treated consistently. Previously, the `tryEval` "
+"function would catch undefined variables inside a `with` but not outside. "
+"Now `tryEval` never catches undefined variables."
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:25
+msgid "Bash completion in `nix-shell` now works correctly."
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:27
+msgid ""
+"Stack traces are less verbose: they no longer show calls to builtin "
+"functions and only show a single line for each derivation on the call stack."
+msgstr ""
+
+#: source/release-notes/rl-1.6.1.md:31
+msgid ""
+"New built-in function: `builtins.typeOf`, which returns the type of its "
+"argument as a string."
+msgstr ""

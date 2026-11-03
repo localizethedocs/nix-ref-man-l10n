@@ -1,0 +1,370 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/derivations.md:1
+msgid "Derivations"
+msgstr ""
+
+#: source/language/derivations.md:3
+msgid ""
+"The most important built-in function is `derivation`, which is used to "
+"describe a single store-layer [store derivation](../glossary.md#gloss-store-"
+"derivation). Consult the [store chapter](../store/derivation/index.md) for "
+"what a store derivation is; this section just concerns how to create one "
+"from the Nix language."
+msgstr ""
+
+#: source/language/derivations.md:7
+msgid ""
+"This builtin function takes as input an attribute set, the attributes of "
+"which specify the inputs to the process. It outputs an attribute set, and "
+"produces a [store derivation](../glossary.md#gloss-store-derivation) as a "
+"side effect of evaluation."
+msgstr ""
+
+#: source/language/derivations.md:12
+msgid "Input attributes"
+msgstr ""
+
+#: source/language/derivations.md:14
+msgid "Required"
+msgstr ""
+
+#: source/language/derivations.md:16
+msgid "\\[`name`\\]{#attr-name} ([String](../language/types.md#type-string))"
+msgstr ""
+
+#: source/language/derivations.md:18
+msgid ""
+"A symbolic name for the derivation. See [derivation outputs](../store/"
+"derivation/outputs/index.md#outputs) for what this is affects."
+msgstr ""
+
+#: source/language/derivations.md:23 source/language/derivations.md:39
+#: source/language/derivations.md:51 source/language/derivations.md:69
+#: source/language/derivations.md:83 source/language/derivations.md:97
+#: source/language/derivations.md:118 source/language/derivations.md:142
+#: source/language/derivations.md:170 source/language/derivations.md:191
+msgid "**Example**"
+msgstr ""
+
+#: source/language/derivations.md:25
+msgid ""
+"```nix\n"
+"derivation {\n"
+"  name = \"hello\";\n"
+"  # ...\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:32
+msgid ""
+"The derivation's path will be `/nix/store/<hash>-hello.drv`. The [output]"
+"(#attr-outputs) paths will be of the form `/nix/store/<hash>-hello[-"
+"<output>]`"
+msgstr ""
+
+#: source/language/derivations.md:35
+msgid ""
+"\\[`system`\\]{#attr-system} ([String](../language/types.md#type-string))"
+msgstr ""
+
+#: source/language/derivations.md:37
+msgid "See [system](../store/derivation/index.md#system)."
+msgstr ""
+
+#: source/language/derivations.md:41
+msgid "Declare a derivation to be built on a specific system type:"
+msgstr ""
+
+#: source/language/derivations.md:43
+msgid ""
+"```nix\n"
+"derivation {\n"
+"  # ...\n"
+"  system = \"x86_64-linux\";\n"
+"  # ...\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:53
+msgid ""
+"Declare a derivation to be built on the system type that evaluates the "
+"expression:"
+msgstr ""
+
+#: source/language/derivations.md:63
+msgid ""
+"[`builtins.currentSystem`](../language/builtins.md#builtins-currentSystem) "
+"has the value of the \\[`system` configuration option\\], and defaults to "
+"the system type of the current Nix installation."
+msgstr ""
+
+#: source/language/derivations.md:65
+msgid ""
+"\\[`builder`\\]{#attr-builder} ([Path](../language/types.md#type-path) | "
+"[String](../language/types.md#type-string))"
+msgstr ""
+
+#: source/language/derivations.md:67
+msgid "See [builder](../store/derivation/index.md#builder)."
+msgstr ""
+
+#: source/language/derivations.md:71
+msgid "Use the file located at `/bin/bash` as the builder executable:"
+msgstr ""
+
+#: source/language/derivations.md:73
+msgid ""
+"```nix\n"
+"derivation {\n"
+"  # ...\n"
+"  builder = \"/bin/bash\";\n"
+"  # ...\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:85
+msgid "Copy a local file to the Nix store for use as the builder executable:"
+msgstr ""
+
+#: source/language/derivations.md:99
+msgid "Use a file from another derivation as the builder executable:"
+msgstr ""
+
+#: source/language/derivations.md:101
+msgid ""
+"```nix\n"
+"let pkgs = import <nixpkgs> {}; in\n"
+"derivation {\n"
+"  # ...\n"
+"  builder = \"${pkgs.python}/bin/python\";\n"
+"  # ...\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:110
+msgid "Optional"
+msgstr ""
+
+#: source/language/derivations.md:112
+msgid ""
+"\\[`args`\\]{#attr-args} ([List](../language/types.md#type-list) of [String]"
+"(../language/types.md#type-string))"
+msgstr ""
+
+#: source/language/derivations.md:114
+msgid "Default: `[ ]`"
+msgstr ""
+
+#: source/language/derivations.md:116
+msgid "See [args](../store/derivation/index.md#args)."
+msgstr ""
+
+#: source/language/derivations.md:120
+msgid "Pass arguments to Bash to interpret a shell command:"
+msgstr ""
+
+#: source/language/derivations.md:122
+msgid ""
+"```nix\n"
+"derivation {\n"
+"  # ...\n"
+"  builder = \"/bin/bash\";\n"
+"  args = [ \"-c\" \"echo hello world > $out\" ];\n"
+"  # ...\n"
+"};\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:131
+msgid ""
+"\\[`outputs`\\]{#attr-outputs} ([List](../language/types.md#type-list) of "
+"[String](../language/types.md#type-string))"
+msgstr ""
+
+#: source/language/derivations.md:133
+msgid "Default: `[ \"out\" ]`"
+msgstr ""
+
+#: source/language/derivations.md:135
+msgid ""
+"Symbolic outputs of the derivation. Each output name is passed to the "
+"[`builder`](#attr-builder) executable as an environment variable with its "
+"value set to the corresponding [store path](../store/store-path.md)."
+msgstr ""
+
+#: source/language/derivations.md:138
+msgid ""
+"By default, a derivation produces a single output called `out`. However, "
+"derivations can produce multiple outputs. This allows the associated [store "
+"objects](../store/store-object.md) and their [closures](../glossary.md#gloss-"
+"closure) to be copied or garbage-collected separately."
+msgstr ""
+
+#: source/language/derivations.md:144
+msgid ""
+"Imagine a library package that provides a dynamic library, header files, and "
+"documentation. A program that links against such a library doesn’t need the "
+"header files and documentation at runtime, and it doesn’t need the "
+"documentation at build time. Thus, the library package could specify:"
+msgstr ""
+
+#: source/language/derivations.md:148
+msgid ""
+"```nix\n"
+"derivation {\n"
+"  # ...\n"
+"  outputs = [ \"lib\" \"dev\" \"doc\" ];\n"
+"  # ...\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:156
+msgid ""
+"This will cause Nix to pass environment variables `lib`, `dev`, and `doc` to "
+"the builder containing the intended store paths of each output. The builder "
+"would typically do something like"
+msgstr ""
+
+#: source/language/derivations.md:166
+msgid "for an Autoconf-style package."
+msgstr ""
+
+#: source/language/derivations.md:168
+msgid ""
+"The name of an output is combined with the name of the derivation to create "
+"the [name part](../store/store-path.md#name) of the output's store path, "
+"unless it is `out`, in which case just the name of the derivation is used."
+msgstr ""
+
+#: source/language/derivations.md:173
+msgid ""
+"```nix\n"
+"derivation {\n"
+"  name = \"example\";\n"
+"  outputs = [ \"lib\" \"dev\" \"doc\" \"out\" ];\n"
+"  # ...\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:181
+msgid ""
+"The store derivation path will be `/nix/store/<hash>-example.drv`. The "
+"output paths will be"
+msgstr ""
+
+#: source/language/derivations.md:183
+msgid "`/nix/store/<hash>-example-lib`"
+msgstr ""
+
+#: source/language/derivations.md:184
+msgid "`/nix/store/<hash>-example-dev`"
+msgstr ""
+
+#: source/language/derivations.md:185
+msgid "`/nix/store/<hash>-example-doc`"
+msgstr ""
+
+#: source/language/derivations.md:186
+msgid "`/nix/store/<hash>-example`"
+msgstr ""
+
+#: source/language/derivations.md:188
+msgid ""
+"You can refer to each output of a derivation by selecting it as an "
+"attribute. The first element of `outputs` determines the _default output_ "
+"and ends up at the top-level."
+msgstr ""
+
+#: source/language/derivations.md:193
+msgid "Select an output by attribute name:"
+msgstr ""
+
+#: source/language/derivations.md:195
+msgid ""
+"```nix\n"
+"let\n"
+"  myPackage = derivation {\n"
+"    name = \"example\";\n"
+"    outputs = [ \"lib\" \"dev\" \"doc\" \"out\" ];\n"
+"    # ...\n"
+"  };\n"
+"in myPackage.dev\n"
+"```"
+msgstr ""
+
+#: source/language/derivations.md:205
+msgid ""
+"Since `lib` is the first output, `myPackage` is equivalent to "
+"`myPackage.lib`."
+msgstr ""
+
+#: source/language/derivations.md:209
+msgid ""
+"See [Advanced Attributes](./advanced-attributes.md) for more, infrequently "
+"used, optional attributes."
+msgstr ""
+
+#: source/language/derivations.md:213
+msgid ""
+"Every other attribute is passed as an environment variable to the builder. "
+"Attribute values are translated to environment variables as follows:"
+msgstr ""
+
+#: source/language/derivations.md:216
+msgid "Strings are passed unchanged."
+msgstr ""
+
+#: source/language/derivations.md:218
+msgid "Integral numbers are converted to decimal notation."
+msgstr ""
+
+#: source/language/derivations.md:220
+msgid ""
+"Floating point numbers are converted to simple decimal or scientific "
+"notation with a preset precision."
+msgstr ""
+
+#: source/language/derivations.md:222
+msgid ""
+"A _path_ (e.g., `../foo/sources.tar`) causes the referenced file to be "
+"copied to the store; its location in the store is put in the environment "
+"variable. The idea is that all sources should reside in the Nix store, since "
+"all inputs to a derivation should reside in the Nix store."
+msgstr ""
+
+#: source/language/derivations.md:228
+msgid ""
+"A _derivation_ causes that derivation to be built prior to the present "
+"derivation. The environment variable is set to the [store path](../store/"
+"store-path.md) of the derivation's default [output](#attr-outputs)."
+msgstr ""
+
+#: source/language/derivations.md:231
+msgid ""
+"Lists of the previous types are also allowed. They are simply concatenated, "
+"separated by spaces."
+msgstr ""
+
+#: source/language/derivations.md:234
+msgid ""
+"`true` is passed as the string `1`, `false` and `null` are passed as an "
+"empty string."
+msgstr ""

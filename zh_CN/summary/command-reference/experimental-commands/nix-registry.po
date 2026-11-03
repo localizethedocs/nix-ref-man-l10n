@@ -1,0 +1,369 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-registry.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:8
+msgid "`nix registry` - manage the flake registry"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:12
+msgid "`nix registry` \\[_option_...\\] _subcommand_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:14
+msgid "where _subcommand_ is one of the following:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:16
+msgid ""
+"[`nix registry add`](./nix3-registry-add.md) - add/replace flake in user "
+"flake registry"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:17
+msgid ""
+"[`nix registry list`](./nix3-registry-list.md) - list available Nix flakes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:18
+msgid ""
+"[`nix registry pin`](./nix3-registry-pin.md) - pin a flake to its current "
+"version or to the current version of a flake URL"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:19
+msgid ""
+"[`nix registry remove`](./nix3-registry-remove.md) - remove flake from user "
+"flake registry"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:20
+msgid ""
+"[`nix registry resolve`](./nix3-registry-resolve.md) - resolve flake "
+"references using the registry"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:22
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:24
+msgid ""
+"`nix registry` provides subcommands for managing _flake registries_. Flake "
+"registries are a convenience feature that allows you to refer to flakes "
+"using symbolic identifiers such as `nixpkgs`, rather than full URLs such as "
+"`git://github.com/NixOS/nixpkgs`. You can use these identifiers on the "
+"command line (e.g. when you do `nix run nixpkgs#hello`) or in flake input "
+"specifications in `flake.nix` files. The latter are automatically resolved "
+"to full URLs and recorded in the flake's `flake.lock` file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:33
+msgid ""
+"In addition, the flake registry allows you to redirect arbitrary flake "
+"references (e.g. `github:NixOS/patchelf`) to another location, such as a "
+"local fork."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:37
+msgid ""
+"There are multiple registries. These are, in order from lowest to highest "
+"precedence:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:40
+msgid ""
+"The global registry, which is a file downloaded from the URL specified by "
+"the setting `flake-registry`. It is cached locally and updated automatically "
+"when it's older than `tarball-ttl` seconds. The default global registry is "
+"kept in [a GitHub repository](https://github.com/NixOS/flake-registry)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:46
+msgid ""
+"The system registry, which is shared by all users. The default location is `/"
+"etc/nix/registry.json`. On NixOS, the system registry can be specified using "
+"the NixOS option `nix.registry`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:50
+msgid ""
+"The user registry `~/.config/nix/registry.json`. This registry can be "
+"modified by commands such as `nix registry pin`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:53
+msgid ""
+"Overrides specified on the command line using the option `--override-flake`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:56
+msgid ""
+"Note that the system and user registries are not used to resolve flake "
+"references in `flake.nix`. They are only used to resolve flake references on "
+"the command line."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:58
+msgid "Registry format"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:60
+msgid "A registry is a JSON file with the following format:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:64
+msgid "\"version\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:65
+msgid "\"flakes\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:67
+msgid "\"from\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:68
+#: source/command-ref/new-cli/nix3-registry.md:72
+msgid "\"type\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:68
+msgid "\"indirect\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:69
+msgid "\"id\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:69
+#: source/command-ref/new-cli/nix3-registry.md:74
+msgid "\"nixpkgs\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:71
+msgid "\"to\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:72
+msgid "\"github\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:73
+msgid "\"owner\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:73
+msgid "\"NixOS\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:74
+msgid "\"repo\""
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:82
+msgid ""
+"That is, it contains a list of objects with attributes `from` and `to`, both "
+"of which contain a flake reference in attribute representation. (For "
+"example, `{\"type\": \"indirect\", \"id\": \"nixpkgs\"}` is the attribute "
+"representation of `nixpkgs`, while `{\"type\": \"github\", \"owner\": "
+"\"NixOS\", \"repo\": \"nixpkgs\"}` is the attribute representation of "
+"`github:NixOS/nixpkgs`.)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:89
+msgid ""
+"Given some flake reference _R_, a registry entry is used if its `from` flake "
+"reference _matches_ _R_. _R_ is then replaced by the _unification_ of the "
+"`to` flake reference with _R_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:93
+msgid "Matching"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:95
+msgid ""
+"The `from` flake reference in a registry entry _matches_ some flake "
+"reference _R_ if the attributes in `from` are the same as the attributes in "
+"`R`. For example:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:99
+msgid "`nixpkgs` matches with `nixpkgs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:101
+msgid "`nixpkgs` matches with `nixpkgs/nixos-20.09`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:103
+msgid "`nixpkgs/nixos-20.09` does not match with `nixpkgs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:105
+msgid "`nixpkgs` does not match with `git://github.com/NixOS/patchelf`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:107
+msgid "Unification"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:109
+msgid ""
+"The `to` flake reference in a registry entry is _unified_ with some flake "
+"reference _R_ by taking `to` and applying the `rev` and `ref` attributes "
+"from _R_, if specified. For example:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:113
+msgid ""
+"`github:NixOS/nixpkgs` unified with `nixpkgs` produces `github:NixOS/"
+"nixpkgs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:115
+msgid ""
+"`github:NixOS/nixpkgs` unified with `nixpkgs/nixos-20.09` produces "
+"`github:NixOS/nixpkgs/nixos-20.09`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:117
+msgid ""
+"`github:NixOS/nixpkgs/master` unified with `nixpkgs/nixos-20.09` produces "
+"`github:NixOS/nixpkgs/nixos-20.09`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:119
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:121
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:123
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:125
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:127
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:129
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:131
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:133
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:135
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:137
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:139
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:141
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:143
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:145
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:147
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:149
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:151
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:153
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:155
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:157
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:159
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:161
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:163
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:165
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-registry.md:167
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

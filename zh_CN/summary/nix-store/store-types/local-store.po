@@ -1,0 +1,417 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/local-store.md:1
+msgid "Local Store"
+msgstr ""
+
+#: source/store/types/local-store.md:3
+msgid "**Store URL format**: `local`, _root_"
+msgstr ""
+
+#: source/store/types/local-store.md:5
+msgid ""
+"This store type accesses a Nix store in the local filesystem directly (i.e. "
+"not via the Nix daemon). _root_ is an absolute path that is prefixed to "
+"other directories such as the Nix store directory. The store pseudo-URL "
+"`local` denotes a store that uses `/` as its root directory."
+msgstr ""
+
+#: source/store/types/local-store.md:11
+msgid "Local chroot store"
+msgstr ""
+
+#: source/store/types/local-store.md:13
+msgid ""
+"A local store that uses a _root_ other than `/` is called a _local chroot "
+"store_. With such stores, the store directory is \"logically\" still `/nix/"
+"store`, so programs stored in them can only be built and executed by "
+"`chroot`\\-ing into _root_. Chroot stores only support building and running "
+"on Linux when [`mount namespaces`](https://man7.org/linux/man-pages/man7/"
+"mount_namespaces.7.html) and [`user namespaces`](https://man7.org/linux/man-"
+"pages/man7/user_namespaces.7.html) are enabled."
+msgstr ""
+
+#: source/store/types/local-store.md:20
+msgid ""
+"For example, the following uses `/tmp/root` as the chroot environment to "
+"build or download `nixpkgs#hello` and then execute it:"
+msgstr ""
+
+#: source/store/types/local-store.md:28
+msgid ""
+"Here, the \"physical\" store location is `/tmp/root/nix/store`, and Nix's "
+"store metadata is in `/tmp/root/nix/var/nix/db`."
+msgstr ""
+
+#: source/store/types/local-store.md:31
+msgid ""
+"It is also possible, but not recommended, to change the \"logical\" location "
+"of the Nix store from its default of `/nix/store`. This makes it impossible "
+"to use default substituters such as `https://cache.nixos.org/`, and thus you "
+"may have to build everything locally. Here is an example:"
+msgstr ""
+
+#: source/store/types/local-store.md:41
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/local-store.md:43
+msgid ""
+"<span id=\"store-local-store-build-dir\">[`build-dir`](#store-local-store-"
+"build-dir)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:45
+msgid ""
+"The directory on the host, in which derivations' temporary build directories "
+"are created."
+msgstr ""
+
+#: source/store/types/local-store.md:47
+msgid ""
+"If not set, Nix will use the `builds` subdirectory of its configured state "
+"directory."
+msgstr ""
+
+#: source/store/types/local-store.md:49
+msgid ""
+"Note that builds are often performed by the Nix daemon, so its `build-dir` "
+"applies."
+msgstr ""
+
+#: source/store/types/local-store.md:51
+msgid ""
+"Nix will create this directory automatically with suitable permissions if it "
+"does not exist. Otherwise its permissions must allow all users to traverse "
+"the directory (i.e. it must have `o+x` set, in unix parlance) for non-"
+"sandboxed builds to work correctly."
+msgstr ""
+
+#: source/store/types/local-store.md:54
+msgid ""
+"This is also the location where [`--keep-failed`](../../command-ref/opt-"
+"common.md#opt-keep-failed) leaves its files."
+msgstr ""
+
+#: source/store/types/local-store.md:56
+msgid ""
+"If Nix runs without sandbox, or if the platform does not support sandboxing "
+"with bind mounts (e.g. macOS), then the [`builder`](../../language/"
+"derivations.md#attr-builder)'s environment will contain this directory, "
+"instead of the virtual location [`sandbox-build-dir`](../../command-ref/conf-"
+"file.md#conf-sandbox-build-dir)."
+msgstr ""
+
+#: source/store/types/local-store.md:58 source/store/types/local-store.md:70
+#: source/store/types/local-store.md:185
+msgid "**Warning**"
+msgstr ""
+
+#: source/store/types/local-store.md:60
+msgid ""
+"`build-dir` must not be set to a world-writable directory. Placing temporary "
+"build directories in a world-writable place allows other users to access or "
+"modify build data that is currently in use. This alone is merely an "
+"impurity, but combined with another factor this has allowed malicious "
+"derivations to escape the build sandbox."
+msgstr ""
+
+#: source/store/types/local-store.md:64
+msgid ""
+"See also the global [`build-dir`](../../command-ref/conf-file.md#conf-build-"
+"dir) setting."
+msgstr ""
+
+#: source/store/types/local-store.md:66 source/store/types/local-store.md:146
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/store/types/local-store.md:68
+msgid ""
+"<span id=\"store-local-store-ignore-gc-delete-failure\">[`ignore-gc-delete-"
+"failure`](#store-local-store-ignore-gc-delete-failure)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:72 source/store/types/local-store.md:187
+msgid ""
+"This setting is part of an [experimental feature](../../development/"
+"experimental-features.md)."
+msgstr ""
+
+#: source/store/types/local-store.md:75 source/store/types/local-store.md:190
+msgid ""
+"To change this setting, make sure the [`local-overlay-store` experimental "
+"feature](../../development/experimental-features.md#xp-feature-local-overlay-"
+"store) is enabled. For example, include the following in [`nix.conf`](../../"
+"command-ref/conf-file.md):"
+msgstr ""
+
+#: source/store/types/local-store.md:85
+msgid ""
+"Whether to ignore failures when deleting items with the garbage collector."
+msgstr ""
+
+#: source/store/types/local-store.md:87
+msgid ""
+"Normally the garbage collector will fail with an error if the nix daemon "
+"cannot delete a file, with this setting such errors will only be printed as "
+"warnings."
+msgstr ""
+
+#: source/store/types/local-store.md:89 source/store/types/local-store.md:126
+#: source/store/types/local-store.md:181 source/store/types/local-store.md:209
+#: source/store/types/local-store.md:215
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/local-store.md:91
+msgid ""
+"<span id=\"store-local-store-log\">[`log`](#store-local-store-log)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:93
+msgid "Directory where Nix stores log files."
+msgstr ""
+
+#: source/store/types/local-store.md:95
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-local-store-root) is not set."
+msgstr ""
+
+#: source/store/types/local-store.md:97
+msgid "**Default:** `/nix/var/log/nix`"
+msgstr ""
+
+#: source/store/types/local-store.md:99
+msgid ""
+"<span id=\"store-local-store-path-info-cache-size\">[`path-info-cache-size`]"
+"(#store-local-store-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:101
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/local-store.md:103
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/local-store.md:105
+msgid ""
+"<span id=\"store-local-store-priority\">[`priority`](#store-local-store-"
+"priority)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:107
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/local-store.md:110
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/local-store.md:112
+msgid ""
+"<span id=\"store-local-store-read-only\">[`read-only`](#store-local-store-"
+"read-only)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:114
+msgid ""
+"Allow this store to be opened when its [database](../../glossary.md#gloss-"
+"nix-database) is on a read-only filesystem."
+msgstr ""
+
+#: source/store/types/local-store.md:116
+msgid ""
+"Normally Nix attempts to open the store database in read-write mode, even "
+"for querying (when write access is not needed), causing it to fail if the "
+"database is on a read-only filesystem."
+msgstr ""
+
+#: source/store/types/local-store.md:118
+msgid ""
+"Enable read-only mode to disable locking and open the SQLite database with "
+"the [`immutable` parameter](https://www.sqlite.org/c3ref/open.html) set."
+msgstr ""
+
+#: source/store/types/local-store.md:120
+msgid "**Warning** Do not use this unless the filesystem is read-only."
+msgstr ""
+
+#: source/store/types/local-store.md:123
+msgid ""
+"Using it when the filesystem is writable can cause incorrect query results "
+"or corruption errors if the database is changed by another process. While "
+"the filesystem the database resides on might appear to be read-only, "
+"consider whether another user or system might have write access to it."
+msgstr ""
+
+#: source/store/types/local-store.md:128
+msgid ""
+"<span id=\"store-local-store-real\">[`real`](#store-local-store-real)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:130
+msgid "Physical path of the Nix store."
+msgstr ""
+
+#: source/store/types/local-store.md:132
+msgid ""
+"Defaults to [`store`](#store-local-store-store) when [`root`](#store-local-"
+"store-root) is not set."
+msgstr ""
+
+#: source/store/types/local-store.md:134 source/store/types/local-store.md:164
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/local-store.md:136
+msgid ""
+"<span id=\"store-local-store-require-sigs\">[`require-sigs`](#store-local-"
+"store-require-sigs)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:138
+msgid ""
+"Whether store paths copied into this store should have a trusted signature."
+msgstr ""
+
+#: source/store/types/local-store.md:140
+msgid "**Default:** `true`"
+msgstr ""
+
+#: source/store/types/local-store.md:142
+msgid ""
+"<span id=\"store-local-store-root\">[`root`](#store-local-store-root)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:144
+msgid "Directory prefixed to all other paths."
+msgstr ""
+
+#: source/store/types/local-store.md:148
+msgid ""
+"<span id=\"store-local-store-state\">[`state`](#store-local-store-state)</"
+"span>"
+msgstr ""
+
+#: source/store/types/local-store.md:150
+msgid "Directory where Nix stores state."
+msgstr ""
+
+#: source/store/types/local-store.md:152
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-local-store-root) is not set."
+msgstr ""
+
+#: source/store/types/local-store.md:154
+msgid "**Default:** `/dummy`"
+msgstr ""
+
+#: source/store/types/local-store.md:156
+msgid ""
+"<span id=\"store-local-store-store\">[`store`](#store-local-store-store)</"
+"span>"
+msgstr ""
+
+#: source/store/types/local-store.md:158
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/local-store.md:160
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/local-store.md:162
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/local-store.md:166
+msgid ""
+"<span id=\"store-local-store-system-features\">[`system-features`](#store-"
+"local-store-system-features)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:168
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/local-store.md:170
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/local-store.md:172
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/local-store.md:174
+msgid ""
+"<span id=\"store-local-store-trusted\">[`trusted`](#store-local-store-"
+"trusted)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:176
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/local-store.md:183
+msgid ""
+"<span id=\"store-local-store-use-roots-daemon\">[`use-roots-daemon`](#store-"
+"local-store-use-roots-daemon)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:200
+msgid "Whether to request garbage collector roots from an external daemon."
+msgstr ""
+
+#: source/store/types/local-store.md:202
+msgid ""
+"When enabled, the garbage collector connects to a Unix domain socket at "
+"[`<state-dir>`](../../store/types/local-store.md#store-local-store-state)`/"
+"gc-roots-socket/socket` to discover additional roots that should not be "
+"collected. This is useful when the Nix daemon runs without root privileges "
+"and cannot scan `/proc` for runtime roots."
+msgstr ""
+
+#: source/store/types/local-store.md:207
+msgid ""
+"The daemon can be started with [`nix store roots-daemon`](../../command-ref/"
+"new-cli/nix3-store-roots-daemon.md)."
+msgstr ""
+
+#: source/store/types/local-store.md:211
+msgid ""
+"<span id=\"store-local-store-want-mass-query\">[`want-mass-query`](#store-"
+"local-store-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/local-store.md:213
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""

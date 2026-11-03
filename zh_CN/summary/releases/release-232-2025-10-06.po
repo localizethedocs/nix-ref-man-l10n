@@ -1,0 +1,435 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.32.md:1
+msgid "Release 2.32.0 (2025-10-06)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:3
+msgid "Incompatible changes"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:5
+msgid ""
+"Removed support for daemons and clients older than Nix 2.0 [\\#13951]"
+"(https://github.com/NixOS/nix/pull/13951)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:7
+msgid ""
+"We have dropped support in the daemon worker protocol for daemons and "
+"clients that don't speak at least version 18 of the protocol. This first Nix "
+"release that supports this version is Nix 2.0, released in February 2018."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:9
+msgid ""
+"Derivation JSON format now uses store path basenames only [\\#13570](https://"
+"github.com/NixOS/nix/issues/13570) [\\#13980](https://github.com/NixOS/nix/"
+"pull/13980)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:11
+msgid ""
+"Experience with many JSON frameworks (e.g. nlohmann/json in C++, Serde in "
+"Rust, and Aeson in Haskell) has shown that the use of the store directory in "
+"JSON formats is an impediment to systematic JSON formats, because it "
+"requires the serializer/deserializer to take an extra parameter (the store "
+"directory)."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:13
+msgid ""
+"We ultimately want to rectify this issue with all JSON formats to the extent "
+"allowed by our stability promises. To start with, we are changing the JSON "
+"format for derivations because the `nix derivation` commands are — in "
+"addition to being formally unstable — less widely used than other unstable "
+"commands."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:15
+msgid ""
+"See the documentation on the [JSON format for derivations](../protocols/json/"
+"derivation/index.md) for further details."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:17
+msgid ""
+"C API: `nix_get_attr_name_byidx`, `nix_get_attr_byidx` take a `nix_value *` "
+"instead of `const nix_value *` [\\#13987](https://github.com/NixOS/nix/pull/"
+"13987)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:19
+msgid ""
+"In order to accommodate a more optimized internal representation of "
+"attribute set merges these functions require a mutable `nix_value *` that "
+"might be modified on access. This does _not_ break the ABI of these "
+"functions."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:22
+msgid "New features"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:24
+msgid ""
+"C API: Add lazy attribute and list item accessors [\\#14030](https://"
+"github.com/NixOS/nix/pull/14030)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:26
+msgid ""
+"The C API now includes lazy accessor functions for retrieving values from "
+"lists and attribute sets without forcing evaluation:"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:28
+msgid ""
+"`nix_get_list_byidx_lazy()` - Get a list element without forcing its "
+"evaluation"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:29
+msgid ""
+"`nix_get_attr_byname_lazy()` - Get an attribute value by name without "
+"forcing evaluation"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:30
+msgid ""
+"`nix_get_attr_byidx_lazy()` - Get an attribute by index without forcing "
+"evaluation"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:32
+msgid ""
+"These functions are useful when forwarding unevaluated sub-values to other "
+"lists, attribute sets, or function calls. They allow more efficient handling "
+"of Nix values by deferring evaluation until actually needed."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:34
+msgid ""
+"Additionally, bounds checking has been improved for all `_byidx` functions "
+"to properly validate indices before access, preventing potential out-of-"
+"bounds errors."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:36
+msgid ""
+"The documentation for `NIX_ERR_KEY` error handling has also been clarified "
+"to specify when this error code is returned."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:38
+msgid "HTTP binary caches now support transparent compression for metadata"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:40
+msgid ""
+"HTTP binary cache stores can now compress `.narinfo`, `.ls`, and build log "
+"files before uploading them, reducing bandwidth usage and storage "
+"requirements. The compression is applied transparently using the `Content-"
+"Encoding` header, allowing compatible clients to automatically decompress "
+"the files."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:44
+msgid "Three new configuration options control this behavior:"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:45
+msgid "`narinfo-compression`: Compression method for `.narinfo` files"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:46
+msgid "`ls-compression`: Compression method for `.ls` files"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:47
+msgid ""
+"`log-compression`: Compression method for build logs in `log/` directory"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:49
+msgid "Example usage:"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:50
+msgid ""
+"```\n"
+"nix copy --to 'http://cache.example.com?narinfo-compression=gzip&ls-"
+"compression=gzip' /nix/store/...\n"
+"nix store copy-log --to 'http://cache.example.com?log-compression=br' /nix/"
+"store/...\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:55
+msgid ""
+"Temporary build directories no longer include derivation names [\\#13839]"
+"(https://github.com/NixOS/nix/pull/13839)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:57
+msgid ""
+"Temporary build directories created during derivation builds no longer "
+"include the derivation name in their path to avoid build failures when the "
+"derivation name is too long. This change ensures predictable prefix lengths "
+"for build directories under `/nix/var/nix/builds`."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:59
+msgid ""
+"External derivation builders [\\#14145](https://github.com/NixOS/nix/pull/"
+"14145)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:61
+msgid ""
+"These are helper programs that Nix calls to perform derivations for "
+"specified system types, e.g. by using QEMU to emulate a different type of "
+"platform. For more information, see the [`external-builders` setting](../"
+"command-ref/conf-file.md#conf-external-builders)."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:63
+msgid "This is currently an experimental feature."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:65
+msgid "Performance improvements"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:67
+msgid ""
+"Optimize memory usage of attribute set merges [\\#13987](https://github.com/"
+"NixOS/nix/pull/13987)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:69
+msgid ""
+"[Attribute set update operations](../language/operators.md#update) have been "
+"optimized to reduce reallocations in cases when the second operand is small."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:72
+msgid ""
+"For typical evaluations of nixpkgs this optimization leads to ~20% less "
+"memory allocated in total without significantly affecting evaluation "
+"performance."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:75
+msgid ""
+"See [eval-attrset-update-layer-rhs-threshold](../command-ref/conf-"
+"file.md#conf-eval-attrset-update-layer-rhs-threshold)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:77
+msgid ""
+"Substituted flake inputs are no longer re-copied to the store [\\#14041]"
+"(https://github.com/NixOS/nix/pull/14041)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:79
+msgid ""
+"Since 2.25, Nix would fail to store a cache entry for substituted flake "
+"inputs, which in turn would cause them to be re-copied to the store on "
+"initial evaluation. Caching these inputs results in a near doubling of "
+"performance in some cases — especially on I/O-bound machines and when using "
+"commands that fetch many inputs, like `nix flake [archive|prefetch-inputs]`."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:81
+msgid ""
+"`nix flake check` now skips derivations that can be substituted [\\#13574]"
+"(https://github.com/NixOS/nix/pull/13574)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:83
+msgid ""
+"Previously, `nix flake check` would evaluate and build/substitute all "
+"derivations. Now, it will skip downloading derivations that can be "
+"substituted. This can drastically decrease the time invocations take in "
+"environments where checks may already be cached (like in CI)."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:88
+msgid "`fetchTarball` and `fetchurl` now correctly substitute (#14138)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:90
+msgid ""
+"At some point we stopped substituting calls to `fetchTarball` and `fetchurl` "
+"with a set `narHash` to avoid incorrectly substituting things in "
+"`fetchTree`, even though it would be safe to substitute when calling the "
+"legacy `fetch{Tarball,url}`. This fixes that regression where it is safe."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:91
+msgid ""
+"Started moving AST allocations into a bump allocator [\\#14088](https://"
+"github.com/NixOS/nix/issues/14088)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:93
+msgid ""
+"This leaves smaller, immutable structures in the AST. So far this saves "
+"about 2% memory on a NixOS config evaluation."
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:94
+msgid "Contributors"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:96
+msgid "This release was made possible by the following 32 contributors:"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:98
+msgid "Farid Zakaria [**(@fzakaria)**](https://github.com/fzakaria)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:99
+msgid "dram [**(@dramforever)**](https://github.com/dramforever)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:100
+msgid ""
+"Ephraim Siegfried [**(@EphraimSiegfried)**](https://github.com/"
+"EphraimSiegfried)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:101
+msgid "Robert Hensing [**(@roberth)**](https://github.com/roberth)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:102
+msgid "Taeer Bar-Yam [**(@Radvendii)**](https://github.com/Radvendii)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:103
+msgid "Emily [**(@emilazy)**](https://github.com/emilazy)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:104
+msgid "Jens Petersen [**(@juhp)**](https://github.com/juhp)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:105
+msgid "Bernardo Meurer [**(@lovesegfault)**](https://github.com/lovesegfault)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:106
+msgid "Jörg Thalheim [**(@Mic92)**](https://github.com/Mic92)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:107
+msgid ""
+"Leandro Emmanuel Reina Kiperman [**(@kip93)**](https://github.com/kip93)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:108
+msgid "Marie [**(@NyCodeGHG)**](https://github.com/NyCodeGHG)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:109
+msgid "Ethan Evans [**(@ethanavatar)**](https://github.com/ethanavatar)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:110
+msgid "Yaroslav Bolyukin [**(@CertainLach)**](https://github.com/CertainLach)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:111
+msgid "Matej Urbas [**(@urbas)**](https://github.com/urbas)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:112
+msgid "Jami Kettunen [**(@JamiKettunen)**](https://github.com/JamiKettunen)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:113
+msgid "Clayton [**(@netadr)**](https://github.com/netadr)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:114
+msgid "Grégory Marti [**(@gmarti)**](https://github.com/gmarti)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:115
+msgid "Eelco Dolstra [**(@edolstra)**](https://github.com/edolstra)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:116
+msgid "rszyma [**(@rszyma)**](https://github.com/rszyma)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:117
+msgid "Philip Wilk [**(@philipwilk)**](https://github.com/philipwilk)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:118
+msgid "John Ericson [**(@Ericson2314)**](https://github.com/Ericson2314)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:119
+msgid "Tom Westerhout [**(@twesterhout)**](https://github.com/twesterhout)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:120
+msgid ""
+"Tristan Ross [**(@RossComputerGuy)**](https://github.com/RossComputerGuy)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:121
+msgid "Sergei Zimmerman [**(@xokdvium)**](https://github.com/xokdvium)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:122
+msgid "Jean-François Roche [**(@jfroche)**](https://github.com/jfroche)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:123
+msgid "Seth Flynn [**(@getchoo)**](https://github.com/getchoo)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:124
+msgid "éclairevoyant [**(@eclairevoyant)**](https://github.com/eclairevoyant)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:125
+msgid "Glen Huang [**(@hgl)**](https://github.com/hgl)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:126
+msgid "osman - オスマン [**(@osbm)**](https://github.com/osbm)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:127
+msgid "David McFarland [**(@corngood)**](https://github.com/corngood)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:128
+msgid "Cole Helbling [**(@cole-h)**](https://github.com/cole-h)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:129
+msgid "Sinan Mohd [**(@sinanmohd)**](https://github.com/sinanmohd)"
+msgstr ""
+
+#: source/release-notes/rl-2.32.md:130
+msgid "Philipp Otterbein"
+msgstr ""

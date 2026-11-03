@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/files/default-nix-expression.md:1
+msgid "Default Nix expression"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:3
+msgid ""
+"The source for the [Nix expressions](../../glossary.md#gloss-nix-expression) "
+"used by [`nix-env`](../../command-ref/nix-env.md) by default:"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:5
+msgid "`~/.nix-defexpr`"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:6
+msgid ""
+"`$XDG_STATE_HOME/nix/defexpr` if [`use-xdg-base-directories`](../../command-"
+"ref/conf-file.md#conf-use-xdg-base-directories) is set to `true`."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:8
+msgid "It is loaded as follows:"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:10
+msgid "If the default expression is a file, it is loaded as a Nix expression."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:11
+msgid ""
+"If the default expression is a directory containing a `default.nix` file, "
+"that `default.nix` file is loaded as a Nix expression."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:12
+msgid ""
+"If the default expression is a directory without a `default.nix` file, then "
+"its contents (both files and subdirectories) are loaded as Nix expressions. "
+"The expressions are combined into a single attribute set, each expression "
+"under an attribute with the same name as the original file or subdirectory. "
+"Subdirectories without a `default.nix` file are traversed recursively in "
+"search of more Nix expressions, but the names of these intermediate "
+"directories are not added to the attribute paths of the default Nix "
+"expression."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:16
+msgid "Then, the resulting expression is interpreted like this:"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:18
+msgid ""
+"If the expression is an attribute set, it is used as the default Nix "
+"expression."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:19
+msgid ""
+"If the expression is a function, an empty set is passed as argument and the "
+"return value is used as the default Nix expression."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:21
+msgid "**Example**"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:23
+msgid ""
+"If the default expression contains two files, `foo.nix` and `bar.nix`, then "
+"the default Nix expression will be equivalent to"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:32
+msgid ""
+"The file [`manifest.nix`](../../command-ref/files/manifest.nix.md) is always "
+"ignored."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:34
+msgid ""
+"The command [`nix-channel`](../../command-ref/nix-channel.md) places a "
+"symlink to the current user's [channels](../../command-ref/files/"
+"channels.md) in this directory, the [user channel link](#user-channel-link). "
+"This makes all subscribed channels available as attributes in the default "
+"expression."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:37
+msgid "User channel link"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:39
+msgid ""
+"A symlink that ensures that [`nix-env`](../../command-ref/nix-env.md) can "
+"find the current user's [channels](../../command-ref/files/channels.md):"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:41
+msgid "`~/.nix-defexpr/channels`"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:42
+msgid ""
+"`$XDG_STATE_HOME/nix/defexpr/channels` if [`use-xdg-base-directories`](../../"
+"command-ref/conf-file.md#conf-use-xdg-base-directories) is set to `true`."
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:44
+msgid "This symlink points to:"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:46
+msgid "`$XDG_STATE_HOME/nix/profiles/channels` for regular users"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:47
+msgid "`$NIX_STATE_DIR/profiles/per-user/root/channels` for `root`"
+msgstr ""
+
+#: source/command-ref/files/default-nix-expression.md:49
+msgid ""
+"In a multi-user installation, you may also have `~/.nix-defexpr/"
+"channels_root`, which links to the channels of the root user."
+msgstr ""
