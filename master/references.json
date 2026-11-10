@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-10-20 08:25:44 +0000",
-      "hash" : "f3f184834895f45030d69f20a311b2eac99ebf1d",
-      "title" : "PR template: Replace \"Context\" with \"Implementation\" (#16647)"
+      "date" : "2026-11-09 14:08:13 +0000",
+      "hash" : "16fa212a96192479593620e9b928733aaf7a2a6d",
+      "title" : "packaging/scripted-installer: Only chown pre-existing files when needed (#16785)"
     }
   },
   "type" : "branch",
