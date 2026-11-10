@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/language/identifiers.md:1
+msgid "Identifiers"
+msgstr ""
+
+#: source/language/identifiers.md:3
+msgid ""
+"An _identifier_ is an [ASCII](https://en.wikipedia.org/wiki/ASCII) character "
+"sequence that:"
+msgstr ""
+
+#: source/language/identifiers.md:4
+msgid "Starts with a letter (`a-z`, `A-Z`) or underscore (`_`)"
+msgstr ""
+
+#: source/language/identifiers.md:5
+msgid "Can contain any number of:"
+msgstr ""
+
+#: source/language/identifiers.md:6
+msgid "Letters (`a-z`, `A-Z`)"
+msgstr ""
+
+#: source/language/identifiers.md:7
+msgid "Digits (`0-9`)"
+msgstr ""
+
+#: source/language/identifiers.md:8
+msgid "Underscores (`_`)"
+msgstr ""
+
+#: source/language/identifiers.md:9
+msgid "Apostrophes (`'`)"
+msgstr ""
+
+#: source/language/identifiers.md:10
+msgid "Hyphens (`-`)"
+msgstr ""
+
+#: source/language/identifiers.md:11
+msgid "Is not one of the [keywords](#keywords)"
+msgstr ""
+
+#: source/language/identifiers.md:13 source/language/identifiers.md:21
+msgid "**Syntax**"
+msgstr ""
+
+#: source/language/identifiers.md:15
+msgid "_identifier_ ~ `[A-Za-z_][A-Za-z0-9_'-]*`"
+msgstr ""
+
+#: source/language/identifiers.md:17
+msgid "Names"
+msgstr ""
+
+#: source/language/identifiers.md:19
+msgid ""
+"A _name_ can be written as an [identifier](#identifiers) or a [string "
+"literal](./string-literals.md)."
+msgstr ""
+
+#: source/language/identifiers.md:23
+msgid "_name_ → _identifier_ | _string_"
+msgstr ""
+
+#: source/language/identifiers.md:25
+msgid ""
+"Names are used in [attribute sets](./syntax.md#attrs-literal), [`let` "
+"bindings](./syntax.md#let-expressions), and [`inherit`](./"
+"syntax.md#inheriting-attributes). Two names are the same if they represent "
+"the same sequence of characters, regardless of whether they are written as "
+"identifiers or strings."
+msgstr ""
+
+#: source/language/identifiers.md:28
+msgid "Keywords"
+msgstr ""
+
+#: source/language/identifiers.md:30
+msgid ""
+"These keywords are reserved and cannot be used as [identifiers]"
+"(#identifiers):"
+msgstr ""
+
+#: source/language/identifiers.md:32
+msgid "[`assert`](./syntax.md#assertions)"
+msgstr ""
+
+#: source/language/identifiers.md:33
+msgid "[`else`](./syntax.md#conditionals)"
+msgstr ""
+
+#: source/language/identifiers.md:34
+msgid "[`if`](./syntax.md#conditionals)"
+msgstr ""
+
+#: source/language/identifiers.md:35
+msgid "[`in`](./syntax.md#let-expressions)"
+msgstr ""
+
+#: source/language/identifiers.md:36
+msgid "[`inherit`](./syntax.md#inheriting-attributes)"
+msgstr ""
+
+#: source/language/identifiers.md:37
+msgid "[`let`](./syntax.md#let-expressions)"
+msgstr ""
+
+#: source/language/identifiers.md:38
+msgid "[`or`](./operators.md#attribute-selection) (see note)"
+msgstr ""
+
+#: source/language/identifiers.md:39
+msgid "[`rec`](./syntax.md#recursive-sets)"
+msgstr ""
+
+#: source/language/identifiers.md:40
+msgid "[`then`](./syntax.md#conditionals)"
+msgstr ""
+
+#: source/language/identifiers.md:41
+msgid "[`with`](./syntax.md#with-expressions)"
+msgstr ""
+
+#: source/language/identifiers.md:46
+msgid "**Note**"
+msgstr ""
+
+#: source/language/identifiers.md:48
+msgid ""
+"The Nix language evaluator currently allows `or` to be used as a name in "
+"some contexts, for backwards compatibility reasons. Users are advised not to "
+"rely on this."
+msgstr ""
+
+#: source/language/identifiers.md:51
+msgid ""
+"There are long-standing issues with how `or` is parsed as a name, which "
+"can't be resolved without making a breaking change to the language."
+msgstr ""

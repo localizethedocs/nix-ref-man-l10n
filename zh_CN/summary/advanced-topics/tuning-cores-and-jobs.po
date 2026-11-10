@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/advanced-topics/cores-vs-jobs.md:1
+msgid "Tuning Cores and Jobs"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:3
+msgid ""
+"Nix has two relevant settings with regards to how your CPU cores will be "
+"utilized: `cores` and `max-jobs`. This chapter will talk about what they "
+"are, how they interact, and their configuration trade-offs."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:7
+msgid ""
+"`max-jobs`  \n"
+"Dictates how many separate derivations will be built at the same time. If "
+"you set this to zero, the local machine will do no builds.  Nix will still "
+"substitute from binary caches, and build remotely if remote builders are "
+"configured."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:13
+msgid ""
+"`cores`  \n"
+"Suggests how many cores each derivation should use. Similar to `make -j`."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:17
+msgid ""
+"The `cores` setting determines the value of `NIX_BUILD_CORES`. "
+"`NIX_BUILD_CORES` is equal to `cores`, unless `cores` equals `0`, in which "
+"case `NIX_BUILD_CORES` will be the total number of cores in the system."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:22
+msgid ""
+"The maximum number of consumed cores is a simple multiplication, `max-jobs` "
+"\\* `NIX_BUILD_CORES`."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:25
+msgid ""
+"The balance on how to set these two independent variables depends upon each "
+"builder's workload and hardware. Here are a few example scenarios on a "
+"machine with 24 cores:"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:29
+msgid "`max-jobs`"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:29
+msgid "`cores`"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:29
+msgid "`NIX_BUILD_CORES`"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:29
+msgid "Maximum Processes"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:29
+msgid "Result"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:31
+#: source/advanced-topics/cores-vs-jobs.md:34
+msgid "1"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:31
+#: source/advanced-topics/cores-vs-jobs.md:32
+#: source/advanced-topics/cores-vs-jobs.md:34
+#: source/advanced-topics/cores-vs-jobs.md:35
+msgid "24"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:31
+msgid ""
+"One derivation will be built at a time, each one can use 24 cores. Undersold "
+"if a job can’t use 24 cores."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:32
+msgid "4"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:32
+#: source/advanced-topics/cores-vs-jobs.md:33
+msgid "6"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:32
+msgid "Four derivations will be built at once, each given access to six cores."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:33
+msgid "12"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:33
+msgid "72"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:33
+msgid ""
+"12 derivations will be built at once, each given access to six cores. This "
+"configuration is over-sold. If all 12 derivations being built simultaneously "
+"try to use all six cores, the machine's performance will be degraded due to "
+"extensive context switching between the 12 builds."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:34
+msgid ""
+"24 derivations can build at the same time, each using a single core. Never "
+"oversold, but derivations which require many cores will be very slow to "
+"compile."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:35
+msgid "0"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:35
+msgid "576"
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:35
+msgid ""
+"24 derivations can build at the same time, each using all the available "
+"cores of the machine. Very likely to be oversold, and very likely to suffer "
+"context switches."
+msgstr ""
+
+#: source/advanced-topics/cores-vs-jobs.md:37
+msgid ""
+"It is up to the derivations' build script to respect host's requested cores-"
+"per-build by following the value of the `NIX_BUILD_CORES` environment "
+"variable."
+msgstr ""

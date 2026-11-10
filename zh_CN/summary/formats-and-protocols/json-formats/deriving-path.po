@@ -1,0 +1,281 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/deriving-path.md:1
+#: source/protocols/json/deriving-path.md:54
+msgid "Deriving Path"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:3
+msgid "[1. Property `Constant`](#oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:4
+msgid "[2. Property `Output`](#oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:5
+msgid "[2.1. Property `drvPath`](#oneOf_i1_drvPath)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:6
+msgid "[2.2. Property `output`](#oneOf_i1_output)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:8
+#: source/protocols/json/deriving-path.md:59
+msgid "**Title:** Deriving Path"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:12
+#: source/protocols/json/deriving-path.md:29
+#: source/protocols/json/deriving-path.md:46
+#: source/protocols/json/deriving-path.md:63
+#: source/protocols/json/deriving-path.md:74
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:12
+#: source/protocols/json/deriving-path.md:63
+msgid "`combining`"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:13
+#: source/protocols/json/deriving-path.md:30
+#: source/protocols/json/deriving-path.md:47
+#: source/protocols/json/deriving-path.md:64
+#: source/protocols/json/deriving-path.md:75
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:13
+#: source/protocols/json/deriving-path.md:30
+#: source/protocols/json/deriving-path.md:47
+#: source/protocols/json/deriving-path.md:54
+#: source/protocols/json/deriving-path.md:55
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:14
+#: source/protocols/json/deriving-path.md:48
+#: source/protocols/json/deriving-path.md:65
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:14
+#: source/protocols/json/deriving-path.md:65
+msgid "Any type allowed"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:16
+msgid ""
+"**Description:** This schema describes the JSON representation of Nix's "
+"[Deriving Path](../../store/derivation/index.md#deriving-path)."
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:18
+msgid "One of(Option)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:20
+msgid "[Constant](#oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:21
+msgid "[Output](#oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:23
+msgid "<a name=\"oneOf_i0\"></a>1. Property `Constant`"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:25
+msgid "**Title:** Constant"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:29
+#: source/protocols/json/deriving-path.md:74
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:31
+msgid "**Defined in**"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:31
+msgid "store-path-v1.yaml"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:33
+msgid ""
+"**Description:** See [Constant](../../store/derivation/index.md#deriving-"
+"path-constant) deriving path."
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:35
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:37
+msgid "**Min length**"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:37
+msgid "34"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:38
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:38
+msgid ""
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+$` [Test](https://regex101.com/?"
+"regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%24)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:40
+msgid "<a name=\"oneOf_i1\"></a>2. Property `Output`"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:42
+msgid "**Title:** Output"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:46
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:48
+msgid "Not allowed"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:50
+msgid ""
+"**Description:** See [Output](../../store/derivation/index.md#deriving-path-"
+"output) deriving path."
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:52
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:52
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:52
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:52
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:54
+msgid "+ [drvPath](#oneOf_i1_drvPath)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:54
+msgid "object"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:55
+msgid "+ [output](#oneOf_i1_output)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:55
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:55
+msgid ""
+"The name of an output produced by that derivation (e.g. \"out\", \"doc\", "
+"etc.).<br />"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:57
+msgid "<a name=\"oneOf_i1_drvPath\"></a>2.1. Property `drvPath`"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:64
+#: source/protocols/json/deriving-path.md:75
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:66
+msgid "**Same definition as**"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:66
+msgid "[Deriving Path](#root)"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:68
+msgid ""
+"**Description:** A deriving path to a [Derivation](../../store/derivation/"
+"index.md#store-derivation), whose output is being referred to."
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:70
+msgid "<a name=\"oneOf_i1_output\"></a>2.2. Property `output`"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:77
+msgid ""
+"**Description:** The name of an output produced by that derivation (e.g. "
+"\"out\", \"doc\", etc.)."
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:82
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:84
+msgid "Constant"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:87
+#: source/protocols/json/deriving-path.md:95
+#: source/protocols/json/deriving-path.md:106
+msgid "\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv\""
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:91
+msgid "Output of static derivation"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:95
+#: source/protocols/json/deriving-path.md:105
+#: source/protocols/json/deriving-path.md:106
+msgid "\"drvPath\""
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:96
+#: source/protocols/json/deriving-path.md:107
+#: source/protocols/json/deriving-path.md:109
+msgid "\"output\""
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:96
+#: source/protocols/json/deriving-path.md:107
+msgid "\"bar\""
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:101
+msgid "Output of dynamic derivation"
+msgstr ""
+
+#: source/protocols/json/deriving-path.md:109
+msgid "\"baz\""
+msgstr ""

@@ -1,0 +1,358 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:1
+msgid "Experimental SSH Store with filesystem mounted"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:3
+msgid "**Warning**"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:5
+msgid ""
+"This store is part of an [experimental feature](../../development/"
+"experimental-features.md)."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:8
+msgid ""
+"To use this store, make sure the [`mounted-ssh-store` experimental feature]"
+"(../../development/experimental-features.md#xp-feature-mounted-ssh-store) is "
+"enabled. For example, include the following in [`nix.conf`](../../command-"
+"ref/conf-file.md):"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:17
+msgid "**Store URL format**: `mounted-ssh-ng://[username@]hostname`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:19
+msgid ""
+"Experimental store type that allows full access to a Nix store on a remote "
+"machine, and additionally requires that store be mounted in the local file "
+"system."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:22
+msgid ""
+"The mounting of that store is not managed by Nix, and must by managed "
+"manually. It could be accomplished with SSHFS or NFS, for example."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:25
+msgid ""
+"The local file system is used to optimize certain operations. For example, "
+"rather than serializing Nix archives and sending over the Nix channel, we "
+"can directly access the file system data via the mount-point."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:29
+msgid ""
+"The local file system is also used to make certain operations possible that "
+"wouldn't otherwise be. For example, persistent GC roots can be created if "
+"they reside on the same file system as the remote store: the remote side "
+"will create the symlinks necessary to avoid race conditions."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:33
+msgid "Settings"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:35
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-base64-ssh-"
+"public-host-key\">[`base64-ssh-public-host-key`](#store-experimental-ssh-"
+"store-with-filesystem-mounted-base64-ssh-public-host-key)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:37
+msgid "The public host key of the remote machine."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:39
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:100
+msgid "**Default:** _empty_"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:41
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"compress\">[`compress`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-compress)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:43
+msgid "Whether to enable SSH compression."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:45
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:147
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:153
+msgid "**Default:** `false`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:47
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-log\">[`log`]"
+"(#store-experimental-ssh-store-with-filesystem-mounted-log)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:49
+msgid "Directory where Nix stores log files."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:51
+msgid ""
+"Defaults to [`NIX_LOG_DIR`](../../command-ref/env-common.md#env-NIX_LOG_DIR) "
+"when [`root`](#store-experimental-ssh-store-with-filesystem-mounted-root) is "
+"not set."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:53
+msgid "**Default:** `/nix/var/log/nix`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:55
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-max-"
+"connection-age\">[`max-connection-age`](#store-experimental-ssh-store-with-"
+"filesystem-mounted-max-connection-age)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:57
+msgid "Maximum age of a connection before it is closed."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:59
+msgid "**Default:** `4294967295`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:61
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-max-"
+"connections\">[`max-connections`](#store-experimental-ssh-store-with-"
+"filesystem-mounted-max-connections)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:63
+msgid "Maximum number of concurrent connections to the Nix daemon."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:65
+msgid "**Default:** `1`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:67
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-path-info-"
+"cache-size\">[`path-info-cache-size`](#store-experimental-ssh-store-with-"
+"filesystem-mounted-path-info-cache-size)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:69
+msgid "Size of the in-memory store path metadata cache."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:71
+msgid "**Default:** `65536`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:73
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"priority\">[`priority`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-priority)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:75
+msgid ""
+"Priority of this store when used as a [substituter](../../command-ref/conf-"
+"file.md#conf-substituters). A lower value means a higher priority."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:78
+msgid "**Default:** `0`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:80
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"real\">[`real`](#store-experimental-ssh-store-with-filesystem-mounted-real)</"
+"span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:82
+msgid "Physical path of the Nix store."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:84
+msgid ""
+"Defaults to [`store`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"store) when [`root`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"root) is not set."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:86
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:130
+msgid "**Default:** `/nix/store`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:88
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-remote-"
+"program\">[`remote-program`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-remote-program)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:90
+msgid "Path to the `nix-daemon` executable on the remote machine."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:92
+msgid "**Default:** `nix-daemon`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:94
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-remote-"
+"store\">[`remote-store`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-remote-store)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:96
+msgid ""
+"[Store URL](../../store/types/index.md#store-url-format) to be used on the "
+"remote machine. The default is `auto` (i.e. use the Nix daemon or `/nix/"
+"store` directly)."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:102
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"root\">[`root`](#store-experimental-ssh-store-with-filesystem-mounted-root)</"
+"span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:104
+msgid "Directory prefixed to all other paths."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:106
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:112
+msgid "**Default:** \\``"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:108
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-ssh-"
+"key\">[`ssh-key`](#store-experimental-ssh-store-with-filesystem-mounted-ssh-"
+"key)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:110
+msgid "Path to the SSH private key used to authenticate to the remote machine."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:114
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"state\">[`state`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"state)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:116
+msgid "Directory where Nix stores state."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:118
+msgid ""
+"Defaults to [`NIX_STATE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STATE_DIR) when [`root`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-root) is not set."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:120
+msgid "**Default:** `/dummy`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:122
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"store\">[`store`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"store)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:124
+msgid "Logical location of the Nix store, usually `/nix/store`."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:126
+msgid ""
+"Defaults to [`NIX_STORE_DIR`](../../command-ref/env-common.md#env-"
+"NIX_STORE_DIR) if unset."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:128
+msgid ""
+"Note that you can only copy store paths between stores if they have the same "
+"`store` setting."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:132
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-system-"
+"features\">[`system-features`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-system-features)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:134
+msgid ""
+"Optional [system features](../../command-ref/conf-file.md#conf-system-"
+"features) available on the system this store uses to build derivations."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:136
+msgid "Example: `\"kvm\"`"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:138
+msgid "**Default:** _machine-specific_"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:140
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-"
+"trusted\">[`trusted`](#store-experimental-ssh-store-with-filesystem-mounted-"
+"trusted)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:142
+msgid ""
+"Whether paths from this store can be used as substitutes even if they are "
+"not signed by a key listed in the [`trusted-public-keys`](../../command-ref/"
+"conf-file.md#conf-trusted-public-keys) setting."
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:149
+msgid ""
+"<span id=\"store-experimental-ssh-store-with-filesystem-mounted-want-mass-"
+"query\">[`want-mass-query`](#store-experimental-ssh-store-with-filesystem-"
+"mounted-want-mass-query)</span>"
+msgstr ""
+
+#: source/store/types/experimental-ssh-store-with-filesystem-mounted.md:151
+msgid ""
+"Whether this store can be queried efficiently for path validity when used as "
+"a [substituter](../../command-ref/conf-file.md#conf-substituters)."
+msgstr ""
