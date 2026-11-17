@@ -1,0 +1,2448 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/store-object-info.md:1
+msgid "Store Object Info v3"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:3
+msgid "[1. Property `Store Object Info`](#oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:4
+msgid "[1.1. Property `version`](#oneOf_i0_version)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:5
+msgid "[1.2. Property `path`](#oneOf_i0_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:6
+msgid "[1.3. Property `narHash`](#oneOf_i0_narHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:7
+msgid "[1.4. Property `narSize`](#oneOf_i0_narSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:8
+msgid "[1.5. Property `references`](#oneOf_i0_references)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:9
+msgid "[1.5.1. Store Path](#oneOf_i0_references_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:10
+msgid "[1.6. Property `ca`](#oneOf_i0_ca)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:11
+msgid "[1.6.1. Property `item 0`](#oneOf_i0_ca_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:12
+msgid "[1.6.2. Property `Content Address`](#oneOf_i0_ca_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:13
+msgid "[1.6.2.1. Property `method`](#oneOf_i0_ca_oneOf_i1_method)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:14
+msgid "[1.6.2.2. Property `hash`](#oneOf_i0_ca_oneOf_i1_hash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:15
+msgid "[1.7. Property `storeDir`](#oneOf_i0_storeDir)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:16
+msgid "[2. Property `Store Object Info with Impure Fields`](#oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:17
+msgid "[2.1. Property `version`](#oneOf_i1_version)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:18
+msgid "[2.2. Property `path`](#oneOf_i1_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:19
+msgid "[2.3. Property `narHash`](#oneOf_i1_narHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:20
+msgid "[2.4. Property `narSize`](#oneOf_i1_narSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:21
+msgid "[2.5. Property `references`](#oneOf_i1_references)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:22
+msgid "[2.5.1. Store Path](#oneOf_i1_references_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:23
+msgid "[2.6. Property `ca`](#oneOf_i1_ca)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:24
+msgid "[2.6.1. Property `item 0`](#oneOf_i1_ca_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:25
+msgid "[2.6.2. Property `Content Address`](#oneOf_i1_ca_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:26
+msgid "[2.7. Property `storeDir`](#oneOf_i1_storeDir)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:27
+msgid "[2.8. Property `deriver`](#oneOf_i1_deriver)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:28
+msgid "[2.8.1. Property `Store Path`](#oneOf_i1_deriver_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:29
+msgid "[2.8.2. Property `item 1`](#oneOf_i1_deriver_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:30
+msgid "[2.9. Property `registrationTime`](#oneOf_i1_registrationTime)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:31
+msgid "[2.10. Property `ultimate`](#oneOf_i1_ultimate)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:32
+msgid "[2.11. Property `signatures`](#oneOf_i1_signatures)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:33
+msgid "[2.11.1. Signature](#oneOf_i1_signatures_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:34
+msgid "[2.11.1.1. Property `keyName`](#oneOf_i1_signatures_items_keyName)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:35
+msgid "[2.11.1.2. Property `sig`](#oneOf_i1_signatures_items_sig)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:36
+msgid "[2.12. Property `closureSize`](#oneOf_i1_closureSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:37
+msgid ""
+"[3. Property `Store Object Info with Impure fields and NAR Info`](#oneOf_i2)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:38
+msgid "[3.1. Property `version`](#oneOf_i2_version)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:39
+msgid "[3.2. Property `path`](#oneOf_i2_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:40
+msgid "[3.3. Property `narHash`](#oneOf_i2_narHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:41
+msgid "[3.4. Property `narSize`](#oneOf_i2_narSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:42
+msgid "[3.5. Property `references`](#oneOf_i2_references)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:43
+msgid "[3.6. Property `ca`](#oneOf_i2_ca)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:44
+msgid "[3.7. Property `storeDir`](#oneOf_i2_storeDir)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:45
+msgid "[3.8. Property `deriver`](#oneOf_i2_deriver)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:46
+msgid "[3.8.1. Property `Store Path`](#oneOf_i2_deriver_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:47
+msgid "[3.8.2. Property `item 1`](#oneOf_i2_deriver_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:48
+msgid "[3.9. Property `registrationTime`](#oneOf_i2_registrationTime)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:49
+msgid "[3.10. Property `ultimate`](#oneOf_i2_ultimate)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:50
+msgid "[3.11. Property `signatures`](#oneOf_i2_signatures)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:51
+msgid "[3.11.1. Signature](#oneOf_i2_signatures_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:52
+msgid "[3.12. Property `closureSize`](#oneOf_i2_closureSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:53
+msgid "[3.13. Property `url`](#oneOf_i2_url)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:54
+msgid "[3.14. Property `compression`](#oneOf_i2_compression)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:55
+msgid "[3.15. Property `downloadHash`](#oneOf_i2_downloadHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:56
+msgid "[3.16. Property `downloadSize`](#oneOf_i2_downloadSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:57
+msgid "[3.17. Property `closureDownloadSize`](#oneOf_i2_closureDownloadSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:59
+msgid "**Title:** Store Object Info v3"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:63
+#: source/protocols/json/store-object-info.md:103
+#: source/protocols/json/store-object-info.md:127
+#: source/protocols/json/store-object-info.md:150
+#: source/protocols/json/store-object-info.md:169
+#: source/protocols/json/store-object-info.md:195
+#: source/protocols/json/store-object-info.md:211
+#: source/protocols/json/store-object-info.md:234
+#: source/protocols/json/store-object-info.md:269
+#: source/protocols/json/store-object-info.md:286
+#: source/protocols/json/store-object-info.md:297
+#: source/protocols/json/store-object-info.md:334
+#: source/protocols/json/store-object-info.md:359
+#: source/protocols/json/store-object-info.md:388
+#: source/protocols/json/store-object-info.md:399
+#: source/protocols/json/store-object-info.md:428
+#: source/protocols/json/store-object-info.md:452
+#: source/protocols/json/store-object-info.md:471
+#: source/protocols/json/store-object-info.md:497
+#: source/protocols/json/store-object-info.md:514
+#: source/protocols/json/store-object-info.md:538
+#: source/protocols/json/store-object-info.md:573
+#: source/protocols/json/store-object-info.md:591
+#: source/protocols/json/store-object-info.md:602
+#: source/protocols/json/store-object-info.md:634
+#: source/protocols/json/store-object-info.md:646
+#: source/protocols/json/store-object-info.md:666
+#: source/protocols/json/store-object-info.md:699
+#: source/protocols/json/store-object-info.md:708
+#: source/protocols/json/store-object-info.md:722
+#: source/protocols/json/store-object-info.md:735
+#: source/protocols/json/store-object-info.md:762
+#: source/protocols/json/store-object-info.md:794
+#: source/protocols/json/store-object-info.md:805
+#: source/protocols/json/store-object-info.md:816
+#: source/protocols/json/store-object-info.md:834
+#: source/protocols/json/store-object-info.md:870
+#: source/protocols/json/store-object-info.md:892
+#: source/protocols/json/store-object-info.md:906
+#: source/protocols/json/store-object-info.md:918
+#: source/protocols/json/store-object-info.md:931
+#: source/protocols/json/store-object-info.md:943
+#: source/protocols/json/store-object-info.md:958
+#: source/protocols/json/store-object-info.md:970
+#: source/protocols/json/store-object-info.md:991
+#: source/protocols/json/store-object-info.md:1024
+#: source/protocols/json/store-object-info.md:1033
+#: source/protocols/json/store-object-info.md:1048
+#: source/protocols/json/store-object-info.md:1062
+#: source/protocols/json/store-object-info.md:1090
+#: source/protocols/json/store-object-info.md:1117
+#: source/protocols/json/store-object-info.md:1136
+#: source/protocols/json/store-object-info.md:1149
+#: source/protocols/json/store-object-info.md:1162
+#: source/protocols/json/store-object-info.md:1190
+#: source/protocols/json/store-object-info.md:1207
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:63
+#: source/protocols/json/store-object-info.md:269
+#: source/protocols/json/store-object-info.md:573
+#: source/protocols/json/store-object-info.md:646
+#: source/protocols/json/store-object-info.md:943
+#: source/protocols/json/store-object-info.md:970
+msgid "`combining`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:64
+#: source/protocols/json/store-object-info.md:104
+#: source/protocols/json/store-object-info.md:128
+#: source/protocols/json/store-object-info.md:151
+#: source/protocols/json/store-object-info.md:170
+#: source/protocols/json/store-object-info.md:196
+#: source/protocols/json/store-object-info.md:212
+#: source/protocols/json/store-object-info.md:235
+#: source/protocols/json/store-object-info.md:270
+#: source/protocols/json/store-object-info.md:287
+#: source/protocols/json/store-object-info.md:298
+#: source/protocols/json/store-object-info.md:335
+#: source/protocols/json/store-object-info.md:360
+#: source/protocols/json/store-object-info.md:389
+#: source/protocols/json/store-object-info.md:400
+#: source/protocols/json/store-object-info.md:429
+#: source/protocols/json/store-object-info.md:453
+#: source/protocols/json/store-object-info.md:472
+#: source/protocols/json/store-object-info.md:498
+#: source/protocols/json/store-object-info.md:515
+#: source/protocols/json/store-object-info.md:539
+#: source/protocols/json/store-object-info.md:574
+#: source/protocols/json/store-object-info.md:592
+#: source/protocols/json/store-object-info.md:603
+#: source/protocols/json/store-object-info.md:635
+#: source/protocols/json/store-object-info.md:647
+#: source/protocols/json/store-object-info.md:667
+#: source/protocols/json/store-object-info.md:700
+#: source/protocols/json/store-object-info.md:709
+#: source/protocols/json/store-object-info.md:723
+#: source/protocols/json/store-object-info.md:736
+#: source/protocols/json/store-object-info.md:763
+#: source/protocols/json/store-object-info.md:795
+#: source/protocols/json/store-object-info.md:806
+#: source/protocols/json/store-object-info.md:817
+#: source/protocols/json/store-object-info.md:835
+#: source/protocols/json/store-object-info.md:871
+#: source/protocols/json/store-object-info.md:893
+#: source/protocols/json/store-object-info.md:907
+#: source/protocols/json/store-object-info.md:919
+#: source/protocols/json/store-object-info.md:932
+#: source/protocols/json/store-object-info.md:944
+#: source/protocols/json/store-object-info.md:959
+#: source/protocols/json/store-object-info.md:971
+#: source/protocols/json/store-object-info.md:992
+#: source/protocols/json/store-object-info.md:1025
+#: source/protocols/json/store-object-info.md:1034
+#: source/protocols/json/store-object-info.md:1049
+#: source/protocols/json/store-object-info.md:1063
+#: source/protocols/json/store-object-info.md:1091
+#: source/protocols/json/store-object-info.md:1118
+#: source/protocols/json/store-object-info.md:1137
+#: source/protocols/json/store-object-info.md:1150
+#: source/protocols/json/store-object-info.md:1163
+#: source/protocols/json/store-object-info.md:1191
+#: source/protocols/json/store-object-info.md:1208
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:64
+#: source/protocols/json/store-object-info.md:104
+#: source/protocols/json/store-object-info.md:113
+#: source/protocols/json/store-object-info.md:114
+#: source/protocols/json/store-object-info.md:115
+#: source/protocols/json/store-object-info.md:116
+#: source/protocols/json/store-object-info.md:117
+#: source/protocols/json/store-object-info.md:118
+#: source/protocols/json/store-object-info.md:119
+#: source/protocols/json/store-object-info.md:151
+#: source/protocols/json/store-object-info.md:235
+#: source/protocols/json/store-object-info.md:287
+#: source/protocols/json/store-object-info.md:298
+#: source/protocols/json/store-object-info.md:325
+#: source/protocols/json/store-object-info.md:326
+#: source/protocols/json/store-object-info.md:400
+#: source/protocols/json/store-object-info.md:409
+#: source/protocols/json/store-object-info.md:410
+#: source/protocols/json/store-object-info.md:411
+#: source/protocols/json/store-object-info.md:412
+#: source/protocols/json/store-object-info.md:413
+#: source/protocols/json/store-object-info.md:414
+#: source/protocols/json/store-object-info.md:415
+#: source/protocols/json/store-object-info.md:416
+#: source/protocols/json/store-object-info.md:417
+#: source/protocols/json/store-object-info.md:418
+#: source/protocols/json/store-object-info.md:419
+#: source/protocols/json/store-object-info.md:420
+#: source/protocols/json/store-object-info.md:453
+#: source/protocols/json/store-object-info.md:539
+#: source/protocols/json/store-object-info.md:592
+#: source/protocols/json/store-object-info.md:603
+#: source/protocols/json/store-object-info.md:667
+#: source/protocols/json/store-object-info.md:700
+#: source/protocols/json/store-object-info.md:763
+#: source/protocols/json/store-object-info.md:785
+#: source/protocols/json/store-object-info.md:786
+#: source/protocols/json/store-object-info.md:817
+#: source/protocols/json/store-object-info.md:835
+#: source/protocols/json/store-object-info.md:846
+#: source/protocols/json/store-object-info.md:847
+#: source/protocols/json/store-object-info.md:848
+#: source/protocols/json/store-object-info.md:849
+#: source/protocols/json/store-object-info.md:850
+#: source/protocols/json/store-object-info.md:851
+#: source/protocols/json/store-object-info.md:852
+#: source/protocols/json/store-object-info.md:853
+#: source/protocols/json/store-object-info.md:854
+#: source/protocols/json/store-object-info.md:855
+#: source/protocols/json/store-object-info.md:856
+#: source/protocols/json/store-object-info.md:857
+#: source/protocols/json/store-object-info.md:858
+#: source/protocols/json/store-object-info.md:859
+#: source/protocols/json/store-object-info.md:860
+#: source/protocols/json/store-object-info.md:861
+#: source/protocols/json/store-object-info.md:862
+#: source/protocols/json/store-object-info.md:893
+#: source/protocols/json/store-object-info.md:992
+#: source/protocols/json/store-object-info.md:1025
+#: source/protocols/json/store-object-info.md:1091
+#: source/protocols/json/store-object-info.md:1118
+#: source/protocols/json/store-object-info.md:1208
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:65
+#: source/protocols/json/store-object-info.md:105
+#: source/protocols/json/store-object-info.md:271
+#: source/protocols/json/store-object-info.md:299
+#: source/protocols/json/store-object-info.md:401
+#: source/protocols/json/store-object-info.md:575
+#: source/protocols/json/store-object-info.md:604
+#: source/protocols/json/store-object-info.md:648
+#: source/protocols/json/store-object-info.md:764
+#: source/protocols/json/store-object-info.md:836
+#: source/protocols/json/store-object-info.md:945
+#: source/protocols/json/store-object-info.md:972
+#: source/protocols/json/store-object-info.md:1092
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:65
+#: source/protocols/json/store-object-info.md:271
+#: source/protocols/json/store-object-info.md:575
+#: source/protocols/json/store-object-info.md:648
+#: source/protocols/json/store-object-info.md:764
+#: source/protocols/json/store-object-info.md:945
+#: source/protocols/json/store-object-info.md:972
+#: source/protocols/json/store-object-info.md:1092
+msgid "Any type allowed"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:67
+msgid ""
+"**Description:** Information about a [store object](../../store/store-"
+"object.md)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:69
+msgid ""
+"This schema describes the JSON representation of store object metadata as "
+"returned by commands like [`nix path-info --json`](../../command-ref/new-cli/"
+"nix3-path-info.md)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:71
+#: source/protocols/json/store-object-info.md:242
+#: source/protocols/json/store-object-info.md:546
+#: source/protocols/json/store-object-info.md:674
+#: source/protocols/json/store-object-info.md:771
+#: source/protocols/json/store-object-info.md:999
+#: source/protocols/json/store-object-info.md:1099
+msgid "**Warning**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:73
+#: source/protocols/json/store-object-info.md:244
+#: source/protocols/json/store-object-info.md:548
+#: source/protocols/json/store-object-info.md:676
+#: source/protocols/json/store-object-info.md:773
+#: source/protocols/json/store-object-info.md:1001
+#: source/protocols/json/store-object-info.md:1101
+msgid ""
+"This JSON format is currently [**experimental**](../../development/"
+"experimental-features.md#xp-feature-nix-command) and subject to change."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:77
+msgid "Field Categories"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:79
+msgid "Store object information can come in a few different variations."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:81
+msgid ""
+"Firstly, \"impure\" fields, which contain non-intrinsic information about "
+"the store object, may or may not be included."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:83
+msgid ""
+"Second, binary cache stores have extra non-intrinsic information about the "
+"store objects they contain."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:85
+msgid ""
+"Thirdly, [`nix path-info --json --closure-size`](../../command-ref/new-cli/"
+"nix3-path-info.html#opt-closure-size) can compute some extra information "
+"about not just the single store object in question, but the store object and "
+"its [closure](../../glossary.md#gloss-closure)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:87
+msgid ""
+"The impure and NAR fields are grouped into separate variants below. See "
+"their descriptions for additional information. The closure fields however as "
+"just included as optional fields, to avoid a combinatorial explosion of "
+"variants."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:91
+#: source/protocols/json/store-object-info.md:277
+#: source/protocols/json/store-object-info.md:582
+#: source/protocols/json/store-object-info.md:655
+#: source/protocols/json/store-object-info.md:980
+msgid "One of(Option)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:93
+msgid "[Store Object Info](#oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:94
+msgid "[Store Object Info with Impure Fields](#oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:95
+msgid "[Store Object Info with Impure fields and NAR Info](#oneOf_i2)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:97
+msgid "<a name=\"oneOf_i0\"></a>1. Property `Store Object Info`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:99
+msgid "**Title:** Store Object Info"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:103
+#: source/protocols/json/store-object-info.md:297
+#: source/protocols/json/store-object-info.md:399
+#: source/protocols/json/store-object-info.md:602
+#: source/protocols/json/store-object-info.md:762
+#: source/protocols/json/store-object-info.md:834
+#: source/protocols/json/store-object-info.md:1090
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:105
+#: source/protocols/json/store-object-info.md:299
+#: source/protocols/json/store-object-info.md:401
+#: source/protocols/json/store-object-info.md:604
+#: source/protocols/json/store-object-info.md:836
+msgid "Not allowed"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:106
+#: source/protocols/json/store-object-info.md:152
+#: source/protocols/json/store-object-info.md:171
+#: source/protocols/json/store-object-info.md:300
+#: source/protocols/json/store-object-info.md:336
+#: source/protocols/json/store-object-info.md:361
+#: source/protocols/json/store-object-info.md:402
+#: source/protocols/json/store-object-info.md:430
+#: source/protocols/json/store-object-info.md:454
+#: source/protocols/json/store-object-info.md:473
+#: source/protocols/json/store-object-info.md:499
+#: source/protocols/json/store-object-info.md:516
+#: source/protocols/json/store-object-info.md:576
+#: source/protocols/json/store-object-info.md:636
+#: source/protocols/json/store-object-info.md:765
+#: source/protocols/json/store-object-info.md:837
+#: source/protocols/json/store-object-info.md:973
+#: source/protocols/json/store-object-info.md:1035
+#: source/protocols/json/store-object-info.md:1050
+#: source/protocols/json/store-object-info.md:1064
+#: source/protocols/json/store-object-info.md:1119
+#: source/protocols/json/store-object-info.md:1164
+msgid "**Defined in**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:106
+msgid "\\#/$defs/base"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:108
+msgid ""
+"**Description:** Basic store object metadata containing only intrinsic "
+"properties. This is the minimal set of fields that describe what a store "
+"object contains."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:111
+#: source/protocols/json/store-object-info.md:323
+#: source/protocols/json/store-object-info.md:407
+#: source/protocols/json/store-object-info.md:783
+#: source/protocols/json/store-object-info.md:844
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:111
+#: source/protocols/json/store-object-info.md:323
+#: source/protocols/json/store-object-info.md:407
+#: source/protocols/json/store-object-info.md:783
+#: source/protocols/json/store-object-info.md:844
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:111
+#: source/protocols/json/store-object-info.md:323
+#: source/protocols/json/store-object-info.md:407
+#: source/protocols/json/store-object-info.md:783
+#: source/protocols/json/store-object-info.md:844
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:111
+#: source/protocols/json/store-object-info.md:323
+#: source/protocols/json/store-object-info.md:407
+#: source/protocols/json/store-object-info.md:783
+#: source/protocols/json/store-object-info.md:844
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:113
+msgid "+ [version](#oneOf_i0_version)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:113
+#: source/protocols/json/store-object-info.md:409
+#: source/protocols/json/store-object-info.md:846
+msgid "const"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:113
+#: source/protocols/json/store-object-info.md:409
+#: source/protocols/json/store-object-info.md:846
+msgid "Format version (must be 3)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:114
+msgid "\\- [path](#oneOf_i0_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:114
+#: source/protocols/json/store-object-info.md:115
+#: source/protocols/json/store-object-info.md:119
+#: source/protocols/json/store-object-info.md:326
+#: source/protocols/json/store-object-info.md:410
+#: source/protocols/json/store-object-info.md:411
+#: source/protocols/json/store-object-info.md:415
+#: source/protocols/json/store-object-info.md:785
+#: source/protocols/json/store-object-info.md:786
+#: source/protocols/json/store-object-info.md:847
+#: source/protocols/json/store-object-info.md:848
+#: source/protocols/json/store-object-info.md:852
+#: source/protocols/json/store-object-info.md:858
+#: source/protocols/json/store-object-info.md:859
+#: source/protocols/json/store-object-info.md:860
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:114
+#: source/protocols/json/store-object-info.md:410
+#: source/protocols/json/store-object-info.md:847
+msgid "Store Path"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:115
+msgid "+ [narHash](#oneOf_i0_narHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:115
+#: source/protocols/json/store-object-info.md:411
+#: source/protocols/json/store-object-info.md:848
+msgid "NAR Hash"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:116
+msgid "+ [narSize](#oneOf_i0_narSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:116
+#: source/protocols/json/store-object-info.md:412
+#: source/protocols/json/store-object-info.md:420
+#: source/protocols/json/store-object-info.md:849
+#: source/protocols/json/store-object-info.md:857
+#: source/protocols/json/store-object-info.md:861
+#: source/protocols/json/store-object-info.md:862
+msgid "integer"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:116
+#: source/protocols/json/store-object-info.md:412
+#: source/protocols/json/store-object-info.md:849
+msgid "NAR Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:117
+msgid "+ [references](#oneOf_i0_references)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:117
+#: source/protocols/json/store-object-info.md:413
+#: source/protocols/json/store-object-info.md:419
+#: source/protocols/json/store-object-info.md:850
+#: source/protocols/json/store-object-info.md:856
+msgid "array"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:117
+#: source/protocols/json/store-object-info.md:413
+#: source/protocols/json/store-object-info.md:850
+msgid "References"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:118
+msgid "+ [ca](#oneOf_i0_ca)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:118
+#: source/protocols/json/store-object-info.md:416
+msgid "Combination"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:118
+#: source/protocols/json/store-object-info.md:326
+#: source/protocols/json/store-object-info.md:414
+#: source/protocols/json/store-object-info.md:851
+msgid "Content Address"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:119
+msgid "+ [storeDir](#oneOf_i0_storeDir)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:119
+#: source/protocols/json/store-object-info.md:415
+#: source/protocols/json/store-object-info.md:852
+msgid "Store Directory"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:121
+msgid "<a name=\"oneOf_i0_version\"></a>1.1. Property `version`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:123
+#: source/protocols/json/store-object-info.md:424
+#: source/protocols/json/store-object-info.md:866
+msgid "**Title:** Format version (must be 3)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:127
+#: source/protocols/json/store-object-info.md:286
+#: source/protocols/json/store-object-info.md:428
+#: source/protocols/json/store-object-info.md:591
+#: source/protocols/json/store-object-info.md:870
+msgid "`const`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:128
+#: source/protocols/json/store-object-info.md:170
+#: source/protocols/json/store-object-info.md:196
+#: source/protocols/json/store-object-info.md:212
+#: source/protocols/json/store-object-info.md:270
+#: source/protocols/json/store-object-info.md:335
+#: source/protocols/json/store-object-info.md:360
+#: source/protocols/json/store-object-info.md:389
+#: source/protocols/json/store-object-info.md:429
+#: source/protocols/json/store-object-info.md:472
+#: source/protocols/json/store-object-info.md:498
+#: source/protocols/json/store-object-info.md:515
+#: source/protocols/json/store-object-info.md:574
+#: source/protocols/json/store-object-info.md:635
+#: source/protocols/json/store-object-info.md:647
+#: source/protocols/json/store-object-info.md:709
+#: source/protocols/json/store-object-info.md:723
+#: source/protocols/json/store-object-info.md:736
+#: source/protocols/json/store-object-info.md:795
+#: source/protocols/json/store-object-info.md:806
+#: source/protocols/json/store-object-info.md:871
+#: source/protocols/json/store-object-info.md:907
+#: source/protocols/json/store-object-info.md:919
+#: source/protocols/json/store-object-info.md:932
+#: source/protocols/json/store-object-info.md:944
+#: source/protocols/json/store-object-info.md:959
+#: source/protocols/json/store-object-info.md:971
+#: source/protocols/json/store-object-info.md:1034
+#: source/protocols/json/store-object-info.md:1049
+#: source/protocols/json/store-object-info.md:1063
+#: source/protocols/json/store-object-info.md:1137
+#: source/protocols/json/store-object-info.md:1150
+#: source/protocols/json/store-object-info.md:1163
+#: source/protocols/json/store-object-info.md:1191
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:130
+#: source/protocols/json/store-object-info.md:432
+#: source/protocols/json/store-object-info.md:874
+msgid ""
+"**Description:** Must be `3`. This is a guard that allows us to continue "
+"evolving this format. Here is the rough version history:"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:134
+#: source/protocols/json/store-object-info.md:436
+#: source/protocols/json/store-object-info.md:878
+msgid "Version 0: `.narinfo` line-oriented format"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:136
+#: source/protocols/json/store-object-info.md:438
+#: source/protocols/json/store-object-info.md:880
+msgid ""
+"Version 1: Original JSON format, with ugly `\"r:sha256\"` inherited from "
+"`.narinfo` format."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:138
+#: source/protocols/json/store-object-info.md:440
+#: source/protocols/json/store-object-info.md:882
+msgid "Version 2: Use structured JSON type for `ca`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:140
+#: source/protocols/json/store-object-info.md:442
+#: source/protocols/json/store-object-info.md:884
+msgid "Version 3: Use structured JSON type for `signatures`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:142
+#: source/protocols/json/store-object-info.md:444
+msgid "Specific value: `3`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:144
+msgid "<a name=\"oneOf_i0_path\"></a>1.2. Property `path`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:146
+#: source/protocols/json/store-object-info.md:230
+#: source/protocols/json/store-object-info.md:448
+#: source/protocols/json/store-object-info.md:534
+#: source/protocols/json/store-object-info.md:662
+#: source/protocols/json/store-object-info.md:888
+#: source/protocols/json/store-object-info.md:987
+msgid "**Title:** Store Path"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:150
+#: source/protocols/json/store-object-info.md:169
+#: source/protocols/json/store-object-info.md:234
+#: source/protocols/json/store-object-info.md:359
+#: source/protocols/json/store-object-info.md:388
+#: source/protocols/json/store-object-info.md:452
+#: source/protocols/json/store-object-info.md:471
+#: source/protocols/json/store-object-info.md:538
+#: source/protocols/json/store-object-info.md:634
+#: source/protocols/json/store-object-info.md:666
+#: source/protocols/json/store-object-info.md:794
+#: source/protocols/json/store-object-info.md:805
+#: source/protocols/json/store-object-info.md:892
+#: source/protocols/json/store-object-info.md:906
+#: source/protocols/json/store-object-info.md:958
+#: source/protocols/json/store-object-info.md:991
+#: source/protocols/json/store-object-info.md:1136
+#: source/protocols/json/store-object-info.md:1149
+#: source/protocols/json/store-object-info.md:1162
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:152
+msgid "[JSON format for `StorePath`](../../protocols/json/store-path.html)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:154
+#: source/protocols/json/store-object-info.md:456
+#: source/protocols/json/store-object-info.md:896
+msgid ""
+"**Description:** [Store path](../../store/store-path.md) to the given store "
+"object."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:156
+#: source/protocols/json/store-object-info.md:458
+#: source/protocols/json/store-object-info.md:898
+msgid ""
+"Note: This field may not be present in all contexts, such as when the path "
+"is used as the key and the the store object info the value in map."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:158
+#: source/protocols/json/store-object-info.md:185
+#: source/protocols/json/store-object-info.md:201
+#: source/protocols/json/store-object-info.md:378
+#: source/protocols/json/store-object-info.md:460
+#: source/protocols/json/store-object-info.md:487
+#: source/protocols/json/store-object-info.md:504
+#: source/protocols/json/store-object-info.md:824
+#: source/protocols/json/store-object-info.md:1126
+#: source/protocols/json/store-object-info.md:1180
+#: source/protocols/json/store-object-info.md:1197
+#: source/protocols/json/store-object-info.md:1216
+msgid "Restrictions"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:160
+#: source/protocols/json/store-object-info.md:462
+msgid "**Min length**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:160
+#: source/protocols/json/store-object-info.md:462
+msgid "34"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:161
+#: source/protocols/json/store-object-info.md:187
+#: source/protocols/json/store-object-info.md:380
+#: source/protocols/json/store-object-info.md:463
+#: source/protocols/json/store-object-info.md:489
+#: source/protocols/json/store-object-info.md:1182
+msgid "**Must match regular expression**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:161
+#: source/protocols/json/store-object-info.md:463
+msgid ""
+"`^[0123456789abcdfghijklmnpqrsvwxyz]{32}-.+$` [Test](https://regex101.com/?"
+"regex=%5E%5B0123456789abcdfghijklmnpqrsvwxyz%5D%7B32%7D-.%2B%24)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:163
+msgid "<a name=\"oneOf_i0_narHash\"></a>1.3. Property `narHash`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:165
+#: source/protocols/json/store-object-info.md:467
+#: source/protocols/json/store-object-info.md:902
+msgid "**Title:** NAR Hash"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:171
+#: source/protocols/json/store-object-info.md:361
+#: source/protocols/json/store-object-info.md:1164
+msgid "[JSON format for `Hash`](../../protocols/json/hash.html)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:173
+#: source/protocols/json/store-object-info.md:475
+#: source/protocols/json/store-object-info.md:910
+msgid ""
+"**Description:** Hash of the [file system object](../../store/file-system-"
+"object.md) part of the store object when serialized as a [Nix Archive](../../"
+"store/file-system-object/content-address.md#serial-nix-archive)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:175
+#: source/protocols/json/store-object-info.md:368
+#: source/protocols/json/store-object-info.md:477
+#: source/protocols/json/store-object-info.md:1170
+msgid "**Examples:**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:178
+#: source/protocols/json/store-object-info.md:371
+#: source/protocols/json/store-object-info.md:480
+#: source/protocols/json/store-object-info.md:1173
+msgid "\"sha256-ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:182
+#: source/protocols/json/store-object-info.md:375
+#: source/protocols/json/store-object-info.md:484
+#: source/protocols/json/store-object-info.md:1177
+msgid ""
+"\"sha512-IEqPxt2oLwoM7XvrjgikFlfBbvRosiioJ5vjMacDwzWW/"
+"RXBOxsH+aodO+pXeJygMa2Fx6cd1wNU7GMSOMo0RQ==\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:187
+#: source/protocols/json/store-object-info.md:380
+#: source/protocols/json/store-object-info.md:489
+#: source/protocols/json/store-object-info.md:1182
+msgid ""
+"`^(blake3\\|md5\\|sha1\\|sha256\\|sha512)-[A-Za-z0-9+/]+=*$` [Test](https://"
+"regex101.com/?regex=%5E%28blake3%7Cmd5%7Csha1%7Csha256%7Csha512%29-%5BA-Za-"
+"z0-9%2B%2F%5D%2B%3D%2A%24&testString=%22sha256-"
+"ungWv48Bz%2BpBQUDeXa4iI7ADYaOWF3qctBD%2FYfIAFa0%3D%22)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:189
+msgid "<a name=\"oneOf_i0_narSize\"></a>1.4. Property `narSize`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:191
+#: source/protocols/json/store-object-info.md:493
+#: source/protocols/json/store-object-info.md:914
+msgid "**Title:** NAR Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:195
+#: source/protocols/json/store-object-info.md:497
+#: source/protocols/json/store-object-info.md:816
+#: source/protocols/json/store-object-info.md:918
+#: source/protocols/json/store-object-info.md:1117
+#: source/protocols/json/store-object-info.md:1190
+#: source/protocols/json/store-object-info.md:1207
+msgid "`integer`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:198
+#: source/protocols/json/store-object-info.md:501
+#: source/protocols/json/store-object-info.md:922
+msgid ""
+"**Description:** The [_NAR size_](../../store/store-object.md#nar-size) of "
+"the store object: the size of its [file system object](../../store/file-"
+"system-object.md) part when serialized as a [Nix Archive](../../store/file-"
+"system-object/content-address.md#serial-nix-archive)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:203
+#: source/protocols/json/store-object-info.md:506
+#: source/protocols/json/store-object-info.md:826
+#: source/protocols/json/store-object-info.md:1128
+#: source/protocols/json/store-object-info.md:1199
+#: source/protocols/json/store-object-info.md:1218
+msgid "**Minimum**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:203
+#: source/protocols/json/store-object-info.md:506
+#: source/protocols/json/store-object-info.md:826
+#: source/protocols/json/store-object-info.md:1128
+#: source/protocols/json/store-object-info.md:1199
+#: source/protocols/json/store-object-info.md:1218
+msgid "≥ 0"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:205
+msgid "<a name=\"oneOf_i0_references\"></a>1.5. Property `references`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:207
+#: source/protocols/json/store-object-info.md:510
+#: source/protocols/json/store-object-info.md:927
+msgid "**Title:** References"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:211
+#: source/protocols/json/store-object-info.md:514
+#: source/protocols/json/store-object-info.md:735
+#: source/protocols/json/store-object-info.md:931
+#: source/protocols/json/store-object-info.md:1062
+msgid "`array`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:214
+#: source/protocols/json/store-object-info.md:518
+#: source/protocols/json/store-object-info.md:935
+msgid ""
+"**Description:** An array of [store paths](../../store/store-path.md), "
+"possibly including this one."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:216
+#: source/protocols/json/store-object-info.md:520
+#: source/protocols/json/store-object-info.md:744
+#: source/protocols/json/store-object-info.md:1072
+msgid "Array restrictions"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:218
+#: source/protocols/json/store-object-info.md:522
+#: source/protocols/json/store-object-info.md:746
+#: source/protocols/json/store-object-info.md:1074
+msgid "**Min items**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:218
+#: source/protocols/json/store-object-info.md:219
+#: source/protocols/json/store-object-info.md:522
+#: source/protocols/json/store-object-info.md:523
+#: source/protocols/json/store-object-info.md:746
+#: source/protocols/json/store-object-info.md:747
+#: source/protocols/json/store-object-info.md:1074
+#: source/protocols/json/store-object-info.md:1075
+msgid "N/A"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:219
+#: source/protocols/json/store-object-info.md:523
+#: source/protocols/json/store-object-info.md:747
+#: source/protocols/json/store-object-info.md:1075
+msgid "**Max items**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:220
+#: source/protocols/json/store-object-info.md:524
+#: source/protocols/json/store-object-info.md:748
+#: source/protocols/json/store-object-info.md:1076
+msgid "**Items unicity**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:220
+#: source/protocols/json/store-object-info.md:221
+#: source/protocols/json/store-object-info.md:524
+#: source/protocols/json/store-object-info.md:525
+#: source/protocols/json/store-object-info.md:748
+#: source/protocols/json/store-object-info.md:749
+#: source/protocols/json/store-object-info.md:1076
+#: source/protocols/json/store-object-info.md:1077
+msgid "False"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:221
+#: source/protocols/json/store-object-info.md:525
+#: source/protocols/json/store-object-info.md:749
+#: source/protocols/json/store-object-info.md:1077
+msgid "**Additional items**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:222
+#: source/protocols/json/store-object-info.md:526
+#: source/protocols/json/store-object-info.md:750
+#: source/protocols/json/store-object-info.md:1078
+msgid "**Tuple validation**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:222
+#: source/protocols/json/store-object-info.md:526
+#: source/protocols/json/store-object-info.md:750
+#: source/protocols/json/store-object-info.md:1078
+msgid "See below"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:224
+#: source/protocols/json/store-object-info.md:528
+#: source/protocols/json/store-object-info.md:752
+#: source/protocols/json/store-object-info.md:1080
+msgid "Each item of this array must be"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:224
+#: source/protocols/json/store-object-info.md:528
+#: source/protocols/json/store-object-info.md:752
+#: source/protocols/json/store-object-info.md:1080
+msgid "Description"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:226
+msgid "[Store Path](#oneOf_i0_references_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:226
+#: source/protocols/json/store-object-info.md:530
+msgid ""
+"A [store path](../../store/store-path.md) identifying a store object. ..."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:228
+msgid "<a name=\"oneOf_i0_references_items\"></a>1.5.1. Store Path"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:236
+#: source/protocols/json/store-object-info.md:540
+#: source/protocols/json/store-object-info.md:605
+#: source/protocols/json/store-object-info.md:668
+#: source/protocols/json/store-object-info.md:872
+#: source/protocols/json/store-object-info.md:894
+#: source/protocols/json/store-object-info.md:908
+#: source/protocols/json/store-object-info.md:920
+#: source/protocols/json/store-object-info.md:933
+#: source/protocols/json/store-object-info.md:946
+#: source/protocols/json/store-object-info.md:960
+#: source/protocols/json/store-object-info.md:993
+#: source/protocols/json/store-object-info.md:1093
+msgid "**Same definition as**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:236
+#: source/protocols/json/store-object-info.md:540
+#: source/protocols/json/store-object-info.md:668
+#: source/protocols/json/store-object-info.md:993
+msgid "[path](#oneOf_i0_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:238
+#: source/protocols/json/store-object-info.md:542
+#: source/protocols/json/store-object-info.md:670
+#: source/protocols/json/store-object-info.md:995
+msgid ""
+"**Description:** A [store path](../../store/store-path.md) identifying a "
+"store object."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:240
+#: source/protocols/json/store-object-info.md:544
+#: source/protocols/json/store-object-info.md:672
+#: source/protocols/json/store-object-info.md:997
+msgid ""
+"This schema describes the JSON representation of store paths as used in "
+"various Nix JSON APIs."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:248
+#: source/protocols/json/store-object-info.md:552
+#: source/protocols/json/store-object-info.md:680
+#: source/protocols/json/store-object-info.md:1005
+msgid "Format"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:250
+#: source/protocols/json/store-object-info.md:554
+#: source/protocols/json/store-object-info.md:682
+#: source/protocols/json/store-object-info.md:1007
+msgid ""
+"Store paths in JSON are represented as strings containing just the hash and "
+"name portion, without the store directory prefix."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:252
+#: source/protocols/json/store-object-info.md:556
+#: source/protocols/json/store-object-info.md:684
+#: source/protocols/json/store-object-info.md:1009
+msgid "For example: `\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv\"`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:254
+#: source/protocols/json/store-object-info.md:558
+#: source/protocols/json/store-object-info.md:686
+#: source/protocols/json/store-object-info.md:1011
+msgid ""
+"(If the store dir is `/nix/store`, then this corresponds to the path `/nix/"
+"store/g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-foo.drv`.)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:256
+#: source/protocols/json/store-object-info.md:560
+#: source/protocols/json/store-object-info.md:688
+#: source/protocols/json/store-object-info.md:1013
+msgid "Structure"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:258
+#: source/protocols/json/store-object-info.md:562
+#: source/protocols/json/store-object-info.md:690
+#: source/protocols/json/store-object-info.md:1015
+msgid "The format follows this pattern: `${digest}-${name}`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:260
+#: source/protocols/json/store-object-info.md:564
+#: source/protocols/json/store-object-info.md:692
+#: source/protocols/json/store-object-info.md:1017
+msgid ""
+"**hash**: Digest rendered in [Nix32](../../protocols/nix32.md) (20 hash "
+"bytes become 32 ASCII characters)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:261
+#: source/protocols/json/store-object-info.md:565
+#: source/protocols/json/store-object-info.md:693
+#: source/protocols/json/store-object-info.md:1018
+msgid "**name**: The package name and optional version/suffix information"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:263
+msgid "<a name=\"oneOf_i0_ca\"></a>1.6. Property `ca`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:265
+#: source/protocols/json/store-object-info.md:293
+#: source/protocols/json/store-object-info.md:355
+#: source/protocols/json/store-object-info.md:569
+#: source/protocols/json/store-object-info.md:598
+#: source/protocols/json/store-object-info.md:939
+msgid "**Title:** Content Address"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:273
+#: source/protocols/json/store-object-info.md:578
+#: source/protocols/json/store-object-info.md:948
+msgid ""
+"**Description:** If the store object is [content-addressed](../../store/"
+"store-object/content-address.md), this is the content address of this store "
+"object's file system object, used to compute its store path. Otherwise (i.e. "
+"if it is [input-addressed](../../glossary.md#gloss-input-addressed-store-"
+"object)), this is `null`."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:279
+msgid "[item 0](#oneOf_i0_ca_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:280
+#: source/protocols/json/store-object-info.md:605
+msgid "[Content Address](#oneOf_i0_ca_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:282
+msgid "<a name=\"oneOf_i0_ca_oneOf_i0\"></a>1.6.1. Property `item 0`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:289
+#: source/protocols/json/store-object-info.md:594
+msgid "Specific value: `null`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:291
+msgid "<a name=\"oneOf_i0_ca_oneOf_i1\"></a>1.6.2. Property `Content Address`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:300
+msgid ""
+"[JSON format for `ContentAddress`](../../protocols/json/content-address.html)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:302
+#: source/protocols/json/store-object-info.md:607
+msgid ""
+"**Description:** This schema describes the JSON representation of Nix's "
+"`ContentAddress` type, which conveys information about [content-addressing "
+"store objects](../../store/store-object/content-address.md)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:304
+#: source/protocols/json/store-object-info.md:609
+msgid "**Note**"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:306
+#: source/protocols/json/store-object-info.md:611
+msgid ""
+"For current methods of content addressing, this data type is a bit "
+"suspicious, because it is neither simply a content address of a file system "
+"object (the `method` is richer), nor simply a content address of a store "
+"object (the `hash` doesn't account for the references). It should thus only "
+"be used in contexts where the references are also known / otherwise made "
+"tamper-resistant."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:325
+msgid "+ [method](#oneOf_i0_ca_oneOf_i1_method)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:325
+msgid "enum (of string)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:325
+msgid "Content-Addressing Method"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:326
+msgid "+ [hash](#oneOf_i0_ca_oneOf_i1_hash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:328
+msgid "<a name=\"oneOf_i0_ca_oneOf_i1_method\"></a>1.6.2.1. Property `method`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:330
+msgid "**Title:** Content-Addressing Method"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:334
+msgid "`enum (of string)`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:336
+msgid ""
+"[JSON format for `ContentAddress`](../../protocols/json/content-"
+"address.html#method)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:338
+msgid ""
+"**Description:** A string representing the [method](../../store/store-object/"
+"content-address.md) of content addressing that is chosen."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:340
+msgid "Valid method strings are:"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:342
+msgid ""
+"[`flat`](../../store/store-object/content-address.md#method-flat) (provided "
+"the contents are a single file)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:343
+msgid "[`nar`](../../store/store-object/content-address.md#method-nix-archive)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:344
+msgid "[`text`](../../store/store-object/content-address.md#method-text)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:345
+msgid "[`git`](../../store/store-object/content-address.md#method-git)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:347
+msgid "Must be one of:"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:348
+msgid "\"flat\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:349
+#: source/protocols/json/store-object-info.md:1231
+#: source/protocols/json/store-object-info.md:1251
+#: source/protocols/json/store-object-info.md:1316
+#: source/protocols/json/store-object-info.md:1336
+msgid "\"nar\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:350
+msgid "\"text\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:351
+msgid "\"git\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:353
+msgid "<a name=\"oneOf_i0_ca_oneOf_i1_hash\"></a>1.6.2.2. Property `hash`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:363
+msgid "**Description:** This would be the content-address itself."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:365
+msgid ""
+"For all current methods, this is just a content address of the file system "
+"object of the store object, [as described in the store chapter](../../store/"
+"file-system-object/content-address.md), and not of the store object as a "
+"whole. In particular, the references of the store object are _not_ taken "
+"into account with this hash (and currently-supported methods)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:382
+msgid "<a name=\"oneOf_i0_storeDir\"></a>1.7. Property `storeDir`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:384
+#: source/protocols/json/store-object-info.md:630
+#: source/protocols/json/store-object-info.md:954
+msgid "**Title:** Store Directory"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:391
+#: source/protocols/json/store-object-info.md:638
+#: source/protocols/json/store-object-info.md:962
+msgid ""
+"**Description:** The [path to the store directory](../../store/store-"
+"path.md#store-directory-path) this store object belongs within (e.g. `/nix/"
+"store`)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:393
+msgid ""
+"<a name=\"oneOf_i1\"></a>2. Property `Store Object Info with Impure Fields`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:395
+msgid "**Title:** Store Object Info with Impure Fields"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:402
+msgid "\\#/$defs/impure"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:404
+msgid ""
+"**Description:** Store object metadata including impure fields that are not "
+"_intrinsic_ properties. In other words, the same store object in different "
+"stores could have different values for these impure fields."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:409
+msgid "+ [version](#oneOf_i1_version)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:410
+msgid "\\- [path](#oneOf_i1_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:411
+msgid "+ [narHash](#oneOf_i1_narHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:412
+msgid "+ [narSize](#oneOf_i1_narSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:413
+msgid "+ [references](#oneOf_i1_references)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:414
+msgid "+ [ca](#oneOf_i1_ca)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:414
+#: source/protocols/json/store-object-info.md:851
+#: source/protocols/json/store-object-info.md:853
+msgid "object"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:415
+msgid "+ [storeDir](#oneOf_i1_storeDir)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:416
+msgid "+ [deriver](#oneOf_i1_deriver)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:416
+#: source/protocols/json/store-object-info.md:853
+msgid "Deriver"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:417
+msgid "+ [registrationTime](#oneOf_i1_registrationTime)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:417
+#: source/protocols/json/store-object-info.md:854
+msgid "integer or null"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:417
+#: source/protocols/json/store-object-info.md:854
+msgid "Registration Time"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:418
+msgid "+ [ultimate](#oneOf_i1_ultimate)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:418
+#: source/protocols/json/store-object-info.md:855
+msgid "boolean"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:418
+#: source/protocols/json/store-object-info.md:855
+msgid "Ultimate"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:419
+msgid "+ [signatures](#oneOf_i1_signatures)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:419
+#: source/protocols/json/store-object-info.md:856
+msgid "Signatures"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:420
+msgid "\\- [closureSize](#oneOf_i1_closureSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:420
+#: source/protocols/json/store-object-info.md:857
+msgid "Closure Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:422
+msgid "<a name=\"oneOf_i1_version\"></a>2.1. Property `version`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:430
+msgid "\\#/$defs/base/properties/version"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:446
+msgid "<a name=\"oneOf_i1_path\"></a>2.2. Property `path`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:454
+msgid "\\#/$defs/base/properties/path"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:465
+msgid "<a name=\"oneOf_i1_narHash\"></a>2.3. Property `narHash`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:473
+msgid "\\#/$defs/base/properties/narHash"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:491
+msgid "<a name=\"oneOf_i1_narSize\"></a>2.4. Property `narSize`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:499
+msgid "\\#/$defs/base/properties/narSize"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:508
+msgid "<a name=\"oneOf_i1_references\"></a>2.5. Property `references`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:516
+msgid "\\#/$defs/base/properties/references"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:530
+msgid "[Store Path](#oneOf_i1_references_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:532
+msgid "<a name=\"oneOf_i1_references_items\"></a>2.5.1. Store Path"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:567
+msgid "<a name=\"oneOf_i1_ca\"></a>2.6. Property `ca`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:576
+msgid "\\#/$defs/base/properties/ca"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:584
+msgid "[item 0](#oneOf_i1_ca_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:585
+msgid "[Content Address](#oneOf_i1_ca_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:587
+msgid "<a name=\"oneOf_i1_ca_oneOf_i0\"></a>2.6.1. Property `item 0`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:596
+msgid "<a name=\"oneOf_i1_ca_oneOf_i1\"></a>2.6.2. Property `Content Address`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:628
+msgid "<a name=\"oneOf_i1_storeDir\"></a>2.7. Property `storeDir`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:636
+msgid "\\#/$defs/base/properties/storeDir"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:640
+msgid "<a name=\"oneOf_i1_deriver\"></a>2.8. Property `deriver`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:642
+#: source/protocols/json/store-object-info.md:966
+msgid "**Title:** Deriver"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:650
+#: source/protocols/json/store-object-info.md:975
+msgid ""
+"**Description:** If known, the path to the [store derivation](../../"
+"glossary.md#gloss-store-derivation) from which this store object was "
+"produced. Otherwise `null`."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:653
+#: source/protocols/json/store-object-info.md:714
+#: source/protocols/json/store-object-info.md:727
+#: source/protocols/json/store-object-info.md:742
+#: source/protocols/json/store-object-info.md:978
+#: source/protocols/json/store-object-info.md:1040
+#: source/protocols/json/store-object-info.md:1054
+#: source/protocols/json/store-object-info.md:1070
+msgid ""
+"This is an \"impure\" field that may not be included in certain contexts."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:657
+msgid "[Store Path](#oneOf_i1_deriver_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:658
+msgid "[item 1](#oneOf_i1_deriver_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:660
+msgid "<a name=\"oneOf_i1_deriver_oneOf_i0\"></a>2.8.1. Property `Store Path`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:695
+msgid "<a name=\"oneOf_i1_deriver_oneOf_i1\"></a>2.8.2. Property `item 1`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:699
+#: source/protocols/json/store-object-info.md:1024
+msgid "`null`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:702
+msgid ""
+"<a name=\"oneOf_i1_registrationTime\"></a>2.9. Property `registrationTime`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:704
+#: source/protocols/json/store-object-info.md:1029
+msgid "**Title:** Registration Time"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:708
+#: source/protocols/json/store-object-info.md:1033
+msgid "`integer or null`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:711
+#: source/protocols/json/store-object-info.md:1037
+msgid ""
+"**Description:** If known, when this derivation was added to the store (Unix "
+"timestamp). Otherwise `null`."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:716
+msgid "<a name=\"oneOf_i1_ultimate\"></a>2.10. Property `ultimate`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:718
+#: source/protocols/json/store-object-info.md:1044
+msgid "**Title:** Ultimate"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:722
+#: source/protocols/json/store-object-info.md:1048
+msgid "`boolean`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:725
+#: source/protocols/json/store-object-info.md:1052
+msgid ""
+"**Description:** Whether this store object is trusted because we built it "
+"ourselves, rather than substituted a build product from elsewhere."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:729
+msgid "<a name=\"oneOf_i1_signatures\"></a>2.11. Property `signatures`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:731
+#: source/protocols/json/store-object-info.md:1058
+msgid "**Title:** Signatures"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:738
+#: source/protocols/json/store-object-info.md:1066
+msgid ""
+"**Description:** Signatures claiming that this store object is what it "
+"claims to be. Not relevant for [content-addressed](../../store/store-object/"
+"content-address.md) store objects, but useful for [input-addressed](../../"
+"glossary.md#gloss-input-addressed-store-object) store objects."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:754
+#: source/protocols/json/store-object-info.md:1093
+msgid "[Signature](#oneOf_i1_signatures_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:754
+#: source/protocols/json/store-object-info.md:1082
+msgid ""
+"A cryptographic signature along with the name of the key that produced "
+"it. ..."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:756
+msgid "<a name=\"oneOf_i1_signatures_items\"></a>2.11.1. Signature"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:758
+#: source/protocols/json/store-object-info.md:1086
+msgid "**Title:** Signature"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:765
+msgid "./signature-v2.yaml"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:767
+#: source/protocols/json/store-object-info.md:1095
+msgid ""
+"**Description:** A cryptographic signature along with the name of the key "
+"that produced it."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:769
+#: source/protocols/json/store-object-info.md:1097
+msgid ""
+"This schema describes the JSON representation of signatures as used in "
+"various Nix JSON APIs."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:777
+#: source/protocols/json/store-object-info.md:1105
+msgid "Version History"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:779
+#: source/protocols/json/store-object-info.md:1107
+msgid ""
+"Version 1: Colon-separated string in the format `<key-name>:<signature-in-"
+"Base64>`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:781
+#: source/protocols/json/store-object-info.md:1109
+msgid "Version 2: Structured object with `keyName` and `sig` fields"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:785
+msgid "+ [keyName](#oneOf_i1_signatures_items_keyName)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:785
+msgid "Key Name"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:786
+msgid "+ [sig](#oneOf_i1_signatures_items_sig)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:786
+msgid "Signature Data"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:788
+msgid ""
+"<a name=\"oneOf_i1_signatures_items_keyName\"></a>2.11.1.1. Property "
+"`keyName`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:790
+msgid "**Title:** Key Name"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:797
+msgid "**Description:** The name of the key used to produce this signature"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:799
+msgid "<a name=\"oneOf_i1_signatures_items_sig\"></a>2.11.1.2. Property `sig`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:801
+msgid "**Title:** Signature Data"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:808
+msgid "**Description:** The raw signature bytes, Base64-encoded"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:810
+msgid "<a name=\"oneOf_i1_closureSize\"></a>2.12. Property `closureSize`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:812
+#: source/protocols/json/store-object-info.md:1113
+msgid "**Title:** Closure Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:819
+#: source/protocols/json/store-object-info.md:1121
+msgid ""
+"**Description:** The [_closure NAR size_](../../store/store-"
+"object.md#closure-nar-size) of the store object: the total size of this "
+"store object and every other object in its [closure](../../glossary.md#gloss-"
+"closure)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:822
+#: source/protocols/json/store-object-info.md:1124
+#: source/protocols/json/store-object-info.md:1214
+msgid ""
+"This field is not stored at all, but computed by traversing the other fields "
+"across all the store objects in a closure."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:828
+msgid ""
+"<a name=\"oneOf_i2\"></a>3. Property `Store Object Info with Impure fields "
+"and NAR Info`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:830
+msgid "**Title:** Store Object Info with Impure fields and NAR Info"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:837
+msgid "\\#/$defs/narInfo"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:839
+msgid ""
+"**Description:** The store object info in the \"binary cache\" family of Nix "
+"store type contain extra information pertaining to _downloads_ of the store "
+"object in question. (This store info is called \"NAR info\", since the "
+"downloads take the form of \\[Nix Archives\\](../../store/file-system-object/"
+"content-address.md#serial-nix-archive, and the metadata is served in a file "
+"with a `.narinfo` extension.)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:842
+msgid ""
+"This download information, being specific to how the store object happens to "
+"be stored and transferred, is also considered to be non-intrinsic / impure."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:846
+msgid "+ [version](#oneOf_i2_version)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:847
+msgid "\\- [path](#oneOf_i2_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:848
+msgid "+ [narHash](#oneOf_i2_narHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:849
+msgid "+ [narSize](#oneOf_i2_narSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:850
+msgid "+ [references](#oneOf_i2_references)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:851
+msgid "+ [ca](#oneOf_i2_ca)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:852
+msgid "+ [storeDir](#oneOf_i2_storeDir)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:853
+msgid "+ [deriver](#oneOf_i2_deriver)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:854
+msgid "+ [registrationTime](#oneOf_i2_registrationTime)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:855
+msgid "+ [ultimate](#oneOf_i2_ultimate)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:856
+msgid "+ [signatures](#oneOf_i2_signatures)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:857
+msgid "\\- [closureSize](#oneOf_i2_closureSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:858
+msgid "+ [url](#oneOf_i2_url)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:858
+msgid "URL"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:859
+msgid "+ [compression](#oneOf_i2_compression)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:859
+msgid "Compression"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:860
+msgid "+ [downloadHash](#oneOf_i2_downloadHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:860
+msgid "Download Hash"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:861
+msgid "+ [downloadSize](#oneOf_i2_downloadSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:861
+msgid "Download Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:862
+msgid "\\- [closureDownloadSize](#oneOf_i2_closureDownloadSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:862
+msgid "Closure Download Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:864
+msgid "<a name=\"oneOf_i2_version\"></a>3.1. Property `version`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:872
+msgid "[version](#oneOf_i1_version)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:886
+msgid "<a name=\"oneOf_i2_path\"></a>3.2. Property `path`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:894
+msgid "[path](#oneOf_i1_path)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:900
+msgid "<a name=\"oneOf_i2_narHash\"></a>3.3. Property `narHash`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:908
+msgid "[narHash](#oneOf_i1_narHash)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:912
+msgid "<a name=\"oneOf_i2_narSize\"></a>3.4. Property `narSize`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:920
+msgid "[narSize](#oneOf_i1_narSize)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:925
+msgid "<a name=\"oneOf_i2_references\"></a>3.5. Property `references`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:933
+msgid "[references](#oneOf_i1_references)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:937
+msgid "<a name=\"oneOf_i2_ca\"></a>3.6. Property `ca`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:946
+msgid "[ca](#oneOf_i1_ca)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:952
+msgid "<a name=\"oneOf_i2_storeDir\"></a>3.7. Property `storeDir`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:960
+msgid "[storeDir](#oneOf_i1_storeDir)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:964
+msgid "<a name=\"oneOf_i2_deriver\"></a>3.8. Property `deriver`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:973
+msgid "\\#/$defs/impure/properties/deriver"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:982
+msgid "[Store Path](#oneOf_i2_deriver_oneOf_i0)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:983
+msgid "[item 1](#oneOf_i2_deriver_oneOf_i1)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:985
+msgid "<a name=\"oneOf_i2_deriver_oneOf_i0\"></a>3.8.1. Property `Store Path`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1020
+msgid "<a name=\"oneOf_i2_deriver_oneOf_i1\"></a>3.8.2. Property `item 1`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1027
+msgid ""
+"<a name=\"oneOf_i2_registrationTime\"></a>3.9. Property `registrationTime`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1035
+msgid "\\#/$defs/impure/properties/registrationTime"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1042
+msgid "<a name=\"oneOf_i2_ultimate\"></a>3.10. Property `ultimate`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1050
+msgid "\\#/$defs/impure/properties/ultimate"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1056
+msgid "<a name=\"oneOf_i2_signatures\"></a>3.11. Property `signatures`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1064
+msgid "\\#/$defs/impure/properties/signatures"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1082
+msgid "[Signature](#oneOf_i2_signatures_items)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1084
+msgid "<a name=\"oneOf_i2_signatures_items\"></a>3.11.1. Signature"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1111
+msgid "<a name=\"oneOf_i2_closureSize\"></a>3.12. Property `closureSize`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1119
+msgid "\\#/$defs/impure/properties/closureSize"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1130
+msgid "<a name=\"oneOf_i2_url\"></a>3.13. Property `url`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1132
+msgid "**Title:** URL"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1139
+msgid ""
+"**Description:** Where to download a compressed archive of the file system "
+"objects of this store object."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1141
+#: source/protocols/json/store-object-info.md:1154
+#: source/protocols/json/store-object-info.md:1168
+#: source/protocols/json/store-object-info.md:1195
+#: source/protocols/json/store-object-info.md:1212
+msgid ""
+"This is an impure \"`.narinfo`\" field that may not be included in certain "
+"contexts."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1143
+msgid "<a name=\"oneOf_i2_compression\"></a>3.14. Property `compression`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1145
+msgid "**Title:** Compression"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1152
+msgid "**Description:** The compression format that the archive is in."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1156
+msgid "<a name=\"oneOf_i2_downloadHash\"></a>3.15. Property `downloadHash`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1158
+msgid "**Title:** Download Hash"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1166
+msgid ""
+"**Description:** A digest for the compressed archive itself, as opposed to "
+"the data contained within."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1184
+msgid "<a name=\"oneOf_i2_downloadSize\"></a>3.16. Property `downloadSize`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1186
+msgid "**Title:** Download Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1193
+msgid "**Description:** The size of the compressed archive itself."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1201
+msgid ""
+"<a name=\"oneOf_i2_closureDownloadSize\"></a>3.17. Property "
+"`closureDownloadSize`"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1203
+msgid "**Title:** Closure Download Size"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1210
+msgid ""
+"**Description:** The total size of the compressed archive itself for this "
+"object, and the compressed archive of every object in this object's [closure]"
+"(../../glossary.md#gloss-closure)."
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1223
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1225
+msgid "Minimal store object (content-addressed)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1229
+#: source/protocols/json/store-object-info.md:1249
+#: source/protocols/json/store-object-info.md:1282
+#: source/protocols/json/store-object-info.md:1296
+#: source/protocols/json/store-object-info.md:1314
+#: source/protocols/json/store-object-info.md:1334
+msgid "\"ca\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1230
+#: source/protocols/json/store-object-info.md:1250
+#: source/protocols/json/store-object-info.md:1315
+#: source/protocols/json/store-object-info.md:1335
+msgid "\"hash\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1230
+#: source/protocols/json/store-object-info.md:1250
+#: source/protocols/json/store-object-info.md:1315
+#: source/protocols/json/store-object-info.md:1335
+msgid "\"sha256-EMIJ+giQ/gLIWoxmPKjno3zHZrxbGymgzGGyZvZBIdM=\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1231
+#: source/protocols/json/store-object-info.md:1251
+#: source/protocols/json/store-object-info.md:1316
+#: source/protocols/json/store-object-info.md:1336
+msgid "\"method\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1233
+#: source/protocols/json/store-object-info.md:1254
+#: source/protocols/json/store-object-info.md:1283
+#: source/protocols/json/store-object-info.md:1298
+#: source/protocols/json/store-object-info.md:1318
+#: source/protocols/json/store-object-info.md:1342
+msgid "\"narHash\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1233
+#: source/protocols/json/store-object-info.md:1254
+#: source/protocols/json/store-object-info.md:1283
+#: source/protocols/json/store-object-info.md:1298
+#: source/protocols/json/store-object-info.md:1318
+#: source/protocols/json/store-object-info.md:1340
+#: source/protocols/json/store-object-info.md:1342
+msgid "\"sha256-FePFYIlMuycIXPZbWi7LGEiMmZSX9FMbaQenWBzm1Sc=\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1234
+#: source/protocols/json/store-object-info.md:1255
+#: source/protocols/json/store-object-info.md:1284
+#: source/protocols/json/store-object-info.md:1299
+#: source/protocols/json/store-object-info.md:1319
+#: source/protocols/json/store-object-info.md:1343
+msgid "\"narSize\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1235
+#: source/protocols/json/store-object-info.md:1256
+#: source/protocols/json/store-object-info.md:1285
+#: source/protocols/json/store-object-info.md:1300
+#: source/protocols/json/store-object-info.md:1320
+#: source/protocols/json/store-object-info.md:1344
+msgid "\"references\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1236
+#: source/protocols/json/store-object-info.md:1257
+#: source/protocols/json/store-object-info.md:1321
+#: source/protocols/json/store-object-info.md:1345
+msgid "\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-bar\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1237
+#: source/protocols/json/store-object-info.md:1258
+#: source/protocols/json/store-object-info.md:1322
+#: source/protocols/json/store-object-info.md:1346
+msgid "\"n5wkd9frr45pa74if5gpz9j7mifg27fh-foo\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1239
+#: source/protocols/json/store-object-info.md:1271
+#: source/protocols/json/store-object-info.md:1286
+#: source/protocols/json/store-object-info.md:1303
+#: source/protocols/json/store-object-info.md:1324
+#: source/protocols/json/store-object-info.md:1359
+msgid "\"storeDir\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1239
+#: source/protocols/json/store-object-info.md:1271
+#: source/protocols/json/store-object-info.md:1286
+#: source/protocols/json/store-object-info.md:1303
+#: source/protocols/json/store-object-info.md:1324
+#: source/protocols/json/store-object-info.md:1359
+msgid "\"/nix/store\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1240
+#: source/protocols/json/store-object-info.md:1273
+#: source/protocols/json/store-object-info.md:1287
+#: source/protocols/json/store-object-info.md:1305
+#: source/protocols/json/store-object-info.md:1325
+#: source/protocols/json/store-object-info.md:1362
+msgid "\"version\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1245
+msgid "Store object with impure fields"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1253
+#: source/protocols/json/store-object-info.md:1297
+#: source/protocols/json/store-object-info.md:1339
+msgid "\"deriver\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1253
+#: source/protocols/json/store-object-info.md:1339
+msgid "\"g1w7hy3qg1w7hy3qg1w7hy3qg1w7hy3q-bar.drv\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1260
+#: source/protocols/json/store-object-info.md:1301
+#: source/protocols/json/store-object-info.md:1348
+msgid "\"registrationTime\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1261
+#: source/protocols/json/store-object-info.md:1302
+#: source/protocols/json/store-object-info.md:1349
+msgid "\"signatures\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1263
+#: source/protocols/json/store-object-info.md:1267
+#: source/protocols/json/store-object-info.md:1351
+#: source/protocols/json/store-object-info.md:1355
+msgid "\"keyName\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1263
+#: source/protocols/json/store-object-info.md:1351
+msgid "\"asdf\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1264
+#: source/protocols/json/store-object-info.md:1268
+#: source/protocols/json/store-object-info.md:1352
+#: source/protocols/json/store-object-info.md:1356
+msgid "\"sig\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1264
+#: source/protocols/json/store-object-info.md:1268
+#: source/protocols/json/store-object-info.md:1352
+#: source/protocols/json/store-object-info.md:1356
+msgid "\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1267
+#: source/protocols/json/store-object-info.md:1355
+msgid "\"qwer\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1272
+#: source/protocols/json/store-object-info.md:1304
+#: source/protocols/json/store-object-info.md:1360
+msgid "\"ultimate\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1278
+msgid "Minimal store object (empty)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1292
+msgid "Store object with all impure fields"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1310
+msgid "NAR info (minimal)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1330
+msgid "NAR info (with binary cache fields)"
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1338
+msgid "\"compression\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1338
+msgid "\"xz\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1340
+msgid "\"downloadHash\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1341
+msgid "\"downloadSize\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1361
+msgid "\"url\""
+msgstr ""
+
+#: source/protocols/json/store-object-info.md:1361
+msgid "\"nar/1w1fff338fvdw53sqgamddn1b2xgds473pv6y13gizdbqjv4i5p3.nar.xz\""
+msgstr ""

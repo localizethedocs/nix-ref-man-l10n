@@ -1,0 +1,538 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-search.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:8
+msgid "`nix search` - search for packages"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:10
+msgid "Synopsis"
+msgstr "概要"
+
+#: source/command-ref/new-cli/nix3-search.md:12
+msgid "`nix search` \\[_option_...\\] _installable_ _regex_..."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:16
+msgid "Show all packages in the `nixpkgs` flake:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:28
+msgid ""
+"Show packages in the `nixpkgs` flake containing `blender` in its name or "
+"description:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:37
+msgid "Search for packages underneath the attribute `gnome3` in Nixpkgs:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:45
+msgid "Show all packages in the flake in the current directory:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:51
+msgid "Search for Firefox or Chromium:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:57
+msgid "Search for packages containing `git` and either `frontend` or `gui`:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:63
+msgid ""
+"Search for packages containing `neovim` but hide ones containing either "
+"`gui` or `python`:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:68
+msgid "or"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:74
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:76
+msgid ""
+"`nix search` searches [_installable_](./nix.md#installables) that can be "
+"evaluated, that is, a flake or Nix expression, but not a [store path](../../"
+"glossary.md#gloss-store-path) or [deriving path](../../glossary.md#gloss-"
+"deriving-path)) for packages whose name or description matches all of the "
+"regular expressions _regex_. For each matching package, It prints the full "
+"attribute name (from the root of the [installable](./nix.md#installables)), "
+"the version and the `meta.description` field, highlighting the substrings "
+"that were matched by the regular expressions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:83
+msgid ""
+"To show all packages, use the regular expression `^`. In contrast to `.*`, "
+"it avoids highlighting the entire name and description of every package."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:86
+msgid ""
+"Note that in this context, `^` is the regex character to match the beginning "
+"of a string, _not_ the delimiter for [selecting a derivation output](../../"
+"command-ref/new-cli/nix.md#derivation-output-selection)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:92
+msgid "Flake output attributes"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:94
+msgid ""
+"If no flake output attribute is given, `nix search` searches for packages:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:97
+msgid "Directly underneath `packages.<system>`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:99
+msgid ""
+"Underneath `legacyPackages.<system>`, recursing into attribute sets that "
+"contain an attribute `recurseForDerivations = true`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:102
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:104
+msgid ""
+"<span id=\"opt-exclude\">[`--exclude`](#opt-exclude)</span> / `-e` _regex_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:106
+msgid ""
+"Hide packages whose attribute path, name or description contain _regex_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:108
+msgid "<span id=\"opt-json\">[`--json`](#opt-json)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:110
+msgid ""
+"Produce output in JSON format, suitable for consumption by another program."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:112
+msgid "<span id=\"opt-no-pretty\">[`--no-pretty`](#opt-no-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:114
+msgid ""
+"Print compact JSON output on a single line, even when the output is a "
+"terminal. Some commands may print multiple JSON objects on separate lines."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:119
+msgid "<span id=\"opt-pretty\">[`--pretty`](#opt-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:121
+msgid "Print multi-line, indented JSON output for readability."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:127
+msgid "Common evaluation options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:129
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:131
+msgid "Pass the value _expr_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:133
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:135
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:137
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:139
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:141
+msgid ""
+"<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _string_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:143
+msgid "Pass the string _string_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:145
+msgid "<span id=\"opt-debugger\">[`--debugger`](#opt-debugger)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:147
+msgid "Start an interactive environment if evaluation fails."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:149
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:151
+msgid ""
+"The [URL of the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:154
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:156
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:158
+msgid ""
+"<span id=\"opt-include\">[`--include`](#opt-include)</span> / `-I` _path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:160
+msgid ""
+"Add _path_ to search path entries used to resolve [lookup paths](../../"
+"language/constructs/lookup-path.md)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:162
+msgid "This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:164
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:166
+msgid ""
+"<span id=\"opt-override-flake\">[`--override-flake`](#opt-override-flake)</"
+"span> _original-ref_ _resolved-ref_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:168
+msgid ""
+"Override the flake registries, redirecting _original-ref_ to _resolved-ref_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:170
+msgid "Common flake-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:172
+msgid ""
+"<span id=\"opt-commit-lock-file\">[`--commit-lock-file`](#opt-commit-lock-"
+"file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:174
+msgid "Commit changes to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:176
+msgid ""
+"<span id=\"opt-inputs-from\">[`--inputs-from`](#opt-inputs-from)</span> "
+"_flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:178
+msgid "Use the inputs of the specified flake as registry entries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:180
+msgid ""
+"<span id=\"opt-no-registries\">[`--no-registries`](#opt-no-registries)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:182
+msgid "Don't allow lookups in the flake registries."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:184
+#: source/command-ref/new-cli/nix3-search.md:208
+#: source/command-ref/new-cli/nix3-search.md:220
+msgid "**DEPRECATED**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:186
+msgid ""
+"Use [`--no-use-registries`](../../command-ref/conf-file.md#conf-use-"
+"registries) instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:188
+msgid ""
+"<span id=\"opt-no-update-lock-file\">[`--no-update-lock-file`](#opt-no-"
+"update-lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:190
+msgid "Do not allow any updates to the flake's lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:192
+msgid ""
+"<span id=\"opt-no-write-lock-file\">[`--no-write-lock-file`](#opt-no-write-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:194
+msgid "Do not write the flake's newly generated lock file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:196
+msgid ""
+"<span id=\"opt-output-lock-file\">[`--output-lock-file`](#opt-output-lock-"
+"file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:198
+msgid ""
+"Write the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:200
+msgid ""
+"<span id=\"opt-override-input\">[`--override-input`](#opt-override-input)</"
+"span> _input-path_ _flake-url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:202
+msgid ""
+"Override a specific flake input (e.g. `dwarffs/nixpkgs`). The input path "
+"must not be empty. This implies `--no-write-lock-file`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:204
+msgid ""
+"<span id=\"opt-recreate-lock-file\">[`--recreate-lock-file`](#opt-recreate-"
+"lock-file)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:206
+msgid "Recreate the flake's lock file from scratch."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:210
+#: source/command-ref/new-cli/nix3-search.md:222
+msgid ""
+"Use [`nix flake update`](../../command-ref/new-cli/nix3-flake-update.md) "
+"instead."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:212
+msgid ""
+"<span id=\"opt-reference-lock-file\">[`--reference-lock-file`](#opt-"
+"reference-lock-file)</span> _flake-lock-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:214
+msgid ""
+"Read the given lock file instead of `flake.lock` within the top-level flake."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:216
+msgid ""
+"<span id=\"opt-update-input\">[`--update-input`](#opt-update-input)</span> "
+"_input-path_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:218
+msgid ""
+"Update a specific flake input (ignoring its previous entry in the lock file)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:224
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:226
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:228
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:230
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:232
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:234
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:236
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:238
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:240
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:242
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:244
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:246
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:248
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:250
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:252
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:254
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:256
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:258
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:260
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:262
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:264
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:266
+msgid ""
+"During evaluation, rewrite missing or corrupted files in the Nix store. "
+"During building, rebuild missing or corrupted store paths."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:268
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:270
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:272
+msgid ""
+"Options that change the interpretation of [installables](../../command-ref/"
+"new-cli/nix.md#installables)"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:274
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> _expr_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:276
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression _expr_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:278
+msgid "<span id=\"opt-file\">[`--file`](#opt-file)</span> / `-f` _file_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:280
+msgid ""
+"Interpret [_installables_](../../command-ref/new-cli/nix.md#installables) as "
+"attribute paths relative to the Nix expression stored in _file_. If _file_ "
+"is the character -, then a Nix expression is read from standard input. "
+"Implies `--impure`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:282
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-search.md:284
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

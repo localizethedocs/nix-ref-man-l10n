@@ -1,0 +1,492 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/opt-common.md:5
+msgid "Common Options"
+msgstr ""
+
+#: source/command-ref/opt-common.md:7
+msgid "Most Nix commands accept the following command-line options:"
+msgstr ""
+
+#: source/command-ref/opt-common.md:9
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:11
+msgid "Prints out a summary of the command syntax and exits."
+msgstr ""
+
+#: source/command-ref/opt-common.md:13
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:15
+msgid "Prints out the Nix version number on standard output and exits."
+msgstr ""
+
+#: source/command-ref/opt-common.md:17
+msgid ""
+"For machine-readable output, including versions of the libraries Nix links "
+"against, see the [`nix version`](../command-ref/new-cli/nix3-version.md) "
+"command."
+msgstr ""
+
+#: source/command-ref/opt-common.md:20
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:22
+msgid ""
+"Increases the level of verbosity of diagnostic messages printed on standard "
+"error. For each Nix operation, the information printed on standard output is "
+"well-defined; any diagnostic information is printed on standard error, never "
+"on standard output."
+msgstr ""
+
+#: source/command-ref/opt-common.md:26
+msgid ""
+"This option may be specified repeatedly. Currently, the following verbosity "
+"levels exist:"
+msgstr ""
+
+#: source/command-ref/opt-common.md:29
+msgid "`0` “Errors only”"
+msgstr ""
+
+#: source/command-ref/opt-common.md:31
+msgid "Only print messages explaining why the Nix invocation failed."
+msgstr ""
+
+#: source/command-ref/opt-common.md:33
+msgid "`1` “Informational”"
+msgstr ""
+
+#: source/command-ref/opt-common.md:35
+msgid "Print _useful_ messages about what Nix is doing. This is the default."
+msgstr ""
+
+#: source/command-ref/opt-common.md:38
+msgid "`2` “Talkative”"
+msgstr ""
+
+#: source/command-ref/opt-common.md:40
+msgid "Print more informational messages."
+msgstr ""
+
+#: source/command-ref/opt-common.md:42
+msgid "`3` “Chatty”"
+msgstr ""
+
+#: source/command-ref/opt-common.md:44
+msgid "Print even more informational messages."
+msgstr ""
+
+#: source/command-ref/opt-common.md:46
+msgid "`4` “Debug”"
+msgstr ""
+
+#: source/command-ref/opt-common.md:48
+msgid "Print debug information."
+msgstr ""
+
+#: source/command-ref/opt-common.md:50
+msgid "`5` “Vomit”"
+msgstr ""
+
+#: source/command-ref/opt-common.md:52
+msgid "Print vast amounts of debug information."
+msgstr ""
+
+#: source/command-ref/opt-common.md:54
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:56
+msgid ""
+"Decreases the level of verbosity of diagnostic messages printed on standard "
+"error. This is the inverse option to `-v` / `--verbose`."
+msgstr ""
+
+#: source/command-ref/opt-common.md:59
+msgid ""
+"This option may be specified repeatedly. See the previous verbosity levels "
+"list."
+msgstr ""
+
+#: source/command-ref/opt-common.md:62
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:64
+msgid ""
+"This option can be used to change the output of the log format, with "
+"_format_ being one of:"
+msgstr ""
+
+#: source/command-ref/opt-common.md:66
+msgid "`raw`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:68
+msgid "This is the raw format, as outputted by nix-build."
+msgstr ""
+
+#: source/command-ref/opt-common.md:70
+msgid "`internal-json`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:72
+msgid "Outputs the logs in a structured manner."
+msgstr ""
+
+#: source/command-ref/opt-common.md:74
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/opt-common.md:76
+msgid ""
+"While the schema itself is relatively stable, the format of the error-"
+"messages (namely of the `msg`\\-field) can change between releases."
+msgstr ""
+
+#: source/command-ref/opt-common.md:80
+msgid "`bar`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:82
+msgid "Only display a progress bar during the builds."
+msgstr ""
+
+#: source/command-ref/opt-common.md:84
+msgid "`bar-with-logs`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:86
+msgid "Display the raw logs, with the progress bar at the bottom."
+msgstr ""
+
+#: source/command-ref/opt-common.md:88
+msgid ""
+"<span id=\"opt-no-build-output\">[`--no-build-output`](#opt-no-build-"
+"output)</span> / `-Q`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:90
+msgid ""
+"By default, output written by builders to standard output and standard error "
+"is echoed to the Nix command's standard error. This option suppresses this "
+"behaviour. Note that the builder's standard output and error are always "
+"written to a log file in `prefix/nix/var/log/nix`."
+msgstr ""
+
+#: source/command-ref/opt-common.md:94
+msgid ""
+"<span id=\"opt-max-jobs\">[`--max-jobs`](#opt-max-jobs)</span> / `-j` "
+"_number_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:96
+msgid ""
+"Sets the maximum number of build jobs that Nix will perform in parallel to "
+"the specified number. Specify `auto` to use the number of CPUs in the "
+"system. The default is specified by the `max-jobs` configuration setting, "
+"which itself defaults to `1`. A higher value is useful on SMP systems or to "
+"exploit I/O latency."
+msgstr ""
+
+#: source/command-ref/opt-common.md:101
+msgid ""
+"Setting it to `0` disallows building on the local machine, which is useful "
+"when you want builds to happen only on remote builders."
+msgstr ""
+
+#: source/command-ref/opt-common.md:103
+msgid "<span id=\"opt-cores\">[`--cores`](#opt-cores)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:105
+msgid ""
+"Sets the value of the `NIX_BUILD_CORES` environment variable in the "
+"invocation of builders. Builders can use this variable at their discretion "
+"to control the maximum amount of parallelism. For instance, in Nixpkgs, if "
+"the derivation attribute `enableParallelBuilding` is set to `true`, the "
+"builder passes the `-jN` flag to GNU Make. It defaults to the value of the "
+"`cores` configuration setting, if set, or `1` otherwise. The value `0` means "
+"that the builder should use all available CPU cores in the system."
+msgstr ""
+
+#: source/command-ref/opt-common.md:111
+msgid ""
+"<span id=\"opt-max-silent-time\">[`--max-silent-time`](#opt-max-silent-"
+"time)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:113
+msgid ""
+"Sets the maximum number of seconds that a builder can go without producing "
+"any data on standard output or standard error. The default is specified by "
+"the `max-silent-time` configuration setting. `0` means no time-out."
+msgstr ""
+
+#: source/command-ref/opt-common.md:117
+msgid "<span id=\"opt-timeout\">[`--timeout`](#opt-timeout)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:119
+msgid ""
+"Sets the maximum number of seconds that a builder can run. The default is "
+"specified by the `timeout` configuration setting. `0` means no timeout."
+msgstr ""
+
+#: source/command-ref/opt-common.md:123
+msgid ""
+"<span id=\"opt-keep-going\">[`--keep-going`](#opt-keep-going)</span> / `-k`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:125
+msgid ""
+"Keep going in case of failed builds, to the greatest extent possible. That "
+"is, if building an input of some derivation fails, Nix will still build the "
+"other inputs, but not the derivation itself. Without this option, Nix stops "
+"if any build fails (except for builds of substitutes), possibly killing "
+"builds in progress (in case of parallel or distributed builds)."
+msgstr ""
+
+#: source/command-ref/opt-common.md:129
+msgid ""
+"<span id=\"opt-keep-failed\">[`--keep-failed`](#opt-keep-failed)</span> / `-"
+"K`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:131
+msgid ""
+"Specifies that in case of a build failure, the temporary directory (usually "
+"in `/tmp`) in which the build takes place should not be deleted. The path of "
+"the build directory is printed as an informational message."
+msgstr ""
+
+#: source/command-ref/opt-common.md:134
+msgid "<span id=\"opt-fallback\">[`--fallback`](#opt-fallback)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:136
+msgid ""
+"Whenever Nix attempts to build a derivation for which substitutes are known "
+"for each output path, but realising the output paths through the substitutes "
+"fails, fall back on building the derivation."
+msgstr ""
+
+#: source/command-ref/opt-common.md:138
+msgid ""
+"The most common scenario in which this is useful is when we have registered "
+"substitutes in order to perform binary distribution from, say, a network "
+"repository. If the repository is down, the realisation of the derivation "
+"will fail. When this option is specified, Nix will build the derivation "
+"instead. Thus, installation from binaries falls back on installation from "
+"source. This option is not the default since it is generally not desirable "
+"for a transient failure in obtaining the substitutes to lead to a full build "
+"from source (with the related consumption of resources)."
+msgstr ""
+
+#: source/command-ref/opt-common.md:144
+msgid ""
+"<span id=\"opt-readonly-mode\">[`--readonly-mode`](#opt-readonly-mode)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:146
+msgid ""
+"When this option is used, no attempt is made to open the Nix database. Most "
+"Nix operations do need database access, so those operations will fail."
+msgstr ""
+
+#: source/command-ref/opt-common.md:149
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:151
+msgid ""
+"This option is accepted by `nix-env`, `nix-instantiate`, `nix-shell` and "
+"`nix-build`. When evaluating Nix expressions, the expression evaluator will "
+"automatically try to call functions that it encounters. It can automatically "
+"call functions for which every argument has a [default value](../language/"
+"syntax.md#functions) (e.g., `{ argName ?  defaultValue }: ...`)."
+msgstr ""
+
+#: source/command-ref/opt-common.md:155
+msgid ""
+"With `--arg`, you can also call functions that have arguments without a "
+"default value (or override a default value). That is, if the evaluator "
+"encounters a function with an argument named _name_, it will call it with "
+"value _value_."
+msgstr ""
+
+#: source/command-ref/opt-common.md:158
+msgid ""
+"For instance, the top-level `default.nix` in Nixpkgs is actually a function:"
+msgstr ""
+
+#: source/command-ref/opt-common.md:167
+msgid ""
+"So if you call this Nix expression (e.g., when you do `nix-env --install --"
+"attr pkgname`), the function will be called automatically using the value "
+"[`builtins.currentSystem`](../language/builtins.md) for the `system` "
+"argument. You can override this using `--arg`, e.g., `nix-env --install --"
+"attr pkgname --arg system \\\"i686-freebsd\\\"`. (Note that since the "
+"argument is a Nix string literal, you have to escape the quotes.)"
+msgstr ""
+
+#: source/command-ref/opt-common.md:171
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:173
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/opt-common.md:175
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:177
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/opt-common.md:179
+msgid "<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:181
+msgid ""
+"This option is like `--arg`, only the value is not a Nix expression but a "
+"string. So instead of `--arg system \\\"i686-linux\\\"` (the outer quotes "
+"are to keep the shell happy) you can say `--argstr system i686-linux`."
+msgstr ""
+
+#: source/command-ref/opt-common.md:184
+msgid "<span id=\"opt-attr\">[`--attr`](#opt-attr)</span> / `-A` _attrPath_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:186
+msgid ""
+"Select an attribute from the top-level Nix expression being evaluated. (`nix-"
+"env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
+"path_ _attrPath_ is a sequence of attribute names separated by dots. For "
+"instance, given a top-level Nix expression _e_, the attribute path "
+"`xorg.xorgserver` would cause the expression `e.xorg.xorgserver` to be used. "
+"See [`nix-env --install`](../command-ref/nix-env/install.md) for some "
+"concrete examples."
+msgstr ""
+
+#: source/command-ref/opt-common.md:192
+msgid ""
+"In addition to attribute names, you can also specify array indices. For "
+"instance, the attribute path `foo.3.bar` selects the `bar` attribute of the "
+"fourth element of the array in the `foo` attribute of the top-level "
+"expression."
+msgstr ""
+
+#: source/command-ref/opt-common.md:197
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:199
+msgid ""
+"The [URL to the Nix store](../store/types/index.md#store-url-format) to use "
+"for evaluation, i.e. where to store derivations (`.drv` files) and inputs "
+"referenced by them."
+msgstr ""
+
+#: source/command-ref/opt-common.md:201
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> / `-E`"
+msgstr ""
+
+#: source/command-ref/opt-common.md:203
+msgid ""
+"Interpret the command line arguments as a list of Nix expressions to be "
+"parsed and evaluated, rather than as a list of file names of Nix "
+"expressions. (`nix-instantiate`, `nix-build` and `nix-shell` only.)"
+msgstr ""
+
+#: source/command-ref/opt-common.md:206
+msgid ""
+"For `nix-shell`, this option is commonly used to give you a shell in which "
+"you can build the packages returned by the expression. If you want to get a "
+"shell which contain the _built_ packages ready for use, give your expression "
+"to the `nix-shell --packages ` convenience flag instead."
+msgstr ""
+
+#: source/command-ref/opt-common.md:209
+msgid "<span id=\"opt-I\">[`-I` / `--include`](#opt-I)</span> _path_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:211
+msgid ""
+"Add an entry to the list of search paths used to resolve [lookup paths](../"
+"language/constructs/lookup-path.md). This option may be given multiple times."
+msgstr ""
+
+#: source/command-ref/opt-common.md:214
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/opt-common.md:216
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:218
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/opt-common.md:220
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/opt-common.md:222
+msgid ""
+"Set the Nix configuration option _name_ to _value_. This overrides settings "
+"in the Nix configuration file (see nix.conf5)."
+msgstr ""
+
+#: source/command-ref/opt-common.md:225
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/opt-common.md:227
+msgid ""
+"Fix corrupted or missing store paths by redownloading or rebuilding them. "
+"Note that this is slow because it requires computing a cryptographic hash of "
+"the contents of every path in the closure of the build. Also note the "
+"warning under `nix-store --repair-path`."
+msgstr ""
+
+#: source/command-ref/opt-common.md:231
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/opt-common.md:233
+msgid ""
+"See [`man nix.conf`](../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

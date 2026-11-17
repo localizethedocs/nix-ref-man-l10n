@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/installation/installing-docker.md:1
+msgid "Using Nix within Docker"
+msgstr ""
+
+#: source/installation/installing-docker.md:3
+msgid ""
+"To run the latest stable release of Nix with Docker run the following "
+"command:"
+msgstr ""
+
+#: source/installation/installing-docker.md:19
+msgid ""
+"If you want the latest pre-release you can use ghcr.io/nixos/nix and view "
+"them at https://github.com/nixos/nix/pkgs/container/nix"
+msgstr ""
+
+#: source/installation/installing-docker.md:21
+msgid "What is included in Nix's Docker image?"
+msgstr ""
+
+#: source/installation/installing-docker.md:23
+msgid ""
+"The official Docker image is created using "
+"`pkgs.dockerTools.buildLayeredImage` (and not with `Dockerfile` as it is "
+"usual with Docker images). You can still base your custom Docker image on it "
+"as you would do with any other Docker image."
+msgstr ""
+
+#: source/installation/installing-docker.md:28
+msgid ""
+"The Docker image is not based on any other image and includes a minimal set "
+"of runtime dependencies that are required to use Nix."
+msgstr ""
+
+#: source/installation/installing-docker.md:32
+msgid "Docker image with the latest development version of Nix"
+msgstr ""
+
+#: source/installation/installing-docker.md:34
+msgid ""
+"To get the latest image that was built by [Hydra](https://hydra.nixos.org) "
+"run the following command:"
+msgstr ""
+
+#: source/installation/installing-docker.md:37
+msgid ""
+"```console\n"
+"$ curl -L https://hydra.nixos.org/job/nix/master/dockerImage.x86_64-linux/"
+"latest/download/1 | docker load\n"
+"$ docker run -ti nix:2.5pre20211105\n"
+"```"
+msgstr ""
+
+#: source/installation/installing-docker.md:42
+msgid "You can also build a Docker image from source yourself:"
+msgstr ""
+
+#: source/installation/installing-docker.md:50
+msgid "Docker image with non-root Nix"
+msgstr ""
+
+#: source/installation/installing-docker.md:52
+msgid ""
+"If you would like to run Nix in a container under a user other than `root`, "
+"you can build an image with a non-root single-user installation of Nix by "
+"specifying the `uid`, `gid`, `uname`, and `gname` arguments to `docker.nix`:"
+msgstr ""

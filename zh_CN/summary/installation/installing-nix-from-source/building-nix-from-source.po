@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/installation/building-source.md:1
+msgid "Building Nix from Source"
+msgstr ""
+
+#: source/installation/building-source.md:3
+msgid ""
+"Nix is built with [Meson](https://mesonbuild.com/). It is broken up into "
+"multiple Meson packages, which are optionally combined in a single project "
+"using Meson's [subprojects](https://mesonbuild.com/Subprojects.html) feature."
+msgstr ""
+
+#: source/installation/building-source.md:6
+msgid ""
+"There are no mandatory extra steps to the building process: generic Meson "
+"installation instructions like [this](https://mesonbuild.com/Quick-"
+"guide.html#using-meson-as-a-distro-packager) should work."
+msgstr ""
+
+#: source/installation/building-source.md:18
+msgid ""
+"The installation path can be specified by passing `-Dprefix=prefix` to "
+"`meson setup build`. The default installation directory is `/usr/local`. You "
+"can change this to any location you like. You must have write permission to "
+"the _prefix_ path."
+msgstr ""
+
+#: source/installation/building-source.md:23
+msgid ""
+"Nix keeps its _store_ (the place where packages are stored) in `/nix/store` "
+"by default. This can be changed using `-Dlibstore:store-dir=path`."
+msgstr ""
+
+#: source/installation/building-source.md:27
+msgid "**Warning**"
+msgstr ""
+
+#: source/installation/building-source.md:29
+msgid ""
+"It is best _not_ to change the Nix store from its default, since doing so "
+"makes it impossible to use pre-built binaries from the standard Nixpkgs "
+"channels — that is, all packages will need to be built from source."
+msgstr ""
+
+#: source/installation/building-source.md:34
+msgid ""
+"Nix keeps state (such as its database and log files) in `/nix/var` by "
+"default. This can be changed using `-Dlocalstatedir=path`."
+msgstr ""
