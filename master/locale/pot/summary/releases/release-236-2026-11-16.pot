@@ -1,0 +1,1030 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-17T17:28:17Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.36.md:1
+msgid "Release 2.36.0 (2026-11-16)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:3
+msgid "Packaging"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:5
+msgid ""
+"Starting with this release, [`nix-installer`](https://github.com/NixOS/nix-"
+"installer) binaries are shipped alongside other binary artifacts in "
+"[releases.nixos.org](https://releases.nixos.org/?prefix=nix/nix-2.36.0/)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:7
+msgid "You can run the installer with:"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:9
+msgid ""
+"```\n"
+"curl -sSfL https://channels.nixos.org/nix-latest/nix-installer | sh -s -- "
+"install\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:13
+msgid ""
+"It's built for `x86_64-linux`, `aarch64-linux` and `aarch64-darwin` "
+"platforms and only supports multi-user installations."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:15
+msgid ""
+"Cross-built binary releases for `powerpc64-linux` and `powerpc64le-linux` "
+"platforms [\\#16274](https://github.com/NixOS/nix/pull/16274)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:17
+msgid ""
+"[Scripted installer](https://channels.nixos.org/nix-latest/install) supports "
+"busybox-based systems (e.g. Alpine) in single-user mode [\\#16537](https://"
+"github.com/NixOS/nix/pull/16537)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:19
+msgid ""
+"The scripted installer sets the correct store mtime [\\#16558](https://"
+"github.com/NixOS/nix/pull/16558)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:21
+msgid "Improvements"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:23
+msgid ""
+"Daemon worker spawning rework [\\#15857](https://github.com/NixOS/nix/issues/"
+"15857) [\\#16659](https://github.com/NixOS/nix/pull/16659)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:25
+msgid ""
+"Previously, `nix-daemon` accepting on the `nix-daemon.socket` would spawn a "
+"worker process by `fork()`\\-ing without calling `execv*`. This has "
+"historically been a source of issues around fork-unsafe dependencies and in "
+"Nix itself. The most notorious instance of this issue has been Nix on macOS, "
+"which discourages such use of fork(2), and has caused numerous issues in the "
+"past (mostly around the use of `SecureTransport` TLS backend in libcurl and "
+"aws-c-io)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:30
+msgid ""
+"Now `nix-daemon` spawns a worker processes by spawning and executing itself "
+"in `--stdio` mode by redirecting stdin/stdout to the accepted socket and "
+"forcing the trust level with the stabilised `--force-trusted` and `--force-"
+"untrusted` flags. The path to the current binary is either `/proc/self/exe` "
+"on Linux, acquired via `_NSGetExecutablePath` on macOS, or "
+"`KERN_PROC_PATHNAME` sysctl on FreeBSD."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:34
+msgid ""
+"No functional changes are expected from this, though there are minor user-"
+"visible behavioral changes:"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:36
+msgid ""
+"`nix-daemon` no longer needs to be restarted for `/etc/nix/nix.conf` changes "
+"to take effect in the daemon _worker_ (note that this doesn't apply to "
+"settings like `allowed-users` or `trusted-users`)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:38
+msgid ""
+"The command line of the worker process no longer has the form `nix-daemon "
+"<peer pid>`. Previously, the PID of the daemon client process was inserted "
+"into `argv[1]`. This also obviates the need for passing the no-op `--daemon` "
+"flag for making room for the PID in `argv[1]`. The peer PID is now part of "
+"the `argv[0]` in the form of `nix-daemon.worker-<peer pid>`. This is an "
+"internal debugging feature used for correlating the daemon _worker_ process "
+"with its client."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:44
+msgid ""
+"`daemon-trust-override`, `--process-ops` stabilisation [\\#16637](https://"
+"github.com/NixOS/nix/pull/16637) [\\#16659](https://github.com/NixOS/nix/"
+"pull/16659)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:47
+msgid ""
+"`daemon-trust-override` experimental feature has been stabilised. This "
+"change was needed to facilitate the daemon worker spawning rework."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:50
+msgid ""
+"`--force-untrusted` now behaves correctly when the `--stdio` daemon worker's "
+"store is another remote store backed by another daemon."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:52
+msgid ""
+"`--force-untrusted`, `--force-trusted`, `--default-trust`, `--process-ops` "
+"flags accepted by `nix-daemon` and `nix daemon` are no longer experimental."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:54
+msgid ""
+"Daemon enables cgroup controllers for build cgroups [\\#9675](https://"
+"github.com/NixOS/nix/issues/9675) [\\#16024](https://github.com/NixOS/nix/"
+"pull/16024)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:56
+msgid ""
+"With `use-cgroups`, the daemon now enables the `cpu`, `memory`, `io` and "
+"`pids` controllers in its cgroup's `cgroup.subtree_control`, so per-build "
+"cgroups expose `memory.peak`, `io.stat` etc. instead of only `cpu.stat`. "
+"This requires the controllers to be delegated to the daemon's cgroup (e.g. "
+"systemd `Delegate=yes`)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:62
+msgid ""
+"Nix now finds Darwin runtime garbage collector roots without `lsof` [\\#3011]"
+"(https://github.com/NixOS/nix/issues/3011) [\\#13990](https://github.com/"
+"NixOS/nix/issues/13990)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:64
+msgid ""
+"On Darwin, the garbage collector now uses `libproc` to retain store paths "
+"referenced by running processes through their working directories, open "
+"files, mapped regions, or environment variables. This avoids the slow `lsof` "
+"fallback and adds environment-variable roots, which `lsof` could not "
+"discover."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:69
+msgid ""
+"macOS does not expose the environment variables of entitled binaries while "
+"System Integrity Protection is enabled, so those roots remain unavailable."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:72
+msgid ""
+"`nix run`, `nix search` and `nix bundle` now auto-call functions [\\#5316]"
+"(https://github.com/NixOS/nix/issues/5316) [\\#15895](https://github.com/"
+"NixOS/nix/pull/15895)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:74
+msgid ""
+"If an [installable](../glossary.md#gloss-installable) given with `--file` or "
+"`--expr` evaluates to a function, it is now called automatically, provided "
+"each of its arguments has a default value or is passed with `--arg`/`--"
+"argstr`. This makes `nix run`, `nix search` and `nix bundle` behave like "
+"`nix build`, `nix shell`, `nix-build` and `nix-env --query`."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:77
+msgid ""
+"For example, `nix run --impure --expr '{ pkgs ? import <nixpkgs> {} }: "
+"pkgs.hello'` now works instead of failing with `error: attribute 'type' does "
+"not exist`."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:79
+msgid ""
+"`nix eval` and `nix edit`, which show the value itself rather than a "
+"package, are unchanged."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:81
+msgid ""
+"Build cgroups are named after the derivation [\\#16516](https://github.com/"
+"NixOS/nix/pull/16516)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:83
+msgid ""
+"Per-build cgroups are now named `nix-build@<drv-hash>-<uid>` when a build "
+"user is used, and `nix-build@<drv-hash>-<pid>` otherwise. They replace `nix-"
+"build-uid-<uid>` and `nix-build-pid-<pid>-<counter>`, so external tools can "
+"locate the cgroup of a given derivation's build."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:86
+msgid ""
+"Add an alias for optimise. [\\#1902](https://github.com/NixOS/nix/issues/"
+"1902) [\\#11326](https://github.com/NixOS/nix/issues/11326) [\\#11577]"
+"(https://github.com/NixOS/nix/pull/11577) [\\#15997](https://github.com/"
+"NixOS/nix/pull/15997)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:88
+msgid ""
+"Add \"optimize\" as a linguistic variation of \"optimise\". Now both the "
+"`nix-store` and `nix store` commands work with the same spelling."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:90
+msgid ""
+"Downloads and store path copying produces significantly less log updates for "
+"`internal-json` logger [\\#16671](https://github.com/NixOS/nix/pull/16671) "
+"[\\#16670](https://github.com/NixOS/nix/pull/16670)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:92
+msgid ""
+"Tools such as `nix-output-monitor` were previously significantly "
+"bottlenecked parsing on the order of tens of MB/s of JSON. Download progress "
+"updates are now chunked and rate-limited. Bandwidth requirements for the "
+"logger are now significantly lower."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:95
+msgid ""
+"Styled output on stdout is plain when stdout is not a terminal [\\#4626]"
+"(https://github.com/NixOS/nix/issues/4626) [\\#9486](https://github.com/"
+"NixOS/nix/issues/9486) [\\#16710](https://github.com/NixOS/nix/issues/16710) "
+"[\\#16711](https://github.com/NixOS/nix/pull/16711)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:97
+msgid ""
+"`nix profile list`, `nix profile history`, `nix flake metadata`, `nix flake "
+"show`, `nix search` and `nix store diff-closures` no longer write ANSI bold "
+"and color to stdout when it is not a terminal, or when `NO_COLOR` is set. "
+"Set `CLICOLOR_FORCE` to keep the styling."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:100
+msgid ""
+"Add `nix version` command with `--json` option [\\#16201](https://github.com/"
+"NixOS/nix/pull/16201) A `--version` flag is more like a modern subcommand "
+"than a flag, and this provides a place for JSON output, making it easier to "
+"consume in scripts. When `--json` is passed, the output includes library "
+"versions."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:105
+msgid ""
+"`nix --version -vv` output also includes library versions in human-readable "
+"comma-separated format."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:107
+msgid ""
+"Bash completions now handle redirections [\\#16648](https://github.com/NixOS/"
+"nix/pull/16648)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:109
+msgid ""
+"File names after redirections (e.g. `nix log nixpkgs#hello > /tmp/hello-"
+"lo<TAB>`) can now be completed."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:111
+msgid ""
+"Nix now makes use of reflinking via `copy_file_range` when copying files on "
+"filesystem that support it [\\#15410](https://github.com/NixOS/nix/pull/"
+"15410)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:113
+msgid "Error message improvements"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:115
+msgid ""
+"Start of infinite recursion is now visible [\\#16296](https://github.com/"
+"NixOS/nix/pull/16296)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:117
+msgid ""
+"When Nix reports a trace for an infinitely recursive evaluation, it will now "
+"let you discern the cycle from the code that leads up to the cycle."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:120
+msgid "Example:"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:122
+msgid ""
+"`nix eval --expr 'let f = builtins.add f 1; in toString f' --show-trace`"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:140
+msgid ""
+"`builtins.warn` now supports unindented multi-line messages [\\#14794]"
+"(https://github.com/NixOS/nix/pull/14794)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:142
+msgid ""
+"`builtins.warn` now preserves the formatting of messages that start with a "
+"newline instead of adding indentation to align them with the warning prefix."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:144
+msgid ""
+"`builtins.addErrorContext` keeps the error from _value_ when _context_ fails "
+"[\\#8283](https://github.com/NixOS/nix/issues/8283) [\\#16618](https://"
+"github.com/NixOS/nix/pull/16618)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:146
+msgid ""
+"If evaluating _context_ in [`builtins.addErrorContext context value`](../"
+"language/builtins.md#builtins-addErrorContext) fails, the error from _value_ "
+"now propagates, with the error from _context_ in its trace. Library authors "
+"can therefore use more complex _context_ expressions without the risk of "
+"hiding the error from _value_."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:149
+msgid ""
+"`addErrorContext` can no longer be abused to catch uncatchable errors like "
+"`abort`."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:151
+msgid ""
+"Error traces now show both the selection site in addition to the definition "
+"site when an attribute is retrieved and both locations are known. [\\#16249]"
+"(https://github.com/NixOS/nix/pull/16249)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:153
+msgid ""
+"Error traces now always show the derivations that were getting instantiated "
+"[\\#16282](https://github.com/NixOS/nix/pull/16282)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:155
+msgid ""
+"All operators in error traces are displayed, and consistently [\\#16301]"
+"(https://github.com/NixOS/nix/pull/16301)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:157
+msgid ""
+"Error messages for interrupted downloads are more concise [\\#16095](https://"
+"github.com/NixOS/nix/pull/16095) [\\#16646](https://github.com/NixOS/nix/"
+"pull/16646) [\\#14757](https://github.com/NixOS/nix/issues/14757)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:159
+msgid "Bug fixes"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:161
+msgid ""
+"`nix develop` no longer disables ASLR on Linux [\\#16624](https://github.com/"
+"NixOS/nix/pull/16624)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:163
+msgid ""
+"Previously, `nix develop` would enable `ADDR_NO_RANDOMIZE` personality bit. "
+"This disabled ASLR for all subsequent commands run in the devshell."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:166
+msgid ""
+"Additionally, `impersonate-linux-26` setting has been removed. If you "
+"require this, you can change the personality manually or use `deterministic-"
+"uname` from Nixpkgs depending on the use-case."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:169
+msgid ""
+"File descriptors are more reliably closed in children processes [\\#16247]"
+"(https://github.com/NixOS/nix/pull/16247) [\\#16717](https://github.com/"
+"NixOS/nix/pull/16717) [\\#16749](https://github.com/NixOS/nix/pull/16749)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:171
+msgid ""
+"Also, Nix daemon no longer performs 1 million close syscalls (commonly "
+"configured RLIMIT_NOFILE for the daemon) for each spawned derivation builder "
+"on macOS by relying on libproc for closing file descriptors in the child."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:174
+msgid ""
+"`post-build-hook` is no longer run in a mount namespace with a writable Nix "
+"store [\\#16247](https://github.com/NixOS/nix/pull/16247)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:176
+msgid ""
+"`builtins.pathExists` no longer swallows access errors from evaluating its "
+"argument [\\#16728](https://github.com/NixOS/nix/pull/16728)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:178
+msgid ""
+"Since Nix 2.20, `builtins.pathExists` accidentally recovered from access "
+"errors caused by evaluating its argument. Consider:"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:181
+msgid "'builtins.pathExists (builtins.readFile /etc/passwd)'"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:184
+msgid ""
+"This evaluated to `false`, even though `builtins.readFile /etc/passwd` would "
+"throw, and `builtins.pathExists` never saw a supposed path."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:186
+msgid ""
+"Now the error propagates, as it did in Nix 2.19 and earlier. This invocation "
+"fails with the same error observed by calling `builtins.readFile /etc/"
+"passwd` in isolation."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:188
+msgid ""
+"Store garbage collector can now delete App bundles on macOS [\\#16626]"
+"(https://github.com/NixOS/nix/pull/16626) [\\#16719](https://github.com/"
+"NixOS/nix/pull/16719)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:190
+msgid ""
+"Previously, even when run as `root` Nix attempted to make directories "
+"writable for deletion, which is not allowed for App bundles on macOS and "
+"would fail with `Operation not permitted`. Nix now skips the `chmod` when "
+"run as root on macOS."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:194
+msgid ""
+"Additionally, when run with `DAC_OVERRIDE` capability on Linux, `chmod` "
+"operation is also skipped."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:196
+msgid ""
+"`nix eval --write-to` is stricter about what it writes [\\#16760](https://"
+"github.com/NixOS/nix/pull/16760)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:198
+msgid ""
+"`nix eval --write-to` now requires attributes to correspond to a single file "
+"name. In particular, it rejects attribute names that contain `/` or are "
+"empty, in addition to rejecting `.` and `..` as it did already. Previously, "
+"an attribute such as `{ \"a/b\" = \"...\"; }` was written to a nested path "
+"`a/b`, which is a bit of an \"injection\"."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:202
+msgid ""
+"Attribute sets can also now be nested at most 64 levels deep, the same limit "
+"as for NARs."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:204
+msgid ""
+"(The output is also now written in the same way as NARs are unpacked, which "
+"hardens it in a bunch of ways.)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:206
+msgid "Path-like flake references detect Mercurial checkouts"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:208
+msgid ""
+"A path-like flake reference such as `.` used to become a `git+file:` input "
+"only inside a Git repository, and a `path:` input everywhere else. In a "
+"Mercurial checkout that copied the whole directory to the store, `.hg` and "
+"untracked files included, and the flake had no `rev`."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:211
+msgid ""
+"Such a reference now resolves to `hg+file:`, so only tracked files are "
+"copied. This needs the `hg` executable, as `hg+file:` inputs always did."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:214
+msgid ""
+"Input schemes, including ones from [`plugin-files`](../command-ref/conf-"
+"file.md#conf-plugin-files), can resolve a path-like flake reference to their "
+"own scheme by implementing `InputScheme::localRepoURL()`."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:216
+msgid "S3: `endpoint=host:port` fixed, deprecated in favour of full URLs"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:218
+msgid ""
+"Bare `host:port` values for the `endpoint` parameter of `s3://` store URLs "
+"were misparsed (the host was taken as a URL scheme). This is fixed, but the "
+"bare form and the separate `scheme` parameter are deprecated: use a full URL "
+"such as `endpoint=https://minio.example.com` instead."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:223
+msgid ""
+"Boost.Context bug causing incorrect daemeon exception detection has been "
+"worked around in Nix and Nixpkgs, with a fix contributed upstream [\\#16197]"
+"(https://github.com/NixOS/nix/pull/16197) [\\#16174](https://github.com/"
+"NixOS/nix/issues/16174)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:225
+msgid ""
+"This would cause spurious aborts in `nix repl` when `builtins.toFile` or "
+"other primops that fetch to the store failed. It only affected builds of Nix "
+"using Boost's fcontext coroutine backend with libstdc++ standard library."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:228
+msgid ""
+"NUL bytes in derivation `builder` and `args` attributes are rejected "
+"[\\#16245](https://github.com/NixOS/nix/pull/16245)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:230
+msgid ""
+"This issue was not possible to encounter from the Nix evaluator, since Nix "
+"strings disallow embedded NUL bytes but could lead to silent truncation in "
+"other cases."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:233
+msgid ""
+"Derivation parser is now more strict [\\#16237](https://github.com/NixOS/nix/"
+"issues/16237) [\\#16284](https://github.com/NixOS/nix/pull/16284)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:235
+msgid ""
+"The derivation ATerm parser now rejects derivations that are not in the form "
+"that's produced by the evaluator."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:237
+msgid ""
+"The NAR parser is stricter when file contents are discarded [\\#16325]"
+"(https://github.com/NixOS/nix/pull/16325)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:239
+msgid ""
+"When computing the NAR listing (`.ls` files) and other operations that "
+"discard contents of regular files in NARs, Nix did not sufficiently validate "
+"padding bytes."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:242
+msgid ""
+"Store path basenames that don't have the hash part followed by `-` are "
+"properly rejected [\\#16257](https://github.com/NixOS/nix/pull/16257)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:244
+msgid ""
+"Truncated Brotli compressed NARs no longer cause Nix to loop infinitely "
+"[\\#16575](https://github.com/NixOS/nix/pull/16575)."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:246
+msgid ""
+"Errors while writing to compressed streams (e.g. copying to a local binary "
+"cache store) no longer cause a crash [\\#16664](https://github.com/NixOS/nix/"
+"pull/16664)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:248
+msgid ""
+"Non-lexically-canonical home-path literals (e.g. `~/repos/nixpkgs/.`) no "
+"longer crash the evaluator [\\#16651](https://github.com/NixOS/nix/pull/"
+"16651)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:250
+msgid ""
+"Deleting profiles with unexpected `mtime` no longer triggers a crash "
+"[\\#16634](https://github.com/NixOS/nix/pull/16634)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:252
+msgid ""
+"Internal source tree names no longer leak into evaluation results of "
+"`builtins.toXML` and value printing [\\#16780](https://github.com/NixOS/nix/"
+"pull/16780)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:254
+msgid ""
+"This is a regression from 2.32 for `pure-eval` mode, which is now fixed."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:256
+msgid ""
+"`builtins.readDir builtins.storeDir` no longer fails in impure evaluation "
+"mode [\\#16780](https://github.com/NixOS/nix/pull/16780)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:258
+msgid ""
+"Since 2.32, it would fail with `error: path '/nix/store/' is not in the Nix "
+"store`."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:260
+msgid ""
+"Logging has been hardened against crafted inputs [\\#16784](https://"
+"github.com/NixOS/nix/pull/16784) [\\#16456](https://github.com/NixOS/nix/"
+"pull/16456)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:262
+msgid ""
+"Nix now handles malformed inputs from derivation builders more robustly and "
+"warns on unknown activities and result types."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:264
+msgid ""
+"While reading git objects, Nix now rejects duplicate Git tree entries and "
+"unsorted trees [\\#16793](https://github.com/NixOS/nix/pull/16793)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:266
+msgid "`ca-derivations`"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:268
+msgid ""
+"Add new `nix store build-trace delete` command [\\#15655](https://github.com/"
+"NixOS/nix/pull/15655)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:270
+msgid ""
+"Implement new `builder-rpc-v0` feature; see [\\#15793](https://github.com/"
+"NixOS/nix/pull/15793) below under `dynamic-derivations`. While motivated "
+"primarily by the dynamic derivations feature, registering outputs is also "
+"useful for content-addressing derivations. The builder can learn the "
+"calculated content-addressed path of one of its outputs before creating "
+"others, removing the need for any rewriting on the nix-daemon side after the "
+"derivation finishes."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:274
+msgid ""
+"Error instead of crashing when realisations cannot be queried [\\#16014]"
+"(https://github.com/NixOS/nix/pull/16014)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:276
+msgid "`dynamic-derivations`"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:278
+msgid ""
+"Implement new `builder-rpc-v0` feature [\\#15793](https://github.com/NixOS/"
+"nix/pull/15793) This PR adds support for creating new store objects within a "
+"derivation at runtime, then registering them as an output."
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:281
+msgid ""
+"`nix store add --scan` for creating references, as well as in `builder-rpc-"
+"v0` [\\#16163](https://github.com/NixOS/nix/pull/16163)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:283
+msgid "C API"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:285
+msgid ""
+"Expose evaluator helpers for working with derivation trees [\\#15842]"
+"(https://github.com/NixOS/nix/pull/15842) `nix_get_derivation`, "
+"`nix_value_auto_call_function`"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:287
+msgid ""
+"Fix `nix_get_external` [\\#15954](https://github.com/NixOS/nix/pull/15954)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:289
+msgid "Contributing"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:291
+msgid "Establish AI policy [\\#15984](https://github.com/NixOS/nix/pull/15984)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:293
+msgid "Contributors"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:295
+msgid "This release was made possible by the following 68 contributors:"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:297
+msgid "Angel J [**(@iamanaws)**](https://github.com/iamanaws)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:298
+msgid "saara [**(@misspenalty)**](https://github.com/misspenalty)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:299
+msgid "Krithik Rao [**(@KritR)**](https://github.com/KritR)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:300
+msgid "Michael Daniels [**(@mdaniels5757)**](https://github.com/mdaniels5757)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:301
+msgid "Kip Landergren [**(@klandergren)**](https://github.com/klandergren)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:302
+msgid ""
+"Lisanna Dettwyler [**(@lisanna-dettwyler)**](https://github.com/lisanna-"
+"dettwyler)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:303
+msgid ""
+"Vladimir Petrzhikovskii [**(@0xdeafbeef)**](https://github.com/0xdeafbeef)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:304
+msgid "John Ericson [**(@Ericson2314)**](https://github.com/Ericson2314)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:305
+msgid "figsoda [**(@figsoda)**](https://github.com/figsoda)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:306
+msgid "raf [**(@NotAShelf)**](https://github.com/NotAShelf)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:307
+msgid "Amaan Qureshi [**(@amaanq)**](https://github.com/amaanq)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:308
+msgid "Jazzkid [**(@Jazzkid0)**](https://github.com/Jazzkid0)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:309
+msgid "Sergei Zimmerman [**(@xokdvium)**](https://github.com/xokdvium)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:310
+msgid "StepBroBD [**(@stepbrobd)**](https://github.com/stepbrobd)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:311
+msgid "dram [**(@dramforever)**](https://github.com/dramforever)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:312
+msgid "Jonas Chevalier [**(@zimbatm)**](https://github.com/zimbatm)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:313
+msgid "yunfachi [**(@yunfachi)**](https://github.com/yunfachi)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:314
+msgid "Matthew Kenigsberg [**(@mkenigs)**](https://github.com/mkenigs)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:315
+msgid "Jake Hillion [**(@JakeHillion)**](https://github.com/JakeHillion)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:316
+msgid "Marshall Porter [**(@meop)**](https://github.com/meop)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:317
+msgid "Robert Hensing [**(@roberth)**](https://github.com/roberth)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:318
+msgid "Philip Taron [**(@PhilipTaronQ)**](https://github.com/PhilipTaronQ)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:319
+msgid "Anton Kesy [**(@antonkesy)**](https://github.com/antonkesy)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:320
+msgid "Jens Petersen [**(@juhp)**](https://github.com/juhp)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:321
+msgid ""
+"Valentin Gagarin [**(@fricklerhandwerk)**](https://github.com/"
+"fricklerhandwerk)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:322
+msgid "HHH [**(@H7TPS)**](https://github.com/H7TPS)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:323
+msgid "Ihar Hrachyshka [**(@booxter)**](https://github.com/booxter)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:324
+msgid "Jörg Thalheim [**(@Mic92)**](https://github.com/Mic92)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:325
+msgid "Sandro [**(@SuperSandro2000)**](https://github.com/SuperSandro2000)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:326
+msgid "faukah [**(@faukah)**](https://github.com/faukah)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:327
+msgid "Rohit Singh [**(@sinrohit-desco)**](https://github.com/sinrohit-desco)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:328
+msgid "Artemis Tosini [**(@artemist)**](https://github.com/artemist)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:329
+msgid "Gaétan Lepage [**(@GaetanLepage)**](https://github.com/GaetanLepage)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:330
+msgid "Yaroslav Kuznetsov [**(@YENGISAY)**](https://github.com/YENGISAY)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:331
+msgid "Bang Lee [**(@Qusic)**](https://github.com/Qusic)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:332
+msgid "Francesco Gazzetta [**(@fgaz)**](https://github.com/fgaz)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:333
+msgid "Farid Zakaria [**(@fzakaria)**](https://github.com/fzakaria)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:334
+msgid "reee [**(@qsxDree)**](https://github.com/qsxDree)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:335
+msgid "Evan Quiney [**(@Evanev7)**](https://github.com/Evanev7)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:336
+msgid "Cosima Neidahl [**(@OPNA2608)**](https://github.com/OPNA2608)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:337
+msgid "Domen Kožar [**(@domenkozar)**](https://github.com/domenkozar)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:338
+msgid "Jacek Galowicz [**(@tfc)**](https://github.com/tfc)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:339
+msgid "sulewicz-gq [**(@sulewicz-gq)**](https://github.com/sulewicz-gq)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:340
+msgid "Grayson Tinker [**(@GraysonTinker)**](https://github.com/GraysonTinker)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:341
+msgid "fsagbuya [**(@fsagbuya)**](https://github.com/fsagbuya)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:342
+msgid "tomberek [**(@tomberek)**](https://github.com/tomberek)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:343
+msgid ""
+"Chad Zawistowski [**(@czawistowski-nvidia)**](https://github.com/"
+"czawistowski-nvidia)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:344
+msgid "Eelco Dolstra [**(@edolstra)**](https://github.com/edolstra)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:345
+msgid "adisbladis [**(@adisbladis)**](https://github.com/adisbladis)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:346
+msgid "Dennis [**(@DerDennisOP)**](https://github.com/DerDennisOP)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:347
+msgid "aetos [**(@aetosdios27)**](https://github.com/aetosdios27)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:348
+msgid "Zapolyarny [**(@ZapolyarnyDev)**](https://github.com/ZapolyarnyDev)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:349
+msgid "Yuta Fudaba [**(@ph0ryn)**](https://github.com/ph0ryn)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:350
+msgid "Carl [**(@Lillecarl)**](https://github.com/Lillecarl)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:351
+msgid "Riccardo Mazzarini [**(@noib3)**](https://github.com/noib3)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:352
+msgid "Jonathan De Troye [**(@detroyejr)**](https://github.com/detroyejr)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:353
+msgid "ulucs [**(@ulucs)**](https://github.com/ulucs)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:354
+msgid "Jamie Magee [**(@JamieMagee)**](https://github.com/JamieMagee)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:355
+msgid "Filippo [**(@Filippo-Galli)**](https://github.com/Filippo-Galli)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:356
+msgid "Adam Dinwoodie [**(@me-and)**](https://github.com/me-and)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:357
+msgid "Jeremy Fleischman [**(@jfly)**](https://github.com/jfly)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:358
+msgid "Philip Taron [**(@philiptaron)**](https://github.com/philiptaron)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:359
+msgid ""
+"Thiago Kenji Okada [**(@thiagokokada)**](https://github.com/thiagokokada)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:360
+msgid "Alex [**(@filaka771)**](https://github.com/filaka771)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:361
+msgid "Ryan Hendrickson [**(@rhendric)**](https://github.com/rhendric)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:362
+msgid "Michael Vorburger [**(@vorburger)**](https://github.com/vorburger)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:363
+msgid "awsmadi [**(@awsmadi)**](https://github.com/awsmadi)"
+msgstr ""
+
+#: source/release-notes/rl-2.36.md:364
+msgid "Philipp Otterbein"
+msgstr ""
