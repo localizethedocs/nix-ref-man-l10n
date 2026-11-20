@@ -16,9 +16,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-20 08:25:44 +0000",
-        "hash" : "f3f184834895f45030d69f20a311b2eac99ebf1d",
-        "title" : "PR template: Replace \"Context\" with \"Implementation\" (#16647)"
+        "date" : "2026-11-16 22:41:20 +0000",
+        "hash" : "29c21a7744ff92879907bcba9c4692fe69259f18",
+        "title" : "release notes: 2.36.0 (#16839)"
       }
     },
     "zh_TW" : 
@@ -26,9 +26,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2026-10-20 08:25:44 +0000",
-        "hash" : "f3f184834895f45030d69f20a311b2eac99ebf1d",
-        "title" : "PR template: Replace \"Context\" with \"Implementation\" (#16647)"
+        "date" : "2026-11-16 22:41:20 +0000",
+        "hash" : "29c21a7744ff92879907bcba9c4692fe69259f18",
+        "title" : "release notes: 2.36.0 (#16839)"
       }
     }
   },

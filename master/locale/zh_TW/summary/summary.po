@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"POT-Creation-Date: 2026-11-17T17:28:17Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1064,269 +1064,273 @@ msgid "Upcoming release"
 msgstr ""
 
 #: source/SUMMARY.md:271
-msgid "Release 2.35 (2026-06-22)"
+msgid "Release 2.36 (2026-11-16)"
 msgstr ""
 
 #: source/SUMMARY.md:272
-msgid "Release 2.34 (2026-02-27)"
+msgid "Release 2.35 (2026-06-22)"
 msgstr ""
 
 #: source/SUMMARY.md:273
-msgid "Release 2.33 (2025-12-09)"
+msgid "Release 2.34 (2026-02-27)"
 msgstr ""
 
 #: source/SUMMARY.md:274
-msgid "Release 2.32 (2025-10-06)"
+msgid "Release 2.33 (2025-12-09)"
 msgstr ""
 
 #: source/SUMMARY.md:275
-msgid "Release 2.31 (2025-08-21)"
+msgid "Release 2.32 (2025-10-06)"
 msgstr ""
 
 #: source/SUMMARY.md:276
-msgid "Release 2.30 (2025-07-07)"
+msgid "Release 2.31 (2025-08-21)"
 msgstr ""
 
 #: source/SUMMARY.md:277
-msgid "Release 2.29 (2025-05-14)"
+msgid "Release 2.30 (2025-07-07)"
 msgstr ""
 
 #: source/SUMMARY.md:278
-msgid "Release 2.28 (2025-04-02)"
+msgid "Release 2.29 (2025-05-14)"
 msgstr ""
 
 #: source/SUMMARY.md:279
-msgid "Release 2.27 (2025-03-03)"
+msgid "Release 2.28 (2025-04-02)"
 msgstr ""
 
 #: source/SUMMARY.md:280
-msgid "Release 2.26 (2025-01-22)"
+msgid "Release 2.27 (2025-03-03)"
 msgstr ""
 
 #: source/SUMMARY.md:281
-msgid "Release 2.25 (2024-11-07)"
+msgid "Release 2.26 (2025-01-22)"
 msgstr ""
 
 #: source/SUMMARY.md:282
-msgid "Release 2.24 (2024-07-31)"
+msgid "Release 2.25 (2024-11-07)"
 msgstr ""
 
 #: source/SUMMARY.md:283
-msgid "Release 2.23 (2024-06-03)"
+msgid "Release 2.24 (2024-07-31)"
 msgstr ""
 
 #: source/SUMMARY.md:284
-msgid "Release 2.22 (2024-04-23)"
+msgid "Release 2.23 (2024-06-03)"
 msgstr ""
 
 #: source/SUMMARY.md:285
-msgid "Release 2.21 (2024-03-11)"
+msgid "Release 2.22 (2024-04-23)"
 msgstr ""
 
 #: source/SUMMARY.md:286
-msgid "Release 2.20 (2024-01-29)"
+msgid "Release 2.21 (2024-03-11)"
 msgstr ""
 
 #: source/SUMMARY.md:287
-msgid "Release 2.19 (2023-11-17)"
+msgid "Release 2.20 (2024-01-29)"
 msgstr ""
 
 #: source/SUMMARY.md:288
-msgid "Release 2.18 (2023-09-20)"
+msgid "Release 2.19 (2023-11-17)"
 msgstr ""
 
 #: source/SUMMARY.md:289
-msgid "Release 2.17 (2023-07-24)"
+msgid "Release 2.18 (2023-09-20)"
 msgstr ""
 
 #: source/SUMMARY.md:290
-msgid "Release 2.16 (2023-05-31)"
+msgid "Release 2.17 (2023-07-24)"
 msgstr ""
 
 #: source/SUMMARY.md:291
-msgid "Release 2.15 (2023-04-11)"
+msgid "Release 2.16 (2023-05-31)"
 msgstr ""
 
 #: source/SUMMARY.md:292
-msgid "Release 2.14 (2023-02-28)"
+msgid "Release 2.15 (2023-04-11)"
 msgstr ""
 
 #: source/SUMMARY.md:293
-msgid "Release 2.13 (2023-01-17)"
+msgid "Release 2.14 (2023-02-28)"
 msgstr ""
 
 #: source/SUMMARY.md:294
-msgid "Release 2.12 (2022-12-06)"
+msgid "Release 2.13 (2023-01-17)"
 msgstr ""
 
 #: source/SUMMARY.md:295
-msgid "Release 2.11 (2022-08-25)"
+msgid "Release 2.12 (2022-12-06)"
 msgstr ""
 
 #: source/SUMMARY.md:296
-msgid "Release 2.10 (2022-07-11)"
+msgid "Release 2.11 (2022-08-25)"
 msgstr ""
 
 #: source/SUMMARY.md:297
-msgid "Release 2.9 (2022-05-30)"
+msgid "Release 2.10 (2022-07-11)"
 msgstr ""
 
 #: source/SUMMARY.md:298
-msgid "Release 2.8 (2022-04-19)"
+msgid "Release 2.9 (2022-05-30)"
 msgstr ""
 
 #: source/SUMMARY.md:299
-msgid "Release 2.7 (2022-03-07)"
+msgid "Release 2.8 (2022-04-19)"
 msgstr ""
 
 #: source/SUMMARY.md:300
-msgid "Release 2.6 (2022-01-24)"
+msgid "Release 2.7 (2022-03-07)"
 msgstr ""
 
 #: source/SUMMARY.md:301
-msgid "Release 2.5 (2021-12-13)"
+msgid "Release 2.6 (2022-01-24)"
 msgstr ""
 
 #: source/SUMMARY.md:302
-msgid "Release 2.4 (2021-11-01)"
+msgid "Release 2.5 (2021-12-13)"
 msgstr ""
 
 #: source/SUMMARY.md:303
-msgid "Release 2.3 (2019-09-04)"
+msgid "Release 2.4 (2021-11-01)"
 msgstr ""
 
 #: source/SUMMARY.md:304
-msgid "Release 2.2 (2019-01-11)"
+msgid "Release 2.3 (2019-09-04)"
 msgstr ""
 
 #: source/SUMMARY.md:305
-msgid "Release 2.1 (2018-09-02)"
+msgid "Release 2.2 (2019-01-11)"
 msgstr ""
 
 #: source/SUMMARY.md:306
-msgid "Release 2.0 (2018-02-22)"
+msgid "Release 2.1 (2018-09-02)"
 msgstr ""
 
 #: source/SUMMARY.md:307
-msgid "Release 1.11.10 (2017-06-12)"
+msgid "Release 2.0 (2018-02-22)"
 msgstr ""
 
 #: source/SUMMARY.md:308
-msgid "Release 1.11 (2016-01-19)"
+msgid "Release 1.11.10 (2017-06-12)"
 msgstr ""
 
 #: source/SUMMARY.md:309
-msgid "Release 1.10 (2015-09-03)"
+msgid "Release 1.11 (2016-01-19)"
 msgstr ""
 
 #: source/SUMMARY.md:310
-msgid "Release 1.9 (2015-06-12)"
+msgid "Release 1.10 (2015-09-03)"
 msgstr ""
 
 #: source/SUMMARY.md:311
-msgid "Release 1.8 (2014-12-14)"
+msgid "Release 1.9 (2015-06-12)"
 msgstr ""
 
 #: source/SUMMARY.md:312
-msgid "Release 1.7 (2014-04-11)"
+msgid "Release 1.8 (2014-12-14)"
 msgstr ""
 
 #: source/SUMMARY.md:313
-msgid "Release 1.6.1 (2013-10-28)"
+msgid "Release 1.7 (2014-04-11)"
 msgstr ""
 
 #: source/SUMMARY.md:314
-msgid "Release 1.6 (2013-09-10)"
+msgid "Release 1.6.1 (2013-10-28)"
 msgstr ""
 
 #: source/SUMMARY.md:315
-msgid "Release 1.5.2 (2013-05-13)"
+msgid "Release 1.6 (2013-09-10)"
 msgstr ""
 
 #: source/SUMMARY.md:316
-msgid "Release 1.5 (2013-02-27)"
+msgid "Release 1.5.2 (2013-05-13)"
 msgstr ""
 
 #: source/SUMMARY.md:317
-msgid "Release 1.4 (2013-02-26)"
+msgid "Release 1.5 (2013-02-27)"
 msgstr ""
 
 #: source/SUMMARY.md:318
-msgid "Release 1.3 (2013-01-04)"
+msgid "Release 1.4 (2013-02-26)"
 msgstr ""
 
 #: source/SUMMARY.md:319
-msgid "Release 1.2 (2012-12-06)"
+msgid "Release 1.3 (2013-01-04)"
 msgstr ""
 
 #: source/SUMMARY.md:320
-msgid "Release 1.1 (2012-07-18)"
+msgid "Release 1.2 (2012-12-06)"
 msgstr ""
 
 #: source/SUMMARY.md:321
-msgid "Release 1.0 (2012-05-11)"
+msgid "Release 1.1 (2012-07-18)"
 msgstr ""
 
 #: source/SUMMARY.md:322
-msgid "Release 0.16 (2010-08-17)"
+msgid "Release 1.0 (2012-05-11)"
 msgstr ""
 
 #: source/SUMMARY.md:323
-msgid "Release 0.15 (2010-03-17)"
+msgid "Release 0.16 (2010-08-17)"
 msgstr ""
 
 #: source/SUMMARY.md:324
-msgid "Release 0.14 (2010-02-04)"
+msgid "Release 0.15 (2010-03-17)"
 msgstr ""
 
 #: source/SUMMARY.md:325
-msgid "Release 0.13 (2009-11-05)"
+msgid "Release 0.14 (2010-02-04)"
 msgstr ""
 
 #: source/SUMMARY.md:326
-msgid "Release 0.12 (2008-11-20)"
+msgid "Release 0.13 (2009-11-05)"
 msgstr ""
 
 #: source/SUMMARY.md:327
-msgid "Release 0.11 (2007-12-31)"
+msgid "Release 0.12 (2008-11-20)"
 msgstr ""
 
 #: source/SUMMARY.md:328
-msgid "Release 0.10.1 (2006-10-11)"
+msgid "Release 0.11 (2007-12-31)"
 msgstr ""
 
 #: source/SUMMARY.md:329
-msgid "Release 0.10 (2006-10-06)"
+msgid "Release 0.10.1 (2006-10-11)"
 msgstr ""
 
 #: source/SUMMARY.md:330
-msgid "Release 0.9.2 (2005-09-21)"
+msgid "Release 0.10 (2006-10-06)"
 msgstr ""
 
 #: source/SUMMARY.md:331
-msgid "Release 0.9.1 (2005-09-20)"
+msgid "Release 0.9.2 (2005-09-21)"
 msgstr ""
 
 #: source/SUMMARY.md:332
-msgid "Release 0.9 (2005-09-16)"
+msgid "Release 0.9.1 (2005-09-20)"
 msgstr ""
 
 #: source/SUMMARY.md:333
-msgid "Release 0.8.1 (2005-04-13)"
+msgid "Release 0.9 (2005-09-16)"
 msgstr ""
 
 #: source/SUMMARY.md:334
-msgid "Release 0.8 (2005-04-11)"
+msgid "Release 0.8.1 (2005-04-13)"
 msgstr ""
 
 #: source/SUMMARY.md:335
-msgid "Release 0.7 (2005-01-12)"
+msgid "Release 0.8 (2005-04-11)"
 msgstr ""
 
 #: source/SUMMARY.md:336
-msgid "Release 0.6 (2004-11-14)"
+msgid "Release 0.7 (2005-01-12)"
 msgstr ""
 
 #: source/SUMMARY.md:337
+msgid "Release 0.6 (2004-11-14)"
+msgstr ""
+
+#: source/SUMMARY.md:338
 msgid "Release 0.5 and earlier"
 msgstr ""
