@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2026-11-16 22:41:20 +0000",
-      "hash" : "29c21a7744ff92879907bcba9c4692fe69259f18",
-      "title" : "release notes: 2.36.0 (#16839)"
+      "date" : "2026-11-24 15:27:40 +0000",
+      "hash" : "a8dc98c535aa239575426601e9d3ffea0cf0bc29",
+      "title" : "Fix `--extra-plugin-files` option (#16885)"
     }
   },
   "type" : "branch",

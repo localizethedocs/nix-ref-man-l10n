@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-11-17T17:28:17Z\n"
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:56Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Nix Store"
 msgstr ""
 
-#: source/SUMMARY.md:20 source/SUMMARY.md:233
+#: source/SUMMARY.md:20 source/SUMMARY.md:236
 msgid "File System Object"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Derivation Resolution"
 msgstr ""
 
-#: source/SUMMARY.md:32 source/SUMMARY.md:257
+#: source/SUMMARY.md:32 source/SUMMARY.md:260
 msgid "Building"
 msgstr ""
 
@@ -255,7 +255,7 @@ msgstr ""
 msgid "Package Management"
 msgstr ""
 
-#: source/SUMMARY.md:64 source/SUMMARY.md:225
+#: source/SUMMARY.md:64 source/SUMMARY.md:228
 msgid "Profiles"
 msgstr ""
 
@@ -808,529 +808,541 @@ msgid "nix store build-trace"
 msgstr ""
 
 #: source/SUMMARY.md:202
-msgid "nix store build-trace info"
+msgid "nix store build-trace delete"
 msgstr ""
 
 #: source/SUMMARY.md:203
-msgid "nix store cat"
+msgid "nix store build-trace info"
 msgstr ""
 
 #: source/SUMMARY.md:204
-msgid "nix store copy-log"
+msgid "nix store cat"
 msgstr ""
 
 #: source/SUMMARY.md:205
-msgid "nix store copy-sigs"
+msgid "nix store copy-log"
 msgstr ""
 
 #: source/SUMMARY.md:206
-msgid "nix store delete"
+msgid "nix store copy-sigs"
 msgstr ""
 
 #: source/SUMMARY.md:207
-msgid "nix store diff-closures"
+msgid "nix store delete"
 msgstr ""
 
 #: source/SUMMARY.md:208
-msgid "nix store dump-path"
+msgid "nix store diff-closures"
 msgstr ""
 
 #: source/SUMMARY.md:209
-msgid "nix store gc"
+msgid "nix store dump-path"
 msgstr ""
 
 #: source/SUMMARY.md:210
-msgid "nix store info"
+msgid "nix store gc"
 msgstr ""
 
 #: source/SUMMARY.md:211
-msgid "nix store ls"
+msgid "nix store info"
 msgstr ""
 
 #: source/SUMMARY.md:212
-msgid "nix store make-content-addressed"
+msgid "nix store ls"
 msgstr ""
 
 #: source/SUMMARY.md:213
-msgid "nix store optimise"
+msgid "nix store make-content-addressed"
 msgstr ""
 
 #: source/SUMMARY.md:214
-msgid "nix store path-from-hash-part"
+msgid "nix store optimise"
 msgstr ""
 
 #: source/SUMMARY.md:215
-msgid "nix store prefetch-file"
+msgid "nix store path-from-hash-part"
 msgstr ""
 
 #: source/SUMMARY.md:216
-msgid "nix store repair"
+msgid "nix store prefetch-file"
 msgstr ""
 
 #: source/SUMMARY.md:217
-msgid "nix store roots-daemon"
+msgid "nix store repair"
 msgstr ""
 
 #: source/SUMMARY.md:218
-msgid "nix store sign"
+msgid "nix store roots-daemon"
 msgstr ""
 
 #: source/SUMMARY.md:219
-msgid "nix store verify"
+msgid "nix store sign"
 msgstr ""
 
 #: source/SUMMARY.md:220
-msgid "nix upgrade-nix"
+msgid "nix store submit-output"
 msgstr ""
 
 #: source/SUMMARY.md:221
-msgid "nix why-depends"
+msgid "nix store verify"
+msgstr ""
+
+#: source/SUMMARY.md:222
+msgid "nix upgrade-nix"
 msgstr ""
 
 #: source/SUMMARY.md:223
-msgid "Files"
+msgid "nix version"
 msgstr ""
 
 #: source/SUMMARY.md:224
-msgid "nix.conf"
+msgid "nix why-depends"
 msgstr ""
 
 #: source/SUMMARY.md:226
-msgid "manifest.nix"
+msgid "Files"
 msgstr ""
 
 #: source/SUMMARY.md:227
-msgid "manifest.json"
-msgstr ""
-
-#: source/SUMMARY.md:228
-msgid "Channels"
+msgid "nix.conf"
 msgstr ""
 
 #: source/SUMMARY.md:229
-msgid "Default Nix expression"
+msgid "manifest.nix"
 msgstr ""
 
 #: source/SUMMARY.md:230
-msgid "Architecture and Design"
+msgid "manifest.json"
 msgstr ""
 
 #: source/SUMMARY.md:231
-msgid "Formats and Protocols"
+msgid "Channels"
 msgstr ""
 
 #: source/SUMMARY.md:232
-msgid "JSON Formats"
+msgid "Default Nix expression"
+msgstr ""
+
+#: source/SUMMARY.md:233
+msgid "Architecture and Design"
 msgstr ""
 
 #: source/SUMMARY.md:234
-msgid "Hash"
+msgid "Formats and Protocols"
 msgstr ""
 
 #: source/SUMMARY.md:235
-msgid "Content Address"
-msgstr ""
-
-#: source/SUMMARY.md:236
-msgid "Store Path"
+msgid "JSON Formats"
 msgstr ""
 
 #: source/SUMMARY.md:237
-msgid "Signature"
+msgid "Hash"
 msgstr ""
 
 #: source/SUMMARY.md:238
-msgid "Store Object Info"
+msgid "Content Address"
 msgstr ""
 
 #: source/SUMMARY.md:239
-msgid "Derivation"
+msgid "Store Path"
 msgstr ""
 
 #: source/SUMMARY.md:240
-msgid "Resolved Derivation"
+msgid "Signature"
 msgstr ""
 
 #: source/SUMMARY.md:241
-msgid "Derivation Options"
+msgid "Store Object Info"
 msgstr ""
 
 #: source/SUMMARY.md:242
-msgid "Deriving Path"
+msgid "Derivation"
 msgstr ""
 
 #: source/SUMMARY.md:243
-msgid "Build Trace Entry"
+msgid "Resolved Derivation"
 msgstr ""
 
 #: source/SUMMARY.md:244
-msgid "Build Result"
+msgid "Derivation Options"
 msgstr ""
 
 #: source/SUMMARY.md:245
-msgid "Store"
+msgid "Deriving Path"
 msgstr ""
 
 #: source/SUMMARY.md:246
-msgid "Serving Tarball Flakes"
+msgid "Build Trace Entry"
 msgstr ""
 
 #: source/SUMMARY.md:247
-msgid "Store Path Specification"
+msgid "Build Result"
 msgstr ""
 
 #: source/SUMMARY.md:248
-msgid "Nix Archive (NAR) Format"
+msgid "Store"
 msgstr ""
 
 #: source/SUMMARY.md:249
-msgid "Binary Cache"
+msgid "Serving Tarball Flakes"
 msgstr ""
 
 #: source/SUMMARY.md:250
-msgid "`nix-cache-info` Format"
+msgid "Store Path Specification"
 msgstr ""
 
 #: source/SUMMARY.md:251
-msgid "`.narinfo` Format"
+msgid "Nix Archive (NAR) Format"
 msgstr ""
 
 #: source/SUMMARY.md:252
-msgid "Derivation \"ATerm\" file format"
+msgid "Binary Cache"
 msgstr ""
 
 #: source/SUMMARY.md:253
-msgid "Nix32 Encoding"
+msgid "`nix-cache-info` Format"
 msgstr ""
 
 #: source/SUMMARY.md:254
-msgid "C API"
+msgid "`.narinfo` Format"
 msgstr ""
 
 #: source/SUMMARY.md:255
-msgid "Glossary"
+msgid "Derivation \"ATerm\" file format"
 msgstr ""
 
 #: source/SUMMARY.md:256
-msgid "Development"
+msgid "Nix32 Encoding"
+msgstr ""
+
+#: source/SUMMARY.md:257
+msgid "C API"
 msgstr ""
 
 #: source/SUMMARY.md:258
-msgid "Testing"
+msgid "Glossary"
 msgstr ""
 
 #: source/SUMMARY.md:259
-msgid "Benchmarking"
-msgstr ""
-
-#: source/SUMMARY.md:260
-msgid "Debugging"
+msgid "Development"
 msgstr ""
 
 #: source/SUMMARY.md:261
-msgid "Documentation"
+msgid "Testing"
 msgstr ""
 
 #: source/SUMMARY.md:262
-msgid "CLI guideline"
+msgid "Benchmarking"
 msgstr ""
 
 #: source/SUMMARY.md:263
-msgid "Data Modeling Guidelines"
+msgid "Debugging"
 msgstr ""
 
 #: source/SUMMARY.md:264
-msgid "C++ style guide"
+msgid "Documentation"
 msgstr ""
 
 #: source/SUMMARY.md:265
-msgid "Static Analysis"
+msgid "CLI guideline"
 msgstr ""
 
 #: source/SUMMARY.md:266
-msgid "Experimental Features"
+msgid "Data Modeling Guidelines"
 msgstr ""
 
 #: source/SUMMARY.md:267
-msgid "Contributing"
+msgid "C++ style guide"
 msgstr ""
 
 #: source/SUMMARY.md:268
-msgid "Releases"
+msgid "Static Analysis"
 msgstr ""
 
 #: source/SUMMARY.md:269
-msgid "Upcoming release"
+msgid "Experimental Features"
+msgstr ""
+
+#: source/SUMMARY.md:270
+msgid "Contributing"
 msgstr ""
 
 #: source/SUMMARY.md:271
-msgid "Release 2.36 (2026-11-16)"
+msgid "Releases"
 msgstr ""
 
 #: source/SUMMARY.md:272
-msgid "Release 2.35 (2026-06-22)"
-msgstr ""
-
-#: source/SUMMARY.md:273
-msgid "Release 2.34 (2026-02-27)"
+msgid "Upcoming release"
 msgstr ""
 
 #: source/SUMMARY.md:274
-msgid "Release 2.33 (2025-12-09)"
+msgid "Release 2.36 (2026-11-16)"
 msgstr ""
 
 #: source/SUMMARY.md:275
-msgid "Release 2.32 (2025-10-06)"
+msgid "Release 2.35 (2026-06-22)"
 msgstr ""
 
 #: source/SUMMARY.md:276
-msgid "Release 2.31 (2025-08-21)"
+msgid "Release 2.34 (2026-02-27)"
 msgstr ""
 
 #: source/SUMMARY.md:277
-msgid "Release 2.30 (2025-07-07)"
+msgid "Release 2.33 (2025-12-09)"
 msgstr ""
 
 #: source/SUMMARY.md:278
-msgid "Release 2.29 (2025-05-14)"
+msgid "Release 2.32 (2025-10-06)"
 msgstr ""
 
 #: source/SUMMARY.md:279
-msgid "Release 2.28 (2025-04-02)"
+msgid "Release 2.31 (2025-08-21)"
 msgstr ""
 
 #: source/SUMMARY.md:280
-msgid "Release 2.27 (2025-03-03)"
+msgid "Release 2.30 (2025-07-07)"
 msgstr ""
 
 #: source/SUMMARY.md:281
-msgid "Release 2.26 (2025-01-22)"
+msgid "Release 2.29 (2025-05-14)"
 msgstr ""
 
 #: source/SUMMARY.md:282
-msgid "Release 2.25 (2024-11-07)"
+msgid "Release 2.28 (2025-04-02)"
 msgstr ""
 
 #: source/SUMMARY.md:283
-msgid "Release 2.24 (2024-07-31)"
+msgid "Release 2.27 (2025-03-03)"
 msgstr ""
 
 #: source/SUMMARY.md:284
-msgid "Release 2.23 (2024-06-03)"
+msgid "Release 2.26 (2025-01-22)"
 msgstr ""
 
 #: source/SUMMARY.md:285
-msgid "Release 2.22 (2024-04-23)"
+msgid "Release 2.25 (2024-11-07)"
 msgstr ""
 
 #: source/SUMMARY.md:286
-msgid "Release 2.21 (2024-03-11)"
+msgid "Release 2.24 (2024-07-31)"
 msgstr ""
 
 #: source/SUMMARY.md:287
-msgid "Release 2.20 (2024-01-29)"
+msgid "Release 2.23 (2024-06-03)"
 msgstr ""
 
 #: source/SUMMARY.md:288
-msgid "Release 2.19 (2023-11-17)"
+msgid "Release 2.22 (2024-04-23)"
 msgstr ""
 
 #: source/SUMMARY.md:289
-msgid "Release 2.18 (2023-09-20)"
+msgid "Release 2.21 (2024-03-11)"
 msgstr ""
 
 #: source/SUMMARY.md:290
-msgid "Release 2.17 (2023-07-24)"
+msgid "Release 2.20 (2024-01-29)"
 msgstr ""
 
 #: source/SUMMARY.md:291
-msgid "Release 2.16 (2023-05-31)"
+msgid "Release 2.19 (2023-11-17)"
 msgstr ""
 
 #: source/SUMMARY.md:292
-msgid "Release 2.15 (2023-04-11)"
+msgid "Release 2.18 (2023-09-20)"
 msgstr ""
 
 #: source/SUMMARY.md:293
-msgid "Release 2.14 (2023-02-28)"
+msgid "Release 2.17 (2023-07-24)"
 msgstr ""
 
 #: source/SUMMARY.md:294
-msgid "Release 2.13 (2023-01-17)"
+msgid "Release 2.16 (2023-05-31)"
 msgstr ""
 
 #: source/SUMMARY.md:295
-msgid "Release 2.12 (2022-12-06)"
+msgid "Release 2.15 (2023-04-11)"
 msgstr ""
 
 #: source/SUMMARY.md:296
-msgid "Release 2.11 (2022-08-25)"
+msgid "Release 2.14 (2023-02-28)"
 msgstr ""
 
 #: source/SUMMARY.md:297
-msgid "Release 2.10 (2022-07-11)"
+msgid "Release 2.13 (2023-01-17)"
 msgstr ""
 
 #: source/SUMMARY.md:298
-msgid "Release 2.9 (2022-05-30)"
+msgid "Release 2.12 (2022-12-06)"
 msgstr ""
 
 #: source/SUMMARY.md:299
-msgid "Release 2.8 (2022-04-19)"
+msgid "Release 2.11 (2022-08-25)"
 msgstr ""
 
 #: source/SUMMARY.md:300
-msgid "Release 2.7 (2022-03-07)"
+msgid "Release 2.10 (2022-07-11)"
 msgstr ""
 
 #: source/SUMMARY.md:301
-msgid "Release 2.6 (2022-01-24)"
+msgid "Release 2.9 (2022-05-30)"
 msgstr ""
 
 #: source/SUMMARY.md:302
-msgid "Release 2.5 (2021-12-13)"
+msgid "Release 2.8 (2022-04-19)"
 msgstr ""
 
 #: source/SUMMARY.md:303
-msgid "Release 2.4 (2021-11-01)"
+msgid "Release 2.7 (2022-03-07)"
 msgstr ""
 
 #: source/SUMMARY.md:304
-msgid "Release 2.3 (2019-09-04)"
+msgid "Release 2.6 (2022-01-24)"
 msgstr ""
 
 #: source/SUMMARY.md:305
-msgid "Release 2.2 (2019-01-11)"
+msgid "Release 2.5 (2021-12-13)"
 msgstr ""
 
 #: source/SUMMARY.md:306
-msgid "Release 2.1 (2018-09-02)"
+msgid "Release 2.4 (2021-11-01)"
 msgstr ""
 
 #: source/SUMMARY.md:307
-msgid "Release 2.0 (2018-02-22)"
+msgid "Release 2.3 (2019-09-04)"
 msgstr ""
 
 #: source/SUMMARY.md:308
-msgid "Release 1.11.10 (2017-06-12)"
+msgid "Release 2.2 (2019-01-11)"
 msgstr ""
 
 #: source/SUMMARY.md:309
-msgid "Release 1.11 (2016-01-19)"
+msgid "Release 2.1 (2018-09-02)"
 msgstr ""
 
 #: source/SUMMARY.md:310
-msgid "Release 1.10 (2015-09-03)"
+msgid "Release 2.0 (2018-02-22)"
 msgstr ""
 
 #: source/SUMMARY.md:311
-msgid "Release 1.9 (2015-06-12)"
+msgid "Release 1.11.10 (2017-06-12)"
 msgstr ""
 
 #: source/SUMMARY.md:312
-msgid "Release 1.8 (2014-12-14)"
+msgid "Release 1.11 (2016-01-19)"
 msgstr ""
 
 #: source/SUMMARY.md:313
-msgid "Release 1.7 (2014-04-11)"
+msgid "Release 1.10 (2015-09-03)"
 msgstr ""
 
 #: source/SUMMARY.md:314
-msgid "Release 1.6.1 (2013-10-28)"
+msgid "Release 1.9 (2015-06-12)"
 msgstr ""
 
 #: source/SUMMARY.md:315
-msgid "Release 1.6 (2013-09-10)"
+msgid "Release 1.8 (2014-12-14)"
 msgstr ""
 
 #: source/SUMMARY.md:316
-msgid "Release 1.5.2 (2013-05-13)"
+msgid "Release 1.7 (2014-04-11)"
 msgstr ""
 
 #: source/SUMMARY.md:317
-msgid "Release 1.5 (2013-02-27)"
+msgid "Release 1.6.1 (2013-10-28)"
 msgstr ""
 
 #: source/SUMMARY.md:318
-msgid "Release 1.4 (2013-02-26)"
+msgid "Release 1.6 (2013-09-10)"
 msgstr ""
 
 #: source/SUMMARY.md:319
-msgid "Release 1.3 (2013-01-04)"
+msgid "Release 1.5.2 (2013-05-13)"
 msgstr ""
 
 #: source/SUMMARY.md:320
-msgid "Release 1.2 (2012-12-06)"
+msgid "Release 1.5 (2013-02-27)"
 msgstr ""
 
 #: source/SUMMARY.md:321
-msgid "Release 1.1 (2012-07-18)"
+msgid "Release 1.4 (2013-02-26)"
 msgstr ""
 
 #: source/SUMMARY.md:322
-msgid "Release 1.0 (2012-05-11)"
+msgid "Release 1.3 (2013-01-04)"
 msgstr ""
 
 #: source/SUMMARY.md:323
-msgid "Release 0.16 (2010-08-17)"
+msgid "Release 1.2 (2012-12-06)"
 msgstr ""
 
 #: source/SUMMARY.md:324
-msgid "Release 0.15 (2010-03-17)"
+msgid "Release 1.1 (2012-07-18)"
 msgstr ""
 
 #: source/SUMMARY.md:325
-msgid "Release 0.14 (2010-02-04)"
+msgid "Release 1.0 (2012-05-11)"
 msgstr ""
 
 #: source/SUMMARY.md:326
-msgid "Release 0.13 (2009-11-05)"
+msgid "Release 0.16 (2010-08-17)"
 msgstr ""
 
 #: source/SUMMARY.md:327
-msgid "Release 0.12 (2008-11-20)"
+msgid "Release 0.15 (2010-03-17)"
 msgstr ""
 
 #: source/SUMMARY.md:328
-msgid "Release 0.11 (2007-12-31)"
+msgid "Release 0.14 (2010-02-04)"
 msgstr ""
 
 #: source/SUMMARY.md:329
-msgid "Release 0.10.1 (2006-10-11)"
+msgid "Release 0.13 (2009-11-05)"
 msgstr ""
 
 #: source/SUMMARY.md:330
-msgid "Release 0.10 (2006-10-06)"
+msgid "Release 0.12 (2008-11-20)"
 msgstr ""
 
 #: source/SUMMARY.md:331
-msgid "Release 0.9.2 (2005-09-21)"
+msgid "Release 0.11 (2007-12-31)"
 msgstr ""
 
 #: source/SUMMARY.md:332
-msgid "Release 0.9.1 (2005-09-20)"
+msgid "Release 0.10.1 (2006-10-11)"
 msgstr ""
 
 #: source/SUMMARY.md:333
-msgid "Release 0.9 (2005-09-16)"
+msgid "Release 0.10 (2006-10-06)"
 msgstr ""
 
 #: source/SUMMARY.md:334
-msgid "Release 0.8.1 (2005-04-13)"
+msgid "Release 0.9.2 (2005-09-21)"
 msgstr ""
 
 #: source/SUMMARY.md:335
-msgid "Release 0.8 (2005-04-11)"
+msgid "Release 0.9.1 (2005-09-20)"
 msgstr ""
 
 #: source/SUMMARY.md:336
-msgid "Release 0.7 (2005-01-12)"
+msgid "Release 0.9 (2005-09-16)"
 msgstr ""
 
 #: source/SUMMARY.md:337
-msgid "Release 0.6 (2004-11-14)"
+msgid "Release 0.8.1 (2005-04-13)"
 msgstr ""
 
 #: source/SUMMARY.md:338
+msgid "Release 0.8 (2005-04-11)"
+msgstr ""
+
+#: source/SUMMARY.md:339
+msgid "Release 0.7 (2005-01-12)"
+msgstr ""
+
+#: source/SUMMARY.md:340
+msgid "Release 0.6 (2004-11-14)"
+msgstr ""
+
+#: source/SUMMARY.md:341
 msgid "Release 0.5 and earlier"
 msgstr ""

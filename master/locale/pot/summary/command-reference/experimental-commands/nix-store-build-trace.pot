@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-store-build-trace.md:1
 msgid ""
 "**Warning**   \n"
-"This program is [**experimental**](../../development/experimental-features."
-"md#xp-feature-nix-command) and its interface is subject to change."
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store-build-trace.md:6
@@ -40,114 +40,120 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-store-build-trace.md:16
 msgid ""
+"[`nix store build-trace delete`](./nix3-store-build-trace-delete.md) - "
+"delete build traces from the store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-build-trace.md:17
+msgid ""
 "[`nix store build-trace info`](./nix3-store-build-trace-info.md) - query "
 "information about one or several build traces"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:18
+#: source/command-ref/new-cli/nix3-store-build-trace.md:19
 msgid "Options"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:20
+#: source/command-ref/new-cli/nix3-store-build-trace.md:21
 msgid "Logging-related options"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:22
+#: source/command-ref/new-cli/nix3-store-build-trace.md:23
 msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:24
+#: source/command-ref/new-cli/nix3-store-build-trace.md:25
 msgid "Set the logging verbosity level to 'debug'."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:26
+#: source/command-ref/new-cli/nix3-store-build-trace.md:27
 msgid ""
 "<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:28
+#: source/command-ref/new-cli/nix3-store-build-trace.md:29
 msgid ""
 "Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
 "with-logs`."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:30
+#: source/command-ref/new-cli/nix3-store-build-trace.md:31
 msgid ""
 "<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
 "logs)</span> / `-L`"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:32
+#: source/command-ref/new-cli/nix3-store-build-trace.md:33
 msgid "Print full build logs on standard error."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:34
+#: source/command-ref/new-cli/nix3-store-build-trace.md:35
 msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:36
+#: source/command-ref/new-cli/nix3-store-build-trace.md:37
 msgid "Decrease the logging verbosity level."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:38
+#: source/command-ref/new-cli/nix3-store-build-trace.md:39
 msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:40
+#: source/command-ref/new-cli/nix3-store-build-trace.md:41
 msgid "Increase the logging verbosity level."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:42
+#: source/command-ref/new-cli/nix3-store-build-trace.md:43
 msgid "Miscellaneous global options"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:44
+#: source/command-ref/new-cli/nix3-store-build-trace.md:45
 msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:46
+#: source/command-ref/new-cli/nix3-store-build-trace.md:47
 msgid "Show usage information."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:48
+#: source/command-ref/new-cli/nix3-store-build-trace.md:49
 msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:50
+#: source/command-ref/new-cli/nix3-store-build-trace.md:51
 msgid ""
 "Disable substituters and consider all previously downloaded files up-to-date."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:52
+#: source/command-ref/new-cli/nix3-store-build-trace.md:53
 msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:54
+#: source/command-ref/new-cli/nix3-store-build-trace.md:55
 msgid ""
 "Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:56
+#: source/command-ref/new-cli/nix3-store-build-trace.md:57
 msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:58
+#: source/command-ref/new-cli/nix3-store-build-trace.md:59
 msgid "Consider all previously downloaded files out-of-date."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:60
+#: source/command-ref/new-cli/nix3-store-build-trace.md:61
 msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:62
+#: source/command-ref/new-cli/nix3-store-build-trace.md:63
 msgid "Show version information."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:64
+#: source/command-ref/new-cli/nix3-store-build-trace.md:65
 msgid "**Note**"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store-build-trace.md:66
+#: source/command-ref/new-cli/nix3-store-build-trace.md:67
 msgid ""
 "See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
 "overriding configuration settings with command line flags."

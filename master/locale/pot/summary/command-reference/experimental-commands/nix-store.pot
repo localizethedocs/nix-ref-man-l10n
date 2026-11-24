@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-store.md:1
 msgid ""
 "**Warning**   \n"
-"This program is [**experimental**](../../development/experimental-features."
-"md#xp-feature-nix-command) and its interface is subject to change."
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:6
@@ -40,6 +40,8 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:16
 #: source/command-ref/new-cli/nix3-store.md:38
+#: source/command-ref/new-cli/nix3-store.md:42
+#: source/command-ref/new-cli/nix3-store.md:46
 msgid "**Available commands:**"
 msgstr ""
 
@@ -156,124 +158,126 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:40
 msgid ""
-"[`nix store roots-daemon`](./nix3-store-roots-daemon.md) - run a daemon that "
-"returns garbage collector roots on request"
-msgstr ""
-
-#: source/command-ref/new-cli/nix3-store.md:42
-msgid "**:**"
-msgstr ""
-
-#: source/command-ref/new-cli/nix3-store.md:44
-msgid ""
 "[`nix store build-trace`](./nix3-store-build-trace.md) - manipulate a Nix "
 "build trace"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:46
-msgid "Options"
+#: source/command-ref/new-cli/nix3-store.md:44
+msgid ""
+"[`nix store roots-daemon`](./nix3-store-roots-daemon.md) - run a daemon that "
+"returns garbage collector roots on request"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:48
-msgid "Logging-related options"
+msgid ""
+"[`nix store submit-output`](./nix3-store-submit-output.md) - submit a store "
+"object as one of the outputs of the derivation currently being built"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:50
-msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgid "Options"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:52
-msgid "Set the logging verbosity level to 'debug'."
+msgid "Logging-related options"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:54
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store.md:56
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store.md:58
 msgid ""
 "<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:56
+#: source/command-ref/new-cli/nix3-store.md:60
 msgid ""
 "Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
 "with-logs`."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:58
+#: source/command-ref/new-cli/nix3-store.md:62
 msgid ""
 "<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
 "logs)</span> / `-L`"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:60
+#: source/command-ref/new-cli/nix3-store.md:64
 msgid "Print full build logs on standard error."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:62
+#: source/command-ref/new-cli/nix3-store.md:66
 msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:64
+#: source/command-ref/new-cli/nix3-store.md:68
 msgid "Decrease the logging verbosity level."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:66
+#: source/command-ref/new-cli/nix3-store.md:70
 msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:68
+#: source/command-ref/new-cli/nix3-store.md:72
 msgid "Increase the logging verbosity level."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:70
+#: source/command-ref/new-cli/nix3-store.md:74
 msgid "Miscellaneous global options"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:72
+#: source/command-ref/new-cli/nix3-store.md:76
 msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:74
+#: source/command-ref/new-cli/nix3-store.md:78
 msgid "Show usage information."
 msgstr ""
 
-#: source/command-ref/new-cli/nix3-store.md:76
-msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
-msgstr ""
-
-#: source/command-ref/new-cli/nix3-store.md:78
-msgid ""
-"Disable substituters and consider all previously downloaded files up-to-date."
-msgstr ""
-
 #: source/command-ref/new-cli/nix3-store.md:80
-msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:82
 msgid ""
-"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+"Disable substituters and consider all previously downloaded files up-to-date."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:84
-msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:86
-msgid "Consider all previously downloaded files out-of-date."
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:88
-msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:90
-msgid "Show version information."
+msgid "Consider all previously downloaded files out-of-date."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:92
-msgid "**Note**"
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-store.md:94
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store.md:96
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store.md:98
 msgid ""
 "See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
 "overriding configuration settings with command line flags."

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -261,87 +261,70 @@ msgid ""
 msgstr ""
 
 #: source/development/experimental-features.md:131
-msgid "\\[`daemon-trust-override`\\]"
-msgstr ""
-
-#: source/development/experimental-features.md:133
-msgid ""
-"Allow forcing trusting or not trusting clients with `nix-daemon`. This is "
-"useful for testing, but possibly also useful for various experiments with "
-"`nix-daemon --stdio` networking."
-msgstr ""
-
-#: source/development/experimental-features.md:138
-msgid ""
-"Refer to [daemon-trust-override tracking issue](https://github.com/NixOS/nix/"
-"milestone/38) for feature tracking."
-msgstr ""
-
-#: source/development/experimental-features.md:140
 msgid "\\[`dynamic-derivations`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:142
+#: source/development/experimental-features.md:133
 msgid "Allow the use of a few things related to dynamic derivations:"
 msgstr ""
 
-#: source/development/experimental-features.md:144
+#: source/development/experimental-features.md:135
 msgid "\"text hashing\" derivation outputs, so we can build .drv files."
 msgstr ""
 
-#: source/development/experimental-features.md:147
+#: source/development/experimental-features.md:138
 msgid ""
 "dependencies in derivations on the outputs of derivations that are "
 "themselves derivations outputs."
 msgstr ""
 
-#: source/development/experimental-features.md:150
+#: source/development/experimental-features.md:141
 msgid ""
 "Refer to [dynamic-derivations tracking issue](https://github.com/NixOS/nix/"
 "milestone/39) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:152
+#: source/development/experimental-features.md:143
 msgid "\\[`external-builders`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:154
+#: source/development/experimental-features.md:145
 msgid "Enables support for external builders / sandbox providers."
 msgstr ""
 
-#: source/development/experimental-features.md:156
+#: source/development/experimental-features.md:147
 msgid ""
 "Refer to [external-builders tracking issue](https://github.com/NixOS/nix/"
 "milestone/62) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:158
+#: source/development/experimental-features.md:149
 msgid "\\[`fetch-closure`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:160
+#: source/development/experimental-features.md:151
 msgid ""
 "Enable the use of the [`fetchClosure`](../language/builtins.md#builtins-"
 "fetchClosure) built-in function in the Nix language."
 msgstr ""
 
-#: source/development/experimental-features.md:162
+#: source/development/experimental-features.md:153
 msgid ""
 "Refer to [fetch-closure tracking issue](https://github.com/NixOS/nix/"
 "milestone/40) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:164
+#: source/development/experimental-features.md:155
 msgid "\\[`fetch-tree`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:166
+#: source/development/experimental-features.md:157
 msgid ""
 "Enable the use of the [`fetchTree`](../language/builtins.md#builtins-"
 "fetchTree) built-in function in the Nix language."
 msgstr ""
 
-#: source/development/experimental-features.md:168
+#: source/development/experimental-features.md:159
 msgid ""
 "`fetchTree` exposes a generic interface for fetching remote file system "
 "trees from different types of remote sources. The [`flakes`](#xp-feature-"
@@ -350,68 +333,68 @@ msgid ""
 "overlap."
 msgstr ""
 
-#: source/development/experimental-features.md:172
+#: source/development/experimental-features.md:163
 msgid ""
 "Enabling just this feature serves as a \"release candidate\", allowing users "
 "to try it out in isolation."
 msgstr ""
 
-#: source/development/experimental-features.md:174
+#: source/development/experimental-features.md:165
 msgid ""
-"Refer to [fetch-tree tracking issue](https://github.com/NixOS/nix/"
-"milestone/31) for feature tracking."
+"Refer to [fetch-tree tracking issue](https://github.com/NixOS/nix/milestone/"
+"31) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:176
+#: source/development/experimental-features.md:167
 msgid "\\[`flakes`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:178
+#: source/development/experimental-features.md:169
 msgid ""
 "Enable flakes. See the manual entry for [`nix flake`](../command-ref/new-cli/"
 "nix3-flake.md) for details."
 msgstr ""
 
-#: source/development/experimental-features.md:181
+#: source/development/experimental-features.md:172
 msgid ""
 "Refer to [flakes tracking issue](https://github.com/NixOS/nix/milestone/27) "
 "for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:183
+#: source/development/experimental-features.md:174
 msgid "\\[`git-hashing`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:185
+#: source/development/experimental-features.md:176
 msgid ""
 "Allow creating (content-addressed) store objects which are hashed via Git's "
 "hashing algorithm. These store objects aren't understandable by older "
 "versions of Nix."
 msgstr ""
 
-#: source/development/experimental-features.md:188
+#: source/development/experimental-features.md:179
 msgid ""
-"Refer to [git-hashing tracking issue](https://github.com/NixOS/nix/"
-"milestone/41) for feature tracking."
+"Refer to [git-hashing tracking issue](https://github.com/NixOS/nix/milestone/"
+"41) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:190
+#: source/development/experimental-features.md:181
 msgid "\\[`impure-derivations`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:192
+#: source/development/experimental-features.md:183
 msgid ""
 "Allow derivations to produce non-fixed outputs by setting the `__impure` "
 "derivation attribute to `true`. An impure derivation can have differing "
 "outputs each time it is built."
 msgstr ""
 
-#: source/development/experimental-features.md:196
-#: source/development/experimental-features.md:261
+#: source/development/experimental-features.md:187
+#: source/development/experimental-features.md:252
 msgid "Example:"
 msgstr ""
 
-#: source/development/experimental-features.md:198
+#: source/development/experimental-features.md:189
 msgid ""
 "```\n"
 "derivation {\n"
@@ -425,7 +408,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/development/experimental-features.md:208
+#: source/development/experimental-features.md:199
 msgid ""
 "Each time this derivation is built, it can produce a different output (as "
 "the builder outputs random bytes to `$out`).  Impure derivations also have "
@@ -434,121 +417,121 @@ msgid ""
 "[content-addressed](#xp-feature-ca-derivations)."
 msgstr ""
 
-#: source/development/experimental-features.md:215
+#: source/development/experimental-features.md:206
 msgid ""
 "This is a more explicit alternative to using [`builtins.currentTime`](../"
 "language/builtins.md#builtins-currentTime)."
 msgstr ""
 
-#: source/development/experimental-features.md:217
+#: source/development/experimental-features.md:208
 msgid ""
 "Refer to [impure-derivations tracking issue](https://github.com/NixOS/nix/"
 "milestone/42) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:219
+#: source/development/experimental-features.md:210
 msgid "\\[`local-overlay-store`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:221
+#: source/development/experimental-features.md:212
 msgid ""
 "Allow the use of [local overlay store](../command-ref/new-cli/nix3-help-"
 "stores.md#experimental-local-overlay-store)."
 msgstr ""
 
-#: source/development/experimental-features.md:223
+#: source/development/experimental-features.md:214
 msgid ""
 "Refer to [local-overlay-store tracking issue](https://github.com/NixOS/nix/"
 "milestone/50) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:225
+#: source/development/experimental-features.md:216
 msgid "\\[`mounted-ssh-store`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:227
+#: source/development/experimental-features.md:218
 msgid ""
 "Allow the use of the [`mounted SSH store`](../command-ref/new-cli/nix3-help-"
 "stores.html#experimental-ssh-store-with-filesystem-mounted)."
 msgstr ""
 
-#: source/development/experimental-features.md:229
+#: source/development/experimental-features.md:220
 msgid ""
 "Refer to [mounted-ssh-store tracking issue](https://github.com/NixOS/nix/"
 "milestone/43) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:231
+#: source/development/experimental-features.md:222
 msgid "\\[`nix-command`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:233
+#: source/development/experimental-features.md:224
 msgid ""
 "Enable the new `nix` subcommands. See the manual on [`nix`](../command-ref/"
 "new-cli/nix.md) for details."
 msgstr ""
 
-#: source/development/experimental-features.md:236
+#: source/development/experimental-features.md:227
 msgid ""
-"Refer to [nix-command tracking issue](https://github.com/NixOS/nix/"
-"milestone/28) for feature tracking."
+"Refer to [nix-command tracking issue](https://github.com/NixOS/nix/milestone/"
+"28) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:238
+#: source/development/experimental-features.md:229
 msgid "\\[`parse-toml-timestamps`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:240
+#: source/development/experimental-features.md:231
 msgid "Allow parsing of timestamps in builtins.fromTOML."
 msgstr ""
 
-#: source/development/experimental-features.md:242
+#: source/development/experimental-features.md:233
 msgid ""
 "Refer to [parse-toml-timestamps tracking issue](https://github.com/NixOS/nix/"
 "milestone/45) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:244
+#: source/development/experimental-features.md:235
 msgid "\\[`pipe-operators`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:246
+#: source/development/experimental-features.md:237
 msgid "Add `|>` and `<|` operators to the Nix language."
 msgstr ""
 
-#: source/development/experimental-features.md:248
+#: source/development/experimental-features.md:239
 msgid ""
 "Refer to [pipe-operators tracking issue](https://github.com/NixOS/nix/"
 "milestone/55) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:250
+#: source/development/experimental-features.md:241
 msgid "\\[`read-only-local-store`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:252
+#: source/development/experimental-features.md:243
 msgid ""
 "Allow the use of the `read-only` parameter in [local store](../store/types/"
 "local-store.md) URIs."
 msgstr ""
 
-#: source/development/experimental-features.md:254
+#: source/development/experimental-features.md:245
 msgid ""
 "Refer to [read-only-local-store tracking issue](https://github.com/NixOS/nix/"
 "milestone/46) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:256
+#: source/development/experimental-features.md:247
 msgid "\\[`recursive-nix`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:258
+#: source/development/experimental-features.md:249
 msgid ""
 "Allow derivation builders to call Nix, and thus build derivations "
 "recursively."
 msgstr ""
 
-#: source/development/experimental-features.md:263
+#: source/development/experimental-features.md:254
 msgid ""
 "```\n"
 "with import <nixpkgs> {};\n"
@@ -570,13 +553,13 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/development/experimental-features.md:281
+#: source/development/experimental-features.md:272
 msgid ""
 "An important restriction on recursive builders is disallowing arbitrary "
 "substitutions. For example, running"
 msgstr ""
 
-#: source/development/experimental-features.md:288
+#: source/development/experimental-features.md:279
 msgid ""
 "in the above `runCommand` script would be disallowed, as this could lead to "
 "derivations with hidden dependencies or breaking reproducibility by relying "
@@ -585,23 +568,23 @@ msgid ""
 "inputs or built by a previous recursive Nix call."
 msgstr ""
 
-#: source/development/experimental-features.md:296
+#: source/development/experimental-features.md:287
 msgid ""
 "Refer to [recursive-nix tracking issue](https://github.com/NixOS/nix/"
 "milestone/47) for feature tracking."
 msgstr ""
 
-#: source/development/experimental-features.md:298
+#: source/development/experimental-features.md:289
 msgid "\\[`verified-fetches`\\]"
 msgstr ""
 
-#: source/development/experimental-features.md:300
+#: source/development/experimental-features.md:291
 msgid ""
 "Enables verification of git commit signatures through the [`fetchGit`](../"
 "language/builtins.md#builtins-fetchGit) built-in."
 msgstr ""
 
-#: source/development/experimental-features.md:302
+#: source/development/experimental-features.md:293
 msgid ""
 "Refer to [verified-fetches tracking issue](https://github.com/NixOS/nix/"
 "milestone/48) for feature tracking."

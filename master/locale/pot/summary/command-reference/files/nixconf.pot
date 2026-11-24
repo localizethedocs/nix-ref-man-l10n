@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -96,7 +96,7 @@ msgid ""
 "start with a `#` character."
 msgstr ""
 
-#: source/command-ref/conf-file.md:37 source/command-ref/conf-file.md:749
+#: source/command-ref/conf-file.md:37 source/command-ref/conf-file.md:755
 msgid "Example:"
 msgstr ""
 
@@ -162,8 +162,8 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:74
 msgid ""
-"The `extra-` prefix is supported for settings that take a list of items (e."
-"g. `--extra-trusted users alice` or `--option extra-trusted-users alice`)."
+"The `extra-` prefix is supported for settings that take a list of items "
+"(e.g. `--extra-trusted users alice` or `--option extra-trusted-users alice`)."
 msgstr ""
 
 #: source/command-ref/conf-file.md:76
@@ -222,20 +222,19 @@ msgstr ""
 #: source/command-ref/conf-file.md:202 source/command-ref/conf-file.md:227
 #: source/command-ref/conf-file.md:240 source/command-ref/conf-file.md:261
 #: source/command-ref/conf-file.md:302 source/command-ref/conf-file.md:326
-#: source/command-ref/conf-file.md:336 source/command-ref/conf-file.md:544
-#: source/command-ref/conf-file.md:622 source/command-ref/conf-file.md:633
-#: source/command-ref/conf-file.md:855 source/command-ref/conf-file.md:955
-#: source/command-ref/conf-file.md:1009 source/command-ref/conf-file.md:1022
-#: source/command-ref/conf-file.md:1037 source/command-ref/conf-file.md:1131
-#: source/command-ref/conf-file.md:1139 source/command-ref/conf-file.md:1145
-#: source/command-ref/conf-file.md:1163 source/command-ref/conf-file.md:1553
-#: source/command-ref/conf-file.md:1572 source/command-ref/conf-file.md:1591
-#: source/command-ref/conf-file.md:1617 source/command-ref/conf-file.md:1627
-#: source/command-ref/conf-file.md:1721 source/command-ref/conf-file.md:1803
-#: source/command-ref/conf-file.md:1924 source/command-ref/conf-file.md:1933
-#: source/command-ref/conf-file.md:1939 source/command-ref/conf-file.md:2010
-#: source/command-ref/conf-file.md:2020 source/command-ref/conf-file.md:2079
-#: source/command-ref/conf-file.md:2106
+#: source/command-ref/conf-file.md:336 source/command-ref/conf-file.md:550
+#: source/command-ref/conf-file.md:628 source/command-ref/conf-file.md:639
+#: source/command-ref/conf-file.md:860 source/command-ref/conf-file.md:960
+#: source/command-ref/conf-file.md:1014 source/command-ref/conf-file.md:1027
+#: source/command-ref/conf-file.md:1128 source/command-ref/conf-file.md:1136
+#: source/command-ref/conf-file.md:1142 source/command-ref/conf-file.md:1160
+#: source/command-ref/conf-file.md:1550 source/command-ref/conf-file.md:1573
+#: source/command-ref/conf-file.md:1592 source/command-ref/conf-file.md:1618
+#: source/command-ref/conf-file.md:1628 source/command-ref/conf-file.md:1722
+#: source/command-ref/conf-file.md:1804 source/command-ref/conf-file.md:1925
+#: source/command-ref/conf-file.md:1934 source/command-ref/conf-file.md:1940
+#: source/command-ref/conf-file.md:2011 source/command-ref/conf-file.md:2021
+#: source/command-ref/conf-file.md:2080 source/command-ref/conf-file.md:2107
 msgid "**Default:** `false`"
 msgstr ""
 
@@ -246,25 +245,25 @@ msgid ""
 msgstr ""
 
 #: source/command-ref/conf-file.md:101 source/command-ref/conf-file.md:180
-#: source/command-ref/conf-file.md:306 source/command-ref/conf-file.md:525
-#: source/command-ref/conf-file.md:548 source/command-ref/conf-file.md:919
-#: source/command-ref/conf-file.md:1043 source/command-ref/conf-file.md:1992
-#: source/command-ref/conf-file.md:2024
+#: source/command-ref/conf-file.md:306 source/command-ref/conf-file.md:531
+#: source/command-ref/conf-file.md:554 source/command-ref/conf-file.md:924
+#: source/command-ref/conf-file.md:1040 source/command-ref/conf-file.md:1993
+#: source/command-ref/conf-file.md:2025
 msgid "**Warning**"
 msgstr ""
 
 #: source/command-ref/conf-file.md:103 source/command-ref/conf-file.md:182
-#: source/command-ref/conf-file.md:308 source/command-ref/conf-file.md:550
-#: source/command-ref/conf-file.md:921 source/command-ref/conf-file.md:1045
-#: source/command-ref/conf-file.md:2026
+#: source/command-ref/conf-file.md:308 source/command-ref/conf-file.md:556
+#: source/command-ref/conf-file.md:926 source/command-ref/conf-file.md:1042
+#: source/command-ref/conf-file.md:2027
 msgid ""
 "This setting is part of an [experimental feature](../development/"
 "experimental-features.md)."
 msgstr ""
 
 #: source/command-ref/conf-file.md:106 source/command-ref/conf-file.md:185
-#: source/command-ref/conf-file.md:553 source/command-ref/conf-file.md:924
-#: source/command-ref/conf-file.md:2029
+#: source/command-ref/conf-file.md:559 source/command-ref/conf-file.md:929
+#: source/command-ref/conf-file.md:2030
 msgid ""
 "To change this setting, make sure the [`flakes` experimental feature](../"
 "development/experimental-features.md#xp-feature-flakes) is enabled. For "
@@ -307,10 +306,10 @@ msgstr ""
 #: source/command-ref/conf-file.md:138
 msgid ""
 "Gitlab: the token value is either the OAuth2 token or the Personal Access "
-"Token (these are different types tokens for gitlab, see https://docs.gitlab."
-"com/12.10/ee/api/README.html#authentication). The `token` value should be "
-"`type:tokenstring` where `type` is either `OAuth2` or `PAT` to indicate "
-"which type of token is being specified."
+"Token (these are different types tokens for gitlab, see https://"
+"docs.gitlab.com/12.10/ee/api/README.html#authentication). The `token` value "
+"should be `type:tokenstring` where `type` is either `OAuth2` or `PAT` to "
+"indicate which type of token is being specified."
 msgstr ""
 
 #: source/command-ref/conf-file.md:146
@@ -348,13 +347,13 @@ msgstr ""
 #: source/command-ref/conf-file.md:170 source/command-ref/conf-file.md:267
 #: source/command-ref/conf-file.md:281 source/command-ref/conf-file.md:342
 #: source/command-ref/conf-file.md:348 source/command-ref/conf-file.md:354
-#: source/command-ref/conf-file.md:566 source/command-ref/conf-file.md:743
-#: source/command-ref/conf-file.md:782 source/command-ref/conf-file.md:828
-#: source/command-ref/conf-file.md:983 source/command-ref/conf-file.md:1070
-#: source/command-ref/conf-file.md:1483 source/command-ref/conf-file.md:1528
-#: source/command-ref/conf-file.md:1547 source/command-ref/conf-file.md:1702
-#: source/command-ref/conf-file.md:1714 source/command-ref/conf-file.md:1980
-#: source/command-ref/conf-file.md:2085
+#: source/command-ref/conf-file.md:572 source/command-ref/conf-file.md:749
+#: source/command-ref/conf-file.md:787 source/command-ref/conf-file.md:833
+#: source/command-ref/conf-file.md:988 source/command-ref/conf-file.md:1067
+#: source/command-ref/conf-file.md:1480 source/command-ref/conf-file.md:1525
+#: source/command-ref/conf-file.md:1544 source/command-ref/conf-file.md:1703
+#: source/command-ref/conf-file.md:1715 source/command-ref/conf-file.md:1981
+#: source/command-ref/conf-file.md:2086
 msgid "**Default:** _empty_"
 msgstr ""
 
@@ -367,16 +366,16 @@ msgid "Whether to allow dirty Git/Mercurial trees."
 msgstr ""
 
 #: source/command-ref/conf-file.md:176 source/command-ref/conf-file.md:213
-#: source/command-ref/conf-file.md:576 source/command-ref/conf-file.md:703
-#: source/command-ref/conf-file.md:899 source/command-ref/conf-file.md:915
-#: source/command-ref/conf-file.md:947 source/command-ref/conf-file.md:999
-#: source/command-ref/conf-file.md:1089 source/command-ref/conf-file.md:1109
-#: source/command-ref/conf-file.md:1443 source/command-ref/conf-file.md:1456
-#: source/command-ref/conf-file.md:1559 source/command-ref/conf-file.md:1607
-#: source/command-ref/conf-file.md:1655 source/command-ref/conf-file.md:1684
-#: source/command-ref/conf-file.md:1775 source/command-ref/conf-file.md:1954
-#: source/command-ref/conf-file.md:2041 source/command-ref/conf-file.md:2047
-#: source/command-ref/conf-file.md:2091
+#: source/command-ref/conf-file.md:582 source/command-ref/conf-file.md:709
+#: source/command-ref/conf-file.md:904 source/command-ref/conf-file.md:920
+#: source/command-ref/conf-file.md:952 source/command-ref/conf-file.md:1004
+#: source/command-ref/conf-file.md:1086 source/command-ref/conf-file.md:1106
+#: source/command-ref/conf-file.md:1440 source/command-ref/conf-file.md:1453
+#: source/command-ref/conf-file.md:1556 source/command-ref/conf-file.md:1608
+#: source/command-ref/conf-file.md:1656 source/command-ref/conf-file.md:1685
+#: source/command-ref/conf-file.md:1776 source/command-ref/conf-file.md:1955
+#: source/command-ref/conf-file.md:2042 source/command-ref/conf-file.md:2048
+#: source/command-ref/conf-file.md:2092
 msgid "**Default:** `true`"
 msgstr ""
 
@@ -401,7 +400,7 @@ msgid ""
 "derivation`](#conf-allow-import-from-derivation)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:206 source/command-ref/conf-file.md:1928
+#: source/command-ref/conf-file.md:206 source/command-ref/conf-file.md:1929
 msgid ""
 "By default, Nix allows [Import from Derivation](../language/import-from-"
 "derivation.md)."
@@ -521,8 +520,8 @@ msgstr ""
 msgid ""
 "A list of URI prefixes to which access is allowed in restricted evaluation "
 "mode. For example, when set to `https://github.com/NixOS`, builtin functions "
-"such as `fetchGit` are allowed to access `https://github.com/NixOS/patchelf."
-"git`."
+"such as `fetchGit` are allowed to access `https://github.com/NixOS/"
+"patchelf.git`."
 msgstr ""
 
 #: source/command-ref/conf-file.md:276
@@ -561,9 +560,9 @@ msgid ""
 "specifying `*`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:292 source/command-ref/conf-file.md:520
-#: source/command-ref/conf-file.md:602 source/command-ref/conf-file.md:1275
-#: source/command-ref/conf-file.md:1388 source/command-ref/conf-file.md:1424
+#: source/command-ref/conf-file.md:292 source/command-ref/conf-file.md:526
+#: source/command-ref/conf-file.md:608 source/command-ref/conf-file.md:1272
+#: source/command-ref/conf-file.md:1385 source/command-ref/conf-file.md:1421
 msgid "**Note**"
 msgstr ""
 
@@ -675,8 +674,8 @@ msgid ""
 "local-store-build-dir) setting."
 msgstr ""
 
-#: source/command-ref/conf-file.md:362 source/command-ref/conf-file.md:663
-#: source/command-ref/conf-file.md:1080
+#: source/command-ref/conf-file.md:362 source/command-ref/conf-file.md:669
+#: source/command-ref/conf-file.md:1077
 msgid "**Default:** \\``"
 msgstr ""
 
@@ -709,26 +708,42 @@ msgstr ""
 
 #: source/command-ref/conf-file.md:377
 msgid ""
+"<span id=\"conf-build-hook-kill-timeout\">[`build-hook-kill-timeout`](#conf-"
+"build-hook-kill-timeout)</span>"
+msgstr ""
+
+#: source/command-ref/conf-file.md:379
+msgid ""
+"How long to wait in milliseconds for build hooks to exit on interrupt before "
+"sending SIGKILL."
+msgstr ""
+
+#: source/command-ref/conf-file.md:381
+msgid "**Default:** `500`"
+msgstr ""
+
+#: source/command-ref/conf-file.md:383
+msgid ""
 "<span id=\"conf-build-poll-interval\">[`build-poll-interval`](#conf-build-"
 "poll-interval)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:379
+#: source/command-ref/conf-file.md:385
 msgid "How often (in seconds) to poll for locks."
 msgstr ""
 
-#: source/command-ref/conf-file.md:381 source/command-ref/conf-file.md:867
-#: source/command-ref/conf-file.md:1325
+#: source/command-ref/conf-file.md:387 source/command-ref/conf-file.md:872
+#: source/command-ref/conf-file.md:1322
 msgid "**Default:** `5`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:383
+#: source/command-ref/conf-file.md:389
 msgid ""
 "<span id=\"conf-build-users-group\">[`build-users-group`](#conf-build-users-"
 "group)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:385
+#: source/command-ref/conf-file.md:391
 msgid ""
 "This options specifies the Unix group containing the Nix build user "
 "accounts. In multi-user Nix installations, builds should not be performed by "
@@ -738,7 +753,7 @@ msgid ""
 "the build result."
 msgstr ""
 
-#: source/command-ref/conf-file.md:392
+#: source/command-ref/conf-file.md:398
 msgid ""
 "Therefore, if this option is non-empty and specifies a valid group, builds "
 "are performed under the user accounts that are a member of the group "
@@ -746,7 +761,7 @@ msgid ""
 "be used for any other purpose!"
 msgstr ""
 
-#: source/command-ref/conf-file.md:397
+#: source/command-ref/conf-file.md:403
 msgid ""
 "Nix never runs two builds under the same user account at the same time. This "
 "is to prevent an obvious security hole: a malicious user writing a Nix "
@@ -755,14 +770,14 @@ msgid ""
 "user accounts as you can spare. (Remember: uids are cheap.)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:404
+#: source/command-ref/conf-file.md:410
 msgid ""
 "The build users should have permission to create files in the Nix store, but "
 "not delete them. Therefore, `/nix/store` should be owned by the Nix account, "
 "its group should be the group specified here, and its mode should be `1775`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:409
+#: source/command-ref/conf-file.md:415
 msgid ""
 "If the build users group is empty, builds are performed under the uid of the "
 "Nix process (that is, the uid of the caller if `NIX_REMOTE` is empty, the "
@@ -770,204 +785,205 @@ msgid ""
 "this should not be used with a nix daemon accessible to untrusted clients."
 msgstr ""
 
-#: source/command-ref/conf-file.md:415
+#: source/command-ref/conf-file.md:421
 msgid "Defaults to `nixbld` when running as root, _empty_ otherwise."
 msgstr ""
 
-#: source/command-ref/conf-file.md:417 source/command-ref/conf-file.md:535
-#: source/command-ref/conf-file.md:847 source/command-ref/conf-file.md:1430
-#: source/command-ref/conf-file.md:1738 source/command-ref/conf-file.md:1873
+#: source/command-ref/conf-file.md:423 source/command-ref/conf-file.md:541
+#: source/command-ref/conf-file.md:852 source/command-ref/conf-file.md:1427
+#: source/command-ref/conf-file.md:1739 source/command-ref/conf-file.md:1874
 msgid "**Default:** _machine-specific_"
 msgstr ""
 
-#: source/command-ref/conf-file.md:419
+#: source/command-ref/conf-file.md:425
 msgid "<span id=\"conf-builders\">[`builders`](#conf-builders)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:421
+#: source/command-ref/conf-file.md:427
 msgid "A semicolon- or newline-separated list of build machines."
 msgstr ""
 
-#: source/command-ref/conf-file.md:423
+#: source/command-ref/conf-file.md:429
 msgid ""
 "In addition to the [usual ways of setting configuration options](../command-"
 "ref/conf-file.md), the value can be read from a file by prefixing its "
 "absolute path with `@`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:425 source/command-ref/conf-file.md:439
-#: source/command-ref/conf-file.md:449 source/command-ref/conf-file.md:455
-#: source/command-ref/conf-file.md:462 source/command-ref/conf-file.md:485
-#: source/command-ref/conf-file.md:493
+#: source/command-ref/conf-file.md:431 source/command-ref/conf-file.md:445
+#: source/command-ref/conf-file.md:455 source/command-ref/conf-file.md:461
+#: source/command-ref/conf-file.md:468 source/command-ref/conf-file.md:491
+#: source/command-ref/conf-file.md:499
 msgid "**Example**"
 msgstr ""
 
-#: source/command-ref/conf-file.md:427
+#: source/command-ref/conf-file.md:433
 msgid "This is the default setting:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:433
+#: source/command-ref/conf-file.md:439
 msgid ""
 "Each machine specification consists of the following elements, separated by "
 "spaces. Only the first element is required. To leave a field at its default, "
 "set it to `-`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:437
+#: source/command-ref/conf-file.md:443
 msgid ""
 "The URI of the remote store in the format `ssh://[username@]hostname[:port]`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:441
+#: source/command-ref/conf-file.md:447
 msgid "`ssh://nix@mac`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:443
+#: source/command-ref/conf-file.md:449
 msgid ""
 "For backward compatibility, `ssh://` may be omitted. The hostname may be an "
 "alias defined in `~/.ssh/config`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:446
+#: source/command-ref/conf-file.md:452
 msgid ""
-"A comma-separated list of [Nix system types](../development/building."
-"md#system-type). If omitted, this defaults to the local platform type."
+"A comma-separated list of [Nix system types](../development/"
+"building.md#system-type). If omitted, this defaults to the local platform "
+"type."
 msgstr ""
 
-#: source/command-ref/conf-file.md:451 source/command-ref/conf-file.md:1817
+#: source/command-ref/conf-file.md:457 source/command-ref/conf-file.md:1818
 msgid "`aarch64-darwin`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:453
+#: source/command-ref/conf-file.md:459
 msgid "It is possible for a machine to support multiple platform types."
 msgstr ""
 
-#: source/command-ref/conf-file.md:457
+#: source/command-ref/conf-file.md:463
 msgid "`i686-linux,x86_64-linux`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:459
+#: source/command-ref/conf-file.md:465
 msgid ""
 "The SSH identity file to be used to log in to the remote machine. If "
 "omitted, SSH uses its regular identities."
 msgstr ""
 
-#: source/command-ref/conf-file.md:464
+#: source/command-ref/conf-file.md:470
 msgid "`/home/user/.ssh/id_mac`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:466
+#: source/command-ref/conf-file.md:472
 msgid ""
 "The maximum number of builds that Nix executes in parallel on the machine. "
 "Typically this should be equal to the number of CPU cores."
 msgstr ""
 
-#: source/command-ref/conf-file.md:469
+#: source/command-ref/conf-file.md:475
 msgid ""
 "The “speed factor”, indicating the relative speed of the machine as a "
 "positive integer or decimal number. If there are multiple machines of the "
 "right type, Nix prefers the fastest, taking load into account."
 msgstr ""
 
-#: source/command-ref/conf-file.md:472
+#: source/command-ref/conf-file.md:478
 msgid ""
 "A comma-separated list of supported [system features](#conf-system-features)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:474
+#: source/command-ref/conf-file.md:480
 msgid ""
 "A machine is only used to build a derivation if all the features in the "
-"derivation's [`requiredSystemFeatures`](../language/advanced-attributes."
-"html#adv-attr-requiredSystemFeatures) attribute are supported by that "
-"machine."
+"derivation's [`requiredSystemFeatures`](../language/advanced-"
+"attributes.html#adv-attr-requiredSystemFeatures) attribute are supported by "
+"that machine."
 msgstr ""
 
-#: source/command-ref/conf-file.md:476
+#: source/command-ref/conf-file.md:482
 msgid ""
 "A comma-separated list of required [system features](#conf-system-features)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:478
+#: source/command-ref/conf-file.md:484
 msgid ""
 "A machine is only used to build a derivation if all of the machine’s "
 "required features appear in the derivation’s [`requiredSystemFeatures`](../"
 "language/advanced-attributes.html#adv-attr-requiredSystemFeatures) attribute."
 msgstr ""
 
-#: source/command-ref/conf-file.md:480
+#: source/command-ref/conf-file.md:486
 msgid ""
 "The (base64-encoded) public host key of the remote machine. If omitted, SSH "
 "uses its regular `known_hosts` file."
 msgstr ""
 
-#: source/command-ref/conf-file.md:483
+#: source/command-ref/conf-file.md:489
 msgid "The value for this field can be obtained via `base64 -w0`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:487
+#: source/command-ref/conf-file.md:493
 msgid "Multiple builders specified on the command line:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:489
+#: source/command-ref/conf-file.md:495
 msgid ""
 "```console\n"
-"--builders 'ssh://mac x86_64-darwin ; ssh://beastie x86_64-freebsd'\n"
+"--builders 'ssh://mac aarch64-darwin ; ssh://beastie x86_64-freebsd'\n"
 "```"
 msgstr ""
 
-#: source/command-ref/conf-file.md:495
+#: source/command-ref/conf-file.md:501
 msgid "This specifies several machines that can perform `i686-linux` builds:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:503
+#: source/command-ref/conf-file.md:509
 msgid "However, `poochie` only builds derivations that have the attribute"
 msgstr ""
 
-#: source/command-ref/conf-file.md:505
+#: source/command-ref/conf-file.md:511
 msgid ""
 "```nix\n"
 "requiredSystemFeatures = [ \"benchmark\" ];\n"
 "```"
 msgstr ""
 
-#: source/command-ref/conf-file.md:509
+#: source/command-ref/conf-file.md:515
 msgid "or"
 msgstr ""
 
-#: source/command-ref/conf-file.md:511
+#: source/command-ref/conf-file.md:517
 msgid ""
 "```nix\n"
 "requiredSystemFeatures = [ \"benchmark\" \"kvm\" ];\n"
 "```"
 msgstr ""
 
-#: source/command-ref/conf-file.md:515
+#: source/command-ref/conf-file.md:521
 msgid ""
 "`itchy` cannot do builds that require `kvm`, but `scratchy` does support "
 "such builds. For regular builds, `itchy` is preferred over `scratchy` "
 "because it has a higher speed factor."
 msgstr ""
 
-#: source/command-ref/conf-file.md:518
+#: source/command-ref/conf-file.md:524
 msgid ""
 "For Nix to use substituters, the calling user must be in the [`trusted-"
 "users`](#conf-trusted-users) list."
 msgstr ""
 
-#: source/command-ref/conf-file.md:522
+#: source/command-ref/conf-file.md:528
 msgid ""
 "A build machine must be accessible via SSH and have Nix installed. `nix` "
 "must be available in `$PATH` for the user connecting over SSH."
 msgstr ""
 
-#: source/command-ref/conf-file.md:527
+#: source/command-ref/conf-file.md:533
 msgid ""
 "If you are building via the Nix daemon (default), the Nix daemon user "
 "account on the local machine (that is, `root`) requires access to a user "
 "account on the remote machine (not necessarily `root`)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:529
+#: source/command-ref/conf-file.md:535
 msgid ""
 "If you can’t or don’t want to configure `root` to be able to access the "
 "remote machine, set [`store`](#conf-store) to any [local store](../store/"
@@ -975,31 +991,31 @@ msgid ""
 "the local machine."
 msgstr ""
 
-#: source/command-ref/conf-file.md:531
+#: source/command-ref/conf-file.md:537
 msgid ""
 "To build only on remote machines and disable local builds, set [`max-jobs`]"
 "(#conf-max-jobs) to 0."
 msgstr ""
 
-#: source/command-ref/conf-file.md:533
+#: source/command-ref/conf-file.md:539
 msgid ""
 "If you want the remote machines to use substituters, set [`builders-use-"
 "substitutes`](#conf-builders-use-substitutes) to `true`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:537
+#: source/command-ref/conf-file.md:543
 msgid ""
 "<span id=\"conf-builders-use-substitutes\">[`builders-use-substitutes`]"
 "(#conf-builders-use-substitutes)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:539
+#: source/command-ref/conf-file.md:545
 msgid ""
 "If set to `true`, Nix instructs [remote build machines](#conf-builders) to "
 "use their own [`substituters`](#conf-substituters) if available."
 msgstr ""
 
-#: source/command-ref/conf-file.md:541
+#: source/command-ref/conf-file.md:547
 msgid ""
 "It means that remote build hosts fetch as many dependencies as possible from "
 "their own substituters (e.g, from `cache.nixos.org`) instead of waiting for "
@@ -1008,61 +1024,61 @@ msgid ""
 "build host is slow."
 msgstr ""
 
-#: source/command-ref/conf-file.md:546
+#: source/command-ref/conf-file.md:552
 msgid ""
 "<span id=\"conf-commit-lock-file-summary\">[`commit-lock-file-summary`]"
 "(#conf-commit-lock-file-summary)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:563
+#: source/command-ref/conf-file.md:569
 msgid ""
 "The commit summary to use when committing changed flake lock files. If "
 "empty, the summary is generated based on the action performed."
 msgstr ""
 
-#: source/command-ref/conf-file.md:568
+#: source/command-ref/conf-file.md:574
 msgid "**Deprecated alias:** `commit-lockfile-summary`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:570
+#: source/command-ref/conf-file.md:576
 msgid ""
 "<span id=\"conf-compress-build-log\">[`compress-build-log`](#conf-compress-"
 "build-log)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:572
+#: source/command-ref/conf-file.md:578
 msgid ""
 "If set to `true` (the default), build logs written to `/nix/var/log/nix/"
 "drvs` are compressed on the fly using bzip2. Otherwise, they are not "
 "compressed."
 msgstr ""
 
-#: source/command-ref/conf-file.md:578
+#: source/command-ref/conf-file.md:584
 msgid "**Deprecated alias:** `build-compress-log`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:580
+#: source/command-ref/conf-file.md:586
 msgid ""
 "<span id=\"conf-connect-timeout\">[`connect-timeout`](#conf-connect-"
 "timeout)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:582
+#: source/command-ref/conf-file.md:588
 msgid ""
 "The timeout (in seconds) for establishing connections in the binary cache "
 "substituter. It corresponds to `curl`’s `--connect-timeout` option. A value "
 "of 0 means no limit."
 msgstr ""
 
-#: source/command-ref/conf-file.md:586
+#: source/command-ref/conf-file.md:592
 msgid "**Default:** `15`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:588
+#: source/command-ref/conf-file.md:594
 msgid "<span id=\"conf-cores\">[`cores`](#conf-cores)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:590
+#: source/command-ref/conf-file.md:596
 msgid ""
 "Sets the value of the `NIX_BUILD_CORES` environment variable in the "
 "[invocation of the `builder` executable](../store/building.md#env-vars) of a "
@@ -1070,92 +1086,92 @@ msgid ""
 "own maximum amount of parallelism."
 msgstr ""
 
-#: source/command-ref/conf-file.md:598
+#: source/command-ref/conf-file.md:604
 msgid ""
 "For instance, in Nixpkgs, if the attribute `enableParallelBuilding` for the "
-"`mkDerivation` build helper is set to `true`, it passes the `-"
-"j${NIX_BUILD_CORES}` flag to GNU Make."
+"`mkDerivation` build helper is set to `true`, it passes the `-j$"
+"{NIX_BUILD_CORES}` flag to GNU Make."
 msgstr ""
 
-#: source/command-ref/conf-file.md:600
+#: source/command-ref/conf-file.md:606
 msgid ""
 "If set to `0`, nix will detect the number of CPU cores and pass this number "
 "via `NIX_BUILD_CORES`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:604
+#: source/command-ref/conf-file.md:610
 msgid ""
 "The number of parallel local Nix build jobs is independently controlled with "
 "the [`max-jobs`](#conf-max-jobs) setting."
 msgstr ""
 
-#: source/command-ref/conf-file.md:606 source/command-ref/conf-file.md:678
-#: source/command-ref/conf-file.md:1249 source/command-ref/conf-file.md:1298
-#: source/command-ref/conf-file.md:1319 source/command-ref/conf-file.md:1903
-#: source/command-ref/conf-file.md:2100
+#: source/command-ref/conf-file.md:612 source/command-ref/conf-file.md:684
+#: source/command-ref/conf-file.md:1246 source/command-ref/conf-file.md:1295
+#: source/command-ref/conf-file.md:1316 source/command-ref/conf-file.md:1904
+#: source/command-ref/conf-file.md:2101
 msgid "**Default:** `0`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:608
+#: source/command-ref/conf-file.md:614
 msgid "**Deprecated alias:** `build-cores`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:610
+#: source/command-ref/conf-file.md:616
 msgid ""
 "<span id=\"conf-debugger-on-trace\">[`debugger-on-trace`](#conf-debugger-on-"
 "trace)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:612
+#: source/command-ref/conf-file.md:618
 msgid ""
 "If set to true and the `--debugger` flag is given, the following functions "
 "enter the debugger like [`builtins.break`](../language/builtins.md#builtins-"
 "break):"
 msgstr ""
 
-#: source/command-ref/conf-file.md:615
+#: source/command-ref/conf-file.md:621
 msgid "[`builtins.trace`](../language/builtins.md#builtins-trace)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:616
+#: source/command-ref/conf-file.md:622
 msgid ""
 "[`builtins.traceVerbose`](../language/builtins.md#builtins-traceVerbose) if "
 "[`trace-verbose`](#conf-trace-verbose) is set to true."
 msgstr ""
 
-#: source/command-ref/conf-file.md:618
+#: source/command-ref/conf-file.md:624
 msgid "[`builtins.warn`](../language/builtins.md#builtins-warn)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:620 source/command-ref/conf-file.md:629
+#: source/command-ref/conf-file.md:626 source/command-ref/conf-file.md:635
 msgid "This is useful for debugging warnings in third-party Nix code."
 msgstr ""
 
-#: source/command-ref/conf-file.md:624
+#: source/command-ref/conf-file.md:630
 msgid ""
 "<span id=\"conf-debugger-on-warn\">[`debugger-on-warn`](#conf-debugger-on-"
 "warn)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:626
+#: source/command-ref/conf-file.md:632
 msgid ""
 "If set to true and the `--debugger` flag is given, [`builtins.warn`](../"
-"language/builtins.md#builtins-warn) will enter the debugger like [`builtins."
-"break`](../language/builtins.md#builtins-break)."
+"language/builtins.md#builtins-warn) will enter the debugger like "
+"[`builtins.break`](../language/builtins.md#builtins-break)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:631
+#: source/command-ref/conf-file.md:637
 msgid ""
 "Use [`debugger-on-trace`](#conf-debugger-on-trace) to also enter the "
 "debugger on legacy warnings that are logged with [`builtins.trace`](../"
 "language/builtins.md#builtins-trace)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:635
+#: source/command-ref/conf-file.md:641
 msgid "<span id=\"conf-diff-hook\">[`diff-hook`](#conf-diff-hook)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:637
+#: source/command-ref/conf-file.md:643
 msgid ""
 "Absolute path to an executable capable of diffing build results. The hook is "
 "executed if `run-diff-hook` is true, and the output of a build is known to "
@@ -1163,102 +1179,102 @@ msgid ""
 "are the same."
 msgstr ""
 
-#: source/command-ref/conf-file.md:642
+#: source/command-ref/conf-file.md:648
 msgid ""
 "The diff hook is executed by the same user and group who ran the build. "
 "However, the diff hook does not have write access to the store path just "
 "built."
 msgstr ""
 
-#: source/command-ref/conf-file.md:646
+#: source/command-ref/conf-file.md:652
 msgid "The diff hook program receives three parameters:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:648
+#: source/command-ref/conf-file.md:654
 msgid "A path to the previous build's results"
 msgstr ""
 
-#: source/command-ref/conf-file.md:650
+#: source/command-ref/conf-file.md:656
 msgid "A path to the current build's results"
 msgstr ""
 
-#: source/command-ref/conf-file.md:652
+#: source/command-ref/conf-file.md:658
 msgid "The path to the build's derivation"
 msgstr ""
 
-#: source/command-ref/conf-file.md:654
+#: source/command-ref/conf-file.md:660
 msgid ""
 "The path to the build's scratch directory. This directory exists only if the "
 "build was run with `--keep-failed`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:657
+#: source/command-ref/conf-file.md:663
 msgid ""
 "The stderr and stdout output from the diff hook isn't displayed to the user. "
 "Instead, it prints to the nix-daemon's log."
 msgstr ""
 
-#: source/command-ref/conf-file.md:660
+#: source/command-ref/conf-file.md:666
 msgid ""
 "When using the Nix daemon, `diff-hook` must be set in the `nix.conf` "
 "configuration file, and cannot be passed at the command line."
 msgstr ""
 
-#: source/command-ref/conf-file.md:665
+#: source/command-ref/conf-file.md:671
 msgid ""
 "<span id=\"conf-download-buffer-size\">[`download-buffer-size`](#conf-"
 "download-buffer-size)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:667
+#: source/command-ref/conf-file.md:673
 msgid ""
 "The size of Nix's internal download buffer in bytes during `curl` transfers. "
 "If data is not processed quickly enough to exceed the size of this buffer, "
 "downloads may stall. The default is 1048576 (1 MiB)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:671
+#: source/command-ref/conf-file.md:677
 msgid "**Default:** `1048576`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:673
+#: source/command-ref/conf-file.md:679
 msgid ""
 "<span id=\"conf-download-speed\">[`download-speed`](#conf-download-speed)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:675
+#: source/command-ref/conf-file.md:681
 msgid ""
 "Specify the maximum transfer rate in kilobytes per second you want Nix to "
 "use for downloads."
 msgstr ""
 
-#: source/command-ref/conf-file.md:680
+#: source/command-ref/conf-file.md:686
 msgid ""
 "<span id=\"conf-eval-attrset-update-layer-rhs-threshold\">[`eval-attrset-"
 "update-layer-rhs-threshold`](#conf-eval-attrset-update-layer-rhs-threshold)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:682
+#: source/command-ref/conf-file.md:688
 msgid ""
 "Tunes the maximum size of an attribute set that, when used as a right "
-"operand in an [attribute set update expression](../language/operators."
-"md#update), uses a more space-efficient linked-list representation of "
-"attribute sets."
+"operand in an [attribute set update expression](../language/"
+"operators.md#update), uses a more space-efficient linked-list representation "
+"of attribute sets."
 msgstr ""
 
-#: source/command-ref/conf-file.md:686
+#: source/command-ref/conf-file.md:692
 msgid ""
 "Setting this to larger values generally leads to less memory allocations, "
 "but may lead to worse evaluation performance."
 msgstr ""
 
-#: source/command-ref/conf-file.md:689
+#: source/command-ref/conf-file.md:695
 msgid "A value of `0` disables this optimization completely."
 msgstr ""
 
-#: source/command-ref/conf-file.md:691
+#: source/command-ref/conf-file.md:697
 msgid ""
 "This is an advanced performance tuning option and typically should not be "
 "changed. The default value is chosen to balance performance and memory "
@@ -1266,278 +1282,273 @@ msgid ""
 "value to reduce the amount of allocations."
 msgstr ""
 
-#: source/command-ref/conf-file.md:695 source/command-ref/conf-file.md:1308
+#: source/command-ref/conf-file.md:701 source/command-ref/conf-file.md:1305
 msgid "**Default:** `16`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:697
+#: source/command-ref/conf-file.md:703
 msgid "<span id=\"conf-eval-cache\">[`eval-cache`](#conf-eval-cache)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:699
+#: source/command-ref/conf-file.md:705
 msgid ""
 "Whether to use the flake evaluation cache. Certain commands won't have to "
 "evaluate when invoked for the second time with a particular version of a "
 "flake. Intermediate results are not cached."
 msgstr ""
 
-#: source/command-ref/conf-file.md:705
+#: source/command-ref/conf-file.md:711
 msgid ""
 "<span id=\"conf-eval-profile-file\">[`eval-profile-file`](#conf-eval-profile-"
 "file)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:707
+#: source/command-ref/conf-file.md:713
 msgid ""
 "Specifies the file where [evaluation profile](#conf-eval-profiler) is saved."
 msgstr ""
 
-#: source/command-ref/conf-file.md:709
+#: source/command-ref/conf-file.md:715
 msgid "**Default:** `nix.profile`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:711
+#: source/command-ref/conf-file.md:717
 msgid ""
 "<span id=\"conf-eval-profiler\">[`eval-profiler`](#conf-eval-profiler)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:713
+#: source/command-ref/conf-file.md:719
 msgid "Enables evaluation profiling. The following modes are supported:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:715
+#: source/command-ref/conf-file.md:721
 msgid ""
 "`flamegraph` stack sampling profiler. Outputs folded format, one line per "
 "stack (suitable for `flamegraph.pl` and compatible tools)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:717
+#: source/command-ref/conf-file.md:723
 msgid ""
 "Use [`eval-profile-file`](#conf-eval-profile-file) to specify where the "
 "profile is saved."
 msgstr ""
 
-#: source/command-ref/conf-file.md:719
+#: source/command-ref/conf-file.md:725
 msgid "See [Using the `eval-profiler`](../advanced-topics/eval-profiler.md)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:721
+#: source/command-ref/conf-file.md:727
 msgid "**Default:** `disabled`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:723
+#: source/command-ref/conf-file.md:729
 msgid ""
 "<span id=\"conf-eval-profiler-frequency\">[`eval-profiler-frequency`](#conf-"
 "eval-profiler-frequency)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:725
+#: source/command-ref/conf-file.md:731
 msgid ""
 "Specifies the sampling rate in hertz for sampling evaluation profilers. Use "
 "`0` to sample the stack after each function call. See [`eval-profiler`]"
 "(#conf-eval-profiler)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:729
+#: source/command-ref/conf-file.md:735
 msgid "**Default:** `99`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:731
+#: source/command-ref/conf-file.md:737
 msgid "<span id=\"conf-eval-system\">[`eval-system`](#conf-eval-system)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:733
+#: source/command-ref/conf-file.md:739
 msgid ""
-"This option defines [`builtins.currentSystem`](../language/builtins."
-"md#builtins-currentSystem) in the Nix language if it is set as a non-empty "
-"string. Otherwise, if it is defined as the empty string (the default), the "
-"value of the [`system` ](#conf-system) configuration setting is used instead."
+"This option defines [`builtins.currentSystem`](../language/"
+"builtins.md#builtins-currentSystem) in the Nix language if it is set as a "
+"non-empty string. Otherwise, if it is defined as the empty string (the "
+"default), the value of the [`system` ](#conf-system) configuration setting "
+"is used instead."
 msgstr ""
 
-#: source/command-ref/conf-file.md:740
+#: source/command-ref/conf-file.md:746
 msgid ""
 "Unlike `system`, this setting does not change what kind of derivations can "
 "be built locally. This is useful for evaluating Nix code on one system to "
 "produce derivations to be built on another type of system."
 msgstr ""
 
-#: source/command-ref/conf-file.md:745
+#: source/command-ref/conf-file.md:751
 msgid ""
 "<span id=\"conf-experimental-features\">[`experimental-features`](#conf-"
 "experimental-features)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:747
+#: source/command-ref/conf-file.md:753
 msgid "Experimental features that are enabled."
 msgstr ""
 
-#: source/command-ref/conf-file.md:755
+#: source/command-ref/conf-file.md:761
 msgid "The following experimental features are available:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:757
+#: source/command-ref/conf-file.md:763
 msgid ""
 "[`auto-allocate-uids`](../development/experimental-features.md#xp-feature-"
 "auto-allocate-uids)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:758
+#: source/command-ref/conf-file.md:764
 msgid ""
 "[`blake3-hashes`](../development/experimental-features.md#xp-feature-blake3-"
 "hashes)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:759
+#: source/command-ref/conf-file.md:765
 msgid ""
 "[`ca-derivations`](../development/experimental-features.md#xp-feature-ca-"
 "derivations)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:760
+#: source/command-ref/conf-file.md:766
 msgid "[`cgroups`](../development/experimental-features.md#xp-feature-cgroups)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:761
+#: source/command-ref/conf-file.md:767
 msgid ""
 "[`configurable-impure-env`](../development/experimental-features.md#xp-"
 "feature-configurable-impure-env)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:762
-msgid ""
-"[`daemon-trust-override`](../development/experimental-features.md#xp-feature-"
-"daemon-trust-override)"
-msgstr ""
-
-#: source/command-ref/conf-file.md:763
+#: source/command-ref/conf-file.md:768
 msgid ""
 "[`dynamic-derivations`](../development/experimental-features.md#xp-feature-"
 "dynamic-derivations)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:764
+#: source/command-ref/conf-file.md:769
 msgid ""
 "[`external-builders`](../development/experimental-features.md#xp-feature-"
 "external-builders)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:765
+#: source/command-ref/conf-file.md:770
 msgid ""
 "[`fetch-closure`](../development/experimental-features.md#xp-feature-fetch-"
 "closure)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:766
+#: source/command-ref/conf-file.md:771
 msgid ""
 "[`fetch-tree`](../development/experimental-features.md#xp-feature-fetch-tree)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:767
+#: source/command-ref/conf-file.md:772
 msgid "[`flakes`](../development/experimental-features.md#xp-feature-flakes)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:768
+#: source/command-ref/conf-file.md:773
 msgid ""
 "[`git-hashing`](../development/experimental-features.md#xp-feature-git-"
 "hashing)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:769
+#: source/command-ref/conf-file.md:774
 msgid ""
 "[`impure-derivations`](../development/experimental-features.md#xp-feature-"
 "impure-derivations)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:770
+#: source/command-ref/conf-file.md:775
 msgid ""
 "[`local-overlay-store`](../development/experimental-features.md#xp-feature-"
 "local-overlay-store)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:771
+#: source/command-ref/conf-file.md:776
 msgid ""
 "[`mounted-ssh-store`](../development/experimental-features.md#xp-feature-"
 "mounted-ssh-store)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:772
+#: source/command-ref/conf-file.md:777
 msgid ""
 "[`nix-command`](../development/experimental-features.md#xp-feature-nix-"
 "command)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:773
+#: source/command-ref/conf-file.md:778
 msgid ""
 "[`parse-toml-timestamps`](../development/experimental-features.md#xp-feature-"
 "parse-toml-timestamps)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:774
+#: source/command-ref/conf-file.md:779
 msgid ""
 "[`pipe-operators`](../development/experimental-features.md#xp-feature-pipe-"
 "operators)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:775
+#: source/command-ref/conf-file.md:780
 msgid ""
 "[`read-only-local-store`](../development/experimental-features.md#xp-feature-"
 "read-only-local-store)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:776
+#: source/command-ref/conf-file.md:781
 msgid ""
 "[`recursive-nix`](../development/experimental-features.md#xp-feature-"
 "recursive-nix)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:777
+#: source/command-ref/conf-file.md:782
 msgid ""
 "[`verified-fetches`](../development/experimental-features.md#xp-feature-"
 "verified-fetches)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:780
+#: source/command-ref/conf-file.md:785
 msgid ""
 "Experimental features are [further documented in the manual](../development/"
 "experimental-features.md)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:784
+#: source/command-ref/conf-file.md:789
 msgid ""
 "<span id=\"conf-external-builders\">[`external-builders`](#conf-external-"
 "builders)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:786
+#: source/command-ref/conf-file.md:791
 msgid ""
 "Helper programs for building derivations, specified in JSON format, e.g."
 msgstr ""
 
-#: source/command-ref/conf-file.md:789
+#: source/command-ref/conf-file.md:794
 msgid "\"systems\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:789 source/command-ref/conf-file.md:820
+#: source/command-ref/conf-file.md:794 source/command-ref/conf-file.md:825
 msgid "\"aarch64-linux\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:789
+#: source/command-ref/conf-file.md:794
 msgid "\"program\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:789
+#: source/command-ref/conf-file.md:794
 msgid "\"/path/to/helper\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:789 source/command-ref/conf-file.md:797
+#: source/command-ref/conf-file.md:794 source/command-ref/conf-file.md:802
 msgid "\"args\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:789
+#: source/command-ref/conf-file.md:794
 msgid "\"bla\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:792
+#: source/command-ref/conf-file.md:797
 msgid ""
 "Whenever Nix needs to build a derivation for a system contained in "
 "_systems_, it will invoke _program_ with the command line arguments _args_, "
@@ -1545,164 +1556,164 @@ msgid ""
 "describes the build environment. The JSON document looks like this:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:798
+#: source/command-ref/conf-file.md:803
 msgid "\"-e\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:799
+#: source/command-ref/conf-file.md:804
 msgid "\"/nix/store/vj1c3wf9…-source-stdenv.sh\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:800
+#: source/command-ref/conf-file.md:805
 msgid "\"/nix/store/shkw4qm9…-default-builder.sh\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:802 source/command-ref/conf-file.md:805
+#: source/command-ref/conf-file.md:807 source/command-ref/conf-file.md:810
 msgid "\"builder\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:802 source/command-ref/conf-file.md:805
+#: source/command-ref/conf-file.md:807 source/command-ref/conf-file.md:810
 msgid "\"/nix/store/s1qkj0ph…-bash-5.2p37/bin/bash\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:803
+#: source/command-ref/conf-file.md:808
 msgid "\"env\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:804
+#: source/command-ref/conf-file.md:809
 msgid "\"HOME\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:804
+#: source/command-ref/conf-file.md:809
 msgid "\"/homeless-shelter\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:806
+#: source/command-ref/conf-file.md:811
 msgid "\"nativeBuildInputs\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:806
+#: source/command-ref/conf-file.md:811
 msgid "\"/nix/store/l31j72f1…-version-check-hook\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:807 source/command-ref/conf-file.md:816
+#: source/command-ref/conf-file.md:812 source/command-ref/conf-file.md:821
 msgid "\"out\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:807 source/command-ref/conf-file.md:816
+#: source/command-ref/conf-file.md:812 source/command-ref/conf-file.md:821
 msgid "\"/nix/store/2yx2prgx…-hello-2.12.2\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:810
+#: source/command-ref/conf-file.md:815
 msgid "\"inputPaths\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:811
+#: source/command-ref/conf-file.md:816
 msgid "\"/nix/store/14dciax3…-glibc-2.32-54-dev\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:812
+#: source/command-ref/conf-file.md:817
 msgid "\"/nix/store/1azs5s8z…-gettext-0.21\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:815
+#: source/command-ref/conf-file.md:820
 msgid "\"outputs\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:818
+#: source/command-ref/conf-file.md:823
 msgid "\"realStoreDir\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:818 source/command-ref/conf-file.md:819
+#: source/command-ref/conf-file.md:823 source/command-ref/conf-file.md:824
 msgid "\"/nix/store\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:819
+#: source/command-ref/conf-file.md:824
 msgid "\"storeDir\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:820
+#: source/command-ref/conf-file.md:825
 msgid "\"system\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:821
+#: source/command-ref/conf-file.md:826
 msgid "\"tmpDir\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:821
+#: source/command-ref/conf-file.md:826
 msgid "\"/private/tmp/nix-build-hello-2.12.2.drv-0/build\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:822
+#: source/command-ref/conf-file.md:827
 msgid "\"tmpDirInSandbox\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:822
+#: source/command-ref/conf-file.md:827
 msgid "\"/build\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:823
+#: source/command-ref/conf-file.md:828
 msgid "\"topTmpDir\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:823
+#: source/command-ref/conf-file.md:828
 msgid "\"/private/tmp/nix-build-hello-2.12.2.drv-0\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:824
+#: source/command-ref/conf-file.md:829
 msgid "\"version\""
 msgstr ""
 
-#: source/command-ref/conf-file.md:830
+#: source/command-ref/conf-file.md:835
 msgid ""
 "<span id=\"conf-extra-platforms\">[`extra-platforms`](#conf-extra-"
 "platforms)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:832
+#: source/command-ref/conf-file.md:837
 msgid "System types of executables that can be run on this machine."
 msgstr ""
 
-#: source/command-ref/conf-file.md:834
+#: source/command-ref/conf-file.md:839
 msgid ""
 "Nix only builds a given [store derivation](../glossary.md#gloss-store-"
 "derivation) locally when its `system` attribute equals any of the values "
 "specified here or in the [`system` option](#conf-system)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:836
+#: source/command-ref/conf-file.md:841
 msgid ""
 "Setting this can be useful to build derivations locally on compatible "
 "machines:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:837
+#: source/command-ref/conf-file.md:842
 msgid ""
 "`i686-linux` executables can be run on `x86_64-linux` machines (set by "
 "default)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:838
+#: source/command-ref/conf-file.md:843
 msgid ""
 "`x86_64-darwin` executables can be run on macOS `aarch64-darwin` with "
 "Rosetta 2 (set by default where applicable)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:839
+#: source/command-ref/conf-file.md:844
 msgid "`armv6` and `armv5tel` executables can be run on `armv7`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:840
+#: source/command-ref/conf-file.md:845
 msgid "some `aarch64` machines can also natively run 32-bit ARM code"
 msgstr ""
 
-#: source/command-ref/conf-file.md:841
+#: source/command-ref/conf-file.md:846
 msgid ""
 "`qemu-user` may be used to support non-native platforms (though this may be "
 "slow and buggy)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:844
+#: source/command-ref/conf-file.md:849
 msgid ""
 "Build systems usually detect the target platform to be the current physical "
 "system and therefore produce machine code incompatible with what may be "
@@ -1711,28 +1722,28 @@ msgid ""
 "natively-built versions of your derivation."
 msgstr ""
 
-#: source/command-ref/conf-file.md:849
+#: source/command-ref/conf-file.md:854
 msgid "<span id=\"conf-fallback\">[`fallback`](#conf-fallback)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:851
+#: source/command-ref/conf-file.md:856
 msgid ""
 "If set to `true`, Nix falls back to building from source if a binary "
 "substitute fails. This is equivalent to the `--fallback` flag. The default "
 "is `false`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:857
+#: source/command-ref/conf-file.md:862
 msgid "**Deprecated alias:** `build-fallback`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:859
+#: source/command-ref/conf-file.md:864
 msgid ""
 "<span id=\"conf-filetransfer-retry-attempts\">[`filetransfer-retry-attempts`]"
 "(#conf-filetransfer-retry-attempts)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:861
+#: source/command-ref/conf-file.md:866
 msgid ""
 "The number of times Nix attempts a file transfer (download or upload) before "
 "giving up. Retries apply to transient failures: connection-level errors, "
@@ -1740,17 +1751,17 @@ msgid ""
 "(401/403/407), 404/410, and other 4xx responses are not retried."
 msgstr ""
 
-#: source/command-ref/conf-file.md:869
+#: source/command-ref/conf-file.md:874
 msgid "**Deprecated alias:** `download-attempts`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:871
+#: source/command-ref/conf-file.md:876
 msgid ""
 "<span id=\"conf-filetransfer-retry-delay\">[`filetransfer-retry-delay`]"
 "(#conf-filetransfer-retry-delay)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:873
+#: source/command-ref/conf-file.md:878
 msgid ""
 "Initial delay in milliseconds before retrying a failed file transfer "
 "(download or upload). The delay doubles with each subsequent attempt "
@@ -1758,144 +1769,144 @@ msgid ""
 "retry-jitter`)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:878
+#: source/command-ref/conf-file.md:883
 msgid "**Default:** `100`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:880
+#: source/command-ref/conf-file.md:885
 msgid ""
 "<span id=\"conf-filetransfer-retry-delay-rate-limited\">[`filetransfer-retry-"
 "delay-rate-limited`](#conf-filetransfer-retry-delay-rate-limited)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:882
+#: source/command-ref/conf-file.md:887
 msgid ""
 "Initial delay in milliseconds before retrying a file transfer that failed "
 "with a rate-limit response (HTTP 429 or 503). The delay doubles with each "
 "subsequent attempt."
 msgstr ""
 
-#: source/command-ref/conf-file.md:886
+#: source/command-ref/conf-file.md:891
 msgid ""
 "Servers may send a `Retry-After` header specifying a longer delay; when "
 "present, Nix respects the larger of the two values."
 msgstr ""
 
-#: source/command-ref/conf-file.md:889
+#: source/command-ref/conf-file.md:894
 msgid "**Default:** `5000`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:891
+#: source/command-ref/conf-file.md:896
 msgid ""
 "<span id=\"conf-filetransfer-retry-jitter\">[`filetransfer-retry-jitter`]"
 "(#conf-filetransfer-retry-jitter)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:893
+#: source/command-ref/conf-file.md:898
 msgid ""
 "Whether to apply random jitter to retry delays. When enabled, each retry "
 "waits for a random duration between 0 and the computed delay (\"full "
 "jitter\"), which spreads out retry storms from many clients."
 msgstr ""
 
-#: source/command-ref/conf-file.md:897
+#: source/command-ref/conf-file.md:902
 msgid "Disable for deterministic retry timing (primarily useful for tests)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:901
+#: source/command-ref/conf-file.md:906
 msgid ""
 "<span id=\"conf-filetransfer-retry-max-delay\">[`filetransfer-retry-max-"
 "delay`](#conf-filetransfer-retry-max-delay)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:903
+#: source/command-ref/conf-file.md:908
 msgid ""
 "Ceiling on the exponential backoff delay in milliseconds. This does not cap "
 "server-provided `Retry-After` values, which are honored as-is."
 msgstr ""
 
-#: source/command-ref/conf-file.md:906
+#: source/command-ref/conf-file.md:911
 msgid "**Default:** `60000`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:908
+#: source/command-ref/conf-file.md:913
 msgid ""
 "<span id=\"conf-filter-syscalls\">[`filter-syscalls`](#conf-filter-"
 "syscalls)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:910
+#: source/command-ref/conf-file.md:915
 msgid ""
 "Whether to prevent certain dangerous system calls, such as creation of "
 "setuid/setgid files or adding ACLs or extended attributes. Only disable this "
 "if you're aware of the security implications."
 msgstr ""
 
-#: source/command-ref/conf-file.md:917
+#: source/command-ref/conf-file.md:922
 msgid ""
 "<span id=\"conf-flake-registry\">[`flake-registry`](#conf-flake-registry)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:934
+#: source/command-ref/conf-file.md:939
 msgid "Path or URI of the global flake registry."
 msgstr ""
 
-#: source/command-ref/conf-file.md:936
+#: source/command-ref/conf-file.md:941
 msgid "When empty, disables the global flake registry."
 msgstr ""
 
-#: source/command-ref/conf-file.md:938
+#: source/command-ref/conf-file.md:943
 msgid "**Default:** `https://channels.nixos.org/flake-registry.json`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:940
+#: source/command-ref/conf-file.md:945
 msgid ""
 "<span id=\"conf-fsync-metadata\">[`fsync-metadata`](#conf-fsync-metadata)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:942
+#: source/command-ref/conf-file.md:947
 msgid ""
 "If set to `true`, changes to the Nix store metadata (in `/nix/var/nix/db`) "
 "are synchronously flushed to disk. This improves robustness in case of "
 "system crashes, but reduces performance. The default is `true`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:949
+#: source/command-ref/conf-file.md:954
 msgid ""
 "<span id=\"conf-fsync-store-paths\">[`fsync-store-paths`](#conf-fsync-store-"
 "paths)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:951
+#: source/command-ref/conf-file.md:956
 msgid ""
 "Whether to call `fsync()` on store paths before registering them, to flush "
 "them to disk. This improves robustness in case of system crashes, but "
 "reduces performance. The default is `false`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:957
+#: source/command-ref/conf-file.md:962
 msgid ""
 "<span id=\"conf-gc-reserved-space\">[`gc-reserved-space`](#conf-gc-reserved-"
 "space)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:959
+#: source/command-ref/conf-file.md:964
 msgid "Amount of reserved disk space for the garbage collector."
 msgstr ""
 
-#: source/command-ref/conf-file.md:961 source/command-ref/conf-file.md:1015
+#: source/command-ref/conf-file.md:966 source/command-ref/conf-file.md:1020
 msgid "**Default:** `8388608`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:963
+#: source/command-ref/conf-file.md:968
 msgid ""
 "<span id=\"conf-hashed-mirrors\">[`hashed-mirrors`](#conf-hashed-mirrors)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:965
+#: source/command-ref/conf-file.md:970
 msgid ""
 "A list of web servers used by `builtins.fetchurl` to obtain files by hash. "
 "Given a hash algorithm _ha_ and a base-16 hash _h_, Nix tries to download "
@@ -1904,7 +1915,7 @@ msgid ""
 "example mirror `http://tarballs.nixos.org/`, when building the derivation"
 msgstr ""
 
-#: source/command-ref/conf-file.md:972
+#: source/command-ref/conf-file.md:977
 msgid ""
 "```nix\n"
 "builtins.fetchurl {\n"
@@ -1915,46 +1926,46 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/command-ref/conf-file.md:979
+#: source/command-ref/conf-file.md:984
 msgid ""
 "Nix will attempt to download this file from `http://tarballs.nixos.org/"
 "sha256/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae` "
 "first. If it is not available there, it tries the original URI."
 msgstr ""
 
-#: source/command-ref/conf-file.md:985
+#: source/command-ref/conf-file.md:990
 msgid ""
 "<span id=\"conf-http-connections\">[`http-connections`](#conf-http-"
 "connections)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:987
+#: source/command-ref/conf-file.md:992
 msgid ""
 "The maximum number of parallel TCP connections used to fetch files from "
 "binary caches and by other downloads. It defaults to 25. 0 means no limit."
 msgstr ""
 
-#: source/command-ref/conf-file.md:991 source/command-ref/conf-file.md:1241
+#: source/command-ref/conf-file.md:996 source/command-ref/conf-file.md:1238
 msgid "**Default:** `25`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:993
+#: source/command-ref/conf-file.md:998
 msgid "**Deprecated alias:** `binary-caches-parallel-connections`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:995
+#: source/command-ref/conf-file.md:1000
 msgid "<span id=\"conf-http2\">[`http2`](#conf-http2)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:997
+#: source/command-ref/conf-file.md:1002
 msgid "Whether to enable HTTP/2 support."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1001
+#: source/command-ref/conf-file.md:1006
 msgid "<span id=\"conf-http3\">[`http3`](#conf-http3)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1003
+#: source/command-ref/conf-file.md:1008
 msgid ""
 "Whether to try enabling HTTP/3 (QUIC). When enabled, Nix requests HTTP/3 and "
 "transparently falls back to HTTP/2 or HTTP/1.1 for servers that do not "
@@ -1962,31 +1973,31 @@ msgid ""
 "against a libcurl built with HTTP/3 (QUIC) support."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1011
+#: source/command-ref/conf-file.md:1016
 msgid "<span id=\"conf-id-count\">[`id-count`](#conf-id-count)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1013
+#: source/command-ref/conf-file.md:1018
 msgid "The number of UIDs/GIDs to use for dynamic ID allocation."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1017
+#: source/command-ref/conf-file.md:1022
 msgid "<span id=\"conf-ignore-try\">[`ignore-try`](#conf-ignore-try)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1019
+#: source/command-ref/conf-file.md:1024
 msgid ""
 "If set to true, ignore exceptions inside 'tryEval' calls when evaluating Nix "
 "expressions in debug mode (using the --debugger flag). By default the "
 "debugger pauses on all exceptions."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1024
+#: source/command-ref/conf-file.md:1029
 msgid ""
 "<span id=\"conf-ignored-acls\">[`ignored-acls`](#conf-ignored-acls)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1026
+#: source/command-ref/conf-file.md:1031
 msgid ""
 "A list of ACLs that should be ignored, normally Nix attempts to remove all "
 "ACLs from files and directories in the Nix store, but some ACLs like "
@@ -1994,29 +2005,15 @@ msgid ""
 "Therefore it's best to just ignore them."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1031
+#: source/command-ref/conf-file.md:1036
 msgid "**Default:** `security.csm security.selinux system.nfs4_acl`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1033
-msgid ""
-"<span id=\"conf-impersonate-linux-26\">[`impersonate-linux-26`](#conf-"
-"impersonate-linux-26)</span>"
-msgstr ""
-
-#: source/command-ref/conf-file.md:1035
-msgid "Whether to impersonate a Linux 2.6 machine on newer kernels."
-msgstr ""
-
-#: source/command-ref/conf-file.md:1039
-msgid "**Deprecated alias:** `build-impersonate-linux-26`"
-msgstr ""
-
-#: source/command-ref/conf-file.md:1041
+#: source/command-ref/conf-file.md:1038
 msgid "<span id=\"conf-impure-env\">[`impure-env`](#conf-impure-env)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1048
+#: source/command-ref/conf-file.md:1045
 msgid ""
 "To change this setting, make sure the [`configurable-impure-env` "
 "experimental feature](../development/experimental-features.md#xp-feature-"
@@ -2024,15 +2021,15 @@ msgid ""
 "[`nix.conf`](../command-ref/conf-file.md):"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1058
+#: source/command-ref/conf-file.md:1055
 msgid "A list of items, each in the format of:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1060
+#: source/command-ref/conf-file.md:1057
 msgid "`name=value`: Set environment variable `name` to `value`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1062
+#: source/command-ref/conf-file.md:1059
 msgid ""
 "If the user is trusted (see `trusted-users` option), when building a fixed-"
 "output derivation, environment variables set in this option is passed to the "
@@ -2040,19 +2037,19 @@ msgid ""
 "attributes.md#adv-attr-impureEnvVars)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1066
+#: source/command-ref/conf-file.md:1063
 msgid ""
 "This option is useful for, e.g., setting `https_proxy` for fixed-output "
 "derivations and in a multi-user Nix installation, or setting private access "
 "tokens when fetching a private repository."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1072
+#: source/command-ref/conf-file.md:1069
 msgid ""
 "<span id=\"conf-json-log-path\">[`json-log-path`](#conf-json-log-path)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1074
+#: source/command-ref/conf-file.md:1071
 msgid ""
 "A file or unix socket to which JSON records of Nix's log output are written, "
 "in the same format as `--log-format internal-json` (without the `@nix ` "
@@ -2061,38 +2058,38 @@ msgid ""
 "records."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1082
+#: source/command-ref/conf-file.md:1079
 msgid ""
 "<span id=\"conf-keep-build-log\">[`keep-build-log`](#conf-keep-build-log)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1084
+#: source/command-ref/conf-file.md:1081
 msgid ""
-"If set to `true` (the default), Nix writes the build log of a derivation (i."
-"e. the standard output and error of its builder) to the directory `/nix/var/"
-"log/nix/drvs`. The build log can be retrieved using the command `nix-store -"
-"l path`."
+"If set to `true` (the default), Nix writes the build log of a derivation "
+"(i.e. the standard output and error of its builder) to the directory `/nix/"
+"var/log/nix/drvs`. The build log can be retrieved using the command `nix-"
+"store -l path`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1091
+#: source/command-ref/conf-file.md:1088
 msgid "**Deprecated alias:** `build-keep-log`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1093
+#: source/command-ref/conf-file.md:1090
 msgid ""
 "<span id=\"conf-keep-derivations\">[`keep-derivations`](#conf-keep-"
 "derivations)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1095
+#: source/command-ref/conf-file.md:1092
 msgid ""
 "If `true` (default), the garbage collector keeps the derivations from which "
 "non-garbage store paths were built. If `false`, they are deleted unless "
 "explicitly registered as a root (or reachable from other roots)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1100
+#: source/command-ref/conf-file.md:1097
 msgid ""
 "Keeping derivation around is useful for querying and traceability (e.g., it "
 "allows you to ask with what dependencies or options a store path was built), "
@@ -2100,30 +2097,30 @@ msgid ""
 "a lot if `keep-outputs` is also turned on)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1106 source/command-ref/conf-file.md:1160
+#: source/command-ref/conf-file.md:1103 source/command-ref/conf-file.md:1157
 msgid ""
 "This option only applies to garbage collection of the whole store and does "
 "not affect deleting explicit paths."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1111
+#: source/command-ref/conf-file.md:1108
 msgid "**Deprecated alias:** `gc-keep-derivations`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1113
+#: source/command-ref/conf-file.md:1110
 msgid ""
 "<span id=\"conf-keep-env-derivations\">[`keep-env-derivations`](#conf-keep-"
 "env-derivations)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1115
+#: source/command-ref/conf-file.md:1112
 msgid ""
 "If `false` (default), derivations are not stored in Nix user environments. "
 "That is, the derivations of any build-time-only dependencies may be garbage-"
 "collected."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1119
+#: source/command-ref/conf-file.md:1116
 msgid ""
 "If `true`, when you add a Nix derivation to a user environment, the path of "
 "the derivation is stored in the user environment. Thus, the derivation isn't "
@@ -2132,7 +2129,7 @@ msgid ""
 "collected, you should also turn on `keep-outputs`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1126
+#: source/command-ref/conf-file.md:1123
 msgid ""
 "The difference between this option and `keep-derivations` is that this one "
 "is \"sticky\": it applies to any user environment created while this option "
@@ -2140,39 +2137,39 @@ msgid ""
 "collector is run."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1133
+#: source/command-ref/conf-file.md:1130
 msgid "**Deprecated alias:** `env-keep-derivations`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1135
+#: source/command-ref/conf-file.md:1132
 msgid "<span id=\"conf-keep-failed\">[`keep-failed`](#conf-keep-failed)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1137
+#: source/command-ref/conf-file.md:1134
 msgid "Whether to keep temporary directories of failed builds."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1141
+#: source/command-ref/conf-file.md:1138
 msgid "<span id=\"conf-keep-going\">[`keep-going`](#conf-keep-going)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1143
+#: source/command-ref/conf-file.md:1140
 msgid "Whether to keep building derivations when another build fails."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1147
+#: source/command-ref/conf-file.md:1144
 msgid ""
 "<span id=\"conf-keep-outputs\">[`keep-outputs`](#conf-keep-outputs)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1149
+#: source/command-ref/conf-file.md:1146
 msgid ""
 "If `true`, the garbage collector keeps the outputs of non-garbage "
 "derivations. If `false` (default), outputs are deleted unless they are GC "
 "roots themselves (or reachable from other roots)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1154
+#: source/command-ref/conf-file.md:1151
 msgid ""
 "In general, outputs must be registered as roots separately. However, even if "
 "the output of a derivation is registered as a root, the collector still "
@@ -2181,35 +2178,35 @@ msgid ""
 "so, set this option to `true`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1165
+#: source/command-ref/conf-file.md:1162
 msgid "**Deprecated alias:** `gc-keep-outputs`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1167
+#: source/command-ref/conf-file.md:1164
 msgid ""
 "<span id=\"conf-lint-absolute-path-literals\">[`lint-absolute-path-literals`]"
 "(#conf-lint-absolute-path-literals)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1169
+#: source/command-ref/conf-file.md:1166
 msgid ""
 "Controls handling of absolute path literals (paths starting with `/`) and "
 "home path literals (paths starting with `~/`)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1171 source/command-ref/conf-file.md:1192
+#: source/command-ref/conf-file.md:1168 source/command-ref/conf-file.md:1189
 msgid "`ignore`: Ignore without warning (default)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1172
+#: source/command-ref/conf-file.md:1169
 msgid "`warn`: Emit a warning about non-portability"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1173 source/command-ref/conf-file.md:1194
+#: source/command-ref/conf-file.md:1170 source/command-ref/conf-file.md:1191
 msgid "`fatal`: Treat as a parse error"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1175
+#: source/command-ref/conf-file.md:1172
 msgid ""
 "It is true that some files are more difficult to reference with relative "
 "paths, because they would require lots of `../../..` upward traversing to "
@@ -2219,7 +2216,7 @@ msgid ""
 "evaluating the expression."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1181
+#: source/command-ref/conf-file.md:1178
 msgid ""
 "Secondly, with [pure evaluation mode](#conf-pure-eval), most such files are "
 "prohibited to access anyway, whether by absolute or relative paths. In that "
@@ -2228,52 +2225,52 @@ msgid ""
 "expressed with absolute paths anyway."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1186 source/command-ref/conf-file.md:1202
-#: source/command-ref/conf-file.md:1235
+#: source/command-ref/conf-file.md:1183 source/command-ref/conf-file.md:1199
+#: source/command-ref/conf-file.md:1232
 msgid "**Default:** `ignore`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1188
+#: source/command-ref/conf-file.md:1185
 msgid ""
 "<span id=\"conf-lint-short-path-literals\">[`lint-short-path-literals`]"
 "(#conf-lint-short-path-literals)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1190
+#: source/command-ref/conf-file.md:1187
 msgid ""
 "Controls handling of relative path literals that don't start with `./` or "
 "`../`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1193
+#: source/command-ref/conf-file.md:1190
 msgid "`warn`: Emit a warning suggesting to use `./` prefix"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1196
+#: source/command-ref/conf-file.md:1193
 msgid ""
 "For example, with this setting set to `warn` or `fatal`, `foo/bar` would "
 "suggest using `./foo/bar` instead."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1199
+#: source/command-ref/conf-file.md:1196
 msgid ""
 "This is useful for improving code readability and making path literals more "
 "explicit."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1204
+#: source/command-ref/conf-file.md:1201
 msgid ""
 "<span id=\"conf-lint-url-literals\">[`lint-url-literals`](#conf-lint-url-"
 "literals)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1206
+#: source/command-ref/conf-file.md:1203
 msgid ""
 "Controls handling of unquoted URLs as part of the Nix language syntax. The "
 "Nix language allows for URL literals, like so:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1209
+#: source/command-ref/conf-file.md:1206
 msgid ""
 "```\n"
 "$ nix repl\n"
@@ -2282,13 +2279,13 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1215
+#: source/command-ref/conf-file.md:1212
 msgid ""
 "Setting this to `warn` or `fatal` will cause the Nix parser to warn or throw "
 "an error when encountering a URL literal:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1218
+#: source/command-ref/conf-file.md:1215
 msgid ""
 "```\n"
 "$ nix repl --lint-url-literals fatal\n"
@@ -2301,11 +2298,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1228
+#: source/command-ref/conf-file.md:1225
 msgid "Unquoted URLs are being deprecated and their usage is discouraged."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1230
+#: source/command-ref/conf-file.md:1227
 msgid ""
 "The reason is that, as opposed to path literals, URLs have no special "
 "properties that distinguish them from regular strings, URLs containing query "
@@ -2313,69 +2310,69 @@ msgid ""
 "tooling."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1237
+#: source/command-ref/conf-file.md:1234
 msgid "<span id=\"conf-log-lines\">[`log-lines`](#conf-log-lines)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1239
+#: source/command-ref/conf-file.md:1236
 msgid "The number of lines of the tail of the log to show if a build fails."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1243
+#: source/command-ref/conf-file.md:1240
 msgid ""
 "<span id=\"conf-max-build-log-size\">[`max-build-log-size`](#conf-max-build-"
 "log-size)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1245
+#: source/command-ref/conf-file.md:1242
 msgid ""
 "This option defines the maximum number of bytes that a builder can write to "
 "its stdout/stderr. If the builder exceeds this limit, it's killed. A value "
 "of `0` (the default) means that there is no limit."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1251
+#: source/command-ref/conf-file.md:1248
 msgid "**Deprecated alias:** `build-max-log-size`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1253
+#: source/command-ref/conf-file.md:1250
 msgid ""
 "<span id=\"conf-max-call-depth\">[`max-call-depth`](#conf-max-call-depth)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1255
+#: source/command-ref/conf-file.md:1252
 msgid "The maximum function call depth to allow before erroring."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1257
+#: source/command-ref/conf-file.md:1254
 msgid "**Default:** `10000`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1259
+#: source/command-ref/conf-file.md:1256
 msgid "<span id=\"conf-max-free\">[`max-free`](#conf-max-free)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1261
+#: source/command-ref/conf-file.md:1258
 msgid ""
 "When a garbage collection is triggered by the `min-free` option, it stops as "
 "soon as `max-free` bytes are available. The default is infinity (i.e. delete "
 "all garbage)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1265
+#: source/command-ref/conf-file.md:1262
 msgid "**Default:** `9223372036854775807`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1267
+#: source/command-ref/conf-file.md:1264
 msgid "<span id=\"conf-max-jobs\">[`max-jobs`](#conf-max-jobs)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1269
+#: source/command-ref/conf-file.md:1266
 msgid "Maximum number of jobs that Nix tries to build locally in parallel."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1271
+#: source/command-ref/conf-file.md:1268
 msgid ""
 "The special value `auto` causes Nix to use the number of CPUs in your "
 "system. Use `0` to disable local builds and directly use the remote machines "
@@ -2384,33 +2381,33 @@ msgid ""
 "attr-preferLocalBuild), which are always built locally."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1277
+#: source/command-ref/conf-file.md:1274
 msgid ""
 "The number of CPU cores to use for each build job is independently "
 "determined by the [`cores`](#conf-cores) setting."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1280
+#: source/command-ref/conf-file.md:1277
 msgid ""
 "The setting can be overridden using the `--max-jobs` (`-j`) command line "
 "switch."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1282
+#: source/command-ref/conf-file.md:1279
 msgid "**Default:** `1`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1284
+#: source/command-ref/conf-file.md:1281
 msgid "**Deprecated alias:** `build-max-jobs`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1286
+#: source/command-ref/conf-file.md:1283
 msgid ""
 "<span id=\"conf-max-silent-time\">[`max-silent-time`](#conf-max-silent-"
 "time)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1288
+#: source/command-ref/conf-file.md:1285
 msgid ""
 "This option defines the maximum number of seconds that a builder can go "
 "without producing any data on standard output or standard error. This is "
@@ -2420,73 +2417,73 @@ msgid ""
 "line switch."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1295 source/command-ref/conf-file.md:1900
+#: source/command-ref/conf-file.md:1292 source/command-ref/conf-file.md:1901
 msgid "The value `0` means that there is no timeout. This is also the default."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1300
+#: source/command-ref/conf-file.md:1297
 msgid "**Deprecated alias:** `build-max-silent-time`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1302
+#: source/command-ref/conf-file.md:1299
 msgid ""
 "<span id=\"conf-max-substitution-jobs\">[`max-substitution-jobs`](#conf-max-"
 "substitution-jobs)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1304
+#: source/command-ref/conf-file.md:1301
 msgid ""
 "This option defines the maximum number of substitution jobs that Nix tries "
 "to run in parallel. The default is `16`. The minimum value one can choose is "
 "`1` and lower values are interpreted as `1`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1310
+#: source/command-ref/conf-file.md:1307
 msgid "**Deprecated alias:** `substitution-max-jobs`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1312
+#: source/command-ref/conf-file.md:1309
 msgid "<span id=\"conf-min-free\">[`min-free`](#conf-min-free)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1314
+#: source/command-ref/conf-file.md:1311
 msgid ""
 "When free disk space in `/nix/store` drops below `min-free` during a build, "
 "Nix performs a garbage-collection until `max-free` bytes are available or "
 "there is no more garbage. A value of `0` (the default) disables this feature."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1321
+#: source/command-ref/conf-file.md:1318
 msgid ""
 "<span id=\"conf-min-free-check-interval\">[`min-free-check-interval`](#conf-"
 "min-free-check-interval)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1323
+#: source/command-ref/conf-file.md:1320
 msgid "Number of seconds between checking free disk space."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1327
+#: source/command-ref/conf-file.md:1324
 msgid ""
 "<span id=\"conf-nar-buffer-size\">[`nar-buffer-size`](#conf-nar-buffer-"
 "size)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1329
+#: source/command-ref/conf-file.md:1326
 msgid "Maximum size of NARs before spilling them to disk."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1331
+#: source/command-ref/conf-file.md:1328
 msgid "**Default:** `33554432`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1333
+#: source/command-ref/conf-file.md:1330
 msgid ""
 "<span id=\"conf-narinfo-cache-meta-ttl\">[`narinfo-cache-meta-ttl`](#conf-"
 "narinfo-cache-meta-ttl)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1335
+#: source/command-ref/conf-file.md:1332
 msgid ""
 "The TTL in seconds for caching binary cache metadata (i.e. `/nix-cache-"
 "info`). This determines how long information about a binary cache (such as "
@@ -2494,42 +2491,42 @@ msgid ""
 "considered valid before being refreshed."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1340
+#: source/command-ref/conf-file.md:1337
 msgid "**Default:** `604800`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1342
+#: source/command-ref/conf-file.md:1339
 msgid ""
 "<span id=\"conf-narinfo-cache-negative-ttl\">[`narinfo-cache-negative-ttl`]"
 "(#conf-narinfo-cache-negative-ttl)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1344
+#: source/command-ref/conf-file.md:1341
 msgid ""
 "The TTL in seconds for negative lookups. If a store path is queried from a "
 "[substituter](#conf-substituters) but was not found, a negative lookup is "
 "cached in the local disk cache database for the specified duration."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1347
+#: source/command-ref/conf-file.md:1344
 msgid "Set to `0` to force updating the lookup cache."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1349
+#: source/command-ref/conf-file.md:1346
 msgid "To wipe the lookup cache completely:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1356 source/command-ref/conf-file.md:1890
+#: source/command-ref/conf-file.md:1353 source/command-ref/conf-file.md:1891
 msgid "**Default:** `3600`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1358
+#: source/command-ref/conf-file.md:1355
 msgid ""
 "<span id=\"conf-narinfo-cache-positive-ttl\">[`narinfo-cache-positive-ttl`]"
 "(#conf-narinfo-cache-positive-ttl)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1360
+#: source/command-ref/conf-file.md:1357
 msgid ""
 "The TTL in seconds for positive lookups. If a store path is queried from a "
 "substituter, the result of the query is cached in the local disk cache "
@@ -2540,178 +2537,178 @@ msgid ""
 "with a hash mismatch if the build isn't reproducible."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1369
+#: source/command-ref/conf-file.md:1366
 msgid "**Default:** `2592000`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1371
+#: source/command-ref/conf-file.md:1368
 msgid "<span id=\"conf-netrc-file\">[`netrc-file`](#conf-netrc-file)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1373
+#: source/command-ref/conf-file.md:1370
 msgid ""
 "If set to an absolute path to a `netrc` file, Nix uses the HTTP "
 "authentication credentials in this file when trying to download from a "
 "remote host through HTTP or HTTPS. Defaults to `$NIX_CONF_DIR/netrc`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1378
+#: source/command-ref/conf-file.md:1375
 msgid ""
 "The `netrc` file consists of a list of accounts in the following format:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1385
+#: source/command-ref/conf-file.md:1382
 msgid ""
 "For the exact syntax, see [the `curl` documentation](https://ec.haxx.se/"
 "usingcurl-netrc.html)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1390
+#: source/command-ref/conf-file.md:1387
 msgid ""
-"This must be an absolute path, and `~` is not resolved. For example, `~/."
-"netrc` won't resolve to your home directory's `.netrc`."
+"This must be an absolute path, and `~` is not resolved. For example, "
+"`~/.netrc` won't resolve to your home directory's `.netrc`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1394
+#: source/command-ref/conf-file.md:1391
 msgid "**Default:** `/dummy/netrc`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1396
+#: source/command-ref/conf-file.md:1393
 msgid "<span id=\"conf-nix-path\">[`nix-path`](#conf-nix-path)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1398
+#: source/command-ref/conf-file.md:1395
 msgid ""
 "List of search paths to use for [lookup path](../language/constructs/lookup-"
-"path.md) resolution. This setting determines the value of [`builtins."
-"nixPath`](../language/builtins.md#builtins-nixPath) and can be used with "
-"[`builtins.findFile`](../language/builtins.md#builtins-findFile)."
+"path.md) resolution. This setting determines the value of "
+"[`builtins.nixPath`](../language/builtins.md#builtins-nixPath) and can be "
+"used with [`builtins.findFile`](../language/builtins.md#builtins-findFile)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1402
+#: source/command-ref/conf-file.md:1399
 msgid ""
 "The configuration setting is overridden by the [`NIX_PATH`](../command-ref/"
 "env-common.md#env-NIX_PATH) environment variable."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1404
+#: source/command-ref/conf-file.md:1401
 msgid ""
 "`NIX_PATH` is overridden by [specifying the setting as the command line flag]"
 "(../command-ref/conf-file.md#command-line-flags) `--nix-path`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1405
+#: source/command-ref/conf-file.md:1402
 msgid ""
-"Any current value is extended by the [`-I` option](../command-ref/opt-common."
-"md#opt-I) or `--extra-nix-path`."
+"Any current value is extended by the [`-I` option](../command-ref/opt-"
+"common.md#opt-I) or `--extra-nix-path`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1407
+#: source/command-ref/conf-file.md:1404
 msgid "If the respective paths are accessible, the default values are:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1409
+#: source/command-ref/conf-file.md:1406
 msgid "`$HOME/.nix-defexpr/channels`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1411
+#: source/command-ref/conf-file.md:1408
 msgid ""
 "The [user channel link](../command-ref/files/default-nix-expression.md#user-"
 "channel-link), pointing to the current state of [channels](../command-ref/"
 "files/channels.md) for the current user."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1413
+#: source/command-ref/conf-file.md:1410
 msgid "`nixpkgs=$NIX_STATE_DIR/profiles/per-user/root/channels/nixpkgs`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1415
+#: source/command-ref/conf-file.md:1412
 msgid "The current state of the `nixpkgs` channel for the `root` user."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1417
+#: source/command-ref/conf-file.md:1414
 msgid "`$NIX_STATE_DIR/profiles/per-user/root/channels`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1419
+#: source/command-ref/conf-file.md:1416
 msgid "The current state of all channels for the `root` user."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1421
+#: source/command-ref/conf-file.md:1418
 msgid ""
 "These files are set up by the [Nix installer](../installation/installing-"
 "binary.md). See [`NIX_STATE_DIR`](../command-ref/env-common.md#env-"
 "NIX_STATE_DIR) for details on the environment variable."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1426
+#: source/command-ref/conf-file.md:1423
 msgid ""
 "If [restricted evaluation](../command-ref/conf-file.md#conf-restrict-eval) "
 "is enabled, the default value is empty."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1428
+#: source/command-ref/conf-file.md:1425
 msgid ""
 "If [pure evaluation](#conf-pure-eval) is enabled, `builtins.nixPath` "
 "_always_ evaluates to the empty list `[ ]`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1432
+#: source/command-ref/conf-file.md:1429
 msgid ""
 "<span id=\"conf-nix-shell-always-looks-for-shell-nix\">[`nix-shell-always-"
 "looks-for-shell-nix`](#conf-nix-shell-always-looks-for-shell-nix)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1434
+#: source/command-ref/conf-file.md:1431
 msgid ""
 "Before Nix 2.24, [`nix-shell`](../command-ref/nix-shell.md) would only look "
 "at `shell.nix` if it was in the working directory - when no file was "
 "specified."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1436
+#: source/command-ref/conf-file.md:1433
 msgid ""
 "Since Nix 2.24, `nix-shell` always looks for a `shell.nix`, whether that's "
 "in the working directory, or in a directory that was passed as an argument."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1438 source/command-ref/conf-file.md:1451
+#: source/command-ref/conf-file.md:1435 source/command-ref/conf-file.md:1448
 msgid ""
 "You may set this to `false` to temporarily revert to the behavior of Nix "
 "2.23 and older."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1440 source/command-ref/conf-file.md:1453
+#: source/command-ref/conf-file.md:1437 source/command-ref/conf-file.md:1450
 msgid ""
 "Using this setting is not recommended. It will be deprecated and removed."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1445
+#: source/command-ref/conf-file.md:1442
 msgid ""
 "<span id=\"conf-nix-shell-shebang-arguments-relative-to-script\">[`nix-shell-"
 "shebang-arguments-relative-to-script`](#conf-nix-shell-shebang-arguments-"
 "relative-to-script)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1447
+#: source/command-ref/conf-file.md:1444
 msgid ""
 "Before Nix 2.24, relative file path expressions in arguments in a `nix-"
 "shell` shebang were resolved relative to the working directory."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1449
+#: source/command-ref/conf-file.md:1446
 msgid ""
 "Since Nix 2.24, `nix-shell` resolves these paths in a manner that is "
 "relative to the [base directory](../glossary.md#gloss-base-directory), "
 "defined as the script's directory."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1458
+#: source/command-ref/conf-file.md:1455
 msgid ""
 "<span id=\"conf-plugin-files\">[`plugin-files`](#conf-plugin-files)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1460
+#: source/command-ref/conf-file.md:1457
 msgid ""
 "A list of plugin files to be loaded by Nix. Each of these files is dlopened "
 "by Nix. If they contain the symbol `nix_plugin_entry()`, this symbol is "
@@ -2724,13 +2721,13 @@ msgid ""
 "those types for more details."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1470
+#: source/command-ref/conf-file.md:1467
 msgid ""
 "Warning! These APIs are inherently unstable and may change from release to "
 "release."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1473
+#: source/command-ref/conf-file.md:1470
 msgid ""
 "Since these files are loaded into the same address space as Nix itself, they "
 "must be DSOs compatible with the instance of Nix running at the time (i.e. "
@@ -2739,78 +2736,78 @@ msgid ""
 "those are already available at load time."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1480
+#: source/command-ref/conf-file.md:1477
 msgid ""
 "If an entry in the list is a directory, all files in the directory are "
 "loaded as plugins (non-recursively)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1485
+#: source/command-ref/conf-file.md:1482
 msgid ""
 "<span id=\"conf-post-build-hook\">[`post-build-hook`](#conf-post-build-"
 "hook)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1487
+#: source/command-ref/conf-file.md:1484
 msgid "Optional. The path to a program to execute after each build."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1489
+#: source/command-ref/conf-file.md:1486
 msgid ""
 "This option is only settable in the global `nix.conf`, or on the command "
 "line by trusted users."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1492
+#: source/command-ref/conf-file.md:1489
 msgid ""
 "When using the nix-daemon, the daemon executes the hook as `root`. If the "
 "nix-daemon is not involved, the hook runs as the user executing the nix-"
 "build."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1496
+#: source/command-ref/conf-file.md:1493
 msgid "The hook executes after an evaluation-time build."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1498
+#: source/command-ref/conf-file.md:1495
 msgid "The hook does not execute on substituted paths."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1500
+#: source/command-ref/conf-file.md:1497
 msgid "The hook's output always goes to the user's terminal."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1502
+#: source/command-ref/conf-file.md:1499
 msgid "If the hook fails, the build succeeds but no further builds execute."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1505
+#: source/command-ref/conf-file.md:1502
 msgid ""
 "The hook executes synchronously, and blocks other builds from progressing "
 "while it runs."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1508
+#: source/command-ref/conf-file.md:1505
 msgid ""
 "The program executes with no arguments. The program's environment contains "
 "the following environment variables:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1511
+#: source/command-ref/conf-file.md:1508
 msgid "`DRV_PATH` The derivation for the built paths."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1514
+#: source/command-ref/conf-file.md:1511
 msgid "Example: `/nix/store/5nihn1a7pa8b25l9zafqaqibznlvvp3f-bash-4.4-p23.drv`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1517
+#: source/command-ref/conf-file.md:1514
 msgid ""
 "`OUT_PATHS` Output paths of the built derivation, separated by a space "
 "character."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1521
+#: source/command-ref/conf-file.md:1518
 msgid ""
 "Example: `/nix/store/l88brggg9hpy96ijds34dlq4n8fan63g-bash-4.4-p23-dev /nix/"
 "store/vch71bhyi5akr5zs40k8h2wqxx69j80l-bash-4.4-p23-doc /nix/store/"
@@ -2819,13 +2816,13 @@ msgid ""
 "a724znygmd1cac856j3gfsyvih3lw07j-bash-4.4-p23`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1530
+#: source/command-ref/conf-file.md:1527
 msgid ""
 "<span id=\"conf-pre-build-hook\">[`pre-build-hook`](#conf-pre-build-hook)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1532
+#: source/command-ref/conf-file.md:1529
 msgid ""
 "If set, the path to a program that can set extra derivation-specific "
 "settings for this system. This is used for settings that can't be captured "
@@ -2833,7 +2830,7 @@ msgid ""
 "versions of the same system to be hard-coded into nix."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1537
+#: source/command-ref/conf-file.md:1534
 msgid ""
 "The hook is passed the derivation path and, if sandboxes are enabled, the "
 "sandbox directory. It can then modify the sandbox and send a series of "
@@ -2841,7 +2838,7 @@ msgid ""
 "commands are:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1542
+#: source/command-ref/conf-file.md:1539
 msgid ""
 "`extra-sandbox-paths`  \n"
 "Pass a list of files and directories to be included in the sandbox for this "
@@ -2849,83 +2846,95 @@ msgid ""
 "same format as `sandbox-paths`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1549
+#: source/command-ref/conf-file.md:1546
 msgid ""
 "<span id=\"conf-preallocate-contents\">[`preallocate-contents`](#conf-"
 "preallocate-contents)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1551
+#: source/command-ref/conf-file.md:1548
 msgid "Whether to preallocate files when writing objects with known size."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1555
+#: source/command-ref/conf-file.md:1552
 msgid ""
 "<span id=\"conf-print-missing\">[`print-missing`](#conf-print-missing)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1557
+#: source/command-ref/conf-file.md:1554
 msgid "Whether to print what paths need to be built or downloaded."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1561
+#: source/command-ref/conf-file.md:1558
 msgid "<span id=\"conf-pure-eval\">[`pure-eval`](#conf-pure-eval)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1563
+#: source/command-ref/conf-file.md:1560
 msgid ""
 "Pure evaluation mode ensures that the result of Nix expressions is fully "
 "determined by explicitly declared inputs, and not influenced by external "
 "state:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1565
+#: source/command-ref/conf-file.md:1562
 msgid ""
 "Restrict file system and network access to files specified by cryptographic "
 "hash"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1566
+#: source/command-ref/conf-file.md:1563
 msgid "Disable impure constants:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1567
+#: source/command-ref/conf-file.md:1564
 msgid ""
 "[`builtins.currentSystem`](../language/builtins.md#builtins-currentSystem)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1568
+#: source/command-ref/conf-file.md:1565
 msgid "[`builtins.currentTime`](../language/builtins.md#builtins-currentTime)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1569
+#: source/command-ref/conf-file.md:1566
 msgid "[`builtins.nixPath`](../language/builtins.md#builtins-nixPath)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1570
+#: source/command-ref/conf-file.md:1567
 msgid "[`builtins.storePath`](../language/builtins.md#builtins-storePath)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1574
+#: source/command-ref/conf-file.md:1569
+msgid ""
+"As a result, every fetch must be a \\[\\]{#pure-fetch}_pure fetch_ — one "
+"that references immutable content: [`fetchTree`](../language/"
+"builtins.md#builtins-fetchTree) and [`fetchGit`](../language/"
+"builtins.md#builtins-fetchGit) require a locked revision, and "
+"[`fetchTarball`](../language/builtins.md#builtins-fetchTarball) and "
+"[`fetchurl`](../language/builtins.md#builtins-fetchurl) require a `sha256` "
+"hash. A mutable reference, such as a Git branch or tag without a revision, "
+"is rejected, since its result could otherwise change over time."
+msgstr ""
+
+#: source/command-ref/conf-file.md:1575
 msgid ""
 "<span id=\"conf-require-drop-supplementary-groups\">[`require-drop-"
 "supplementary-groups`](#conf-require-drop-supplementary-groups)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1576
+#: source/command-ref/conf-file.md:1577
 msgid ""
 "Following the principle of least privilege, Nix attempts to drop "
 "supplementary groups when building with sandboxing."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1579
+#: source/command-ref/conf-file.md:1580
 msgid ""
 "However this can fail under some circumstances. For example, if the user "
 "lacks the `CAP_SETGID` capability. Search `setgroups(2)` for `EPERM` to find "
 "more detailed information on this."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1583
+#: source/command-ref/conf-file.md:1584
 msgid ""
 "If you encounter such a failure, setting this option to `false` enables you "
 "to ignore it and continue. But before doing so, you should consider the "
@@ -2933,18 +2942,18 @@ msgid ""
 "build sandbox is less restricted than intended."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1587
+#: source/command-ref/conf-file.md:1588
 msgid ""
 "This option defaults to `true` when the user is root (since `root` usually "
 "has permissions to call setgroups) and `false` otherwise."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1593
+#: source/command-ref/conf-file.md:1594
 msgid ""
 "<span id=\"conf-require-sigs\">[`require-sigs`](#conf-require-sigs)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1595
+#: source/command-ref/conf-file.md:1596
 msgid ""
 "If set to `true` (the default), any non-content-addressed path added or "
 "copied to the Nix store (e.g. when substituting from a binary cache) must "
@@ -2953,24 +2962,24 @@ msgid ""
 "listed in `secret-key-files`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1601
+#: source/command-ref/conf-file.md:1602
 msgid ""
 "Set to `false` to disable signature checking and trust all non-content-"
 "addressed paths unconditionally."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1604
+#: source/command-ref/conf-file.md:1605
 msgid ""
 "(Content-addressed paths are inherently trustworthy and thus unaffected by "
 "this configuration option.)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1609
+#: source/command-ref/conf-file.md:1610
 msgid ""
 "<span id=\"conf-restrict-eval\">[`restrict-eval`](#conf-restrict-eval)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1611
+#: source/command-ref/conf-file.md:1612
 msgid ""
 "If set to `true`, the Nix evaluator doesn't allow access to any files "
 "outside of [`builtins.nixPath`](../language/builtins.md#builtins-nixPath), "
@@ -2978,26 +2987,26 @@ msgid ""
 "allowed-uris)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1619
+#: source/command-ref/conf-file.md:1620
 msgid ""
 "<span id=\"conf-run-diff-hook\">[`run-diff-hook`](#conf-run-diff-hook)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1621
+#: source/command-ref/conf-file.md:1622
 msgid "If true, enable the execution of the `diff-hook` program."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1623
+#: source/command-ref/conf-file.md:1624
 msgid ""
 "When using the Nix daemon, `run-diff-hook` must be set in the `nix.conf` "
 "configuration file, and cannot be passed at the command line."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1629
+#: source/command-ref/conf-file.md:1630
 msgid "<span id=\"conf-sandbox\">[`sandbox`](#conf-sandbox)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1631
+#: source/command-ref/conf-file.md:1632
 msgid ""
 "If set to `true`, builds are performed in a _sandboxed environment_, i.e., "
 "they're isolated from the normal file system hierarchy and only see their "
@@ -3011,83 +3020,83 @@ msgid ""
 "they can access the network)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1644
+#: source/command-ref/conf-file.md:1645
 msgid ""
 "Currently, sandboxing only work on Linux and macOS. The use of a sandbox "
 "requires that Nix is run as root (so you should use the \"build users\" "
 "feature to perform the actual builds under different users than root)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1649
+#: source/command-ref/conf-file.md:1650
 msgid ""
 "If this option is set to `relaxed`, then fixed-output derivations and "
 "derivations that have the `__noChroot` attribute set to `true` do not run in "
 "sandboxes."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1653
+#: source/command-ref/conf-file.md:1654
 msgid "The default is `true` on Linux and `false` on all other platforms."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1657
+#: source/command-ref/conf-file.md:1658
 msgid "**Deprecated alias:** `build-use-chroot`, `build-use-sandbox`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1659
+#: source/command-ref/conf-file.md:1660
 msgid ""
 "<span id=\"conf-sandbox-build-dir\">[`sandbox-build-dir`](#conf-sandbox-"
 "build-dir)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1661 source/command-ref/conf-file.md:1671
+#: source/command-ref/conf-file.md:1662 source/command-ref/conf-file.md:1672
 msgid "_Linux only_"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1663
+#: source/command-ref/conf-file.md:1664
 msgid "The build directory inside the sandbox."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1665
+#: source/command-ref/conf-file.md:1666
 msgid "This directory is backed by [`build-dir`](#conf-build-dir) on the host."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1667
+#: source/command-ref/conf-file.md:1668
 msgid "**Default:** `/build`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1669
+#: source/command-ref/conf-file.md:1670
 msgid ""
 "<span id=\"conf-sandbox-dev-shm-size\">[`sandbox-dev-shm-size`](#conf-"
 "sandbox-dev-shm-size)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1673
+#: source/command-ref/conf-file.md:1674
 msgid ""
 "This option determines the maximum size of the `tmpfs` filesystem mounted on "
 "`/dev/shm` in Linux sandboxes. For the format, see the description of the "
 "`size` option of `tmpfs` in mount(8). The default is `50%`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1678
+#: source/command-ref/conf-file.md:1679
 msgid "**Default:** `50%`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1680
+#: source/command-ref/conf-file.md:1681
 msgid ""
 "<span id=\"conf-sandbox-fallback\">[`sandbox-fallback`](#conf-sandbox-"
 "fallback)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1682
+#: source/command-ref/conf-file.md:1683
 msgid "Whether to disable sandboxing when the kernel doesn't allow it."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1686
+#: source/command-ref/conf-file.md:1687
 msgid ""
 "<span id=\"conf-sandbox-paths\">[`sandbox-paths`](#conf-sandbox-paths)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1688
+#: source/command-ref/conf-file.md:1689
 msgid ""
 "A list of paths bind-mounted into Nix sandbox environments. You can use the "
 "syntax `target=source` to mount a path in a different location in the "
@@ -3098,29 +3107,29 @@ msgid ""
 "filesystem."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1696
+#: source/command-ref/conf-file.md:1697
 msgid ""
 "If the source is in the Nix store, then its closure is added to the sandbox "
 "as well."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1699
+#: source/command-ref/conf-file.md:1700
 msgid ""
 "Depending on how Nix was built, the default value for this option may be "
 "empty or provide `/bin/sh` as a bind-mount of `bash`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1704
+#: source/command-ref/conf-file.md:1705
 msgid "**Deprecated alias:** `build-chroot-dirs`, `build-sandbox-paths`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1706
+#: source/command-ref/conf-file.md:1707
 msgid ""
 "<span id=\"conf-secret-key-files\">[`secret-key-files`](#conf-secret-key-"
 "files)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1708
+#: source/command-ref/conf-file.md:1709
 msgid ""
 "A whitespace-separated list of files containing secret (private) keys. These "
 "are used to sign locally-built paths. They can be generated using `nix-store "
@@ -3129,128 +3138,128 @@ msgid ""
 "`nix.conf`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1716
+#: source/command-ref/conf-file.md:1717
 msgid "<span id=\"conf-show-trace\">[`show-trace`](#conf-show-trace)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1718
+#: source/command-ref/conf-file.md:1719
 msgid ""
 "Whether Nix should print out a stack trace in case of Nix expression "
 "evaluation errors."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1723
+#: source/command-ref/conf-file.md:1724
 msgid ""
 "<span id=\"conf-ssl-cert-file\">[`ssl-cert-file`](#conf-ssl-cert-file)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1725
+#: source/command-ref/conf-file.md:1726
 msgid ""
 "The path of a file containing CA certificates used to authenticate `https://"
 "` downloads. Nix by default uses the first of the following files that "
 "exists:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1729
+#: source/command-ref/conf-file.md:1730
 msgid "`/etc/ssl/certs/ca-certificates.crt`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1730
+#: source/command-ref/conf-file.md:1731
 msgid "`/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1732
+#: source/command-ref/conf-file.md:1733
 msgid ""
 "The path can be overridden by the following environment variables, in order "
 "of precedence:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1735
+#: source/command-ref/conf-file.md:1736
 msgid "`NIX_SSL_CERT_FILE`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1736
+#: source/command-ref/conf-file.md:1737
 msgid "`SSL_CERT_FILE`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1740
+#: source/command-ref/conf-file.md:1741
 msgid ""
 "<span id=\"conf-stalled-download-timeout\">[`stalled-download-timeout`]"
 "(#conf-stalled-download-timeout)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1742
+#: source/command-ref/conf-file.md:1743
 msgid ""
 "The timeout (in seconds) for receiving data from servers during download. "
 "Nix cancels idle downloads after this timeout's duration."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1746
+#: source/command-ref/conf-file.md:1747
 msgid "**Default:** `300`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1748
+#: source/command-ref/conf-file.md:1749
 msgid "<span id=\"conf-start-id\">[`start-id`](#conf-start-id)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1750
+#: source/command-ref/conf-file.md:1751
 msgid "The first UID and GID to use for dynamic ID allocation."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1752
+#: source/command-ref/conf-file.md:1753
 msgid "**Default:** `872415232`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1754
+#: source/command-ref/conf-file.md:1755
 msgid "<span id=\"conf-store\">[`store`](#conf-store)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1756
+#: source/command-ref/conf-file.md:1757
 msgid ""
 "The [URL of the Nix store](../store/types/index.md#store-url-format) to use "
 "for most operations."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1759
+#: source/command-ref/conf-file.md:1760
 msgid ""
 "See the [Store Types](../store/types/index.md) section of the manual for "
 "supported store types and settings."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1763
+#: source/command-ref/conf-file.md:1764
 msgid ""
 "Can be overridden by the [`NIX_REMOTE`](../command-ref/env-common.md#env-"
 "NIX_REMOTE) environment variable."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1765
+#: source/command-ref/conf-file.md:1766
 msgid "The default value is [`auto`](../store/types/index.md#auto)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1767
+#: source/command-ref/conf-file.md:1768
 msgid "**Default:** `auto`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1769
+#: source/command-ref/conf-file.md:1770
 msgid "<span id=\"conf-substitute\">[`substitute`](#conf-substitute)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1771
+#: source/command-ref/conf-file.md:1772
 msgid ""
 "If set to `true` (default), Nix uses binary substitutes if available. This "
 "option can be disabled to force building from source."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1777
+#: source/command-ref/conf-file.md:1778
 msgid "**Deprecated alias:** `build-use-substitutes`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1779
+#: source/command-ref/conf-file.md:1780
 msgid ""
 "<span id=\"conf-substituters\">[`substituters`](#conf-substituters)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1781
+#: source/command-ref/conf-file.md:1782
 msgid ""
 "A list of [URLs of Nix stores](../store/types/index.md#store-url-format) to "
 "be used as substituters, separated by whitespace. A substituter is an "
@@ -3258,59 +3267,59 @@ msgid ""
 "[store objects](../store/store-object.md) instead of building them."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1784
+#: source/command-ref/conf-file.md:1785
 msgid ""
 "Substituters are tried based on their priority value, which each substituter "
 "can set independently. Lower value means higher priority. The default is "
 "`https://cache.nixos.org`, which has a priority of 40."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1788
+#: source/command-ref/conf-file.md:1789
 msgid ""
 "At least one of the following conditions must be met for Nix to use a "
 "substituter:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1790
+#: source/command-ref/conf-file.md:1791
 msgid ""
 "The substituter is in the [`trusted-substituters`](#conf-trusted-"
 "substituters) list"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1791
+#: source/command-ref/conf-file.md:1792
 msgid ""
 "The user calling Nix is in the [`trusted-users`](#conf-trusted-users) list"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1793
+#: source/command-ref/conf-file.md:1794
 msgid ""
 "In addition, each store path should be trusted as described in [`trusted-"
 "public-keys`](#conf-trusted-public-keys)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1795
+#: source/command-ref/conf-file.md:1796
 msgid "**Default:** `https://cache.nixos.org/`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1797
+#: source/command-ref/conf-file.md:1798
 msgid "**Deprecated alias:** `binary-caches`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1799
+#: source/command-ref/conf-file.md:1800
 msgid ""
 "<span id=\"conf-sync-before-registering\">[`sync-before-registering`](#conf-"
 "sync-before-registering)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1801
+#: source/command-ref/conf-file.md:1802
 msgid "Whether to call `sync()` before registering a path as valid."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1805
+#: source/command-ref/conf-file.md:1806
 msgid "<span id=\"conf-system\">[`system`](#conf-system)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1807
+#: source/command-ref/conf-file.md:1808
 msgid ""
 "The system type of the current Nix installation. Nix only builds a given "
 "[store derivation](../glossary.md#gloss-store-derivation) locally when its "
@@ -3318,73 +3327,73 @@ msgid ""
 "platforms`](#conf-extra-platforms)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1810
+#: source/command-ref/conf-file.md:1811
 msgid ""
 "The default value is set when Nix itself is compiled for the system it will "
 "run on. The following system types are widely used, as Nix is actively "
 "supported on these platforms:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1813
+#: source/command-ref/conf-file.md:1814
 msgid "`x86_64-linux`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1814
-msgid "`x86_64-darwin`"
-msgstr ""
-
 #: source/command-ref/conf-file.md:1815
-msgid "`i686-linux`"
+msgid "`x86_64-darwin` (only via Rosetta 2)"
 msgstr ""
 
 #: source/command-ref/conf-file.md:1816
+msgid "`i686-linux`"
+msgstr ""
+
+#: source/command-ref/conf-file.md:1817
 msgid "`aarch64-linux`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1818
+#: source/command-ref/conf-file.md:1819
 msgid "`armv6l-linux`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1819
+#: source/command-ref/conf-file.md:1820
 msgid "`armv7l-linux`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1821
+#: source/command-ref/conf-file.md:1822
 msgid ""
 "In general, you do not have to modify this setting. While you can force Nix "
 "to run a Darwin-specific `builder` executable on a Linux machine, the result "
 "would obviously be wrong."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1824
+#: source/command-ref/conf-file.md:1825
 msgid ""
 "This value is available in the Nix language as [`builtins.currentSystem`](../"
 "language/builtins.md#builtins-currentSystem) if the [`eval-system`](#conf-"
 "eval-system) configuration option is set as the empty string."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1830
+#: source/command-ref/conf-file.md:1831
 msgid "**Default:** `x86_64-linux`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1832
+#: source/command-ref/conf-file.md:1833
 msgid ""
 "<span id=\"conf-system-features\">[`system-features`](#conf-system-"
 "features)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1834
+#: source/command-ref/conf-file.md:1835
 msgid "A set of system “features” supported by this machine."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1836
+#: source/command-ref/conf-file.md:1837
 msgid ""
 "This complements the [`system`](#conf-system) and [`extra-platforms`](#conf-"
 "extra-platforms) configuration options and the corresponding [`system`](../"
 "language/derivations.md#attr-system) attribute on derivations."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1838
+#: source/command-ref/conf-file.md:1839
 msgid ""
 "A derivation can require system features in the [`requiredSystemFeatures` "
 "attribute](../language/advanced-attributes.md#adv-attr-"
@@ -3392,88 +3401,88 @@ msgid ""
 "them."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1840
+#: source/command-ref/conf-file.md:1841
 msgid "System features are user-defined, but Nix sets the following defaults:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1842
+#: source/command-ref/conf-file.md:1843
 msgid "`apple-virt`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1844
+#: source/command-ref/conf-file.md:1845
 msgid "Included on Darwin if virtualization is available."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1846
+#: source/command-ref/conf-file.md:1847
 msgid "`kvm`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1848
+#: source/command-ref/conf-file.md:1849
 msgid "Included on Linux if `/dev/kvm` is accessible."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1850
+#: source/command-ref/conf-file.md:1851
 msgid "`nixos-test`, `benchmark`, `big-parallel`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1852
+#: source/command-ref/conf-file.md:1853
 msgid ""
 "These historical pseudo-features are always enabled for backwards "
 "compatibility, as they are used in Nixpkgs to route Hydra builds to specific "
 "machines."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1854
+#: source/command-ref/conf-file.md:1855
 msgid "`ca-derivations`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1856
+#: source/command-ref/conf-file.md:1857
 msgid ""
 "Included by default if the [`ca-derivations` experimental feature](../"
 "development/experimental-features.md#xp-feature-ca-derivations) is enabled."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1858
+#: source/command-ref/conf-file.md:1859
 msgid ""
 "This system feature is implicitly required by derivations with the "
 "[`__contentAddressed` attribute](../language/advanced-attributes.md#adv-attr-"
 "__contentAddressed)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1860
+#: source/command-ref/conf-file.md:1861
 msgid "`recursive-nix`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1862
+#: source/command-ref/conf-file.md:1863
 msgid ""
 "Included by default if the [`recursive-nix` experimental feature](../"
 "development/experimental-features.md#xp-feature-recursive-nix) is enabled."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1864
+#: source/command-ref/conf-file.md:1865
 msgid "`uid-range`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1866
+#: source/command-ref/conf-file.md:1867
 msgid ""
 "On Linux, Nix can run builds in a user namespace where they run as root (UID "
 "0) and have 65,536 UIDs available. This is primarily useful for running "
 "containers such as `systemd-nspawn` inside a Nix build. For an example, see "
-"[`tests/systemd-nspawn/nix`](https://github.com/NixOS/nix/"
-"blob/67bcb99700a0da1395fa063d7c6586740b304598/tests/systemd-nspawn.nix)."
+"[`tests/systemd-nspawn/nix`](https://github.com/NixOS/nix/blob/"
+"67bcb99700a0da1395fa063d7c6586740b304598/tests/systemd-nspawn.nix)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1871
+#: source/command-ref/conf-file.md:1872
 msgid ""
 "Included by default on Linux if the [`auto-allocate-uids`](#conf-auto-"
 "allocate-uids) setting is enabled."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1875
+#: source/command-ref/conf-file.md:1876
 msgid "<span id=\"conf-tarball-ttl\">[`tarball-ttl`](#conf-tarball-ttl)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1877
+#: source/command-ref/conf-file.md:1878
 msgid ""
 "The number of seconds a downloaded tarball is considered fresh. If the "
 "cached tarball is stale, Nix checks whether it is still up to date using the "
@@ -3481,27 +3490,27 @@ msgid ""
 "or the cached ETag doesn't match."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1882
+#: source/command-ref/conf-file.md:1883
 msgid ""
 "Setting the TTL to `0` forces Nix to always check if the tarball is up to "
 "date."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1885
+#: source/command-ref/conf-file.md:1886
 msgid "Nix caches tarballs in `$XDG_CACHE_HOME/nix/tarballs`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1887
+#: source/command-ref/conf-file.md:1888
 msgid ""
 "Files fetched via `NIX_PATH`, `fetchGit`, `fetchMercurial`, `fetchTarball`, "
 "and `fetchurl` respect this TTL."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1892
+#: source/command-ref/conf-file.md:1893
 msgid "<span id=\"conf-timeout\">[`timeout`](#conf-timeout)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1894
+#: source/command-ref/conf-file.md:1895
 msgid ""
 "This option defines the maximum number of seconds that a builder can run. "
 "This is useful (for instance in an automated build system) to catch builds "
@@ -3510,64 +3519,64 @@ msgid ""
 "switch."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1905
+#: source/command-ref/conf-file.md:1906
 msgid "**Deprecated alias:** `build-timeout`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1907
+#: source/command-ref/conf-file.md:1908
 msgid ""
 "<span id=\"conf-trace-function-calls\">[`trace-function-calls`](#conf-trace-"
 "function-calls)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1909
+#: source/command-ref/conf-file.md:1910
 msgid ""
 "If set to `true`, the Nix evaluator traces every function call. Nix prints a "
 "log message at the \"vomit\" level for every function entrance and function "
 "exit."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1918
+#: source/command-ref/conf-file.md:1919
 msgid "The `undefined position` means the function call is a builtin."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1920
+#: source/command-ref/conf-file.md:1921
 msgid ""
 "Use the `contrib/stack-collapse.py` script distributed with the Nix source "
 "code to convert the trace logs in to a format suitable for `flamegraph.pl`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1926
+#: source/command-ref/conf-file.md:1927
 msgid ""
 "<span id=\"conf-trace-import-from-derivation\">[`trace-import-from-"
 "derivation`](#conf-trace-import-from-derivation)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1930
+#: source/command-ref/conf-file.md:1931
 msgid ""
 "When this setting is `true`, Nix logs a warning indicating that it performed "
 "such an import. This option has no effect if `allow-import-from-derivation` "
 "is disabled."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1935
+#: source/command-ref/conf-file.md:1936
 msgid ""
 "<span id=\"conf-trace-verbose\">[`trace-verbose`](#conf-trace-verbose)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1937
+#: source/command-ref/conf-file.md:1938
 msgid ""
 "Whether `builtins.traceVerbose` should trace its first argument when "
 "evaluated."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1941
+#: source/command-ref/conf-file.md:1942
 msgid ""
 "<span id=\"conf-trust-tarballs-from-git-forges\">[`trust-tarballs-from-git-"
 "forges`](#conf-trust-tarballs-from-git-forges)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1943
+#: source/command-ref/conf-file.md:1944
 msgid ""
 "If enabled (the default), Nix considers tarballs from GitHub and similar Git "
 "forges to be locked if a Git revision is specified, e.g. `github:NixOS/"
@@ -3576,88 +3585,88 @@ msgid ""
 "revision."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1950
+#: source/command-ref/conf-file.md:1951
 msgid ""
 "If disabled, such tarballs are only considered locked if a `narHash` "
-"attribute is specified, e.g. `github:NixOS/"
-"patchelf/7c2f768bf9601268a4e71c2ebe91e2011918a70f?narHash=sha256-"
+"attribute is specified, e.g. `github:NixOS/patchelf/"
+"7c2f768bf9601268a4e71c2ebe91e2011918a70f?narHash=sha256-"
 "PPXqKY2hJng4DBVE0I4xshv/vGLUskL7jl53roB8UdU%3D`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1956
+#: source/command-ref/conf-file.md:1957
 msgid ""
 "<span id=\"conf-trusted-public-keys\">[`trusted-public-keys`](#conf-trusted-"
 "public-keys)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1958
+#: source/command-ref/conf-file.md:1959
 msgid "A whitespace-separated list of public keys."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1960
+#: source/command-ref/conf-file.md:1961
 msgid ""
 "At least one of the following condition must be met for Nix to accept "
 "copying a store object from another Nix store (such as a [substituter](#conf-"
 "substituters)):"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1964
+#: source/command-ref/conf-file.md:1965
 msgid "the store object has been signed using a key in the trusted keys list"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1965
+#: source/command-ref/conf-file.md:1966
 msgid "the [`require-sigs`](#conf-require-sigs) option has been set to `false`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1966
+#: source/command-ref/conf-file.md:1967
 msgid "the store URL is configured with `trusted=true`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1967
+#: source/command-ref/conf-file.md:1968
 msgid ""
 "the store object is [content-addressed](../glossary.md#gloss-content-"
 "addressed-store-object)"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1969
+#: source/command-ref/conf-file.md:1970
 msgid ""
 "**Default:** `cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1971
+#: source/command-ref/conf-file.md:1972
 msgid "**Deprecated alias:** `binary-cache-public-keys`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1973
+#: source/command-ref/conf-file.md:1974
 msgid ""
 "<span id=\"conf-trusted-substituters\">[`trusted-substituters`](#conf-"
 "trusted-substituters)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1975
+#: source/command-ref/conf-file.md:1976
 msgid ""
 "A list of [Nix store URLs](../store/types/index.md#store-url-format), "
 "separated by whitespace. These are not used by default, but users of the Nix "
 "daemon can enable them by specifying [`substituters`](#conf-substituters)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1978
+#: source/command-ref/conf-file.md:1979
 msgid ""
 "Unprivileged users (those set in only [`allowed-users`](#conf-allowed-users) "
 "but not [`trusted-users`](#conf-trusted-users)) can pass as `substituters` "
 "only those URLs listed in `trusted-substituters`."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1982
+#: source/command-ref/conf-file.md:1983
 msgid "**Deprecated alias:** `trusted-binary-caches`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1984
+#: source/command-ref/conf-file.md:1985
 msgid ""
 "<span id=\"conf-trusted-users\">[`trusted-users`](#conf-trusted-users)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1986
+#: source/command-ref/conf-file.md:1987
 msgid ""
 "A list of user names, separated by whitespace. These users will have "
 "additional rights when connecting to the Nix daemon, such as the ability to "
@@ -3665,146 +3674,146 @@ msgid ""
 "realisations or unsigned input-addressed store objects."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1989
+#: source/command-ref/conf-file.md:1990
 msgid ""
 "You can also specify groups by prefixing names with `@`. For instance, "
 "`@wheel` means all users in the `wheel` group."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1994
+#: source/command-ref/conf-file.md:1995
 msgid ""
 "Adding a user to `trusted-users` is essentially equivalent to giving that "
 "user root access to the system. For example, the user can access or replace "
 "store path contents that are critical for system security."
 msgstr ""
 
-#: source/command-ref/conf-file.md:1997
+#: source/command-ref/conf-file.md:1998
 msgid "**Default:** `root`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:1999
+#: source/command-ref/conf-file.md:2000
 msgid ""
 "<span id=\"conf-upgrade-nix-store-path-url\">[`upgrade-nix-store-path-url`]"
 "(#conf-upgrade-nix-store-path-url)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2001
+#: source/command-ref/conf-file.md:2002
 msgid ""
 "Used by `nix upgrade-nix`, the URL of the file that contains the store paths "
 "of the latest Nix release."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2004
+#: source/command-ref/conf-file.md:2005
 msgid ""
 "**Default:** `https://github.com/NixOS/nixpkgs/raw/master/nixos/modules/"
 "installer/tools/nix-fallback-paths.nix`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2006
+#: source/command-ref/conf-file.md:2007
 msgid ""
 "<span id=\"conf-use-case-hack\">[`use-case-hack`](#conf-use-case-hack)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2008
+#: source/command-ref/conf-file.md:2009
 msgid ""
 "Whether to enable a macOS-specific hack for dealing with file name case "
 "collisions."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2012
+#: source/command-ref/conf-file.md:2013
 msgid "<span id=\"conf-use-cgroups\">[`use-cgroups`](#conf-use-cgroups)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2014
+#: source/command-ref/conf-file.md:2015
 msgid ""
 "Whether to execute builds inside cgroups. This is only supported on Linux."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2017
+#: source/command-ref/conf-file.md:2018
 msgid ""
 "Cgroups are required and enabled automatically for derivations that require "
 "the `uid-range` system feature."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2022
+#: source/command-ref/conf-file.md:2023
 msgid ""
 "<span id=\"conf-use-registries\">[`use-registries`](#conf-use-registries)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2039
+#: source/command-ref/conf-file.md:2040
 msgid "Whether to use flake registries to resolve flake references."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2043
+#: source/command-ref/conf-file.md:2044
 msgid ""
 "<span id=\"conf-use-sqlite-wal\">[`use-sqlite-wal`](#conf-use-sqlite-wal)</"
 "span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2045
+#: source/command-ref/conf-file.md:2046
 msgid "Whether SQLite should use WAL mode."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2049
+#: source/command-ref/conf-file.md:2050
 msgid ""
 "<span id=\"conf-use-xdg-base-directories\">[`use-xdg-base-directories`]"
 "(#conf-use-xdg-base-directories)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2051
+#: source/command-ref/conf-file.md:2052
 msgid ""
 "If set to `true`, Nix conforms to the [XDG Base Directory Specification]"
-"(https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest."
-"html) for files in `$HOME`. The environment variables used to implement this "
-"are documented in the [Environment Variables section](../command-ref/env-"
-"common.md)."
+"(https://specifications.freedesktop.org/basedir-spec/basedir-spec-"
+"latest.html) for files in `$HOME`. The environment variables used to "
+"implement this are documented in the [Environment Variables section](../"
+"command-ref/env-common.md)."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2056
+#: source/command-ref/conf-file.md:2057
 msgid ""
 "**Warning** This changes the location of some well-known symlinks that Nix "
 "creates, which might break tools that rely on the old, non-XDG-conformant "
 "locations."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2059
+#: source/command-ref/conf-file.md:2060
 msgid "In particular, the following locations change:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2061
+#: source/command-ref/conf-file.md:2062
 msgid "Old"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2061
+#: source/command-ref/conf-file.md:2062
 msgid "New"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2063
+#: source/command-ref/conf-file.md:2064
 msgid "`~/.nix-profile`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2063
+#: source/command-ref/conf-file.md:2064
 msgid "`$XDG_STATE_HOME/nix/profile`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2064
+#: source/command-ref/conf-file.md:2065
 msgid "`~/.nix-defexpr`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2064
+#: source/command-ref/conf-file.md:2065
 msgid "`$XDG_STATE_HOME/nix/defexpr`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2065
+#: source/command-ref/conf-file.md:2066
 msgid "`~/.nix-channels`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2065
+#: source/command-ref/conf-file.md:2066
 msgid "`$XDG_STATE_HOME/nix/channels`"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2067
+#: source/command-ref/conf-file.md:2068
 msgid ""
 "If you already have Nix installed and are using [profiles](../package-"
 "management/profiles.md) or [channels](../command-ref/nix-channel.md), you "
@@ -3813,48 +3822,48 @@ msgid ""
 "can be achieved with the following shell commands:"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2072
+#: source/command-ref/conf-file.md:2073
 msgid "${XDG_STATE_HOME-$HOME/.local/state}/nix"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2081
+#: source/command-ref/conf-file.md:2082
 msgid ""
 "<span id=\"conf-user-agent-suffix\">[`user-agent-suffix`](#conf-user-agent-"
 "suffix)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2083
+#: source/command-ref/conf-file.md:2084
 msgid "String appended to the user agent in HTTP requests."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2087
+#: source/command-ref/conf-file.md:2088
 msgid "<span id=\"conf-warn-dirty\">[`warn-dirty`](#conf-warn-dirty)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2089
+#: source/command-ref/conf-file.md:2090
 msgid "Whether to warn about dirty Git/Mercurial trees."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2093
+#: source/command-ref/conf-file.md:2094
 msgid ""
 "<span id=\"conf-warn-large-path-threshold\">[`warn-large-path-threshold`]"
 "(#conf-warn-large-path-threshold)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2095
+#: source/command-ref/conf-file.md:2096
 msgid ""
 "Warn when copying a path larger than this number of bytes to the Nix store "
 "(as determined by its NAR serialisation). Default is 0, which disables the "
 "warning. Set it to 1 to warn on all paths."
 msgstr ""
 
-#: source/command-ref/conf-file.md:2102
+#: source/command-ref/conf-file.md:2103
 msgid ""
 "<span id=\"conf-warn-short-path-literals\">[`warn-short-path-literals`]"
 "(#conf-warn-short-path-literals)</span>"
 msgstr ""
 
-#: source/command-ref/conf-file.md:2104
+#: source/command-ref/conf-file.md:2105
 msgid ""
 "Deprecated. Use [`lint-short-path-literals`](#conf-lint-short-path-"
 "literals)` = warn` instead."
