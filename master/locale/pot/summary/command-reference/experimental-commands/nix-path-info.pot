@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,8 +14,8 @@ msgstr ""
 #: source/command-ref/new-cli/nix3-path-info.md:1
 msgid ""
 "**Warning**   \n"
-"This program is [**experimental**](../../development/experimental-features."
-"md#xp-feature-nix-command) and its interface is subject to change."
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-path-info.md:6
@@ -87,8 +87,8 @@ msgstr ""
 msgid ""
 "```console\n"
 "# nix path-info --json --all --closure-size \\\n"
-"  | jq 'map_values(.closureSize | select(. < 1e9)) | to_entries | sort_by(."
-"value)'\n"
+"  | jq 'map_values(.closureSize | select(. < 1e9)) | to_entries | "
+"sort_by(.value)'\n"
 "[\n"
 "  …,\n"
 "  {\n"
@@ -147,8 +147,8 @@ msgstr ""
 
 #: source/command-ref/new-cli/nix3-path-info.md:110
 msgid ""
-"Print the sum of the sizes of the NAR serialisations of the closure of each "
-"path."
+"Print the [_closure NAR size_](../../store/store-object.md#closure-nar-size) "
+"of each store object, i.e. the sum over its whole closure."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-path-info.md:112
@@ -217,7 +217,9 @@ msgid "<span id=\"opt-size\">[`--size`](#opt-size)</span> / `-s`"
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-path-info.md:149
-msgid "Print the size of the NAR serialisation of each path."
+msgid ""
+"Print the [_NAR size_](../../store/store-object.md#nar-size) of each store "
+"object."
 msgstr ""
 
 #: source/command-ref/new-cli/nix3-path-info.md:151

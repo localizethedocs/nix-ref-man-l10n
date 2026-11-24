@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
-"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:57Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -61,8 +61,8 @@ msgstr ""
 
 #: source/development/documentation.md:28
 msgid ""
-"To build the manual incrementally, [enter the development shell](./building."
-"md) and configure with `doc-gen` enabled:"
+"To build the manual incrementally, [enter the development shell](./"
+"building.md) and configure with `doc-gen` enabled:"
 msgstr ""
 
 #: source/development/documentation.md:30
@@ -96,8 +96,8 @@ msgstr ""
 
 #: source/development/documentation.md:51
 msgid ""
-"The HTML manual will be generated at `build/src/nix-manual/manual/index."
-"html`."
+"The HTML manual will be generated at `build/src/nix-manual/manual/"
+"index.html`."
 msgstr ""
 
 #: source/development/documentation.md:53
@@ -146,8 +146,8 @@ msgstr ""
 
 #: source/development/documentation.md:72
 msgid ""
-"Please take the time to read the [plain language guidelines](https://www."
-"plainlanguage.gov/guidelines/) for details."
+"Please take the time to read the [plain language guidelines](https://"
+"www.plainlanguage.gov/guidelines/) for details."
 msgstr ""
 
 #: source/development/documentation.md:74
@@ -280,7 +280,7 @@ msgstr ""
 #: source/development/documentation.md:129
 msgid ""
 "When changing anchors, update [client-side redirects](https://github.com/"
-"NixOS/nix/blob/master/doc/manual/redirects.js)"
+"NixOS/nix/blob/master/doc/manual/redirects.json)"
 msgstr ""
 
 #: source/development/documentation.md:131
@@ -291,137 +291,135 @@ msgstr ""
 
 #: source/development/documentation.md:133
 msgid ""
-"The build checks for broken internal links with. This happens late in the "
+"The `nix-manual-linkcheck` flake check finds broken internal links with "
+"[lychee](https://github.com/lycheeverse/lychee). This happens late in the "
 "process, so [building the whole manual](#building-the-manual) is not "
-"suitable for iterating quickly. [`mdbook-linkcheck`](https://github.com/"
-"Michael-F-Bryan/mdbook-linkcheck) does not implement checking [URI fragments]"
-"(https://en.wikipedia.org/wiki/URI_fragment) yet."
+"suitable for iterating quickly."
 msgstr ""
 
-#: source/development/documentation.md:140
+#: source/development/documentation.md:138
 msgid "Markdown conventions"
 msgstr ""
 
-#: source/development/documentation.md:142
+#: source/development/documentation.md:140
 msgid ""
-"The manual is written in markdown, and rendered with [mdBook](https://github."
-"com/rust-lang/mdBook) for the web and with [lowdown](https://github.com/"
-"kristapsdz/lowdown) for `man` pages and `--help` output."
+"The manual is written in markdown, and rendered with [mdBook](https://"
+"github.com/rust-lang/mdBook) for the web and with [lowdown](https://"
+"github.com/kristapsdz/lowdown) for `man` pages and `--help` output."
 msgstr ""
 
-#: source/development/documentation.md:144
+#: source/development/documentation.md:142
 msgid "For supported markdown features, refer to:"
 msgstr ""
 
-#: source/development/documentation.md:145
+#: source/development/documentation.md:143
 msgid ""
-"[mdBook documentation](https://rust-lang.github.io/mdBook/format/markdown."
-"html)"
+"[mdBook documentation](https://rust-lang.github.io/mdBook/format/"
+"markdown.html)"
 msgstr ""
 
-#: source/development/documentation.md:146
+#: source/development/documentation.md:144
 msgid "[lowdown documentation](https://kristaps.bsd.lv/lowdown/)"
 msgstr ""
 
-#: source/development/documentation.md:148
+#: source/development/documentation.md:146
 msgid "Please observe these guidelines to ease reviews:"
 msgstr ""
 
-#: source/development/documentation.md:150
+#: source/development/documentation.md:148
 msgid "Write one sentence per line."
 msgstr ""
 
-#: source/development/documentation.md:152
+#: source/development/documentation.md:150
 msgid ""
 "This makes long sentences immediately visible, and makes it easier to review "
 "changes and make direct suggestions."
 msgstr ""
 
-#: source/development/documentation.md:154
+#: source/development/documentation.md:152
 msgid ""
 "Use reference links – sparingly – to ease source readability. Put "
 "definitions close to their first use."
 msgstr ""
 
-#: source/development/documentation.md:157
+#: source/development/documentation.md:155
 msgid "Example:"
 msgstr ""
 
-#: source/development/documentation.md:167
+#: source/development/documentation.md:165
 msgid "Use admonitions of the following form:"
 msgstr ""
 
-#: source/development/documentation.md:175
+#: source/development/documentation.md:173
 msgid "Highlight examples as such:"
 msgstr ""
 
-#: source/development/documentation.md:185
+#: source/development/documentation.md:183
 msgid ""
 "Highlight syntax definitions as such, using [EBNF](https://en.wikipedia.org/"
 "wiki/Extended_Backus%E2%80%93Naur_form) notation:"
 msgstr ""
 
-#: source/development/documentation.md:193
+#: source/development/documentation.md:191
 msgid "The `..` variable"
 msgstr ""
 
-#: source/development/documentation.md:195
+#: source/development/documentation.md:193
 msgid ""
 "`..` provides a base path for links that occur in reusable snippets or other "
 "documentation that doesn't have a base path of its own."
 msgstr ""
 
-#: source/development/documentation.md:197
+#: source/development/documentation.md:195
 msgid ""
 "If a broken link occurs in a snippet that was inserted into multiple "
 "generated files in different directories, use `..` to reference the `doc/"
 "manual/source` directory."
 msgstr ""
 
-#: source/development/documentation.md:199
+#: source/development/documentation.md:197
 msgid ""
-"If the `..` literal appears in an error message from the [`mdbook-linkcheck`]"
-"(https://github.com/Michael-F-Bryan/mdbook-linkcheck) tool, the `..` "
-"replacement needs to be applied to the generated source file that mentions "
-"it. See existing `..` logic in the \\[Makefile for the manual\\]. Regular "
-"markdown files used for the manual have a base path of their own and they "
-"can use relative paths instead of `..`."
+"If the `..` literal appears in an error message from [lychee](https://"
+"github.com/lycheeverse/lychee), the `..` replacement needs to be applied to "
+"the generated source file that mentions it. See existing `..` logic in the \\"
+"[Makefile for the manual\\]. Regular markdown files used for the manual have "
+"a base path of their own and they can use relative paths instead of `..`."
 msgstr ""
 
-#: source/development/documentation.md:203
+#: source/development/documentation.md:201
 msgid "API documentation"
 msgstr ""
 
-#: source/development/documentation.md:205
+#: source/development/documentation.md:203
 msgid ""
 "[Doxygen API documentation](https://hydra.nixos.org/job/nix/master/internal-"
 "api-docs/latest/download-by-type/doc/internal-api-docs) is available online. "
 "You can also build and view it yourself:"
 msgstr ""
 
-#: source/development/documentation.md:215
-#: source/development/documentation.md:236
+#: source/development/documentation.md:213
+#: source/development/documentation.md:234
 msgid "or inside `nix-shell` or `nix develop`:"
 msgstr ""
 
-#: source/development/documentation.md:223
+#: source/development/documentation.md:221
 msgid "C API documentation"
 msgstr ""
 
-#: source/development/documentation.md:225
+#: source/development/documentation.md:223
 msgid ""
-"Note that the C API is not yet stable. [C API documentation](https://hydra."
-"nixos.org/job/nix/master/external-api-docs/latest/download-by-type/doc/"
+"Note that the C API is not yet stable. [C API documentation](https://"
+"hydra.nixos.org/job/nix/master/external-api-docs/latest/download-by-type/doc/"
 "external-api-docs) is available online. You can also build and view it "
 "yourself:"
 msgstr ""
 
-#: source/development/documentation.md:244
+#: source/development/documentation.md:242
 msgid ""
 "If you use direnv, or otherwise want to run `configurePhase` in a transient "
 "shell, use:"
 msgstr ""
 
-#: source/development/documentation.md:247
+#: source/development/documentation.md:245
 msgid "'appendToVar mesonFlags \"-Ddoc-gen=true\"; mesonConfigurePhase'"
 msgstr ""

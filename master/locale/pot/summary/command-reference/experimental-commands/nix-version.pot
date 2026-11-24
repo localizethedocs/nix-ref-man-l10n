@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.37.0 Reference Manual\n"
+"POT-Creation-Date: 2026-11-24T19:28:57Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-version.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:8
+msgid "`nix version` - show the Nix version"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:12
+msgid "`nix version` \\[_option_...\\]"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:16
+msgid "Show the Nix version:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:23
+msgid ""
+"Show the version together with the versions of the libraries Nix links "
+"against, as machine-readable JSON:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:26
+msgid ""
+"```console\n"
+"# nix version --json\n"
+"{\n"
+"  \"version\": \"X.Y.Z\",\n"
+"  \"libraries\": {\n"
+"    \"libcurl\": \"P.Q.R\",\n"
+"    \"libgit2\": \"A.B.C\"\n"
+"  }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:37
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:39
+msgid "Print the version of Nix."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:41
+msgid ""
+"Without any flags, this is like the [`nix --version`](../../command-ref/opt-"
+"common.md#opt-version) option."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:44
+msgid ""
+"This subcommand additionally reports the versions of the libraries Nix links "
+"against (see `--json` below)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:46
+msgid "With `--json`, the output is a JSON object with the following fields:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:48
+msgid ""
+"`version`: The version of Nix, as also printed by [`nix --version`](../../"
+"command-ref/opt-common.md#opt-version)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:51
+msgid ""
+"`libraries`: An object mapping the names of Nix's direct third-party "
+"dependencies to their versions. Which entries appear here depends on how Nix "
+"was built, so consumers should not assume any particular key is present."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:56
+msgid ""
+"For a library that exposes its version at runtime, this is the version of "
+"the loaded library, which _on some platforms_ may differ from the version "
+"Nix was compiled against. For dependencies without such a query, it is the "
+"version Nix was compiled with."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:61
+msgid ""
+"This list covers direct dependencies only; transitive dependencies are not "
+"included."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:64
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:66
+msgid "<span id=\"opt-json\">[`--json`](#opt-json)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:68
+msgid ""
+"Produce output in JSON format, suitable for consumption by another program."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:70
+msgid "<span id=\"opt-no-pretty\">[`--no-pretty`](#opt-no-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:72
+msgid ""
+"Print compact JSON output on a single line, even when the output is a "
+"terminal. Some commands may print multiple JSON objects on separate lines."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:77
+msgid "<span id=\"opt-pretty\">[`--pretty`](#opt-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:79
+msgid "Print multi-line, indented JSON output for readability."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:85
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:87
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:89
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:91
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:93
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:95
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:97
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:99
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:101
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:103
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:105
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:107
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:109
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:111
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:113
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:115
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:117
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:119
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:121
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:123
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:125
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:127
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:129
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-version.md:131
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""
