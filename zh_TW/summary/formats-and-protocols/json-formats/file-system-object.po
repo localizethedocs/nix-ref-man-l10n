@@ -1,0 +1,568 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/protocols/json/file-system-object.md:1
+#: source/protocols/json/file-system-object.md:124
+msgid "File System Object"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:3
+msgid "[1. Property `Regular File`](#anyOf_i0)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:4
+msgid "[1.1. Property `type`](#anyOf_i0_type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:5
+msgid "[1.2. Property `contents`](#anyOf_i0_contents)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:6
+msgid "[1.3. Property `executable`](#anyOf_i0_executable)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:7
+msgid "[2. Property `Directory`](#anyOf_i1)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:8
+msgid "[2.1. Property `type`](#anyOf_i1_type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:9
+msgid "[2.2. Property `entries`](#anyOf_i1_entries)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:10
+msgid ""
+"[2.2.1. Property `File System Object`]"
+"(#anyOf_i1_entries_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:11
+msgid "[3. Property `Symbolic Link`](#anyOf_i2)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:12
+msgid "[3.1. Property `type`](#anyOf_i2_type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:13
+msgid "[3.2. Property `target`](#anyOf_i2_target)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:14
+msgid "[4. Property `type`](#type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:16
+#: source/protocols/json/file-system-object.md:128
+msgid "**Title:** File System Object"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:20
+#: source/protocols/json/file-system-object.md:44
+#: source/protocols/json/file-system-object.md:61
+#: source/protocols/json/file-system-object.md:70
+#: source/protocols/json/file-system-object.md:79
+#: source/protocols/json/file-system-object.md:91
+#: source/protocols/json/file-system-object.md:107
+#: source/protocols/json/file-system-object.md:116
+#: source/protocols/json/file-system-object.md:132
+#: source/protocols/json/file-system-object.md:147
+#: source/protocols/json/file-system-object.md:163
+#: source/protocols/json/file-system-object.md:172
+#: source/protocols/json/file-system-object.md:181
+msgid "**Type**"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:20
+#: source/protocols/json/file-system-object.md:132
+msgid "`combining`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:21
+#: source/protocols/json/file-system-object.md:45
+#: source/protocols/json/file-system-object.md:62
+#: source/protocols/json/file-system-object.md:71
+#: source/protocols/json/file-system-object.md:80
+#: source/protocols/json/file-system-object.md:92
+#: source/protocols/json/file-system-object.md:108
+#: source/protocols/json/file-system-object.md:117
+#: source/protocols/json/file-system-object.md:133
+#: source/protocols/json/file-system-object.md:148
+#: source/protocols/json/file-system-object.md:164
+#: source/protocols/json/file-system-object.md:173
+#: source/protocols/json/file-system-object.md:182
+msgid "**Required**"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:21
+#: source/protocols/json/file-system-object.md:30
+#: source/protocols/json/file-system-object.md:45
+#: source/protocols/json/file-system-object.md:53
+#: source/protocols/json/file-system-object.md:54
+#: source/protocols/json/file-system-object.md:55
+#: source/protocols/json/file-system-object.md:62
+#: source/protocols/json/file-system-object.md:80
+#: source/protocols/json/file-system-object.md:92
+#: source/protocols/json/file-system-object.md:100
+#: source/protocols/json/file-system-object.md:101
+#: source/protocols/json/file-system-object.md:108
+#: source/protocols/json/file-system-object.md:124
+#: source/protocols/json/file-system-object.md:133
+#: source/protocols/json/file-system-object.md:148
+#: source/protocols/json/file-system-object.md:156
+#: source/protocols/json/file-system-object.md:157
+#: source/protocols/json/file-system-object.md:164
+msgid "No"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:22
+#: source/protocols/json/file-system-object.md:46
+#: source/protocols/json/file-system-object.md:93
+#: source/protocols/json/file-system-object.md:118
+#: source/protocols/json/file-system-object.md:134
+#: source/protocols/json/file-system-object.md:149
+msgid "**Additional properties**"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:22
+#: source/protocols/json/file-system-object.md:134
+msgid "Any type allowed"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:24
+#: source/protocols/json/file-system-object.md:137
+msgid ""
+"**Description:** This schema describes the JSON representation of Nix's "
+"[File System Object](../../store/file-system-object.md)."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:26
+#: source/protocols/json/file-system-object.md:139
+msgid ""
+"The schema is recursive because file system objects contain other file "
+"system objects."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:28
+#: source/protocols/json/file-system-object.md:51
+#: source/protocols/json/file-system-object.md:98
+#: source/protocols/json/file-system-object.md:122
+#: source/protocols/json/file-system-object.md:154
+msgid "Property"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:28
+#: source/protocols/json/file-system-object.md:51
+#: source/protocols/json/file-system-object.md:98
+#: source/protocols/json/file-system-object.md:122
+#: source/protocols/json/file-system-object.md:154
+msgid "Type"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:28
+#: source/protocols/json/file-system-object.md:51
+#: source/protocols/json/file-system-object.md:98
+#: source/protocols/json/file-system-object.md:122
+#: source/protocols/json/file-system-object.md:154
+msgid "Pattern"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:28
+#: source/protocols/json/file-system-object.md:51
+#: source/protocols/json/file-system-object.md:98
+#: source/protocols/json/file-system-object.md:122
+#: source/protocols/json/file-system-object.md:154
+msgid "Title/Description"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:30
+msgid "+ [type](#type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:30
+msgid "enum (of string)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:30
+#: source/protocols/json/file-system-object.md:53
+#: source/protocols/json/file-system-object.md:100
+#: source/protocols/json/file-system-object.md:156
+msgid "\\-"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:32
+msgid "Any of(Option)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:34
+msgid "[Regular File](#anyOf_i0)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:35
+msgid "[Directory](#anyOf_i1)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:36
+msgid "[Symbolic Link](#anyOf_i2)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:38
+msgid "<a name=\"anyOf_i0\"></a>1. Property `Regular File`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:40
+msgid "**Title:** Regular File"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:44
+#: source/protocols/json/file-system-object.md:91
+#: source/protocols/json/file-system-object.md:116
+#: source/protocols/json/file-system-object.md:147
+msgid "`object`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:46
+#: source/protocols/json/file-system-object.md:93
+#: source/protocols/json/file-system-object.md:149
+msgid "Not allowed"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:47
+#: source/protocols/json/file-system-object.md:94
+#: source/protocols/json/file-system-object.md:150
+msgid "**Defined in**"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:47
+#: source/protocols/json/file-system-object.md:94
+#: source/protocols/json/file-system-object.md:150
+msgid "In this schema"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:49
+msgid ""
+"**Description:** See [Regular File](../../store/file-system-"
+"object.md#regular) in the manual for details."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:53
+msgid "\\- [type](#anyOf_i0_type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:53
+#: source/protocols/json/file-system-object.md:100
+#: source/protocols/json/file-system-object.md:156
+msgid "const"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:54
+msgid "+ [contents](#anyOf_i0_contents)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:54
+#: source/protocols/json/file-system-object.md:157
+msgid "string"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:54
+msgid "File contents"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:55
+msgid "\\- [executable](#anyOf_i0_executable)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:55
+msgid "boolean"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:55
+msgid "Whether the file is executable."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:57
+msgid "<a name=\"anyOf_i0_type\"></a>1.1. Property `type`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:61
+#: source/protocols/json/file-system-object.md:107
+#: source/protocols/json/file-system-object.md:163
+msgid "`const`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:64
+msgid "Specific value: `\"regular\"`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:66
+msgid "<a name=\"anyOf_i0_contents\"></a>1.2. Property `contents`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:70
+#: source/protocols/json/file-system-object.md:172
+msgid "`string`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:71
+#: source/protocols/json/file-system-object.md:117
+#: source/protocols/json/file-system-object.md:173
+#: source/protocols/json/file-system-object.md:182
+msgid "Yes"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:73
+msgid "**Description:** File contents"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:75
+msgid "<a name=\"anyOf_i0_executable\"></a>1.3. Property `executable`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:79
+msgid "`boolean`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:81
+msgid "**Default**"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:81
+msgid "`false`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:83
+msgid "**Description:** Whether the file is executable."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:85
+msgid "<a name=\"anyOf_i1\"></a>2. Property `Directory`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:87
+msgid "**Title:** Directory"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:96
+msgid ""
+"**Description:** See [Directory](../../store/file-system-"
+"object.md#directory) in the manual for details."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:100
+msgid "\\- [type](#anyOf_i1_type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:101
+msgid "+ [entries](#anyOf_i1_entries)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:101
+#: source/protocols/json/file-system-object.md:124
+msgid "object"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:101
+msgid "Map of names to nested file system objects (for type=directory)<br />"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:103
+msgid "<a name=\"anyOf_i1_type\"></a>2.1. Property `type`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:110
+msgid "Specific value: `\"directory\"`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:112
+msgid "<a name=\"anyOf_i1_entries\"></a>2.2. Property `entries`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:118
+msgid ""
+"[Each additional property must conform to the schema]"
+"(#anyOf_i1_entries_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:120
+msgid ""
+"**Description:** Map of names to nested file system objects (for "
+"type=directory)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:124
+msgid "\\- [](#anyOf_i1_entries_additionalProperties)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:126
+msgid ""
+"<a name=\"anyOf_i1_entries_additionalProperties\"></a>2.2.1. Property `File "
+"System Object`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:135
+msgid "**Same definition as**"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:135
+msgid "[File System Object](#root)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:141
+msgid "<a name=\"anyOf_i2\"></a>3. Property `Symbolic Link`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:143
+msgid "**Title:** Symbolic Link"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:152
+msgid ""
+"**Description:** See [Symbolic Link](../../store/file-system-"
+"object.md#symlink) in the manual for details."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:156
+msgid "\\- [type](#anyOf_i2_type)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:157
+msgid "+ [target](#anyOf_i2_target)"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:157
+msgid "Target path of the symlink."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:159
+msgid "<a name=\"anyOf_i2_type\"></a>3.1. Property `type`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:166
+msgid "Specific value: `\"symlink\"`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:168
+msgid "<a name=\"anyOf_i2_target\"></a>3.2. Property `target`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:175
+msgid "**Description:** Target path of the symlink."
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:177
+msgid "<a name=\"type\"></a>4. Property `type`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:181
+msgid "`enum (of string)`"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:184
+msgid "Must be one of:"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:185
+#: source/protocols/json/file-system-object.md:200
+#: source/protocols/json/file-system-object.md:215
+#: source/protocols/json/file-system-object.md:227
+msgid "\"regular\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:186
+#: source/protocols/json/file-system-object.md:219
+msgid "\"symlink\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:187
+#: source/protocols/json/file-system-object.md:222
+#: source/protocols/json/file-system-object.md:230
+msgid "\"directory\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:192
+msgid "Examples"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:194
+msgid "Simple"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:198
+#: source/protocols/json/file-system-object.md:213
+#: source/protocols/json/file-system-object.md:225
+msgid "\"contents\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:198
+msgid "\"asdf\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:199
+#: source/protocols/json/file-system-object.md:214
+#: source/protocols/json/file-system-object.md:226
+msgid "\"executable\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:200
+#: source/protocols/json/file-system-object.md:215
+#: source/protocols/json/file-system-object.md:219
+#: source/protocols/json/file-system-object.md:222
+#: source/protocols/json/file-system-object.md:227
+#: source/protocols/json/file-system-object.md:230
+msgid "\"type\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:205
+msgid "Complex"
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:209
+#: source/protocols/json/file-system-object.md:211
+msgid "\"entries\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:210
+msgid "\"bar\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:212
+msgid "\"baz\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:213
+msgid "\"good day,\\n\\u0000\\n\\tworld!\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:217
+msgid "\"quux\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:218
+msgid "\"target\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:218
+msgid "\"/over/there\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:224
+msgid "\"foo\""
+msgstr ""
+
+#: source/protocols/json/file-system-object.md:225
+msgid "\"hello\\n\\u0000\\n\\tworld!\""
+msgstr ""

@@ -1,0 +1,1291 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-env/install.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:3
+msgid "`nix-env --install` - add packages to user environment"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:5
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:7
+msgid ""
+"`nix-env` {`--install` | `-i`} _args…_ \\[{`--prebuilt-only` | `-b`}\\] \\"
+"[{`--attr` | `-A`}\\] \\[`--from-expression`\\] \\[`-E`\\] \\[`--from-"
+"profile` _path_\\] \\[`--preserve-installed` | `-P`\\] \\[`--remove-all` | `-"
+"r`\\] \\[`--priority` _priority_\\]"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:16
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:18
+msgid ""
+"The `--install` operation creates a new user environment. It is based on the "
+"current generation of the active [profile](../../command-ref/files/"
+"profiles.md), to which a set of [store paths](../../store/store-path.md) "
+"described by _args_ is added."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:23
+msgid "The arguments _args_ map to store paths in a number of possible ways:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:25
+msgid ""
+"By default, _args_ is a set of names denoting derivations in the [default "
+"Nix expression](../../command-ref/files/default-nix-expression.md). These "
+"are [realised](../../glossary.md#gloss-realise), and the resulting output "
+"paths are installed. Currently installed derivations with a name equal to "
+"the name of a derivation being added are removed unless the option `--"
+"preserve-installed` is specified."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:33
+msgid ""
+"If there are multiple derivations matching a name in _args_ that have the "
+"same name (e.g., `gcc-3.3.6` and `gcc-4.1.1`), then the derivation with the "
+"highest _priority_ is used. A derivation can define a priority by declaring "
+"the `meta.priority` attribute. This attribute should be a number, with a "
+"higher value denoting a lower priority. The default priority is `5`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:40
+msgid ""
+"If there are multiple matching derivations with the same priority, then the "
+"derivation with the highest version will be installed."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:43
+msgid ""
+"You can force the installation of multiple derivations with the same name by "
+"being specific about the versions. For instance, `nix-env --install "
+"gcc-3.3.6 gcc-4.1.1` will install both version of GCC (and will probably "
+"cause a user environment conflict!)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:48
+msgid ""
+"If [`--attr`](#opt-attr) / `-A` is specified, the arguments are _attribute "
+"paths_ that select attributes from the [default Nix expression](../../"
+"command-ref/files/default-nix-expression.md). This is faster than using "
+"derivation names and unambiguous. Show the attribute paths of available "
+"packages with [`nix-env --query`](./query.md):"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:56
+msgid ""
+"If `--from-profile` _path_ is given, _args_ is a set of names denoting "
+"installed [store paths](../../store/store-path.md) in the profile _path_. "
+"This is an easy way to copy user environment elements from one profile to "
+"another."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:61
+msgid ""
+"If `--from-expression` is given, _args_ are [Nix language functions](../../"
+"language/syntax.md#functions) that are called with the [default Nix "
+"expression](../../command-ref/files/default-nix-expression.md) as their "
+"single argument. The derivations returned by those function calls are "
+"installed. This allows derivations to be specified in an unambiguous way, "
+"which is necessary if there are multiple derivations with the same name."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:65
+msgid ""
+"If `--priority` _priority_ is given, the priority of the derivations being "
+"installed is set to _priority_. This can be used to override the priority of "
+"the derivations being installed. This is useful if _args_ are [store paths]"
+"(../../store/store-path.md), which don't have any priority information."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:69
+msgid ""
+"If _args_ are [store paths](../../store/store-path.md) that point to [store "
+"derivations](../../glossary.md#gloss-store-derivation), then those store "
+"derivations are [realised](../../glossary.md#gloss-realise), and the "
+"resulting output paths are installed."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:71
+msgid ""
+"If _args_ are [store paths](../../store/store-path.md) that do not point to "
+"store derivations, then these are [realised](../../glossary.md#gloss-"
+"realise) and installed."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:73
+msgid ""
+"By default all [outputs](../../language/derivations.md#attr-outputs) are "
+"installed for each [store derivation](../../glossary.md#gloss-store-"
+"derivation). This can be overridden by adding a `meta.outputsToInstall` "
+"attribute on the derivation listing a subset of the output names."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:76
+msgid "Example:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:78
+msgid ""
+"The file `example.nix` defines a derivation with two outputs `foo` and "
+"`bar`, each containing a file."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:80
+msgid ""
+"```nix\n"
+"# example.nix\n"
+"let\n"
+"  pkgs = import <nixpkgs> {};\n"
+"  command = ''\n"
+"    ${pkgs.coreutils}/bin/mkdir -p $foo $bar\n"
+"    echo foo > $foo/foo-file\n"
+"    echo bar > $bar/bar-file\n"
+"  '';\n"
+"in\n"
+"derivation {\n"
+"  name = \"example\";\n"
+"  builder = \"${pkgs.bash}/bin/bash\";\n"
+"  args = [ \"-c\" command ];\n"
+"  outputs = [ \"foo\" \"bar\" ];\n"
+"  system = builtins.currentSystem;\n"
+"}\n"
+"```"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:99
+msgid ""
+"Installing from this Nix expression will make files from both outputs appear "
+"in the current profile."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:110
+msgid ""
+"Adding `meta.outputsToInstall` to that derivation will make `nix-env` only "
+"install files from the specified outputs."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:112
+msgid ""
+"```nix\n"
+"# example-outputs.nix\n"
+"import ./example.nix // { meta.outputsToInstall = [ \"bar\" ]; }\n"
+"```"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:127
+#: source/command-ref/nix-env/install.md:151
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:129
+msgid "`--prebuilt-only` / `-b`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:131
+msgid ""
+"Use only derivations for which a substitute is registered, i.e., there is a "
+"pre-built binary available that can be downloaded in lieu of building the "
+"derivation. Thus, no packages will be built from source."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:136
+msgid "`--preserve-installed` / `-P`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:138
+msgid ""
+"Do not remove derivations with a name matching one of the derivations being "
+"installed. Usually, trying to have two versions of the same package "
+"installed in the same generation of a profile will lead to an error in "
+"building the generation, due to file name clashes between the two versions. "
+"However, this is not the case for all packages."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:145
+msgid "`--remove-all` / `-r`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:147
+msgid ""
+"Remove all previously installed packages first. This is equivalent to "
+"running `nix-env --uninstall '.*'` first, except that everything happens in "
+"a single transaction."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:153
+msgid ""
+"The following options are allowed for all `nix-env` operations, but may not "
+"always have an effect."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:155
+msgid "`--file` / `-f` _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:157
+msgid ""
+"Specifies the Nix expression (designated below as the _active Nix "
+"expression_) used by the `--install`, `--upgrade`, and `--query --available` "
+"operations to obtain derivations. The default is `~/.nix-defexpr`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:162
+msgid ""
+"If the argument starts with `http://` or `https://`, it is interpreted as "
+"the URL of a tarball that will be downloaded and unpacked to a temporary "
+"location. The tarball must include a single top-level directory containing "
+"at least a file named `default.nix`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:167
+msgid "`--profile` / `-p` _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:169
+msgid ""
+"Specifies the profile to be used by those operations that operate on a "
+"profile (designated below as the _active profile_). A profile is a sequence "
+"of user environments called _generations_, one of which is the _current "
+"generation_."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:174
+msgid "`--dry-run`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:176
+msgid ""
+"For the `--install`, `--upgrade`, `--uninstall`, `--switch-generation`, `--"
+"delete-generations` and `--rollback` operations, this flag will cause `nix-"
+"env` to print what _would_ be done if this flag had not been specified, "
+"without actually doing it."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:181
+msgid ""
+"`--dry-run` also prints out which paths will be [substituted](../../"
+"glossary.md) (i.e., downloaded) and which paths will be built from source "
+"(because no substitute is available)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:185
+msgid "`--system-filter` _system_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:187
+msgid ""
+"By default, operations such as `--query --available` show derivations "
+"matching any platform. This option allows you to use derivations for the "
+"specified platform _system_."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:195
+msgid "Common Options"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:197
+msgid "Most Nix commands accept the following command-line options:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:199
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:201
+msgid "Prints out a summary of the command syntax and exits."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:203
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:205
+msgid "Prints out the Nix version number on standard output and exits."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:207
+msgid ""
+"For machine-readable output, including versions of the libraries Nix links "
+"against, see the [`nix version`](../../command-ref/new-cli/nix3-version.md) "
+"command."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:210
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:212
+msgid ""
+"Increases the level of verbosity of diagnostic messages printed on standard "
+"error. For each Nix operation, the information printed on standard output is "
+"well-defined; any diagnostic information is printed on standard error, never "
+"on standard output."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:216
+msgid ""
+"This option may be specified repeatedly. Currently, the following verbosity "
+"levels exist:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:219
+msgid "`0` “Errors only”"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:221
+msgid "Only print messages explaining why the Nix invocation failed."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:223
+msgid "`1` “Informational”"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:225
+msgid "Print _useful_ messages about what Nix is doing. This is the default."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:228
+msgid "`2` “Talkative”"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:230
+msgid "Print more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:232
+msgid "`3` “Chatty”"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:234
+msgid "Print even more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:236
+msgid "`4` “Debug”"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:238
+msgid "Print debug information."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:240
+msgid "`5` “Vomit”"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:242
+msgid "Print vast amounts of debug information."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:244
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:246
+msgid ""
+"Decreases the level of verbosity of diagnostic messages printed on standard "
+"error. This is the inverse option to `-v` / `--verbose`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:249
+msgid ""
+"This option may be specified repeatedly. See the previous verbosity levels "
+"list."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:252
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:254
+msgid ""
+"This option can be used to change the output of the log format, with "
+"_format_ being one of:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:256
+msgid "`raw`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:258
+msgid "This is the raw format, as outputted by nix-build."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:260
+msgid "`internal-json`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:262
+msgid "Outputs the logs in a structured manner."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:264
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:266
+msgid ""
+"While the schema itself is relatively stable, the format of the error-"
+"messages (namely of the `msg`\\-field) can change between releases."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:270
+msgid "`bar`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:272
+msgid "Only display a progress bar during the builds."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:274
+msgid "`bar-with-logs`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:276
+msgid "Display the raw logs, with the progress bar at the bottom."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:278
+msgid ""
+"<span id=\"opt-no-build-output\">[`--no-build-output`](#opt-no-build-"
+"output)</span> / `-Q`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:280
+msgid ""
+"By default, output written by builders to standard output and standard error "
+"is echoed to the Nix command's standard error. This option suppresses this "
+"behaviour. Note that the builder's standard output and error are always "
+"written to a log file in `prefix/nix/var/log/nix`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:284
+msgid ""
+"<span id=\"opt-max-jobs\">[`--max-jobs`](#opt-max-jobs)</span> / `-j` "
+"_number_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:286
+msgid ""
+"Sets the maximum number of build jobs that Nix will perform in parallel to "
+"the specified number. Specify `auto` to use the number of CPUs in the "
+"system. The default is specified by the `max-jobs` configuration setting, "
+"which itself defaults to `1`. A higher value is useful on SMP systems or to "
+"exploit I/O latency."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:291
+msgid ""
+"Setting it to `0` disallows building on the local machine, which is useful "
+"when you want builds to happen only on remote builders."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:293
+msgid "<span id=\"opt-cores\">[`--cores`](#opt-cores)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:295
+msgid ""
+"Sets the value of the `NIX_BUILD_CORES` environment variable in the "
+"invocation of builders. Builders can use this variable at their discretion "
+"to control the maximum amount of parallelism. For instance, in Nixpkgs, if "
+"the derivation attribute `enableParallelBuilding` is set to `true`, the "
+"builder passes the `-jN` flag to GNU Make. It defaults to the value of the "
+"`cores` configuration setting, if set, or `1` otherwise. The value `0` means "
+"that the builder should use all available CPU cores in the system."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:301
+msgid ""
+"<span id=\"opt-max-silent-time\">[`--max-silent-time`](#opt-max-silent-"
+"time)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:303
+msgid ""
+"Sets the maximum number of seconds that a builder can go without producing "
+"any data on standard output or standard error. The default is specified by "
+"the `max-silent-time` configuration setting. `0` means no time-out."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:307
+msgid "<span id=\"opt-timeout\">[`--timeout`](#opt-timeout)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:309
+msgid ""
+"Sets the maximum number of seconds that a builder can run. The default is "
+"specified by the `timeout` configuration setting. `0` means no timeout."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:313
+msgid ""
+"<span id=\"opt-keep-going\">[`--keep-going`](#opt-keep-going)</span> / `-k`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:315
+msgid ""
+"Keep going in case of failed builds, to the greatest extent possible. That "
+"is, if building an input of some derivation fails, Nix will still build the "
+"other inputs, but not the derivation itself. Without this option, Nix stops "
+"if any build fails (except for builds of substitutes), possibly killing "
+"builds in progress (in case of parallel or distributed builds)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:319
+msgid ""
+"<span id=\"opt-keep-failed\">[`--keep-failed`](#opt-keep-failed)</span> / `-"
+"K`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:321
+msgid ""
+"Specifies that in case of a build failure, the temporary directory (usually "
+"in `/tmp`) in which the build takes place should not be deleted. The path of "
+"the build directory is printed as an informational message."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:324
+msgid "<span id=\"opt-fallback\">[`--fallback`](#opt-fallback)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:326
+msgid ""
+"Whenever Nix attempts to build a derivation for which substitutes are known "
+"for each output path, but realising the output paths through the substitutes "
+"fails, fall back on building the derivation."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:328
+msgid ""
+"The most common scenario in which this is useful is when we have registered "
+"substitutes in order to perform binary distribution from, say, a network "
+"repository. If the repository is down, the realisation of the derivation "
+"will fail. When this option is specified, Nix will build the derivation "
+"instead. Thus, installation from binaries falls back on installation from "
+"source. This option is not the default since it is generally not desirable "
+"for a transient failure in obtaining the substitutes to lead to a full build "
+"from source (with the related consumption of resources)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:334
+msgid ""
+"<span id=\"opt-readonly-mode\">[`--readonly-mode`](#opt-readonly-mode)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:336
+msgid ""
+"When this option is used, no attempt is made to open the Nix database. Most "
+"Nix operations do need database access, so those operations will fail."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:339
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:341
+msgid ""
+"This option is accepted by `nix-env`, `nix-instantiate`, `nix-shell` and "
+"`nix-build`. When evaluating Nix expressions, the expression evaluator will "
+"automatically try to call functions that it encounters. It can automatically "
+"call functions for which every argument has a [default value](../../language/"
+"syntax.md#functions) (e.g., `{ argName ?  defaultValue }: ...`)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:345
+msgid ""
+"With `--arg`, you can also call functions that have arguments without a "
+"default value (or override a default value). That is, if the evaluator "
+"encounters a function with an argument named _name_, it will call it with "
+"value _value_."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:348
+msgid ""
+"For instance, the top-level `default.nix` in Nixpkgs is actually a function:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:357
+msgid ""
+"So if you call this Nix expression (e.g., when you do `nix-env --install --"
+"attr pkgname`), the function will be called automatically using the value "
+"[`builtins.currentSystem`](../../language/builtins.md) for the `system` "
+"argument. You can override this using `--arg`, e.g., `nix-env --install --"
+"attr pkgname --arg system \\\"i686-freebsd\\\"`. (Note that since the "
+"argument is a Nix string literal, you have to escape the quotes.)"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:361
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:363
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:365
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:367
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:369
+msgid "<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:371
+msgid ""
+"This option is like `--arg`, only the value is not a Nix expression but a "
+"string. So instead of `--arg system \\\"i686-linux\\\"` (the outer quotes "
+"are to keep the shell happy) you can say `--argstr system i686-linux`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:374
+msgid "<span id=\"opt-attr\">[`--attr`](#opt-attr)</span> / `-A` _attrPath_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:376
+msgid ""
+"Select an attribute from the top-level Nix expression being evaluated. (`nix-"
+"env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
+"path_ _attrPath_ is a sequence of attribute names separated by dots. For "
+"instance, given a top-level Nix expression _e_, the attribute path "
+"`xorg.xorgserver` would cause the expression `e.xorg.xorgserver` to be used. "
+"See [`nix-env --install`](../../command-ref/nix-env/install.md) for some "
+"concrete examples."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:382
+msgid ""
+"In addition to attribute names, you can also specify array indices. For "
+"instance, the attribute path `foo.3.bar` selects the `bar` attribute of the "
+"fourth element of the array in the `foo` attribute of the top-level "
+"expression."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:387
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:389
+msgid ""
+"The [URL to the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. where to store derivations (`.drv` files) and "
+"inputs referenced by them."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:391
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> / `-E`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:393
+msgid ""
+"Interpret the command line arguments as a list of Nix expressions to be "
+"parsed and evaluated, rather than as a list of file names of Nix "
+"expressions. (`nix-instantiate`, `nix-build` and `nix-shell` only.)"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:396
+msgid ""
+"For `nix-shell`, this option is commonly used to give you a shell in which "
+"you can build the packages returned by the expression. If you want to get a "
+"shell which contain the _built_ packages ready for use, give your expression "
+"to the `nix-shell --packages ` convenience flag instead."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:399
+msgid "<span id=\"opt-I\">[`-I` / `--include`](#opt-I)</span> _path_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:401
+msgid ""
+"Add an entry to the list of search paths used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md). This option may be given "
+"multiple times."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:404
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:406
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:408
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:410
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:412
+msgid ""
+"Set the Nix configuration option _name_ to _value_. This overrides settings "
+"in the Nix configuration file (see nix.conf5)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:415
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:417
+msgid ""
+"Fix corrupted or missing store paths by redownloading or rebuilding them. "
+"Note that this is slow because it requires computing a cryptographic hash of "
+"the contents of every path in the closure of the build. Also note the "
+"warning under `nix-store --repair-path`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:421
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:423
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:426
+msgid "Environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:428
+msgid "`NIX_PROFILE`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:430
+msgid ""
+"Location of the Nix profile. Defaults to the target of the symlink `~/.nix-"
+"profile`, if it exists, or `/nix/var/nix/profiles/default` otherwise."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:435
+msgid "Common Environment Variables"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:437
+msgid "Most Nix commands interpret the following environment variables."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:439
+msgid "Configuration environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:441
+msgid ""
+"The following environment variables affect how Nix loads its configuration. "
+"See the [configuration file](../../command-ref/conf-file.md#configuration-"
+"file) documentation for full details."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:444
+msgid ""
+"<span id=\"env-NIX_CONF_DIR\">[`NIX_CONF_DIR`](#env-NIX_CONF_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:446
+msgid "Overrides the system configuration directory."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:448
+msgid ""
+"<span id=\"env-NIX_USER_CONF_FILES\">[`NIX_USER_CONF_FILES`](#env-"
+"NIX_USER_CONF_FILES)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:450
+msgid "Overrides the user configuration file locations."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:452
+msgid "<span id=\"env-NIX_CONFIG\">[`NIX_CONFIG`](#env-NIX_CONFIG)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:454
+msgid "Provides configuration settings inline."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:456
+msgid "Store setting environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:458
+msgid ""
+"<span id=\"env-NIX_IGNORE_SYMLINK_STORE\">[`NIX_IGNORE_SYMLINK_STORE`](#env-"
+"NIX_IGNORE_SYMLINK_STORE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:460
+msgid ""
+"Normally, the Nix store directory (typically `/nix/store`) is not allowed to "
+"contain any symlink components. This is to prevent “impure” builds. Builders "
+"sometimes “canonicalise” paths by resolving all symlink components. Thus, "
+"builds on different machines (with `/nix/store` resolving to different "
+"locations) could yield different results. This is generally not a problem, "
+"except when builds are deployed to machines where `/nix/store` resolves "
+"differently. If you are sure that you’re not going to do that, you can set "
+"`NIX_IGNORE_SYMLINK_STORE` to `1`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:470
+msgid ""
+"Note that if you’re symlinking the Nix store so that you can put it on "
+"another file system than the root file system, on Linux you’re better off "
+"using `bind` mount points, e.g.,"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:479
+msgid "Consult the mount 8 manual page for details."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:481
+msgid ""
+"<span id=\"env-NIX_STORE_DIR\">[`NIX_STORE_DIR`](#env-NIX_STORE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:483
+msgid ""
+"Overrides the location of the Nix store. On Unix, the default is `/nix/"
+"store`, set at compile time by the `libstore:store-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\store`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:487
+msgid ""
+"See the [Store Types](../../store/types/index.md) chapter; each store has a "
+"`store` setting linking back to this as its default."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:489
+msgid "<span id=\"env-NIX_LOG_DIR\">[`NIX_LOG_DIR`](#env-NIX_LOG_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:491
+msgid ""
+"Overrides the location of the Nix log directory. On Unix, the default is `/"
+"nix/var/log/nix`, set at compile time by the `log-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\log`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:495
+#: source/command-ref/nix-env/install.md:503
+msgid ""
+"The [Local Store](../../store/types/local-store.md), [Local Daemon Store]"
+"(../../store/types/local-daemon-store.md), and [Experimental SSH Store with "
+"filesystem mounted](../../store/types/experimental-ssh-store-with-filesystem-"
+"mounted.md) have per-store settings that override this."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:497
+msgid ""
+"<span id=\"env-NIX_STATE_DIR\">[`NIX_STATE_DIR`](#env-NIX_STATE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:499
+msgid ""
+"Overrides the location of the Nix state directory. On Unix, the default is `$"
+"{localstatedir}/nix`, where `localstatedir` is a compile-time build option "
+"defaulting to `/nix/var`. On Windows, there is no compile-time setting; the "
+"default is `%PROGRAMDATA%\\nix\\state`, determined at runtime using the "
+"[`%PROGRAMDATA%` Known Folder](#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:505
+msgid ""
+"<span id=\"env-NIX_DAEMON_SOCKET_PATH\">[`NIX_DAEMON_SOCKET_PATH`](#env-"
+"NIX_DAEMON_SOCKET_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:507
+msgid ""
+"Overrides the path to the Unix domain socket used to communicate with the "
+"Nix daemon. Defaults to `daemon-socket/socket` within the state directory "
+"(see [`NIX_STATE_DIR`](#env-NIX_STATE_DIR))."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:510
+msgid ""
+"See the [Local Daemon Store](../../store/types/local-daemon-store.md) "
+"documentation for details on how the socket path is resolved."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:512
+msgid "<span id=\"env-TMPDIR\">[`TMPDIR`](#env-TMPDIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:514
+msgid ""
+"Use the specified directory to store temporary files. In particular, this "
+"includes temporary build directories; these can take up substantial amounts "
+"of disk space. The default is `/tmp`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:518
+msgid "<span id=\"env-NIX_REMOTE\">[`NIX_REMOTE`](#env-NIX_REMOTE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:520
+msgid ""
+"Overrides the [`store`](../../command-ref/conf-file.md#conf-store) setting."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:528
+msgid "Nix language evaluator settings"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:530
+msgid ""
+"<span id=\"env-NIX_SHOW_STATS\">[`NIX_SHOW_STATS`](#env-NIX_SHOW_STATS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:532
+msgid ""
+"If set to `1`, Nix will print some evaluation statistics, such as the number "
+"of values allocated."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:535
+msgid ""
+"<span id=\"env-NIX_COUNT_CALLS\">[`NIX_COUNT_CALLS`](#env-NIX_COUNT_CALLS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:537
+msgid ""
+"If set to `1`, Nix will print how often functions were called during Nix "
+"expression evaluation. This is useful for profiling your Nix expressions."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:541
+msgid ""
+"<span id=\"env-GC_INITIAL_HEAP_SIZE\">[`GC_INITIAL_HEAP_SIZE`](#env-"
+"GC_INITIAL_HEAP_SIZE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:543
+msgid ""
+"If Nix has been configured to use the Boehm garbage collector, this variable "
+"sets the initial size of the heap in bytes. It defaults to 384 MiB. Setting "
+"it to a low value reduces memory consumption, but will increase runtime due "
+"to the overhead of garbage collection."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:548
+msgid "<span id=\"env-NIX_PATH\">[`NIX_PATH`](#env-NIX_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:550
+msgid ""
+"A colon-separated list of search path entries used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:552
+msgid ""
+"This environment variable overrides the value of the [`nix-path` "
+"configuration setting](../../command-ref/conf-file.md#conf-nix-path)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:554
+msgid ""
+"It can be extended using the [`-I` option](../../command-ref/opt-"
+"common.md#opt-I)."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:556
+#: source/command-ref/nix-env/install.md:564
+msgid "**Example**"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:562
+msgid ""
+"If `NIX_PATH` is set to an empty string, resolving search paths will always "
+"fail."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:567
+msgid "'<nixpkgs>'"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:568
+msgid "'nixpkgs'"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:571
+msgid "User Directories"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:573
+msgid ""
+"Nix supports per-user **configuration**, **state**, and **cache** "
+"directories. The following environment variables override the locations for "
+"these directories:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:576
+msgid ""
+"\\[user configuration directory\\]{#user-conf-dir}: \\[`NIX_CONFIG_HOME`\\]"
+"{#env-NIX_CONFIG_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:577
+msgid "user state directory: \\[`NIX_STATE_HOME`\\]{#env-NIX_STATE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:578
+msgid "user cache directory: \\[`NIX_CACHE_HOME`\\]{#env-NIX_CACHE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:580
+msgid "When these are not set, the defaults depend on the platform:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:582
+msgid ""
+"On Unix, the [XDG base directories](#xdg-base-directories): "
+"`$XDG_CONFIG_HOME/nix`, `$XDG_STATE_HOME/nix`, `$XDG_CACHE_HOME/nix`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:583
+msgid ""
+"On Windows, the [Windows Known Folders](#known-folders): `%APPDATA%"
+"\\nix\\config`, `%LOCALAPPDATA%\\nix\\state`, `%LOCALAPPDATA%\\nix\\cache`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:587
+msgid ""
+"For backwards compatibility, legacy Nix commands (e.g. `nix-env`, `nix-"
+"channel`) use dotfiles in `$HOME` instead of these directories unless [`use-"
+"xdg-base-directories`](../../command-ref/conf-file.md#conf-use-xdg-base-"
+"directories) is enabled. [New Nix commands](../../command-ref/new-cli/"
+"nix.md) (experimental) use the proper directories by default."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:590
+msgid ""
+"When [`use-xdg-base-directories`](../../command-ref/conf-file.md#conf-use-"
+"xdg-base-directories) is enabled, the configuration directory is resolved as:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:592
+msgid "`$NIX_CONFIG_HOME`, if it is defined"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:593
+msgid "Otherwise, the platform default (e.g. `$XDG_CONFIG_HOME/nix` on Unix)"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:595
+msgid "Likewise for the state and cache directories."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:597
+msgid "Miscellaneous environment variables"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:599
+msgid ""
+"<span id=\"env-IN_NIX_SHELL\">[`IN_NIX_SHELL`](#env-IN_NIX_SHELL)</span>"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:601
+msgid ""
+"Indicator that tells if the current environment was set up by `nix-shell`. "
+"It can have the values `pure` or `impure`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:604
+msgid "Appendix: OS-specific conventions"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:606
+msgid "This information is not Nix-specific, but is referenced above."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:608
+msgid "Unix: XDG Base Directories"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:610
+msgid ""
+"The [XDG Base Directory Specification](https://"
+"specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) "
+"defines standard locations for user-specific configuration, state, and cache "
+"files on Unix systems."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:614
+msgid "The following environment variables are used:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:616
+msgid "\\[`XDG_CONFIG_HOME`\\]{#env-XDG_CONFIG_HOME} (default `~/.config`)"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:617
+msgid "\\[`XDG_STATE_HOME`\\]{#env-XDG_STATE_HOME} (default `~/.local/state`)"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:618
+msgid "\\[`XDG_CACHE_HOME`\\]{#env-XDG_CACHE_HOME} (default `~/.cache`)"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:619
+msgid ""
+"\\[`XDG_CONFIG_DIRS`\\]{#env-XDG_CONFIG_DIRS} (default `/etc/xdg`) — colon-"
+"separated list of additional configuration base directories, searched after "
+"`XDG_CONFIG_HOME`"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:621
+msgid "Windows: Known Folders"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:623
+msgid ""
+"On Windows, [Known Folders](https://learn.microsoft.com/en-us/windows/win32/"
+"shell/known-folders) provide standard locations for application data on "
+"Windows."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:627
+msgid "The relevant folders are:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:629
+msgid "\\[`%APPDATA%`\\]{#env-APPDATA} — per-user roaming application data"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:630
+msgid ""
+"\\[`%LOCALAPPDATA%`\\]{#env-LOCALAPPDATA} — per-user local application data"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:631
+msgid "\\[`%PROGRAMDATA%`\\]{#env-PROGRAMDATA} — system-wide application data"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:634
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:636
+msgid ""
+"To install a package using a specific attribute path from the active Nix "
+"expression:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:645
+msgid "To install a specific version of `gcc` using the derivation name:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:653
+msgid ""
+"Using attribute path for selecting a package is preferred, as it is much "
+"faster and there will not be multiple matches."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:656
+msgid ""
+"Note the previously installed version is removed, since `--preserve-"
+"installed` was not specified."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:659
+msgid "To install an arbitrary version:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:666
+msgid "To install all derivations in the Nix expression `foo.nix`:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:672
+msgid "To copy the store path with symbolic name `gcc` from another profile:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:678
+msgid ""
+"To install a specific [store derivation](../../glossary.md#gloss-store-"
+"derivation) (typically created by `nix-instantiate`):"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:685
+msgid "To install a specific output path:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:691
+msgid "To install from a Nix expression specified on the command-line:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:693
+msgid ""
+"```console\n"
+"$ nix-env --file ./foo.nix --install --expr \\\n"
+"    'f: (f {system = \"i686-linux\";}).subversionWithJava'\n"
+"```"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:698
+msgid ""
+"I.e., this evaluates to `(f: (f {system = \"i686-"
+"linux\";}).subversionWithJava) (import ./foo.nix)`, thus selecting the "
+"`subversionWithJava` attribute from the set returned by calling the function "
+"defined in `./foo.nix`."
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:703
+msgid ""
+"A dry-run tells you which paths will be downloaded or built from source:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:714
+msgid ""
+"To install Firefox from the latest revision in the Nixpkgs/NixOS 14.12 "
+"channel:"
+msgstr ""
+
+#: source/command-ref/nix-env/install.md:717
+msgid ""
+"```console\n"
+"$ nix-env --file https://github.com/NixOS/nixpkgs/archive/nixos-14.12.tar.gz "
+"--install --attr firefox\n"
+"```"
+msgstr ""

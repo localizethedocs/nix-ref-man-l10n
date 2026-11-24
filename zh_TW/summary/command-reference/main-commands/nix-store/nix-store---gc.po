@@ -1,0 +1,1053 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/nix-store/gc.md:1
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:3
+msgid "`nix-store --gc` - run garbage collection"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:5
+msgid "Synopsis"
+msgstr "概要"
+
+#: source/command-ref/nix-store/gc.md:7
+msgid ""
+"`nix-store` `--gc` \\[`--print-roots` | `--print-live` | `--print-dead`\\] \\"
+"[`--max-freed` _bytes_\\]"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:9
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:11
+msgid ""
+"Without additional flags, the operation `--gc` performs a garbage collection "
+"on the Nix store. That is, all paths in the Nix store not reachable via file "
+"system references from a set of “roots”, are deleted."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:15
+msgid "The following suboperations may be specified:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:17
+msgid "`--print-roots`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:19
+msgid ""
+"This operation prints on standard output the set of roots used by the "
+"garbage collector."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:22
+msgid "`--print-live`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:24
+msgid ""
+"This operation prints on standard output the set of “live” store paths, "
+"which are all the store paths reachable from the roots. Live paths should "
+"never be deleted, since that would break consistency — it would become "
+"possible that applications are installed that reference things that are no "
+"longer present in the store."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:30
+msgid "`--print-dead`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:32
+msgid ""
+"This operation prints out on standard output the set of “dead” store paths, "
+"which is just the opposite of the set of live paths: any path in the store "
+"that is not live (with respect to the roots) is dead."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:36
+msgid ""
+"By default, all unreachable paths are deleted. The following options control "
+"what gets deleted and in what order:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:39
+msgid "`--max-freed` _bytes_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:41
+msgid ""
+"Keep deleting paths until at least _bytes_ bytes have been deleted, then "
+"stop. The argument _bytes_ can be followed by the multiplicative suffix `K`, "
+"`M`, `G` or `T`, denoting KiB, MiB, GiB or TiB units."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:46
+msgid ""
+"The behaviour of the collector is also influenced by the `keep-outputs` and "
+"`keep-derivations` settings in the Nix configuration file."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:50
+msgid ""
+"By default, the collector prints the total number of freed bytes when it "
+"finishes (or when it is interrupted)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:53
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:55
+msgid ""
+"The following options are allowed for all `nix-store` operations, but may "
+"not always have an effect."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:57
+msgid "<span id=\"opt-add-root\">[`--add-root`](#opt-add-root)</span> _path_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:59
+msgid ""
+"Causes the result of a realisation (`--realise` and `--force-realise`) to be "
+"registered as a root of the garbage collector. _path_ will be created as a "
+"symlink to the resulting store path. In addition, a uniquely named symlink "
+"to _path_ will be created in `/nix/var/nix/gcroots/auto/`. For instance,"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:75
+msgid ""
+"Thus, when `/home/eelco/bla/result` is removed, the GC root in the `auto` "
+"directory becomes a dangling symlink and will be ignored by the collector."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:79 source/command-ref/nix-store/gc.md:164
+msgid "**Warning**"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:81
+msgid ""
+"Note that it is not possible to move or rename GC roots, since the symlink "
+"in the `auto` directory will still point to the old location."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:85
+msgid ""
+"If there are multiple results, then multiple symlinks will be created by "
+"sequentially numbering symlinks beyond the first one (e.g., `foo`, `foo-2`, "
+"`foo-3`, and so on)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:95
+msgid "Common Options"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:97
+msgid "Most Nix commands accept the following command-line options:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:99
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:101
+msgid "Prints out a summary of the command syntax and exits."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:103
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:105
+msgid "Prints out the Nix version number on standard output and exits."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:107
+msgid ""
+"For machine-readable output, including versions of the libraries Nix links "
+"against, see the [`nix version`](../../command-ref/new-cli/nix3-version.md) "
+"command."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:110
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:112
+msgid ""
+"Increases the level of verbosity of diagnostic messages printed on standard "
+"error. For each Nix operation, the information printed on standard output is "
+"well-defined; any diagnostic information is printed on standard error, never "
+"on standard output."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:116
+msgid ""
+"This option may be specified repeatedly. Currently, the following verbosity "
+"levels exist:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:119
+msgid "`0` “Errors only”"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:121
+msgid "Only print messages explaining why the Nix invocation failed."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:123
+msgid "`1` “Informational”"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:125
+msgid "Print _useful_ messages about what Nix is doing. This is the default."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:128
+msgid "`2` “Talkative”"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:130
+msgid "Print more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:132
+msgid "`3` “Chatty”"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:134
+msgid "Print even more informational messages."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:136
+msgid "`4` “Debug”"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:138
+msgid "Print debug information."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:140
+msgid "`5` “Vomit”"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:142
+msgid "Print vast amounts of debug information."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:144
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:146
+msgid ""
+"Decreases the level of verbosity of diagnostic messages printed on standard "
+"error. This is the inverse option to `-v` / `--verbose`."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:149
+msgid ""
+"This option may be specified repeatedly. See the previous verbosity levels "
+"list."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:152
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:154
+msgid ""
+"This option can be used to change the output of the log format, with "
+"_format_ being one of:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:156
+msgid "`raw`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:158
+msgid "This is the raw format, as outputted by nix-build."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:160
+msgid "`internal-json`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:162
+msgid "Outputs the logs in a structured manner."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:166
+msgid ""
+"While the schema itself is relatively stable, the format of the error-"
+"messages (namely of the `msg`\\-field) can change between releases."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:170
+msgid "`bar`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:172
+msgid "Only display a progress bar during the builds."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:174
+msgid "`bar-with-logs`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:176
+msgid "Display the raw logs, with the progress bar at the bottom."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:178
+msgid ""
+"<span id=\"opt-no-build-output\">[`--no-build-output`](#opt-no-build-"
+"output)</span> / `-Q`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:180
+msgid ""
+"By default, output written by builders to standard output and standard error "
+"is echoed to the Nix command's standard error. This option suppresses this "
+"behaviour. Note that the builder's standard output and error are always "
+"written to a log file in `prefix/nix/var/log/nix`."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:184
+msgid ""
+"<span id=\"opt-max-jobs\">[`--max-jobs`](#opt-max-jobs)</span> / `-j` "
+"_number_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:186
+msgid ""
+"Sets the maximum number of build jobs that Nix will perform in parallel to "
+"the specified number. Specify `auto` to use the number of CPUs in the "
+"system. The default is specified by the `max-jobs` configuration setting, "
+"which itself defaults to `1`. A higher value is useful on SMP systems or to "
+"exploit I/O latency."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:191
+msgid ""
+"Setting it to `0` disallows building on the local machine, which is useful "
+"when you want builds to happen only on remote builders."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:193
+msgid "<span id=\"opt-cores\">[`--cores`](#opt-cores)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:195
+msgid ""
+"Sets the value of the `NIX_BUILD_CORES` environment variable in the "
+"invocation of builders. Builders can use this variable at their discretion "
+"to control the maximum amount of parallelism. For instance, in Nixpkgs, if "
+"the derivation attribute `enableParallelBuilding` is set to `true`, the "
+"builder passes the `-jN` flag to GNU Make. It defaults to the value of the "
+"`cores` configuration setting, if set, or `1` otherwise. The value `0` means "
+"that the builder should use all available CPU cores in the system."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:201
+msgid ""
+"<span id=\"opt-max-silent-time\">[`--max-silent-time`](#opt-max-silent-"
+"time)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:203
+msgid ""
+"Sets the maximum number of seconds that a builder can go without producing "
+"any data on standard output or standard error. The default is specified by "
+"the `max-silent-time` configuration setting. `0` means no time-out."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:207
+msgid "<span id=\"opt-timeout\">[`--timeout`](#opt-timeout)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:209
+msgid ""
+"Sets the maximum number of seconds that a builder can run. The default is "
+"specified by the `timeout` configuration setting. `0` means no timeout."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:213
+msgid ""
+"<span id=\"opt-keep-going\">[`--keep-going`](#opt-keep-going)</span> / `-k`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:215
+msgid ""
+"Keep going in case of failed builds, to the greatest extent possible. That "
+"is, if building an input of some derivation fails, Nix will still build the "
+"other inputs, but not the derivation itself. Without this option, Nix stops "
+"if any build fails (except for builds of substitutes), possibly killing "
+"builds in progress (in case of parallel or distributed builds)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:219
+msgid ""
+"<span id=\"opt-keep-failed\">[`--keep-failed`](#opt-keep-failed)</span> / `-"
+"K`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:221
+msgid ""
+"Specifies that in case of a build failure, the temporary directory (usually "
+"in `/tmp`) in which the build takes place should not be deleted. The path of "
+"the build directory is printed as an informational message."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:224
+msgid "<span id=\"opt-fallback\">[`--fallback`](#opt-fallback)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:226
+msgid ""
+"Whenever Nix attempts to build a derivation for which substitutes are known "
+"for each output path, but realising the output paths through the substitutes "
+"fails, fall back on building the derivation."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:228
+msgid ""
+"The most common scenario in which this is useful is when we have registered "
+"substitutes in order to perform binary distribution from, say, a network "
+"repository. If the repository is down, the realisation of the derivation "
+"will fail. When this option is specified, Nix will build the derivation "
+"instead. Thus, installation from binaries falls back on installation from "
+"source. This option is not the default since it is generally not desirable "
+"for a transient failure in obtaining the substitutes to lead to a full build "
+"from source (with the related consumption of resources)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:234
+msgid ""
+"<span id=\"opt-readonly-mode\">[`--readonly-mode`](#opt-readonly-mode)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:236
+msgid ""
+"When this option is used, no attempt is made to open the Nix database. Most "
+"Nix operations do need database access, so those operations will fail."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:239
+msgid "<span id=\"opt-arg\">[`--arg`](#opt-arg)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:241
+msgid ""
+"This option is accepted by `nix-env`, `nix-instantiate`, `nix-shell` and "
+"`nix-build`. When evaluating Nix expressions, the expression evaluator will "
+"automatically try to call functions that it encounters. It can automatically "
+"call functions for which every argument has a [default value](../../language/"
+"syntax.md#functions) (e.g., `{ argName ?  defaultValue }: ...`)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:245
+msgid ""
+"With `--arg`, you can also call functions that have arguments without a "
+"default value (or override a default value). That is, if the evaluator "
+"encounters a function with an argument named _name_, it will call it with "
+"value _value_."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:248
+msgid ""
+"For instance, the top-level `default.nix` in Nixpkgs is actually a function:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:257
+msgid ""
+"So if you call this Nix expression (e.g., when you do `nix-env --install --"
+"attr pkgname`), the function will be called automatically using the value "
+"[`builtins.currentSystem`](../../language/builtins.md) for the `system` "
+"argument. You can override this using `--arg`, e.g., `nix-env --install --"
+"attr pkgname --arg system \\\"i686-freebsd\\\"`. (Note that since the "
+"argument is a Nix string literal, you have to escape the quotes.)"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:261
+msgid ""
+"<span id=\"opt-arg-from-file\">[`--arg-from-file`](#opt-arg-from-file)</"
+"span> _name_ _path_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:263
+msgid ""
+"Pass the contents of file _path_ as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:265
+msgid ""
+"<span id=\"opt-arg-from-stdin\">[`--arg-from-stdin`](#opt-arg-from-stdin)</"
+"span> _name_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:267
+msgid "Pass the contents of stdin as the argument _name_ to Nix functions."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:269
+msgid "<span id=\"opt-argstr\">[`--argstr`](#opt-argstr)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:271
+msgid ""
+"This option is like `--arg`, only the value is not a Nix expression but a "
+"string. So instead of `--arg system \\\"i686-linux\\\"` (the outer quotes "
+"are to keep the shell happy) you can say `--argstr system i686-linux`."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:274
+msgid "<span id=\"opt-attr\">[`--attr`](#opt-attr)</span> / `-A` _attrPath_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:276
+msgid ""
+"Select an attribute from the top-level Nix expression being evaluated. (`nix-"
+"env`, `nix-instantiate`, `nix-build` and `nix-shell` only.) The _attribute "
+"path_ _attrPath_ is a sequence of attribute names separated by dots. For "
+"instance, given a top-level Nix expression _e_, the attribute path "
+"`xorg.xorgserver` would cause the expression `e.xorg.xorgserver` to be used. "
+"See [`nix-env --install`](../../command-ref/nix-env/install.md) for some "
+"concrete examples."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:282
+msgid ""
+"In addition to attribute names, you can also specify array indices. For "
+"instance, the attribute path `foo.3.bar` selects the `bar` attribute of the "
+"fourth element of the array in the `foo` attribute of the top-level "
+"expression."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:287
+msgid ""
+"<span id=\"opt-eval-store\">[`--eval-store`](#opt-eval-store)</span> _store-"
+"url_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:289
+msgid ""
+"The [URL to the Nix store](../../store/types/index.md#store-url-format) to "
+"use for evaluation, i.e. where to store derivations (`.drv` files) and "
+"inputs referenced by them."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:291
+msgid "<span id=\"opt-expr\">[`--expr`](#opt-expr)</span> / `-E`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:293
+msgid ""
+"Interpret the command line arguments as a list of Nix expressions to be "
+"parsed and evaluated, rather than as a list of file names of Nix "
+"expressions. (`nix-instantiate`, `nix-build` and `nix-shell` only.)"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:296
+msgid ""
+"For `nix-shell`, this option is commonly used to give you a shell in which "
+"you can build the packages returned by the expression. If you want to get a "
+"shell which contain the _built_ packages ready for use, give your expression "
+"to the `nix-shell --packages ` convenience flag instead."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:299
+msgid "<span id=\"opt-I\">[`-I` / `--include`](#opt-I)</span> _path_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:301
+msgid ""
+"Add an entry to the list of search paths used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md). This option may be given "
+"multiple times."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:304
+msgid ""
+"Paths added through `-I` take precedence over the [`nix-path` configuration "
+"setting](../../command-ref/conf-file.md#conf-nix-path) and the [`NIX_PATH` "
+"environment variable](../../command-ref/env-common.md#env-NIX_PATH)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:306
+msgid "<span id=\"opt-impure\">[`--impure`](#opt-impure)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:308
+msgid "Allow access to mutable paths and repositories."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:310
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:312
+msgid ""
+"Set the Nix configuration option _name_ to _value_. This overrides settings "
+"in the Nix configuration file (see nix.conf5)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:315
+msgid "<span id=\"opt-repair\">[`--repair`](#opt-repair)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:317
+msgid ""
+"Fix corrupted or missing store paths by redownloading or rebuilding them. "
+"Note that this is slow because it requires computing a cryptographic hash of "
+"the contents of every path in the closure of the build. Also note the "
+"warning under `nix-store --repair-path`."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:321
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:323
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:326
+msgid "Common Environment Variables"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:328
+msgid "Most Nix commands interpret the following environment variables."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:330
+msgid "Configuration environment variables"
+msgstr "組態環境變數"
+
+#: source/command-ref/nix-store/gc.md:332
+msgid ""
+"The following environment variables affect how Nix loads its configuration. "
+"See the [configuration file](../../command-ref/conf-file.md#configuration-"
+"file) documentation for full details."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:335
+msgid ""
+"<span id=\"env-NIX_CONF_DIR\">[`NIX_CONF_DIR`](#env-NIX_CONF_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:337
+msgid "Overrides the system configuration directory."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:339
+msgid ""
+"<span id=\"env-NIX_USER_CONF_FILES\">[`NIX_USER_CONF_FILES`](#env-"
+"NIX_USER_CONF_FILES)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:341
+msgid "Overrides the user configuration file locations."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:343
+msgid "<span id=\"env-NIX_CONFIG\">[`NIX_CONFIG`](#env-NIX_CONFIG)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:345
+msgid "Provides configuration settings inline."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:347
+msgid "Store setting environment variables"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:349
+msgid ""
+"<span id=\"env-NIX_IGNORE_SYMLINK_STORE\">[`NIX_IGNORE_SYMLINK_STORE`](#env-"
+"NIX_IGNORE_SYMLINK_STORE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:351
+msgid ""
+"Normally, the Nix store directory (typically `/nix/store`) is not allowed to "
+"contain any symlink components. This is to prevent “impure” builds. Builders "
+"sometimes “canonicalise” paths by resolving all symlink components. Thus, "
+"builds on different machines (with `/nix/store` resolving to different "
+"locations) could yield different results. This is generally not a problem, "
+"except when builds are deployed to machines where `/nix/store` resolves "
+"differently. If you are sure that you’re not going to do that, you can set "
+"`NIX_IGNORE_SYMLINK_STORE` to `1`."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:361
+msgid ""
+"Note that if you’re symlinking the Nix store so that you can put it on "
+"another file system than the root file system, on Linux you’re better off "
+"using `bind` mount points, e.g.,"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:370
+msgid "Consult the mount 8 manual page for details."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:372
+msgid ""
+"<span id=\"env-NIX_STORE_DIR\">[`NIX_STORE_DIR`](#env-NIX_STORE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:374
+msgid ""
+"Overrides the location of the Nix store. On Unix, the default is `/nix/"
+"store`, set at compile time by the `libstore:store-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\store`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:378
+msgid ""
+"See the [Store Types](../../store/types/index.md) chapter; each store has a "
+"`store` setting linking back to this as its default."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:380
+msgid "<span id=\"env-NIX_LOG_DIR\">[`NIX_LOG_DIR`](#env-NIX_LOG_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:382
+msgid ""
+"Overrides the location of the Nix log directory. On Unix, the default is `/"
+"nix/var/log/nix`, set at compile time by the `log-dir` build option. On "
+"Windows, there is no compile-time setting; the default is `%PROGRAMDATA%"
+"\\nix\\log`, determined at runtime using the [`%PROGRAMDATA%` Known Folder]"
+"(#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:386
+#: source/command-ref/nix-store/gc.md:394
+msgid ""
+"The [Local Store](../../store/types/local-store.md), [Local Daemon Store]"
+"(../../store/types/local-daemon-store.md), and [Experimental SSH Store with "
+"filesystem mounted](../../store/types/experimental-ssh-store-with-filesystem-"
+"mounted.md) have per-store settings that override this."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:388
+msgid ""
+"<span id=\"env-NIX_STATE_DIR\">[`NIX_STATE_DIR`](#env-NIX_STATE_DIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:390
+msgid ""
+"Overrides the location of the Nix state directory. On Unix, the default is `$"
+"{localstatedir}/nix`, where `localstatedir` is a compile-time build option "
+"defaulting to `/nix/var`. On Windows, there is no compile-time setting; the "
+"default is `%PROGRAMDATA%\\nix\\state`, determined at runtime using the "
+"[`%PROGRAMDATA%` Known Folder](#known-folders)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:396
+msgid ""
+"<span id=\"env-NIX_DAEMON_SOCKET_PATH\">[`NIX_DAEMON_SOCKET_PATH`](#env-"
+"NIX_DAEMON_SOCKET_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:398
+msgid ""
+"Overrides the path to the Unix domain socket used to communicate with the "
+"Nix daemon. Defaults to `daemon-socket/socket` within the state directory "
+"(see [`NIX_STATE_DIR`](#env-NIX_STATE_DIR))."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:401
+msgid ""
+"See the [Local Daemon Store](../../store/types/local-daemon-store.md) "
+"documentation for details on how the socket path is resolved."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:403
+msgid "<span id=\"env-TMPDIR\">[`TMPDIR`](#env-TMPDIR)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:405
+msgid ""
+"Use the specified directory to store temporary files. In particular, this "
+"includes temporary build directories; these can take up substantial amounts "
+"of disk space. The default is `/tmp`."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:409
+msgid "<span id=\"env-NIX_REMOTE\">[`NIX_REMOTE`](#env-NIX_REMOTE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:411
+msgid ""
+"Overrides the [`store`](../../command-ref/conf-file.md#conf-store) setting."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:419
+msgid "Nix language evaluator settings"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:421
+msgid ""
+"<span id=\"env-NIX_SHOW_STATS\">[`NIX_SHOW_STATS`](#env-NIX_SHOW_STATS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:423
+msgid ""
+"If set to `1`, Nix will print some evaluation statistics, such as the number "
+"of values allocated."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:426
+msgid ""
+"<span id=\"env-NIX_COUNT_CALLS\">[`NIX_COUNT_CALLS`](#env-NIX_COUNT_CALLS)</"
+"span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:428
+msgid ""
+"If set to `1`, Nix will print how often functions were called during Nix "
+"expression evaluation. This is useful for profiling your Nix expressions."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:432
+msgid ""
+"<span id=\"env-GC_INITIAL_HEAP_SIZE\">[`GC_INITIAL_HEAP_SIZE`](#env-"
+"GC_INITIAL_HEAP_SIZE)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:434
+msgid ""
+"If Nix has been configured to use the Boehm garbage collector, this variable "
+"sets the initial size of the heap in bytes. It defaults to 384 MiB. Setting "
+"it to a low value reduces memory consumption, but will increase runtime due "
+"to the overhead of garbage collection."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:439
+msgid "<span id=\"env-NIX_PATH\">[`NIX_PATH`](#env-NIX_PATH)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:441
+msgid ""
+"A colon-separated list of search path entries used to resolve [lookup paths]"
+"(../../language/constructs/lookup-path.md)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:443
+msgid ""
+"This environment variable overrides the value of the [`nix-path` "
+"configuration setting](../../command-ref/conf-file.md#conf-nix-path)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:445
+msgid ""
+"It can be extended using the [`-I` option](../../command-ref/opt-"
+"common.md#opt-I)."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:447
+#: source/command-ref/nix-store/gc.md:455
+msgid "**Example**"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:453
+msgid ""
+"If `NIX_PATH` is set to an empty string, resolving search paths will always "
+"fail."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:458
+msgid "'<nixpkgs>'"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:459
+msgid "'nixpkgs'"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:462
+msgid "User Directories"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:464
+msgid ""
+"Nix supports per-user **configuration**, **state**, and **cache** "
+"directories. The following environment variables override the locations for "
+"these directories:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:467
+msgid ""
+"\\[user configuration directory\\]{#user-conf-dir}: \\[`NIX_CONFIG_HOME`\\]"
+"{#env-NIX_CONFIG_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:468
+msgid "user state directory: \\[`NIX_STATE_HOME`\\]{#env-NIX_STATE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:469
+msgid "user cache directory: \\[`NIX_CACHE_HOME`\\]{#env-NIX_CACHE_HOME}"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:471
+msgid "When these are not set, the defaults depend on the platform:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:473
+msgid ""
+"On Unix, the [XDG base directories](#xdg-base-directories): "
+"`$XDG_CONFIG_HOME/nix`, `$XDG_STATE_HOME/nix`, `$XDG_CACHE_HOME/nix`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:474
+msgid ""
+"On Windows, the [Windows Known Folders](#known-folders): `%APPDATA%"
+"\\nix\\config`, `%LOCALAPPDATA%\\nix\\state`, `%LOCALAPPDATA%\\nix\\cache`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:478
+msgid ""
+"For backwards compatibility, legacy Nix commands (e.g. `nix-env`, `nix-"
+"channel`) use dotfiles in `$HOME` instead of these directories unless [`use-"
+"xdg-base-directories`](../../command-ref/conf-file.md#conf-use-xdg-base-"
+"directories) is enabled. [New Nix commands](../../command-ref/new-cli/"
+"nix.md) (experimental) use the proper directories by default."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:481
+msgid ""
+"When [`use-xdg-base-directories`](../../command-ref/conf-file.md#conf-use-"
+"xdg-base-directories) is enabled, the configuration directory is resolved as:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:483
+msgid "`$NIX_CONFIG_HOME`, if it is defined"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:484
+msgid "Otherwise, the platform default (e.g. `$XDG_CONFIG_HOME/nix` on Unix)"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:486
+msgid "Likewise for the state and cache directories."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:488
+msgid "Miscellaneous environment variables"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:490
+msgid ""
+"<span id=\"env-IN_NIX_SHELL\">[`IN_NIX_SHELL`](#env-IN_NIX_SHELL)</span>"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:492
+msgid ""
+"Indicator that tells if the current environment was set up by `nix-shell`. "
+"It can have the values `pure` or `impure`."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:495
+msgid "Appendix: OS-specific conventions"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:497
+msgid "This information is not Nix-specific, but is referenced above."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:499
+msgid "Unix: XDG Base Directories"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:501
+msgid ""
+"The [XDG Base Directory Specification](https://"
+"specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) "
+"defines standard locations for user-specific configuration, state, and cache "
+"files on Unix systems."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:505
+msgid "The following environment variables are used:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:507
+msgid "\\[`XDG_CONFIG_HOME`\\]{#env-XDG_CONFIG_HOME} (default `~/.config`)"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:508
+msgid "\\[`XDG_STATE_HOME`\\]{#env-XDG_STATE_HOME} (default `~/.local/state`)"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:509
+msgid "\\[`XDG_CACHE_HOME`\\]{#env-XDG_CACHE_HOME} (default `~/.cache`)"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:510
+msgid ""
+"\\[`XDG_CONFIG_DIRS`\\]{#env-XDG_CONFIG_DIRS} (default `/etc/xdg`) — colon-"
+"separated list of additional configuration base directories, searched after "
+"`XDG_CONFIG_HOME`"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:512
+msgid "Windows: Known Folders"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:514
+msgid ""
+"On Windows, [Known Folders](https://learn.microsoft.com/en-us/windows/win32/"
+"shell/known-folders) provide standard locations for application data on "
+"Windows."
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:518
+msgid "The relevant folders are:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:520
+msgid "\\[`%APPDATA%`\\]{#env-APPDATA} — per-user roaming application data"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:521
+msgid ""
+"\\[`%LOCALAPPDATA%`\\]{#env-LOCALAPPDATA} — per-user local application data"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:522
+msgid "\\[`%PROGRAMDATA%`\\]{#env-PROGRAMDATA} — system-wide application data"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:525
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:527
+msgid "To delete all unreachable paths, just do:"
+msgstr ""
+
+#: source/command-ref/nix-store/gc.md:536
+msgid "To delete at least 100 MiBs of unreachable paths:"
+msgstr ""

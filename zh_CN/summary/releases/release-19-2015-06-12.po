@@ -1,0 +1,257 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-1.9.md:1
+msgid "Release 1.9 (2015-06-12)"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:3
+msgid ""
+"In addition to the usual bug fixes, this release has the following new "
+"features:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:6
+msgid ""
+"Signed binary cache support. You can enable signature checking by adding the "
+"following to `nix.conf`:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:12
+msgid ""
+"This will prevent Nix from downloading any binary from the cache that is not "
+"signed by one of the keys listed in `binary-cache-public-keys`."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:16
+msgid ""
+"Signature checking is only supported if you built Nix with the `libsodium` "
+"package."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:19
+msgid ""
+"Note that while Nix has had experimental support for signed binary caches "
+"since version 1.7, this release changes the signature format in a backwards-"
+"incompatible way."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:23
+msgid ""
+"Automatic downloading of Nix expression tarballs. In various places, you can "
+"now specify the URL of a tarball containing Nix expressions (such as "
+"Nixpkgs), which will be downloaded and unpacked automatically. For example:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:28
+msgid "In `nix-env`:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:30
+msgid ""
+"    $ nix-env -f https://github.com/NixOS/nixpkgs-channels/archive/"
+"nixos-14.12.tar.gz -iA firefox\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:32
+msgid ""
+"This installs Firefox from the latest tested and built revision of the NixOS "
+"14.12 channel."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:35
+msgid "In `nix-build` and `nix-shell`:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:37
+msgid ""
+"    $ nix-build https://github.com/NixOS/nixpkgs/archive/master.tar.gz -A "
+"hello\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:39
+msgid ""
+"This builds GNU Hello from the latest revision of the Nixpkgs master branch."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:42
+msgid ""
+"In the Nix search path (as specified via `NIX_PATH` or `-I`). For example, "
+"to start a shell containing the Pan package from a specific version of "
+"Nixpkgs:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:46
+msgid ""
+"    $ nix-shell -p pan -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/"
+"archive/8a3eea054838b55aca962c3fbde9c83c102b8bf2.tar.gz\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:48
+msgid "In `nixos-rebuild` (on NixOS):"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:50
+msgid ""
+"    $ nixos-rebuild test -I nixpkgs=https://github.com/NixOS/nixpkgs-"
+"channels/archive/nixos-unstable.tar.gz\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:52
+msgid "In Nix expressions, via the new builtin function `fetchTarball`:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:54
+msgid ""
+"    with import (fetchTarball https://github.com/NixOS/nixpkgs-channels/"
+"archive/nixos-14.12.tar.gz) {}; …\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:56
+msgid "(This is not allowed in restricted mode.)"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:58
+msgid "`nix-shell` improvements:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:60
+msgid ""
+"`nix-shell` now has a flag `--run` to execute a command in the `nix-shell` "
+"environment, e.g. `nix-shell --run make`. This is like the existing `--"
+"command` flag, except that it uses a non-interactive shell (ensuring that "
+"hitting Ctrl-C won’t drop you into the child shell)."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:66
+msgid ""
+"`nix-shell` can now be used as a `#!`\\-interpreter. This allows you to "
+"write scripts that dynamically fetch their own dependencies. For example, "
+"here is a Haskell script that, when invoked, first downloads GHC and the "
+"Haskell packages on which it depends:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:72
+msgid ""
+"    #! /usr/bin/env nix-shell\n"
+"    #! nix-shell -i runghc -p haskellPackages.ghc haskellPackages.HTTP\n"
+"    \n"
+"    import Network.HTTP\n"
+"    \n"
+"    main = do\n"
+"      resp <- Network.HTTP.simpleHTTP (getRequest \"http://nixos.org/\")\n"
+"      body <- getResponseBody resp\n"
+"      print (take 100 body)\n"
+"    "
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:82
+msgid ""
+"Of course, the dependencies are cached in the Nix store, so the second "
+"invocation of this script will be much faster."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:85
+msgid "Chroot improvements:"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:87
+msgid ""
+"Chroot builds are now supported on Mac OS X (using its sandbox mechanism)."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:90
+msgid ""
+"If chroots are enabled, they are now used for all derivations, including "
+"fixed-output derivations (such as `fetchurl`). The latter do have network "
+"access, but can no longer access the host filesystem. If you need the old "
+"behaviour, you can set the option `build-use-chroot` to `relaxed`."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:96
+msgid ""
+"On Linux, if chroots are enabled, builds are performed in a private PID "
+"namespace once again. (This functionality was lost in Nix 1.8.)"
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:100
+msgid ""
+"Store paths listed in `build-chroot-dirs` are now automatically expanded to "
+"their closure. For instance, if you want `/nix/store/…-bash/bin/sh` mounted "
+"in your chroot as `/bin/sh`, you only need to say `build-chroot-dirs "
+"=                                                 /bin/sh=/nix/store/…-bash/"
+"bin/sh`; it is no longer necessary to specify the dependencies of Bash."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:107
+msgid ""
+"The new derivation attribute `passAsFile` allows you to specify that the "
+"contents of derivation attributes should be passed via files rather than "
+"environment variables. This is useful if you need to pass very long strings "
+"that exceed the size limit of the environment. The Nixpkgs function "
+"`writeTextFile` uses this."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:113
+msgid ""
+"You can now use `~` in Nix file names to refer to your home directory, e.g. "
+"`import         ~/.nixpkgs/config.nix`."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:117
+msgid ""
+"Nix has a new option `restrict-eval` that allows limiting what paths the Nix "
+"evaluator has access to. By passing `--option restrict-eval true` to Nix, "
+"the evaluator will throw an exception if an attempt is made to access any "
+"file outside of the Nix search path. This is primarily intended for Hydra to "
+"ensure that a Hydra jobset only refers to its declared inputs (and is "
+"therefore reproducible)."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:124
+msgid ""
+"`nix-env` now only creates a new “generation” symlink in `/nix/var/nix/"
+"profiles` if something actually changed."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:127
+msgid ""
+"The environment variable `NIX_PAGER` can now be set to override `PAGER`. You "
+"can set it to `cat` to disable paging for Nix commands only."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:131
+msgid "Failing `<...>` lookups now show position information."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:133
+msgid ""
+"Improved Boehm GC use: we disabled scanning for interior pointers, which "
+"should reduce the “`Repeated         allocation of very large block`” "
+"warnings and associated retention of memory."
+msgstr ""
+
+#: source/release-notes/rl-1.9.md:138
+msgid ""
+"This release has contributions from aszlig, Benjamin Staffin, Charles "
+"Strahan, Christian Theune, Daniel Hahler, Danylo Hlynskyi Daniel Peebles, "
+"Dan Peebles, Domen Kožar, Eelco Dolstra, Harald van Dijk, Hoang Xuan Phu, "
+"Jaka Hudoklin, Jeff Ramnani, j-keck, Linquize, Luca Bruno, Michael Merickel, "
+"Oliver Dunkl, Rob Vermaas, Rok Garbas, Shea Levy, Tobias Geerinckx-Rice and "
+"William A. Kennington III."
+msgstr ""

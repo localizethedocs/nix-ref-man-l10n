@@ -1,0 +1,215 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:8
+msgid "`nix upgrade-nix` - upgrade Nix to the latest stable version"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:12
+msgid "`nix upgrade-nix` \\[_option_...\\]"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:16
+msgid "Upgrade Nix to the stable version declared in Nixpkgs:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:22
+msgid "Upgrade Nix in a specific profile:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:28
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:30
+msgid "This command upgrades Nix to the stable version."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:32
+msgid ""
+"By default, the latest stable version is defined by Nixpkgs, in [nix-"
+"fallback-paths.nix](https://github.com/NixOS/nixpkgs/raw/master/nixos/"
+"modules/installer/tools/nix-fallback-paths.nix) and updated manually. It may "
+"not always be the latest tagged release."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:36
+msgid ""
+"By default, it locates the directory containing the `nix` binary in the "
+"`$PATH` environment variable. If that directory is a Nix profile, it will "
+"upgrade the `nix` package in that profile to the latest stable binary "
+"release."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:41
+msgid ""
+"You cannot use this command to upgrade Nix in the system profile of a NixOS "
+"system (that is, if `nix` is found in `/run/current-system`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:44
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:46
+msgid "<span id=\"opt-dry-run\">[`--dry-run`](#opt-dry-run)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:48
+msgid "Show what this command would do without doing it."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:50
+msgid ""
+"<span id=\"opt-nix-store-paths-url\">[`--nix-store-paths-url`](#opt-nix-"
+"store-paths-url)</span> _url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:52
+msgid ""
+"The URL of the file that contains the store paths of the latest Nix release."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:54
+msgid ""
+"<span id=\"opt-profile\">[`--profile`](#opt-profile)</span> / `-p` _profile-"
+"dir_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:56
+msgid "The path to the Nix profile to upgrade."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:58
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:60
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:62
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:64
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:66
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:68
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:70
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:72
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:74
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:76
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:78
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:80
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:82
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:84
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:86
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:88
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:90
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:92
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:94
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:96
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:98
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:100
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:102
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-upgrade-nix.md:104
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""

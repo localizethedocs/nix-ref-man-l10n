@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.9.md:1
+msgid "Release 2.9 (2022-05-30)"
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:3
+msgid ""
+"Running Nix with the new `--debugger` flag will cause it to start a repl "
+"session if an exception is thrown during evaluation, or if `builtins.break` "
+"is called.  From there you can inspect the values of variables and evaluate "
+"Nix expressions.  In debug mode, the following new repl commands are "
+"available:"
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:18
+msgid "Read more about the debugger [here](https://www.zknotes.com/note/5970)."
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:21
+msgid ""
+"Nix now provides better integration with zsh's `run-help` feature. It is now "
+"included in the Nix installation in the form of an autoloadable shell "
+"function, `run-help-nix`. It picks up Nix subcommands from the currently "
+"typed in command and directs the user to the associated man pages."
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:27
+msgid ""
+"`nix repl` has a new build-and-link (`:bl`) command that builds a derivation "
+"while creating GC root symlinks."
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:30
+msgid ""
+"The path produced by `builtins.toFile` is now allowed to be imported or read "
+"even with restricted evaluation. Note that this will not work with a read-"
+"only store."
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:34
+msgid ""
+"`nix build` has a new `--print-out-paths` flag to print the resulting output "
+"paths.  This matches the default behaviour of `nix-build`."
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:38
+msgid ""
+"You can now specify which outputs of a derivation `nix` should operate on "
+"using the syntax `installable^outputs`, e.g. `nixpkgs#glibc^dev,static` or "
+"`nixpkgs#glibc^*`. By default, `nix` will use the outputs specified by the "
+"derivation's `meta.outputsToInstall` attribute if it exists, or all outputs "
+"otherwise."
+msgstr ""
+
+#: source/release-notes/rl-2.9.md:45
+msgid ""
+"`builtins.fetchTree` (and flake inputs) can now be used to fetch plain files "
+"over the `http(s)` and `file` protocols in addition to directory tarballs."
+msgstr ""

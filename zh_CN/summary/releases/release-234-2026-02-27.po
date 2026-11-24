@@ -1,0 +1,916 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.34.md:1
+msgid "Release 2.34.0 (2026-02-27)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:3
+msgid "Highlights"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:5
+msgid "Rust nix-installer in beta"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:7
+msgid ""
+"The Rust-based rewrite of the Nix installer is now in beta. We'd love help "
+"testing it out!"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:10
+msgid "To test out the new installer, run:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:11
+msgid ""
+"```\n"
+"curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:15
+msgid ""
+"This installer can be run even when you have an existing, script-based Nix "
+"installation without any adjustments."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:17
+msgid ""
+"This new installer also comes with the ability to uninstall your Nix "
+"installation; run:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:22
+msgid ""
+"This will get rid of your entire Nix installation (even if you installed "
+"over an existing, script-based installation)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:24
+msgid ""
+"This installer is a modified version of the [Determinate Nix Installer]"
+"(https://github.com/DeterminateSystems/nix-installer) by Determinate "
+"Systems. Thanks to Determinate Systems for all the investment they've put "
+"into the installer."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:27
+msgid ""
+"Source for the installer is in <https://github.com/NixOS/nix-installer>. "
+"Report any issues in that repo."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:30
+msgid ""
+"For CI usage, a GitHub Action to install Nix using this installer is "
+"available at <https://github.com/NixOS/nix-installer-action>."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:32
+msgid ""
+"Stabilisation of `no-url-literals` experimental feature and new diagnostics "
+"infrastructure, with `lint-url-literals`, `lint-short-path-literals`, and "
+"`lint-absolute-path-literals` settings [\\#8738](https://github.com/NixOS/"
+"nix/issues/8738) [\\#10048](https://github.com/NixOS/nix/issues/10048) "
+"[\\#10281](https://github.com/NixOS/nix/issues/10281) [\\#15326](https://"
+"github.com/NixOS/nix/pull/15326)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:34
+msgid ""
+"Experimental feature `no-url-literals` has been stabilised and is now "
+"controlled by the `lint-url-literals` option. New diagnostics infrastructure "
+"has been added for linting discouraged language features."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:37
+msgid "New lint infrastructure"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:39
+msgid ""
+"[`lint-url-literals`](../command-ref/conf-file.md#conf-lint-url-literals)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:41
+msgid ""
+"The `no-url-literals` experimental feature has been stabilised and replaced "
+"with a new [`lint-url-literals`](../command-ref/conf-file.md#conf-lint-url-"
+"literals) setting."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:43
+msgid "To migrate from the experimental feature, replace:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:47 source/release-notes/rl-2.34.md:60
+msgid "with:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:52
+msgid ""
+"[`lint-short-path-literals`](../command-ref/conf-file.md#conf-lint-short-"
+"path-literals)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:54
+msgid ""
+"The [`warn-short-path-literals`](../command-ref/conf-file.md#conf-warn-short-"
+"path-literals) boolean setting has been deprecated and replaced with [`lint-"
+"short-path-literals`](../command-ref/conf-file.md#conf-lint-short-path-"
+"literals)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:56
+msgid "To migrate, replace:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:65
+msgid ""
+"[`lint-absolute-path-literals`](../command-ref/conf-file.md#conf-lint-"
+"absolute-path-literals)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:67
+msgid ""
+"A new [`lint-absolute-path-literals`](../command-ref/conf-file.md#conf-lint-"
+"absolute-path-literals) setting has been added to control handling of "
+"absolute path literals (paths starting with `/`) and home path literals "
+"(paths starting with `~/`)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:69
+msgid "Setting values"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:71
+msgid "All three settings accept three values:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:72
+msgid "`ignore`: Allow the feature without emitting any diagnostic (default)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:73
+msgid "`warn`: Emit a warning when the feature is used"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:74
+msgid "`fatal`: Treat the feature as a parse error"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:76
+msgid "The defaults may change in future versions."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:78
+msgid ""
+"Improved parser error messages [\\#15092](https://github.com/NixOS/nix/pull/"
+"15092)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:80
+msgid ""
+"Parser error messages now use legible strings for tokens instead of internal "
+"names. For example, malformed expression `a ++ ++ b` now produces the "
+"following error:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:88
+msgid "Instead of:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:96
+msgid "New features"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:98
+msgid ""
+"`nix repl` now supports `inherit` and multiple bindings [\\#15082](https://"
+"github.com/NixOS/nix/pull/15082)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:100
+msgid ""
+"The `nix repl` now supports `inherit` statements and multiple bindings per "
+"line:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:117
+msgid ""
+"New command `nix store roots-daemon` for serving GC roots [\\#15143](https://"
+"github.com/NixOS/nix/pull/15143)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:119
+msgid ""
+"New command [`nix store roots-daemon`](../command-ref/new-cli/nix3-store-"
+"roots-daemon.md) runs a daemon that serves garbage collector roots over a "
+"Unix domain socket. It enables the garbage collector to discover runtime "
+"roots when the main Nix daemon doesn't have `CAP_SYS_PTRACE` capability and "
+"therefore cannot scan `/proc`."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:122
+msgid ""
+"The garbage collector can be configured to use this daemon via the [`use-"
+"roots-daemon`](../store/types/local-store.md#store-local-store-use-roots-"
+"daemon) store setting."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:124
+msgid ""
+"This feature requires the [`local-overlay-store` experimental feature](../"
+"development/experimental-features.md#xp-feature-local-overlay-store)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:126
+msgid ""
+"New command `nix-nswrapper` in `libexec` [\\#15183](https://github.com/NixOS/"
+"nix/pull/15183)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:128
+msgid ""
+"The new command `libexec/nix-nswrapper` is used to run the Nix daemon in an "
+"unprivileged user namespace on Linux. In order to use this command, build "
+"user UIDs and GIDs must be allocated in `/etc/subuid` and `/etc/subgid`."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:130
+msgid ""
+"It can be used to run the Nix daemon with full sandboxing without executing "
+"as root. Support has been added to Nixpkgs with the new `nix.daemonUser` and "
+"`nix.daemonGroup` settings."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:132
+msgid ""
+"New setting `ignore-gc-delete-failure` for local stores [\\#15054](https://"
+"github.com/NixOS/nix/pull/15054)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:134
+msgid ""
+"A new local store setting [`ignore-gc-delete-failure`](../store/types/local-"
+"store.md#store-local-store-ignore-gc-delete-failure) has been added. When "
+"enabled, garbage collection will log warnings instead of failing when it "
+"cannot delete store paths. This is useful when running Nix as an "
+"unprivileged user that may not have write access to all paths in the store."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:138
+msgid ""
+"This setting is experimental and requires the [`local-overlay-store`](../"
+"development/experimental-features.md#xp-feature-local-overlay-store) "
+"experimental feature."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:140
+msgid ""
+"New setting `narinfo-cache-meta-ttl` [\\#15287](https://github.com/NixOS/nix/"
+"pull/15287)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:142
+msgid ""
+"The new setting `narinfo-cache-meta-ttl` controls how long binary cache "
+"metadata (i.e. `/nix-cache-info`) is cached locally, in seconds. This was "
+"previously hard-coded to 7 days, which is still the default. As a result, "
+"you can now use `nix store info --refresh` to check whether a binary cache "
+"is still valid."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:144
+msgid ""
+"Support HTTPS binary caches using mTLS (client certificate) authentication "
+"[\\#13002](https://github.com/NixOS/nix/issues/13002) [\\#13030](https://"
+"github.com/NixOS/nix/pull/13030)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:146
+msgid ""
+"Added support for `tls-certificate` and `tls-private-key` options in "
+"substituter URLs."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:148
+msgid "Example:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:150
+msgid ""
+"```\n"
+"https://substituter.invalid?tls-certificate=/path/to/cert.pem&tls-private-"
+"key=/path/to/key.pem\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:154
+msgid ""
+"When these options are configured, Nix will use this certificate/private key "
+"pair to authenticate to the server."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:156
+msgid ""
+"`nix store gc --dry-run` and `nix-collect-garbage --dry-run` now report the "
+"number of paths that would be freed [\\#15229](https://github.com/NixOS/nix/"
+"pull/15229) [\\#5704](https://github.com/NixOS/nix/issues/5704)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:158
+msgid "Performance improvements"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:160
+msgid ""
+"Unpacking tarballs to `~/.cache/nix/tarball-cache-v2` is now multithreaded "
+"[\\#12087](https://github.com/NixOS/nix/pull/12087)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:162
+msgid ""
+"Content-addressed cache for `builtins.fetchTarball` and tarball-based flake "
+"inputs (e.g. `github:NixOS/nixpkgs`, `https://channels.nixos.org/nixos-25.11/"
+"nixexprs.tar.xz`) now writes git blobs (files) to the `tarball-cache-v2` "
+"repository concurrently, which significantly reduces the wall time for "
+"tarball unpacking (up to ~1.8x faster unpacking for `https://"
+"channels.nixos.org/nixos-25.11/nixexprs.tar.xz` in our testing)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:164
+msgid ""
+"Currently, Nix doesn't perform any maintenance on the `~/.cache/nix/tarball-"
+"cache-v2` repository, which will be addressed in future versions. Users that "
+"wish to reclaim disk space used by the tarball cache may want to run:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:171
+msgid ""
+"`nix nar ls` and other NAR listing operations have been optimised further "
+"[\\#15163](https://github.com/NixOS/nix/pull/15163)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:173
+msgid ""
+"Evaluator hot-path optimizations [\\#15270](https://github.com/NixOS/nix/"
+"pull/15270) [\\#15271](https://github.com/NixOS/nix/pull/15271)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:175
+msgid "C API Changes"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:177
+msgid ""
+"New store API methods [\\#14766](https://github.com/NixOS/nix/pull/14766) "
+"[\\#14768](https://github.com/NixOS/nix/pull/14768)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:179
+msgid "The C API now includes additional methods:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:181
+msgid ""
+"`nix_store_query_path_from_hash_part()` - Get the full store path given its "
+"hash part"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:182
+msgid ""
+"`nix_store_copy_path()` - Copy a single store path between two stores, "
+"allows repairs and configuring signature checking"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:184
+msgid ""
+"Errors returned from your primops are not treated as recoverable by default "
+"[\\#13930](https://github.com/NixOS/nix/pull/13930) [\\#15286](https://"
+"github.com/NixOS/nix/pull/15286)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:186
+msgid "Nix 2.34 by default remembers the error in the thunk that triggered it."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:188
+msgid "Previously the following sequence of events worked:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:190
+msgid "Have a thunk that invokes a primop that's defined through the C API"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:191
+msgid "The primop returns an error"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:192
+msgid "Force the thunk again"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:193
+msgid "The primop returns a value"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:194
+msgid "The thunk evaluated successfully"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:196
+msgid "**Resolution**"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:198
+msgid ""
+"C API consumers that rely on this must change their recoverable error calls:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:205
+msgid "Bug fixes"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:207
+msgid ""
+"Avoid dropping ssh connections with `ssh-ng://` stores for store path "
+"copying [\\#14998](https://github.com/NixOS/nix/pull/14998) [\\#6950]"
+"(https://github.com/NixOS/nix/issues/6950)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:209
+msgid ""
+"Due to a bug in how Nix handled Boost.Coroutine2 suspension and resumption, "
+"copying from `ssh-ng://` stores would drop the SSH connection for each "
+"copied path. This issue has been fixed, which improves performance by "
+"avoiding multiple SSH/Nix Worker Protocol handshakes."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:211
+msgid ""
+"S3 binary caches now use virtual-hosted-style addressing by default "
+"[\\#15208](https://github.com/NixOS/nix/issues/15208) [\\#15216](https://"
+"github.com/NixOS/nix/pull/15216)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:213
+msgid ""
+"S3 binary caches now use virtual-hosted-style URLs (`https://"
+"bucket.s3.region.amazonaws.com/key`) instead of path-style URLs (`https://"
+"s3.region.amazonaws.com/bucket/key`) when connecting to standard AWS S3 "
+"endpoints. This enables HTTP/2 multiplexing and fixes TCP connection "
+"exhaustion (TIME_WAIT socket accumulation) under high-concurrency workloads."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:219
+msgid "A new `addressing-style` store option controls this behavior:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:221
+msgid ""
+"`auto` (default): virtual-hosted-style for standard AWS endpoints, path-"
+"style for custom endpoints."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:223
+msgid "`path`: forces path-style addressing (deprecated by AWS)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:224
+msgid ""
+"`virtual`: forces virtual-hosted-style addressing (bucket names must not "
+"contain dots)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:227
+msgid ""
+"Bucket names containing dots (e.g., `my.bucket.name`) automatically fall "
+"back to path-style addressing in `auto` mode, because dotted names create "
+"multi-level subdomains that break TLS wildcard certificate validation."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:231
+msgid "Example using path-style for backwards compatibility:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:233
+msgid ""
+"```\n"
+"s3://my-bucket/key?region=us-east-1&addressing-style=path\n"
+"```"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:237
+msgid ""
+"Additionally, TCP keep-alive is now enabled on all HTTP connections, "
+"preventing idle connections from being silently dropped by intermediate "
+"network devices (NATs, firewalls, load balancers)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:241
+msgid ""
+"`nix-prefetch-url --unpack` now properly checks for empty archives [\\#15242]"
+"(https://github.com/NixOS/nix/pull/15242)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:243
+msgid ""
+"Prior versions failed to check for empty archives and would crash with a "
+"`nullptr` dereference when unpacking empty archives. This is now fixed."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:246
+msgid ""
+"Prevent runaway processes when Nix is killed with `SIGKILL` when building in "
+"a local store with build users [\\#15193](https://github.com/NixOS/nix/pull/"
+"15193)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:248
+msgid ""
+"When run as root, Nix doesn't run builds via the daemon and is a parent of "
+"the forked build processes. Prior versions of Nix failed to preserve the "
+"`PR_SET_PDEATHSIG` parent-death signal across `setuid` calls. This could "
+"lead to build processes being reparented and continue running in the "
+"background. This has been fixed."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:250
+msgid ""
+"Fix crash when interrupting `--log-format internal-json` [\\#15335](https://"
+"github.com/NixOS/nix/pull/15335)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:252
+msgid ""
+"Pressing Ctrl-C during `--log-format internal-json` (used by [nix-output-"
+"monitor](https://github.com/maralorn/nix-output-monitor)) no longer causes a "
+"spurious \"Nix crashed. This is a bug.\" report."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:254
+msgid ""
+"Fix percent-encoding in `file://` and `local://` store URIs [\\#15280]"
+"(https://github.com/NixOS/nix/pull/15280)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:256
+msgid ""
+"Store URIs with special characters like `+` in the path (e.g. `file:///tmp/"
+"a+b`) no longer incorrectly create percent-encoded directories (e.g. `/tmp/"
+"a%2Bb`)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:258
+msgid ""
+"Fix crash during tab completion in `nix repl` [\\#15255](https://github.com/"
+"NixOS/nix/pull/15255)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:260
+msgid ""
+"Fix \"Too many open files\" on macOS [\\#15205](https://github.com/NixOS/nix/"
+"pull/15205)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:262
+msgid ""
+"Nix now raises the open file soft limit to the hard limit at startup, fixing "
+"\"Too many open files\" errors on macOS where the default soft limit is low."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:264
+msgid ""
+"`nix develop` no longer fails when `inputs.nixpkgs` has `flake = false` "
+"[\\#15175](https://github.com/NixOS/nix/pull/15175)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:266
+msgid ""
+"`builtins.flakeRefToString` no longer fails with \"attribute is a thunk\" "
+"[\\#15160](https://github.com/NixOS/nix/pull/15160)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:268
+msgid ""
+"Fix `QueryPathInfo` throwing on invalid paths in the daemon [\\#15134]"
+"(https://github.com/NixOS/nix/pull/15134)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:270
+msgid ""
+"`nix-store --generate-binary-cache-key` now fsyncs key files to prevent "
+"corruption [\\#15107](https://github.com/NixOS/nix/pull/15107)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:272
+msgid ""
+"Fix `build-hook` setting in `nix.conf` being ignored [\\#15083](https://"
+"github.com/NixOS/nix/pull/15083)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:274
+msgid ""
+"Fix empty error messages when builds are cancelled due to a dependency "
+"failure [\\#14972](https://github.com/NixOS/nix/pull/14972)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:276
+msgid ""
+"When a build fails without `--keep-going`, other in-progress builds are "
+"cancelled. Previously, these cancelled builds were incorrectly reported as "
+"failed with empty error messages. This affected `buildPathsWithResults` "
+"callers such as `nix flake check`."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:278
+msgid "Miscellaneous changes"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:280
+msgid ""
+"Content-Encoding decompression is now handled by libcurl [\\#14324](https://"
+"github.com/NixOS/nix/issues/14324) [\\#15336](https://github.com/NixOS/nix/"
+"pull/15336)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:282
+msgid ""
+"Transparent decompression of HTTP downloads specifying `Content-Encoding` "
+"header now uses libcurl. This adds support for previously advertised, but "
+"not supported `deflate` encoding as well as deprecated `x-gzip` alias. Non-"
+"standard `xz`, `bzip2` encodings that were previously advertised are no "
+"longer supported, as they do not commonly appear in the wild and should not "
+"be sent by compliant servers."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:285
+msgid ""
+"`br`, `zstd`, `gzip` continue to be supported. Distro packaging should "
+"ensure that the `libcurl` dependency is linked against required libraries to "
+"support these encodings. By default, the build system now requires libcurl "
+">= 8.17.0, which is not known to have issues around [pausing and "
+"decompression](https://github.com/curl/curl/issues/16280)."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:287
+msgid ""
+"Static builds now support S3 features (`libstore:s3-aws-auth` meson option) "
+"[\\#15076](https://github.com/NixOS/nix/pull/15076)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:289
+msgid ""
+"Improved package-related error messages [\\#15349](https://github.com/NixOS/"
+"nix/pull/15349)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:291
+msgid ""
+"Store path context is now rendered in the user-facing `hash^out` format "
+"instead of the internal `!out!hash` format. A misleading error message in "
+"`nix-env` that incorrectly blamed content-addressed derivations has been "
+"fixed."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:294
+msgid ""
+"Improved error message for empty derivation files [\\#15298](https://"
+"github.com/NixOS/nix/pull/15298)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:296
+msgid ""
+"Parsing an empty `.drv` file (e.g. due to store corruption after an unclean "
+"shutdown) now produces a clear error message instead of the cryptic "
+"`expected string 'D'`."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:298
+msgid ""
+"Relative `file:` paths for tarballs are now rejected with a clear error "
+"[\\#14983](https://github.com/NixOS/nix/pull/14983)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:300
+msgid ""
+"Continued progress on the Windows port, including build fixes, CI "
+"improvements, and platform abstractions."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:302
+msgid ""
+"Nix docker images are now uploaded to [GHCR](https://github.com/NixOS/nix/"
+"pkgs/container/nix) as part of the release process"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:304
+msgid ""
+"Historically, only pre-release builds of `amd64` docker images have been "
+"uploaded to ghcr.io with the `latest` tag pointing to the last built image "
+"from `master` branch. This has been fixed and going forward, <https://"
+"github.com/NixOS/nix/pkgs/container/nix> will include the same images as "
+"<https://hub.docker.com/r/nixos/nix/> that are built by [Hydra](https://"
+"hydra.nixos.org/project/nix) for [arm64](https://hydra.nixos.org/job/nix/"
+"maintenance-2.34/dockerImage.aarch64-linux) and [amd64](https://"
+"hydra.nixos.org/job/nix/maintenance-2.34/dockerImage.x86_64-linux). Pre-"
+"release versions are no longer pushed to the registry."
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:306
+msgid "Contributors"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:308
+msgid "This release was made possible by the following 43 contributors:"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:310
+msgid "Taeer Bar-Yam [**(@Radvendii)**](https://github.com/Radvendii)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:311
+msgid "Sergei Zimmerman [**(@xokdvium)**](https://github.com/xokdvium)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:312
+msgid "Jörg Thalheim [**(@Mic92)**](https://github.com/Mic92)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:313
+msgid "Graham Dennis [**(@GrahamDennis)**](https://github.com/GrahamDennis)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:314
+msgid "Damien Diederen [**(@ztzg)**](https://github.com/ztzg)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:315
+msgid "koberbe-jh [**(@koberbe-jh)**](https://github.com/koberbe-jh)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:316
+msgid "Robert Hensing [**(@roberth)**](https://github.com/roberth)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:317
+msgid "Bouke van der Bijl [**(@bouk)**](https://github.com/bouk)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:318
+msgid ""
+"Lisanna Dettwyler [**(@lisanna-dettwyler)**](https://github.com/lisanna-"
+"dettwyler)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:319
+msgid "kiara [**(@KiaraGrouwstra)**](https://github.com/KiaraGrouwstra)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:320
+msgid "Side Effect [**(@YawKar)**](https://github.com/YawKar)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:321
+msgid "dram [**(@dramforever)**](https://github.com/dramforever)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:322
+msgid "tomf [**(@tomfitzhenry)**](https://github.com/tomfitzhenry)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:323
+msgid "Kamil Monicz [**(@Zaczero)**](https://github.com/Zaczero)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:324
+msgid "Cosima Neidahl [**(@OPNA2608)**](https://github.com/OPNA2608)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:325
+msgid "Siddhant Kumar [**(@siddhantk232)**](https://github.com/siddhantk232)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:326
+msgid "Jens Petersen [**(@juhp)**](https://github.com/juhp)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:327
+msgid "Johannes Kirschbauer [**(@hsjobeki)**](https://github.com/hsjobeki)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:328
+msgid "tomberek [**(@tomberek)**](https://github.com/tomberek)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:329
+msgid "Eelco Dolstra [**(@edolstra)**](https://github.com/edolstra)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:330
+msgid "Artemis Tosini [**(@artemist)**](https://github.com/artemist)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:331
+msgid "David McFarland [**(@corngood)**](https://github.com/corngood)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:332
+msgid ""
+"Tucker Shea [**(@NoRePercussions)**](https://github.com/NoRePercussions)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:333
+msgid "Connor Baker [**(@ConnorBaker)**](https://github.com/ConnorBaker)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:334
+msgid "Cole Helbling [**(@cole-h)**](https://github.com/cole-h)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:335
+msgid "Eveeifyeve [**(@Eveeifyeve)**](https://github.com/Eveeifyeve)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:336
+msgid "John Ericson [**(@Ericson2314)**](https://github.com/Ericson2314)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:337
+msgid "Graham Christensen [**(@grahamc)**](https://github.com/grahamc)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:338
+msgid "Ilja [**(@iljah)**](https://github.com/iljah)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:339
+msgid "Pol Dellaiera [**(@drupol)**](https://github.com/drupol)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:340
+msgid "steelman [**(@steelman)**](https://github.com/steelman)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:341
+msgid "Brian McKenna [**(@puffnfresh)**](https://github.com/puffnfresh)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:342
+msgid ""
+"JustAGuyTryingHisBest [**(@JustAGuyTryingHisBest)**](https://github.com/"
+"JustAGuyTryingHisBest)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:343
+msgid "zowoq [**(@zowoq)**](https://github.com/zowoq)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:344
+msgid "Agustín Covarrubias [**(@agucova)**](https://github.com/agucova)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:345
+msgid "Sergei Trofimovich [**(@trofi)**](https://github.com/trofi)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:346
+msgid "Bernardo Meurer [**(@lovesegfault)**](https://github.com/lovesegfault)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:347
+msgid "Peter Bynum [**(@pkpbynum)**](https://github.com/pkpbynum)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:348
+msgid "Amaan Qureshi [**(@amaanq)**](https://github.com/amaanq)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:349
+msgid "Michael Hoang [**(@Enzime)**](https://github.com/Enzime)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:350
+msgid "Michael Daniels [**(@mdaniels5757)**](https://github.com/mdaniels5757)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:351
+msgid "Matthew Kenigsberg [**(@mkenigs)**](https://github.com/mkenigs)"
+msgstr ""
+
+#: source/release-notes/rl-2.34.md:352
+msgid "Shea Levy [**(@shlevy)**](https://github.com/shlevy)"
+msgstr ""

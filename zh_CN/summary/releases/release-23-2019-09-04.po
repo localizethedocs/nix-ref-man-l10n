@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/release-notes/rl-2.3.md:1
+msgid "Release 2.3 (2019-09-04)"
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:3
+msgid ""
+"This is primarily a bug fix release. However, it makes some incompatible "
+"changes:"
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:6
+msgid ""
+"Nix now uses BSD file locks instead of POSIX file locks. Because of this, "
+"you should not use Nix 2.3 and previous releases at the same time on a Nix "
+"store."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:10
+msgid "It also has the following changes:"
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:12
+msgid ""
+"`builtins.fetchGit`'s `ref` argument now allows specifying an absolute "
+"remote ref. Nix will automatically prefix `ref` with `refs/heads` only if "
+"`ref` doesn't already begin with `refs/`."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:16
+msgid ""
+"The installer now enables sandboxing by default on Linux when the system has "
+"the necessary kernel support."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:19
+msgid "The `max-jobs` setting now defaults to 1."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:21
+msgid "New builtin functions: `builtins.isPath`, `builtins.hashFile`."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:23
+msgid ""
+"The `nix` command has a new `--print-build-logs` (`-L`) flag to print build "
+"log output to stderr, rather than showing the last log line in the progress "
+"bar. To distinguish between concurrent builds, log lines are prefixed by the "
+"name of the package."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:28
+msgid ""
+"Builds are now executed in a pseudo-terminal, and the `TERM` environment "
+"variable is set to `xterm-256color`. This allows many programs (e.g. `gcc`, "
+"`clang`, `cmake`) to print colorized log output."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:33
+msgid ""
+"Add `--no-net` convenience flag. This flag disables substituters; sets the "
+"`tarball-ttl` setting to infinity (ensuring that any previously downloaded "
+"files are considered current); and disables retrying downloads and sets the "
+"connection timeout to the minimum. This flag is enabled automatically if "
+"there are no configured non-loopback network interfaces."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:40
+msgid ""
+"Add a `post-build-hook` setting to run a program after a build has succeeded."
+msgstr ""
+
+#: source/release-notes/rl-2.3.md:43
+msgid ""
+"Add a `trace-function-calls` setting to log the duration of Nix function "
+"calls to stderr."
+msgstr ""

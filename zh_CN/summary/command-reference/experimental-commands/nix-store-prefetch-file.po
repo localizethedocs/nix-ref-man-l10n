@@ -1,0 +1,269 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nix 2.36.0 Reference Manual\n"
+"POT-Creation-Date: 2026-10-20T13:33:21Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:1
+msgid ""
+"**Warning**   \n"
+"This program is [**experimental**](../../development/experimental-"
+"features.md#xp-feature-nix-command) and its interface is subject to change."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:6
+msgid "Name"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:8
+msgid "`nix store prefetch-file` - download a file into the Nix store"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:10
+msgid "Synopsis"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:12
+msgid "`nix store prefetch-file` \\[_option_...\\] _url_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:14
+msgid "Examples"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:16
+msgid "Download a file to the Nix store:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:18
+msgid ""
+"```console\n"
+"# nix store prefetch-file https://releases.nixos.org/nix/nix-2.3.10/"
+"nix-2.3.10.tar.xz\n"
+"Downloaded 'https://releases.nixos.org/nix/nix-2.3.10/nix-2.3.10.tar.xz' to\n"
+"'/nix/store/vbdbi42hgnc4h7pyqzp6h2yf77kw93aw-source' (hash\n"
+"'sha256-qKheVd5D0BervxMDbt+1hnTKE2aRWC8XCAwc0SeHt6s=').\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:25
+msgid "Download a file and get the SHA-512 hash:"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:27
+msgid ""
+"```console\n"
+"# nix store prefetch-file --json --hash-type sha512 \\\n"
+"    https://releases.nixos.org/nix/nix-2.3.10/nix-2.3.10.tar.xz \\\n"
+"  | jq -r .hash\n"
+"sha512-6XJxfym0TNH9knxeH4ZOvns6wElFy3uahunl2hJgovACCMEMXSy42s69zWVyGJALXTI+86tpDJGlIcAySEKBbA==\n"
+"```"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:34
+msgid "Description"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:36
+msgid ""
+"This command downloads the file _url_ to the Nix store. It prints out the "
+"resulting store path and the cryptographic hash of the contents of the file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:40
+msgid ""
+"The name component of the store path defaults to the last component of "
+"_url_, but this can be overridden using `--name`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:43
+msgid "Options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:45
+msgid "<span id=\"opt-executable\">[`--executable`](#opt-executable)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:47
+msgid ""
+"Make the resulting file executable. Note that this causes the resulting hash "
+"to be a NAR hash rather than a flat file hash."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:49
+msgid ""
+"<span id=\"opt-expected-hash\">[`--expected-hash`](#opt-expected-hash)</"
+"span> _hash_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:51
+msgid "The expected hash of the file."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:53
+msgid ""
+"<span id=\"opt-hash-type\">[`--hash-type`](#opt-hash-type)</span> _hash-algo_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:55
+msgid "Hash algorithm (`blake3`, `md5`, `sha1`, `sha256`, or `sha512`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:57
+msgid "<span id=\"opt-json\">[`--json`](#opt-json)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:59
+msgid ""
+"Produce output in JSON format, suitable for consumption by another program."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:61
+msgid "<span id=\"opt-name\">[`--name`](#opt-name)</span> _name_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:63
+msgid ""
+"Override the name component of the resulting store path. It defaults to the "
+"base name of _url_."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:65
+msgid "<span id=\"opt-no-pretty\">[`--no-pretty`](#opt-no-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:67
+msgid ""
+"Print compact JSON output on a single line, even when the output is a "
+"terminal. Some commands may print multiple JSON objects on separate lines."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:72
+msgid "<span id=\"opt-pretty\">[`--pretty`](#opt-pretty)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:74
+msgid "Print multi-line, indented JSON output for readability."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:80
+msgid "<span id=\"opt-unpack\">[`--unpack`](#opt-unpack)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:82
+msgid ""
+"Unpack the archive (which must be a tarball or zip file) and add the result "
+"to the Nix store."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:84
+msgid "Logging-related options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:86
+msgid "<span id=\"opt-debug\">[`--debug`](#opt-debug)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:88
+msgid "Set the logging verbosity level to 'debug'."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:90
+msgid ""
+"<span id=\"opt-log-format\">[`--log-format`](#opt-log-format)</span> _format_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:92
+msgid ""
+"Set the format of log output; one of `raw`, `internal-json`, `bar` or `bar-"
+"with-logs`."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:94
+msgid ""
+"<span id=\"opt-print-build-logs\">[`--print-build-logs`](#opt-print-build-"
+"logs)</span> / `-L`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:96
+msgid "Print full build logs on standard error."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:98
+msgid "<span id=\"opt-quiet\">[`--quiet`](#opt-quiet)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:100
+msgid "Decrease the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:102
+msgid "<span id=\"opt-verbose\">[`--verbose`](#opt-verbose)</span> / `-v`"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:104
+msgid "Increase the logging verbosity level."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:106
+msgid "Miscellaneous global options"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:108
+msgid "<span id=\"opt-help\">[`--help`](#opt-help)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:110
+msgid "Show usage information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:112
+msgid "<span id=\"opt-offline\">[`--offline`](#opt-offline)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:114
+msgid ""
+"Disable substituters and consider all previously downloaded files up-to-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:116
+msgid "<span id=\"opt-option\">[`--option`](#opt-option)</span> _name_ _value_"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:118
+msgid ""
+"Set the Nix configuration setting _name_ to _value_ (overriding `nix.conf`)."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:120
+msgid "<span id=\"opt-refresh\">[`--refresh`](#opt-refresh)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:122
+msgid "Consider all previously downloaded files out-of-date."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:124
+msgid "<span id=\"opt-version\">[`--version`](#opt-version)</span>"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:126
+msgid "Show version information."
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:128
+msgid "**Note**"
+msgstr ""
+
+#: source/command-ref/new-cli/nix3-store-prefetch-file.md:130
+msgid ""
+"See [`man nix.conf`](../../command-ref/conf-file.md#command-line-flags) for "
+"overriding configuration settings with command line flags."
+msgstr ""
